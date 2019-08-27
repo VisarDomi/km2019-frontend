@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23.359" height="23.359" viewBox="0 0 23.359 23.359">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="23.359" height="23.359" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="icon_menu_close" clip-path="url(#clip-path)">
+    <path id="Path_2574" data-name="Path 2574" d="M0,0H29.461V3.573H0Z" transform="translate(2.526 0) rotate(45)" fill="#fff"/>
+    <path id="Path_2575" data-name="Path 2575" d="M0,0H29.434V3.6H0Z" transform="translate(23.359 2.546) rotate(135)" fill="#fff"/>
+  </g>
+</svg>

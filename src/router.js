@@ -1,27 +1,42 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Vue from "vue";
+import Router from "vue-router";
 
-Vue.use(Router)
+import Home from "./views/Home.vue";
+import Artists from "./views/Artists.vue";
+import SingleArtist from "./views/SingleArtist.vue";
+import Blogs from "./views/Blogs.vue";
+import SingleBlog from "./views/SingleBlog.vue";
+
+Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'home',
+      path: "/",
+      name: "Home",
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: function () { 
-        return import(/* webpackChunkName: "about" */ './views/About.vue')
-      }
+      path: "/artists",
+      name: "Artists",
+      component: Artists
+    },
+    {
+      path: "/artist",
+      name: "SingleArtist",
+      component: SingleArtist
+    },
+    {
+      path: "/blogs",
+      name: "Blogs",
+      component: Blogs
+    },
+    {
+      path: "/blog",
+      name: "SingleBlog",
+      component: SingleBlog
     }
   ]
-})
+});

@@ -1,13 +1,26 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import './registerServiceWorker'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import store from "./store";
+import "./registerServiceWorker";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
+// import "animate.css";
+import "fullpage-vue/src/fullpage.css";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
+
+import VueFullpage from "fullpage-vue";
+import BootstrapVue from "bootstrap-vue";
+
+Vue.use(BootstrapVue);
+Vue.use(VueFullpage);
 
 new Vue({
   router,
   store,
-  render: function (h) { return h(App) }
-}).$mount('#app')
+  render: function(h) {
+    return h(App);
+  }
+}).$mount("#app");

@@ -1,4 +1,4 @@
-# vue-kengaa
+# vue-kenga
 
 ## Project setup
 ```
