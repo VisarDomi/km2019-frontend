@@ -1,6 +1,58 @@
 <template>
   <div class="artist-page">
-    <h1>single artist page</h1>
+    <div class="row justify-content-between menu-row align-items-center">
+      <div class="col-lg-3 col-sm-2 col-xs-1 text-center">
+        <img src="@/assets/img/logowhite.svg" alt />
+      </div>
+      <div class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover" @click="goToArtists()">
+        <img src="@/assets/img/artistet_arrow_l.svg" alt class="back-icon center-block" />
+      </div>
+    </div>
+
+    <div class="artist-container container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/GnxAhRj38Qk"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <div class="col-lg-5 top-padded-col">
+          <h1 class="artist-name">Soni</h1>
+          <h1 class="artist-surname">Malaj</h1>
+          <h2 class="artist-songtitle">loose yourself to dance</h2>
+          <h3 class="bio-text">bio</h3>
+          <h4
+            class="bio-description"
+          >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p class="share-text">Shperndaje:</p>
+            <span>
+              
+                <i class="fa fa-facebook" style="margin-right:5px;"></i>
+                <i class="fa fa-instagram" style="margin-right:5px;"></i>
+                <i class="fa fa-whatsapp"></i>
+
+            </span> 
+            <br>
+          <h1 class="trigger-text">Vetem nje kenge do degjosh?</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">1</div>
+        <div class="col-lg-4">2</div>
+        <div class="col-lg-4">3</div>
+        <div class="col-lg-4">4</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,13 +64,144 @@ export default {
   components: {},
   data() {
     return {};
+  },
+  methods: {
+    goToArtists() {
+      this.$router.push({ name: "Artists" });
+    }
   }
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
+.artist-name {
+  font-family: Vollkorn;
+  color: white;
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 1.8rem;
+}
+
+.top-padded-col {
+  padding-top: 20px;
+}
+.artist-surname {
+  font-family: Vollkorn;
+  color: white;
+  font-weight: 900;
+  font-size: 3rem;
+}
+.artist-surname:after {
+  background: none repeat scroll 0 0 white;
+  bottom: -10px;
+  content: "";
+  display: block;
+  height: 9px;
+  position: relative;
+  width: 48px;
+}
+
+.artist-songtitle {
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-family: Montserrat;
+  // font-weight: 300;
+  color: white;
+  font-size: 2rem;
+}
+
+.bio-text {
+  overflow: hidden;
+  color: white;
+  font-family: Vollkorn;
+  font-weight: 400;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px white;
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.bio-text:after {
+  background-color: white;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.bio-text:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+.bio-description {
+  font-family: Montserrat;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.share-text {
+  color: white;
+  text-transform: uppercase;
+  font-family: Ubuntu;
+  font-weight: 700;
+  padding-top: 10px;
+}
+.artist-container {
+  margin-top: 5rem;
+}
+
+i.fa {
+  color: white;
+  display: inline-block;
+  border-radius: 60px;
+  border: 1px solid white;
+  // box-shadow: 0px 0px 2px #fff;
+  padding: 0.5em 0.7em;
+
+}
+
+.trigger-text{
+  color:white;
+  font-family: Vollkorn;
+  margin-top: 20px;
+}
+
 .artist-page {
   height: 100vh;
-  background: lightsalmon;
+  // background: lightsalmon;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../src/assets/img/sonimala2j.png") no-repeat;
+  background-size: cover;
+}
+
+.menu-row {
+  margin-right: 0px;
+  margin-left: 0px;
+  height: 10rem;
+}
+
+.row {
+  margin-right: 0px !important;
+  margin-left: 0px;
+}
+
+.back-hover:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.vertical-center {
+  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+  display: flex;
+  align-items: center;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
