@@ -105,11 +105,6 @@ export default {
   }
 }
 
-// .cmi {
-//   opacity: 0;
-//   transition: all 1s;
-// }
-
 .col-lg-1 {
   padding-left: 0;
   padding-right: 0;
@@ -120,13 +115,4 @@ export default {
     cursor: pointer;
   }
 }
-
-// @media (min-width: 768px) {
-//   .navbar-brand.abs {
-//     position: absolute;
-//     width: 100%;
-//     left: 0;
-//     text-align: center;
-//   }
-// }
 </style>
