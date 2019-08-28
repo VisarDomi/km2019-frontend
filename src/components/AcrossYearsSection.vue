@@ -7,14 +7,28 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3"></div>
+      <div class="col-lg-1">
+        <div class="graphic-right">
+          <img src="@/assets/img/Group 147.svg" alt />
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="carousel-left">
+          <img src="@/assets/img/ndervite_left.svg" alt />
+        </div>
+      </div>
       <div class="col-lg-6">
         <div class="image-container">
           <img src="@/assets/img/ndervite.svg" alt />
           <p class="year">2018</p>
         </div>
       </div>
-      <div class="col-lg-3"></div>
+      <div class="col-lg-2">
+        <div class="carousel-right">
+          <img src="@/assets/img/ndervite_right.svg" alt />
+        </div>
+      </div>
+      <div class="col-lg-1"></div>
     </div>
     <div class="row">
       <div class="col-lg-9 offset-lg-2">
@@ -42,6 +56,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.graphic-right {
+  position: absolute;
+  top: 15%;
+  left: -120%;
+}
+
+.carousel-right {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+}
+.carousel-left {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+}
+
 .year {
   font-size: 6rem;
   background-color: #c360b5;
