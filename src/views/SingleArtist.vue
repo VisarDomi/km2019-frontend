@@ -34,23 +34,53 @@
       <div class="row">
         <div class="col">
           <p class="share-text">Shperndaje:</p>
-            <span>
-              
-                <i class="fa fa-facebook" style="margin-right:5px;"></i>
-                <i class="fa fa-instagram" style="margin-right:5px;"></i>
-                <i class="fa fa-whatsapp"></i>
-
-            </span> 
-            <br>
+          <span>
+            <i class="fa fa-facebook" style="margin-right:5px;"></i>
+            <i class="fa fa-instagram" style="margin-right:5px;"></i>
+            <i class="fa fa-whatsapp"></i>
+          </span>
+          <br />
           <h1 class="trigger-text">Vetem nje kenge do degjosh?</h1>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-lg-4">1</div>
-        <div class="col-lg-4">2</div>
-        <div class="col-lg-4">3</div>
-        <div class="col-lg-4">4</div>
+        <div class="col-lg-3">
+          <div class="artist-card abs-bottom">
+            <div class="img-container">
+              <img src="@/assets/img/Kejsi Tola.svg" alt />
+            </div>
+            <p class="artist-card__name go-up--small">Kejsi Tola</p>
+            <p class="artist-card__song">Loose Yourself to Dance</p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="artist-card abs-bottom">
+            <div class="img-container">
+              <img src="@/assets/img/Klajdi Haruni.svg" alt />
+            </div>
+            <p class="artist-card__name go-up--small">Klajdi Haruni</p>
+            <p class="artist-card__song">Loose Yourself to Dance</p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="artist-card abs-bottom">
+            <div class="img-container">
+              <img src="@/assets/img/Alar Band.svg" alt />
+            </div>
+            <p class="artist-card__name go-up--small">Alar Band</p>
+            <p class="artist-card__song">Loose Yourself to Dance</p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="artist-card abs-bottom">
+            <div class="img-container">
+              <img src="@/assets/img/Rozana Radi.svg" alt />
+            </div>
+            <p class="artist-card__name go-up--small">Rozana Radi</p>
+            <p class="artist-card__song">Loose Yourself to Dance</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -160,11 +190,10 @@ i.fa {
   border: 1px solid white;
   // box-shadow: 0px 0px 2px #fff;
   padding: 0.5em 0.7em;
-
 }
 
-.trigger-text{
-  color:white;
+.trigger-text {
+  color: white;
   font-family: Vollkorn;
   margin-top: 20px;
 }
@@ -203,5 +232,43 @@ i.fa {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.artist-card {
+  width: 90%;
+  img {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+  &__name {
+    color: white;
+    font-size: 2rem;
+    padding: 4px 1rem;
+    background-color: black;
+    font-family: Vollkorn;
+    display: inline-block;
+    border: solid 2px white;
+
+    margin-bottom: 2px;
+  }
+  &__song {
+    border: 1px solid black;
+    background-color: white;
+    text-transform: uppercase;
+    font-family: Ubuntu;
+
+    display: inline-block;
+    padding: 6px 1rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+}
+
+.go-up {
+  margin-top: -10rem;
+  &--small {
+    margin-top: -4rem;
+  }
 }
 </style>
