@@ -1,45 +1,93 @@
 <template>
   <div class="artists">
     <div class="row justify-content-between artist-row align-items-center">
-      <div class="col-lg-3 col-sm-2 col-xs-1 text-center ">
+      <div class="col-lg-3 col-sm-2 col-xs-1 text-center">
         <img src="@/assets/img/logowhite.svg" alt />
       </div>
-      <div class="col-lg-1 col-sm-2 col-xs-1  vertical-center back-hover" @click="goToHome()">
-        <img src="@/assets/img/artistet_arrow_l.svg" alt="" class="back-icon center-block ">
+      <div class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover" @click="goToHome()">
+        <img src="@/assets/img/artistet_arrow_l.svg" alt class="back-icon center-block" />
       </div>
     </div>
-
 
     <div class="row align-items-center justify-content-center row-title">
-      <div class="col-xl-7 col-lg-9 col-md-12 text-center ">
-
+      <div class="col-xl-7 col-lg-9 col-md-12 text-center">
         <div class="row align-items-center justify-content-center">
-
-
           <h1 class="jumbo-title-artistet">artistët</h1>
 
-
-
           <!-- <img src="@/assets/img/search_icon.svg" alt="" class="search-icon"> -->
-          	<input type="search" placeholder="Search">
-
+          <input type="search" placeholder="Search" />
         </div>
-
-
       </div>
     </div>
 
-    <div class="row">
+    <div class="row mx-6 row-artists">
       <div class="col-lg-3">
         <div class="artist-card" @click="goToArtist()">
-
+          <div class="h-75 artist-card">
+            <div class="img-container">
+              <img src="@/assets/img/Soni Malaj.svg" alt />
+            </div>
+            <p class="artist-card__name go-up--small">Soni Malaj</p>
+            <p class="artist-card__song">Loose Yourself to Dance</p>
+          </div>
         </div>
       </div>
-
+      <div class="col-lg-3">
+        <div class="artist-card" @click="goToArtist()">
+          <div class="h-75 artist-card">
+            <div class="img-container">
+              <img src="@/assets/img/Eneda Tarifa.svg" alt />
+            </div>
+            <p class="artist-card__name go-up--small">Eneda Tarifa</p>
+            <p class="artist-card__song">Loose Yourself to Dance</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="artist-card" @click="goToArtist()">
+          <div class="h-75 artist-card">
+            <div class="img-container">
+              <img src="@/assets/img/Kejsi Tola.svg" alt />
+            </div>
+            <p class="artist-card__name go-up--small">Kejsi Tola</p>
+            <p class="artist-card__song">Loose Yourself to Dance</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="artist-card" @click="goToArtist()">
+          <div class="h-75 artist-card">
+            <div class="img-container">
+              <img src="@/assets/img/Klajdi Haruni.svg" alt />
+            </div>
+            <p class="artist-card__name go-up--small">Klajdi Haruni</p>
+            <p class="artist-card__song">Loose Yourself to Dance</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="artist-card" @click="goToArtist()">
+          <div class="h-75 artist-card">
+            <div class="img-container">
+              <img src="@/assets/img/Rozana Radi.svg" alt />
+            </div>
+            <p class="artist-card__name go-up--small">Rozana Radi</p>
+            <p class="artist-card__song">Loose Yourself to Dance</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="artist-card" @click="goToArtist()">
+          <div class="h-75 artist-card">
+            <div class="img-container">
+              <img src="@/assets/img/Alar Band.svg" alt />
+            </div>
+            <p class="artist-card__name go-up--small">Alar Band</p>
+            <p class="artist-card__song">Loose Yourself to Dance</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-
   </div>
 </template>
 
@@ -53,10 +101,10 @@ export default {
     return {};
   },
   methods: {
-    goToArtist(){
+    goToArtist() {
       this.$router.push({ name: "SingleArtist" });
     },
-    goToHome(){
+    goToHome() {
       this.$router.push({ name: "Home" });
     }
   }
@@ -64,69 +112,69 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-.artist-card{
-  background:salmon;
-  height: 300px;
+.mx-6 {
+  padding-right: 8rem;
+  padding-left: 8rem !important;
 }
 
-.artist-card:hover{
+.row-artists {
+  background: #0e1032;
+}
+
+.artist-card:hover {
   cursor: pointer;
 }
 
-.search-icon:hover{
-  cursor:pointer;
+.search-icon:hover {
+  cursor: pointer;
 }
 
-
-.row-title{
-  margin-top:10rem;
+.row-title {
+  margin-top: 10rem;
 }
 
-.search-icon{
+.search-icon {
   height: 5rem;
   // text-align:left;
 }
 
-.jumbo-title-artistet{
+.jumbo-title-artistet {
   // text-align:right;
-  padding-right:20px;
+  padding-right: 20px;
   margin-right: 20px;
-font-size: 12rem;
-   -webkit-text-fill-color: transparent;
-   -webkit-text-stroke: 2px white;
+  font-size: 12rem;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px white;
 
-font-family: Vollkorn;
+  font-family: Vollkorn;
 }
 
-
-
+//on mobile breakpoint change to 100%;
 .artists {
   height: 100vh;
   background: #0e1032;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
   display: flex;
   align-items: center;
 }
 
-.back-hover:hover{
-  
-  background: #21234E;
+.back-hover:hover {
+  background: #21234e;
   cursor: pointer;
 }
 
-.center-block{
-display: block;
-    margin-left: auto;
-    margin-right: auto;
-
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.row{
-  
+.row {
   margin-right: 0px !important;
   margin-left: 0px;
 }
@@ -141,85 +189,119 @@ display: block;
   text-align: center;
 }
 
+input[type="search"] {
+  background: url("../../src/assets/img/search_icon.svg") no-repeat 9px center;
+  // border: solid 1px #ccc;
+  padding: 9px 10px 9px 32px;
+  width: 55px;
 
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  border-radius: 10em;
 
-input[type=search] {
-	background:  url('../../src/assets/img/search_icon.svg') no-repeat 9px center;
-	// border: solid 1px #ccc;
-	padding: 9px 10px 9px 32px;
-	width: 55px;
-	
-	-webkit-border-radius: 10em;
-	-moz-border-radius: 10em;
-	border-radius: 10em;
-	
-	-webkit-transition: all .5s;
-	-moz-transition: all .5s;
-	transition: all .5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
 }
-
 
 input {
-	outline: none;
+  outline: none;
 }
-input[type=search] {
-	-webkit-appearance: textfield;
-	-webkit-box-sizing: content-box;
-	font-family: inherit;
-	font-size: 100%;
-      border: none !important;
-    padding: 50px ;
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  font-family: inherit;
+  font-size: 100%;
+  border: none !important;
+  padding: 50px;
 }
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button {
-	display: none; 
+  display: none;
 }
 
+input[type="search"]:focus {
+  width: 330px !important;
 
-input[type=search]:focus {
-	width: 330px !important;
-  
-    color: white !important;
-    font-size: 3rem ;
-    padding-top:15px;
-    padding-bottom:15px;
-	background-color: #1A1C3C;
-	border-color: #66CC75;
-	padding-left:100px !important;
-	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
-	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
-	box-shadow: 0 0 5px rgba(109,207,246,.5);
+  color: white !important;
+  font-size: 3rem;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #1a1c3c;
+  border-color: #66cc75;
+  padding-left: 100px !important;
+  -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+  -moz-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+  box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
 }
-
 
 input:-moz-placeholder {
-	color: #999;
+  color: #999;
 }
 input::-webkit-input-placeholder {
-	color: #999;
+  color: #999;
 }
 
 /* Demo 2 */
- input[type=search] {
-	width: 15px;
-	padding-left: 10px;
-	color: transparent;
-	cursor: pointer;
+input[type="search"] {
+  width: 15px;
+  padding-left: 10px;
+  color: transparent;
+  cursor: pointer;
 }
- input[type=search]:hover {
-	// background-color: #fff;
+input[type="search"]:hover {
+  // background-color: #fff;
 }
- input[type=search]:focus {
-	width: 130px;
-	padding-left: 32px;
-	color: #000;
-	background-color: #1A1C3C;
-	cursor: auto;
+input[type="search"]:focus {
+  width: 130px;
+  padding-left: 32px;
+  color: #000;
+  background-color: #1a1c3c;
+  cursor: auto;
 }
 input:-moz-placeholder {
-	color: transparent;
+  color: transparent;
 }
- input::-webkit-input-placeholder {
-	color: transparent;
+input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.artist-card {
+  width: 90%;
+  margin-top: 30px;
+  img {
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+  &__name {
+    color: white;
+    font-size: 2rem;
+    padding: 4px 1rem;
+    background-color: black;
+    font-family: Vollkorn;
+    display: inline-block;
+    border: solid 2px white;
+
+    margin-bottom: 2px;
+  }
+  &__song {
+    border: 1px solid black;
+    background-color: white;
+    text-transform: uppercase;
+    font-family: Ubuntu;
+
+    display: inline-block;
+    padding: 6px 1rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+}
+
+.go-up {
+  margin-top: -10rem;
+  &--small {
+    margin-top: -4rem;
+  }
 }
 </style>

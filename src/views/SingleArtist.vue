@@ -199,11 +199,13 @@ i.fa {
 }
 
 .artist-page {
+  // height: 100%;
   height: 100vh;
   // background: lightsalmon;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../src/assets/img/sonimala2j.png") no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .menu-row {
