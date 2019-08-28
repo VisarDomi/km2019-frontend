@@ -17,6 +17,8 @@ import BootstrapVue from "bootstrap-vue";
 Vue.use(BootstrapVue);
 Vue.use(VueFullpage);
 
+export const eventBus = new Vue();
+
 new Vue({
   router,
   store,

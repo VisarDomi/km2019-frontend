@@ -1,12 +1,12 @@
 <template>
   <div class="artists-section">
-    <HeaderBlack />
+    <HeaderHero menutype="menu__items--black" logoBlack="true" />
     <button @click="goToArtists()">Go To Artists</button>
   </div>
 </template>
 
 <script>
-import HeaderBlack from "@/components/Headers/HeaderBlack.vue";
+import HeaderHero from "@/components/Headers/HeaderHero.vue";
 export default {
   name: "ArtistsSection",
   data() {
@@ -18,7 +18,7 @@ export default {
     }
   },
   components: {
-    HeaderBlack
+    HeaderHero
   }
 };
 </script>

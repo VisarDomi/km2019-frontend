@@ -1,7 +1,7 @@
 
 <template>
   <div class="section-hero">
-    <HeaderHero />
+    <HeaderHero menutype="menu__items--white" iconWhite="true" />
     <img src="@/assets/img/logo.svg" alt="Kenga Magjike logo" class="logo" />
   </div>
 </template>
