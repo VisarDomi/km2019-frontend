@@ -1,123 +1,114 @@
 <template>
-  <!-- <li class="nav-item">
-          <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
-          <label for="navi-toggle" class="navigation__button nav-link">
-            <span class="navigation__icon">
-              <img src="@/assets/img/icon_menu_close.svg" alt />
-            </span>
-          </label>
-  </li>-->
-
-  <div class="row align-items-center justify-content-end menu__items">
-    <!-- v-transition v-if="show"> -->
-    <div class="col-lg-1 cmi">artistet</div>
+  <!-- <div> -->
+  <div class="row align-items-center menu__items" v-bind:class="menutype">
+    <div class="col-lg-2">
+      <span class="d-lg-inline-block" href="#" v-if="logoBlack">
+        <img src="@/assets/img/logoblack.svg" alt="Logo" class="logo" />
+      </span>
+      <span class="navbar-brand d-none d-lg-inline-block" href="#" v-if="logoWhite">
+        <img src="@/assets/img/logowhite.svg" alt="Logo" class="logo" />
+      </span>
+    </div>
+    <div class="col-lg-1 offset-lg-4 cmi">artistet</div>
     <div class="col-lg-1 cmi">nder vite</div>
     <div class="col-lg-1 cmi">#magjike</div>
     <div class="col-lg-1 cmi">te reja</div>
     <div class="col-lg-1 cmi">rregullore</div>
     <div class="col-lg-1">
-      <span class="navigation__icon" @click="collapseMenu">
-        <img v-if="shouldHide" src="@/assets/img/icon_menu_close.svg" alt />
-        <img v-if="!shouldHide" src="@/assets/img/icon_menu.svg" alt />
+      <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
+        <img v-if="shouldHide" src="@/assets/img/icon_menu_close_white.svg" alt />
+        <img v-if="!shouldHide" src="@/assets/img/icon_menu_white.svg" alt />
+      </span>
+      <span class="navigation__icon" @click="collapseMenu" v-else>
+        <img v-if="shouldHide" src="@/assets/img/icon_menu_close_black.svg" alt />
+        <img v-if="!shouldHide" src="@/assets/img/icon_menu_black.svg" alt />
       </span>
     </div>
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
+import { eventBus } from "@/main";
+
 export default {
   name: "HeaderWhite",
   data() {
     return {
-      shouldHide: false,
+      shouldHide: true,
       listMenu: []
     };
   },
+  props: {
+    menutype: "",
+    iconWhite: "",
+    logoBlack: "",
+    logoWhite: ""
+  },
   methods: {
     collapseMenu() {
-      var menuElement = document.getElementsByClassName("menu__items")[0];
-
-      var artistet = this.listMenu[0];
-      var ndervite = this.listMenu[1];
-      var magjike = this.listMenu[2];
-      var tereja = this.listMenu[3];
-      var rregullore = this.listMenu[4];
+      var Items = document.getElementsByClassName("cmi");
       if (this.shouldHide) {
-        artistet.style.opacity = 0;
-        artistet.style.transition = "all 1s";
-        artistet.style.transform = "translate(35vw, 0)";
+        for (var i = 0; i < Items.length; i++) {
+          console.log(i, Items[i]);
+          Items[i].style.opacity = 0;
+          Items[i].style.transition = "all 1s";
 
-        ndervite.style.opacity = 0;
-        ndervite.style.transition = "all 1s";
-        ndervite.style.transform = "translate(30vw, 0)";
-
-        magjike.style.opacity = 0;
-        magjike.style.transition = "all 1s";
-        magjike.style.transform = "translate(20vw, 0)";
-
-        tereja.style.opacity = 0;
-        tereja.style.transition = "all 1s";
-        tereja.style.transform = "translate(10vw, 0)";
-
-        rregullore.style.opacity = 0;
-        rregullore.style.transition = "all 1s";
-        rregullore.style.transform = "translate(5vw, 0)";
+          if (i % 5 == 0) {
+            Items[i].style.transform = "translate(43vw, 0)";
+          } else if (i % 5 == 1) {
+            Items[i].style.transform = "translate(36vw, 0)";
+          } else if (i % 5 == 2) {
+            Items[i].style.transform = "translate(27vw, 0)";
+          } else if (i % 5 == 3) {
+            Items[i].style.transform = "translate(18vw, 0)";
+          } else if (i % 5 == 4) {
+            Items[i].style.transform = "translate(9vw, 0)";
+          }
+        }
 
         this.shouldHide = false;
       } else {
-        artistet.style.opacity = 1;
-        artistet.style.transition = "all 1s";
-        artistet.style.transform = "translate(0, 0)";
-
-        ndervite.style.opacity = 1;
-        ndervite.style.transition = "all 1s";
-        ndervite.style.transform = "translate(0, 0)";
-
-        magjike.style.opacity = 1;
-        magjike.style.transition = "all 1s";
-        magjike.style.transform = "translate(0, 0)";
-
-        tereja.style.opacity = 1;
-        tereja.style.transition = "all 1s";
-        tereja.style.transform = "translate(0, 0)";
-
-        rregullore.style.opacity = 1;
-        rregullore.style.transition = "all 1s";
-        rregullore.style.transform = "translate(0, 0)";
+        for (var i = 0; i < Items.length; i++) {
+          Items[i].style.opacity = 1;
+          Items[i].style.transition = "all 1s";
+          Items[i].style.transform = "translate(0, 0)";
+        }
         this.shouldHide = true;
       }
+      eventBus.$emit("menuState", this.shouldHide);
     }
   },
-  mounted: function() {
-    var artistet = document.getElementsByClassName("cmi")[0];
-    var ndervite = document.getElementsByClassName("cmi")[1];
-    var magjike = document.getElementsByClassName("cmi")[2];
-    var tereja = document.getElementsByClassName("cmi")[3];
-    var rregullore = document.getElementsByClassName("cmi")[4];
-    this.listMenu.push(artistet);
-    this.listMenu.push(ndervite);
-    this.listMenu.push(magjike);
-    this.listMenu.push(tereja);
-    this.listMenu.push(rregullore);
-    //  = [artistet, ndervite, magjike, tereja, rregullore, listMenu];
+  mounted() {
+    eventBus.$on("menuState", payload => {
+      this.shouldHide = payload;
+    });
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.logo {
+  float: left;
+}
 .menu__items {
   text-align: center;
-  color: white;
   font-family: Ubuntu;
   height: 15rem;
   font-size: 1.7rem;
+  &--white {
+    color: white;
+  }
+  &--black {
+    color: black;
+  }
 }
 
-.cmi {
-  opacity: 0;
-  transition: all 1s;
-}
+// .cmi {
+//   opacity: 0;
+//   transition: all 1s;
+// }
 
 .col-lg-1 {
   padding-left: 0;
@@ -130,12 +121,12 @@ export default {
   }
 }
 
-@media (min-width: 768px) {
-  .navbar-brand.abs {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    text-align: center;
-  }
-}
+// @media (min-width: 768px) {
+//   .navbar-brand.abs {
+//     position: absolute;
+//     width: 100%;
+//     left: 0;
+//     text-align: center;
+//   }
+// }
 </style>
