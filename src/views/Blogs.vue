@@ -24,13 +24,18 @@
   <slide >
     <div class="imageback" ></div>
     <h1 class="blog-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
+    <h3 class="date">22.10.2019</h3>
     
   </slide>
   <slide>
     <div class="imageback" :style="{'background-image': 'url(' + require('@/assets/img/blog2.jpg') + ')'}"></div>
+    <h1 class="blog-title">Atmosferë serenatash në skenën e Këngës Magjike</h1>
+    <h3 class="date">22.10.2019</h3>
   </slide>
     <slide>
     <div class="imageback" :style="{'background-image': 'url(' + require('@/assets/img/blog3.jpg') + ')'}"></div>
+    <h1 class="blog-title">Fifi dhe Mc Kresha betejë në skenë!</h1>
+    <h3 class="date">22.10.2019</h3>
   </slide>
   <slide>
     <div class="imageback" :style="{'background-image': 'url(' + require('@/assets/img/blog1.jpg') + ')'}"></div>
@@ -83,8 +88,29 @@ background-size: cover;
 
 
 .blog-title {
-  color: white;
-  font-family: Vollkorn;
+color: white;
+    z-index: 30;
+    position: absolute;
+    font-family: Vollkorn;
+    top: 20rem;
+    width: 75%;
+    text-align: left;
+    left: 2rem;
+    font-size: 4.5rem;
+    line-height: 1;
+}
+
+.date{
+      color: #C360B5;
+    position: absolute;
+    top:50rem;
+    z-index: 30;
+    font-family: Montserrat;
+    background: white;
+    font-weight:700;
+    font-size:1.4rem;
+        padding: 11px 11px 0px 11px;
+        left: 2rem;
 }
 
 .no-pad {
@@ -152,6 +178,7 @@ background-size: cover;
 
 .VueCarousel-slide-active{
   height:100%;
+  position:relative;
 }
 
 
