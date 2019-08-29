@@ -99,6 +99,7 @@ export default {
   &:hover {
     cursor: pointer;
   }
+  z-index: 1000;
 }
 
 .logo {
