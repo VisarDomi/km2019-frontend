@@ -1,8 +1,72 @@
 <template>
   <div class="section-submission">
     <HeaderHero menutype="menu__items--white" iconWhite="true" logoWhite="true" />
+    <div class="row">
+      <div class="col-lg-5 offset-lg-1">
+        <p class="description">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+          sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation
+        </p>
+      </div>
+    </div>
+    <div class="row h-100">
+      <div class="col-lg-6">
+        <div class="graphic-left">
+          <img src="@/assets/img/Path 2580.svg" alt />
+        </div>
+        <div class="image-container mt-2">
+          <img src="@/assets/img/Group 115.svg" alt />
+        </div>
+        <div class="image-footer">
+          <div class="image--name mt-3">Emer Mbiemer</div>
+          <div class="image--instagram">@insta_account</div>
+          <div class="carousel-right">
+            <img src="@/assets/img/magjike_right.svg" alt />
+          </div>
+          <div class="carousel-left">
+            <img src="@/assets/img/magjike_left.svg" alt />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 go-up">
+        <div class="main-header">
+          <h1>#magjike</h1>
+        </div>
+        <div class="composition h-50">
+          <div class="row h-50">
+            <div class="col-lg-4">
+              <div class="composition-image--1">
+                <img src="@/assets/img/Composition 1.svg" alt />
+              </div>
+            </div>
+            <div class="col-lg-4 high-index">
+              <div class="composition-image--2">
+                <img src="@/assets/img/Composition 2.svg" alt />
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="composition-image--3">
+                <img src="@/assets/img/Composition 3.svg" alt />
+              </div>
+            </div>
+          </div>
 
-    <h1>Submissions Section</h1>
+          <div class="row h-50 mt-6">
+            <div class="col-lg-4 high-index">
+              <div class="composition-image--4">
+                <img src="@/assets/img/Composition 4.svg" alt />
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="composition-image--5">
+                <img src="@/assets/img/Composition 5.svg" alt />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,6 +84,113 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.high-index {
+  z-index: 4;
+}
+
+.composition-image {
+  &--2 {
+    position: absolute;
+    bottom: 0;
+  }
+  &--4 {
+    text-align: right;
+  }
+  &--5 {
+    text-align: right;
+  }
+}
+
+.mt-6 {
+  margin-top: 8rem;
+}
+
+.main-header {
+  h1 {
+    z-index: 2;
+    position: absolute;
+
+    left: -12%;
+    top: 17%;
+
+    font-family: Vollkorn;
+    font-size: 18rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px black;
+  }
+}
+
+.graphic-left {
+  position: absolute;
+  top: -8%;
+  right: 33%;
+  img {
+    transform: scale(0.85);
+  }
+}
+
+.image {
+  &--name {
+    color: white;
+    border: 1px solid white;
+    background-color: black;
+    font-family: Ubuntu;
+    display: inline-block;
+    font-size: 2.4rem;
+    font-weight: 700;
+    padding: 0 1rem;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  &--instagram {
+    font-family: Ubuntu;
+    border: 2px solid black;
+    background-color: white;
+    padding: 0 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+
+    position: absolute;
+    left: 50%;
+    top: 57%;
+    transform: translate(-50%, 0);
+  }
+}
+
+.carousel-right {
+  position: absolute;
+  right: 25%;
+  bottom: 40%;
+}
+.carousel-left {
+  position: absolute;
+  left: 25%;
+  bottom: 40%;
+}
+.image-container {
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, 0%);
+  height: 50%;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.go-up {
+  margin-top: -5rem;
+}
+.description {
+  font-size: 2rem;
+  font-family: Ubuntu;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
 .section-submission {
   background-color: lightseagreen;
 }

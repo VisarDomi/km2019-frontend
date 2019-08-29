@@ -7,7 +7,7 @@
 
         <!-- <ArtistsSection /> -->
 
-        <AcrossYearsSection />
+        <!-- <AcrossYearsSection /> -->
 
         <SubmissionSection />
 
