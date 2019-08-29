@@ -6,6 +6,7 @@ import Artists from "./views/Artists.vue";
 import SingleArtist from "./views/SingleArtist.vue";
 import Blogs from "./views/Blogs.vue";
 import SingleBlog from "./views/SingleBlog.vue";
+import Rregullore from "./views/Rregullore.vue";
 
 Vue.use(Router);
 
@@ -37,6 +38,11 @@ export default new Router({
       path: "/blog",
       name: "SingleBlog",
       component: SingleBlog
+    },
+    {
+      path: "/rregullore",
+      name: "Rregullore",
+      component: Rregullore
     }
   ]
 });

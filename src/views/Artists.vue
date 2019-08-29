@@ -5,7 +5,7 @@
         <img src="@/assets/img/logowhite.svg" alt />
       </div>
       <div class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover" @click="goToHome()">
-        <img src="@/assets/img/artistet_arrow_l.svg" alt class="back-icon center-block" />
+        <img src="@/assets/img/artistet_arrow_right.svg" alt class="back-icon center-block" />
       </div>
     </div>
 
