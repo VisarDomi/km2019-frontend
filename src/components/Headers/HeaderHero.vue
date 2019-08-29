@@ -13,7 +13,7 @@
     <div class="col-lg-1 cmi">nder vite</div>
     <div class="col-lg-1 cmi">#magjike</div>
     <div class="col-lg-1 cmi">te reja</div>
-    <div class="col-lg-1 cmi">rregullore</div>
+    <div class="col-lg-1 cmi" @click="goToRregullore()">rregullore</div>
     <div class="col-lg-1">
       <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
         <img v-if="shouldHide" src="@/assets/img/icon_menu_close_white.svg" alt />
@@ -46,6 +46,9 @@ export default {
     logoWhite: ""
   },
   methods: {
+    goToRregullore(){
+      this.$router.push({ name: "Rregullore" });
+    },
     collapseMenu() {
       var Items = document.getElementsByClassName("cmi");
       if (this.shouldHide) {
