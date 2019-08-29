@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "./registerServiceWorker";
-
+import VueCarousel from 'vue-carousel';
 Vue.config.productionTip = false;
 
 // import "animate.css";
@@ -16,6 +16,7 @@ import BootstrapVue from "bootstrap-vue";
 
 Vue.use(BootstrapVue);
 Vue.use(VueFullpage);
+Vue.use(VueCarousel);
 
 export const eventBus = new Vue();
 

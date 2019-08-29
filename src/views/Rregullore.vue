@@ -26,12 +26,12 @@
       <div>
         <p class="card-text">
               Kenget duhet te jene origjinale, te padegjuara me pare dhe te krijuara enkas per “Kenga Magjike 2019”.
+              <br><br>
+              Kenget e paraqitura në “Kenga Magjike 2019” nuk duhet të jenë te gjata më shume se 3 minuta e 45 sekonda.
         </p>
         <b-collapse id="collapse-1" class="mt-2">
           <b-card>
             <p class="card-text">
-              Kenget e paraqitura në “Kenga Magjike 2019” nuk duhet të jenë te gjata më shume se 3 minuta e 45 sekonda.
-              <br><br>
               Datat e pranimit te kengeve jane 2 dhe 3 Shtator 2019, vetem prane TV Klan – Shqiperi dhe jo me poste elektronike.
               <br><br>
               Ne festivalin Kenga Magjike, mosha e artisteve interpretues eshte deri 65 vjec.
@@ -73,6 +73,98 @@
           <img src="@/assets/img/artistet arrow l-5.svg" alt />
         </b-button>
       </div>
+
+      <div>
+        <h1 class="jumbo-title-artistet kategoria" style="font-size:10rem;">Sipas Kategorise</h1>
+
+              <h1 class="title-rregullat" style="margin-top:20px;">
+        BIG
+      </h1>
+
+            <div>
+        <p class="card-text">
+              Kenget duhet te jene origjinale, te padegjuara me pare dhe te krijuara enkas per “Kenga Magjike 2019”.
+              <br><br>
+              Kenget e paraqitura në “Kenga Magjike 2019” nuk duhet të jenë te gjata më shume se 3 minuta e 45 sekonda.
+        </p>
+        <b-collapse id="collapse-2" class="mt-2">
+          <b-card>
+            <p class="card-text">
+
+              Studiot e prodhimit dhe autoret jane te lire te paraqesin kenge pa limit ne Festivalin “Kenga Magjike 2019”.
+              <br><br>
+              Kenget e pranuara do te paraqiten ne fazen e pare ne programin “E diela Shqiptare„ – sezoni: Shtator – Dhjetor 2019. Kenget e kualifikuara, me pas paraqiten ne fazen e dyte: ne netet finale te Kenga Magjike: 4, 5 dhe 7 Dhjetor 2019.
+              <br><br>
+            </p>
+          </b-card>
+        </b-collapse>
+                <b-button v-b-toggle.collapse-2 variant="primary" size="lg" class="more-button">
+          <img src="@/assets/img/artistet arrow l-5.svg" alt />
+        </b-button>
+      </div>
+
+
+
+
+              <h1 class="title-rregullat" style="margin-top:20px;">
+        New Artist
+      </h1>
+
+            <div>
+        <p class="card-text">
+              Kenget duhet te jene origjinale, te padegjuara me pare dhe te krijuara enkas per “Kenga Magjike 2019”.
+              <br><br>
+              Kenget e paraqitura në “Kenga Magjike 2019” nuk duhet të jenë te gjata më shume se 3 minuta e 45 sekonda.
+        </p>
+        <b-collapse id="collapse-3" class="mt-2">
+          <b-card>
+            <p class="card-text">
+
+              Studiot e prodhimit dhe autoret jane te lire te paraqesin kenge pa limit ne Festivalin “Kenga Magjike 2019”.
+              <br><br>
+              Kenget e pranuara do te paraqiten ne fazen e pare ne programin “E diela Shqiptare„ – sezoni: Shtator – Dhjetor 2019. Kenget e kualifikuara, me pas paraqiten ne fazen e dyte: ne netet finale te Kenga Magjike: 4, 5 dhe 7 Dhjetor 2019.
+              <br><br>
+            </p>
+          </b-card>
+        </b-collapse>
+                <b-button v-b-toggle.collapse-3 variant="primary" size="lg" class="more-button">
+          <img src="@/assets/img/artistet arrow l-5.svg" alt />
+        </b-button>
+      </div>
+
+
+
+
+              <h1 class="title-rregullat" style="margin-top:20px;">
+        Finaliste
+      </h1>
+
+            <div>
+        <p class="card-text">
+              Kenget duhet te jene origjinale, te padegjuara me pare dhe te krijuara enkas per “Kenga Magjike 2019”.
+              <br><br>
+              Kenget e paraqitura në “Kenga Magjike 2019” nuk duhet të jenë te gjata më shume se 3 minuta e 45 sekonda.
+        </p>
+        <b-collapse id="collapse-4" class="mt-2">
+          <b-card>
+            <p class="card-text">
+
+              Studiot e prodhimit dhe autoret jane te lire te paraqesin kenge pa limit ne Festivalin “Kenga Magjike 2019”.
+              <br><br>
+              Kenget e pranuara do te paraqiten ne fazen e pare ne programin “E diela Shqiptare„ – sezoni: Shtator – Dhjetor 2019. Kenget e kualifikuara, me pas paraqiten ne fazen e dyte: ne netet finale te Kenga Magjike: 4, 5 dhe 7 Dhjetor 2019.
+              <br><br>
+            </p>
+          </b-card>
+        </b-collapse>
+                <b-button v-b-toggle.collapse-4 variant="primary" size="lg" class="more-button">
+          <img src="@/assets/img/artistet arrow l-5.svg" alt />
+        </b-button>
+      </div>
+
+
+
+
+      </div>
     </div>
   </div>
 </template>
@@ -94,11 +186,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.kategoria{
+  text-align: left;
+  -webkit-text-stroke: 2px #52C2BD!important;
+}
+
+
 .more-button {
   border: 2px solid white;
   border-radius: 50%;
   background: transparent;
   padding: 2rem;
+  margin-top:40px;
+  margin-bottom: 60px;
 }
 
 .more-button:hover {
@@ -135,6 +236,7 @@ export default {
 .card-body {
   background: #0e1032;
   border: none;
+  padding-left:0;
 }
 
 .card {
