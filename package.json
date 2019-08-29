@@ -4,15 +4,18 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build && cp netlify.toml dist/netlify.toml"
   },
   "dependencies": {
     "animate.css": "^3.7.2",
     "bootstrap-vue": "^2.0.0-rc.28",
     "fullpage-vue": "^1.8.3",
+    "jquery": "^3.4.1",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
+    "vue-carousel": "^0.18.0",
     "vue-router": "^3.0.3",
+    "vue-slick": "^1.1.15",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
