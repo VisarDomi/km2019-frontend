@@ -69,7 +69,7 @@
     </div>
     <div class="row mt-6">
       <div class="col-lg-6 offset-lg-3 text-center">
-        <a href="#" class="btn">më shumë artistë</a>
+        <a href="#" class="btn" @click="goToArtists()">më shumë artistë</a>
       </div>
     </div>
   </div>

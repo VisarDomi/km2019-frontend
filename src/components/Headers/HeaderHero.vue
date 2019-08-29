@@ -9,7 +9,7 @@
         <img src="@/assets/img/logowhite.svg" alt="Logo" class="logo" />
       </span>
     </div>
-    <div class="col-lg-1 offset-lg-4 cmi">artistet</div>
+    <div class="col-lg-1 offset-lg-4 cmi" @click="goToArtists()">artistet</div>
     <div class="col-lg-1 cmi">nder vite</div>
     <div class="col-lg-1 cmi">#magjike</div>
     <div class="col-lg-1 cmi">te reja</div>
@@ -46,8 +46,11 @@ export default {
     logoWhite: ""
   },
   methods: {
-    goToRregullore(){
+    goToRregullore() {
       this.$router.push({ name: "Rregullore" });
+    },
+    goToArtists() {
+      this.$router.push({ name: "Artists" });
     },
     collapseMenu() {
       var Items = document.getElementsByClassName("cmi");
@@ -92,6 +95,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.cmi {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .logo {
   float: left;
 }
