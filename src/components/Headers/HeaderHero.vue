@@ -14,7 +14,7 @@
     <div class="col-lg-1 cmi">#magjike</div>
     <div class="col-lg-1 cmi">te reja</div>
     <div class="col-lg-1 cmi" @click="goToRregullore()">rregullore</div>
-    <div class="col-lg-1">
+    <div class="col-lg-1 high-index">
       <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
         <img v-if="shouldHide" src="@/assets/img/icon_menu_close_white.svg" alt />
         <img v-if="!shouldHide" src="@/assets/img/icon_menu_white.svg" alt />
@@ -95,6 +95,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.high-index {
+  z-index: 9999;
+}
+
 .cmi {
   &:hover {
     cursor: pointer;
