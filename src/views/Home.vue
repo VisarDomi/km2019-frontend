@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <LandingSection />
+    <!-- <LandingSection /> -->
     <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="example">
-        <HeroSection />
+        <!-- <HeroSection /> -->
 
-        <ArtistsSection />
+        <!-- <ArtistsSection /> -->
 
-        <AcrossYearsSection />
+        <!-- <AcrossYearsSection /> -->
 
-        <SubmissionSection />
+        <!-- <SubmissionSection /> -->
 
-        <NewsSection />
+        <!-- <NewsSection /> -->
 
         <SponsorSectionz />
       </div>

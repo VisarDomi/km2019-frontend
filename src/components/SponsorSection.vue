@@ -1,12 +1,17 @@
 <template>
-  <div class="section-sponsorz">
-    <h1>Sponsor Section</h1>
+  <div class="section-sponsorz h-100">
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from "@/components/Footer/Footer.vue";
+
 export default {
-  name: "SponsorSectionz"
+  name: "SponsorSectionz",
+  components: {
+    Footer
+  }
 };
 </script>
 
