@@ -1,7 +1,7 @@
 <template>
   <div class="section-submission">
     <HeaderHero menutype="menu__items--white" iconWhite="true" logoWhite="true" />
-    <div class="row">
+    <div class="row go-up--small">
       <div class="col-lg-5 offset-lg-1">
         <p class="description">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
@@ -30,6 +30,9 @@
         </div>
       </div>
       <div class="col-lg-6 go-up">
+        <div class="graphic-right">
+          <img src="@/assets/img/Path 2580.svg" alt />
+        </div>
         <div class="main-header">
           <h1>#magjike</h1>
         </div>
@@ -37,17 +40,17 @@
           <div class="row h-50">
             <div class="col-lg-4">
               <div class="composition-image--1">
-                <img src="@/assets/img/Composition 1.svg" alt />
+                <img src="@/assets/img/Composition 1.svg" class="img-fluid" alt />
               </div>
             </div>
             <div class="col-lg-4 high-index">
               <div class="composition-image--2">
-                <img src="@/assets/img/Composition 2.svg" alt />
+                <img src="@/assets/img/Composition 2.svg" class="img-fluid" alt />
               </div>
             </div>
             <div class="col-lg-4">
               <div class="composition-image--3">
-                <img src="@/assets/img/Composition 3.svg" alt />
+                <img src="@/assets/img/Composition 3.svg" class="img-fluid" alt />
               </div>
             </div>
           </div>
@@ -55,15 +58,18 @@
           <div class="row h-50 mt-6">
             <div class="col-lg-4 high-index">
               <div class="composition-image--4">
-                <img src="@/assets/img/Composition 4.svg" alt />
+                <img src="@/assets/img/Composition 4.svg" class="img-fluid" alt />
               </div>
             </div>
             <div class="col-lg-4">
               <div class="composition-image--5">
-                <img src="@/assets/img/Composition 5.svg" alt />
+                <img src="@/assets/img/Composition 5.svg" class="img-fluid" alt />
               </div>
             </div>
           </div>
+        </div>
+        <div class="abs-bottom w-100 text-center">
+          <a href="#" class="btn">dorëzo artin tend</a>
         </div>
       </div>
     </div>
@@ -84,6 +90,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.btn {
+  padding: 0.5rem 12rem;
+  border: 2px solid black;
+  border-radius: 10rem;
+
+  font-family: Ubuntu;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.abs-bottom {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  height: 30%;
+}
+
 .high-index {
   z-index: 4;
 }
@@ -120,6 +143,12 @@ export default {
   }
 }
 
+.graphic-right {
+  position: absolute;
+  transform: scale(1.5);
+  top: -10%;
+  right: -17%;
+}
 .graphic-left {
   position: absolute;
   top: -8%;
@@ -154,7 +183,7 @@ export default {
 
     position: absolute;
     left: 50%;
-    top: 57%;
+    margin-top: 5rem;
     transform: translate(-50%, 0);
   }
 }
@@ -162,19 +191,17 @@ export default {
 .carousel-right {
   position: absolute;
   right: 25%;
-  bottom: 40%;
+  margin-top: 2rem;
+  // bottom: 40%;
 }
 .carousel-left {
   position: absolute;
   left: 25%;
-  bottom: 40%;
+  margin-top: 2rem;
+  // bottom: 40%;
 }
 .image-container {
-  // position: absolute;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, 0%);
-  height: 50%;
+  height: 53%;
   img {
     height: 100%;
     width: 100%;
@@ -182,7 +209,10 @@ export default {
 }
 
 .go-up {
-  margin-top: -5rem;
+  margin-top: -7rem;
+  &--small {
+    margin-top: -2rem;
+  }
 }
 .description {
   font-size: 2rem;
