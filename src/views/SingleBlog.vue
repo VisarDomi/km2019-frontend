@@ -21,7 +21,7 @@
         <p class="date">22.10.2019</p>
         <h3 class="bio-text">te ngjashme</h3>
 
-        <carousel :perPageCustom="[[480, 1], [768, 2], [992,2]]" :paginationEnabled="false" >
+        <carousel :perPageCustom="[[480, 1], [768, 2], [992,2]]" :paginationEnabled="false" :navigationEnabled="true" :singleBlog="true">
           <slide >
 
             <div class="blog-card">
@@ -36,6 +36,16 @@
               <h2 class="blog-card-title">Fifi dhe Mc Kresha betejë në skenë!</h2>
             </div>
           </slide>
+
+                              <slide >
+
+                        <div class="blog-card">
+              <img class="blog-card-image img-fluid" src="@/assets/img/sonimalaj.png" alt="">
+              <h2 class="blog-card-title">Fifi dhe Mc Kresha betejë në skenë!</h2>
+            </div>
+          </slide>
+
+
         </carousel>
 
         </div>
@@ -61,9 +71,34 @@ export default {
         goToBlogs() {
       this.$router.push({ name: "Blogs" });
     },
+  },
+  mounted(){
+    // var elem = document.querySelector('.VueCarousel-navigation-button');
+    // console.log(elem)
+    // elem.style.top = '-21%';
+
+    // var elem = document.querySelector('.VueCarousel-navigation-prev');
+    // elem.style.left = '83%';
+
+    // var elem = document.querySelector('.VueCarousel-navigation-next');
+    // elem.style.top = '74px';
   }
 };
 </script>
+
+<style lang="css">
+.VueCarousel-navigation-button{
+  top:-21% !important;
+}
+.VueCarousel-navigation-prev{
+  left: 83% !important;
+}
+
+.VueCarousel-navigation-next{
+  right:74px !important;
+}
+</style>
+
 
 <style lang="scss" scoped>
 
