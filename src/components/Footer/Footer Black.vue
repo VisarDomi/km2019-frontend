@@ -20,11 +20,11 @@
       </div>
       <div class="col-xl-6 col-md-2 offset-lg-1">
         <div class="icons abs-right">
-          <img src="@/assets/img/icon twitter.svg" class="mr-3" alt />
-          <img src="@/assets/img/icon facebook.svg" class="mr-3" alt />
-          <img src="@/assets/img/icon instagram.svg" class="mr-3" alt />
-          <img src="@/assets/img/icon snapchat.svg" class="mr-3" alt />
-          <img src="@/assets/img/icon youtube.svg" class="mr-3" alt />
+          <img src="@/assets/img/icon twitter white.svg" class="mr-3" alt />
+          <img src="@/assets/img/icon facebook white.svg" class="mr-3" alt />
+          <img src="@/assets/img/icon instagram white.svg" class="mr-3" alt />
+          <img src="@/assets/img/icon snapchat white.svg" class="mr-3" alt />
+          <img src="@/assets/img/icon youtube white.svg" class="mr-3" alt />
         </div>
       </div>
     </div>
@@ -33,15 +33,9 @@
 
 <script>
 export default {
-  name: "Footer",
+  name: "Footer Black",
   data() {
     return {};
-  },
-  props: {
-    menutype: "",
-    iconWhite: "",
-    logoBlack: "",
-    logoWhite: ""
   },
   methods: {
     changeRoute(name) {
@@ -82,9 +76,6 @@ export default {
     &--top {
       position: absolute;
       top: 25%;
-      @media only screen and (max-height: 850px) {
-        top: 20%;
-      }
     }
     &--bottom {
       position: absolute;
