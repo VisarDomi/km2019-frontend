@@ -23,7 +23,7 @@
 <carousel :perPageCustom="[[480, 2], [768, 3], [992,4]]" :paginationEnabled="false" style="color:white;">
   <slide >
     <div class="imageback" ></div>
-    <h1 class="blog-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
+    <h1 class="blog-title" @click="goToBlog()">Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
     <h3 class="date">22.10.2019</h3>
     
   </slide>
@@ -70,6 +70,9 @@ export default {
     goToHome() {
       this.$router.push({ name: "Home" });
     },
+        goToBlog() {
+      this.$router.push({ name: "SingleBlog" });
+    },
   },
   mounted(){
   }
@@ -84,8 +87,16 @@ export default {
 background:url("../../src/assets/img/blog1.jpg") no-repeat  center;
 height:100%;
 background-size: cover;
+filter: grayscale(100%);
 }
 
+.imageback:hover{
+  opacity:0.3;
+}
+
+.blog-title:hover{
+  cursor:pointer;
+}
 
 .blog-title {
 color: white;
@@ -119,7 +130,7 @@ color: white;
 //on mobile breakpoint change to 100%;
 .blogs {
   height: 100vh;
-  background: #0e1032;
+  background: #C360B5;
   background-size: cover;
   background-attachment: fixed;
 }
