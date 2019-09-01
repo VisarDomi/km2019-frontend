@@ -8,6 +8,16 @@
     </div>
     <div class="middle h-50 go-up">
       <div class="row h-100">
+        <div class="graphic-left h-75 w-25">
+          <div class="h-100 w-100">
+            <img src="@/assets/img/Group 178.svg" alt />
+          </div>
+        </div>
+        <div class="graphic-right h-75 w-25">
+          <div class="h-100 w-100">
+            <img src="@/assets/img/Group 159.svg" alt />
+          </div>
+        </div>
         <div class="col-lg-3">
           <div class="blog__image blog__image--1">
             <div class="blog__footer">
@@ -56,10 +66,6 @@
           </div>
         </div>
       </div>
-      <div class="graphic-left">
-        <img src alt />
-      </div>
-      <div class="graphic-right"></div>
     </div>
   </div>
 </template>
@@ -79,17 +85,14 @@ export default {
 <style scoped lang="scss">
 .graphic-right {
   position: absolute;
-  transform: scale(1.5);
-  top: -10%;
-  right: -17%;
+  opacity: 0.2;
+  top: 5%;
+  right: 7%;
 }
 .graphic-left {
   position: absolute;
-  top: -8%;
-  right: 33%;
-  img {
-    transform: scale(0.85);
-  }
+  bottom: -16%;
+  left: -2%;
 }
 
 .btn {
@@ -124,6 +127,8 @@ export default {
       &:hover {
         background: linear-gradient(rgba(#c4aac0, 0.7), rgba(#c76cba, 0.7)),
           url("../assets/img/blog 1.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
       }
     }
     &--2 {
@@ -135,6 +140,8 @@ export default {
       &:hover {
         background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7)),
           url("../assets/img/blog 2.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
       }
     }
     &--3 {
@@ -146,6 +153,8 @@ export default {
       &:hover {
         background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7)),
           url("../assets/img/blog 3.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
       }
     }
     &--4 {
@@ -157,6 +166,8 @@ export default {
       &:hover {
         background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7)),
           url("../assets/img/blog 4.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
       }
     }
     width: 100%;

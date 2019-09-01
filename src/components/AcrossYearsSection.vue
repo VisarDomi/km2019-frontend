@@ -73,10 +73,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.graphic-right {
+.graphic-left {
   position: absolute;
   top: 15%;
   left: -120%;
+}
+.graphic-right {
+  position: absolute;
+  top: -20%;
+  left: -80%;
 }
 
 .carousel-right {

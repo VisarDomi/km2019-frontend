@@ -12,7 +12,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-2">
+      <div class="col-lg-2 col-xl-2">
         <div class="left-container">
           <img src="@/assets/img/Group Home Left.svg" alt />
         </div>
@@ -49,6 +49,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "@/assets/sass/abstracts/_mixins.scss";
+
 .high-index {
   z-index: 2;
 }
@@ -60,10 +62,16 @@ export default {
 .header {
   &--1 {
     color: white;
-    font-size: 15rem;
     font-family: Vollkorn;
     font-weight: 700;
     line-height: 12rem;
+    font-size: 15rem;
+    @include respond(tab-port) {
+      font-size: 10rem;
+    }
+    @include respond(4k-desktop) {
+      font-size: 20rem;
+    }
   }
   &--2 {
     -webkit-text-fill-color: transparent;
@@ -71,6 +79,13 @@ export default {
     font-family: Vollkorn;
     font-size: 15rem;
     line-height: 14rem;
+    @include respond(tab-land) {
+      font-size: 10rem;
+    }
+    @include respond(4k-desktop) {
+      font-size: 20rem;
+      margin-top: 5%;
+    }
   }
   &--3 {
     color: white;
@@ -80,6 +95,11 @@ export default {
     font-size: 15rem;
     display: inline-block;
     padding: 0 1rem;
+
+    @include respond(4k-desktop) {
+      font-size: 20rem;
+      margin-top: 5%;
+    }
   }
 }
 .right-center-container {
@@ -135,6 +155,7 @@ export default {
   bottom: 45%;
   left: 45%;
   width: 90%;
+  z-index: 5;
 }
 
 .img-container {

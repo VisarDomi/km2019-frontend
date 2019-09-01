@@ -6,7 +6,7 @@
         <h1 class="header-text">artistët</h1>
       </div>
     </div>
-    <div class="row px-6 h-35 go-up">
+    <div class="row px-6 respond-height go-up">
       <div class="col-lg-2">
         <div class="h-75 abs-bottom artist-card">
           <div class="img-container">
@@ -18,7 +18,7 @@
       </div>
 
       <div class="col-lg-2">
-        <div class="h-75 artist-card">
+        <div class="h-75 artist-card high-index">
           <div class="img-container">
             <img src="@/assets/img/Soni Malaj.svg" alt />
           </div>
@@ -72,6 +72,16 @@
         <a href="#" class="btn" @click="goToArtists()">më shumë artistë</a>
       </div>
     </div>
+    <div class="graphic-left h-75 w-25">
+      <div class="img-left-container h-100 w-100">
+        <img src="@/assets/img/Group 171.svg" alt />
+      </div>
+    </div>
+    <div class="graphic-right h-75 w-25">
+      <div class="img-right-container h-100 w-100">
+        <img src="@/assets/img/Group 331.svg" alt />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -94,17 +104,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/sass/abstracts/_mixins.scss";
+.graphic-left {
+  position: absolute;
+  bottom: 0%;
+  left: -45%;
+}
+.graphic-right {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+}
+
+.respond-height {
+  height: 35%;
+  @include respond(4k-desktop) {
+    height: 50%;
+  }
+}
+
 .abs-bottom {
   position: absolute;
   bottom: 0;
 }
 
+.high-index {
+  position: relative;
+  z-index: 4;
+}
+
 .artist-card {
   width: 90%;
+  z-index: 4;
   img {
     height: 100%;
     width: 100%;
-    z-index: -1;
+    // z-index: 5;
   }
   &__name {
     color: white;
@@ -116,6 +151,12 @@ export default {
     border: solid 2px white;
 
     margin-bottom: 2px;
+    @include respond(tab-land) {
+      font-size: 1.5rem;
+    }
+    @include respond(4k-desktop) {
+      font-size: 4rem;
+    }
   }
   &__song {
     border: 1px solid black;
@@ -126,6 +167,12 @@ export default {
     display: inline-block;
     padding: 6px 1rem;
     font-size: 1.5rem;
+    @include respond(tab-land) {
+      font-size: 1.25rem;
+    }
+    @include respond(4k-desktop) {
+      font-size: 3.5rem;
+    }
   }
 }
 
@@ -149,12 +196,18 @@ export default {
   font-family: Ubuntu;
   font-weight: 700;
   font-size: 2.5rem;
+  @include respond(4k-desktop) {
+    font-size: 5rem;
+  }
 }
 
 .go-up {
   margin-top: -10rem;
   &--small {
     margin-top: -4rem;
+  }
+  @include respond(4k-desktop) {
+    margin-top: 0;
   }
 }
 
@@ -164,10 +217,13 @@ export default {
 
 .header-text {
   text-align: center;
-  font-size: 25rem;
   font-family: Vollkorn;
   // color: black;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px black;
+  font-size: 25rem;
+  @include respond(tab-land) {
+    font-size: 20rem;
+  }
 }
 </style>
