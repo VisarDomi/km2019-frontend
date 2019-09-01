@@ -5,6 +5,14 @@
 
     <img src="@/assets/img/logo.svg" alt="Kenga Magjike logo" class="logo" />
     <div class="row h-100">
+      <div class="col-lg-2 text-center" v-if="windowWidth > 950">
+        <div class="logo-hako-container">
+          <p class="description">partnere zyrtare</p>
+          <div class="img-container">
+            <img src="@/assets/img/Hako_logo.svg" alt />
+          </div>
+        </div>
+      </div>
       <div class="col-lg-2 col-xl-2">
         <div class="left-container">
           <img src="@/assets/img/Group Home Left.svg" alt />
@@ -23,6 +31,12 @@
       <div class="col-lg-2">
         <div class="right-container">
           <img src="@/assets/img/Group Home Right.svg" alt />
+        </div>
+      </div>
+      <div class="logo-hako-container" v-if="windowWidth < 950">
+        <p class="description">partnere zyrtare</p>
+        <div class="img-container">
+          <img src="@/assets/img/Hako_logo.svg" alt />
         </div>
       </div>
     </div>
@@ -62,6 +76,9 @@ export default {
 
 .go-left {
   margin-left: -17% !important;
+  @include respond(phone) {
+    margin-left: -8% !important;
+  }
 }
 
 .header {
@@ -77,6 +94,11 @@ export default {
     @include respond(4k-desktop) {
       font-size: 20rem;
     }
+
+    @include respond(phone) {
+      font-size: 8rem;
+      line-height: 8rem;
+    }
   }
   &--2 {
     -webkit-text-fill-color: transparent;
@@ -91,6 +113,10 @@ export default {
       font-size: 20rem;
       margin-top: 5%;
     }
+    @include respond(phone) {
+      font-size: 8rem;
+      line-height: 8rem;
+    }
   }
   &--3 {
     color: white;
@@ -104,6 +130,10 @@ export default {
     @include respond(4k-desktop) {
       font-size: 20rem;
       margin-top: 5%;
+    }
+    @include respond(phone) {
+      font-size: 8rem;
+      line-height: 8rem;
     }
   }
 }
@@ -130,8 +160,8 @@ export default {
 // LEFT CONTAINER IS BADLY HANDLED
 .left-container {
   position: absolute;
-  left: -11%;
-  top: -8%;
+  left: -58%;
+  top: -2%;
 
   img {
     // width: 100%;
@@ -148,11 +178,19 @@ export default {
   font-family: Ubuntu;
   font-weight: 700;
   border: 2px solid white;
+
+  @include respond(phone) {
+    text-align: center;
+    margin-bottom: 0;
+  }
 }
 .logo {
-  margin-top: -5rem;
+  margin-top: -8rem;
   margin-left: 4rem;
   height: 16rem;
+  @include respond(phone) {
+    margin-top: 5rem;
+  }
 }
 
 .logo-hako-container {
@@ -161,11 +199,27 @@ export default {
   left: 45%;
   width: 90%;
   z-index: 5;
+  height: 14%;
+
+  @include respond(phone) {
+    bottom: 0%;
+    left: 0%;
+
+    width: 100%;
+    height: 20%;
+  }
+
+  img {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 
 .img-container {
   background-color: white;
   align-content: center;
   width: 100%;
+  height: 100%;
 }
 </style>
