@@ -6,9 +6,10 @@
       <div class="fullpage-wp" v-fullpage="opts" ref="example">
         <!-- <HeroSection /> -->
 
-        <ArtistsSection />
+        <!-- <ArtistsSection /> -->
 
-        <AcrossYearsSection />
+        <AcrossYearsSection v-if="windowWidth > 950" />
+        <AcrossYearsMobile v-else />
 
         <SubmissionSection />
 
@@ -28,6 +29,7 @@ import LandingSection from "@/components/LandingSection.vue";
 import HeroSection from "@/components/HeroSection.vue";
 import ArtistsSection from "@/components/ArtistsSection.vue";
 import AcrossYearsSection from "@/components/AcrossYearsSection.vue";
+import AcrossYearsMobile from "@/components/AcrossYearsMobile.vue";
 
 import SubmissionSection from "@/components/SubmissionSection.vue";
 import NewsSection from "@/components/NewsSection.vue";
@@ -40,6 +42,7 @@ export default {
     HeroSection,
     ArtistsSection,
     AcrossYearsSection,
+    AcrossYearsMobile,
     SubmissionSection,
     NewsSection,
     SponsorSectionz,

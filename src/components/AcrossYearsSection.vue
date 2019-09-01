@@ -8,7 +8,7 @@
     />
     <div class="row go-up--small">
       <div class="col-lg-11 offset-lg-1">
-        <h1 class="header-text">ndë r vite</h1>
+        <h1 class="header-text">ndër vite</h1>
       </div>
     </div>
     <div class="row">

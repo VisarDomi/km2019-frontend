@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="9.433" height="8.865" viewBox="0 0 9.433 8.865">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="9.433" height="8.866" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="artistet_arrow_l" clip-path="url(#clip-path)">
+    <g id="artistet_arrow_l-2" data-name="artistet_arrow_l" transform="translate(3.61 8.471) rotate(-135)">
+      <rect id="Rectangle_45" data-name="Rectangle 45" width="1.324" height="5.648" transform="translate(0 0)" fill="#c360b5"/>
+      <rect id="Rectangle_46" data-name="Rectangle 46" width="1.324" height="5.648" transform="translate(5.648 4.314) rotate(90)" fill="#c360b5"/>
+    </g>
+  </g>
+</svg>
