@@ -266,6 +266,7 @@ export default {
 }
 
 .header-text {
+  margin-top: -7rem;
   text-align: center;
   font-family: Vollkorn;
   // color: black;

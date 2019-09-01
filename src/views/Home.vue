@@ -1,15 +1,15 @@
 <template>
   <div class="home">
-    <!-- <LandingSection /> -->
+    <LandingSection />
     <HeaderMobile v-if="windowWidth < 950" />
     <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="example">
-        <!-- <HeroSection /> -->
+        <HeroSection />
 
-        <!-- <ArtistsSection /> -->
+        <ArtistsSection />
 
-        <!-- <AcrossYearsSection v-if="windowWidth > 950" />
-        <AcrossYearsMobile v-else />-->
+        <AcrossYearsSection v-if="windowWidth > 950" />
+        <AcrossYearsMobile v-else />
 
         <SubmissionSection v-if="windowWidth > 950" />
         <SubmissionMobile v-else />
