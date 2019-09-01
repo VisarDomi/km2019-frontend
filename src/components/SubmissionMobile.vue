@@ -10,18 +10,24 @@
           </div>
 
           <div class="row h-8 go-up">
-            <h1 class="header-text">ndër vite</h1>
+            <div class="name mt-3">Emer Mbiemer</div>
+            <div class="instagram">@insta_account</div>
           </div>
           <div class="row h-10">
             <p class="magjike">#magjike</p>
           </div>
-          <div class="row h-30 mt-3">
+          <div class="row h-10 mt-3">
             <p class="description">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
               sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
               aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
               exerci tation.
             </p>
+          </div>
+          <div class="row h-10">
+            <div class="w-100 text-center">
+              <a href="#" class="btn">dorëzo artin tend</a>
+            </div>
           </div>
           <div class="row h-10 navigation-container">
             <div class="col-6 h-100">
@@ -72,6 +78,42 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.btn {
+  padding: 0.5rem 3rem;
+  border: 2px solid black;
+  border-radius: 10rem;
+  font-family: Ubuntu;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-top: 12rem;
+}
+
+.name {
+  color: white;
+  border: 1px solid white;
+  background-color: black;
+  font-family: Ubuntu;
+  display: inline-block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  padding: 0 1rem;
+
+  position: absolute;
+  left: 10%;
+}
+.instagram {
+  font-family: Ubuntu;
+  border: 2px solid black;
+  background-color: white;
+  padding: 0 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+
+  position: absolute;
+  left: 10%;
+  margin-top: 5rem;
+}
+
 .h-5 {
   height: 5%;
 }
