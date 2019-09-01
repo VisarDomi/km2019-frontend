@@ -2,7 +2,7 @@
   <div class="rregullat">
     <div class="row justify-content-between artist-row align-items-center">
       <div class="col-lg-3 col-sm-2 col-xs-1 text-center">
-        <img src="@/assets/img/logowhite.svg" alt />
+        <img src="@/assets/img/logowhite.svg" class="img-logo" @click="goToHome()" />
       </div>
       <div class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover" @click="goToHome()">
         <img src="@/assets/img/artistet_arrow_left.svg" alt class="back-icon center-block" />

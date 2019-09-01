@@ -1,5 +1,5 @@
 <template>
-  <div class="section-artists">
+  <div class="section-artists" id='section-artists'>
     <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 950" />
     <div class="row">
       <div class="col-lg-6 offset-lg-3 text-center">
@@ -249,7 +249,7 @@ export default {
 }
 
 .go-up {
-  margin-top: -10rem;
+  margin-top: -7rem;
   &--small {
     margin-top: -4rem;
   }
@@ -266,7 +266,7 @@ export default {
 }
 
 .header-text {
-  margin-top: -7rem;
+  margin-top: -9rem;
   text-align: center;
   font-family: Vollkorn;
   // color: black;

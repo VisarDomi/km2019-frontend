@@ -2,9 +2,12 @@
   <div class="artist-page">
     <div class="row justify-content-between menu-row align-items-center">
       <div class="col-lg-3 col-sm-2 col-xs-1 text-center">
-        <img src="@/assets/img/logowhite.svg" alt />
+        <img src="@/assets/img/logowhite.svg" class="img-logo" @click="goToHome()" alt />
       </div>
-      <div class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover" @click="goToArtists()">
+      <div
+        class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover-artist"
+        @click="goToArtists()"
+      >
         <img src="@/assets/img/artistet_arrow_right.svg" alt class="back-icon center-block" />
       </div>
     </div>
@@ -98,6 +101,9 @@ export default {
   methods: {
     goToArtists() {
       this.$router.push({ name: "Artists" });
+    },
+    goToHome() {
+      this.$router.push({ name: "Home" });
     }
   }
 };
@@ -197,6 +203,9 @@ i.fa {
   font-family: Vollkorn;
   margin-top: 20px;
 }
+.img-logo:hover {
+  cursor: pointer;
+}
 
 .artist-page {
   // height: 100%;
@@ -219,8 +228,8 @@ i.fa {
   margin-left: 0px;
 }
 
-.back-hover:hover {
-  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+.back-hover-artist:hover {
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1) !important;
   cursor: pointer;
 }
 

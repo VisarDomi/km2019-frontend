@@ -3,16 +3,26 @@
   <div class="row align-items-center menu__items" v-bind:class="menutype">
     <div class="col-lg-2">
       <span class="d-lg-inline-block" href="#" v-if="logoBlack">
-        <img src="@/assets/img/logoblack.svg" alt="Logo" class="logo respond-width--logo" />
+        <img
+          src="@/assets/img/logoblack.svg"
+          alt="Logo"
+          class="img-logo logo respond-width--logo"
+          @click="goToHome()"
+        />
       </span>
       <span class="navbar-brand d-none d-lg-inline-block" href="#" v-if="logoWhite">
-        <img src="@/assets/img/logowhite.svg" alt="Logo" class="logo respond-width--logo" />
+        <img
+          src="@/assets/img/logowhite.svg"
+          alt="Logo"
+          class="img-logo logo respond-width--logo"
+          @click="goToHome()"
+        />
       </span>
     </div>
     <div class="col-lg-1 offset-lg-4 cmi" @click="goToArtists()">artistët</div>
     <div class="col-lg-1 cmi">ndër vite</div>
     <div class="col-lg-1 cmi">#magjike</div>
-    <div class="col-lg-1 cmi">të reja</div>
+    <div class="col-lg-1 cmi" @click="goToBlogs()">të reja</div>
     <div class="col-lg-1 cmi" @click="goToRregullore()">rregullore</div>
     <div class="col-lg-1 high-index">
       <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
@@ -59,8 +69,14 @@ export default {
     goToRregullore() {
       this.$router.push({ name: "Rregullore" });
     },
+    goToHome() {
+      this.$router.push({ name: "Home" });
+    },
     goToArtists() {
       this.$router.push({ name: "Artists" });
+    },
+    goToBlogs() {
+      this.$router.push({ name: "Blogs" });
     },
     collapseMenu() {
       var Items = document.getElementsByClassName("cmi");

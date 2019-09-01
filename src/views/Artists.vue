@@ -2,7 +2,7 @@
   <div class="artists">
     <div class="row justify-content-between artist-row align-items-center h-15">
       <div class="col-lg-3 col-sm-3 col-xs-1 text-center">
-        <img src="@/assets/img/logowhite.svg" class="logo-img" alt />
+        <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
       <div class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover" @click="goToHome()">
         <img
@@ -319,7 +319,7 @@ input::-webkit-input-placeholder {
 
     font-size: 2rem;
     @include respond(big-desktop) {
-      font-size: 3rem;
+      font-size: 2rem;
     }
     @include respond(4k-desktop) {
       font-size: 4rem;
@@ -340,7 +340,7 @@ input::-webkit-input-placeholder {
       line-height: 2rem;
     }
     @include respond(big-desktop) {
-      font-size: 2.35rem;
+      font-size: 2rem;
       line-height: 2.6rem;
     }
     @include respond(4k-desktop) {
