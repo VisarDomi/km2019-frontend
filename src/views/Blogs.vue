@@ -20,7 +20,7 @@
     </div>-->
 <div class="carousel-container">
 
-<carousel :perPageCustom="[[480, 2], [768, 3], [992,4]]" :paginationEnabled="false" style="color:white;">
+<carousel :perPageCustom="[[480, 2], [768, 3], [992,4]]" :paginationEnabled="false" :navigationEnabled="true">
   <slide >
     <div class="imageback" ></div>
     <h1 class="blog-title" @click="goToBlog()">Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
@@ -79,6 +79,20 @@ export default {
 };
 </script>
 
+<style lang="css">
+.VueCarousel-navigation-button{
+  bottom:15% !important;
+}
+.VueCarousel-navigation-prev{
+  left: 20% !important;
+}
+
+.VueCarousel-navigation-next{
+  right:20% !important;
+}
+</style>
+
+
 
 <style lang="scss">
 // import "assets/sass/main.scss";
@@ -96,6 +110,7 @@ filter: grayscale(100%);
 
 .blog-title:hover{
   cursor:pointer;
+  color: #C360B5;
 }
 
 .blog-title {

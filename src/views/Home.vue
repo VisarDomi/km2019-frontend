@@ -5,13 +5,13 @@
       <div class="fullpage-wp" v-fullpage="opts" ref="example">
         <!-- <HeroSection /> -->
 
-        <!-- <ArtistsSection /> -->
+        <ArtistsSection />
 
-        <!-- <AcrossYearsSection /> -->
+        <AcrossYearsSection />
 
-        <!-- <SubmissionSection /> -->
+        <SubmissionSection />
 
-        <!-- <NewsSection /> -->
+        <NewsSection />
 
         <SponsorSectionz />
       </div>
