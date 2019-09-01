@@ -8,10 +8,11 @@
 
         <!-- <ArtistsSection /> -->
 
-        <AcrossYearsSection v-if="windowWidth > 950" />
-        <AcrossYearsMobile v-else />
+        <!-- <AcrossYearsSection v-if="windowWidth > 950" />
+        <AcrossYearsMobile v-else />-->
 
-        <SubmissionSection />
+        <SubmissionSection v-if="windowWidth > 950" />
+        <SubmissionMobile v-else />
 
         <NewsSection />
 
@@ -28,10 +29,13 @@ import LandingSection from "@/components/LandingSection.vue";
 
 import HeroSection from "@/components/HeroSection.vue";
 import ArtistsSection from "@/components/ArtistsSection.vue";
+
 import AcrossYearsSection from "@/components/AcrossYearsSection.vue";
 import AcrossYearsMobile from "@/components/AcrossYearsMobile.vue";
 
 import SubmissionSection from "@/components/SubmissionSection.vue";
+import SubmissionMobile from "@/components/SubmissionMobile.vue";
+
 import NewsSection from "@/components/NewsSection.vue";
 import SponsorSectionz from "@/components/SponsorSection.vue";
 
@@ -44,6 +48,7 @@ export default {
     AcrossYearsSection,
     AcrossYearsMobile,
     SubmissionSection,
+    SubmissionMobile,
     NewsSection,
     SponsorSectionz,
     HeaderMobile
