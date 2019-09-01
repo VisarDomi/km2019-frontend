@@ -176,7 +176,7 @@ export default {
 
   font-size: 12rem;
   @include respond(big-desktop) {
-    font-size: 18rem;
+    font-size: 14rem;
   }
   @include respond(4k-desktop) {
     font-size: 30rem;

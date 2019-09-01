@@ -181,7 +181,7 @@ export default {
 
 .description {
   color: #c360b5;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   line-height: 3rem;
   margin-top: 3rem; //lg only
 }
@@ -201,7 +201,7 @@ export default {
 
 .carousel-right {
   position: absolute;
-  right: -8%;
+  right: -4%;
   top: 50%;
   // padding-top: 19px;
 }
@@ -216,7 +216,7 @@ export default {
 
 .carousel-left {
   position: absolute;
-  left: -8%;
+  left: -4%;
   top: 50%;
   // padding-top:15px;
 }
