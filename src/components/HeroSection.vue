@@ -1,17 +1,10 @@
 
 <template>
   <div class="section-hero">
-    <HeaderHero menutype="menu__items--white" iconWhite="true" />
+    <HeaderHero menutype="menu__items--white" iconWhite="true" v-if="windowWidth > 950" />
+
     <img src="@/assets/img/logo.svg" alt="Kenga Magjike logo" class="logo" />
     <div class="row h-100">
-      <div class="col-lg-2 text-center">
-        <div class="logo-hako-container">
-          <p class="description">partnere zyrtare</p>
-          <div class="img-container">
-            <img src="@/assets/img/Hako_logo.svg" alt />
-          </div>
-        </div>
-      </div>
       <div class="col-lg-2 col-xl-2">
         <div class="left-container">
           <img src="@/assets/img/Group Home Left.svg" alt />
@@ -38,11 +31,23 @@
 
 <script>
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
+import HeaderMobile from "@/components/Headers/MobileHeader.vue";
 export default {
   name: "HeroSection",
 
   components: {
-    HeaderHero
+    HeaderHero,
+    HeaderMobile
+  },
+  data() {
+    return {
+      windowWidth: window.innerWidth
+    };
+  },
+  mounted() {
+    window.onresize = () => {
+      this.windowWidth = window.innerWidth;
+    };
   }
 };
 </script>

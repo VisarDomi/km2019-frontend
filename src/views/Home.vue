@@ -1,15 +1,16 @@
 <template>
   <div class="home">
     <!-- <LandingSection /> -->
+    <HeaderMobile v-if="windowWidth < 950" />
     <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="example">
-        <!-- <HeroSection /> -->
+        <HeroSection />
 
-        <!-- <ArtistsSection /> -->
+        <ArtistsSection />
 
-        <!-- <AcrossYearsSection /> -->
+        <AcrossYearsSection />
 
-        <!-- <SubmissionSection /> -->
+        <SubmissionSection />
 
         <NewsSection />
 
@@ -21,7 +22,9 @@
 
 <script>
 // @ is an alias to /src
+import HeaderMobile from "@/components/Headers/MobileHeader.vue";
 import LandingSection from "@/components/LandingSection.vue";
+
 import HeroSection from "@/components/HeroSection.vue";
 import ArtistsSection from "@/components/ArtistsSection.vue";
 import AcrossYearsSection from "@/components/AcrossYearsSection.vue";
@@ -39,7 +42,8 @@ export default {
     AcrossYearsSection,
     SubmissionSection,
     NewsSection,
-    SponsorSectionz
+    SponsorSectionz,
+    HeaderMobile
   },
   data() {
     return {
@@ -49,10 +53,16 @@ export default {
         duration: 500,
         beforeChange: function(currentSlideEl, currenIndex, nextIndex) {},
         afterChange: function(currentSlideEl, currenIndex) {}
-      }
+      },
+      windowWidth: window.innerWidth
     };
   },
-  method: {}
+  method: {},
+  mounted() {
+    window.onresize = () => {
+      this.windowWidth = window.innerWidth;
+    };
+  }
 };
 </script>
 
