@@ -11,7 +11,7 @@
 
         <!-- <SubmissionSection /> -->
 
-        <!-- <NewsSection /> -->
+        <NewsSection />
 
         <SponsorSectionz />
       </div>

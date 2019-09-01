@@ -8,7 +8,7 @@
     </div>
     <div class="row">
       <div class="col-lg-1">
-        <div class="graphic-right">
+        <div class="graphic-left">
           <img src="@/assets/img/Group 147.svg" alt />
         </div>
       </div>
@@ -24,11 +24,13 @@
         </div>
       </div>
       <div class="col-lg-2">
+        <div class="graphic-right">
+          <img src="@/assets/img/Group 158.svg" alt />
+        </div>
         <div class="carousel-right">
           <img src="@/assets/img/ndervite_right.svg" alt />
         </div>
       </div>
-      <div class="col-lg-1"></div>
     </div>
     <div class="row">
       <div class="col-lg-9 offset-lg-2">
@@ -56,10 +58,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.graphic-right {
+.graphic-left {
   position: absolute;
   top: 15%;
   left: -120%;
+}
+.graphic-right {
+  position: absolute;
+  top: -20%;
+  left: -80%;
 }
 
 .carousel-right {

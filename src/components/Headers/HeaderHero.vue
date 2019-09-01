@@ -3,10 +3,10 @@
   <div class="row align-items-center menu__items" v-bind:class="menutype">
     <div class="col-lg-2">
       <span class="d-lg-inline-block" href="#" v-if="logoBlack">
-        <img src="@/assets/img/logoblack.svg" alt="Logo" class="logo" />
+        <img src="@/assets/img/logoblack.svg" alt="Logo" class="logo respond-width--logo" />
       </span>
       <span class="navbar-brand d-none d-lg-inline-block" href="#" v-if="logoWhite">
-        <img src="@/assets/img/logowhite.svg" alt="Logo" class="logo" />
+        <img src="@/assets/img/logowhite.svg" alt="Logo" class="logo respond-width--logo" />
       </span>
     </div>
     <div class="col-lg-1 offset-lg-4 cmi" @click="goToArtists()">artistet</div>
@@ -16,12 +16,22 @@
     <div class="col-lg-1 cmi" @click="goToRregullore()">rregullore</div>
     <div class="col-lg-1 high-index">
       <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
-        <img v-if="shouldHide" src="@/assets/img/icon_menu_close_white.svg" alt />
-        <img v-if="!shouldHide" src="@/assets/img/icon_menu_white.svg" alt />
+        <img
+          v-if="shouldHide"
+          src="@/assets/img/icon_menu_close_white.svg"
+          class="respond-width"
+          alt
+        />
+        <img v-if="!shouldHide" src="@/assets/img/icon_menu_white.svg" class="respond-width" alt />
       </span>
       <span class="navigation__icon" @click="collapseMenu" v-else>
-        <img v-if="shouldHide" src="@/assets/img/icon_menu_close_black.svg" alt />
-        <img v-if="!shouldHide" src="@/assets/img/icon_menu_black.svg" alt />
+        <img
+          v-if="shouldHide"
+          src="@/assets/img/icon_menu_close_black.svg"
+          class="respond-width"
+          alt
+        />
+        <img v-if="!shouldHide" src="@/assets/img/icon_menu_black.svg" class="respond-width" alt />
       </span>
     </div>
   </div>
@@ -95,6 +105,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "@/assets/sass/abstracts/_mixins.scss";
+.respond-width {
+  @include respond(4k-desktop) {
+    width: 25%;
+  }
+  &--logo {
+    @include respond(4k-desktop) {
+      width: 200%;
+    }
+  }
+}
+
 .high-index {
   z-index: 9999;
 }
@@ -114,6 +136,10 @@ export default {
   font-family: Ubuntu;
   height: 15rem;
   font-size: 1.7rem;
+  @include respond(4k-desktop) {
+    font-size: 4rem;
+  }
+
   &--white {
     color: white;
   }

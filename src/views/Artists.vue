@@ -1,11 +1,15 @@
 <template>
   <div class="artists">
-    <div class="row justify-content-between artist-row align-items-center">
-      <div class="col-lg-3 col-sm-2 col-xs-1 text-center">
-        <img src="@/assets/img/logowhite.svg" alt />
+    <div class="row justify-content-between artist-row align-items-center h-15">
+      <div class="col-lg-3 col-sm-3 col-xs-1 text-center">
+        <img src="@/assets/img/logowhite.svg" class="logo-img" alt />
       </div>
       <div class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover" @click="goToHome()">
-        <img src="@/assets/img/artistet_arrow_right.svg" alt class="back-icon center-block" />
+        <img
+          src="@/assets/img/artistet_arrow_right.svg"
+          alt
+          class="back-icon center-block respond-width"
+        />
       </div>
     </div>
 
@@ -112,6 +116,30 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/sass/abstracts/_mixins.scss";
+.respond-width {
+  // width: 50%;
+  @include respond(tab-land) {
+    width: 70%;
+  }
+  @include respond(4k-desktop) {
+    width: 40%;
+  }
+}
+
+.logo-img {
+  width: 50%;
+  @include respond(tab-land) {
+    width: 80%;
+  }
+  @include respond(tab-port) {
+    width: 90%;
+  }
+}
+.h-15 {
+  height: 14% !important;
+}
+
 .mx-6 {
   padding-right: 8rem;
   padding-left: 8rem !important;
@@ -142,11 +170,17 @@ export default {
   // text-align:right;
   padding-right: 20px;
   margin-right: 20px;
-  font-size: 12rem;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px white;
-
   font-family: Vollkorn;
+
+  font-size: 12rem;
+  @include respond(big-desktop) {
+    font-size: 18rem;
+  }
+  @include respond(4k-desktop) {
+    font-size: 30rem;
+  }
 }
 
 //on mobile breakpoint change to 100%;
@@ -276,14 +310,20 @@ input::-webkit-input-placeholder {
   }
   &__name {
     color: white;
-    font-size: 2rem;
     padding: 4px 1rem;
     background-color: black;
     font-family: Vollkorn;
     display: inline-block;
     border: solid 2px white;
-
     margin-bottom: 2px;
+
+    font-size: 2rem;
+    @include respond(big-desktop) {
+      font-size: 3rem;
+    }
+    @include respond(4k-desktop) {
+      font-size: 4rem;
+    }
   }
   &__song {
     border: 1px solid black;
@@ -293,8 +333,20 @@ input::-webkit-input-placeholder {
 
     display: inline-block;
     padding: 6px 1rem;
-    font-size: 1.35rem;
     font-weight: 700;
+    font-size: 1.35rem;
+    font-size: 2rem;
+    @include respond(tab-land) {
+      line-height: 2rem;
+    }
+    @include respond(big-desktop) {
+      font-size: 2.35rem;
+      line-height: 2.6rem;
+    }
+    @include respond(4k-desktop) {
+      font-size: 4.35rem;
+      line-height: 4rem;
+    }
   }
 }
 
