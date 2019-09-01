@@ -4,7 +4,7 @@
     <HeaderMobile v-if="windowWidth < 950" />
     <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="example">
-        <HeroSection />
+        <!-- <HeroSection /> -->
 
         <ArtistsSection />
 

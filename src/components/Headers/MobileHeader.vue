@@ -1,10 +1,10 @@
 <template>
   <div class="mobile-header">
     <div class="open-menu high-index" v-if="iconWhite">
-      <img src="@/assets/img/icon_menu_white.svg" @click="openNavR()" alt />
+      <img src="@/assets/img/icon_menu.svg" @click="openNavR()" alt />
     </div>
     <div class="open-menu high-index" v-else>
-      <img src="@/assets/img/icon_menu_white.svg" @click="openNavR()" alt />
+      <img src="@/assets/img/icon_menu.svg" @click="openNavR()" alt />
     </div>
     <div id="mySidenavR" class="sidenavR">
       <a href="javascript:void(0)" class="closebtn" @click="closeNavR()">×</a>

@@ -7,72 +7,28 @@
       </div>
     </div>
     <div class="row px-6 respond-height go-up">
-      <div class="col-lg-2">
-        <div class="h-75 abs-bottom artist-card">
+      <div
+        class="col-lg-2 col-7 mobile-offset-2"
+        v-for="(artist, index) in artists"
+        :key="artist.name"
+      >
+        <div class="artist-card abs-bottom" :class="{'abs-bottom--up': index % 2 === 0}">
+          <!-- <div class="artist-card"> -->
           <div class="img-container">
-            <img src="@/assets/img/Eneda Tarifa.svg" alt />
+            <img :src="artist.img" alt />
           </div>
-          <p class="artist-card__name go-up--small">Eneda Tarifa</p>
-          <p class="artist-card__song">Loose Yourself to Dance</p>
-        </div>
-      </div>
-
-      <div class="col-lg-2">
-        <div class="h-75 artist-card high-index">
-          <div class="img-container">
-            <img src="@/assets/img/Soni Malaj.svg" alt />
-          </div>
-          <p class="artist-card__name go-up--small">Eneda Tarifa</p>
-          <p class="artist-card__song">Loose Yourself to Dance</p>
-        </div>
-      </div>
-
-      <div class="col-lg-2">
-        <div class="h-75 abs-bottom artist-card">
-          <div class="img-container">
-            <img src="@/assets/img/Kejsi Tola.svg" alt />
-          </div>
-          <p class="artist-card__name go-up--small">Kejsi Tola</p>
-          <p class="artist-card__song">Loose Yourself to Dance</p>
-        </div>
-      </div>
-
-      <div class="col-lg-2">
-        <div class="h-75 artist-card">
-          <div class="img-container">
-            <img src="@/assets/img/Klajdi Haruni.svg" alt />
-          </div>
-          <p class="artist-card__name go-up--small">Klajdi Haruni</p>
-          <p class="artist-card__song">Loose Yourself to Dance</p>
-        </div>
-      </div>
-
-      <div class="col-lg-2">
-        <div class="h-75 abs-bottom artist-card">
-          <div class="img-container">
-            <img src="@/assets/img/Alar Band.svg" alt />
-          </div>
-          <p class="artist-card__name go-up--small">Alar Band</p>
-          <p class="artist-card__song">Loose Yourself to Dance</p>
-        </div>
-      </div>
-
-      <div class="col-lg-2">
-        <div class="h-75 artist-card">
-          <div class="img-container">
-            <img src="@/assets/img/Rozana Radi.svg" alt />
-          </div>
-          <p class="artist-card__name go-up--small">Rozana Radi</p>
-          <p class="artist-card__song">Loose Yourself to Dance</p>
+          <p class="artist-card__name go-up--small">{{artist.name}}</p>
+          <p class="artist-card__song">{{artist.songtilte}}</p>
         </div>
       </div>
     </div>
+
     <div class="row mt-6">
-      <div class="col-lg-6 offset-lg-3 text-center">
-        <a href="#" class="btn" @click="goToArtists()">më shumë artistë</a>
+      <div class="col-lg-6 offset-lg-3 col-12 text-center">
+        <a href="#" class="btn more-artist-button" @click="goToArtists()">më shumë artistë</a>
       </div>
     </div>
-    <div class="graphic-left h-75 w-25">
+    <div class="graphic-left h-75 w-25" v-if="windowWidth > 950">
       <div class="img-left-container h-100 w-100">
         <img src="@/assets/img/Group 171.svg" alt />
       </div>
@@ -99,6 +55,38 @@ export default {
   },
   data() {
     return {
+      artists: [
+        {
+          name: "Klajdi Haruni",
+          songtilte: "Loose yourself to dance",
+          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
+        },
+        {
+          name: "Klajdi Haruni",
+          songtilte: "Loose yourself to dance",
+          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
+        },
+        {
+          name: "Klajdi Haruni",
+          songtilte: "Loose yourself to dance",
+          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
+        },
+        {
+          name: "Klajdi Haruni",
+          songtilte: "Loose yourself to dance",
+          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
+        },
+        {
+          name: "Klajdi Haruni",
+          songtilte: "Loose yourself to dance",
+          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
+        },
+        {
+          name: "Klajdi Haruni",
+          songtilte: "Loose yourself to dance",
+          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
+        }
+      ],
       windowWidth: window.innerWidth
     };
   },
@@ -106,12 +94,34 @@ export default {
     window.onresize = () => {
       this.windowWidth = window.innerWidth;
     };
+    if (this.windowWidth < 950) {
+      this.artists.pop();
+      this.artists.pop();
+      this.artists.pop();
+      this.artists.pop();
+      this.artists.pop();
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_mixins.scss";
+.mobile-offset-2 {
+  @include respond(phone) {
+    margin-left: 20%;
+  }
+}
+
+.more-artist-button {
+  @include respond(phone) {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
 .graphic-left {
   position: absolute;
   bottom: 0%;
@@ -128,11 +138,23 @@ export default {
   @include respond(4k-desktop) {
     height: 50%;
   }
+  @include respond(phone) {
+    height: 75%;
+  }
 }
 
 .abs-bottom {
   position: absolute;
   bottom: 0;
+  &--up {
+    bottom: -20%;
+    @include respond(phone) {
+      bottom: 30%;
+    }
+  }
+  // @include respond(phone) {
+  //   bottom: 10%;
+  // }
 }
 
 .high-index {
@@ -177,9 +199,16 @@ export default {
     @include respond(tab-land) {
       font-size: 1.25rem;
     }
+    // @include respond(phone) {
+    //   font-size: 1.25rem;
+    // }
     @include respond(4k-desktop) {
       font-size: 3.5rem;
     }
+  }
+
+  @include respond(phone) {
+    padding-top: 2rem;
   }
 }
 
@@ -188,11 +217,19 @@ export default {
 }
 .mt-6 {
   margin-top: 8rem;
+  @include respond(phone) {
+    margin-top: 0rem;
+  }
 }
 
 .px-6 {
   margin-right: 4rem;
   margin-left: 4rem;
+
+  @include respond(phone) {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 .btn {
@@ -206,6 +243,9 @@ export default {
   @include respond(4k-desktop) {
     font-size: 5rem;
   }
+  @include respond(phone) {
+    padding: 1rem 0rem;
+  }
 }
 
 .go-up {
@@ -215,6 +255,9 @@ export default {
   }
   @include respond(4k-desktop) {
     margin-top: 0;
+  }
+  @include respond(phone) {
+    margin-top: -7rem;
   }
 }
 
@@ -231,6 +274,9 @@ export default {
   font-size: 25rem;
   @include respond(tab-land) {
     font-size: 20rem;
+  }
+  @include respond(phone) {
+    font-size: 10rem;
   }
 }
 </style>

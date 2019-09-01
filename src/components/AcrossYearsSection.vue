@@ -8,71 +8,59 @@
     />
     <div class="row go-up--small">
       <div class="col-lg-11 offset-lg-1">
-        <h1 class="header-text">nder vite</h1>
+        <h1 class="header-text">ndë r vite</h1>
       </div>
     </div>
     <div class="row">
       <div class="graphic-right">
-         <img src="@/assets/img/Group 158.svg" alt />
-       </div>
-       <div class="graphic-left">
-         <img src="@/assets/img/Group 147.svg" alt />
-       </div>
-      <div class="container">
-                    <a @click.prevent="nextSlide">
-              <div class="carousel-right">
-                <img  class="img-fluid img-next-arrow" src="@/assets/img/ndervite_right.svg" alt />
-              </div>
-            </a>
-            <a @click.prevent="prevSlide">              
-              <div class="carousel-left">
-                <img  class="img-fluid img-left-arrow" src="@/assets/img/ndervite_left.svg" alt />
-              </div></a>
-          <carousel
-            ref="carousel"
-            :perPageCustom="[[0,1]]"
-            :paginationEnabled="false"
-          >
-
-            <slide>
-              <!-- <div class="image-container"> -->
-                <div class="slider-img-container">
-
-                <img class="slider-image" src="@/assets/img/km2018.jpg" alt />
-                <p class="year">2017</p>
-                </div>
-              <!-- </div> -->
-            </slide>
-            <slide>
-              <div class="slider-img-container">
-
-                <img class="slider-image" src="@/assets/img/km2018.jpg" alt />
-                <p class="year">2018</p>
-                </div>
-            </slide>
-
-            <slide>
-              <div class="slider-img-container">
-
-                <img class="slider-image" src="@/assets/img/km2018.jpg" alt />
-                <p class="year">2019</p>
-                </div>
-            </slide>
-                                  <slide>
-              <!-- <div class="image-container"> -->
-                <div class="slider-img-container">
-
-                <img class="slider-image" src="@/assets/img/km2018.jpg" alt />
-                <p class="year">2017</p>
-                </div>
-              <!-- </div> -->
-            </slide>
-          </carousel>
-
+        <img src="@/assets/img/Group 158.svg" alt />
       </div>
+      <div class="graphic-left">
+        <img src="@/assets/img/Group 147.svg" alt />
+      </div>
+      <div class="container">
+        <a @click.prevent="nextSlide">
+          <div class="carousel-right">
+            <img class="img-fluid img-next-arrow" src="@/assets/img/ndervite_right.svg" alt />
+          </div>
+        </a>
+        <a @click.prevent="prevSlide">
+          <div class="carousel-left">
+            <img class="img-fluid img-left-arrow" src="@/assets/img/ndervite_left.svg" alt />
+          </div>
+        </a>
+        <carousel ref="carousel" :perPageCustom="[[0,1]]" :paginationEnabled="false">
+          <slide>
+            <!-- <div class="image-container"> -->
+            <div class="slider-img-container">
+              <img class="slider-image" src="@/assets/img/km2018.jpg" alt />
+              <p class="year">2017</p>
+            </div>
+            <!-- </div> -->
+          </slide>
+          <slide>
+            <div class="slider-img-container">
+              <img class="slider-image" src="@/assets/img/km2018.jpg" alt />
+              <p class="year">2018</p>
+            </div>
+          </slide>
 
-
-
+          <slide>
+            <div class="slider-img-container">
+              <img class="slider-image" src="@/assets/img/km2018.jpg" alt />
+              <p class="year">2019</p>
+            </div>
+          </slide>
+          <slide>
+            <!-- <div class="image-container"> -->
+            <div class="slider-img-container">
+              <img class="slider-image" src="@/assets/img/km2018.jpg" alt />
+              <p class="year">2017</p>
+            </div>
+            <!-- </div> -->
+          </slide>
+        </carousel>
+      </div>
     </div>
     <div class="row">
       <div class="col-lg-9 offset-lg-2">
@@ -92,12 +80,12 @@ import HeaderHero from "@/components/Headers/HeaderHero.vue";
 export default {
   name: "AcrossYearsSection",
   methods: {
-        nextSlide() {
+    nextSlide() {
       this.$refs.carousel.goToPage(this.$refs.carousel.getNextPage());
     },
     prevSlide() {
       this.$refs.carousel.goToPage(this.$refs.carousel.getPreviousPage());
-    },
+    }
   },
   components: {
     HeaderHero
@@ -117,20 +105,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
-.container{
-  height:30rem;
-  margin-top:2rem;
-  margin-bottom:2rem;
-  position:relative;
+.container {
+  height: 30rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
 }
 
-.slider-image{
+.slider-image {
   // height:30rem;
 }
 
-.slider-img-container{
-  text-align:center;
+.slider-img-container {
+  text-align: center;
 }
 
 .graphic-left {
@@ -141,7 +128,7 @@ export default {
 .graphic-right {
   position: absolute;
   right: 9%;
-    top: 19%;
+  top: 19%;
 }
 
 .carousel-right {
@@ -181,14 +168,14 @@ export default {
   font-family: Vollkorn;
   color: #c360b5;
   line-height: 15rem;
-      margin-bottom: 2%; //lg only 
+  margin-bottom: 2%; //lg only
 }
 
 .go-up {
   margin-top: -10rem;
   &--small {
     margin-top: -5rem;
-        margin-bottom: -2rem;
+    margin-bottom: -2rem;
   }
 }
 
@@ -199,25 +186,24 @@ export default {
   margin-top: 3rem; //lg only
 }
 
-
 .img-next-arrow {
   width: 6rem;
-  z-index:98393;
+  z-index: 98393;
 }
 
-.img-next-arrow:hover{
-  cursor:pointer;
+.img-next-arrow:hover {
+  cursor: pointer;
 }
 
-.img-left-arrow:hover{
-  cursor:pointer;
+.img-left-arrow:hover {
+  cursor: pointer;
 }
 
 .carousel-right {
   position: absolute;
   right: -8%;
-  top:50%;
-      // padding-top: 19px;
+  top: 50%;
+  // padding-top: 19px;
 }
 .carousel-right:hover {
   cursor: pointer;
@@ -225,13 +211,13 @@ export default {
 
 .img-left-arrow {
   width: 6rem;
-  z-index:98393;
+  z-index: 98393;
 }
 
 .carousel-left {
   position: absolute;
   left: -8%;
-  top:50%;
+  top: 50%;
   // padding-top:15px;
 }
 

@@ -9,10 +9,10 @@
         <img src="@/assets/img/logowhite.svg" alt="Logo" class="logo respond-width--logo" />
       </span>
     </div>
-    <div class="col-lg-1 offset-lg-4 cmi" @click="goToArtists()">artistet</div>
-    <div class="col-lg-1 cmi">nder vite</div>
+    <div class="col-lg-1 offset-lg-4 cmi" @click="goToArtists()">artistët</div>
+    <div class="col-lg-1 cmi">ndër vite</div>
     <div class="col-lg-1 cmi">#magjike</div>
-    <div class="col-lg-1 cmi">te reja</div>
+    <div class="col-lg-1 cmi">të reja</div>
     <div class="col-lg-1 cmi" @click="goToRregullore()">rregullore</div>
     <div class="col-lg-1 high-index">
       <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
@@ -22,7 +22,7 @@
           class="respond-width"
           alt
         />
-        <img v-if="!shouldHide" src="@/assets/img/icon_menu_white.svg" class="respond-width" alt />
+        <img v-if="!shouldHide" src="@/assets/img/icon_menu.svg" class="respond-width" alt />
       </span>
       <span class="navigation__icon" @click="collapseMenu" v-else>
         <img
@@ -31,7 +31,7 @@
           class="respond-width"
           alt
         />
-        <img v-if="!shouldHide" src="@/assets/img/icon_menu_black.svg" class="respond-width" alt />
+        <img v-if="!shouldHide" src="@/assets/img/icon_menu.svg" class="respond-width" alt />
       </span>
     </div>
   </div>

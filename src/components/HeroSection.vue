@@ -19,8 +19,8 @@
         </div>
       </div>
       <div class="col-lg-6 text-right go-left high-index">
-        <h1 class="header--1">3 nete</h1>
-        <h1 class="header--2">55 artiste</h1>
+        <h1 class="header--1">3 netë</h1>
+        <h1 class="header--2">55 artistë</h1>
         <h1 class="header--3">magji</h1>
       </div>
       <div class="col-lg-2">
