@@ -17,32 +17,38 @@ export default new Router({
     {
       path: "/",
       name: "Home",
-      component: Home
+      component: Home,
+      meta: { transition: 'overlay-left' }
     },
     {
       path: "/artists",
       name: "Artists",
-      component: Artists
+      component: Artists,
+      meta: { transition: 'overlay-right' },
     },
     {
       path: "/artist",
       name: "SingleArtist",
-      component: SingleArtist
+      component: SingleArtist,
+      meta: { transition: 'overlay-right' }
     },
     {
       path: "/blogs",
       name: "Blogs",
-      component: Blogs
+      component: Blogs,
+      meta: { transition: 'overlay-left' }
     },
     {
       path: "/blog",
       name: "SingleBlog",
-      component: SingleBlog
+      component: SingleBlog,
+      meta: { transition: 'overlay-left' }
     },
     {
       path: "/rregullore",
       name: "Rregullore",
-      component: Rregullore
+      component: Rregullore,
+      meta: { transition: 'overlay-left' }
     }
   ]
 });

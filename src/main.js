@@ -5,7 +5,9 @@ import store from "./store";
 import "./registerServiceWorker";
 import VueCarousel from 'vue-carousel';
 Vue.config.productionTip = false;
+import VuePageTransition from 'vue-page-transition'
 
+Vue.use(VuePageTransition)
 // import "animate.css";
 import "fullpage-vue/src/fullpage.css";
 import "bootstrap/dist/css/bootstrap.css";
