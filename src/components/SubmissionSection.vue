@@ -1,6 +1,11 @@
 <template>
   <div class="section-submission">
-    <HeaderHero menutype="menu__items--white" iconWhite="true" logoWhite="true" />
+    <HeaderHero
+      menutype="menu__items--white"
+      iconWhite="true"
+      logoWhite="true"
+      v-if="windowWidth > 950"
+    />
     <div class="row go-up--small">
       <div class="col-lg-5 offset-lg-1">
         <p class="description">
@@ -84,6 +89,16 @@ export default {
 
   components: {
     HeaderHero
+  },
+  data() {
+    return {
+      windowWidth: window.innerWidth
+    };
+  },
+  mounted() {
+    window.onresize = () => {
+      this.windowWidth = window.innerWidth;
+    };
   }
 };
 </script>

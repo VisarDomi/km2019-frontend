@@ -1,6 +1,11 @@
 <template>
   <div class="section-news">
-    <HeaderHero menutype="menu__items--white" iconWhite="true" logoWhite="true" />
+    <HeaderHero
+      menutype="menu__items--white"
+      iconWhite="true"
+      logoWhite="true"
+      v-if="windowWidth > 950"
+    />
     <div class="row h-25">
       <div class="header-container">
         <h1>te reja</h1>
@@ -77,6 +82,16 @@ export default {
 
   components: {
     HeaderHero
+  },
+  data() {
+    return {
+      windowWidth: window.innerWidth
+    };
+  },
+  mounted() {
+    window.onresize = () => {
+      this.windowWidth = window.innerWidth;
+    };
   }
 };
 </script>

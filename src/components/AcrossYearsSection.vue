@@ -1,6 +1,11 @@
 <template>
   <div class="section-acrossyears">
-    <HeaderHero menutype="menu__items--white" logoWhite="true" iconWhite="true" />
+    <HeaderHero
+      menutype="menu__items--white"
+      logoWhite="true"
+      iconWhite="true"
+      v-if="windowWidth > 950"
+    />
     <div class="row go-up--small">
       <div class="col-lg-11 offset-lg-1">
         <h1 class="header-text">nder vite</h1>
@@ -96,6 +101,16 @@ export default {
   },
   components: {
     HeaderHero
+  },
+  data() {
+    return {
+      windowWidth: window.innerWidth
+    };
+  },
+  mounted() {
+    window.onresize = () => {
+      this.windowWidth = window.innerWidth;
+    };
   }
 };
 </script>

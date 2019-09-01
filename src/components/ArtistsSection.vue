@@ -1,6 +1,6 @@
 <template>
   <div class="section-artists">
-    <HeaderHero menutype="menu__items--black" logoBlack="true" />
+    <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 950" />
     <div class="row">
       <div class="col-lg-6 offset-lg-3 text-center">
         <h1 class="header-text">artistët</h1>
@@ -89,9 +89,6 @@
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 export default {
   name: "ArtistsSection",
-  data() {
-    return {};
-  },
   methods: {
     goToArtists() {
       this.$router.push({ name: "Artists" });
@@ -99,6 +96,16 @@ export default {
   },
   components: {
     HeaderHero
+  },
+  data() {
+    return {
+      windowWidth: window.innerWidth
+    };
+  },
+  mounted() {
+    window.onresize = () => {
+      this.windowWidth = window.innerWidth;
+    };
   }
 };
 </script>
