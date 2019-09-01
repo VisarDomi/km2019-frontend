@@ -2,7 +2,7 @@
   <div class="blogs">
     <div class="row justify-content-between artist-row align-items-center">
       <div class="col-lg-3 col-sm-2 col-xs-1 text-center">
-        <img src="@/assets/img/logowhite.svg" alt />
+        <img class="img-logo" @click="goToHome()" src="@/assets/img/logowhite.svg" alt />
       </div>
       <div class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover" @click="goToHome()">
         <img src="@/assets/img/artistet_arrow_left.svg" alt class="back-icon center-block" />
@@ -20,25 +20,43 @@
     </div>-->
 <div class="carousel-container">
 
-<carousel :perPageCustom="[[480, 2], [768, 3], [992,4]]" :paginationEnabled="false" style="color:white;">
+              <a @click.prevent="nextSlide">
+              <div class="carousel-right">
+                <img class="img-fluid img-next-arrow" src="@/assets/img/ndervite_right.svg" alt />
+              </div>
+            </a>
+            <a @click.prevent="prevSlide">              
+              <div class="carousel-left">
+                <img class="img-fluid img-left-arrow" src="@/assets/img/ndervite_left.svg" alt />
+              </div></a>
+
+<carousel ref="carousel" :perPageCustom="[[0, 1], [768, 3], [992,4]]" :paginationEnabled="false" :navigationEnabled="false">
   <slide >
-    <div class="imageback" ></div>
+    <div class="imageback" >
+      
     <h1 class="blog-title" @click="goToBlog()">Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
+    </div>
     <h3 class="date">22.10.2019</h3>
     
   </slide>
   <slide>
-    <div class="imageback" :style="{'background-image': 'url(' + require('@/assets/img/blog2.jpg') + ')'}"></div>
+    <div class="imageback" :style="{'background-image': 'url(' + require('@/assets/img/blog2.jpg') + ')'}">
+    
     <h1 class="blog-title">Atmosferë serenatash në skenën e Këngës Magjike</h1>
+    </div>
     <h3 class="date">22.10.2019</h3>
   </slide>
     <slide>
-    <div class="imageback" :style="{'background-image': 'url(' + require('@/assets/img/blog3.jpg') + ')'}"></div>
+    <div class="imageback" :style="{'background-image': 'url(' + require('@/assets/img/blog3.jpg') + ')'}">
     <h1 class="blog-title">Fifi dhe Mc Kresha betejë në skenë!</h1>
+    </div>
     <h3 class="date">22.10.2019</h3>
   </slide>
   <slide>
-    <div class="imageback" :style="{'background-image': 'url(' + require('@/assets/img/blog1.jpg') + ')'}"></div>
+    <div class="imageback" :style="{'background-image': 'url(' + require('@/assets/img/blog4.jpg') + ')'}">
+        <h1 class="blog-title">Fifi dhe Mc Kresha betejë në skenë!</h1>
+    </div>
+    <h3 class="date">22.10.2019</h3>
   </slide>
     <slide>
     <div class="imageback" :style="{'background-image': 'url(' + require('@/assets/img/sonimalaj.png') + ')'}"></div>
@@ -67,6 +85,12 @@ export default {
     };
   },
   methods: {
+        nextSlide() {
+      this.$refs.carousel.goToPage(this.$refs.carousel.getNextPage());
+    },
+    prevSlide() {
+      this.$refs.carousel.goToPage(this.$refs.carousel.getPreviousPage());
+    },
     goToHome() {
       this.$router.push({ name: "Home" });
     },
@@ -78,6 +102,44 @@ export default {
   }
 };
 </script>
+
+<style scoped lang="css">
+.img-logo:hover{
+  cursor:pointer;
+}
+.img-next-arrow {
+  width: 6rem;
+}
+
+.carousel-right {
+  position: absolute;
+      bottom: 5rem;
+    right: 5rem;
+      padding-top: 19px;
+      z-index:99;
+}
+.carousel-right:hover {
+  cursor: pointer;
+}
+
+.img-left-arrow {
+  width: 6rem;
+}
+
+.carousel-left {
+  z-index:99;
+  position: absolute;
+  bottom: 5rem;
+  left: 5rem;
+  padding-top:15px;
+}
+
+.carousel-left:hover {
+  cursor: pointer;
+}
+
+</style>
+
 
 
 <style lang="scss">
@@ -91,11 +153,12 @@ filter: grayscale(100%);
 }
 
 .imageback:hover{
-  opacity:0.3;
+  opacity:0.7;
 }
 
 .blog-title:hover{
   cursor:pointer;
+  // color: #C360B5;
 }
 
 .blog-title {

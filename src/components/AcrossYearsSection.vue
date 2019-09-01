@@ -12,30 +12,38 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-1">
-        <div class="graphic-left">
-          <img src="@/assets/img/Group 147.svg" alt />
-        </div>
+      <div class="container">
+        
+          <carousel
+            ref="carousel"
+            :perPageCustom="[[0,1]]"
+            :paginationEnabled="false"
+          >
+            <slide>
+              <div class="image-container">
+                <img src="@/assets/img/blog3.jpg" alt />
+                <p class="year">2018</p>
+              </div>
+            </slide>
+            <slide>
+              <div class="image-container">
+                <img src="@/assets/img/ndervite.svg" alt />
+                <p class="year">2018</p>
+              </div>
+            </slide>
+
+            <slide>
+              <div class="image-container">
+                <img src="@/assets/img/ndervite.svg" alt />
+                <p class="year">2018</p>
+              </div>
+            </slide>
+          </carousel>
+
       </div>
-      <div class="col-lg-2">
-        <div class="carousel-left">
-          <img src="@/assets/img/ndervite_left.svg" alt />
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="image-container">
-          <img src="@/assets/img/ndervite.svg" alt />
-          <p class="year">2018</p>
-        </div>
-      </div>
-      <div class="col-lg-2">
-        <div class="graphic-right">
-          <img src="@/assets/img/Group 158.svg" alt />
-        </div>
-        <div class="carousel-right">
-          <img src="@/assets/img/ndervite_right.svg" alt />
-        </div>
-      </div>
+
+
+
     </div>
     <div class="row">
       <div class="col-lg-9 offset-lg-2">
@@ -54,7 +62,14 @@
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 export default {
   name: "AcrossYearsSection",
-  methods: {},
+  methods: {
+        nextSlide() {
+      this.$refs.carousel.goToPage(this.$refs.carousel.getNextPage());
+    },
+    prevSlide() {
+      this.$refs.carousel.goToPage(this.$refs.carousel.getPreviousPage());
+    },
+  },
   components: {
     HeaderHero
   },
@@ -108,8 +123,8 @@ export default {
 .image-container {
   text-align: center;
   img {
-    width: 80%;
-    height: 80%;
+    // width: 80%;
+    height: 40rem;
   }
 }
 .section-acrossyears {
