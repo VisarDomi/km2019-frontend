@@ -2,7 +2,7 @@
   <div class="blog-page">
     <div class="row justify-content-between artist-row align-items-center">
       <div class="col-lg-3 col-sm-2 col-xs-1 text-center">
-        <img src="@/assets/img/logowhite.svg" alt />
+        <img class="img-logo" src="@/assets/img/logowhite.svg" @click="goToHome()" alt />
       </div>
       <div class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover" @click="goToBlogs()">
         <img src="@/assets/img/artistet_arrow_left.svg" alt class="back-icon center-block" />
@@ -89,6 +89,9 @@ export default {
     },
     goToBlogs() {
       this.$router.push({ name: "Blogs" });
+    },
+    goToHome() {
+      this.$router.push({ name: "Home" });
     }
   }
 };
@@ -98,6 +101,11 @@ export default {
 
 
 <style lang="scss" scoped>
+
+.img-logo:hover{
+  cursor:pointer;
+}
+
 .img-next-arrow {
   width: 6rem;
 }
@@ -250,6 +258,6 @@ hr {
   position: fixed;
   top: 0;
   z-index: 9999;
-  width: 102%;
+  width: 100%;
 }
 </style>
