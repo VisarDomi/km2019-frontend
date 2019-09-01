@@ -1,20 +1,21 @@
 <template>
   <div class="home">
-    <!-- <LandingSection /> -->
+    <LandingSection />
     <HeaderMobile v-if="windowWidth < 950" />
     <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="example">
-        <!-- <HeroSection /> -->
+        <HeroSection />
 
-        <!-- <ArtistsSection /> -->
+        <ArtistsSection />
 
-        <!-- <AcrossYearsSection v-if="windowWidth > 950" />
-        <AcrossYearsMobile v-else />-->
+        <AcrossYearsSection v-if="windowWidth > 950" />
+        <AcrossYearsMobile v-else />
 
         <SubmissionSection v-if="windowWidth > 950" />
         <SubmissionMobile v-else />
 
-        <NewsSection />
+        <NewsSection v-if="windowWidth > 950" />
+        <NewsMobile v-else />
 
         <SponsorSectionz />
       </div>
@@ -37,7 +38,11 @@ import SubmissionSection from "@/components/SubmissionSection.vue";
 import SubmissionMobile from "@/components/SubmissionMobile.vue";
 
 import NewsSection from "@/components/NewsSection.vue";
+import NewsMobile from "@/components/NewsMobile.vue";
+
 import SponsorSectionz from "@/components/SponsorSection.vue";
+
+// import Blogs from "@/views/Blogs.vue";
 
 export default {
   name: "Home",
@@ -50,6 +55,8 @@ export default {
     SubmissionSection,
     SubmissionMobile,
     NewsSection,
+    NewsMobile,
+
     SponsorSectionz,
     HeaderMobile
   },
