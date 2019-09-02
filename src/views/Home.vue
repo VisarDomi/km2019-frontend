@@ -1,12 +1,13 @@
 <template>
   <div class="home">
-    <LandingSection />
+    <!-- <LandingSection /> -->
     <HeaderMobile v-if="windowWidth < 950" />
     <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="example">
-        <HeroSection />
+        <!-- <HeroSection /> -->
 
-        <ArtistsSection />
+        <ArtistsSection v-if="windowWidth > 950" />
+        <ArtistsMobile v-else />
 
         <AcrossYearsSection v-if="windowWidth > 950" />
         <AcrossYearsMobile v-else />
@@ -29,7 +30,9 @@ import HeaderMobile from "@/components/Headers/MobileHeader.vue";
 import LandingSection from "@/components/LandingSection.vue";
 
 import HeroSection from "@/components/HeroSection.vue";
+
 import ArtistsSection from "@/components/ArtistsSection.vue";
+import ArtistsMobile from "@/components/ArtistsMobile.vue";
 
 import AcrossYearsSection from "@/components/AcrossYearsSection.vue";
 import AcrossYearsMobile from "@/components/AcrossYearsMobile.vue";
@@ -50,6 +53,7 @@ export default {
     LandingSection,
     HeroSection,
     ArtistsSection,
+    ArtistsMobile,
     AcrossYearsSection,
     AcrossYearsMobile,
     SubmissionSection,

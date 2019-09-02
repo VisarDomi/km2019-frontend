@@ -110,6 +110,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "@/assets/sass/abstracts/_mixins.scss";
 .artist-name {
   font-family: Vollkorn;
   color: white;
@@ -208,8 +209,11 @@ i.fa {
 }
 
 .artist-page {
-  // height: 100%;
   height: 100vh;
+  // height: 100%;
+  @include respond(phone) {
+    height: 100%;
+  }
   // background: lightsalmon;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../src/assets/img/sonimala2j.png") no-repeat;

@@ -1,19 +1,18 @@
 <template>
-  <div class="section-artists" id='section-artists'>
+  <div class="section-artists" id="section-artists">
     <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 950" />
     <div class="row">
-      <div class="col-lg-6 offset-lg-3 text-center">
+      <div class="col-lg-12 text-center">
         <h1 class="header-text">artistët</h1>
       </div>
     </div>
     <div class="row px-6 respond-height go-up">
       <div
-        class="col-lg-2 col-7 mobile-offset-2"
+        class="col-lg-2 col-sm-4 col-7 mobile-offset-2"
         v-for="(artist, index) in artists"
         :key="artist.name"
       >
         <div class="artist-card abs-bottom" :class="{'abs-bottom--up': index % 2 === 0}">
-          <!-- <div class="artist-card"> -->
           <div class="img-container">
             <img :src="artist.img" alt />
           </div>
@@ -28,15 +27,11 @@
         <a href="#" class="btn more-artist-button" @click="goToArtists()">më shumë artistë</a>
       </div>
     </div>
-    <div class="graphic-left h-75 w-25" v-if="windowWidth > 950">
-      <div class="img-left-container h-100 w-100">
-        <img src="@/assets/img/Group 171.svg" alt />
-      </div>
+    <div class="graphic-left w-50" v-if="windowWidth > 950">
+      <img src="@/assets/img/Group 171.svg" alt />
     </div>
-    <div class="graphic-right h-75 w-25">
-      <div class="img-right-container h-100 w-100">
-        <img src="@/assets/img/Group 331.svg" alt />
-      </div>
+    <div class="graphic-right w-50">
+      <img src="@/assets/img/Group 331.svg" alt />
     </div>
   </div>
 </template>
@@ -124,13 +119,24 @@ export default {
 
 .graphic-left {
   position: absolute;
-  bottom: 0%;
-  left: -45%;
+  bottom: -21%;
+  left: -25%;
+  transform: scale(1.2);
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 .graphic-right {
   position: absolute;
   bottom: 0%;
-  right: 0%;
+  right: -25%;
+  transform: scale(0.9);
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .respond-height {
@@ -242,6 +248,7 @@ export default {
   font-size: 2.5rem;
   @include respond(4k-desktop) {
     font-size: 5rem;
+    margin-top: 20rem;
   }
   @include respond(phone) {
     padding: 1rem 0rem;
@@ -254,7 +261,7 @@ export default {
     margin-top: -4rem;
   }
   @include respond(4k-desktop) {
-    margin-top: 0;
+    margin-top: -25rem;
   }
   @include respond(phone) {
     margin-top: -7rem;
@@ -273,6 +280,10 @@ export default {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px black;
   font-size: 25rem;
+  @include respond(4k-desktop) {
+    font-size: 30rem;
+  }
+
   @include respond(tab-land) {
     font-size: 20rem;
   }

@@ -117,10 +117,13 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+
 .respond-width {
-  // width: 50%;
   @include respond(tab-land) {
     width: 70%;
+  }
+  @include respond(phone) {
+    width: 20%;
   }
   @include respond(4k-desktop) {
     width: 40%;
@@ -159,6 +162,9 @@ export default {
 
 .row-title {
   margin-top: 10rem;
+  @include respond(phone) {
+    margin-top: 3rem;
+  }
 }
 
 .search-icon {
@@ -173,6 +179,10 @@ export default {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px white;
   font-family: Vollkorn;
+
+  @include respond(phone) {
+    margin-top: 1rem;
+  }
 
   font-size: 12rem;
   @include respond(big-desktop) {
@@ -264,6 +274,11 @@ input[type="search"]:focus {
   background-color: #1a1c3c;
   border-color: #66cc75;
   padding-left: 100px !important;
+
+  @include respond(phone) {
+    padding-left: 60px !important;
+  }
+
   -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
   -moz-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
   box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
