@@ -1,10 +1,10 @@
 <template>
   <div class="artists">
     <div class="row justify-content-between artist-row align-items-center h-15">
-      <div class="col-lg-3 col-sm-3 col-xs-1 text-center">
+      <div class="col-lg-3 col-sm-3 col-6 text-center">
         <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
-      <div class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover" @click="goToHome()">
+      <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToHome()">
         <img
           src="@/assets/img/artistet_arrow_right.svg"
           alt
@@ -182,6 +182,8 @@ export default {
 
   @include respond(phone) {
     margin-top: 1rem;
+    margin-right:0px;
+    padding-right:0px;
   }
 
   font-size: 12rem;
@@ -302,6 +304,11 @@ input[type="search"]:hover {
   // background-color: #fff;
 }
 input[type="search"]:focus {
+  @include respond(phone) {
+    width: 90% !important ;
+    padding-left:22% !important;
+  }
+
   width: 130px;
   padding-left: 32px;
   color: #000;
@@ -316,7 +323,7 @@ input::-webkit-input-placeholder {
 }
 
 .artist-card {
-  width: 90%;
+  // width: 90%;
   margin-top: 30px;
   img {
     height: 100%;

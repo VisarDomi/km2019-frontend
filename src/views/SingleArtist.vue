@@ -1,11 +1,11 @@
 <template>
   <div class="artist-page">
     <div class="row justify-content-between menu-row align-items-center">
-      <div class="col-lg-3 col-sm-2 col-xs-1 text-center">
-        <img src="@/assets/img/logowhite.svg" class="img-logo" @click="goToHome()" alt />
+      <div class="col-lg-3 col-sm-2 col-xs-9 col-9  text-center logo-col">
+        <img src="@/assets/img/logowhite.svg" class="align-middle img-logo" @click="goToHome()" alt />
       </div>
       <div
-        class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover-artist"
+        class="col-lg-1 col-sm-2 col-xs-3 col-3 vertical-center back-hover-artist"
         @click="goToArtists()"
       >
         <img src="@/assets/img/artistet_arrow_right.svg" alt class="back-icon center-block" />
@@ -38,7 +38,7 @@
         <div class="col">
           <p class="share-text">Shperndaje:</p>
           <span>
-            <i class="fa fa-facebook" style="margin-right:5px;"></i>
+            <i class="fa fa-facebook facebook-icon" style="margin-right:5px;"></i>
             <i class="fa fa-instagram" style="margin-right:5px;"></i>
             <i class="fa fa-whatsapp"></i>
           </span>
@@ -119,6 +119,13 @@ export default {
   line-height: 1.8rem;
 }
 
+
+.logo-col{
+  @include respond(phone) {
+    height: 100%;
+  }
+}
+
 .top-padded-col {
   padding-top: 20px;
 }
@@ -185,6 +192,7 @@ export default {
   font-family: Ubuntu;
   font-weight: 700;
   padding-top: 10px;
+  font-size:1.2rem;
 }
 .artist-container {
   margin-top: 5rem;
@@ -196,7 +204,12 @@ i.fa {
   border-radius: 60px;
   border: 1px solid white;
   // box-shadow: 0px 0px 2px #fff;
-  padding: 0.5em 0.7em;
+  padding: 0.9em 1em;
+}
+
+.facebook-icon{
+  padding-left: 1.1em !important;
+  padding-right: 1.1em !important;
 }
 
 .trigger-text {
@@ -204,13 +217,18 @@ i.fa {
   font-family: Vollkorn;
   margin-top: 20px;
 }
+
+.img-logo{
+  position: relative;
+    top: 30%;
+}
 .img-logo:hover {
   cursor: pointer;
 }
 
 .artist-page {
-  height: 100vh;
-  // height: 100%;
+  // height: 100vh;
+  height: 100%;
   @include respond(phone) {
     height: 100%;
   }
@@ -225,6 +243,9 @@ i.fa {
   margin-right: 0px;
   margin-left: 0px;
   height: 10rem;
+  @include respond(phone) {
+    padding-top:18px;
+  }
 }
 
 .row {
@@ -250,7 +271,7 @@ i.fa {
 }
 
 .artist-card {
-  width: 90%;
+  // width: 90%;
   img {
     height: 100%;
     width: 100%;
