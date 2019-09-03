@@ -1,6 +1,6 @@
 <template>
   <div class="section-artists" id="section-artists">
-    <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 950" />
+    <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 750" />
     <div class="row">
       <div class="col-lg-12 text-center">
         <h1 class="header-text">artistët</h1>
@@ -86,9 +86,11 @@ export default {
     };
   },
   mounted() {
-    window.onresize = () => {
-      this.windowWidth = window.innerWidth;
-    };
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
     if (this.windowWidth < 950) {
       this.artists.pop();
       this.artists.pop();

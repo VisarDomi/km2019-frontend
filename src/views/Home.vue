@@ -1,22 +1,22 @@
 <template>
   <div class="home">
     <!-- <LandingSection /> -->
-    <HeaderMobile v-if="windowWidth < 950" />
+    <HeaderMobile v-if="windowWidth < 750" />
     <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="example">
         <!-- <HeroSection /> -->
 
-        <!-- <ArtistsSection v-if="windowWidth > 950" />
+        <!-- <ArtistsSection v-if="windowWidth > 1000" />
         <ArtistsMobile v-else />-->
 
-        <!-- <AcrossYearsSection v-if="windowWidth > 950" />
-        <AcrossYearsMobile v-else />-->
+        <AcrossYearsSection v-if="windowWidth > 750" />
+        <AcrossYearsMobile v-else />
 
-        <!-- <SubmissionSection v-if="windowWidth > 950" />
-        <SubmissionMobile v-else />-->
+        <SubmissionSection v-if="windowWidth > 950" />
+        <SubmissionMobile v-else />
 
-        <!-- <NewsSection v-if="windowWidth > 950" />
-        <NewsMobile v-else />-->
+        <NewsSection v-if="windowWidth > 950" />
+        <NewsMobile v-else />
 
         <SponsorSectionz />
       </div>
@@ -78,9 +78,11 @@ export default {
   },
   method: {},
   mounted() {
-    window.onresize = () => {
-      this.windowWidth = window.innerWidth;
-    };
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
   }
 };
 </script>

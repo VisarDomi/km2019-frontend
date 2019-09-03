@@ -4,7 +4,7 @@
       menutype="menu__items--white"
       iconWhite="true"
       logoWhite="true"
-      v-if="windowWidth > 950"
+      v-if="windowWidth > 750"
     />
     <div class="row h-25">
       <div class="header-container">
@@ -89,9 +89,11 @@ export default {
     };
   },
   mounted() {
-    window.onresize = () => {
-      this.windowWidth = window.innerWidth;
-    };
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
   }
 };
 </script>
