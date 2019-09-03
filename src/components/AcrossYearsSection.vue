@@ -189,6 +189,9 @@ export default {
     margin-top: 5%;
     font-size: 25rem;
   }
+  @include respond(small-screen) {
+    font-size: 17rem;
+  }
   @include respond(tab-land) {
     font-size: 15rem;
   }

@@ -1,24 +1,20 @@
 <template>
   <div class="footer">
     <div class="row h-100">
-      <div class="col-xl-3 col-lg-3 col-md-4 border-right-white">
-        <div class="abs-center">
-          <img src="@/assets/img/logowhite.svg" alt />
-        </div>
+      <div class="col-sm-5 border-right-white w-logo">
+        <img src="@/assets/img/logowhite.svg" class="logo-container" alt />
       </div>
-      <div class="col-xl-1 col-md-2 pl-5">
+      <div class="pl-5 col-sm-2">
         <p class="footer-item footer-item--top" @click="changeRoute('Artists')">artistet</p>
-        <p class="footer-item footer-item--bottom mt-5">nder vite</p>
+        <p class="footer-item footer-item--middle">#magjike</p>
+        <p class="footer-item footer-item--bottom nder-vite">nder vite</p>
       </div>
-      <div class="col-xl-1 col-md-2 pl-5">
-        <p class="footer-item footer-item--top">#magjike</p>
-        <p class="footer-item footer-item--bottom mt-5">te reja</p>
-      </div>
-      <div class="col-xl-1 col-md-2 pl-5">
+      <div class="pl-5 col-sm-2">
         <p class="footer-item footer-item--top">rregullore</p>
-        <p class="footer-item footer-item--bottom mt-5">voto</p>
+        <p class="footer-item footer-item--middle">te reja</p>
+        <p class="footer-item footer-item--bottom">voto</p>
       </div>
-      <div class="col-xl-5 col-md-2 offset-lg-1">
+      <div class="col-sm-3">
         <div class="icons abs-right">
           <img src="@/assets/img/icon twitter white.svg" class="mr-3" alt />
           <img src="@/assets/img/icon facebook white.svg" class="mr-3" alt />
@@ -48,6 +44,20 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+.w-logo {
+  width: 10%;
+}
+
+.logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
 
 .border-right-white {
   border-right: 2px solid white;
@@ -71,18 +81,29 @@ export default {
   width: 100%;
   height: 20%;
   background-color: #0e1032;
+  text-align: center;
   &-item {
     color: white;
     font-size: 2rem;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
 
     &--top {
-      position: absolute;
-      top: 25%;
+      top: 20%;
+    }
+    &--middle {
+      top: 40%;
     }
     &--bottom {
-      position: absolute;
-      bottom: 25%;
+      bottom: 20%;
     }
+  }
+}
+.nder-vite {
+  @include respond(tab-port) {
+    font-size: 1.5rem;
   }
 }
 </style>

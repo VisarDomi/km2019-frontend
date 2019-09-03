@@ -9,14 +9,14 @@
         <!-- <ArtistsSection v-if="windowWidth > 950" />
         <ArtistsMobile v-else />-->
 
-        <AcrossYearsSection v-if="windowWidth > 950" />
-        <AcrossYearsMobile v-else />
+        <!-- <AcrossYearsSection v-if="windowWidth > 950" />
+        <AcrossYearsMobile v-else />-->
 
-        <SubmissionSection v-if="windowWidth > 950" />
-        <SubmissionMobile v-else />
+        <!-- <SubmissionSection v-if="windowWidth > 950" />
+        <SubmissionMobile v-else />-->
 
-        <NewsSection v-if="windowWidth > 950" />
-        <NewsMobile v-else />
+        <!-- <NewsSection v-if="windowWidth > 950" />
+        <NewsMobile v-else />-->
 
         <SponsorSectionz />
       </div>
