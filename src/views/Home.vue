@@ -6,8 +6,8 @@
       <div class="fullpage-wp" v-fullpage="opts" ref="example">
         <!-- <HeroSection /> -->
 
-        <ArtistsSection v-if="windowWidth > 950" />
-        <ArtistsMobile v-else />
+        <!-- <ArtistsSection v-if="windowWidth > 950" />
+        <ArtistsMobile v-else />-->
 
         <AcrossYearsSection v-if="windowWidth > 950" />
         <AcrossYearsMobile v-else />

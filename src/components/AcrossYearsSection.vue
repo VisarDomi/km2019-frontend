@@ -7,16 +7,16 @@
       v-if="windowWidth > 950"
     />
     <div class="row go-up--small">
-      <div class="col-lg-11 offset-lg-1">
+      <div class="col-lg-12">
         <h1 class="header-text">ndër vite</h1>
       </div>
     </div>
     <div class="row">
-      <div class="graphic-right">
-        <img src="@/assets/img/Group 158.svg" alt />
-      </div>
-      <div class="graphic-left">
+      <div class="graphic-left w-25">
         <img src="@/assets/img/Group 147.svg" alt />
+      </div>
+      <div class="graphic-right w-50">
+        <img src="@/assets/img/Group 158.svg" alt />
       </div>
       <div class="container">
         <a @click.prevent="nextSlide">
@@ -105,6 +105,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "@/assets/sass/abstracts/_mixins.scss";
 .container {
   height: 30rem;
   margin-top: 2rem;
@@ -122,13 +123,27 @@ export default {
 
 .graphic-left {
   position: absolute;
-  // top: 15%;
-  left: -12%;
+  left: -1%;
+  top: 42%;
+  transform: scale(2);
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 .graphic-right {
   position: absolute;
-  right: 9%;
-  top: 19%;
+  right: -6%;
+  top: 15%;
+  transform: scale(1);
+  @include respond(4k-desktop) {
+    transform: scale(2);
+    right: -15%;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .carousel-right {
@@ -169,6 +184,14 @@ export default {
   color: #c360b5;
   line-height: 15rem;
   margin-bottom: 2%; //lg only
+  margin-left: 5%;
+  @include respond(4k-desktop) {
+    margin-top: 5%;
+    font-size: 25rem;
+  }
+  @include respond(tab-land) {
+    font-size: 15rem;
+  }
 }
 
 .go-up {
@@ -184,6 +207,10 @@ export default {
   font-size: 2.3rem;
   line-height: 3rem;
   margin-top: 3rem; //lg only
+  @include respond(4k-desktop) {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
 }
 
 .img-next-arrow {
