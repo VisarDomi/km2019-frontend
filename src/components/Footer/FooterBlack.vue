@@ -3,7 +3,7 @@
     <div class="row h-100">
       <div class="col-xl-3 col-lg-3 col-md-4 border-right-white">
         <div class="abs-center">
-          <img src="@/assets/img/logoblack.svg" alt />
+          <img src="@/assets/img/logowhite.svg" alt />
         </div>
       </div>
       <div class="col-xl-1 col-md-2 pl-5">
@@ -20,11 +20,11 @@
       </div>
       <div class="col-xl-5 col-md-2 offset-lg-1">
         <div class="icons abs-right">
-          <img src="@/assets/img/icon twitter black.svg" class="mr-3" alt />
-          <img src="@/assets/img/icon facebook black.svg" class="mr-3" alt />
-          <img src="@/assets/img/icon instagram black.svg" class="mr-3" alt />
-          <img src="@/assets/img/icon snapchat black.svg" class="mr-3" alt />
-          <img src="@/assets/img/icon youtube black.svg" class="mr-3" alt />
+          <img src="@/assets/img/icon twitter white.svg" class="mr-3" alt />
+          <img src="@/assets/img/icon facebook white.svg" class="mr-3" alt />
+          <img src="@/assets/img/icon instagram white.svg" class="mr-3" alt />
+          <img src="@/assets/img/icon snapchat white.svg" class="mr-3" alt />
+          <img src="@/assets/img/icon youtube white.svg" class="mr-3" alt />
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  name: "Footer White",
+  name: "FooterBlack",
   data() {
     return {};
   },
@@ -47,8 +47,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "@/assets/sass/abstracts/_mixins.scss";
+
 .border-right-white {
-  border-right: 2px solid black;
+  border-right: 2px solid white;
 }
 .abs-right {
   position: absolute;
@@ -67,10 +69,10 @@ export default {
   position: absolute;
   bottom: 0%;
   width: 100%;
-  height: 7%;
-  background-color: white;
+  height: 20%;
+  background-color: #0e1032;
   &-item {
-    color: black;
+    color: white;
     font-size: 2rem;
 
     &--top {

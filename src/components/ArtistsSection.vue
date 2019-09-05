@@ -48,27 +48,27 @@ export default {
     return {
       artists: [
         {
-          name: "Klajdi Haruni",
+          name: "Klajdi Haruni1",
           songtilte: "Loose yourself to dance",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         },
         {
-          name: "Klajdi Haruni",
+          name: "Klajdi Haruni2",
           songtilte: "Loose yourself to dance",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         },
         {
-          name: "Klajdi Haruni",
+          name: "Klajdi Haruni3",
           songtilte: "Loose yourself to dance",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         },
         {
-          name: "Klajdi Haruni",
+          name: "Klajdi Haruni4",
           songtilte: "Loose yourself to dance",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         },
         {
-          name: "Klajdi Haruni",
+          name: "Klajdi Haruni5",
           songtilte: "Loose yourself to dance",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         },
