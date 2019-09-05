@@ -6,19 +6,19 @@
       iconWhite="true"
       v-if="windowWidth > 950"
     />
-    <div class="row go-up--small">
-      <div class="col-lg-12">
+    <div class="row go-up--small h-20">
+      <div class="col-lg-12 offset-1">
         <h1 class="header-text">ndër vite</h1>
       </div>
     </div>
-    <div class="row">
+    <div class="row h-40">
       <div class="graphic-left w-25">
         <img src="@/assets/img/Group 147.svg" alt />
       </div>
       <div class="graphic-right w-50">
         <img src="@/assets/img/Group 158.svg" alt />
       </div>
-      <div class="container">
+      <div class="container h-100">
         <a @click.prevent="nextSlide">
           <div class="carousel-right">
             <img class="img-fluid img-next-arrow" src="@/assets/img/ndervite_right.svg" alt />
@@ -32,29 +32,53 @@
         <carousel ref="carousel" :perPageCustom="[[0,1]]" :paginationEnabled="false">
           <slide>
             <!-- <div class="image-container"> -->
-            <div class="slider-img-container">
-              <img class="slider-image" src="@/assets/img/km2018.jpg" alt />
+            <div class="slider-img-container h-100">
+                        <div class="embed-responsive embed-responsive-16by9 h-100">
+                          <iframe
+                            class="embed-responsive-item"
+                            src="https://www.youtube.com/embed/GnxAhRj38Qk"
+                            allowfullscreen
+                          ></iframe>
+                        </div>
               <p class="year">2017</p>
             </div>
             <!-- </div> -->
           </slide>
           <slide>
-            <div class="slider-img-container">
-              <img class="slider-image" src="@/assets/img/km2018.jpg" alt />
+            <div class="slider-img-container h-100">
+                        <div class="embed-responsive embed-responsive-16by9 h-100">
+                          <iframe
+                            class="embed-responsive-item"
+                            src="https://www.youtube.com/embed/GnxAhRj38Qk"
+                            allowfullscreen
+                          ></iframe>
+                        </div>
               <p class="year">2018</p>
             </div>
           </slide>
 
           <slide>
-            <div class="slider-img-container">
-              <img class="slider-image" src="@/assets/img/km2018.jpg" alt />
+            <div class="slider-img-container h-100">
+                        <div class="embed-responsive embed-responsive-16by9 h-100">
+                          <iframe
+                            class="embed-responsive-item"
+                            src="https://www.youtube.com/embed/GnxAhRj38Qk"
+                            allowfullscreen
+                          ></iframe>
+                        </div>
               <p class="year">2019</p>
             </div>
           </slide>
           <slide>
             <!-- <div class="image-container"> -->
-            <div class="slider-img-container">
-              <img class="slider-image" src="@/assets/img/km2018.jpg" alt />
+            <div class="slider-img-container h-100">
+                        <div class="embed-responsive embed-responsive-16by9 h-100">
+                          <iframe
+                            class="embed-responsive-item"
+                            src="https://www.youtube.com/embed/GnxAhRj38Qk"
+                            allowfullscreen
+                          ></iframe>
+                        </div>
               <p class="year">2017</p>
             </div>
             <!-- </div> -->
@@ -106,6 +130,20 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+.h-20{
+  height:20%;
+}
+
+.h-30{
+  height:30%;
+}
+
+.h-40{
+  height:40%;
+}
+
+
 .container {
   height: 30rem;
   margin-top: 2rem;
@@ -119,6 +157,13 @@ export default {
 
 .slider-img-container {
   text-align: center;
+  width:60%;
+    margin-left:auto;
+  margin-right:auto;
+}
+
+.embed-responsive{
+
 }
 
 .graphic-left {
@@ -183,7 +228,7 @@ export default {
   font-family: Vollkorn;
   color: #c360b5;
   line-height: 15rem;
-  margin-bottom: 2%; //lg only
+  margin-bottom: 4%; //lg only
   margin-left: 5%;
   @include respond(4k-desktop) {
     margin-top: 5%;
