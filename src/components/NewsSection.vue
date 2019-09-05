@@ -8,7 +8,7 @@
     />
     <div class="row h-25">
       <div class="header-container">
-        <h1>te reja</h1>
+        <h1>&nbsp;&nbsp;te reja</h1>
       </div>
     </div>
     <div class="middle h-50 go-up">
