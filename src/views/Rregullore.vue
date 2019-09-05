@@ -152,20 +152,32 @@
       </div>
     </div>
 
-    <Footer />
+    <Footer v-if="windowWidth > 770" />
+    <FooterSmall v-if="windowWidth < 770 && windowWidth > 600" />
   </div>
 </template>
 
 
 <script>
 import Footer from "@/components/Footer/Footer White.vue";
+import FooterSmall from "@/components/Footer/Footer White Small.vue";
 export default {
   name: "Rregullore",
   components: {
-    Footer
+    Footer,
+    FooterSmall
   },
   data() {
-    return {};
+    return {
+      windowWidth: window.innerWidth
+    };
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
   },
   methods: {
     goToHome() {
@@ -176,6 +188,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/sass/abstracts/_mixins.scss";
 .kategoria {
   text-align: left;
   -webkit-text-stroke: 2px #52c2bd !important;
@@ -243,7 +256,12 @@ export default {
   text-align: left;
   margin-bottom: 30px;
   font-size: 8rem;
-  // margin-top:8%;
+  @include respond(small-screen) {
+    font-size: 6rem;
+  }
+  @include respond(tab-port) {
+    font-size: 5rem;
+  }
 }
 
 .row-title {
@@ -259,6 +277,9 @@ export default {
   -webkit-text-stroke: 2px white;
 
   font-family: Vollkorn;
+  @include respond(small-screen) {
+    font-size: 11rem;
+  }
 }
 
 //on mobile breakpoint change to 100%;

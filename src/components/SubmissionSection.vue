@@ -105,6 +105,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "@/assets/sass/abstracts/_mixins.scss";
 .btn {
   padding: 0.5rem 12rem;
   border: 2px solid black;
@@ -155,6 +156,10 @@ export default {
     font-size: 18rem;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px black;
+
+    @include respond(small-screen) {
+      font-size: 15rem;
+    }
   }
 }
 

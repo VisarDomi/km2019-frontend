@@ -9,13 +9,14 @@
 
     <HeaderMobile v-else />
 
-    <FooterBlack />
-    <!-- <FooterWhite v-if="windowWidth > 600" /> -->
+    <FooterBlack v-if="windowWidth > 770" />
+    <FooterBlackSmall v-if="windowWidth < 770 && windowWidth > 600" />
   </div>
 </template>
 
 <script>
-import FooterBlack from "@/components/Footer/FooterBlack.vue";
+import FooterBlack from "@/components/Footer/Footer Black.vue";
+import FooterBlackSmall from "@/components/Footer/Footer Black Small.vue";
 import Footer from "@/components/Footer/Footer White.vue";
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 import HeaderMobile from "@/components/Headers/MobileHeader.vue";
@@ -24,6 +25,7 @@ export default {
   name: "SponsorSectionz",
   components: {
     FooterBlack,
+    FooterBlackSmall,
     Footer,
     HeaderHero,
     HeaderMobile
@@ -34,9 +36,11 @@ export default {
     };
   },
   mounted() {
-    window.onresize = () => {
-      this.windowWidth = window.innerWidth;
-    };
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
   }
 };
 </script>
