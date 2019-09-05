@@ -159,8 +159,8 @@
 
 
 <script>
-import Footer from "@/components/Footer/Footer White.vue";
-import FooterSmall from "@/components/Footer/Footer White Small.vue";
+import Footer from "@/components/Footer/FooterWhite.vue";
+import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
 export default {
   name: "Rregullore",
   components: {
