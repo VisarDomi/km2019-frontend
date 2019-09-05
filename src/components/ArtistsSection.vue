@@ -213,6 +213,9 @@ export default {
   @include respond(4k-desktop) {
     margin-top: -25rem;
   }
+  @include respond(small-screen) {
+    margin-top: -4%;
+  }
   @include respond(tab-port) {
     margin-top: 0rem;
   }
@@ -233,14 +236,15 @@ export default {
   @include respond(4k-desktop) {
     font-size: 30rem;
   }
-
+  @include respond(small-screen) {
+    margin-top: -10%;
+    font-size: 22rem;
+  }
   @include respond(tab-land) {
     font-size: 20rem;
-    margin-top: 0rem;
   }
   @include respond(tab-port) {
     font-size: 15rem;
-    margin-top: 0rem;
   }
 }
 </style>

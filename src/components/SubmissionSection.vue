@@ -130,9 +130,30 @@ export default {
 }
 
 .composition-image {
+  &--1 {
+    @include respond(small-screen) {
+      width: 90%;
+    }
+  }
   &--2 {
     position: absolute;
-    bottom: 0;
+    bottom: 7%;
+    width: 100%;
+    left: -3%;
+    @include respond(small-screen) {
+      width: 65%;
+      bottom: -5%;
+    }
+  }
+  &--3 {
+    position: absolute;
+    width: 100%;
+    left: -27%;
+    @include respond(small-screen) {
+      width: 65%;
+      left: -27%;
+      bottom: 5%;
+    }
   }
   &--4 {
     text-align: right;
@@ -161,7 +182,7 @@ export default {
 
     @include respond(small-screen) {
       font-size: 15rem;
-      top: 20%;
+      top: 18%;
     }
   }
 }
@@ -241,6 +262,9 @@ export default {
   margin-top: -7rem;
   &--small {
     margin-top: -2rem;
+    @include respond(small-screen) {
+      margin-top: -4%;
+    }
   }
 }
 .description {
