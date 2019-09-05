@@ -251,6 +251,7 @@ export default {
 }
 
 .description {
+  padding-top:3rem;
   color: #c360b5;
   font-size: 2.3rem;
   line-height: 3rem;
