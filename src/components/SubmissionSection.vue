@@ -161,6 +161,7 @@ export default {
 
     @include respond(small-screen) {
       font-size: 15rem;
+      top: 20%;
     }
   }
 }
@@ -213,12 +214,18 @@ export default {
 .carousel-right {
   position: absolute;
   right: 25%;
+  @include respond(small-screen) {
+    right: 20%;
+  }
   margin-top: 2rem;
   // bottom: 40%;
 }
 .carousel-left {
   position: absolute;
   left: 25%;
+  @include respond(small-screen) {
+    left: 20%;
+  }
   margin-top: 2rem;
   // bottom: 40%;
 }

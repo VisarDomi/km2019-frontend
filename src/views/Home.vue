@@ -4,10 +4,10 @@
     <HeaderMobile v-if="windowWidth < 750" />
     <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="example">
-        <!-- <HeroSection /> -->
+        <HeroSection />
 
-        <!-- <ArtistsSection v-if="windowWidth > 1000" />
-        <ArtistsMobile v-else />-->
+        <ArtistsSection v-if="windowWidth > 600" />
+        <ArtistsMobile v-else />
 
         <AcrossYearsSection v-if="windowWidth > 750" />
         <AcrossYearsMobile v-else />

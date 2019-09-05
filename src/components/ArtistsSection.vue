@@ -7,11 +7,7 @@
       </div>
     </div>
     <div class="row px-6 respond-height go-up">
-      <div
-        class="col-lg-2 col-sm-4 col-7 mobile-offset-2"
-        v-for="(artist, index) in artists"
-        :key="artist.name"
-      >
+      <div class="col-lg-2 col-sm-2 col-7" v-for="(artist, index) in artists" :key="artist.name">
         <div class="artist-card abs-bottom" :class="{'abs-bottom--up': index % 2 === 0}">
           <div class="img-container">
             <img :src="artist.img" alt />
@@ -91,33 +87,12 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
-    if (this.windowWidth < 950) {
-      this.artists.pop();
-      this.artists.pop();
-      this.artists.pop();
-      this.artists.pop();
-      this.artists.pop();
-    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_mixins.scss";
-.mobile-offset-2 {
-  @include respond(phone) {
-    margin-left: 20%;
-  }
-}
-
-.more-artist-button {
-  @include respond(phone) {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
-}
 
 .graphic-left {
   position: absolute;
@@ -146,9 +121,6 @@ export default {
   @include respond(4k-desktop) {
     height: 50%;
   }
-  @include respond(phone) {
-    height: 75%;
-  }
 }
 
 .abs-bottom {
@@ -156,13 +128,7 @@ export default {
   bottom: 0;
   &--up {
     bottom: -20%;
-    @include respond(phone) {
-      bottom: 30%;
-    }
   }
-  // @include respond(phone) {
-  //   bottom: 10%;
-  // }
 }
 
 .high-index {
@@ -207,16 +173,9 @@ export default {
     @include respond(tab-land) {
       font-size: 1.25rem;
     }
-    // @include respond(phone) {
-    //   font-size: 1.25rem;
-    // }
     @include respond(4k-desktop) {
       font-size: 3.5rem;
     }
-  }
-
-  @include respond(phone) {
-    padding-top: 2rem;
   }
 }
 
@@ -225,19 +184,11 @@ export default {
 }
 .mt-6 {
   margin-top: 8rem;
-  @include respond(phone) {
-    margin-top: 0rem;
-  }
 }
 
 .px-6 {
   margin-right: 4rem;
   margin-left: 4rem;
-
-  @include respond(phone) {
-    margin-right: 0;
-    margin-left: 0;
-  }
 }
 
 .btn {
@@ -252,9 +203,6 @@ export default {
     font-size: 5rem;
     margin-top: 20rem;
   }
-  @include respond(phone) {
-    padding: 1rem 0rem;
-  }
 }
 
 .go-up {
@@ -265,8 +213,8 @@ export default {
   @include respond(4k-desktop) {
     margin-top: -25rem;
   }
-  @include respond(phone) {
-    margin-top: -7rem;
+  @include respond(tab-port) {
+    margin-top: 0rem;
   }
 }
 
@@ -288,9 +236,11 @@ export default {
 
   @include respond(tab-land) {
     font-size: 20rem;
+    margin-top: 0rem;
   }
-  @include respond(phone) {
-    font-size: 10rem;
+  @include respond(tab-port) {
+    font-size: 15rem;
+    margin-top: 0rem;
   }
 }
 </style>
