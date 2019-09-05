@@ -1,7 +1,7 @@
 
 <template>
   <div class="section-hero">
-    <HeaderHero menutype="menu__items--white" iconWhite="true" v-if="windowWidth > 950" />
+    <HeaderHero menutype="menu__items--white" iconWhite="true" v-if="windowWidth > 750" />
 
     <img src="@/assets/img/logo.svg" alt="Kenga Magjike logo" class="logo" />
     <div class="row h-100">
@@ -59,9 +59,11 @@ export default {
     };
   },
   mounted() {
-    window.onresize = () => {
-      this.windowWidth = window.innerWidth;
-    };
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
   }
 };
 </script>

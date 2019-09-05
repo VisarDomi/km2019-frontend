@@ -4,7 +4,7 @@
       menutype="menu__items--white"
       iconWhite="true"
       logoWhite="true"
-      v-if="windowWidth > 950"
+      v-if="windowWidth > 750"
     />
     <div class="row go-up--small">
       <div class="col-lg-5 offset-lg-1">
@@ -96,9 +96,11 @@ export default {
     };
   },
   mounted() {
-    window.onresize = () => {
-      this.windowWidth = window.innerWidth;
-    };
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
   }
 };
 </script>
@@ -128,9 +130,30 @@ export default {
 }
 
 .composition-image {
+  &--1 {
+    @include respond(small-screen) {
+      width: 90%;
+    }
+  }
   &--2 {
     position: absolute;
-    bottom: 0;
+    bottom: 7%;
+    width: 100%;
+    left: -3%;
+    @include respond(small-screen) {
+      width: 65%;
+      bottom: -5%;
+    }
+  }
+  &--3 {
+    position: absolute;
+    width: 100%;
+    left: -27%;
+    @include respond(small-screen) {
+      width: 65%;
+      left: -27%;
+      bottom: 5%;
+    }
   }
   &--4 {
     text-align: right;
@@ -159,6 +182,7 @@ export default {
 
     @include respond(small-screen) {
       font-size: 15rem;
+      top: 18%;
     }
   }
 }
@@ -211,12 +235,18 @@ export default {
 .carousel-right {
   position: absolute;
   right: 25%;
+  @include respond(small-screen) {
+    right: 20%;
+  }
   margin-top: 2rem;
   // bottom: 40%;
 }
 .carousel-left {
   position: absolute;
   left: 25%;
+  @include respond(small-screen) {
+    left: 20%;
+  }
   margin-top: 2rem;
   // bottom: 40%;
 }
@@ -232,6 +262,9 @@ export default {
   margin-top: -7rem;
   &--small {
     margin-top: -2rem;
+    @include respond(small-screen) {
+      margin-top: -4%;
+    }
   }
 }
 .description {

@@ -4,7 +4,7 @@
       menutype="menu__items--white"
       iconWhite="true"
       logoWhite="true"
-      v-if="windowWidth > 950"
+      v-if="windowWidth > 750"
     />
     <div class="row h-25">
       <div class="header-container">
@@ -89,15 +89,18 @@ export default {
     };
   },
   mounted() {
-    window.onresize = () => {
-      this.windowWidth = window.innerWidth;
-    };
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "@/assets/sass/abstracts/_mixins.scss";
 .graphic-right {
   position: absolute;
   opacity: 0.2;
@@ -228,11 +231,17 @@ export default {
   position: absolute;
   top: 6%;
   left: 5%;
+  @include respond(small-screen) {
+    left: 10%;
+  }
   z-index: 5;
   h1 {
     font-size: 20rem;
     font-family: Vollkorn;
     font-weight: 700;
+    @include respond(small-screen) {
+      font-size: 15rem;
+    }
   }
 }
 </style>

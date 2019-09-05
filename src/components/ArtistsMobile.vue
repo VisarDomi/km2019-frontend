@@ -123,7 +123,7 @@ export default {
 
     display: inline-block;
     padding: 6px 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 2rem;
   }
 }

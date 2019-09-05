@@ -235,7 +235,7 @@ export default {
     font-size: 25rem;
   }
   @include respond(small-screen) {
-    font-size: 17rem;
+    font-size: 15rem;
   }
   @include respond(tab-land) {
     font-size: 15rem;
@@ -254,10 +254,13 @@ export default {
   color: #c360b5;
   font-size: 2.3rem;
   line-height: 3rem;
-  margin-top: 3rem; //lg only
+  margin-top: 3rem;
   @include respond(4k-desktop) {
     font-size: 4rem;
     line-height: 4.5rem;
+  }
+  @include respond(small-screen) {
+    margin-top: 1rem;
   }
 }
 

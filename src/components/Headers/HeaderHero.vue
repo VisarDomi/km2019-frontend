@@ -1,7 +1,7 @@
 <template>
   <!-- <div> -->
   <div class="row align-items-center menu__items" v-bind:class="menutype">
-    <div class="col-xl-3 col-lg-4">
+    <div class="col-xl-3 col-lg-4 col-sm-4">
       <span class="d-lg-inline-block" href="#" v-if="logoBlack">
         <img
           src="@/assets/img/logoblack.svg"
@@ -19,12 +19,15 @@
         />
       </span>
     </div>
-    <div class="col-lg-1 offset-xl-3 offset-lg-2 cmi" @click="goToArtists()">artistët</div>
-    <div class="col-lg-1 cmi">ndër vite</div>
-    <div class="col-lg-1 cmi">#magjike</div>
-    <div class="col-lg-1 cmi" @click="goToBlogs()">të reja</div>
-    <div class="col-lg-1 cmi" @click="goToRregullore()">rregullore</div>
-    <div class="col-lg-1 high-index">
+    <div
+      class="col-lg-1 col-sm-1 offset-xl-3 offset-lg-2 offset-sm-2 cmi"
+      @click="goToArtists()"
+    >artistët</div>
+    <div class="col-lg-1 col-sm-1 cmi">ndër vite</div>
+    <div class="col-lg-1 col-sm-1 cmi">#magjike</div>
+    <div class="col-lg-1 col-sm-1 cmi" @click="goToBlogs()">të reja</div>
+    <div class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rregullore</div>
+    <div class="col-lg-1 col-sm-1 high-index">
       <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
         <img
           v-if="shouldHide"
@@ -115,6 +118,7 @@ export default {
     eventBus.$on("menuState", payload => {
       this.shouldHide = payload;
     });
+    this.collapseMenu();
   }
 };
 </script>
