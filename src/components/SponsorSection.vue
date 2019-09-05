@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import FooterBlack from "@/components/Footer/Footer Black.vue";
+import FooterBlack from "@/components/Footer/FooterBlack.vue";
 import Footer from "@/components/Footer/Footer White.vue";
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 import HeaderMobile from "@/components/Headers/MobileHeader.vue";

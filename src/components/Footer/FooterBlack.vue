@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  name: "Footer Black",
+  name: "FooterBlack",
   data() {
     return {};
   },
