@@ -39,7 +39,7 @@
           <img src="@/assets/img/Path 2580.svg" alt />
         </div>
         <div class="main-header">
-          <h1>#magjike</h1>
+          <h1>#fotome</h1>
         </div>
         <div class="composition h-50">
           <div class="row h-50">
@@ -74,7 +74,7 @@
           </div>
         </div>
         <div class="abs-bottom w-100 text-center">
-          <a href="#" class="btn">dorëzo artin tend</a>
+          <a href="#" class="btn">dorëzo foton tend</a>
         </div>
       </div>
     </div>

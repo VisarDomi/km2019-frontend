@@ -1,10 +1,11 @@
 <template>
   <div class="home">
-    <LandingSection />
+    <!-- <LandingSection /> -->
     <HeaderMobile v-if="windowWidth < 750" />
     <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="example">
-        <HeroSection />
+        <!-- <HeroSection /> -->
+        <HeroSection2 />
 
         <ArtistsSection v-if="windowWidth > 600" />
         <ArtistsMobile v-else />
@@ -30,6 +31,7 @@ import HeaderMobile from "@/components/Headers/MobileHeader.vue";
 import LandingSection from "@/components/LandingSection.vue";
 
 import HeroSection from "@/components/HeroSection.vue";
+import HeroSection2 from "@/components/HeroSection2.vue";
 
 import ArtistsSection from "@/components/ArtistsSection.vue";
 import ArtistsMobile from "@/components/ArtistsMobile.vue";
@@ -52,6 +54,7 @@ export default {
   components: {
     LandingSection,
     HeroSection,
+    HeroSection2,
     ArtistsSection,
     ArtistsMobile,
     AcrossYearsSection,

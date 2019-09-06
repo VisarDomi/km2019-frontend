@@ -19,7 +19,7 @@
         <img src="@/assets/img/Group 158.svg" alt />
       </div>
       <div class="container h-100">
-        <a @click.prevent="nextSlide">
+        <!-- <a @click.prevent="nextSlide">
           <div class="carousel-right">
             <img class="img-fluid img-next-arrow" src="@/assets/img/ndervite_right.svg" alt />
           </div>
@@ -28,62 +28,17 @@
           <div class="carousel-left">
             <img class="img-fluid img-left-arrow" src="@/assets/img/ndervite_left.svg" alt />
           </div>
-        </a>
-        <carousel ref="carousel" :perPageCustom="[[0,1]]" :paginationEnabled="false">
-          <slide>
-            <!-- <div class="image-container"> -->
-            <div class="slider-img-container h-100">
-                        <div class="embed-responsive embed-responsive-16by9 h-100">
-                          <iframe
-                            class="embed-responsive-item"
-                            src="https://www.youtube.com/embed/GnxAhRj38Qk"
-                            allowfullscreen
-                          ></iframe>
-                        </div>
-              <p class="year">2017</p>
-            </div>
-            <!-- </div> -->
-          </slide>
-          <slide>
-            <div class="slider-img-container h-100">
-                        <div class="embed-responsive embed-responsive-16by9 h-100">
-                          <iframe
-                            class="embed-responsive-item"
-                            src="https://www.youtube.com/embed/GnxAhRj38Qk"
-                            allowfullscreen
-                          ></iframe>
-                        </div>
-              <p class="year">2018</p>
-            </div>
-          </slide>
-
-          <slide>
-            <div class="slider-img-container h-100">
-                        <div class="embed-responsive embed-responsive-16by9 h-100">
-                          <iframe
-                            class="embed-responsive-item"
-                            src="https://www.youtube.com/embed/GnxAhRj38Qk"
-                            allowfullscreen
-                          ></iframe>
-                        </div>
-              <p class="year">2019</p>
-            </div>
-          </slide>
-          <slide>
-            <!-- <div class="image-container"> -->
-            <div class="slider-img-container h-100">
-                        <div class="embed-responsive embed-responsive-16by9 h-100">
-                          <iframe
-                            class="embed-responsive-item"
-                            src="https://www.youtube.com/embed/GnxAhRj38Qk"
-                            allowfullscreen
-                          ></iframe>
-                        </div>
-              <p class="year">2017</p>
-            </div>
-            <!-- </div> -->
-          </slide>
-        </carousel>
+        </a>-->
+        <div class="slider-img-container h-100">
+          <div class="embed-responsive embed-responsive-16by9 h-100">
+            <iframe
+              class="embed-responsive-item"
+              src="https://www.youtube.com/embed/GnxAhRj38Qk"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <!-- <p class="year">2017</p> -->
+        </div>
       </div>
     </div>
     <div class="row">
@@ -131,18 +86,17 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
-.h-20{
-  height:20%;
+.h-20 {
+  height: 20%;
 }
 
-.h-30{
-  height:30%;
+.h-30 {
+  height: 30%;
 }
 
-.h-40{
-  height:40%;
+.h-40 {
+  height: 40%;
 }
-
 
 .container {
   height: 30rem;
@@ -157,13 +111,12 @@ export default {
 
 .slider-img-container {
   text-align: center;
-  width:60%;
-    margin-left:auto;
-  margin-right:auto;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.embed-responsive{
-
+.embed-responsive {
 }
 
 .graphic-left {
@@ -251,7 +204,7 @@ export default {
 }
 
 .description {
-  padding-top:3rem;
+  padding-top: 3rem;
   color: #c360b5;
   font-size: 2.3rem;
   line-height: 3rem;

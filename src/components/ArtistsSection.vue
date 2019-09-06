@@ -3,11 +3,15 @@
     <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 750" />
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h1 class="header-text">artistët</h1>
+        <h1 class="header-text">juria</h1>
       </div>
     </div>
-    <div class="row px-6 respond-height go-up">
-      <div class="col-lg-2 col-sm-2 col-7" v-for="(artist, index) in artists" :key="artist.name">
+    <div class="row px-6 respond-height">
+      <div
+        class="col-lg-2 col-sm-2 col-7 ml-6"
+        v-for="(artist, index) in artists"
+        :key="artist.name"
+      >
         <div class="artist-card abs-bottom" :class="{'abs-bottom--up': index % 2 === 0}">
           <div class="img-container">
             <img :src="artist.img" alt />
@@ -20,7 +24,7 @@
 
     <div class="row mt-6">
       <div class="col-lg-6 offset-lg-3 col-12 text-center">
-        <a href="#" class="btn more-artist-button" @click="goToArtists()">më shumë artistë</a>
+        <!-- <a href="#" class="btn more-artist-button" @click="goToArtists()">më shumë artistë</a> -->
       </div>
     </div>
     <div class="graphic-left w-50" v-if="windowWidth > 950">
@@ -48,35 +52,35 @@ export default {
     return {
       artists: [
         {
-          name: "Klajdi Haruni1",
+          name: "Juria1",
           songtilte: "Loose yourself to dance",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         },
         {
-          name: "Klajdi Haruni2",
+          name: "Juria2",
           songtilte: "Loose yourself to dance",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         },
         {
-          name: "Klajdi Haruni3",
+          name: "Juria3",
           songtilte: "Loose yourself to dance",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         },
         {
-          name: "Klajdi Haruni4",
+          name: "Juria4",
           songtilte: "Loose yourself to dance",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         },
         {
-          name: "Klajdi Haruni5",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "Klajdi Haruni",
+          name: "Juria5",
           songtilte: "Loose yourself to dance",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         }
+        // {
+        //   name: "Klajdi Haruni",
+        //   songtilte: "Loose yourself to dance",
+        //   img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
+        // }
       ],
       windowWidth: window.innerWidth
     };
@@ -93,6 +97,9 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_mixins.scss";
+.ml-6 {
+  margin-left: 3%;
+}
 
 .graphic-left {
   position: absolute;
