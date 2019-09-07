@@ -1,6 +1,6 @@
 <template>
   <div class="voto">
-    <div class="row justify-content-between header-row align-items-center h-15">
+    <div class="row justify-content-between header-row align-items-center">
       <div class="col-lg-3 col-sm-3 col-6 text-center">
         <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
@@ -24,24 +24,17 @@
       </div>
     </div>
 
-    <div class="row voto-artist-row voto-card mb-5">
+    <div class="row voto-artist-row voto-card mt-5" v-for="artist in artists" :key="artist.name">
       <div class="col-lg-7 offset-lg-2">
-        <span class="artist-name">Soni Malaj</span>
+        <span class="artist-name">{{artist.name}}</span>
         <hr />
-        <span class="artist-song">Loose Yourself to dance</span>
+        <span class="artist-song">{{artist.song}}</span>
       </div>
-      <div class="col-lg-1 bg-danger">
-        
+      <div class="col-lg-1">
+        <img @click="goToRoute('')" src="@/assets/img/Ellipse 13.svg" alt class="voto-img" />
       </div>
     </div>
-    <div class="row voto-artist-row voto-card mb-5">
-      <div class="col-lg-7 offset-lg-2">
-        <span class="artist-name">Daft</span>
-        <hr />
-        <span class="artist-song">Loose Yourself to dance</span>
-      </div>
-      <div class="col-lg-1 bg-danger"></div>
-    </div>
+    <div class="spacer"></div>
   </div>
 </template>
 
@@ -51,7 +44,16 @@ export default {
   name: "Voto",
   components: {},
   data() {
-    return {};
+    return {
+      artists: [
+        { name: "John Wick", song: "La Vendetta" },
+        { name: "Chamunda", song: "Goddess of war and famine" },
+        { name: "Mike Tyson", song: "suplex!!!" },
+        { name: "Batman", song: "I'm batman" },
+        { name: "Daft", song: "Loose yourself to dance" },
+        { name: "Daft", song: "Loose yourself to dance" }
+      ]
+    };
   },
   mounted() {},
   methods: {
@@ -64,7 +66,13 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
-.voto-card {
+.spacer {
+  // background: #0e1032;
+  height: 10rem;
+}
+
+.voto-img {
+  margin-top: 13%;
 }
 
 hr {
@@ -87,6 +95,7 @@ hr {
 
 .voto-artist-row {
   height: 10%;
+  background: #0e1032;
 }
 
 .back-hover:hover {
@@ -94,12 +103,8 @@ hr {
   cursor: pointer;
 }
 
-.h-15 {
-  height: 14% !important;
-}
-
 .voto {
-  height: 100vh;
+  // height: 100vh;
   background: #0e1032;
   background-size: cover;
   background-attachment: fixed;
@@ -125,7 +130,7 @@ hr {
 .header-row {
   margin-right: 0px;
   margin-left: 0px;
-  height: 10rem;
+  height: 12rem;
   background: #151745;
 }
 
