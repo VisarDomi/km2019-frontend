@@ -20,17 +20,39 @@
         <div class="graphic-left">
           <img src="@/assets/img/Path 2580.svg" alt />
         </div>
-        <div class="image-container mt-2">
-          <img src="@/assets/img/Group 115.svg" alt />
+        <div class="image-container mt-2 text-center">
+
+
+
+      <carousel
+        ref="carouselsubmission"
+        :perPage="1"
+        :paginationEnabled="false"
+        :navigationEnabled="false"
+      >
+
+          <slide>
+            <img class="img-fluid" src="@/assets/img/Group 115.svg" alt style="width:auto;"/>
+          </slide>
+
+          <slide>
+            <img class="img-fluid " src="@/assets/img/Group 116.png" alt style="width:auto;" />
+          </slide>
+
+      </carousel>
+
+
+
+      
         </div>
         <div class="image-footer">
           <div class="image--name mt-3">Emer Mbiemer</div>
           <div class="image--instagram">@insta_account</div>
           <div class="carousel-right">
-            <img src="@/assets/img/magjike_right.svg" alt />
+            <img @click.prevent="nextSlide" src="@/assets/img/magjike_right.svg" alt />
           </div>
           <div class="carousel-left">
-            <img src="@/assets/img/magjike_left.svg" alt />
+            <img @click.prevent="prevSlide" src="@/assets/img/magjike_left.svg" alt />
           </div>
         </div>
       </div>
@@ -82,6 +104,8 @@
 </template>
 
 <script>
+
+import { Carousel, Slide } from "vue-carousel";
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 
 export default {
@@ -94,6 +118,14 @@ export default {
     return {
       windowWidth: window.innerWidth
     };
+  },
+  methods: {
+        nextSlide() {
+      this.$refs.carouselsubmission.goToPage(this.$refs.carouselsubmission.getNextPage());
+    },
+    prevSlide() {
+      this.$refs.carouselsubmission.goToPage(this.$refs.carouselsubmission.getPreviousPage());
+    },
   },
   mounted() {
     this.$nextTick(() => {
@@ -109,6 +141,10 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
+
+.w-65{
+  width: 65% !important;
+}
 .btn {
   padding: 0.5rem 12rem;
   border: 2px solid black;
@@ -222,8 +258,17 @@ export default {
   }
 }
 
+.carousel-right:hover{
+  cursor:pointer;
+}
+
+.carousel-left:hover{
+  cursor: pointer;
+}
+
 .carousel-right {
   position: absolute;
+  z-index:99999;
   right: 25%;
   @include respond(small-screen) {
     right: 20%;
@@ -233,6 +278,7 @@ export default {
 }
 .carousel-left {
   position: absolute;
+  z-index:99999;
   left: 25%;
   @include respond(small-screen) {
     left: 20%;
@@ -241,6 +287,8 @@ export default {
   // bottom: 40%;
 }
 .image-container {
+  z-index:99999;
+  position:relative;
   height: 53%;
   img {
     height: 100%;
