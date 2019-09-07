@@ -11,7 +11,7 @@
         <h1 class="header-text">ndër vite</h1>
       </div>
     </div>
-    <div class="row h-40">
+    <div class="row h-50">
       <div class="graphic-left w-25">
         <img src="@/assets/img/Group 147.svg" alt />
       </div>
@@ -30,7 +30,7 @@
           </div>
         </a>-->
         <div class="slider-img-container h-100">
-          <div class="embed-responsive embed-responsive-16by9 h-100">
+          <div class="embed-responsive embed-responsive-4by3 h-100">
             <iframe
               class="embed-responsive-item"
               src="https://www.youtube.com/embed/GnxAhRj38Qk"
@@ -98,6 +98,9 @@ export default {
   height: 40%;
 }
 
+.h-50{
+  height:50%;
+}
 .container {
   height: 30rem;
   margin-top: 2rem;
@@ -117,6 +120,7 @@ export default {
 }
 
 .embed-responsive {
+  box-shadow: 0px 0px 31px -16px #fff;
 }
 
 .graphic-left {
@@ -206,8 +210,10 @@ export default {
 .description {
   padding-top: 3rem;
   color: #c360b5;
-  font-size: 2.3rem;
-  line-height: 3rem;
+  font-size: 2rem;
+  font-weight:400;
+  font-family:Ubuntu;
+  line-height: 2.5rem;
   margin-top: 3rem;
   @include respond(4k-desktop) {
     font-size: 4rem;
