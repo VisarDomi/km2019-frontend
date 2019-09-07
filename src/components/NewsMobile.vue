@@ -132,26 +132,30 @@ export default {
 
 .blog-date-section{
     color: #c360b5;
-    position: absolute;
-    top: 38rem;
+    // position: absolute;
+    // top: 38rem;
     z-index: 30;
     font-family: Montserrat;
     background: white;
     font-weight: 700;
     font-size: 2rem;
     padding: 11px 11px 0px 11px;
-    left: 4rem;
+    // left: 4rem;
+    margin-left: 40px;
+    width: 26%;
 }
 
 .blog-title-section{
+  padding-top: 38%;
+    padding-left: 10%;
     color: white;
     z-index: 30;
-    position: relative;
+    // position: relative;
     font-family: Vollkorn;
-    top: 23rem;
+    // top: 23rem;
     width: 75%;
     text-align: left;
-    left: 4rem;
+    // left: 4rem;
     font-size: 4.5rem;
     line-height: 1;
 }
