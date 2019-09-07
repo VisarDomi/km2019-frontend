@@ -1,11 +1,15 @@
 <template>
   <div class="blogs">
-    <div class="row justify-content-between artist-row align-items-center">
-      <div class="col-lg-3 col-sm-2 col-xs-1 text-center">
-        <img class="img-logo" @click="goToHome()" src="@/assets/img/logowhite.svg" alt />
+    <div class="row justify-content-between artist-row align-items-center h-15">
+      <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
+        <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
-      <div class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover" @click="goToHome()">
-        <img src="@/assets/img/artistet_arrow_left.svg" alt class="back-icon center-block" />
+      <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToHome()">
+        <img
+          src="@/assets/img/artistet_arrow_left.svg"
+          alt
+          class="back-icon center-block respond-width"
+        />
       </div>
     </div>
     <!-- <div class="row">
@@ -21,12 +25,12 @@
     <div class="carousel-container">
       <a @click.prevent="nextSlide">
         <div class="carousel-right">
-          <img class="img-fluid img-next-arrow" src="@/assets/img/ndervite_right.svg" alt />
+          <img class="img-fluid img-next-arrow" src="@/assets/img/button next_posts.svg" alt />
         </div>
       </a>
       <a @click.prevent="prevSlide">
         <div class="carousel-left">
-          <img class="img-fluid img-left-arrow" src="@/assets/img/ndervite_left.svg" alt />
+          <img class="img-fluid img-left-arrow" src="@/assets/img/button previous_posts.svg" alt />
         </div>
       </a>
 
@@ -36,46 +40,22 @@
         :paginationEnabled="false"
         :navigationEnabled="false"
       >
-        <slide>
-          <div class="imageback">
-            <h1 class="blog-title" @click="goToBlog()">Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
-          </div>
-          <h3 class="date">22.10.2019</h3>
-        </slide>
-        <slide>
-          <div
-            class="imageback"
-            :style="{'background-image': 'url(' + require('@/assets/img/blog2.jpg') + ')'}"
+        <slide v-for="artist in artists" :key="artist.name">
+          
+            <div
+            class="h-100 slide-column"
+            :style="{'background-image': 'url(' + artist.img + ')'}"
           >
-            <h1 class="blog-title">Atmosferë serenatash në skenën e Këngës Magjike</h1>
-          </div>
+            <h1 class="blog-title" @click="goToBlog()">{{artist.songtilte}}</h1>
+            
+
           <h3 class="date">22.10.2019</h3>
-        </slide>
-        <slide>
-          <div
-            class="imageback"
-            :style="{'background-image': 'url(' + require('@/assets/img/blog3.jpg') + ')'}"
-          >
-            <h1 class="blog-title">Fifi dhe Mc Kresha betejë në skenë!</h1>
+
           </div>
-          <h3 class="date">22.10.2019</h3>
+            
+         
         </slide>
-        <slide>
-          <div
-            class="imageback"
-            :style="{'background-image': 'url(' + require('@/assets/img/blog4.jpg') + ')'}"
-          >
-            <h1 class="blog-title">Fifi dhe Mc Kresha betejë në skenë!</h1>
-          </div>
-          <h3 class="date">22.10.2019</h3>
-        </slide>
-        <slide>
-          <div
-            class="imageback"
-            :style="{'background-image': 'url(' + require('@/assets/img/sonimalaj.png') + ')'}"
-          ></div>
-        </slide>
-        <slide>Slide 2 Content</slide>
+
       </carousel>
     </div>
   </div>
@@ -92,7 +72,36 @@ export default {
     Slide
   },
   data() {
-    return {};
+    return {
+      
+      artists: [
+        {
+          name: "10.10.2018",
+          songtilte: "Flori Mumajesi fitues i Kënga Magjike 2018!",
+          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
+        },
+        {
+          name: "10.10.2018",
+          songtilte: "Ardit Gjebrea zbulon bukuroshen me të cilën do të prezantojë “Kënga Magjike” 2019!",
+          img: "https://i2.wp.com/bordo.al/wp-content/uploads/2019/08/3F5B2EF4-32D6-4A38-AA0C-B7265F170CAE.jpeg?w=750"
+        },
+        {
+          name: "10.10.2018",
+          songtilte: "Flori Mumajesi fitues i Kënga Magjike 2018!",
+          img: "https://www.kohajone.com/wp-content/uploads/2018/11/kenga-magjike.jpg"
+        },
+        {
+          name: "10.10.2018",
+          songtilte: "Kenga Magjike 2019, Vjen ndryshimi i dyte...",
+          img: "https://rapshqip.com/wp-content/uploads/2018/11/6FIHMs0WLL4.jpg"
+        },
+        {
+          name: "10.10.2018",
+          songtilte: "Flori Mumajesi fitues i Kënga Magjike 2018!",
+          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
+        },
+      ]
+    };
   },
   methods: {
     nextSlide() {
@@ -119,6 +128,25 @@ export default {
 </style>
 
 <style scoped lang="css">
+
+
+.slide-column{
+  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-column:hover {
+         background: -webkit-linear-gradient(rgba(200, 0, 60, 0) 0%, rgba(200, 0, 60, 0.5) 100%);
+  background: -moz-linear-gradient(rgba(200, 0, 60, 0) 0%, rgba(200, 0, 60, 0.5) 100%);
+  background: -o-linear-gradient(rgba(200, 0, 60, 0) 0%, rgba(200, 0, 60, 0.5) 100%);
+  background: linear-gradient(rgba(200, 0, 60, 0) 0%, rgba(200, 0, 60, 0.5) 100%);
+  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
 .img-logo:hover {
   cursor: pointer;
 }
@@ -178,27 +206,31 @@ export default {
 .blog-title {
   color: white;
   z-index: 30;
-  position: absolute;
+  // position: absolute;
   font-family: Vollkorn;
-  top: 30rem;
-  width: 75%;
-  text-align: left;
-  left: 2rem;
+  // top: 30rem;
+    width: 84%;
+    text-align: left;
+    font-size: 4.5rem;
+    padding-top: 58%;
+    padding-left: 10%;
   font-size: 4.5rem;
   line-height: 1;
 }
 
 .date {
   color: #c360b5;
-  position: absolute;
-  top: 50rem;
+  // position: absolute;
+  // top: 50rem;
   z-index: 30;
   font-family: Montserrat;
   background: white;
+  width:9rem;
+  margin-left: 10%;
   font-weight: 700;
   font-size: 1.4rem;
   padding: 11px 11px 0px 11px;
-  left: 2rem;
+  // left: 2rem;
 }
 
 .no-pad {
