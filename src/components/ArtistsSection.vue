@@ -35,7 +35,7 @@
 
     <div class="row mt-6">
       <div class="col-lg-6 offset-lg-3 col-12 text-center">
-        <!-- <a href="#" class="btn more-artist-button" @click="goToArtists()">më shumë artistë</a> -->
+        <!-- <a href="#" class="btn" @click="goToArtists()">më shumë artistë</a> -->
       </div>
     </div>
     <div class="graphic-left w-50" v-if="windowWidth > 950">

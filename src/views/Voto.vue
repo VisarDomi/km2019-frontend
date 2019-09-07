@@ -31,7 +31,7 @@
         <span class="artist-song">{{artist.song}}</span>
       </div>
       <div class="col-lg-1">
-        <img @click="goToRoute('')" src="@/assets/img/Ellipse 13.svg" alt class="voto-img" />
+        <img @click="goToVotoArtist()" src="@/assets/img/Ellipse 13.svg" alt class="voto-img" />
       </div>
     </div>
     <div class="spacer"></div>
@@ -57,8 +57,11 @@ export default {
   },
   mounted() {},
   methods: {
-    goToRoute(name) {
-      this.$router.push({ name: name });
+    goToVotoArtist() {
+      this.$router.push({ name: "VotoArtist" });
+    },
+    goToHome() {
+      this.$router.push({ name: "Home" });
     }
   }
 };

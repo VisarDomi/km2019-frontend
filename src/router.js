@@ -8,6 +8,7 @@ import Blogs from "./views/Blogs.vue";
 import SingleBlog from "./views/SingleBlog.vue";
 import Rregullore from "./views/Rregullore.vue";
 import Voto from "./views/Voto.vue";
+import VotoArtist from "./views/VotoArtist.vue";
 
 Vue.use(Router);
 
@@ -55,6 +56,12 @@ export default new Router({
       path: "/voto",
       name: "Voto",
       component: Voto,
+      meta: { transition: "overlay-left" }
+    },
+    {
+      path: "/voto-artist",
+      name: "VotoArtist",
+      component: VotoArtist,
       meta: { transition: "overlay-left" }
     }
   ]

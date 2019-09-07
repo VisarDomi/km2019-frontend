@@ -1,0 +1,16 @@
+<svg id="selected" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="77.91" height="77.91" viewBox="0 0 77.91 77.91">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="19.034" height="19.034" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="e2" transform="translate(0 0)" fill="none" stroke="#fff" stroke-width="2">
+    <ellipse cx="38.955" cy="38.955" rx="38.955" ry="38.955" stroke="none"/>
+    <ellipse cx="38.955" cy="38.955" rx="37.955" ry="37.955" fill="none"/>
+  </g>
+  <ellipse id="e1" cx="31.955" cy="31.955" rx="31.955" ry="31.955" transform="translate(7 7)" fill="#fff"/>
+  <g id="icon_cancel_vote" transform="translate(29.165 28.94)" opacity="0.05" clip-path="url(#clip-path)">
+    <rect id="Rectangle_23" data-name="Rectangle 23" width="25.363" height="3.089" transform="translate(1.099 0) rotate(45)" fill="#282828"/>
+    <rect id="Rectangle_24" data-name="Rectangle 24" width="25.363" height="3.089" transform="translate(19.033 1.099) rotate(135)" fill="#282828"/>
+  </g>
+</svg>
