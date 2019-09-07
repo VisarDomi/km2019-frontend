@@ -1,29 +1,18 @@
 <template>
   <div class="section-artists" id="section-artists">
     <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 750" />
-    <div class="row go-up">
+    <div class="row">
       <div class="col-lg-12 text-center">
-        <h1 class="header-text">artistet</h1>
+        <h1 class="header-text">juria</h1>
       </div>
     </div>
-    <div class="row px-6 respond-height go-up">
+    <div class="row px-6 respond-height">
       <div
-        class="col-lg-2 col-sm-2 col-7 ml-6 pos-relative"
-        v-for="(artist, index) in artistsRow1"
+        class="col-lg-2 col-sm-2 col-7 ml-6"
+        v-for="(artist, index) in artists"
         :key="artist.name"
       >
         <div class="artist-card abs-bottom" :class="{'abs-bottom--up': index % 2 === 0}">
-          <div>
-            <img :src="artist.img" alt />
-          </div>
-          <p class="artist-card__name go-up--small">{{artist.name}}</p>
-          <p class="artist-card__song">{{artist.songtilte}}</p>
-        </div>
-      </div>
-    </div>
-    <div class="row respond-height">
-      <div :class="myClass()" v-for="artist in artistsRow2" :key="artist.name">
-        <div class="artist-card abs-bottom abs-bottom--up">
           <div class="img-container">
             <img :src="artist.img" alt />
           </div>
@@ -61,7 +50,7 @@ export default {
   },
   data() {
     return {
-      artistsRow1: [
+      artists: [
         {
           name: "Juria1",
           songtilte: "Loose yourself to dance",
@@ -88,32 +77,8 @@ export default {
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         }
       ],
-      artistsRow2: [
-        {
-          name: "Juria6",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "Juria7",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        }
-        // {
-        //   name: "Juria8",
-        //   songtilte: "Loose yourself to dance",
-        //   img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        // }
-      ],
       windowWidth: window.innerWidth
     };
-  },
-  methods: {
-    myClass() {
-      let nrColumns = this.artistsRow2.length;
-      // return `col-lg-2 col-sm-2 col-7 pos-relative col-${nrColumns}-centered`;
-      return `col-lg-2 col-sm-2 col-7 ml-6 pos-relative col-${nrColumns}-centered`;
-    }
   },
   mounted() {
     this.$nextTick(() => {
@@ -127,25 +92,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_mixins.scss";
-.pos-relative {
-  position: relative;
-}
-
-.col-3-centered {
-  margin-left: 13% !important;
-}
-.col-2-centered {
-  margin-left: 23% !important;
-}
-.col-1-centered {
-  margin-left: 0%;
-}
-
-.img-container {
-  max-width: 100%;
-  height: auto;
-}
-
 .ml-6 {
   margin-left: 3%;
 }
@@ -264,8 +210,7 @@ export default {
 .go-up {
   margin-top: -7rem;
   &--small {
-    position: absolute;
-    bottom: 13%;
+    margin-top: -4rem;
   }
   @include respond(4k-desktop) {
     margin-top: -25rem;
@@ -289,7 +234,7 @@ export default {
   // color: black;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px black;
-  font-size: 20rem;
+  font-size: 25rem;
   @include respond(4k-desktop) {
     font-size: 30rem;
   }

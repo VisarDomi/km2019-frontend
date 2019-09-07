@@ -39,12 +39,28 @@ export default {
         Element[0].parentNode.removeChild(Element[0]);
       }, 1000);
 
-      console.log(Element);
-      console.log(Element[0]);
+      // console.log(Element);
+      // console.log(Element[0]);
+    },
+    isInView(el) {
+      var rect = el.getBoundingClientRect();
+      return !(rect.top > $(window).height() || rect.bottom < 0);
     }
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
+    $(document).on("scroll", function() {
+      console.log("scrolling");
+      $("video").each(function() {
+        console.log("yea");
+        if (isInView($(this)[0])) {
+          // visible?
+          if ($(this)[0].paused) $(this)[0].play(); // play if not playing
+        } else {
+          if (!$(this)[0].paused) $(this)[0].pause(); // pause if not paused
+        }
+      });
+    });
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);

@@ -43,17 +43,17 @@
         </div>
         <div class="composition h-50">
           <div class="row h-50">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
               <div class="composition-image--1">
                 <img src="@/assets/img/Composition 1.svg" class="img-fluid" alt />
               </div>
             </div>
-            <div class="col-lg-4 high-index">
+            <div class="col-lg-3 ml-5 high-index">
               <div class="composition-image--2">
                 <img src="@/assets/img/Composition 2.svg" class="img-fluid" alt />
               </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
               <div class="composition-image--3">
                 <img src="@/assets/img/Composition 3.svg" class="img-fluid" alt />
               </div>
@@ -61,12 +61,12 @@
           </div>
 
           <div class="row h-50 mt-6">
-            <div class="col-lg-4 high-index">
+            <div class="col-lg-3 high-index">
               <div class="composition-image--4">
                 <img src="@/assets/img/Composition 4.svg" class="img-fluid" alt />
               </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
               <div class="composition-image--5">
                 <img src="@/assets/img/Composition 5.svg" class="img-fluid" alt />
               </div>
@@ -108,6 +108,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+
 .btn {
   padding: 0.5rem 12rem;
   border: 2px solid black;
@@ -131,35 +132,24 @@ export default {
 
 .composition-image {
   &--1 {
-    @include respond(small-screen) {
-      width: 90%;
-    }
+    width: 100%;
+    height: 100%;
+    transform: scale(1.1);
   }
   &--2 {
-    position: absolute;
-    bottom: 7%;
     width: 100%;
-    left: -3%;
-    @include respond(small-screen) {
-      width: 65%;
-      bottom: -5%;
-    }
+    height: 100%;
+    margin-top: 10%;
   }
   &--3 {
-    position: absolute;
     width: 100%;
-    left: -27%;
     @include respond(small-screen) {
       width: 65%;
-      left: -27%;
-      bottom: 5%;
     }
   }
   &--4 {
-    text-align: right;
   }
   &--5 {
-    text-align: right;
   }
 }
 
