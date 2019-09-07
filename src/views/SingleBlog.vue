@@ -1,36 +1,40 @@
 <template>
   <div class="blog-page">
-    <div class="row justify-content-between artist-row align-items-center">
-      <div class="col-lg-3 col-sm-2 col-xs-1 text-center">
-        <img class="img-logo" src="@/assets/img/logowhite.svg" @click="goToHome()" alt />
+    <div class="row justify-content-between artist-row align-items-center h-15">
+      <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
+        <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
-      <div class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover" @click="goToBlogs()">
-        <img src="@/assets/img/artistet_arrow_left.svg" alt class="back-icon center-block" />
+      <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
+        <img
+          src="@/assets/img/artistet_arrow_left.svg"
+          alt
+          class="back-icon center-block respond-width"
+        />
       </div>
     </div>
 
     <div class="row blog-row">
-      <div class="col-md-5  col-xs-12 image-col">
-        <img class="blog-image" src="@/assets/img/single_blog_1.jpg" alt />
+      <div class="col-md-5  col-12 image-col">
+        <img class="blog-image" src="https://lapsi.al/wp-content/uploads/2018/12/1-7-1024x922.jpg" alt />
       </div>
       <div class="col-md-7 col-xs-12 blog-col">
         <div class="container">
-          <h1 class="blog-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
+          <h1 class="single-blog-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
           <hr />
           <p
             class="blog-content"
           >Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.</p>
 
           <div class="row">
-            <p class="date">22.10.2019</p>
+            <p class="single-date">22.10.2019</p>
             <a @click.prevent="nextSlide">
               <div class="carousel-right">
-                <img class="img-fluid img-next-arrow" src="@/assets/img/ndervite_right.svg" alt />
+                <img class="img-fluid img-next-arrow" src="@/assets/img/button next_posts.svg" alt />
               </div>
             </a>
             <a @click.prevent="prevSlide">              
               <div class="carousel-left">
-                <img class="img-fluid img-left-arrow" src="@/assets/img/ndervite_left.svg" alt />
+                <img class="img-fluid img-left-arrow" src="@/assets/img/button previous_posts.svg" alt />
               </div></a>
           </div>
 
@@ -102,31 +106,36 @@ export default {
 
 <style lang="scss" scoped>
 
+
+@import "@/assets/sass/abstracts/_mixins.scss";
+
+
+
 .img-logo:hover{
   cursor:pointer;
 }
 
 .img-next-arrow {
-  width: 6rem;
+  width: 5rem;
 }
 
 .carousel-right {
   position: absolute;
   right: 8rem;
-      padding-top: 19px;
+  padding-top: 19px;
 }
 .carousel-right:hover {
   cursor: pointer;
 }
 
 .img-left-arrow {
-  width: 6rem;
+  width: 5rem;
 }
 
 .carousel-left {
   position: absolute;
   right: 15rem;
-  padding-top:15px;
+  padding-top:19px;
 }
 
 .carousel-left:hover {
@@ -174,10 +183,22 @@ export default {
   margin-right: -50%;
 }
 
-.date {
+.single-date {
   position: initial;
   width: fit-content;
   margin-top: 3rem;
+
+    color: #c360b5;
+  // position: absolute;
+  // top: 50rem;
+  z-index: 30;
+  font-family: Montserrat;
+  background: white;
+  width:9rem;
+  // margin-left: 10%;
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding: 11px 11px 0px 11px;
 }
 
 .blog-content {
@@ -187,7 +208,7 @@ export default {
   font-weight: 400;
 }
 
-.blog-title {
+.single-blog-title {
   color: white;
   font-size: 4rem;
   margin-top: 20%;
@@ -205,6 +226,8 @@ hr {
   height: 100%;
   height: calc(100vh);
   position: fixed;
+
+
 }
 
 .blog-row {
@@ -213,6 +236,9 @@ hr {
 .image-col {
   background: salmon;
   padding: 0;
+      @include respond(small-screen) {
+    height: 45%;
+  }
   margin: 0;
 }
 .blog-col {
