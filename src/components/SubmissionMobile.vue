@@ -1,6 +1,6 @@
 <template>
   <div class="section-submissions">
-    <div class="carousel-container h-100">
+    <div class="carousel-container ">
       <carousel ref="carousel2" :perPageCustom="[[0,1]]" :paginationEnabled="false">
         <slide>
           <div class="row h-45">
@@ -29,6 +29,40 @@
               <a href="#" class="btn">dorëzo artin tend</a>
             </div>
           </div>
+        </slide>
+
+                <slide>
+          <div class="row h-45">
+            <div class="slider-img-container h-100 w-100">
+              <img src="@/assets/img/Group 116.png" class="h-100 w-100" alt />
+            </div>
+          </div>
+
+          <div class="row h-8 go-up">
+            <div class="name mt-3">Emer Mbiemer</div>
+            <div class="instagram">@insta_account</div>
+          </div>
+          <div class="row h-10">
+            <p class="magjike">#magjike</p>
+          </div>
+          <div class="row h-10 mt-3">
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+              sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+              aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+              exerci tation.
+            </p>
+          </div>
+          <div class="row h-10">
+            <div class="w-100 text-center">
+              <a href="#" class="btn">dorëzo artin tend</a>
+            </div>
+          </div>
+        </slide>
+      </carousel>
+
+
+
           <div class="row h-10 navigation-container">
             <div class="col-6 h-100">
               <div class="carousel-left text-center" @click.prevent="prevSlide">
@@ -42,8 +76,6 @@
               </div>
             </div>
           </div>
-        </slide>
-      </carousel>
     </div>
   </div>
 </template>
@@ -72,6 +104,9 @@ export default {
     window.onresize = () => {
       this.windowWidth = window.innerWidth;
     };
+        setTimeout(() => {
+      this.$forceUpdate()
+    }, 500)
   }
 };
 </script>

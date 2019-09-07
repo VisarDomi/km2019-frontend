@@ -5,13 +5,13 @@
     <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="example">
         <!-- <HeroSection /> -->
-        <HeroSection2 />
+        <!-- <HeroSection2 />
 
         <ArtistsSection v-if="windowWidth > 600" />
         <ArtistsMobile v-else />
 
         <AcrossYearsSection v-if="windowWidth > 750" />
-        <AcrossYearsMobile v-else />
+        <AcrossYearsMobile v-else /> -->
 
         <SubmissionSection v-if="windowWidth > 950" />
         <SubmissionMobile v-else />

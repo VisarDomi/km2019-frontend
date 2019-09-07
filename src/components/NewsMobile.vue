@@ -1,22 +1,56 @@
 <template>
   <div class="mobile-news">
     <div class="row h-20 align-items-center">
-      <h1 class="title">të reja</h1>
+      <h1 class="title">&nbsp;të reja</h1>
     </div>
-    <div class="row h-50 justify-content-center mt-6">
-      <div class="col-10" v-for="artist in artists" :key="artist.name">
-        <div class="artist-card abs-bottom">
-          <!-- <div class="artist-card"> -->
-          <div class="img-container">
-            <img :src="artist.img" alt />
-          </div>
-          <p class="artist-card__name go-up--small">{{artist.name}}</p>
-          <p class="artist-card__song">{{artist.songtilte}}</p>
+
+
+      <a @click.prevent="nextSlide">
+        <div class="carousel-right">
+          <img class="img-fluid img-next-arrow" src="@/assets/img/button next_posts.svg" alt />
         </div>
-      </div>
+      </a>
+      <a @click.prevent="prevSlide">
+        <div class="carousel-left">
+          <img class="img-fluid img-left-arrow" src="@/assets/img/button previous_posts.svg" alt />
+        </div>
+      </a>
+
+
+
+    <div class="row h-60 justify-content-center mt-6">
+
+
+      <carousel
+        ref="carouselNewsMobile"
+        :perPage="1"
+        :paginationEnabled="false"
+        :navigationEnabled="false"
+      >
+
+      <slide v-for="artist in artists" :key="artist.name">
+          <div
+            class="h-100"
+            :style="{'background-image': 'url(' + artist.img + ')'}"
+          >
+            <h1 class="blog-title-section">{{artist.songtilte}}</h1>
+          <h3 class="blog-date-section">{{artist.name}}</h3>
+          </div>
+        </slide>
+
+      </carousel>
+
+
+
+
+
+
     </div>
+
+
+
     <div class="row">
-      <div class="w-100 text-center btn-container">
+      <div class="w-108 text-center btn-container">
         <a href="#" class="btn">lexo me shumë</a>
       </div>
     </div>
@@ -33,24 +67,119 @@ export default {
           name: "10.10.2018",
           songtilte: "Flori Mumajesi fitues i Kënga Magjike 2018!",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        }
+        },
+        {
+          name: "10.10.2018",
+          songtilte: "Flori Mumajesi fitues i Kënga Magjike 2018!",
+          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
+        },
       ]
     };
-  }
+  },
+  methods: {
+        nextSlide() {
+      this.$refs.carouselNewsMobile.goToPage(this.$refs.carouselNewsMobile.getNextPage());
+    },
+    prevSlide() {
+      this.$refs.carouselNewsMobile.goToPage(this.$refs.carouselNewsMobile.getPreviousPage());
+    },
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+
+.img-next-arrow {
+  width: 7rem;
+}
+
+.carousel-right {
+  position: absolute;
+  bottom: 13%;
+  right: 5rem;
+  padding-top: 19px;
+  z-index: 99;
+}
+.carousel-right:hover {
+  cursor: pointer;
+}
+
+.img-left-arrow {
+  width: 7rem;
+}
+
+.carousel-left {
+  z-index: 99;
+  position: absolute;
+  bottom: 13%;
+  left: 5rem;
+  padding-top: 15px;
+}
+
+.carousel-left:hover {
+  cursor: pointer;
+}
+
+
+
+
+.mobile-news{
+  background-color: #0e1032;
+}
+
+.blog-date-section{
+    color: #c360b5;
+    // position: absolute;
+    // top: 38rem;
+    z-index: 30;
+    font-family: Montserrat;
+    background: white;
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 11px 11px 0px 11px;
+    // left: 4rem;
+    margin-left: 40px;
+    width: 26%;
+}
+
+.blog-title-section{
+  padding-top: 38%;
+    padding-left: 10%;
+    color: white;
+    z-index: 30;
+    // position: relative;
+    font-family: Vollkorn;
+    // top: 23rem;
+    width: 75%;
+    text-align: left;
+    // left: 4rem;
+    font-size: 4.5rem;
+    line-height: 1;
+}
+
+.w-108{
+  width: 108% !important;
+}
+
 .title {
   text-align: center;
   font-family: Vollkorn;
   // color: black;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px black;
+  -webkit-text-stroke: 2px white;
   font-size: 15rem;
   margin-top: 8rem;
+}
+
+.h-70{
+  height:70%;
+}
+
+.h-60{
+  height:62%;
 }
 
 .btn-container {
@@ -60,7 +189,8 @@ export default {
 
 .btn {
   padding: 0.5rem 7rem;
-  border: 2px solid black;
+  color:white;
+  border: 2px solid white;
   border-radius: 10rem;
   font-family: Ubuntu;
   font-weight: 700;
