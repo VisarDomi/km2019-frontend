@@ -1,15 +1,16 @@
 <template>
   <div class="section-artists" id="section-artists">
     <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 750" />
-    <div class="row go-up">
+    <div class="row" :class="{'go-up': hasArtistsMore()}">
       <div class="col-lg-12 text-center">
         <h1 class="header-text">artistet</h1>
       </div>
     </div>
-    <div class="row px-6 respond-height go-up">
+    <div class="row px-6 respond-height" :class="{'go-up': hasArtistsMore()}">
       <div
-        class="col-lg-2 col-sm-2 col-7 ml-6 pos-relative"
-        v-for="(artist, index) in artistsRow1"
+        class="col-lg-2 col-sm-2 col-7 pos-relative"
+        :class="{'ml-6': firstRow()}"
+        v-for="(artist, index) in this.artists"
         :key="artist.name"
       >
         <div class="artist-card abs-bottom" :class="{'abs-bottom--up': index % 2 === 0}">
@@ -17,18 +18,18 @@
             <img :src="artist.img" alt />
           </div>
           <p class="artist-card__name go-up--small">{{artist.name}}</p>
-          <p class="artist-card__song">{{artist.songtilte}}</p>
+          <p class="artist-card__song">{{artist.song}}</p>
         </div>
       </div>
     </div>
-    <div class="row respond-height">
-      <div :class="myClass()" v-for="artist in artistsRow2" :key="artist.name">
+    <div class="row respond-height" v-if="this.artistsMore">
+      <div :class="myClass()" v-for="artist in artistsMore" :key="artist.name">
         <div class="artist-card abs-bottom abs-bottom--up">
           <div class="img-container">
             <img :src="artist.img" alt />
           </div>
           <p class="artist-card__name go-up--small">{{artist.name}}</p>
-          <p class="artist-card__song">{{artist.songtilte}}</p>
+          <p class="artist-card__song">{{artist.song}}</p>
         </div>
       </div>
     </div>
@@ -49,11 +50,58 @@
 
 <script>
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
+import axios from "axios";
+// import { ArtistService } from "@/api.js";
 export default {
   name: "ArtistsSection",
   methods: {
     goToArtists() {
       this.$router.push({ name: "Artists" });
+    },
+    hasArtistsMore() {
+      if (this.artistsMore.length > 0) {
+        console.log("0");
+        return true;
+      }
+      console.log("1");
+      return false;
+    },
+    firstRow() {
+      if (this.artists.length === 6) {
+        return false;
+      }
+      return true;
+    },
+    myClass() {
+      let nrColumns = this.artistsMore.length;
+      return `col-lg-2 col-sm-2 col-7 ml-6 pos-relative col-${nrColumns}-centered`;
+    },
+    async getArtists() {
+      const axios = require("axios");
+      axios.defaults.headers.common = {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json"
+      };
+      let artists = axios
+        .get("https://fw9cy4j1y6.execute-api.eu-west-1.amazonaws.com/Dev/api", {
+          params: {
+            TableName: "KM2019-Artist",
+            Limit: "100"
+          }
+        })
+        .then(res => {
+          let resItems = res.data["Items"];
+          if (resItems.length <= 6) {
+            this.artists = resItems;
+          } else {
+            let coppy1 = [...resItems];
+            this.artists = [...coppy1.splice(0, 5)];
+            let coppy2 = [...resItems];
+            this.artistsMore = coppy2.splice(5, resItems.length);
+          }
+          console.log(this.artists);
+          console.log(this.artistsMore);
+        });
     }
   },
   components: {
@@ -61,59 +109,10 @@ export default {
   },
   data() {
     return {
-      artistsRow1: [
-        {
-          name: "Juria1",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "Juria2",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "Juria3",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "Juria4",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "Juria5",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        }
-      ],
-      artistsRow2: [
-        {
-          name: "Juria6",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "Juria7",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        }
-        // {
-        //   name: "Juria8",
-        //   songtilte: "Loose yourself to dance",
-        //   img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        // }
-      ],
+      artists: [],
+      artistsMore: [],
       windowWidth: window.innerWidth
     };
-  },
-  methods: {
-    myClass() {
-      let nrColumns = this.artistsRow2.length;
-      // return `col-lg-2 col-sm-2 col-7 pos-relative col-${nrColumns}-centered`;
-      return `col-lg-2 col-sm-2 col-7 ml-6 pos-relative col-${nrColumns}-centered`;
-    }
   },
   mounted() {
     this.$nextTick(() => {
@@ -121,6 +120,7 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
+    this.getArtists();
   }
 };
 </script>
@@ -136,9 +136,6 @@ export default {
 }
 .col-2-centered {
   margin-left: 23% !important;
-}
-.col-1-centered {
-  margin-left: 0%;
 }
 
 .img-container {

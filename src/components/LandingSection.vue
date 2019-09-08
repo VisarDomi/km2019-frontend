@@ -50,9 +50,9 @@ export default {
   created() {
     window.addEventListener("scroll", this.handleScroll);
     $(document).on("scroll", function() {
-      console.log("scrolling");
+      // console.log("scrolling");
       $("video").each(function() {
-        console.log("yea");
+        // console.log("yea");
         if (isInView($(this)[0])) {
           // visible?
           if ($(this)[0].paused) $(this)[0].play(); // play if not playing

@@ -85,7 +85,7 @@ export default {
       var Items = document.getElementsByClassName("cmi");
       if (this.shouldHide) {
         for (var i = 0; i < Items.length; i++) {
-          console.log(i, Items[i]);
+          // console.log(i, Items[i]);
           Items[i].style.opacity = 0;
           Items[i].style.transition = "all 1s";
 
