@@ -143,7 +143,7 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       &:hover {
-        background: linear-gradient(rgba(#c4aac0, 0.7), rgba(#c76cba, 0.7)),
+        background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7)),
           url("../assets/img/blog 1.svg");
         background-repeat: no-repeat;
         background-size: cover;

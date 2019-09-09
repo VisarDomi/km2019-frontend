@@ -232,6 +232,14 @@ i.fa {
   @include respond(phone) {
     height: 100%;
   }
+
+  @include respond(tab-port){
+    height:100vh;
+  }
+
+  @include respond(tab-land){
+    height:100vh;
+  }
   // background: lightsalmon;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../src/assets/img/sonimala2j.png") no-repeat;
