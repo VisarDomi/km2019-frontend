@@ -3,7 +3,7 @@
     <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 750" />
     <div class="row" :class="{'go-up': hasArtistsMore()}">
       <div class="col-lg-12 text-center">
-        <h1 class="header-text">artistet</h1>
+        <h1 class="header-text">juria</h1>
       </div>
     </div>
     <div class="row px-6 respond-height" :class="{'go-up': hasArtistsMore()}">
@@ -36,7 +36,7 @@
 
     <div class="row mt-6">
       <div class="col-lg-6 offset-lg-3 col-12 text-center">
-        <!-- <a href="#" class="btn" @click="goToArtists()">më shumë artistë</a> -->
+        <a href="#" class="btn" @click="goToArtists()">më shumë artistë</a>
       </div>
     </div>
     <div class="graphic-left w-50" v-if="windowWidth > 950">
