@@ -98,8 +98,8 @@ export default {
   height: 40%;
 }
 
-.h-50{
-  height:50%;
+.h-50 {
+  height: 50%;
 }
 .container {
   height: 30rem;
@@ -120,7 +120,7 @@ export default {
 }
 
 .embed-responsive {
-  box-shadow: 0px 0px 31px -16px #fff;
+  box-shadow: 0px 3px 36px -11px rgba(#fff, 0.9);
 }
 
 .graphic-left {
@@ -211,8 +211,8 @@ export default {
   padding-top: 3rem;
   color: #c360b5;
   font-size: 2rem;
-  font-weight:400;
-  font-family:Ubuntu;
+  font-weight: 400;
+  font-family: Ubuntu;
   line-height: 2.5rem;
   margin-top: 3rem;
   @include respond(4k-desktop) {
