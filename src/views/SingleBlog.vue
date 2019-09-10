@@ -14,8 +14,12 @@
     </div>
 
     <div class="row blog-row">
-      <div class="col-md-5  col-12 image-col">
-        <img class="blog-image" src="https://lapsi.al/wp-content/uploads/2018/12/1-7-1024x922.jpg" alt />
+      <div class="col-md-5 col-12 image-col">
+        <img
+          class="blog-image"
+          src="https://lapsi.al/wp-content/uploads/2018/12/1-7-1024x922.jpg"
+          alt
+        />
       </div>
       <div class="col-md-7 col-xs-12 blog-col">
         <div class="container">
@@ -27,15 +31,25 @@
 
           <div class="row">
             <p class="single-date">22.10.2019</p>
-            <a @click.prevent="nextSlide">
-              <div class="carousel-right">
-                <img class="img-fluid img-next-arrow" src="@/assets/img/button next_posts.svg" alt />
-              </div>
-            </a>
-            <a @click.prevent="prevSlide">              
-              <div class="carousel-left">
-                <img class="img-fluid img-left-arrow" src="@/assets/img/button previous_posts.svg" alt />
-              </div></a>
+            <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
+              <img
+                v-if="hoverR"
+                @click.prevent="nextSlide"
+                src="@/assets/img/blogs_right_hover.svg"
+                alt
+              />
+              <img v-else @click.prevent="nextSlide" src="@/assets/img/blogs_right_normal.svg" alt />
+            </div>
+
+            <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
+              <img
+                v-if="hoverL"
+                @click.prevent="nextSlide"
+                src="@/assets/img/blogs_left_hover.svg"
+                alt
+              />
+              <img v-else @click.prevent="nextSlide" src="@/assets/img/blogs_left_normal.svg" alt />
+            </div>
           </div>
 
           <h3 class="bio-text">te ngjashme</h3>
@@ -82,7 +96,10 @@ export default {
     Slide
   },
   data() {
-    return {};
+    return {
+      hoverR: false,
+      hoverL: false
+    };
   },
   methods: {
     nextSlide() {
@@ -105,27 +122,19 @@ export default {
 
 
 <style lang="scss" scoped>
-
-
 @import "@/assets/sass/abstracts/_mixins.scss";
-
-
-
-.img-logo:hover{
-  cursor:pointer;
-}
-
-.img-next-arrow {
-  width: 5rem;
-}
 
 .carousel-right {
   position: absolute;
   right: 8rem;
-  padding-top: 19px;
+  margin-top: 19px;
+  border-radius: 50%;
+  background-color: white;
 }
 .carousel-right:hover {
   cursor: pointer;
+  border-radius: 50%;
+  background-color: green;
 }
 
 .img-left-arrow {
@@ -135,11 +144,23 @@ export default {
 .carousel-left {
   position: absolute;
   right: 15rem;
-  padding-top:19px;
+  margin-top: 19px;
+  border-radius: 50%;
+  background-color: white;
 }
 
 .carousel-left:hover {
   cursor: pointer;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.img-logo:hover {
+  cursor: pointer;
+}
+
+.img-next-arrow {
+  width: 5rem;
 }
 
 .blog-card-title {
@@ -188,17 +209,18 @@ export default {
   width: fit-content;
   margin-top: 3rem;
 
-    color: #c360b5;
+  color: #c360b5;
   // position: absolute;
   // top: 50rem;
   z-index: 30;
-  font-family: Montserrat;
+  font-family: Panton;
   background: white;
-  width:9rem;
+  width: 9rem;
   // margin-left: 10%;
   font-weight: 700;
   font-size: 1.4rem;
-  padding: 11px 11px 0px 11px;
+  padding: 0.5rem;
+  padding-left: 1.2rem;
 }
 
 .blog-content {
@@ -226,8 +248,6 @@ hr {
   height: 100%;
   height: calc(100vh);
   position: fixed;
-
-
 }
 
 .blog-row {
@@ -236,7 +256,7 @@ hr {
 .image-col {
   background: salmon;
   padding: 0;
-      @include respond(small-screen) {
+  @include respond(small-screen) {
     height: 45%;
   }
   margin: 0;

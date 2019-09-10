@@ -210,9 +210,10 @@ export default {
       background-color: #c360b5;
       display: inline-block;
       color: white;
+      font-family: Panton;
       font-weight: 700;
       font-size: 1.5rem;
-      padding-top: 5px;
+      padding: 1px 1rem;
     }
     &--title {
       color: white;
