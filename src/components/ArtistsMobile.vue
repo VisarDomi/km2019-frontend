@@ -72,7 +72,7 @@
 
     <div class="row">
       <div class="w-100 text-center btn-container">
-        <a href="#" @click="goToRoute('Artists')" class="btn">lexo me shumë</a>
+        <a href="#" @click="goToRoute('Artists')" class="btn" style="margin-left:8%;">lexo me shumë</a>
       </div>
     </div>
   </div>
@@ -144,6 +144,9 @@ export default {
   },
   mounted() {
     this.getArtists();
+            setTimeout(() => {
+      this.$forceUpdate()
+    }, 500)
   }
 };
 </script>

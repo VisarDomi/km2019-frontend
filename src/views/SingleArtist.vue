@@ -226,6 +226,10 @@ i.fa {
   cursor: pointer;
 }
 
+body{
+  height:100% !important;
+}
+
 .artist-page {
   // height: 100vh;
   height: 100%;
@@ -234,11 +238,11 @@ i.fa {
   }
 
   @include respond(tab-port){
-    height:100vh;
+    height:100%;
   }
 
   @include respond(tab-land){
-    height:100vh;
+    // height:100vh;
   }
   // background: lightsalmon;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
