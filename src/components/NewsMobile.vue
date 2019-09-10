@@ -4,50 +4,32 @@
       <h1 class="title">&nbsp;të reja</h1>
     </div>
 
-
-      <a @click.prevent="nextSlide">
-        <div class="carousel-right">
-          <img class="img-fluid img-next-arrow" src="@/assets/img/button next_posts.svg" alt />
-        </div>
-      </a>
-      <a @click.prevent="prevSlide">
-        <div class="carousel-left">
-          <img class="img-fluid img-left-arrow" src="@/assets/img/button previous_posts.svg" alt />
-        </div>
-      </a>
-
-
+    <a @click.prevent="nextSlide">
+      <div class="carousel-right">
+        <img class="img-fluid img-next-arrow" src="@/assets/img/button next_posts.svg" alt />
+      </div>
+    </a>
+    <a @click.prevent="prevSlide">
+      <div class="carousel-left">
+        <img class="img-fluid img-left-arrow" src="@/assets/img/button previous_posts.svg" alt />
+      </div>
+    </a>
 
     <div class="row h-60 justify-content-center mt-6">
-
-
       <carousel
         ref="carouselNewsMobile"
         :perPage="1"
         :paginationEnabled="false"
         :navigationEnabled="false"
       >
-
-      <slide v-for="artist in artists" :key="artist.name">
-          <div
-            class="h-100"
-            :style="{'background-image': 'url(' + artist.img + ')'}"
-          >
+        <slide v-for="artist in artists" :key="artist.name">
+          <div class="h-100" :style="{'background-image': 'url(' + artist.img + ')'}">
             <h1 class="blog-title-section">{{artist.songtilte}}</h1>
-          <h3 class="blog-date-section">{{artist.name}}</h3>
+            <h3 class="blog-date-section">{{artist.name}}</h3>
           </div>
         </slide>
-
       </carousel>
-
-
-
-
-
-
     </div>
-
-
 
     <div class="row">
       <div class="w-108 text-center btn-container">
@@ -72,25 +54,28 @@ export default {
           name: "10.10.2018",
           songtilte: "Flori Mumajesi fitues i Kënga Magjike 2018!",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
+        }
       ]
     };
   },
   methods: {
-        nextSlide() {
-      this.$refs.carouselNewsMobile.goToPage(this.$refs.carouselNewsMobile.getNextPage());
+    nextSlide() {
+      this.$refs.carouselNewsMobile.goToPage(
+        this.$refs.carouselNewsMobile.getNextPage()
+      );
     },
     prevSlide() {
-      this.$refs.carouselNewsMobile.goToPage(this.$refs.carouselNewsMobile.getPreviousPage());
-    },
-  },
+      this.$refs.carouselNewsMobile.goToPage(
+        this.$refs.carouselNewsMobile.getPreviousPage()
+      );
+    }
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
-
 
 .img-next-arrow {
   width: 7rem;
@@ -123,44 +108,41 @@ export default {
   cursor: pointer;
 }
 
-
-
-
-.mobile-news{
+.mobile-news {
   background-color: #0e1032;
 }
 
-.blog-date-section{
-    color: #c360b5;
-    // position: absolute;
-    // top: 38rem;
-    z-index: 30;
-    font-family: Montserrat;
-    background: white;
-    font-weight: 700;
-    font-size: 2rem;
-    padding: 11px 11px 0px 11px;
-    // left: 4rem;
-    margin-left: 40px;
-    width: 26%;
+.blog-date-section {
+  color: #c360b5;
+  // position: absolute;
+  // top: 38rem;
+  z-index: 30;
+  font-family: Montserrat;
+  background: white;
+  font-weight: 700;
+  font-size: 2rem;
+  padding: 11px 11px 0px 11px;
+  // left: 4rem;
+  margin-left: 40px;
+  width: 26%;
 }
 
-.blog-title-section{
+.blog-title-section {
   padding-top: 38%;
-    padding-left: 10%;
-    color: white;
-    z-index: 30;
-    // position: relative;
-    font-family: Vollkorn;
-    // top: 23rem;
-    width: 75%;
-    text-align: left;
-    // left: 4rem;
-    font-size: 4.5rem;
-    line-height: 1;
+  padding-left: 10%;
+  color: white;
+  z-index: 30;
+  // position: relative;
+  font-family: Vollkorn;
+  // top: 23rem;
+  width: 75%;
+  text-align: left;
+  // left: 4rem;
+  font-size: 4.5rem;
+  line-height: 1;
 }
 
-.w-108{
+.w-108 {
   width: 108% !important;
 }
 
@@ -174,12 +156,12 @@ export default {
   margin-top: 8rem;
 }
 
-.h-70{
-  height:70%;
+.h-70 {
+  height: 70%;
 }
 
-.h-60{
-  height:62%;
+.h-60 {
+  height: 62%;
 }
 
 .btn-container {
@@ -189,7 +171,7 @@ export default {
 
 .btn {
   padding: 0.5rem 7rem;
-  color:white;
+  color: white;
   border: 2px solid white;
   border-radius: 10rem;
   font-family: Ubuntu;

@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="more text-center w-100 mt-5">
-            <a href="#" class="btn">lexo me shume</a>
+            <a href="#" class="btn" @click="goToBlogs()">lexo me shume</a>
           </div>
         </div>
       </div>
@@ -87,6 +87,11 @@ export default {
     return {
       windowWidth: window.innerWidth
     };
+  },
+  methods: {
+    goToBlogs() {
+      this.$router.push({ name: "Blogs" });
+    }
   },
   mounted() {
     this.$nextTick(() => {
@@ -122,6 +127,9 @@ export default {
   font-weight: 700;
   font-size: 2rem;
   color: #c76cba;
+  &:hover {
+    color: white;
+  }
 }
 
 .middle {

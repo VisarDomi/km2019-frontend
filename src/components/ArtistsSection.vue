@@ -1,15 +1,15 @@
 <template>
   <div class="section-artists" id="section-artists">
     <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 750" />
-    <div class="row" :class="{'go-up': hasArtistsMore()}">
+    <div class="row" v-if="nrArtists(5) || nrArtists(6)">
       <div class="col-lg-12 text-center">
-        <h1 class="header-text">juria</h1>
+        <h1 class="header-text">artistet</h1>
       </div>
     </div>
-    <div class="row px-6 respond-height" :class="{'go-up': hasArtistsMore()}">
+    <div class="row px-6 respond-height" v-if="nrArtists(5) || nrArtists(6)">
       <div
-        class="col-lg-2 col-sm-2 col-7 pos-relative"
-        :class="{'ml-6': firstRow()}"
+        class="col-lg-2 col-sm-2 pos-relative"
+        :class="{'ml-6': !nrArtists(6)}"
         v-for="(artist, index) in this.artists"
         :key="artist.name"
       >
@@ -18,24 +18,42 @@
             <img :src="artist.img" alt />
           </div>
           <p class="artist-card__name go-up--small">{{artist.name}}</p>
+          <br />
           <p class="artist-card__song">{{artist.song}}</p>
         </div>
       </div>
     </div>
-    <div class="row respond-height" v-if="this.artistsMore">
-      <div :class="myClass()" v-for="artist in artistsMore" :key="artist.name">
-        <div class="artist-card abs-bottom abs-bottom--up">
-          <div class="img-container">
+    <div class="row respond-height go-up--small" v-if="nrArtists(4)">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-2 mx-4" v-for="artist in this.artists" :key="artist.name">
+        <div class="artist-card abs-bottom">
+          <div>
             <img :src="artist.img" alt />
+            <p class="artist-card__name inside-card">Ronald Domi</p>
+            <br />
+            <p class="artist-card__song mb-5">Loose yourself to dance</p>
           </div>
-          <p class="artist-card__name go-up--small">{{artist.name}}</p>
-          <p class="artist-card__song">{{artist.song}}</p>
         </div>
       </div>
     </div>
-
-    <div class="row mt-6">
-      <div class="col-lg-6 offset-lg-3 col-12 text-center">
+    <div class="row respond-height mt-5" v-if="nrArtists(4)">
+      <div :class="myClass()"></div>
+      <div class="col-lg-2 mx-4" v-for="artist in this.artists2Row" :key="artist.name">
+        <div class="artist-card abs-bottom">
+          <div>
+            <img :src="artist.img" alt />
+            <p class="artist-card__name inside-card">Ronald Domi</p>
+            <br />
+            <p class="artist-card__song mb-5">Loose yourself to dance</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" :class="{'mt-4' : nrArtists(5) || nrArtists(6)}">
+      <div
+        class="col-lg-6 offset-lg-3 col-12 text-center"
+        :class="{'mt-6' : nrArtists(5) || nrArtists(6)}"
+      >
         <a href="#" class="btn" @click="goToArtists()">më shumë artistë</a>
       </div>
     </div>
@@ -58,23 +76,18 @@ export default {
     goToArtists() {
       this.$router.push({ name: "Artists" });
     },
-    hasArtistsMore() {
-      if (this.artistsMore.length > 0) {
-        console.log("0");
+    nrArtists(n) {
+      if (this.artists.length === n) {
         return true;
       }
-      console.log("1");
       return false;
     },
-    firstRow() {
-      if (this.artists.length === 6) {
-        return false;
-      }
-      return true;
-    },
     myClass() {
-      let nrColumns = this.artistsMore.length;
-      return `col-lg-2 col-sm-2 col-7 ml-6 pos-relative col-${nrColumns}-centered`;
+      let nrColumns = this.artists2Row.length;
+      if (nrColumns == 3) {
+        return `col-lg-3`;
+      }
+      return `col-lg-2`;
     },
     async getArtists() {
       const axios = require("axios");
@@ -95,12 +108,10 @@ export default {
             this.artists = resItems;
           } else {
             let coppy1 = [...resItems];
-            this.artists = [...coppy1.splice(0, 5)];
+            this.artists = [...coppy1.splice(0, 4)];
             let coppy2 = [...resItems];
-            this.artistsMore = coppy2.splice(5, resItems.length);
+            this.artists2Row = coppy2.splice(4, resItems.length);
           }
-          console.log(this.artists);
-          console.log(this.artistsMore);
         });
     }
   },
@@ -110,7 +121,7 @@ export default {
   data() {
     return {
       artists: [],
-      artistsMore: [],
+      artists2Row: [],
       windowWidth: window.innerWidth
     };
   },
@@ -127,6 +138,25 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_mixins.scss";
+.inside-card {
+  position: absolute;
+  bottom: 21%;
+  @include respond(small-screen) {
+    bottom: 29%;
+  }
+  @include respond(tab-land) {
+    bottom: 24%;
+  }
+  left: 0%;
+}
+
+.ml-25 {
+  margin-left: 24%;
+}
+.ml-- {
+  margin-right: -2%;
+}
+
 .pos-relative {
   position: relative;
 }
@@ -261,8 +291,7 @@ export default {
 .go-up {
   margin-top: -7rem;
   &--small {
-    position: absolute;
-    bottom: 13%;
+    margin-top: -3.4rem;
   }
   @include respond(4k-desktop) {
     margin-top: -25rem;

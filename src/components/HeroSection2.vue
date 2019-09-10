@@ -22,6 +22,7 @@ export default {
     HeaderHero,
     HeaderMobile
   },
+  methods: {},
   data() {
     return {
       windowWidth: window.innerWidth

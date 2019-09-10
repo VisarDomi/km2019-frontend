@@ -1,7 +1,7 @@
 <template>
   <!-- <div> -->
   <div class="row align-items-center menu__items" v-bind:class="menutype">
-    <div class="col-xl-3 col-lg-4 col-sm-4">
+    <div class="col-xl-3 col-lg-4 col-sm-4 high-index">
       <span class="d-lg-inline-block" href="#" v-if="logoBlack">
         <img
           src="@/assets/img/logoblack.svg"
@@ -15,17 +15,17 @@
           src="@/assets/img/logowhite.svg"
           alt="Logo"
           class="img-logo logo respond-width--logo"
-          @click="goToHome()"
+          @click="moveTo(0)"
         />
       </span>
     </div>
     <div
       class="col-lg-1 col-sm-1 offset-xl-3 offset-lg-2 offset-sm-2 cmi"
-      @click="goToArtists()"
+      @click="moveTo(1)"
     >artistët</div>
-    <div class="col-lg-1 col-sm-1 cmi">ndër vite</div>
-    <div class="col-lg-1 col-sm-1 cmi">#magjike</div>
-    <div class="col-lg-1 col-sm-1 cmi" @click="goToBlogs()">të reja</div>
+    <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(2)">ndër vite</div>
+    <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(3)">#fotome</div>
+    <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(4)">të reja</div>
     <div class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rregullore</div>
     <div class="col-lg-1 col-sm-1 high-index">
       <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
@@ -69,17 +69,11 @@ export default {
     logoWhite: ""
   },
   methods: {
+    moveTo(index) {
+      eventBus.$emit("changeSection", index);
+    },
     goToRregullore() {
       this.$router.push({ name: "Rregullore" });
-    },
-    goToHome() {
-      this.$router.push({ name: "Home" });
-    },
-    goToArtists() {
-      this.$router.push({ name: "Artists" });
-    },
-    goToBlogs() {
-      this.$router.push({ name: "Blogs" });
     },
     collapseMenu() {
       var Items = document.getElementsByClassName("cmi");

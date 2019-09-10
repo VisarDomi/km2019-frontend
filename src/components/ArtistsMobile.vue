@@ -1,20 +1,75 @@
 <template>
   <div class="mobile-news">
-    <div class="row h-20 align-items-center">
+    <a @click.prevent="nextSlide">
+      <div class="carousel-right">
+        <img class="img-fluid img-next-arrow" src="@/assets/img/button next_posts.svg" alt />
+      </div>
+    </a>
+    <a @click.prevent="prevSlide">
+      <div class="carousel-left">
+        <img class="img-fluid img-left-arrow" src="@/assets/img/button previous_posts.svg" alt />
+      </div>
+    </a>
+    <div class="row h-15 align-items-center">
       <h1 class="title">artistet</h1>
     </div>
-    <div class="row h-50 justify-content-center mt-6">
-      <div class="col-5" v-for="(artist, index) in artists" :key="artist.name">
-        <div class="artist-card" :class="{'mt-1': index > 1}">
-          <!-- <div class="artist-card"> -->
-          <div class="img-container">
-            <img :src="artist.img" alt />
+
+    <!-- <div class="row h-50 justify-content-center mt-6"> -->
+    <div class="row h-100">
+      <carousel
+        ref="carouselArtistsMobile"
+        :perPage="2"
+        :paginationEnabled="false"
+        :navigationEnabled="false"
+      >
+        <slide>
+          <div class="card-2 mt-30" v-for="artist in artists1" :key="artist.id">
+            <div class="artist-card">
+              <div class="img-container">
+                <img :src="artist.img" alt />
+              </div>
+              <p class="artist-card__name go-up--small">{{artist.name}}</p>
+              <p class="artist-card__song">{{artist.song}}</p>
+            </div>
           </div>
-          <p class="artist-card__name go-up--small">{{artist.name}}</p>
-          <p class="artist-card__song">{{artist.songtilte}}</p>
-        </div>
-      </div>
+        </slide>
+        <slide>
+          <div class="card-2 mt-30" v-for="artist in artists2" :key="artist.id">
+            <div class="artist-card">
+              <div class="img-container">
+                <img :src="artist.img" alt />
+              </div>
+              <p class="artist-card__name go-up--small">{{artist.name}}</p>
+              <p class="artist-card__song">{{artist.song}}</p>
+            </div>
+          </div>
+        </slide>
+        <slide>
+          <div class="card-2 mt-30" v-for="artist in artists3" :key="artist.id">
+            <div class="artist-card">
+              <div class="img-container">
+                <img :src="artist.img" alt />
+              </div>
+              <p class="artist-card__name go-up--small">{{artist.name}}</p>
+              <p class="artist-card__song">{{artist.song}}</p>
+            </div>
+          </div>
+        </slide>
+        <slide v-if="hasCol4()">
+          <div class="card-2 mt-30" v-for="artist in artists4" :key="artist.id">
+            <div class="artist-card">
+              <div class="img-container">
+                <img :src="artist.img" alt />
+              </div>
+              <p class="artist-card__name go-up--small">{{artist.name}}</p>
+              <p class="artist-card__song">{{artist.song}}</p>
+            </div>
+          </div>
+        </slide>
+      </carousel>
     </div>
+    <!-- </div> -->
+
     <div class="row">
       <div class="w-100 text-center btn-container">
         <a href="#" @click="goToRoute('Artists')" class="btn">lexo me shumë</a>
@@ -30,32 +85,65 @@ export default {
     return {
       artists: [
         {
-          name: "Klajdi Haruni",
-          songtilte: "Lose Yourself to Dance",
+          name: "name",
+          songtitle: "songtitle songtitle songtitle",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         },
         {
-          name: "Klajdi Haruni",
-          songtilte: "Lose Yourself to Dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "Klajdi Haruni",
-          songtilte: "Lose Yourself to Dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "Klajdi Haruni",
-          songtilte: "Lose Yourself to Dance",
+          name: "name",
+          songtitle: "songtitle songtitle songtitle",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         }
-      ]
+      ],
+      artists1: [],
+      artists2: [],
+      artists3: [],
+      artists4: []
     };
   },
   methods: {
     goToRoute(name) {
       this.$router.push({ name: name });
+    },
+    hasCol4() {
+      return this.artists4.length > 0;
+    },
+    nextSlide() {
+      this.$refs.carouselArtistsMobile.goToPage(
+        this.$refs.carouselArtistsMobile.getNextPage()
+      );
+    },
+    prevSlide() {
+      this.$refs.carouselArtistsMobile.goToPage(
+        this.$refs.carouselArtistsMobile.getPreviousPage()
+      );
+    },
+    async getArtists() {
+      const axios = require("axios");
+      axios.defaults.headers.common = {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json"
+      };
+      let artists = axios
+        .get("https://fw9cy4j1y6.execute-api.eu-west-1.amazonaws.com/Dev/api", {
+          params: {
+            TableName: "KM2019-Artist",
+            Limit: "100"
+          }
+        })
+        .then(res => {
+          let resItems = res.data["Items"];
+          this.artists1 = [...resItems.splice(0, 2)];
+          this.artists2 = [...resItems.splice(0, 2)];
+          this.artists3 = [...resItems.splice(0, 2)];
+          if (resItems.length > 0) {
+            this.artists4 = [...resItems.splice(0, 2)];
+          }
+        });
     }
+  },
+  mounted() {
+    this.getArtists();
   }
 };
 </script>
@@ -63,8 +151,48 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
-.up {
-  // margin-top: -20px !important;
+.card-2 {
+  max-width: 75%;
+}
+.mt-30 {
+  margin-top: 35%;
+  margin-left: 17%;
+}
+
+.slide {
+  flex-basis: initial !important;
+  flex-shrink: 1 !important;
+}
+
+.img-next-arrow {
+  width: 7rem;
+}
+
+.carousel-right {
+  position: absolute;
+  bottom: 10%;
+  right: 3rem;
+  padding-top: 19px;
+  z-index: 99;
+}
+.carousel-right:hover {
+  cursor: pointer;
+}
+
+.img-left-arrow {
+  width: 7rem;
+}
+
+.carousel-left {
+  z-index: 99;
+  position: absolute;
+  bottom: 10%;
+  left: 3rem;
+  padding-top: 15px;
+}
+
+.carousel-left:hover {
+  cursor: pointer;
 }
 
 .title {
@@ -139,8 +267,8 @@ export default {
 .h-10 {
   height: 10%;
 }
-.h-20 {
-  height: 20%;
+.h-15 {
+  height: 15%;
 }
 
 .blog {
