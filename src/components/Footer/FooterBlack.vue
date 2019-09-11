@@ -7,12 +7,12 @@
         </div>
       </div>
       <div class="col-xl-1 col-md-2 pl-5">
-        <p class="footer-item footer-item--top" @click="changeRoute('Artists')">artistet</p>
-        <p class="footer-item footer-item--bottom mt-5">nder vite</p>
+        <p class="footer-item footer-item--top" @click="changeRoute('Artists')">artistët</p>
+        <p class="footer-item footer-item--bottom mt-5">ndër vite</p>
       </div>
       <div class="col-xl-1 col-md-2 pl-5">
         <p class="footer-item footer-item--top">#magjike</p>
-        <p class="footer-item footer-item--bottom mt-5">te reja</p>
+        <p class="footer-item footer-item--bottom mt-5">të reja</p>
       </div>
       <div class="col-xl-1 col-md-2 pl-5">
         <p class="footer-item footer-item--top">rregullore</p>

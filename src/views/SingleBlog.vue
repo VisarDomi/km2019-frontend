@@ -129,12 +129,12 @@ export default {
   right: 8rem;
   margin-top: 19px;
   border-radius: 50%;
-  background-color: white;
+  // background-color: white;
 }
 .carousel-right:hover {
   cursor: pointer;
   border-radius: 50%;
-  background-color: green;
+  background-color: white;
 }
 
 .img-left-arrow {
@@ -146,13 +146,13 @@ export default {
   right: 15rem;
   margin-top: 19px;
   border-radius: 50%;
-  background-color: white;
+  // background-color: white;
 }
 
 .carousel-left:hover {
   cursor: pointer;
   border-radius: 50%;
-  background-color: green;
+  background-color: white;
 }
 
 .img-logo:hover {

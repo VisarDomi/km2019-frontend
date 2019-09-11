@@ -125,12 +125,12 @@ export default {
   /* padding-top: 19px; */
   z-index: 99;
   border-radius: 50%;
-  background-color: white;
+  background-color: #c360b5;
 }
 .carousel-right:hover {
   cursor: pointer;
   border-radius: 50%;
-  background-color: #c360b5;
+  background-color: white;
 }
 
 .img-left-arrow {
@@ -143,14 +143,14 @@ export default {
   bottom: 5rem;
   left: 5rem;
   border-radius: 50%;
-  background-color: white;
+  background-color: #c360b5;
   /* padding-top: 15px; */
 }
 
 .carousel-left:hover {
   cursor: pointer;
   border-radius: 50%;
-  background-color: #c360b5;
+  background-color: white;
 }
 
 .slide-column {

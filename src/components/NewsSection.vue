@@ -8,7 +8,7 @@
     />
     <div class="row h-25">
       <div class="header-container">
-        <h1>&nbsp;&nbsp;te reja</h1>
+        <h1>&nbsp;&nbsp;të reja</h1>
       </div>
     </div>
     <div class="middle h-50 go-up">
@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="more text-center w-100 mt-5">
-            <a href="#" class="btn" @click="goToBlogs()">lexo me shume</a>
+            <a href="#" class="btn" @click="goToBlogs()">lexo më shumë</a>
           </div>
         </div>
       </div>
@@ -128,7 +128,12 @@ export default {
   font-size: 2rem;
   color: #c76cba;
   &:hover {
+    border: 0px;
     color: white;
+    background-color: #c76cba;
+  }
+  &:focus {
+    transform: translateY(4px);
   }
 }
 

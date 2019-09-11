@@ -1,20 +1,19 @@
 <template>
   <div class="home">
-    <!-- <LandingSection /> -->
     <HeaderMobile v-if="windowWidth < 750" />
     <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="fullpage">
-        <!-- <HeroSection /> -->
-        <HeroSection2 data-id="0" />
+        <!-- <HeroSection2 data-id="0" /> -->
 
-        <ArtistsSection data-id="1" v-if="windowWidth > 600" />
+        <!-- <ArtistsSection data-id="1" v-if="windowWidth > 600" /> -->
+        <ArtistsSectionJuria data-id="1" v-if="windowWidth > 600" />
         <ArtistsMobile v-else />
 
         <AcrossYearsSection data-id="2" v-if="windowWidth > 750" />
         <AcrossYearsMobile v-else />
 
-        <SubmissionSection data-id="3" v-if="windowWidth > 950" />
-        <SubmissionMobile v-else />
+        <!-- <SubmissionSection data-id="3" v-if="windowWidth > 950" />
+        <SubmissionMobile v-else />-->
 
         <NewsSection data-id="4" v-if="windowWidth > 950" />
         <NewsMobile v-else />
@@ -34,6 +33,7 @@ import HeroSection from "@/components/HeroSection.vue";
 import HeroSection2 from "@/components/HeroSection2.vue";
 
 import ArtistsSection from "@/components/ArtistsSection.vue";
+import ArtistsSectionJuria from "@/components/ArtistsSectionJuria.vue";
 import ArtistsMobile from "@/components/ArtistsMobile.vue";
 
 import AcrossYearsSection from "@/components/AcrossYearsSection.vue";
@@ -57,6 +57,7 @@ export default {
     HeroSection,
     HeroSection2,
     ArtistsSection,
+    ArtistsSectionJuria,
     ArtistsMobile,
     AcrossYearsSection,
     AcrossYearsMobile,

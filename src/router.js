@@ -4,6 +4,7 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Artists from "./views/Artists.vue";
 import SingleArtist from "./views/SingleArtist.vue";
+import Juria from "./views/Juria.vue";
 import Blogs from "./views/Blogs.vue";
 import SingleBlog from "./views/SingleBlog.vue";
 import Rregullore from "./views/Rregullore.vue";
@@ -30,6 +31,18 @@ export default new Router({
     },
     {
       path: "/artist",
+      name: "SingleArtist",
+      component: SingleArtist,
+      meta: { transition: "overlay-right" }
+    },
+    {
+      path: "/juria",
+      name: "Juria",
+      component: Juria,
+      meta: { transition: "overlay-right" }
+    },
+    {
+      path: "/artist/:name",
       name: "SingleArtist",
       component: SingleArtist,
       meta: { transition: "overlay-right" }

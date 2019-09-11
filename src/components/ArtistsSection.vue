@@ -3,7 +3,7 @@
     <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 750" />
     <div class="row go-up--small">
       <div class="col-lg-12 text-center">
-        <h1 class="header-text">artistet</h1>
+        <h1 class="header-text">artistët</h1>
       </div>
     </div>
     <div class="row px-6 respond-height" v-if="nrArtists(5) || nrArtists(6)">
@@ -305,6 +305,14 @@ export default {
   @include respond(4k-desktop) {
     font-size: 5rem;
     margin-top: 20rem;
+  }
+  &:hover {
+    border: 0px;
+    color: white;
+    background-color: black;
+  }
+  &:focus {
+    transform: translateY(4px);
   }
 }
 

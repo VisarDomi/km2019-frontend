@@ -14,18 +14,14 @@
 
     <div class="artist-container container">
       <div class="row">
-        <div class="col-lg-7">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe
-              class="embed-responsive-item"
-              src="https://www.youtube.com/embed/GnxAhRj38Qk"
-              allowfullscreen
-            ></iframe>
+        <div class="col-lg-6">
+          <div class="img-container">
+            <img class="img" src="https://www.teksteshqip.com/img_upz/allart_full/4838.jpg" alt />
           </div>
         </div>
         <div class="col-lg-5 top-padded-col">
-          <h1 class="artist-name">Soni</h1>
-          <h1 class="artist-surname">Malaj</h1>
+          <h1 class="artist-name">Emer</h1>
+          <h1 class="artist-surname">Mbiemer</h1>
           <h2 class="artist-songtitle">loose yourself to dance</h2>
           <h3 class="bio-text">bio</h3>
           <h4
@@ -42,51 +38,9 @@
             <i class="fa fa-instagram" style="margin-right:5px;"></i>
             <i class="fa fa-whatsapp"></i>
           </span>
-          <br />
-          <h1 class="trigger-text">Vetem nje kenge do degjosh?</h1>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-3">
-          <div class="artist-card abs-bottom">
-            <div class="img-container">
-              <img src="@/assets/img/Kejsi Tola.svg" alt />
-            </div>
-            <p class="artist-card__name go-up--small">Kejsi Tola</p>
-            <p class="artist-card__song">Loose Yourself to Dance</p>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="artist-card abs-bottom">
-            <div class="img-container">
-              <img src="@/assets/img/Klajdi Haruni.svg" alt />
-            </div>
-            <p class="artist-card__name go-up--small">Klajdi Haruni</p>
-            <p class="artist-card__song">Loose Yourself to Dance</p>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="artist-card abs-bottom">
-            <div class="img-container">
-              <img src="@/assets/img/Alar Band.svg" alt />
-            </div>
-            <p class="artist-card__name go-up--small">Alar Band</p>
-            <p class="artist-card__song">Loose Yourself to Dance</p>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="artist-card abs-bottom">
-            <div class="img-container">
-              <img src="@/assets/img/Rozana Radi.svg" alt />
-            </div>
-            <p class="artist-card__name go-up--small">Rozana Radi</p>
-            <p class="artist-card__song">Loose Yourself to Dance</p>
-          </div>
         </div>
       </div>
     </div>
-    <div class="spacer"></div>
   </div>
 </template>
 
@@ -112,6 +66,14 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+.img-container {
+  // width: 100%;
+}
+.img {
+  max-width: 100%;
+  height: auto;
+}
+
 .spacer {
   height: 3rem;
 }
@@ -235,8 +197,8 @@ body {
 }
 
 .artist-page {
-  // height: 100vh;
-  height: 100%;
+  height: 100vh;
+  // height: 100%;
   @include respond(phone) {
     height: 100%;
   }
@@ -249,8 +211,9 @@ body {
     // height:100vh;
   }
   // background: lightsalmon;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../src/assets/img/sonimala2j.png") no-repeat;
+  // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  //   url("../../src/assets/img/sonimala2j.png") no-repeat;
+  background: linear-gradient(#0e1032, #000);
   background-size: cover;
   background-attachment: fixed;
 }

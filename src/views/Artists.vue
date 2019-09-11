@@ -92,6 +92,21 @@
         </div>
       </div>
     </div>
+    <!-- <div class="row mx-6 row-artists">
+      <div class="col-lg-3" v-for="artist in this.artists" :key="artist.id">
+        <div class="artist-card" @click="goToArtist(artist)">
+          <div class="h-75 artist-card">
+            <div class="img-container">
+              <img :src="artist.img" alt />
+            </div>
+            <p class="artist-card__name go-up--small">{{artist.name}}</p>
+            <br />
+            <p class="artist-card__song">{{artist.song}}</p>
+          </div>
+        </div>
+      </div>
+    </div>-->
+    <div class="spacer"></div>
   </div>
 </template>
 
@@ -102,7 +117,9 @@ export default {
   name: "Artists",
   components: {},
   data() {
-    return {};
+    return {
+      artists: []
+    };
   },
   methods: {
     goToArtist() {
@@ -110,14 +127,39 @@ export default {
     },
     goToHome() {
       this.$router.push({ name: "Home" });
+    },
+
+    async getArtists() {
+      const axios = require("axios");
+      axios.defaults.headers.common = {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json"
+      };
+      let artists = axios
+        .get("https://fw9cy4j1y6.execute-api.eu-west-1.amazonaws.com/Dev/api", {
+          params: {
+            TableName: "KM2019-Artist",
+            Limit: "100"
+          }
+        })
+        .then(res => {
+          let resItems = res.data["Items"];
+          this.artists = resItems;
+        });
     }
+  },
+  mounted() {
+    this.getArtists();
   }
 };
 </script>
 
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
-
+.spacer {
+  height: 3rem;
+  background: #0e1032;
+}
 .respond-width {
   @include respond(tab-land) {
     width: 70%;
@@ -182,8 +224,8 @@ export default {
 
   @include respond(phone) {
     margin-top: 1rem;
-    margin-right:0px;
-    padding-right:0px;
+    margin-right: 0px;
+    padding-right: 0px;
   }
 
   font-size: 12rem;
@@ -306,7 +348,7 @@ input[type="search"]:hover {
 input[type="search"]:focus {
   @include respond(phone) {
     width: 90% !important ;
-    padding-left:22% !important;
+    padding-left: 22% !important;
   }
 
   width: 130px;

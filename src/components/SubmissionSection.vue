@@ -149,11 +149,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
-.carousel-right:hover {
-  cursor: pointer;
-  background-color: black;
-}
-
+.carousel-right:hover,
 .carousel-left:hover {
   cursor: pointer;
   background-color: black;
@@ -168,7 +164,6 @@ export default {
     right: 20%;
   }
   margin-top: 2rem;
-  // bottom: 40%;
 }
 .carousel-left {
   position: absolute;
@@ -179,7 +174,6 @@ export default {
     left: 20%;
   }
   margin-top: 2rem;
-  // bottom: 40%;
 }
 
 .w-65 {
@@ -193,6 +187,15 @@ export default {
   font-family: Ubuntu;
   font-weight: 700;
   font-size: 2.5rem;
+
+  &:hover {
+    border: 0px;
+    color: white;
+    background-color: black;
+  }
+  &:focus {
+    transform: translateY(4px);
+  }
 }
 
 .abs-bottom {
