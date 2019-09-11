@@ -29,6 +29,7 @@
                 <img :src="artist.img" alt />
               </div>
               <p class="artist-card__name go-up--small">{{artist.name}}</p>
+              <br />
               <p class="artist-card__song">{{artist.song}}</p>
             </div>
           </div>
@@ -40,6 +41,7 @@
                 <img :src="artist.img" alt />
               </div>
               <p class="artist-card__name go-up--small">{{artist.name}}</p>
+              <br />
               <p class="artist-card__song">{{artist.song}}</p>
             </div>
           </div>
@@ -51,6 +53,7 @@
                 <img :src="artist.img" alt />
               </div>
               <p class="artist-card__name go-up--small">{{artist.name}}</p>
+              <br />
               <p class="artist-card__song">{{artist.song}}</p>
             </div>
           </div>
@@ -62,6 +65,7 @@
                 <img :src="artist.img" alt />
               </div>
               <p class="artist-card__name go-up--small">{{artist.name}}</p>
+              <br />
               <p class="artist-card__song">{{artist.song}}</p>
             </div>
           </div>
@@ -144,9 +148,9 @@ export default {
   },
   mounted() {
     this.getArtists();
-            setTimeout(() => {
-      this.$forceUpdate()
-    }, 500)
+    setTimeout(() => {
+      this.$forceUpdate();
+    }, 500);
   }
 };
 </script>

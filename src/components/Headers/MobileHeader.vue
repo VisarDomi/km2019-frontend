@@ -9,12 +9,12 @@
     <div id="mySidenavR" class="sidenavR">
       <a href="javascript:void(0)" class="closebtn" @click="closeNavR()">×</a>
       <a href="#">&nbsp;</a>
-      <a href="#">artistet</a>
-      <a href="#">nder vite</a>
-      <a href="#">#magjike</a>
-      <a href="#">te reja</a>
-      <a href="#">rregullore</a>
-      <div class="bottom-graphic">
+      <a href="#" @click="moveTo(1)">artistet</a>
+      <a href="#" @click="moveTo(2)">nder vite</a>
+      <a href="#" @click="moveTo(3)">#magjike</a>
+      <a href="#" @click="moveTo(4)">te reja</a>
+      <a href="#" class="high-index pos-relative" @click="goToRregullore()">rregullore</a>
+      <div class="bottom-graphic" @click="moveTo(0)">
         <img src="@/assets/img/Path 2649.svg" alt />
       </div>
     </div>
@@ -36,11 +36,12 @@ export default {
     iconWhite: ""
   },
   methods: {
-    goToRregullore() {
-      this.$router.push({ name: "Rregullore" });
+    moveTo(index) {
+      eventBus.$emit("changeSection", index);
     },
-    goToArtists() {
-      this.$router.push({ name: "Artists" });
+    goToRregullore() {
+      console.log("h");
+      this.$router.push({ name: "Rregullore" });
     },
     openNavR() {
       document.getElementById("mySidenavR").style.width = "250px";
@@ -66,6 +67,10 @@ export default {
   bottom: 0%;
   left: 50%;
   transform: translate(-50%, 0);
+}
+
+.pos-relative {
+  position: relative;
 }
 
 .high-index {

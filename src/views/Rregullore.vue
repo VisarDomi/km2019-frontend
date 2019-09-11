@@ -76,7 +76,7 @@
       </div>
 
       <div>
-        <h1 class="jumbo-title-artistet kategoria" style="font-size:10rem;">Sipas Kategorise</h1>
+        <h1 class="jumbo-title-artistet kategoria" style="font-size:8rem;">Sipas Kategorise</h1>
 
         <h1 class="title-rregullat" style="margin-top:20px;">BIG</h1>
 
@@ -154,6 +154,7 @@
 
     <Footer v-if="windowWidth > 770" />
     <FooterSmall v-if="windowWidth < 770 && windowWidth > 600" />
+    <div class="spacer" v-else></div>
   </div>
 </template>
 
@@ -189,6 +190,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_mixins.scss";
+.spacer {
+  height: 1rem;
+}
+
 .kategoria {
   text-align: left;
   -webkit-text-stroke: 2px #52c2bd !important;
@@ -245,7 +250,7 @@ export default {
 }
 
 .containertext {
-  margin: 20rem;
+  margin: 16%;
   margin-top: 3%;
   text-align: center;
 }
@@ -279,6 +284,9 @@ export default {
   font-family: Vollkorn;
   @include respond(small-screen) {
     font-size: 11rem;
+  }
+  @include respond(phone) {
+    font-size: 8rem;
   }
 }
 
