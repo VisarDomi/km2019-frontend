@@ -54,6 +54,7 @@
               <img src="@/assets/img/Kejsi Tola.svg" alt />
             </div>
             <p class="artist-card__name go-up--small">Kejsi Tola</p>
+            <br />
             <p class="artist-card__song">Loose Yourself to Dance</p>
           </div>
         </div>
@@ -63,6 +64,7 @@
               <img src="@/assets/img/Klajdi Haruni.svg" alt />
             </div>
             <p class="artist-card__name go-up--small">Klajdi Haruni</p>
+            <br />
             <p class="artist-card__song">Loose Yourself to Dance</p>
           </div>
         </div>
@@ -72,6 +74,7 @@
               <img src="@/assets/img/Alar Band.svg" alt />
             </div>
             <p class="artist-card__name go-up--small">Alar Band</p>
+            <br />
             <p class="artist-card__song">Loose Yourself to Dance</p>
           </div>
         </div>
@@ -81,6 +84,7 @@
               <img src="@/assets/img/Rozana Radi.svg" alt />
             </div>
             <p class="artist-card__name go-up--small">Rozana Radi</p>
+            <br />
             <p class="artist-card__song">Loose Yourself to Dance</p>
           </div>
         </div>

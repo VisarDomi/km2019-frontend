@@ -2,7 +2,6 @@
   <div class="section-sponsorz h-100">
     <HeaderHero
       menutype="menu__items--black"
-      iconBlack="true"
       logoBlack="true"
       v-if="windowWidth > 950"
     />

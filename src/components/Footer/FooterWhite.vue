@@ -6,30 +6,30 @@
           <img src="@/assets/img/logoblack.svg" alt />
         </div>
       </div>
-      <div class="col-md-1 pl-6 border-left-black">
-        <p class="footer-item align-centered" @click="changeSection(1)">artistët</p>
+      <div class="col-md-1 pl-6 temporary-spread border-left-black">
+        <p class="footer-item align-centered pl-5" @click="changeSection(1)">juria</p>
       </div>
       <!-- <div class="col-md-1 pl-6">
         <p class="footer-item" @click="changeSection(3)">#fotome</p>
       </div>-->
-      <div class="col-md-1 pl-6">
+      <div class="col-md-1 pl-6 temporary-spread">
         <p class="footer-item" @click="changeSection(2)">ndër vite</p>
       </div>
-      <div class="col-md-1 pl-6">
+      <div class="col-md-1 pl-6 temporary-spread">
         <p class="footer-item" @click="changeSection(3)">të reja</p>
       </div>
-      <div class="col-md-1 pl-6">
+      <div class="col-md-1 temporary-spread">
         <p class="footer-item" @click="changeRoute('Rregullore')">rregullore</p>
       </div>
-      <div class="col-md-1 pl-6">
+      <!-- <div class="col-md-1 pl-6">
         <p class="footer-item" @click="changeRoute('Voto')">voto</p>
-      </div>
+      </div>-->
 
       <div class="col-md-2 border-left-black icons-center">
         <div class="icons horizontal-center">
-          <img src="@/assets/img/icon facebook black.svg" class="mr-3" alt />
-          <img src="@/assets/img/icon instagram black.svg" class="mr-3" alt />
-          <img src="@/assets/img/icon youtube black.svg" class="mr-3" alt />
+          <img src="@/assets/img/icon facebook black.svg" class="social-1" alt />
+          <img src="@/assets/img/icon instagram black.svg" class="social-2" alt />
+          <img src="@/assets/img/icon youtube black.svg" class="social-3" alt />
         </div>
       </div>
       <div class="col-md-2 border-left-black">
@@ -66,6 +66,27 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+.social {
+  &-1 {
+    position: absolute;
+    left: 16%;
+  }
+  &-2 {
+    position: absolute;
+    left: 44%;
+  }
+  &-3 {
+    // position: absolute;
+    // left: 2%;
+    padding-left: 64%;
+  }
+}
+
+.temporary-spread {
+  margin-right: 3%;
+}
+
 .footer-item {
   cursor: pointer;
 }
@@ -74,7 +95,7 @@ export default {
   padding-left: 4%;
 }
 .pl-6 {
-  padding-left: 2%;
+  padding-left: 1%;
 }
 
 .border-left-black {

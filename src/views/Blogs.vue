@@ -44,8 +44,8 @@
         </slide>
       </carousel>
     </div>
-    <FooterBlack v-if="windowWidth > 770" />
-    <!-- <FooterWhite v-if="windowWidth > 770" /> -->
+    <!-- <FooterBlack v-if="windowWidth > 770" /> -->
+    <FooterWhite v-if="windowWidth > 770" />
     <!-- <FooterBlackSmall v-if="windowWidth < 770 && windowWidth > 600" /> -->
   </div>
 </template>

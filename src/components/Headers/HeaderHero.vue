@@ -7,10 +7,10 @@
           src="@/assets/img/logoblack.svg"
           alt="Logo"
           class="img-logo logo respond-width--logo"
-          @click="goToHome()"
+          @click="moveTo(0)"
         />
       </span>
-      <span class="navbar-brand d-none d-lg-inline-block" href="#" v-if="logoWhite">
+      <span class="d-lg-inline-block" href="#" v-if="logoWhite">
         <img
           src="@/assets/img/logowhite.svg"
           alt="Logo"
@@ -71,6 +71,7 @@ export default {
   },
   methods: {
     moveTo(index) {
+      console.log("clicked");
       eventBus.$emit("changeSection", index);
     },
     goToRregullore() {
@@ -84,15 +85,24 @@ export default {
           Items[i].style.opacity = 0;
           Items[i].style.transition = "all 1s";
 
-          if (i % 5 == 0) {
-            Items[i].style.transform = "translate(43vw, 0)";
-          } else if (i % 5 == 1) {
+          // if (i % 5 == 0) {
+          //   Items[i].style.transform = "translate(43vw, 0)";
+          // } else if (i % 5 == 1) {
+          //   Items[i].style.transform = "translate(36vw, 0)";
+          // } else if (i % 5 == 2) {
+          //   Items[i].style.transform = "translate(27vw, 0)";
+          // } else if (i % 5 == 3) {
+          //   Items[i].style.transform = "translate(18vw, 0)";
+          // } else if (i % 5 == 4) {
+          //   Items[i].style.transform = "translate(9vw, 0)";
+          // }
+          if (i % 4 == 0) {
             Items[i].style.transform = "translate(36vw, 0)";
-          } else if (i % 5 == 2) {
+          } else if (i % 4 == 1) {
             Items[i].style.transform = "translate(27vw, 0)";
-          } else if (i % 5 == 3) {
+          } else if (i % 4 == 2) {
             Items[i].style.transform = "translate(18vw, 0)";
-          } else if (i % 5 == 4) {
+          } else if (i % 4 == 3) {
             Items[i].style.transform = "translate(9vw, 0)";
           }
         }
