@@ -13,7 +13,7 @@
     </div>
 
     <div class="artist-container container">
-      <div class="row">
+      <div class="row go-up--small">
         <div class="col-lg-6">
           <div class="img-container">
             <img class="img" src="https://www.teksteshqip.com/img_upz/allart_full/4838.jpg" alt />
@@ -41,17 +41,24 @@
         </div>
       </div>
     </div>
+    <FooterWhite v-if="windowWidth > 770" />
+    <FooterWhiteSmall v-if="windowWidth < 770 && windowWidth > 600" />
   </div>
 </template>
 
 <script>
+import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
 // @ is an alias to /src
 
 export default {
   name: "SingleArtist",
-  components: {},
+  components: {
+    FooterWhite,
+    FooterWhiteSmall
+  },
   data() {
-    return {};
+    return { windowWidth: window.innerWidth };
   },
   methods: {
     goToArtists() {
@@ -60,6 +67,14 @@ export default {
     goToHome() {
       this.$router.push({ name: "Home" });
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
+    // this.getArtists();
   }
 };
 </script>
