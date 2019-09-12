@@ -213,7 +213,7 @@ export default {
   // position: absolute;
   // top: 50rem;
   z-index: 30;
-  font-family: Panton;
+  // font-family: Panton;
   background: white;
   width: 9rem;
   // margin-left: 10%;

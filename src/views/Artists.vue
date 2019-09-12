@@ -179,7 +179,7 @@ export default {
     width: 70%;
   }
   @include respond(phone) {
-    width: 20%;
+    width: 50%;
   }
   @include respond(4k-desktop) {
     width: 40%;

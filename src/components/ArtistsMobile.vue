@@ -1,15 +1,5 @@
 <template>
   <div class="mobile-news">
-    <a @click.prevent="nextSlide">
-      <div class="carousel-right">
-        <img class="img-fluid img-next-arrow" src="@/assets/img/button next_posts.svg" alt />
-      </div>
-    </a>
-    <a @click.prevent="prevSlide">
-      <div class="carousel-left">
-        <img class="img-fluid img-left-arrow" src="@/assets/img/button previous_posts.svg" alt />
-      </div>
-    </a>
     <div class="row h-15 align-items-center">
       <h1 class="title">artistet</h1>
     </div>
@@ -24,56 +14,56 @@
       >
         <slide>
           <div class="card-2 mt-30" v-for="artist in artists1" :key="artist.id">
-            <div class="artist-card">
+            <div class="artist-card" @click="goToRoute('SingleArtist')">
               <div class="img-container">
                 <img :src="artist.img" alt />
               </div>
-              <p class="artist-card__name go-up--small">{{artist.name}}</p>
+              <p class="artist-card__name inside-card">{{artist.name}}</p>
               <br />
-              <p class="artist-card__song">{{artist.song}}</p>
+              <p class="artist-card__song go-up">{{artist.song}}</p>
             </div>
           </div>
         </slide>
         <slide>
           <div class="card-2 mt-30" v-for="artist in artists2" :key="artist.id">
-            <div class="artist-card">
+            <div class="artist-card" @click="goToRoute('SingleArtist')">
               <div class="img-container">
                 <img :src="artist.img" alt />
               </div>
-              <p class="artist-card__name go-up--small">{{artist.name}}</p>
+              <p class="artist-card__name inside-card">{{artist.name}}</p>
               <br />
-              <p class="artist-card__song">{{artist.song}}</p>
+              <p class="artist-card__song go-up">{{artist.song}}</p>
             </div>
           </div>
         </slide>
         <slide>
           <div class="card-2 mt-30" v-for="artist in artists3" :key="artist.id">
-            <div class="artist-card">
+            <div class="artist-card" @click="goToRoute('SingleArtist')">
               <div class="img-container">
                 <img :src="artist.img" alt />
               </div>
-              <p class="artist-card__name go-up--small">{{artist.name}}</p>
+              <p class="artist-card__name inside-card">{{artist.name}}</p>
               <br />
-              <p class="artist-card__song">{{artist.song}}</p>
+              <p class="artist-card__song go-up">{{artist.song}}</p>
             </div>
           </div>
         </slide>
-        <slide v-if="hasCol4()">
+        <slide>
           <div class="card-2 mt-30" v-for="artist in artists4" :key="artist.id">
-            <div class="artist-card">
+            <div class="artist-card" @click="goToRoute('SingleArtist')">
               <div class="img-container">
                 <img :src="artist.img" alt />
               </div>
-              <p class="artist-card__name go-up--small">{{artist.name}}</p>
+              <p class="artist-card__name inside-card">{{artist.name}}</p>
               <br />
-              <p class="artist-card__song">{{artist.song}}</p>
+              <p class="artist-card__song go-up">{{artist.song}}</p>
             </div>
           </div>
         </slide>
       </carousel>
     </div>
     <!-- </div> -->
-
+    <div class="graphic-right"></div>
     <div class="row">
       <div class="w-100 text-center btn-container">
         <a href="#" @click="goToRoute('Artists')" class="btn" style="margin-left:8%;">lexo me shumë</a>
@@ -158,6 +148,30 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+.graphic-right {
+  width: 2px;
+  height: 70%;
+  background-color: black;
+  position: absolute;
+  bottom: 15%;
+  right: 0%;
+  box-shadow: -3px 0 3px 0 black;
+}
+.pt-10 {
+  padding-top: 10%;
+}
+.inside-card {
+  position: absolute;
+  bottom: 27%;
+}
+
+.go-up {
+  margin-top: -5%;
+  &--small {
+    margin-top: -2%;
+  }
+}
+
 .card-2 {
   max-width: 75%;
 }
@@ -231,9 +245,10 @@ export default {
   margin-top: 5rem;
 }
 .artist-card {
+  position: relative;
   width: 100%;
   z-index: 4;
-  margin-top: -9rem;
+  margin-top: -6rem;
   img {
     height: 100%;
     width: 100%;

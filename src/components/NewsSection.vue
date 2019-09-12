@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--1">
+          <div class="blog__image blog__image--1" @click="goToBlog()">
             <div class="blog__footer">
               <p class="blog__footer--date">12.12.2011</p>
               <p class="blog__footer--title">Flori Mumajesi fitues i Kenga Magjike 2018!</p>
@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--2">
+          <div class="blog__image blog__image--2" @click="goToBlog()">
             <div class="blog__footer">
               <p class="blog__footer--date">12.12.2011</p>
               <p class="blog__footer--title">Flori Mumajesi fitues i Kenga Magjike 2018!</p>
@@ -46,7 +46,7 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--3">
+          <div class="blog__image blog__image--3" @click="goToBlog()">
             <div class="blog__footer">
               <p class="blog__footer--date">12.12.2011</p>
               <p class="blog__footer--title">Flori Mumajesi fitues i Kenga Magjike 2018!</p>
@@ -57,7 +57,7 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--4">
+          <div class="blog__image blog__image--4" @click="goToBlog()">
             <div class="blog__footer">
               <p class="blog__footer--date">12.12.2011</p>
               <p class="blog__footer--title">Flori Mumajesi fitues i Kenga Magjike 2018!</p>
@@ -91,6 +91,9 @@ export default {
   methods: {
     goToBlogs() {
       this.$router.push({ name: "Blogs" });
+    },
+    goToBlog() {
+      this.$router.push({ name: "SingleBlog" });
     }
   },
   mounted() {
@@ -215,7 +218,9 @@ export default {
       background-color: #c360b5;
       display: inline-block;
       color: white;
-      font-family: Panton;
+      // font-family: Panton;
+      // font-family: PANTON-REGULAR;
+      // font-family: PantonSemiBoldTf;
       font-weight: 700;
       font-size: 1.5rem;
       padding: 1px 1rem;

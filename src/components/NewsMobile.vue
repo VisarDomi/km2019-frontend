@@ -23,7 +23,7 @@
         :navigationEnabled="false"
       >
         <slide v-for="artist in artists" :key="artist.name">
-          <div class="h-100" :style="{'background-image': 'url(' + artist.img + ')'}">
+          <div class="h-100 blog" :style="{'background-image': 'url(' + artist.img + ')'}">
             <h1 class="blog-title-section">{{artist.songtilte}}</h1>
             <h3 class="blog-date-section">{{artist.name}}</h3>
           </div>
@@ -123,19 +123,19 @@ export default {
   font-size: 2rem;
   padding: 11px 11px 0px 11px;
   // left: 4rem;
-  margin-left: 40px;
+  margin-left: 30%;
   width: 26%;
 }
 
 .blog-title-section {
   padding-top: 38%;
-  padding-left: 10%;
+  padding-left: 30%;
   color: white;
   z-index: 30;
   // position: relative;
   font-family: Vollkorn;
   // top: 23rem;
-  width: 75%;
+  width: 100%;
   text-align: left;
   // left: 4rem;
   font-size: 4.5rem;
@@ -171,8 +171,8 @@ export default {
 
 .btn {
   padding: 0.5rem 7rem;
-  color: white;
-  border: 2px solid white;
+  color: #c360b5;
+  border: 2px solid #c360b5;
   border-radius: 10rem;
   font-family: Ubuntu;
   font-weight: 700;
@@ -230,48 +230,6 @@ export default {
 }
 
 .blog {
-  &__image {
-    &--1 {
-      background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog 1.svg");
-
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    &--2 {
-      background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog 2.svg");
-
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-
-    width: 100%;
-    height: 100%;
-  }
-
-  // &__footer {
-  //   z-index: 20;
-  //   position: absolute;
-  //   bottom: 0%;
-  //   left: 10%;
-  //   font-family: Ubuntu;
-  //   &--date {
-  //     background-color: #c360b5;
-  //     display: inline-block;
-  //     color: white;
-  //     font-weight: 700;
-  //     font-size: 1.5rem;
-  //     padding-top: 5px;
-  //   }
-  //   &--title {
-  //     color: white;
-  //     font-weight: bold;
-  //     font-size: 2rem;
-  //   }
-  //   &--other {
-  //     color: white;
-  //   }
-  // }
+  margin-left: -20%;
 }
 </style>

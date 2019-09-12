@@ -78,7 +78,7 @@ export default {
         {
           name: "10.10.2018",
           songtilte:
-            "Ardit Gjebrea zbulon bukuroshen me të cilën do të prezantojë “Kënga Magjike” 2019!",
+            "Ardit Gjebrea zbulon prezantusen per “Kënga Magjike” 2019!",
           img:
             "https://i2.wp.com/bordo.al/wp-content/uploads/2019/08/3F5B2EF4-32D6-4A38-AA0C-B7265F170CAE.jpeg?w=750"
         },
@@ -248,7 +248,7 @@ export default {
   // position: absolute;
   // top: 50rem;
   z-index: 30;
-  font-family: Panton;
+  // font-family: Panton;
   background: white;
   width: 9rem;
   margin-left: 10%;

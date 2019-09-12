@@ -5,15 +5,14 @@
       <div class="fullpage-wp" v-fullpage="opts" ref="fullpage">
         <HeroSection2 data-id="0" />
 
-        <!-- <ArtistsSection data-id="1" v-if="windowWidth > 600" /> -->
         <ArtistsSectionJuria data-id="1" v-if="windowWidth > 600" />
         <ArtistsMobile v-else />
 
         <AcrossYearsSection data-id="2" v-if="windowWidth > 750" />
         <AcrossYearsMobile v-else />
 
-        <!-- <SubmissionSection data-id="3" v-if="windowWidth > 950" />
-        <SubmissionMobile v-else />-->
+        <SubmissionSection data-id="3" v-if="windowWidth > 950" />
+        <SubmissionMobile v-else />
 
         <NewsSection data-id="3" v-if="windowWidth > 950" />
         <NewsMobile v-else />

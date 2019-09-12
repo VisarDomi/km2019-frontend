@@ -12,7 +12,7 @@
         v-for="(artist, index) in artists"
         :key="artist.name"
       >
-        <div class="artist-card abs-bottom" :class="{'abs-bottom--up': index % 2 === 0}">
+        <div class="artist-card abs-bottom" :class="{'abs-bottom--up': index % 2 === 0}" @click="goToJuria()">
           <div class="img-container">
             <img :src="artist.img" alt />
           </div>
@@ -41,8 +41,8 @@ import HeaderHero from "@/components/Headers/HeaderHero.vue";
 export default {
   name: "ArtistsSection",
   methods: {
-    goToArtists() {
-      this.$router.push({ name: "Artists" });
+    goToJuria() {
+      this.$router.push({ name: "Juria" });
     }
   },
   components: {

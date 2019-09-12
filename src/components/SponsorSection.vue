@@ -11,12 +11,14 @@
 
     <FooterBlack v-if="windowWidth > 770" />
     <FooterBlackSmall v-if="windowWidth < 770 && windowWidth > 600" />
+    <FooterBlackMobile v-else />
   </div>
 </template>
 
 <script>
 import FooterBlack from "@/components/Footer/FooterBlack.vue";
 import FooterBlackSmall from "@/components/Footer/FooterBlackSmall.vue";
+import FooterBlackMobile from "@/components/Footer/FooterBlackMobile.vue";
 import Footer from "@/components/Footer/FooterWhite.vue";
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 import HeaderMobile from "@/components/Headers/MobileHeader.vue";
@@ -26,6 +28,7 @@ export default {
   components: {
     FooterBlack,
     FooterBlackSmall,
+    FooterBlackMobile,
     Footer,
     HeaderHero,
     HeaderMobile
