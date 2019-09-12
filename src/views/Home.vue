@@ -11,10 +11,10 @@
         <AcrossYearsSection data-id="2" v-if="windowWidth > 750" />
         <AcrossYearsMobile v-else />
 
-        <SubmissionSection data-id="3" v-if="windowWidth > 950" />
-        <SubmissionMobile v-else />
+        <!-- <SubmissionSection data-id="3" v-if="windowWidth > 950" />
+        <SubmissionMobile v-else /> -->
 
-        <NewsSection data-id="3" v-if="windowWidth > 950" />
+        <NewsSection data-id="4" v-if="windowWidth > 950" />
         <NewsMobile v-else />
 
         <SponsorSectionz />
