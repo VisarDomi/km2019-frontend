@@ -106,18 +106,27 @@
         </div>
       </div>
     </div>-->
+
     <div class="spacer"></div>
+    <FooterWhite v-if="windowWidth > 770" />
+    <FooterWhiteSmall v-if="windowWidth < 770 && windowWidth > 600" />
   </div>
 </template>
 
 <script>
+import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
 // @ is an alias to /src
 
 export default {
   name: "Artists",
-  components: {},
+  components: {
+    FooterWhite,
+    FooterWhiteSmall
+  },
   data() {
     return {
+      windowWidth: window.innerWidth,
       artists: []
     };
   },
@@ -149,6 +158,11 @@ export default {
     }
   },
   mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
     this.getArtists();
   }
 };
@@ -157,7 +171,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 .spacer {
-  height: 3rem;
+  height: 15rem;
   background: #0e1032;
 }
 .respond-width {
@@ -182,7 +196,7 @@ export default {
   }
 }
 .h-15 {
-  height: 14% !important;
+  height: 10rem !important;
 }
 
 .mx-6 {
@@ -239,7 +253,8 @@ export default {
 
 //on mobile breakpoint change to 100%;
 .artists {
-  height: 100vh;
+  position: relative;
+  height: 100%;
   background: #0e1032;
   background-size: cover;
   background-attachment: fixed;

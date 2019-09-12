@@ -35,16 +35,24 @@
       </div>
     </div>
     <div class="spacer"></div>
+    <Footer v-if="windowWidth > 770" />
+    <FooterSmall v-if="windowWidth < 770 && windowWidth > 600" />
   </div>
 </template>
 
 
 <script>
+import Footer from "@/components/Footer/FooterWhite.vue";
+import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
 export default {
   name: "Voto",
-  components: {},
+  components: {
+    Footer,
+    FooterSmall
+  },
   data() {
     return {
+      windowWidth: window.innerWidth,
       artists: [
         { name: "John Wick", song: "La Vendetta" },
         { name: "Chamunda", song: "Goddess of war and famine" },
@@ -55,7 +63,13 @@ export default {
       ]
     };
   },
-  mounted() {},
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
+  },
   methods: {
     goToVotoArtist() {
       this.$router.push({ name: "VotoArtist" });
@@ -71,7 +85,7 @@ export default {
 @import "@/assets/sass/abstracts/_mixins.scss";
 .spacer {
   // background: #0e1032;
-  height: 10rem;
+  height: 17rem;
 }
 
 .voto-img {
@@ -107,6 +121,7 @@ hr {
 }
 
 .voto {
+  position: relative;
   // height: 100vh;
   background: #0e1032;
   background-size: cover;

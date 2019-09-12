@@ -87,17 +87,26 @@
       </div>
     </div>
     <div class="spacer"></div>
+    <FooterWhite v-if="windowWidth > 770" />
+    <FooterWhiteSmall v-if="windowWidth < 770 && windowWidth > 600" />
   </div>
 </template>
 
 <script>
+import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
 // @ is an alias to /src
 
 export default {
   name: "SingleArtist",
-  components: {},
+  components: {
+    FooterWhite,
+    FooterWhiteSmall
+  },
   data() {
-    return {};
+    return {
+      windowWidth: window.innerWidth
+    };
   },
   methods: {
     goToArtists() {
@@ -106,6 +115,14 @@ export default {
     goToHome() {
       this.$router.push({ name: "Home" });
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
+    // this.getArtists();
   }
 };
 </script>
@@ -113,7 +130,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 .spacer {
-  height: 3rem;
+  height: 15rem;
 }
 
 .artist-name {
@@ -236,6 +253,7 @@ body {
 
 .artist-page {
   // height: 100vh;
+  position: relative;
   height: 100%;
   @include respond(phone) {
     height: 100%;

@@ -3,7 +3,7 @@
     <HeaderMobile v-if="windowWidth < 750" />
     <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="fullpage">
-        <!-- <HeroSection2 data-id="0" /> -->
+        <HeroSection2 data-id="0" />
 
         <!-- <ArtistsSection data-id="1" v-if="windowWidth > 600" /> -->
         <ArtistsSectionJuria data-id="1" v-if="windowWidth > 600" />
@@ -15,10 +15,10 @@
         <!-- <SubmissionSection data-id="3" v-if="windowWidth > 950" />
         <SubmissionMobile v-else />-->
 
-        <NewsSection data-id="4" v-if="windowWidth > 950" />
+        <NewsSection data-id="3" v-if="windowWidth > 950" />
         <NewsMobile v-else />
 
-        <SponsorSectionz data-id="5" />
+        <SponsorSectionz />
       </div>
     </div>
   </div>
@@ -83,17 +83,22 @@ export default {
   },
   methods: {
     moveTo: function(index) {
+      console.log("h");
       this.$refs.fullpage.$fullpage.moveTo(index, true);
     }
   },
   mounted() {
+    eventBus.$on("changeSection", payload => {
+      this.moveTo(payload);
+    });
+    eventBus.$on("changeSectionFromFooter", payload => {
+      console.log("probably from footer");
+      this.moveTo(payload);
+    });
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
-    });
-    eventBus.$on("changeSection", payload => {
-      this.moveTo(payload);
     });
   }
 };

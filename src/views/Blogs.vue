@@ -25,8 +25,8 @@
       </div>
 
       <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
-        <img v-if="hoverL" @click.prevent="nextSlide" src="@/assets/img/blogs_left_hover.svg" alt />
-        <img v-else @click.prevent="nextSlide" src="@/assets/img/blogs_left_normal.svg" alt />
+        <img v-if="hoverL" @click.prevent="prevSlide" src="@/assets/img/blogs_left_hover.svg" alt />
+        <img v-else @click.prevent="prevSlide" src="@/assets/img/blogs_left_normal.svg" alt />
       </div>
 
       <carousel
@@ -44,6 +44,9 @@
         </slide>
       </carousel>
     </div>
+    <FooterBlack v-if="windowWidth > 770" />
+    <!-- <FooterWhite v-if="windowWidth > 770" /> -->
+    <!-- <FooterBlackSmall v-if="windowWidth < 770 && windowWidth > 600" /> -->
   </div>
 </template>
 
@@ -51,14 +54,21 @@
 
 <script>
 import { Carousel, Slide } from "vue-carousel";
+import FooterBlack from "@/components/Footer/FooterBlack.vue";
+import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterBlackSmall from "@/components/Footer/FooterBlackSmall.vue";
 export default {
   name: "Blogs",
   components: {
     Carousel,
+    FooterBlack,
+    FooterWhite,
+    FooterBlackSmall,
     Slide
   },
   data() {
     return {
+      windowWidth: window.innerWidth,
       artists: [
         {
           name: "10.10.2018",
@@ -107,7 +117,13 @@ export default {
       this.$router.push({ name: "SingleBlog" });
     }
   },
-  mounted() {}
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
+  }
 };
 </script>
 
@@ -120,7 +136,8 @@ export default {
 <style scoped lang="css">
 .carousel-right {
   position: absolute;
-  bottom: 5rem;
+  /* bottom: 5rem; */
+  bottom: 17%;
   right: 5rem;
   /* padding-top: 19px; */
   z-index: 99;
@@ -140,7 +157,8 @@ export default {
 .carousel-left {
   z-index: 99;
   position: absolute;
-  bottom: 5rem;
+  /* bottom: 5rem; */
+  bottom: 17%;
   left: 5rem;
   border-radius: 50%;
   background-color: #c360b5;
@@ -281,7 +299,7 @@ export default {
 }
 
 .carousel-container {
-  height: calc(100% - (10rem));
+  height: calc(87% - (10rem));
 }
 
 .text-center {

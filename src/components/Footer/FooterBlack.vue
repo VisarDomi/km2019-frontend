@@ -1,31 +1,42 @@
 <template>
   <div class="footer">
-    <div class="row h-100">
-      <div class="col-xl-3 col-lg-3 col-md-4 border-right-white">
+    <div class="row h-50 vertical-center">
+      <div class="col-md-2">
         <div class="abs-center">
           <img src="@/assets/img/logowhite.svg" alt />
         </div>
       </div>
-      <div class="col-xl-1 col-md-2 pl-5">
-        <p class="footer-item footer-item--top" @click="changeRoute('Artists')">artistët</p>
-        <p class="footer-item footer-item--bottom mt-5">ndër vite</p>
+      <div class="col-md-1 pl-6 border-left-white">
+        <p class="footer-item align-centered" @click="changeRoute('Artists')">artistët</p>
       </div>
-      <div class="col-xl-1 col-md-2 pl-5">
-        <p class="footer-item footer-item--top">#magjike</p>
-        <p class="footer-item footer-item--bottom mt-5">të reja</p>
+      <div class="col-md-1 pl-6">
+        <p class="footer-item">#fotome</p>
       </div>
-      <div class="col-xl-1 col-md-2 pl-5">
-        <p class="footer-item footer-item--top">rregullore</p>
-        <p class="footer-item footer-item--bottom mt-5">voto</p>
+      <div class="col-md-1 pl-6">
+        <p class="footer-item">ndër vite</p>
       </div>
-      <div class="col-xl-5 col-md-2 offset-lg-1">
-        <div class="icons abs-right">
-          <img src="@/assets/img/icon twitter white.svg" class="mr-3" alt />
+      <div class="col-md-1 pl-6">
+        <p class="footer-item">të reja</p>
+      </div>
+      <div class="col-md-1 pl-6">
+        <p class="footer-item">rregullore</p>
+      </div>
+      <div class="col-md-1 pl-6">
+        <p class="footer-item">voto</p>
+      </div>
+
+      <div class="col-md-2 border-left-white icons-center">
+        <div class="icons horizontal-center">
           <img src="@/assets/img/icon facebook white.svg" class="mr-3" alt />
           <img src="@/assets/img/icon instagram white.svg" class="mr-3" alt />
-          <img src="@/assets/img/icon snapchat white.svg" class="mr-3" alt />
           <img src="@/assets/img/icon youtube white.svg" class="mr-3" alt />
         </div>
+      </div>
+      <div class="col-md-2 border-left-white">
+        <p class="footer-item">
+          &copy;Forged by
+          <span>BoldCrest</span>
+        </p>
       </div>
     </div>
   </div>
@@ -48,9 +59,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+.icons-center {
+  padding-left: 4%;
+}
+.pl-6 {
+  padding-left: 2%;
+}
 
-.border-right-white {
-  border-right: 2px solid white;
+.border-left-white {
+  border-left: 2px solid white;
 }
 .abs-right {
   position: absolute;
@@ -69,12 +86,14 @@ export default {
   position: absolute;
   bottom: 0%;
   width: 100%;
-  height: 20%;
+  height: 13%;
   background-color: #0e1032;
   &-item {
     color: white;
     font-size: 2rem;
-
+    span {
+      font-weight: 700;
+    }
     &--top {
       position: absolute;
       top: 25%;

@@ -24,8 +24,9 @@
       @click="moveTo(1)"
     >artistët</div>
     <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(2)">ndër vite</div>
-    <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(3)">#fotome</div>
-    <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(4)">të reja</div>
+    <!-- <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(3)">#fotome</div> -->
+    <div class="col-lg-1 col-sm-1 cmi"></div>
+    <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(3)">të reja</div>
     <div class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rregullore</div>
     <div class="col-lg-1 col-sm-1 high-index">
       <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
