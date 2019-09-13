@@ -1,10 +1,18 @@
 <template>
   <div class="home">
-    <!-- <LandingSection /> -->
-    <HeaderMobile v-if="windowWidth < 750" />
+
+
+
+
+    <ComingSoon>
+    </ComingSoon>
+
+
+
+    <!-- <HeaderMobile v-if="windowWidth < 750" />
     <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="example">
-        <!-- <HeroSection /> -->
+
         <HeroSection2 />
 
         <ArtistsSection v-if="windowWidth > 600" />
@@ -21,12 +29,18 @@
 
         <SponsorSectionz />
       </div>
-    </div>
+    </div> -->
+
+
+
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+
+import ComingSoon from "@/components/ComingSoon.vue";
+
 import HeaderMobile from "@/components/Headers/MobileHeader.vue";
 import LandingSection from "@/components/LandingSection.vue";
 
@@ -52,6 +66,7 @@ import SponsorSectionz from "@/components/SponsorSection.vue";
 export default {
   name: "Home",
   components: {
+    ComingSoon,
     LandingSection,
     HeroSection,
     HeroSection2,
