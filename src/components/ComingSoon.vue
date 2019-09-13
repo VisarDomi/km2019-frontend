@@ -4,7 +4,7 @@
 <template>
   <div class="bgimg">
   <div class="topleft">
-    <p>Kenga Magjike 2019</p>
+    <p>Kënga Magjike 2019</p>
   </div>
   <div class="middle">
     <h1 style="font-size:5rem;">COMING SOON</h1>
@@ -32,7 +32,8 @@ body, html {
 }
 
 .bgimg {
-  background-image: url('../assets/img/bridge.jpg');
+  /* background-image: url('../assets/img/bridge.jpg'); */
+  background-color: #0e1032;
   height: 100%;
   background-position: center;
   background-size: cover;
