@@ -2,7 +2,6 @@
   <div class="section-sponsorz h-100">
     <HeaderHero
       menutype="menu__items--black"
-      iconBlack="true"
       logoBlack="true"
       v-if="windowWidth > 950"
     />
@@ -11,12 +10,14 @@
 
     <FooterBlack v-if="windowWidth > 770" />
     <FooterBlackSmall v-if="windowWidth < 770 && windowWidth > 600" />
+    <FooterBlackMobile v-else />
   </div>
 </template>
 
 <script>
 import FooterBlack from "@/components/Footer/FooterBlack.vue";
 import FooterBlackSmall from "@/components/Footer/FooterBlackSmall.vue";
+import FooterBlackMobile from "@/components/Footer/FooterBlackMobile.vue";
 import Footer from "@/components/Footer/FooterWhite.vue";
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 import HeaderMobile from "@/components/Headers/MobileHeader.vue";
@@ -26,6 +27,7 @@ export default {
   components: {
     FooterBlack,
     FooterBlackSmall,
+    FooterBlackMobile,
     Footer,
     HeaderHero,
     HeaderMobile

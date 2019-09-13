@@ -39,11 +39,23 @@
         <div class="image-footer">
           <div class="image--name mt-3">Emer Mbiemer</div>
           <div class="image--instagram">@insta_account</div>
-          <div class="carousel-right">
-            <img @click.prevent="nextSlide" src="@/assets/img/magjike_right.svg" alt />
+          <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
+            <img
+              v-if="hoverR"
+              @click.prevent="nextSlide"
+              src="@/assets/img/magjike_right_hover.svg"
+              alt
+            />
+            <img v-else @click.prevent="nextSlide" src="@/assets/img/magjike_right_normal.svg" alt />
           </div>
-          <div class="carousel-left">
-            <img @click.prevent="prevSlide" src="@/assets/img/magjike_left.svg" alt />
+          <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
+            <img
+              v-if="hoverL"
+              @click.prevent="nextSlide"
+              src="@/assets/img/magjike_left_hover.svg"
+              alt
+            />
+            <img v-else @click.prevent="nextSlide" src="@/assets/img/magjike_left_normal.svg" alt />
           </div>
         </div>
       </div>
@@ -106,7 +118,9 @@ export default {
   },
   data() {
     return {
-      windowWidth: window.innerWidth
+      windowWidth: window.innerWidth,
+      hoverR: false,
+      hoverL: false
     };
   },
   methods: {
@@ -135,6 +149,33 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
+.carousel-right:hover,
+.carousel-left:hover {
+  cursor: pointer;
+  background-color: black;
+}
+
+.carousel-right {
+  position: absolute;
+  z-index: 99999;
+  right: 25%;
+  border-radius: 50%;
+  @include respond(small-screen) {
+    right: 20%;
+  }
+  margin-top: 2rem;
+}
+.carousel-left {
+  position: absolute;
+  z-index: 99999;
+  left: 25%;
+  border-radius: 50%;
+  @include respond(small-screen) {
+    left: 20%;
+  }
+  margin-top: 2rem;
+}
+
 .w-65 {
   width: 65% !important;
 }
@@ -146,6 +187,15 @@ export default {
   font-family: Ubuntu;
   font-weight: 700;
   font-size: 2.5rem;
+
+  &:hover {
+    border: 0px;
+    color: white;
+    background-color: black;
+  }
+  &:focus {
+    transform: translateY(4px);
+  }
 }
 
 .abs-bottom {
@@ -251,34 +301,6 @@ export default {
   }
 }
 
-.carousel-right:hover {
-  cursor: pointer;
-}
-
-.carousel-left:hover {
-  cursor: pointer;
-}
-
-.carousel-right {
-  position: absolute;
-  z-index: 99999;
-  right: 25%;
-  @include respond(small-screen) {
-    right: 20%;
-  }
-  margin-top: 2rem;
-  // bottom: 40%;
-}
-.carousel-left {
-  position: absolute;
-  z-index: 99999;
-  left: 25%;
-  @include respond(small-screen) {
-    left: 20%;
-  }
-  margin-top: 2rem;
-  // bottom: 40%;
-}
 .image-container {
   z-index: 99999;
   position: relative;

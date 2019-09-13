@@ -1,6 +1,6 @@
 <template>
   <div class="section-submissions">
-    <div class="carousel-container ">
+    <div class="carousel-container">
       <carousel ref="carousel2" :perPageCustom="[[0,1]]" :paginationEnabled="false">
         <slide>
           <div class="row h-45">
@@ -31,7 +31,7 @@
           </div>
         </slide>
 
-                <slide>
+        <slide>
           <div class="row h-45">
             <div class="slider-img-container h-100 w-100">
               <img src="@/assets/img/Group 116.png" class="h-100 w-100" alt />
@@ -61,21 +61,19 @@
         </slide>
       </carousel>
 
-
-
-          <div class="row h-10 navigation-container">
-            <div class="col-6 h-100">
-              <div class="carousel-left text-center" @click.prevent="prevSlide">
-                <img class src="@/assets/img/artistet_arrow_l.svg" alt />
-              </div>
-            </div>
-
-            <div class="col-6 h-100">
-              <div class="carousel-right text-center" @click.prevent="nextSlide">
-                <img class src="@/assets/img/artistet_arrow_r.svg" alt />
-              </div>
-            </div>
+      <div class="row h-10 navigation-container">
+        <div class="col-6 h-100">
+          <div class="carousel-left text-center" @click.prevent="prevSlide">
+            <img class src="@/assets/img/artistet_arrow_l.svg" alt />
           </div>
+        </div>
+
+        <div class="col-6 h-100">
+          <div class="carousel-right text-center" @click.prevent="nextSlide">
+            <img class src="@/assets/img/artistet_arrow_r.svg" alt />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -104,15 +102,19 @@ export default {
     window.onresize = () => {
       this.windowWidth = window.innerWidth;
     };
-        setTimeout(() => {
-      this.$forceUpdate()
-    }, 500)
+    setTimeout(() => {
+      this.$forceUpdate();
+    }, 500);
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.carousel-container {
+  height: 100%;
+}
+
 .btn {
   padding: 0.5rem 3rem;
   border: 2px solid black;
@@ -134,7 +136,7 @@ export default {
   padding: 0 1rem;
 
   position: absolute;
-  left: 10%;
+  left: 20%;
 }
 .instagram {
   font-family: Ubuntu;
@@ -145,7 +147,7 @@ export default {
   font-weight: 700;
 
   position: absolute;
-  left: 10%;
+  left: 20%;
   margin-top: 5rem;
 }
 
@@ -192,10 +194,8 @@ export default {
 }
 
 .magjike {
-  // color: black;
   font-size: 7rem;
-  // padding-left: 3rem;
-  margin-left: 5rem;
+  margin-left: 18%;
   padding: 0 1rem;
 
   font-family: Vollkorn;

@@ -1,9 +1,9 @@
 <template>
   <div class="section-artists" id="section-artists">
     <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 750" />
-    <div class="row" v-if="nrArtists(5) || nrArtists(6)">
+    <div class="row go-up--small">
       <div class="col-lg-12 text-center">
-        <h1 class="header-text">artistet</h1>
+        <h1 class="header-text">artistët</h1>
       </div>
     </div>
     <div class="row px-6 respond-height" v-if="nrArtists(5) || nrArtists(6)">
@@ -23,22 +23,22 @@
         </div>
       </div>
     </div>
+    <div class="row respond-height go-up--medium" v-if="nrArtists(4)">
+      <div class="col-lg-3--spacer"></div>
+      <div class="col-lg-2 mx--2" v-for="artist in this.artists" :key="artist.name">
+        <div class="artist-card abs-bottom">
+          <div>
+            <img :src="artist.img" alt />
+            <p class="artist-card__name inside-card">Ronald Domi</p>
+            <br />
+            <p class="artist-card__song mb-5">Loose yourself to dance</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row respond-height go-up--small" v-if="nrArtists(4)">
-      <div class="col-lg-2"></div>
-      <div class="col-lg-2 mx-4" v-for="artist in this.artists" :key="artist.name">
-        <div class="artist-card abs-bottom">
-          <div>
-            <img :src="artist.img" alt />
-            <p class="artist-card__name inside-card">Ronald Domi</p>
-            <br />
-            <p class="artist-card__song mb-5">Loose yourself to dance</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row respond-height mt-5" v-if="nrArtists(4)">
       <div :class="myClass()"></div>
-      <div class="col-lg-2 mx-4" v-for="artist in this.artists2Row" :key="artist.name">
+      <div class="col-lg-2 mx--2" v-for="artist in this.artists2Row" :key="artist.name">
         <div class="artist-card abs-bottom">
           <div>
             <img :src="artist.img" alt />
@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-    <div class="row" :class="{'mt-4' : nrArtists(5) || nrArtists(6)}">
+    <div class="row mt--2" :class="{'mt-4' : nrArtists(5) || nrArtists(6)}">
       <div
         class="col-lg-6 offset-lg-3 col-12 text-center"
         :class="{'mt-6' : nrArtists(5) || nrArtists(6)}"
@@ -87,7 +87,7 @@ export default {
       if (nrColumns == 3) {
         return `col-lg-3`;
       }
-      return `col-lg-2`;
+      return `col-lg-3--spacer`;
     },
     async getArtists() {
       const axios = require("axios");
@@ -138,9 +138,28 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_mixins.scss";
+.mx--2 {
+  margin-right: -2%;
+  margin-left: -2%;
+}
+
+.mt--2 {
+  margin-top: -0.5%;
+}
+
+.col-lg-3--spacer {
+  -webkit-box-flex: 0;
+  flex: 0 0 27%;
+  max-width: 27%;
+}
+
+.go-down {
+  margin-top: 2%;
+}
+
 .inside-card {
   position: absolute;
-  bottom: 21%;
+  bottom: 31%;
   @include respond(small-screen) {
     bottom: 29%;
   }
@@ -220,7 +239,8 @@ export default {
 }
 
 .artist-card {
-  width: 90%;
+  // width: 90%;
+  width: 63%;
   z-index: 4;
   img {
     height: 100%;
@@ -286,12 +306,23 @@ export default {
     font-size: 5rem;
     margin-top: 20rem;
   }
+  &:hover {
+    border: 0px;
+    color: white;
+    background-color: black;
+  }
+  &:focus {
+    transform: translateY(4px);
+  }
 }
 
 .go-up {
   margin-top: -7rem;
   &--small {
     margin-top: -3.4rem;
+  }
+  &--medium {
+    margin-top: -5rem;
   }
   @include respond(4k-desktop) {
     margin-top: -25rem;
@@ -315,7 +346,7 @@ export default {
   // color: black;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px black;
-  font-size: 20rem;
+  font-size: 17rem;
   @include respond(4k-desktop) {
     font-size: 30rem;
   }

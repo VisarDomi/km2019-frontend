@@ -12,11 +12,16 @@
         v-for="(artist, index) in artists"
         :key="artist.name"
       >
-        <div class="artist-card abs-bottom" :class="{'abs-bottom--up': index % 2 === 0}">
+        <div
+          class="artist-card abs-bottom"
+          :class="{'abs-bottom--up': index % 2 === 0}"
+          @click="goToJuria()"
+        >
           <div class="img-container">
             <img :src="artist.img" alt />
           </div>
           <p class="artist-card__name go-up--small">{{artist.name}}</p>
+          <br />
           <p class="artist-card__song">{{artist.songtilte}}</p>
         </div>
       </div>
@@ -41,8 +46,8 @@ import HeaderHero from "@/components/Headers/HeaderHero.vue";
 export default {
   name: "ArtistsSection",
   methods: {
-    goToArtists() {
-      this.$router.push({ name: "Artists" });
+    goToJuria() {
+      this.$router.push({ name: "Juria" });
     }
   },
   components: {
@@ -154,7 +159,7 @@ export default {
     font-family: Vollkorn;
     display: inline-block;
     border: solid 2px white;
-
+    line-height: 3rem;
     margin-bottom: 2px;
     @include respond(tab-land) {
       font-size: 1.5rem;
@@ -164,7 +169,7 @@ export default {
     }
   }
   &__song {
-    border: 1px solid black;
+    border: 2px solid black;
     background-color: white;
     text-transform: uppercase;
     font-family: Ubuntu;
@@ -172,6 +177,7 @@ export default {
     display: inline-block;
     padding: 6px 1rem;
     font-size: 1.5rem;
+    line-height: 2.5rem;
     @include respond(tab-land) {
       font-size: 1.25rem;
     }

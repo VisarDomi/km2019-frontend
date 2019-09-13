@@ -1,30 +1,24 @@
 <template>
   <div class="home">
 
-
-
-
     <ComingSoon>
     </ComingSoon>
 
-
-
     <!-- <HeaderMobile v-if="windowWidth < 750" />
     <div class="fullpage-container">
-      <div class="fullpage-wp" v-fullpage="opts" ref="example">
+      <div class="fullpage-wp" v-fullpage="opts" ref="fullpage">
+        <HeroSection2 data-id="0" />
 
-        <HeroSection2 />
-
-        <ArtistsSection v-if="windowWidth > 600" />
+        <ArtistsSectionJuria data-id="1" v-if="windowWidth > 600" />
         <ArtistsMobile v-else />
 
-        <AcrossYearsSection v-if="windowWidth > 750" />
-        <AcrossYearsMobile v-else />
+        <AcrossYearsSection data-id="2" v-if="windowWidth > 750" />
+        <AcrossYearsMobile v-else /> -->
 
-        <SubmissionSection v-if="windowWidth > 950" />
-        <SubmissionMobile v-else />
+        <!-- <SubmissionSection data-id="3" v-if="windowWidth > 950" />
+        <SubmissionMobile v-else /> -->
 
-        <NewsSection v-if="windowWidth > 950" />
+        <!-- <NewsSection data-id="4" v-if="windowWidth > 950" />
         <NewsMobile v-else />
 
         <SponsorSectionz />
@@ -48,6 +42,7 @@ import HeroSection from "@/components/HeroSection.vue";
 import HeroSection2 from "@/components/HeroSection2.vue";
 
 import ArtistsSection from "@/components/ArtistsSection.vue";
+import ArtistsSectionJuria from "@/components/ArtistsSectionJuria.vue";
 import ArtistsMobile from "@/components/ArtistsMobile.vue";
 
 import AcrossYearsSection from "@/components/AcrossYearsSection.vue";
@@ -61,6 +56,7 @@ import NewsMobile from "@/components/NewsMobile.vue";
 
 import SponsorSectionz from "@/components/SponsorSection.vue";
 
+import { eventBus } from "@/main";
 // import Blogs from "@/views/Blogs.vue";
 
 export default {
@@ -71,6 +67,7 @@ export default {
     HeroSection,
     HeroSection2,
     ArtistsSection,
+    ArtistsSectionJuria,
     ArtistsMobile,
     AcrossYearsSection,
     AcrossYearsMobile,
@@ -94,8 +91,20 @@ export default {
       windowWidth: window.innerWidth
     };
   },
-  method: {},
+  methods: {
+    moveTo: function(index) {
+      console.log("h");
+      this.$refs.fullpage.$fullpage.moveTo(index, true);
+    }
+  },
   mounted() {
+    eventBus.$on("changeSection", payload => {
+      this.moveTo(payload);
+    });
+    eventBus.$on("changeSectionFromFooter", payload => {
+      console.log("probably from footer");
+      this.moveTo(payload);
+    });
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;

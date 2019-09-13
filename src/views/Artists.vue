@@ -92,17 +92,43 @@
         </div>
       </div>
     </div>
+    <!-- <div class="row mx-6 row-artists">
+      <div class="col-lg-3" v-for="artist in this.artists" :key="artist.id">
+        <div class="artist-card" @click="goToArtist(artist)">
+          <div class="h-75 artist-card">
+            <div class="img-container">
+              <img :src="artist.img" alt />
+            </div>
+            <p class="artist-card__name go-up--small">{{artist.name}}</p>
+            <br />
+            <p class="artist-card__song">{{artist.song}}</p>
+          </div>
+        </div>
+      </div>
+    </div>-->
+
+    <div class="spacer"></div>
+    <FooterWhite v-if="windowWidth > 770" />
+    <FooterWhiteSmall v-if="windowWidth < 770 && windowWidth > 600" />
   </div>
 </template>
 
 <script>
+import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
 // @ is an alias to /src
 
 export default {
   name: "Artists",
-  components: {},
+  components: {
+    FooterWhite,
+    FooterWhiteSmall
+  },
   data() {
-    return {};
+    return {
+      windowWidth: window.innerWidth,
+      artists: []
+    };
   },
   methods: {
     goToArtist() {
@@ -110,20 +136,50 @@ export default {
     },
     goToHome() {
       this.$router.push({ name: "Home" });
+    },
+
+    async getArtists() {
+      const axios = require("axios");
+      axios.defaults.headers.common = {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json"
+      };
+      let artists = axios
+        .get("https://fw9cy4j1y6.execute-api.eu-west-1.amazonaws.com/Dev/api", {
+          params: {
+            TableName: "KM2019-Artist",
+            Limit: "100"
+          }
+        })
+        .then(res => {
+          let resItems = res.data["Items"];
+          this.artists = resItems;
+        });
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
+    this.getArtists();
   }
 };
 </script>
 
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
-
+.spacer {
+  height: 15rem;
+  background: #0e1032;
+}
 .respond-width {
   @include respond(tab-land) {
     width: 70%;
   }
   @include respond(phone) {
-    width: 20%;
+    width: 50%;
   }
   @include respond(4k-desktop) {
     width: 40%;
@@ -140,7 +196,7 @@ export default {
   }
 }
 .h-15 {
-  height: 14% !important;
+  height: 10rem !important;
 }
 
 .mx-6 {
@@ -182,8 +238,8 @@ export default {
 
   @include respond(phone) {
     margin-top: 1rem;
-    margin-right:0px;
-    padding-right:0px;
+    margin-right: 0px;
+    padding-right: 0px;
   }
 
   font-size: 12rem;
@@ -197,7 +253,8 @@ export default {
 
 //on mobile breakpoint change to 100%;
 .artists {
-  height: 100vh;
+  position: relative;
+  height: 100%;
   background: #0e1032;
   background-size: cover;
   background-attachment: fixed;
@@ -306,7 +363,7 @@ input[type="search"]:hover {
 input[type="search"]:focus {
   @include respond(phone) {
     width: 90% !important ;
-    padding-left:22% !important;
+    padding-left: 22% !important;
   }
 
   width: 130px;

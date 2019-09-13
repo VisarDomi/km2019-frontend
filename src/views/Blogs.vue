@@ -12,27 +12,22 @@
         />
       </div>
     </div>
-    <!-- <div class="row">
-      <div class="col-lg-3 no-pad h-100">
-        <h1 class="blog-title">
-          blog title
-        </h1>
-      </div>
-      <div class="col-lg-3 no-pad">2</div>
-      <div class="col-lg-3 no-pad">3</div>
-      <div class="col-lg-3 no-pad">4</div>
-    </div>-->
     <div class="carousel-container">
-      <a @click.prevent="nextSlide">
-        <div class="carousel-right">
+      <!-- <div class="carousel-right">
+        <a @click.prevent="nextSlide">
           <img class="img-fluid img-next-arrow" src="@/assets/img/button next_posts.svg" alt />
-        </div>
-      </a>
-      <a @click.prevent="prevSlide">
-        <div class="carousel-left">
-          <img class="img-fluid img-left-arrow" src="@/assets/img/button previous_posts.svg" alt />
-        </div>
-      </a>
+        </a>
+      </div>-->
+
+      <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
+        <img v-if="hoverR" @click.prevent="nextSlide" src="@/assets/img/blogs_right_hover.svg" alt />
+        <img v-else @click.prevent="nextSlide" src="@/assets/img/blogs_right_normal.svg" alt />
+      </div>
+
+      <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
+        <img v-if="hoverL" @click.prevent="prevSlide" src="@/assets/img/blogs_left_hover.svg" alt />
+        <img v-else @click.prevent="prevSlide" src="@/assets/img/blogs_left_normal.svg" alt />
+      </div>
 
       <carousel
         ref="carousel"
@@ -41,23 +36,17 @@
         :navigationEnabled="false"
       >
         <slide v-for="artist in artists" :key="artist.name">
-          
-            <div
-            class="h-100 slide-column"
-            :style="{'background-image': 'url(' + artist.img + ')'}"
-          >
+          <div class="h-100 slide-column" :style="{'background-image': 'url(' + artist.img + ')'}">
             <h1 class="blog-title" @click="goToBlog()">{{artist.songtilte}}</h1>
-            
 
-          <h3 class="date">22.10.2019</h3>
-
+            <h3 class="date">22.10.2019</h3>
           </div>
-            
-         
         </slide>
-
       </carousel>
     </div>
+    <!-- <FooterBlack v-if="windowWidth > 770" /> -->
+    <FooterWhite v-if="windowWidth > 770" />
+    <!-- <FooterBlackSmall v-if="windowWidth < 770 && windowWidth > 600" /> -->
   </div>
 </template>
 
@@ -65,15 +54,21 @@
 
 <script>
 import { Carousel, Slide } from "vue-carousel";
+import FooterBlack from "@/components/Footer/FooterBlack.vue";
+import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterBlackSmall from "@/components/Footer/FooterBlackSmall.vue";
 export default {
   name: "Blogs",
   components: {
     Carousel,
+    FooterBlack,
+    FooterWhite,
+    FooterBlackSmall,
     Slide
   },
   data() {
     return {
-      
+      windowWidth: window.innerWidth,
       artists: [
         {
           name: "10.10.2018",
@@ -82,13 +77,16 @@ export default {
         },
         {
           name: "10.10.2018",
-          songtilte: "Ardit Gjebrea zbulon bukuroshen me të cilën do të prezantojë “Kënga Magjike” 2019!",
-          img: "https://i2.wp.com/bordo.al/wp-content/uploads/2019/08/3F5B2EF4-32D6-4A38-AA0C-B7265F170CAE.jpeg?w=750"
+          songtilte:
+            "Ardit Gjebrea zbulon prezantusen per “Kënga Magjike” 2019!",
+          img:
+            "https://i2.wp.com/bordo.al/wp-content/uploads/2019/08/3F5B2EF4-32D6-4A38-AA0C-B7265F170CAE.jpeg?w=750"
         },
         {
           name: "10.10.2018",
           songtilte: "Flori Mumajesi fitues i Kënga Magjike 2018!",
-          img: "https://www.kohajone.com/wp-content/uploads/2018/11/kenga-magjike.jpg"
+          img:
+            "https://www.kohajone.com/wp-content/uploads/2018/11/kenga-magjike.jpg"
         },
         {
           name: "10.10.2018",
@@ -99,8 +97,10 @@ export default {
           name: "10.10.2018",
           songtilte: "Flori Mumajesi fitues i Kënga Magjike 2018!",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-      ]
+        }
+      ],
+      hoverR: false,
+      hoverL: false
     };
   },
   methods: {
@@ -117,7 +117,13 @@ export default {
       this.$router.push({ name: "SingleBlog" });
     }
   },
-  mounted() {}
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
+  }
 };
 </script>
 
@@ -128,41 +134,20 @@ export default {
 </style>
 
 <style scoped lang="css">
-
-
-.slide-column{
-  background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.slide-column:hover {
-         background: -webkit-linear-gradient(rgba(200, 0, 60, 0) 0%, rgba(200, 0, 60, 0.5) 100%);
-  background: -moz-linear-gradient(rgba(200, 0, 60, 0) 0%, rgba(200, 0, 60, 0.5) 100%);
-  background: -o-linear-gradient(rgba(200, 0, 60, 0) 0%, rgba(200, 0, 60, 0.5) 100%);
-  background: linear-gradient(rgba(200, 0, 60, 0) 0%, rgba(200, 0, 60, 0.5) 100%);
-  background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-
-.img-logo:hover {
-  cursor: pointer;
-}
-.img-next-arrow {
-  width: 6rem;
-}
-
 .carousel-right {
   position: absolute;
-  bottom: 5rem;
+  /* bottom: 5rem; */
+  bottom: 17%;
   right: 5rem;
-  padding-top: 19px;
+  /* padding-top: 19px; */
   z-index: 99;
+  border-radius: 50%;
+  background-color: #c360b5;
 }
 .carousel-right:hover {
   cursor: pointer;
+  border-radius: 50%;
+  background-color: white;
 }
 
 .img-left-arrow {
@@ -172,13 +157,53 @@ export default {
 .carousel-left {
   z-index: 99;
   position: absolute;
-  bottom: 5rem;
+  /* bottom: 5rem; */
+  bottom: 17%;
   left: 5rem;
-  padding-top: 15px;
+  border-radius: 50%;
+  background-color: #c360b5;
+  /* padding-top: 15px; */
 }
 
 .carousel-left:hover {
   cursor: pointer;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.slide-column {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide-column:hover {
+  background: -webkit-linear-gradient(
+    rgba(200, 0, 60, 0) 0%,
+    rgba(200, 0, 60, 0.5) 100%
+  );
+  background: -moz-linear-gradient(
+    rgba(200, 0, 60, 0) 0%,
+    rgba(200, 0, 60, 0.5) 100%
+  );
+  background: -o-linear-gradient(
+    rgba(200, 0, 60, 0) 0%,
+    rgba(200, 0, 60, 0.5) 100%
+  );
+  background: linear-gradient(
+    rgba(200, 0, 60, 0) 0%,
+    rgba(200, 0, 60, 0.5) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.img-logo:hover {
+  cursor: pointer;
+}
+.img-next-arrow {
+  width: 6rem;
 }
 </style>
 
@@ -209,11 +234,11 @@ export default {
   // position: absolute;
   font-family: Vollkorn;
   // top: 30rem;
-    width: 84%;
-    text-align: left;
-    font-size: 4.5rem;
-    padding-top: 58%;
-    padding-left: 10%;
+  width: 84%;
+  text-align: left;
+  font-size: 4.5rem;
+  padding-top: 58%;
+  padding-left: 10%;
   font-size: 4.5rem;
   line-height: 1;
 }
@@ -223,13 +248,13 @@ export default {
   // position: absolute;
   // top: 50rem;
   z-index: 30;
-  font-family: Montserrat;
+  // font-family: Panton;
   background: white;
-  width:9rem;
+  width: 9rem;
   margin-left: 10%;
   font-weight: 700;
-  font-size: 1.4rem;
-  padding: 11px 11px 0px 11px;
+  font-size: 1.7rem;
+  padding: 0.5rem;
   // left: 2rem;
 }
 
@@ -274,7 +299,7 @@ export default {
 }
 
 .carousel-container {
-  height: calc(100% - (10rem));
+  height: calc(87% - (10rem));
 }
 
 .text-center {

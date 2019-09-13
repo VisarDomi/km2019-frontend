@@ -8,7 +8,7 @@
     />
     <div class="row h-25">
       <div class="header-container">
-        <h1>&nbsp;&nbsp;te reja</h1>
+        <h1>&nbsp;&nbsp;të reja</h1>
       </div>
     </div>
     <div class="middle h-50 go-up">
@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--1">
+          <div class="blog__image blog__image--1" @click="goToBlog()">
             <div class="blog__footer">
               <p class="blog__footer--date">12.12.2011</p>
               <p class="blog__footer--title">Flori Mumajesi fitues i Kenga Magjike 2018!</p>
@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--2">
+          <div class="blog__image blog__image--2" @click="goToBlog()">
             <div class="blog__footer">
               <p class="blog__footer--date">12.12.2011</p>
               <p class="blog__footer--title">Flori Mumajesi fitues i Kenga Magjike 2018!</p>
@@ -46,7 +46,7 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--3">
+          <div class="blog__image blog__image--3" @click="goToBlog()">
             <div class="blog__footer">
               <p class="blog__footer--date">12.12.2011</p>
               <p class="blog__footer--title">Flori Mumajesi fitues i Kenga Magjike 2018!</p>
@@ -57,7 +57,7 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--4">
+          <div class="blog__image blog__image--4" @click="goToBlog()">
             <div class="blog__footer">
               <p class="blog__footer--date">12.12.2011</p>
               <p class="blog__footer--title">Flori Mumajesi fitues i Kenga Magjike 2018!</p>
@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="more text-center w-100 mt-5">
-            <a href="#" class="btn" @click="goToBlogs()">lexo me shume</a>
+            <a href="#" class="btn" @click="goToBlogs()">lexo më shumë</a>
           </div>
         </div>
       </div>
@@ -91,6 +91,9 @@ export default {
   methods: {
     goToBlogs() {
       this.$router.push({ name: "Blogs" });
+    },
+    goToBlog() {
+      this.$router.push({ name: "SingleBlog" });
     }
   },
   mounted() {
@@ -128,7 +131,12 @@ export default {
   font-size: 2rem;
   color: #c76cba;
   &:hover {
+    border: 0px;
     color: white;
+    background-color: #c76cba;
+  }
+  &:focus {
+    transform: translateY(4px);
   }
 }
 
@@ -210,9 +218,12 @@ export default {
       background-color: #c360b5;
       display: inline-block;
       color: white;
+      // font-family: Panton;
+      // font-family: PANTON-REGULAR;
+      // font-family: PantonSemiBoldTf;
       font-weight: 700;
       font-size: 1.5rem;
-      padding-top: 5px;
+      padding: 1px 1rem;
     }
     &--title {
       color: white;
