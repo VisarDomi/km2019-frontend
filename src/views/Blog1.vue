@@ -119,6 +119,16 @@ export default {
       hoverL: false
     };
   },
+  head: {
+    // To use "this" in the component, it is necessary to return the object through a function
+    meta: [
+      { p: 'og:image', c: 'https://previews.dropbox.com/p/thumb/AAiMHszbD4-8Qlpt-wfpBN8BOjSNgArSJl3c0uhXkofMXQEI9qmzM7zkwuUnLPPBtdSq4uUYDbAetrAf5gGgK5quqAfa9toLaX-2BU27741sxIw5pvrlIk7OMOd4uFqluteI_UlceoR1FolpzbHPu7Hj7ED7osvCj224cyjXmDFYTopk9CyJ657seAJgbFg8Nh0pGdDn59ACzMobLh1UevXYFWzjiahRFrLSmuBKqwStSZR9T0aLK_RC80AzzFZgJMWC2r_xw5H2RgxMYpC2ml4R9h5g8AAq_ueViMW4gIdIDcQ19rb8zq24boHulKcDPBZ8-cjTPUcKkuig3YutCZl56rwVZaZxSxKLlIiu5hQWhg/p.jpeg?fv_content=true&size_mode=5' },
+      { p: 'og:url', c: 'https://kengamagjike.com/blog1'},
+      { p: 'og:title', c: 'Ja kush jane 3 artistët e parë BIG!'},
+      { p: 'og:description', c: 'Lindita, Genti Deda dhe Rea Nuhu janë tre artistët BIG që do  të çelin siparin e festivalit “Kënga Magjike”, duke prezantuar këngët e tyre në fazën e parë të këtij festivali në programin “E Diela Shqiptare”.'},
+      
+    ]
+  },
   methods: {
     nextSlide() {
       this.$refs.carousel.goToPage(this.$refs.carousel.getNextPage());

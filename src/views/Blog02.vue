@@ -114,6 +114,17 @@ export default {
       hoverL: false
     };
   },
+  
+  head: {
+    // To use "this" in the component, it is necessary to return the object through a function
+    meta: [
+      { p: 'og:image', c: 'https://previews.dropbox.com/p/thumb/AAisnD3aY-Yt4ad-aYUqa3eCwKFZbavtuyesCXOu3oWhaBIKOMtduCzcitGJ0cXtfoXKWbId5Ash9vVGpYBXpwvSxVZp-TPtieATqj4VRL9uRVOfJ1ToVvgadt44Ozo3BO0IIs7QV4kmy4WnRMc6Qs3d_jCVTe6C4Esw-ydi6C_yTSBsxWNFLffL8AuBJ1_SP8TS_fGMGh3wZh3-idWKjvChm3SgxPC5eEG1VeHuOnQzMLQ6Nm9iId8dF1IjGLBPkL66fsNMAY2chehuN49aSJfb55x96uB0J7eabdHs4M5GjwjD440BiurOXwTg0eDobMXOnwWWnQAaiZUGAhVuc9m8EyrNLJV-Y0x2NW00Mp1GJQ/p.jpeg?fv_content=true&size_mode=5' },
+      { p: 'og:url', c: 'https://kengamagjike.com/blog02'},
+      { p: 'og:title', c: 'Ndryshon sistemi i votimit në Kënga Magjike'},
+      { p: 'og:description', c: 'Në eksperiencën 20 vjeçare të Festivalit Kënga Magjike, thembra e Akilit ka qenë Votimi. Që prej vitit 2010, këngëtarët gjysmëfinalistë, kanë deklaruar votën e tyre të hapur, duke përcaktuar kështu këngëtarët e natës finale dhe fituesin e festivalit.'},
+      
+    ]
+  },
   methods: {
     nextSlide() {
       this.$refs.carousel.goToPage(this.$refs.carousel.getNextPage());
