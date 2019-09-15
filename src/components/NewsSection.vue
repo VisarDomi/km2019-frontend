@@ -38,7 +38,7 @@
           <div class="blog__image blog__image--2" @click="goToBlog('Blog2')">
             <div class="blog__footer">
               <p class="blog__footer--date">12.1.2019</p>
-              <p class="blog__footer--title">Flori Mumajesi fitues i Kenga Magjike 2018!</p>
+              <p class="blog__footer--title">Flori Mumajesi fitues i Kënga Magjike 2018!</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -48,7 +48,7 @@
         <div class="col-lg-3">
           <div class="blog__image blog__image--3" @click="goToBlog('Blog3')">
             <div class="blog__footer">
-              <p class="blog__footer--date">12.12.2017</p>
+              <p class="blog__footer--date">12.12.2018</p>
               <p class="blog__footer--title">Atmosferë serenatash në skenën e Këngës Magjike</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
@@ -59,7 +59,7 @@
         <div class="col-lg-3">
           <div class="blog__image blog__image--4" @click="goToBlog('5')">
             <div class="blog__footer">
-              <p class="blog__footer--date">15.11.2017</p>
+              <p class="blog__footer--date">15.11.2018</p>
               <p class="blog__footer--title">
 Mishela Rrapo: Presidenti turk u përlot prej meje</p>
               <div class="blog__footer--other mb-4">

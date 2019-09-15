@@ -9,10 +9,10 @@
     <div id="mySidenavR" class="sidenavR">
       <a href="javascript:void(0)" class="closebtn" @click="closeNavR()">×</a>
       <a href="#">&nbsp;</a>
-      <a href="#" @click="moveTo(1)">artistet</a>
-      <a href="#" @click="moveTo(2)">nder vite</a>
+      <a href="#" @click="moveTo(1)">juria</a>
+      <a href="#" @click="moveTo(2)">ndvr vite</a>
       <!-- <a href="#" @click="moveTo(3)">#magjike</a> -->
-      <a href="#" @click="moveTo(3)">te reja</a>
+      <a href="#" @click="moveTo(3)">të reja</a>
       <a href="#" class="high-index pos-relative" @click="goToRregullore()">rregullore</a>
       <div class="bottom-graphic" @click="moveTo(0)">
         <img src="@/assets/img/Path 2649.svg" alt />

@@ -38,7 +38,7 @@
         <slide>
           <div class="h-100 slide-column" >
             <img src="@/assets/img/blog/Blog-1.jpg" class="img-blog img-fluid" alt="">
-            <h1 class="blog-title" @click="goToBlog('Blog1')">Ja kush jane 3 artistët e parë BIG! </h1>
+            <h1 class="blog-title" @click="goToBlog('Blog1')">Ja kush janë 3 artistët e parë BIG! </h1>
 
             <h3 class="date">14.09.2019</h3>
           </div>
@@ -48,7 +48,7 @@
             <img src="@/assets/img/blog/Blog-2-gray.jpg" class="img-blog img-fluid" alt="">
             <h1 class="blog-title" @click="goToBlog('Blog2')">Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
 
-            <h3 class="date">22.1.2019</h3>
+            <h3 class="date">22.01.2019</h3>
           </div>
         </slide>
         <slide>
@@ -56,7 +56,7 @@
             <img src="@/assets/img/blog/Blog-3-gray.jpg" class="img-blog img-fluid" alt="">
             <h1 class="blog-title" @click="goToBlog('Blog3')">Fifi dhe Mc Kresha betejë në skenë!</h1>
 
-            <h3 class="date">22.10.2019</h3>
+            <h3 class="date">22.11.2018</h3>
           </div>
         </slide>
         <slide>
@@ -64,7 +64,7 @@
             <img src="@/assets/img/blog/Blog-4-gray.jpg" class="img-blog img-fluid" alt="">
             <h1 class="blog-title" @click="goToBlog('Blog4')">Atmosferë serenatash në skenën e Këngës Magjike</h1>
 
-            <h3 class="date">22.10.2019</h3>
+            <h3 class="date">5.11.2018</h3>
           </div>
         </slide>
         <slide>
@@ -72,7 +72,7 @@
             <img src="@/assets/img/blog/Blog-5-gray.jpg" class="img-blog img-fluid" alt="">
             <h1 class="blog-title" @click="goToBlog('Blog5')">Mishela Rrapo: Presidenti turk u përlot prej meje</h1>
 
-            <h3 class="date">22.10.2019</h3>
+            <h3 class="date">14.11.2018</h3>
           </div>
         </slide>
         <slide>
@@ -80,7 +80,7 @@
             <img src="@/assets/img/blog/Blog-7-gray.jpg" class="img-blog img-fluid" alt="">
             <h1 class="blog-title" @click="goToBlog('Blog6')">Evi Reçi nuk dua binjake!!</h1>
 
-            <h3 class="date">22.10.2019</h3>
+            <h3 class="date">16.10.2018</h3>
           </div>
         </slide>
         <slide>
@@ -88,7 +88,7 @@
             <img src="@/assets/img/blog/Blog-fifi-gray.jpg" class="img-blog img-fluid" alt="">
             <h1 class="blog-title" @click="goToBlog('Blog7')">Fifi, nje imituese perfekte!</h1>
 
-            <h3 class="date">22.10.2019</h3>
+            <h3 class="date">10.10.2018</h3>
           </div>
         </slide>
         <slide>
@@ -96,7 +96,7 @@
             <img src="@/assets/img/blog/Blog-mentor-gray.jpg" class="img-blog img-fluid" alt="">
             <h1 class="blog-title" @click="goToBlog('Blog8')">Hera e pare e Mentor Haziri-t...Ja doli?!</h1>
 
-            <h3 class="date">22.10.2019</h3>
+            <h3 class="date">5.10.2019</h3>
           </div>
         </slide>
       </carousel>

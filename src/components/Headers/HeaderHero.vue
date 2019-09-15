@@ -22,7 +22,7 @@
     <div
       class="col-lg-1 col-sm-1 offset-xl-4 offset-lg-3 offset-sm-3 cmi"
       @click="moveTo(1)"
-    >artistët</div>
+    >juria</div>
     <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(2)">ndër vite</div>
     <!-- <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(3)">#fotome</div> -->
     <!-- <div class="col-lg-1 col-sm-1 cmi"></div> -->

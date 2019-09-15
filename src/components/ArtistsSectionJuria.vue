@@ -77,7 +77,7 @@
           <div class="img-container">
             <img src="@/assets/img/juria/enkel.jpg" alt />
           </div>
-          <p class="artist-card__name go-up--small">Enkel Demi</p>
+          <p class="artist-card__name go-up--small">ENKEL DEMI</p>
           <!-- <br />
           <p class="artist-card__song">{{artist.songtilte}}</p> -->
         </div>
