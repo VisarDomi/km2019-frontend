@@ -85,6 +85,9 @@ export default {
     goToBlogs() {
       this.$router.push({ name: "Blogs" });
     },
+    goToBlog(blogname){
+      this.$router.push({name:blogname});
+    },
     prevSlide() {
       this.$refs.carouselNewsMobile.goToPage(
         this.$refs.carouselNewsMobile.getPreviousPage()
