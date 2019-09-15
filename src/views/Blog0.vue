@@ -142,7 +142,7 @@ export default {
   head: {
     // To use "this" in the component, it is necessary to return the object through a function
     meta: [
-      { p: 'og:image', c: 'https://i.ibb.co/L6jCr96/Blog-0.jpg' },
+      { p: 'og:image', c: 'https://previews.dropbox.com/p/thumb/AAi0w_d1Zwra6nfZUTNvBBf6E_pcdXu_ZlaE-qOw8p0nDDwCbQmfp8jxYjBdBBgiNJLmP-P1iDnHCjjGOMmQ8nql7uWmSC9fie60LWKFsRMgl-jli5B5fXjA6pYzchXw39beZEHziASFUOU5BXjxpFTpCuOZIqa3yQ178M559oepOM5TK-PG4NC0bHmZcTST4iuZRPZOKSY09uxCWYoak8AYjeV3KVeSLYdUrOsemymybW0UN-KvMlDtGRvrltOAHm7yLtW1NL7uzT0-wtqDmewUefRCAxdSYiZwUv4sQLbN3SiaFTZ8UcYG-iz5V93VUF7rnenFrjMVKbMSyQtz84xTNlRcaXgpUz9NtdMuMbkqjA/p.jpeg?fv_content=true&size_mode=5' },
       { p: 'og:url', c: 'https://kengamagjike.com/blog0'},
       { p: 'og:title', c: 'Kënga Magjike, këtë vit 6 anëtarë jurie'},
       { p: 'og:description', c: 'Në javën e parë të programit “E Diela Shqiptare”, në orarin dedikuar festivalit “Kënga Magjike”, nuk u zbuluan këngëtarët, por gjashtë anëtarët e jurisë.'},
