@@ -8,7 +8,7 @@
     />
     <div class="row h-25">
       <div class="header-container">
-        <h1>&nbsp;&nbsp;të reja</h1>
+        <h1>&nbsp;&nbsp;&nbsp;të reja</h1>
       </div>
     </div>
     <div class="middle h-50 go-up">
@@ -261,12 +261,12 @@ export default {
   }
   z-index: 5;
   h1 {
-    font-size: 20rem;
+    font-size: 23vh;
     font-family: Vollkorn;
     font-weight: 700;
-    @include respond(small-screen) {
-      font-size: 15rem;
-    }
+    // @include respond(small-screen) {
+    //   font-size: 15rem;
+    // }
   }
 }
 </style>
