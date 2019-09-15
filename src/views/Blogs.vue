@@ -128,7 +128,7 @@
     </div>
     <!-- <FooterBlack v-if="windowWidth > 770" /> -->
     <FooterWhite v-if="windowWidth > 770" />
-      <FooterWhiteMobile v-else />
+      <FooterSingleBlogMobile v-else />
     <!-- <FooterBlackSmall v-if="windowWidth < 770 && windowWidth > 600" /> -->
   </div>
 </template>
@@ -138,13 +138,13 @@
 <script>
 import { Carousel, Slide } from "vue-carousel";
 import FooterBlack from "@/components/Footer/FooterBlack.vue";
-import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
+import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterBlackSmall from "@/components/Footer/FooterBlackSmall.vue";
 export default {
   name: "Blogs",
   components: {
-    FooterWhiteMobile,
+    FooterSingleBlogMobile,
     Carousel,
     FooterBlack,
     FooterWhite,
