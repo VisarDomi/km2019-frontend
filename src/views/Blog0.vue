@@ -143,6 +143,10 @@ export default {
     // To use "this" in the component, it is necessary to return the object through a function
     meta: [
       { p: 'og:image', c: 'https://i.ibb.co/L6jCr96/Blog-0.jpg' },
+      { p: 'og:url', c: 'https://kengamagjike.com/blog0'},
+      { p: 'og:title', c: 'Kënga Magjike, këtë vit 6 anëtarë jurie'},
+      { p: 'og:description', c: 'Në javën e parë të programit “E Diela Shqiptare”, në orarin dedikuar festivalit “Kënga Magjike”, nuk u zbuluan këngëtarët, por gjashtë anëtarët e jurisë.'},
+      
     ]
   },
   methods: {
