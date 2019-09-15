@@ -35,6 +35,31 @@
         :paginationEnabled="false"
         :navigationEnabled="false"
       >
+
+        <slide>
+          <div class="h-100 slide-column" >
+            <img src="@/assets/img/blog/Blog-02-gray.jpg" class="img-blog img-fluid" alt="">
+            <h1 class="blog-title" @click="goToBlog('Blog02')">Ndryshon sistemi i votimit në Kënga Magjike</h1>
+
+            <h3 class="date">15.09.2019</h3>
+          </div>
+        </slide>
+        <slide>
+          <div class="h-100 slide-column" >
+            <img src="@/assets/img/blog/Blog-01-gray.jpg" class="img-blog img-fluid" alt="">
+            <h1 class="blog-title" @click="goToBlog('Blog01')">Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
+
+            <h3 class="date">15.09.2019</h3>
+          </div>
+        </slide>
+        <slide>
+          <div class="h-100 slide-column" >
+            <img src="@/assets/img/blog/Blog-0-gray.jpg" class="img-blog img-fluid" alt="">
+            <h1 class="blog-title" @click="goToBlog('Blog0')">Kënga Magjike, këtë vit 6 anëtarë jurie </h1>
+
+            <h3 class="date">15.09.2019</h3>
+          </div>
+        </slide>
         <slide>
           <div class="h-100 slide-column" >
             <img src="@/assets/img/blog/Blog-1.jpg" class="img-blog img-fluid" alt="">

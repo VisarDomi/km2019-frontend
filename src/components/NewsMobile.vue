@@ -23,6 +23,14 @@
         :navigationEnabled="false"
       >
         <slide>
+          <div class="h-100 slide-column">
+            <img src="@/assets/img/blog/Blog-0-gray.jpg" class="img-blog img-fluid" alt="">
+            <h1 class="blog-title" @click="goToBlog('Blog0')">Kënga Magjike, këtë vit 6 anëtarë jurie</h1>
+
+            <h3 class="date">05.09.2019</h3>
+          </div>
+        </slide>
+        <slide>
           <div class="h-100 slide-column" >
             <img src="@/assets/img/blog/Blog-1.jpg" class="img-blog img-fluid" alt="">
             <h1 class="blog-title" @click="goToBlog('Blog1')">Ja kush jane 3 artistët e parë BIG! </h1>
@@ -31,19 +39,11 @@
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column">
-            <img src="@/assets/img/blog/Blog-2-gray.jpg" class="img-blog img-fluid" alt="">
-            <h1 class="blog-title" @click="goToBlog('Blog2')">Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
-
-            <h3 class="date">22.1.2019</h3>
-          </div>
-        </slide>
-        <slide>
           <div class="h-100 slide-column" >
-            <img src="@/assets/img/blog/Blog-3-gray.jpg" class="img-blog img-fluid" alt="">
-            <h1 class="blog-title" @click="goToBlog('Blog3')">Fifi dhe Mc Kresha betejë në skenë!</h1>
+            <img src="@/assets/img/blog/Blog-01-gray.jpg" class="img-blog img-fluid" alt="">
+            <h1 class="blog-title" @click="goToBlog('Blog01')">Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
 
-            <h3 class="date">22.10.2019</h3>
+            <h3 class="date">15.09.2019</h3>
           </div>
         </slide>
       </carousel>

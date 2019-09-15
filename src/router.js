@@ -24,8 +24,11 @@ import Blog4 from "./views/Blog4.vue";
 import Blog5 from "./views/Blog5.vue";
 import Blog6 from "./views/Blog6.vue";
 import Blog7 from "./views/Blog7.vue";
-import Blog8 from "./views/Blog8.vue";
 
+import Blog8 from "./views/Blog8.vue";
+import Blog0 from "./views/Blog0.vue";
+import Blog01 from "./views/Blog01.vue";
+import Blog02 from "./views/Blog02.vue";
 
 
 import Rregullore from "./views/Rregullore.vue";
@@ -162,6 +165,24 @@ export default new Router({
       path: "/blog8",
       name: "Blog8",
       component: Blog8,
+      meta: { transition: "overlay-left" }
+    },
+    {
+      path: "/blog0",
+      name: "Blog0",
+      component: Blog0,
+      meta: { transition: "overlay-left" }
+    },
+    {
+      path: "/blog01",
+      name: "Blog01",
+      component: Blog01,
+      meta: { transition: "overlay-left" }
+    },
+    {
+      path: "/blog02",
+      name: "Blog02",
+      component: Blog02,
       meta: { transition: "overlay-left" }
     },
 

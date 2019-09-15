@@ -35,10 +35,10 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--2" @click="goToBlog('Blog2')">
+          <div class="blog__image blog__image--2" @click="goToBlog('Blog0')">
             <div class="blog__footer">
-              <p class="blog__footer--date">12.1.2019</p>
-              <p class="blog__footer--title">Flori Mumajesi fitues i Kënga Magjike 2018!</p>
+              <p class="blog__footer--date">15.09.2019</p>
+              <p class="blog__footer--title">Kënga Magjike, këtë vit 6 anëtarë jurie</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -46,10 +46,10 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--3" @click="goToBlog('Blog3')">
+          <div class="blog__image blog__image--3" @click="goToBlog('Blog01')">
             <div class="blog__footer">
-              <p class="blog__footer--date">12.12.2018</p>
-              <p class="blog__footer--title">Atmosferë serenatash në skenën e Këngës Magjike</p>
+              <p class="blog__footer--date">15.09.2019</p>
+              <p class="blog__footer--title">Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -57,11 +57,11 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--4" @click="goToBlog('5')">
+          <div class="blog__image blog__image--4" @click="goToBlog('Blog02')">
             <div class="blog__footer">
-              <p class="blog__footer--date">15.11.2018</p>
+              <p class="blog__footer--date">15.09.2018</p>
               <p class="blog__footer--title">
-Mishela Rrapo: Presidenti turk u përlot prej meje</p>
+Ndryshon sistemi i votimit në Kënga Magjike</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -173,39 +173,39 @@ export default {
     }
     &--2 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog 2.svg");
+        url("../assets/img/blog/Blog-0-gray.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       &:hover {
         background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7)),
-          url("../assets/img/blog 2.svg");
+          url("../assets/img/blog/Blog-0-gray.jpg");
         background-repeat: no-repeat;
         background-size: cover;
       }
     }
     &--3 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog 3.svg");
+        url("../assets/img/blog/Blog-01-gray-cropped.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       &:hover {
         background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7)),
-          url("../assets/img/blog 3.svg");
+          url("../assets/img/blog/Blog-01-gray-cropped.jpg");
         background-repeat: no-repeat;
         background-size: cover;
       }
     }
     &--4 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-5-gray.jpg");
+        url("../assets/img/blog/Blog-02-gray-cropped.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       &:hover {
         background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7)),
-          url("../assets/img/blog/Blog-5-gray.jpg");
+          url("../assets/img/blog/Blog-02-gray-cropped.jpg");
         background-repeat: no-repeat;
         background-size: cover;
       }
