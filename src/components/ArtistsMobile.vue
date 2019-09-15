@@ -1,18 +1,84 @@
 <template>
   <div class="mobile-news">
     <div class="row h-15 align-items-center">
-      <h1 class="title">artistet</h1>
+      <h1 class="title">juria</h1>
     </div>
 
     <!-- <div class="row h-50 justify-content-center mt-6"> -->
     <div class="row h-100">
       <carousel
         ref="carouselArtistsMobile"
-        :perPage="2"
+        :perPage="1"
         :paginationEnabled="false"
         :navigationEnabled="false"
       >
+
+
         <slide>
+
+          <div class="row " style="margin-bottom:20px;">
+            <div class="col-6 col-left">
+              <div class="artist-card" @click="goToRoute('JuriaArben')">
+                <div class="img-container">
+                  <img src="@/assets/img/juria/Arben.jpg" alt />
+                </div>
+                <p class="artist-card__name inside-card">ARBEN SKËNDERI</p>
+              </div>
+            </div>
+            <div class="col-6 col-right">
+              <div class="artist-card" @click="goToRoute('JuriaArmend')">
+                <div class="img-container">
+                  <img src="@/assets/img/juria/armend.jpg" alt />
+                </div>
+                <p class="artist-card__name inside-card">ARMEND REXHEPAGIQ</p>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="row " style="">
+            <div class="col-6 col-left">
+              <div class="artist-card" @click="goToRoute('JuriaDj')">
+                <div class="img-container">
+                  <img src="@/assets/img/juria/djs.jpg" alt />
+                </div>
+                <p class="artist-card__name inside-card">DJ MISS ROSE & DJ STONE</p>
+              </div>
+            </div>
+            <div class="col-6 col-right">
+              <div class="artist-card" @click="goToRoute('JuriaJonida')">
+                <div class="img-container">
+                  <img src="@/assets/img/juria/jonida.jpg" alt />
+                </div>
+                <p class="artist-card__name inside-card">JONIDA MALIQI</p>
+              </div>
+            </div>
+                        <div class="col-6 col-left" style="margin-top:10px;">
+              <div class="artist-card" @click="goToRoute('JuriaEnkel')">
+                <div class="img-container">
+                  <img src="@/assets/img/juria/enkel.jpg" alt />
+                </div>
+                <p class="artist-card__name inside-card">ENKEL DEMI</p>
+              </div>
+            </div>
+          </div>
+
+<!-- 
+             -->
+
+
+        </slide>
+
+
+
+
+
+
+
+
+
+
+        <!-- <slide>
           <div class="card-2 mt-30" v-for="artist in artists1" :key="artist.id">
             <div class="artist-card" @click="goToRoute('SingleArtist')">
               <div class="img-container">
@@ -59,16 +125,22 @@
               <p class="artist-card__song go-up">{{artist.song}}</p>
             </div>
           </div>
-        </slide>
+        </slide> -->
+
+
+
+
+
+
       </carousel>
     </div>
     <!-- </div> -->
     <div class="graphic-right"></div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="w-100 text-center btn-container">
         <a href="#" @click="goToRoute('Artists')" class="btn" style="margin-left:8%;">lexo me shumë</a>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -148,6 +220,18 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+.col-left{
+      padding-right: 0;
+    padding-left: 39px;
+}
+
+.col-right{
+  padding-right:19px;
+  padding-left: 20px;
+}
+
+
 .graphic-right {
   width: 2px;
   height: 70%;
@@ -162,7 +246,7 @@ export default {
 }
 .inside-card {
   position: absolute;
-  bottom: 27%;
+  bottom: -16%;
 }
 
 .go-up {
@@ -248,7 +332,7 @@ export default {
   position: relative;
   width: 100%;
   z-index: 4;
-  margin-top: -6rem;
+  margin-top: 1rem;
   img {
     height: 100%;
     width: 100%;

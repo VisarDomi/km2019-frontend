@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="blog-page">
     <div class="row justify-content-between artist-row align-items-center h-15">
       <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
@@ -27,7 +28,15 @@
           <hr />
           <p
             class="blog-content"
-          >Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.</p>
+          >Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
+          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
+          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
+          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
+          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
+          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
+          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
+          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
+          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.</p>
 
           <div class="row">
             <p class="single-date">22.10.2019</p>
@@ -44,11 +53,11 @@
             <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
               <img
                 v-if="hoverL"
-                @click.prevent="nextSlide"
+                @click.prevent="prevSlide"
                 src="@/assets/img/blogs_left_hover.svg"
                 alt
               />
-              <img v-else @click.prevent="nextSlide" src="@/assets/img/blogs_left_normal.svg" alt />
+              <img v-else @click.prevent="prevSlide" src="@/assets/img/blogs_left_normal.svg" alt />
             </div>
           </div>
 
@@ -79,24 +88,43 @@
               </div>
             </slide>
           </carousel>
+          <br>
+          <br>
+
         </div>
       </div>
+
+          
+
+        <FooterWhite v-if="windowWidth > 770"  />
+         
+
+
     </div>
+          <FooterSingleBlogMobile v-if="windowWidth < 770" />
   </div>
+          </div>
 </template>
 
 <script>
 // @ is an alias to /src
 
 import { Carousel, Slide } from "vue-carousel";
+
+import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
 export default {
   name: "SingleBlog",
   components: {
     Carousel,
-    Slide
+    Slide,
+    FooterWhite,
+    FooterSingleBlogMobile
   },
   data() {
     return {
+      
+      windowWidth: window.innerWidth,
       hoverR: false,
       hoverL: false
     };
@@ -114,6 +142,13 @@ export default {
     goToHome() {
       this.$router.push({ name: "Home" });
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
   }
 };
 </script>
@@ -122,7 +157,15 @@ export default {
 
 
 <style lang="scss" scoped>
+
+
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+@font-face {
+  font-family: Panton;
+  src: url('../assets/Fonts/panton-semibold.OTF');
+  font-weight: bold;
+}
 
 .carousel-right {
   position: absolute;
@@ -169,6 +212,7 @@ export default {
   font-size: 2.3rem;
   width: 90%;
   margin-top: 2rem;
+
 }
 
 .blog-card-image {
@@ -208,17 +252,17 @@ export default {
   position: initial;
   width: fit-content;
   margin-top: 3rem;
-
+  font-family: Panton;
   color: #c360b5;
   // position: absolute;
   // top: 50rem;
   z-index: 30;
   // font-family: Panton;
   background: white;
-  width: 9rem;
+  width: 10.2rem;
   // margin-left: 10%;
-  font-weight: 700;
-  font-size: 1.4rem;
+  font-weight: 900;
+  font-size: 1.6rem;
   padding: 0.5rem;
   padding-left: 1.2rem;
 }
@@ -266,6 +310,9 @@ hr {
   font-size: 3rem;
   padding-left: 5rem;
   padding-right: 5rem;
+    @include respond(phone) {
+    margin-bottom:80px;
+  }
 }
 .blog-page {
   height: 100vh;

@@ -1,10 +1,10 @@
 <template>
   <div class="home">
 
-    <ComingSoon>
-    </ComingSoon>
+    <!-- <ComingSoon>
+    </ComingSoon> -->
 
-    <!-- <HeaderMobile v-if="windowWidth < 750" />
+    <HeaderMobile v-if="windowWidth < 750" />
     <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="fullpage">
         <HeroSection2 data-id="0" />
@@ -13,17 +13,17 @@
         <ArtistsMobile v-else />
 
         <AcrossYearsSection data-id="2" v-if="windowWidth > 750" />
-        <AcrossYearsMobile v-else /> -->
+        <AcrossYearsMobile v-else />
 
         <!-- <SubmissionSection data-id="3" v-if="windowWidth > 950" />
         <SubmissionMobile v-else /> -->
 
-        <!-- <NewsSection data-id="4" v-if="windowWidth > 950" />
+        <NewsSection data-id="4" v-if="windowWidth > 950" />
         <NewsMobile v-else />
 
         <SponsorSectionz />
       </div>
-    </div> -->
+    </div>
 
 
 
@@ -34,6 +34,7 @@
 // @ is an alias to /src
 
 import ComingSoon from "@/components/ComingSoon.vue";
+import FooterBlackMobile from "@/components/Footer/FooterBlackMobile.vue";
 
 import HeaderMobile from "@/components/Headers/MobileHeader.vue";
 import LandingSection from "@/components/LandingSection.vue";
@@ -62,6 +63,7 @@ import { eventBus } from "@/main";
 export default {
   name: "Home",
   components: {
+    FooterBlackMobile,
     ComingSoon,
     LandingSection,
     HeroSection,

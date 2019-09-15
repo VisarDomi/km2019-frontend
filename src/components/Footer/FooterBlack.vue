@@ -1,9 +1,9 @@
 <template>
   <div class="footer">
-    <div class="row h-50 vertical-center">
+    <div class="row h-50 vertical-center footer-container">
       <div class="col-md-2">
         <div class="abs-center">
-          <img src="@/assets/img/logowhite.svg" alt @click="changeSection(0)" />
+          <img class="logo-footer" src="@/assets/img/logowhite.svg" alt @click="changeSection(0)" />
         </div>
       </div>
       <div class="col-md-1 pl-7 temporary-spread border-left-white">
@@ -34,8 +34,9 @@
       </div>
       <div class="col-md-2 border-left-white">
         <p class="footer-item">
-          &copy;Forged by
-          <span>BoldCrest</span>
+          <a href="https://boldcrest.com/">
+          <img src="@/assets/img/logocrestfooterblack.svg" alt="" style="width:250px;padding-left:30px;">
+          </a>
         </p>
       </div>
     </div>
@@ -66,6 +67,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+.footer-container{
+  padding-left:35px;
+}
+
+
 .footer-item {
   cursor: pointer;
 }

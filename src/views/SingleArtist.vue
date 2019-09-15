@@ -93,17 +93,20 @@
     <div class="spacer"></div>
     <FooterWhite v-if="windowWidth > 770" />
     <FooterWhiteSmall v-if="windowWidth < 770 && windowWidth > 600" />
+      <FooterWhiteMobile v-else />
   </div>
 </template>
 
 <script>
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
 import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
 // @ is an alias to /src
 
 export default {
   name: "SingleArtist",
   components: {
+    FooterWhiteMobile,
     FooterWhite,
     FooterWhiteSmall
   },

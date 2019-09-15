@@ -8,7 +8,7 @@
                         <div class="embed-responsive embed-responsive-4by3 h-100">
                           <iframe
                             class="embed-responsive-item"
-                            src="https://www.youtube.com/embed/GnxAhRj38Qk"
+                            src="https://www.youtube.com/embed/N6zn-y-G2dA"
                             allowfullscreen
                           ></iframe>
                         </div>
@@ -23,10 +23,7 @@
           </div>
           <div class="row">
             <p class="description">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-              sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-              aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-              exerci tation.
+              Festivali Kënga Magjike lindi në vitin 1999, si një alternativë ndryshe, një koncept i ri, një kontribut tjetër në muzikën e lehtë, duke u bërë kështu një prej eventeve më të rëndësishëm në historinë e muzikës shqiptare. Pothuaj të gjithë artistët shqiptarë, e kanë prekur magjinë e kësaj skene. Prej vitit 2016, struktura e festivalit ka ndryshuar, duke shtuar edhe kategorinë New Artist. Pas 20 vitesh eksperiencë, ky edicion sjell të rejat që janë diksutuar dhe kërkuar nga vetë artistët dhe publiku; mënyra e votimit dhe të kënduarit live.  
             </p>
           </div>
           <!-- <div class="row navigation-container">
@@ -124,7 +121,7 @@ export default {
 
 .description {
   color: #c360b5;
-  font-size: 2rem;
+      font-size: 1.78vh;
   margin-left: 5rem;
   width: 80%;
 }

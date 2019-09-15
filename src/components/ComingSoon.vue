@@ -1,6 +1,3 @@
-
-
-
 <template>
   <div class="bgimg">
   <div class="topleft">

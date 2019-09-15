@@ -8,7 +8,7 @@
         <img
           src="@/assets/img/artistet_arrow_right.svg"
           alt
-          class="back-icon center-block respond-width"
+          class="back-icon center-block "
         />
       </div>
     </div>
@@ -110,17 +110,20 @@
     <div class="spacer"></div>
     <FooterWhite v-if="windowWidth > 770" />
     <FooterWhiteSmall v-if="windowWidth < 770 && windowWidth > 600" />
+      <FooterWhiteMobile v-else />
   </div>
 </template>
 
 <script>
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
+import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
 // @ is an alias to /src
 
 export default {
   name: "Artists",
   components: {
+    FooterWhiteMobile,
     FooterWhite,
     FooterWhiteSmall
   },

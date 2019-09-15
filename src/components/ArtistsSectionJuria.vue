@@ -7,22 +7,79 @@
       </div>
     </div>
     <div class="row px-6 respond-height">
-      <div
-        class="col-lg-2 col-sm-2 col-7 ml-6"
-        v-for="(artist, index) in artists"
-        :key="artist.name"
-      >
+
+      <div class="col-lg-2 col-sm-2 col-7 ml-6">
         <div
           class="artist-card abs-bottom"
           :class="{'abs-bottom--up': index % 2 === 0}"
-          @click="goToJuria()"
+          @click="goToJuria('JuriaArben')"
         >
           <div class="img-container">
-            <img :src="artist.img" alt />
+            <img src="@/assets/img/juria/Arben.jpg" alt />
           </div>
-          <p class="artist-card__name go-up--small">{{artist.name}}</p>
-          <br />
-          <p class="artist-card__song">{{artist.songtilte}}</p>
+          <p class="artist-card__name go-up--small">ARBEN SKËNDERI</p>
+          <!-- <br />
+          <p class="artist-card__song">{{artist.songtilte}}</p> -->
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-sm-2 col-7 ml-6">
+        <div
+          class="artist-card abs-bottom"
+          :class="{'abs-bottom--up': index % 2 === 0}"
+          @click="goToJuria('JuriaArmend')"
+        >
+          <div class="img-container">
+            <img src="@/assets/img/juria/armend.jpg" alt />
+          </div>
+          <p class="artist-card__name go-up--small">ARMEND REXHEPAGIQ</p>
+          <!-- <br />
+          <p class="artist-card__song">{{artist.songtilte}}</p> -->
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-sm-2 col-7 ml-6">
+        <div
+          class="artist-card abs-bottom"
+          :class="{'abs-bottom--up': index % 2 === 0}"
+          @click="goToJuria('JuriaJonida')"
+        >
+          <div class="img-container">
+            <img src="@/assets/img/juria/jonida.jpg" alt />
+          </div>
+          <p class="artist-card__name go-up--small">JONIDA MALIQI</p>
+          <!-- <br />
+          <p class="artist-card__song">{{artist.songtilte}}</p> -->
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-sm-2 col-7 ml-6">
+        <div
+          class="artist-card abs-bottom"
+          :class="{'abs-bottom--up': index % 2 === 0}"
+          @click="goToJuria('JuriaDj')"
+        >
+          <div class="img-container">
+            <img src="@/assets/img/juria/djs.jpg" alt />
+          </div>
+          <p class="artist-card__name go-up--small">DJ MISS ROSE & DJ STONE</p>
+          <!-- <br />
+          <p class="artist-card__song">{{artist.songtilte}}</p> -->
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-sm-2 col-7 ml-6">
+        <div
+          class="artist-card abs-bottom"
+          :class="{'abs-bottom--up': index % 2 === 0}"
+          @click="goToJuria('JuriaEnkel')"
+        >
+          <div class="img-container">
+            <img src="@/assets/img/juria/enkel.jpg" alt />
+          </div>
+          <p class="artist-card__name go-up--small">Enkel Demi</p>
+          <!-- <br />
+          <p class="artist-card__song">{{artist.songtilte}}</p> -->
         </div>
       </div>
     </div>
@@ -46,8 +103,8 @@ import HeaderHero from "@/components/Headers/HeaderHero.vue";
 export default {
   name: "ArtistsSection",
   methods: {
-    goToJuria() {
-      this.$router.push({ name: "Juria" });
+    goToJuria(routename) {
+      this.$router.push({ name: routename });
     }
   },
   components: {
@@ -57,27 +114,27 @@ export default {
     return {
       artists: [
         {
-          name: "Juria1",
+          name: "ARBEN SKËNDERI",
+          songtilte: "",
+          img: "@/assets/img/juria/Arben.jpg"
+        },
+        {
+          name: "ARMEND REXHEPAGIQ",
           songtilte: "Loose yourself to dance",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         },
         {
-          name: "Juria2",
+          name: "JONIDA MALIQI",
           songtilte: "Loose yourself to dance",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         },
         {
-          name: "Juria3",
+          name: "DJ MISS ROSE & DJ STONE",
           songtilte: "Loose yourself to dance",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         },
         {
-          name: "Juria4",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "Juria5",
+          name: "ENKEL DEMI",
           songtilte: "Loose yourself to dance",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         }

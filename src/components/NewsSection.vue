@@ -24,9 +24,20 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--1" @click="goToBlog()">
+          <div class="blog__image blog__image--1" @click="goToBlog('Blog1')">
             <div class="blog__footer">
-              <p class="blog__footer--date">12.12.2011</p>
+              <p class="blog__footer--date">14.09.2019</p>
+              <p class="blog__footer--title">Ja kush jane 3 artistët e parë BIG! </p>
+              <div class="blog__footer--other mb-4">
+                <img src="@/assets/img/Group 180.svg" alt />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="blog__image blog__image--2" @click="goToBlog('Blog2')">
+            <div class="blog__footer">
+              <p class="blog__footer--date">12.1.2019</p>
               <p class="blog__footer--title">Flori Mumajesi fitues i Kenga Magjike 2018!</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
@@ -35,10 +46,10 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--2" @click="goToBlog()">
+          <div class="blog__image blog__image--3" @click="goToBlog('Blog3')">
             <div class="blog__footer">
-              <p class="blog__footer--date">12.12.2011</p>
-              <p class="blog__footer--title">Flori Mumajesi fitues i Kenga Magjike 2018!</p>
+              <p class="blog__footer--date">12.12.2017</p>
+              <p class="blog__footer--title">Atmosferë serenatash në skenën e Këngës Magjike</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -46,21 +57,11 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--3" @click="goToBlog()">
+          <div class="blog__image blog__image--4" @click="goToBlog('5')">
             <div class="blog__footer">
-              <p class="blog__footer--date">12.12.2011</p>
-              <p class="blog__footer--title">Flori Mumajesi fitues i Kenga Magjike 2018!</p>
-              <div class="blog__footer--other mb-4">
-                <img src="@/assets/img/Group 180.svg" alt />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="blog__image blog__image--4" @click="goToBlog()">
-            <div class="blog__footer">
-              <p class="blog__footer--date">12.12.2011</p>
-              <p class="blog__footer--title">Flori Mumajesi fitues i Kenga Magjike 2018!</p>
+              <p class="blog__footer--date">15.11.2017</p>
+              <p class="blog__footer--title">
+Mishela Rrapo: Presidenti turk u përlot prej meje</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -92,8 +93,8 @@ export default {
     goToBlogs() {
       this.$router.push({ name: "Blogs" });
     },
-    goToBlog() {
-      this.$router.push({ name: "SingleBlog" });
+    goToBlog(blogname) {
+      this.$router.push({ name: blogname });
     }
   },
   mounted() {
@@ -109,6 +110,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+
+.blog__image:hover{
+  cursor:pointer;
+}
 .graphic-right {
   position: absolute;
   opacity: 0.2;
@@ -154,13 +160,13 @@ export default {
   &__image {
     &--1 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog 1.svg");
+        url("../assets/img/blog/Blog-1.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       &:hover {
         background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7)),
-          url("../assets/img/blog 1.svg");
+          url("../assets/img/blog/Blog-1.jpg");
         background-repeat: no-repeat;
         background-size: cover;
       }
@@ -193,13 +199,13 @@ export default {
     }
     &--4 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog 4.svg");
+        url("../assets/img/blog/Blog-5-gray.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       &:hover {
         background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7)),
-          url("../assets/img/blog 4.svg");
+          url("../assets/img/blog/Blog-5-gray.jpg");
         background-repeat: no-repeat;
         background-size: cover;
       }
@@ -218,7 +224,7 @@ export default {
       background-color: #c360b5;
       display: inline-block;
       color: white;
-      // font-family: Panton;
+      font-family: Panton;
       // font-family: PANTON-REGULAR;
       // font-family: PantonSemiBoldTf;
       font-weight: 700;

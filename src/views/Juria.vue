@@ -31,7 +31,7 @@
       </div>
 
       <div class="row">
-        <div class="col">
+        <div class="col share-col" style="">
           <p class="share-text">Shperndaje:</p>
           <span>
             <i class="fa fa-facebook facebook-icon" style="margin-right:5px;"></i>
@@ -41,13 +41,17 @@
         </div>
       </div>
     </div>
+    <div class="spacer"></div>
     <FooterWhite v-if="windowWidth > 770" />
-    <FooterWhiteSmall v-if="windowWidth < 770 && windowWidth > 600" />
+    <FooterWhiteSmall v-else-if="windowWidth < 770 && windowWidth > 600" />
+      <FooterJuriaMobile v-else/>
+
   </div>
 </template>
 
 <script>
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterJuriaMobile from "@/components/Footer/FooterJuriaMobile.vue";
 import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
 // @ is an alias to /src
 
@@ -55,6 +59,7 @@ export default {
   name: "SingleArtist",
   components: {
     FooterWhite,
+    FooterJuriaMobile,
     FooterWhiteSmall
   },
   data() {
@@ -81,6 +86,13 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+.share-col{
+margin-bottom:50px;
+  @include respond(phone) {
+    height: 70px;
+  }
+}
 .img-container {
   // width: 100%;
 }
@@ -176,7 +188,13 @@ export default {
   font-size: 1.2rem;
 }
 .artist-container {
+  background: linear-gradient(#0e1032, #000);
+  height:100%;
+  // margin-bottom:6%;
   margin-top: 5rem;
+    @include respond(phone) {
+    margin-bottom:50px;
+  }
 }
 
 i.fa {
@@ -212,10 +230,10 @@ body {
 }
 
 .artist-page {
-  height: 100vh;
+  // height:100vh;
   // height: 100%;
   @include respond(phone) {
-    height: 100%;
+    height: 100vh;
   }
 
   @include respond(tab-port) {
@@ -299,6 +317,9 @@ body {
   margin-top: -10rem;
   &--small {
     margin-top: -4rem;
+      @include respond(phone) {
+    padding-top: 30px;
+  }
   }
 }
 </style>

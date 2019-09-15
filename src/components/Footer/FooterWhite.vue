@@ -1,9 +1,9 @@
 <template>
   <div class="footer">
     <div class="row h-50 vertical-center">
-      <div class="col-md-2">
+      <div class="col-md-2 ">
         <div class="abs-center" @click="changeRoute('Home')">
-          <img src="@/assets/img/logoblack.svg" alt />
+          <img src="@/assets/img/logoblack.svg" class="footer-image-logo" alt />
         </div>
       </div>
       <div class="col-md-1 pl-6 temporary-spread border-left-black">
@@ -32,10 +32,10 @@
           <img src="@/assets/img/icon youtube black.svg" class="social-3" alt />
         </div>
       </div>
-      <div class="col-md-2 border-left-black">
+      <div class="col-md-2 col-sm-1 border-left-black">
         <p class="footer-item">
-          &copy;Forged by
-          <span>BoldCrest</span>
+          <a href="https://boldcrest.com/">
+          <img src="@/assets/img/logocrestfooterwhite.svg" alt="" style="width:250px;padding-left:30px;"></a>
         </p>
       </div>
     </div>
@@ -67,6 +67,13 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
+
+.footer-image-logo{
+        @include respond(small-screen) {
+    margin-left:4%;
+  }
+}
+
 .social {
   &-1 {
     position: absolute;
@@ -74,7 +81,7 @@ export default {
   }
   &-2 {
     position: absolute;
-    left: 44%;
+    left: 43%;
   }
   &-3 {
     // position: absolute;
@@ -115,10 +122,10 @@ export default {
 }
 
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0%;
   width: 100%;
-  height: 11rem;
+  height: 8rem;
   background-color: white;
   &-item {
     color: black;

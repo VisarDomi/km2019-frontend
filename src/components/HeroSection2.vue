@@ -6,7 +6,7 @@
     <img src="@/assets/img/logo.svg" alt="Kenga Magjike logo" class="logo w-50 h-50" />
     <div class="bg-video">
       <video class="bg-video__content" autoplay muted loop>
-        <source src="@/assets/video.mp4" type="video/mp4" />
+        <source src="@/assets/videoplayback.webm" type="video/mp4" />
       </video>
     </div>
   </div>

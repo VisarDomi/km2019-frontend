@@ -1,10 +1,10 @@
 <template>
   <div class="rregullat">
     <div class="row justify-content-between artist-row align-items-center">
-      <div class="col-lg-3 col-sm-2 col-xs-1 text-center">
+      <div class="col-lg-3 col-sm-2 col-1 col-xs-1 text-center">
         <img src="@/assets/img/logowhite.svg" class="img-logo" @click="goToHome()" />
       </div>
-      <div class="col-lg-1 col-sm-2 col-xs-1 vertical-center back-hover" @click="goToHome()">
+      <div class="col-lg-1 col-sm-2 col-xs-1 col-3 vertical-center back-hover" @click="goToHome()">
         <img src="@/assets/img/artistet_arrow_left.svg" alt class="back-icon center-block" />
       </div>
     </div>
@@ -153,19 +153,20 @@
     </div>
 
     <Footer v-if="windowWidth > 770" />
-    <FooterSmall v-if="windowWidth < 770 && windowWidth > 600" />
-    <div class="spacer" v-else></div>
+    <FooterSmall v-else-if="windowWidth < 770 && windowWidth > 600" />
+    <FooterWhiteMobile v-else />
   </div>
 </template>
 
 
 <script>
 import Footer from "@/components/Footer/FooterWhite.vue";
+import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
 import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
 export default {
   name: "Rregullore",
   components: {
-    Footer,
+    Footer,FooterWhiteMobile,
     FooterSmall
   },
   data() {
@@ -253,6 +254,7 @@ export default {
   margin: 16%;
   margin-top: 3%;
   text-align: center;
+  margin-bottom:0px;
 }
 
 .title-rregullat {
