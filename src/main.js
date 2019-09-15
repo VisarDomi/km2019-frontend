@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import VueHead from 'vue-head'
 // import { ApiService } from "@/api.js";
 
 import axios from "axios";
@@ -23,7 +24,7 @@ import VueFullpage from "fullpage-vue";
 import BootstrapVue from "bootstrap-vue";
 
 Vue.use(axios);
-
+Vue.use(VueHead)
 Vue.use(BootstrapVue);
 Vue.use(VueFullpage);
 Vue.use(VueCarousel);

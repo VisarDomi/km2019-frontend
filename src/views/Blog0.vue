@@ -1,5 +1,19 @@
 <template>
+
 <div>
+  <head>
+    <meta property="og:title" content="The Rock"/>
+    <meta property="og:type" content="movie"/>
+    <meta property="og:url" content="http://www.imdb.com/title/tt0117500/"/>
+    <meta property="og:image" content="http://ia.media-imdb.com/rock.jpg"/>
+    <meta property="og:site_name" content="IMDb"/>
+    <meta property="fb:admins" content="USER_ID"/>
+    <meta property="og:description"
+          content="A group of U.S. Marines, under command of
+                   a renegade general, take over Alcatraz and
+                   threaten San Francisco Bay with biological
+                   weapons."/>
+  </head>
   <div class="blog-page">
     <div class="row justify-content-between artist-row align-items-center h-15">
       <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
@@ -124,6 +138,12 @@ export default {
       hoverR: false,
       hoverL: false
     };
+  },
+  head: {
+    // To use "this" in the component, it is necessary to return the object through a function
+    meta: [
+      { p: 'og:image', c: 'https://ibb.co/J26zqr2' },
+    ]
   },
   methods: {
     nextSlide() {
