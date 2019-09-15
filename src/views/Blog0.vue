@@ -142,7 +142,7 @@ export default {
   head: {
     // To use "this" in the component, it is necessary to return the object through a function
     meta: [
-      { p: 'og:image', c: 'https://ibb.co/J26zqr2' },
+      { p: 'og:image', c: 'https://i.ibb.co/L6jCr96/Blog-0.jpg' },
     ]
   },
   methods: {
