@@ -12,32 +12,16 @@
         <div
           class="artist-card abs-bottom"
           :class="{'abs-bottom--up': index % 2 === 0}"
-          @click="goToJuria('JuriaArben')"
-        >
-          <div class="img-container">
-            <img src="@/assets/img/juria/Arben.jpg" alt />
-          </div>
-          <p class="artist-card__name go-up--small">ARBEN SKËNDERI</p>
-          <!-- <br />
-          <p class="artist-card__song">{{artist.songtilte}}</p> -->
-        </div>
-      </div>
-
-      <div class="col-lg-2 col-sm-2 col-7 ml-6">
-        <div
-          class="artist-card abs-bottom"
-          :class="{'abs-bottom--up': index % 2 === 0}"
           @click="goToJuria('JuriaArmend')"
         >
           <div class="img-container">
             <img src="@/assets/img/juria/armend.jpg" alt />
           </div>
-          <p class="artist-card__name go-up--small">ARMEND REXHEPAGIQ</p>
+          <p class="artist-card__name go-up--small">ARMEND REXHEPAGIQI</p>
           <!-- <br />
           <p class="artist-card__song">{{artist.songtilte}}</p> -->
         </div>
       </div>
-
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
         <div
           class="artist-card abs-bottom"
@@ -52,21 +36,22 @@
           <p class="artist-card__song">{{artist.songtilte}}</p> -->
         </div>
       </div>
-
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
         <div
           class="artist-card abs-bottom"
           :class="{'abs-bottom--up': index % 2 === 0}"
-          @click="goToJuria('JuriaDj')"
+          @click="goToJuria('JuriaArben')"
         >
           <div class="img-container">
-            <img src="@/assets/img/juria/djs.jpg" alt />
+            <img src="@/assets/img/juria/Arben.jpg" alt />
           </div>
-          <p class="artist-card__name go-up--small">DJ MISS ROSE & DJ STONE</p>
+          <p class="artist-card__name go-up--small">ARBEN SKËNDERI</p>
           <!-- <br />
           <p class="artist-card__song">{{artist.songtilte}}</p> -->
         </div>
       </div>
+
+
 
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
         <div
@@ -82,6 +67,21 @@
           <p class="artist-card__song">{{artist.songtilte}}</p> -->
         </div>
       </div>
+      <div class="col-lg-2 col-sm-2 col-7 ml-6">
+        <div
+          class="artist-card abs-bottom"
+          :class="{'abs-bottom--up': index % 2 === 0}"
+          @click="goToJuria('JuriaDj')"
+        >
+          <div class="img-container">
+            <img src="@/assets/img/juria/djs.jpg" alt />
+          </div>
+          <p class="artist-card__name go-up--small">DJ MISS ROSE & DJ STONE</p>
+          <!-- <br />
+          <p class="artist-card__song">{{artist.songtilte}}</p> -->
+        </div>
+      </div>
+
     </div>
 
     <div class="row mt-6">

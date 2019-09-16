@@ -21,7 +21,7 @@
         </div>
         <div class="col-lg-5 top-padded-col">
           <h1 class="artist-name">Armend</h1>
-          <h1 class="artist-surname">Rexhepagiq</h1>
+          <h1 class="artist-surname">Rexhepagiqi</h1>
           <!-- <h2 class="artist-songtitle">loose yourself to dance</h2> -->
           <h3 class="bio-text">bio</h3>
           <h4
