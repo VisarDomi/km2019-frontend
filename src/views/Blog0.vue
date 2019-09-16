@@ -47,7 +47,7 @@
 <br><br>
 Po, pooo gjashtë anëtarë!
 <br><br>
-Dy prej tyre kanë qenë edhe vitin e kaluar pjesë e kësaj jurie; kantautori Armend Rexhepagiq dhe instrumentisti Arben Skënderi. Kësaj dysheje profesionistësh i bashkohet edhe këgëtarja e njohur Jonida Maliqi. Po gazetarin Enkel Demi e kishit parë në ndonjë panel jurie!? Ja do keni mundësinë ta ndiqni çdo të diel, deri në përfundim të festivalit “Kënga Magjike 2019”.
+Dy prej tyre kanë qenë edhe vitin e kaluar pjesë e kësaj jurie; kantautori Armend Rexhepagiqi dhe instrumentisti Arben Skënderi. Kësaj dysheje profesionistësh i bashkohet edhe këgëtarja e njohur Jonida Maliqi. Po gazetarin Enkel Demi e kishit parë në ndonjë panel jurie!? Ja do keni mundësinë ta ndiqni çdo të diel, deri në përfundim të festivalit “Kënga Magjike 2019”.
 <br><br>
 Ja u bënë 4 anëtarë. Po 2 të fundit kush janë?  Ata janë dy, por vota e tyre do të vlejë sa për një; DJ Miss Rose & DJ Stone. Një çift DJ, çift edhe profesionalisht, por edhe ne jetën personale; do të jenë  pjesë e panelit të jurisë së festivalit “Kënga Magjike 2019”.
 
