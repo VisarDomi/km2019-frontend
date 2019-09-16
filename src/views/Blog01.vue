@@ -1,96 +1,85 @@
 <template>
-<div>
-  <div class="blog-page">
-    <div class="row justify-content-between artist-row align-items-center h-15">
-      <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
-        <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
-      </div>
-      <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
-        <img
-          src="@/assets/img/artistet_arrow_left.svg"
-          alt
-          class="back-icon center-block respond-width"
-        />
-      </div>
-    </div>
-
-    <div class="row blog-row">
-      <div class="col-md-5 col-12 image-col">
-        <img
-          class="blog-image"
-          src="@/assets/img/blog/Blog-01-cropped.jpg"
-          alt
-        />
-      </div>
-      <div class="col-md-7 col-xs-12 blog-col">
-        <div class="container">
-          <h1 class="single-blog-title">Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
-          <hr />
-          <p
-            class="blog-content"
-          >Në vitet e kaluara të festivalit “Kënga Magjike” ka pasur raste, kur qoftë në Kategorinë BIG, qoftë në kategorinë New Artist, kanë konkurruar këngëtarë të huaj. E reja në këtë edicion të festivalit është se do të ketë më shumë se 10 këngëtarë të huaj dhe pjesa më e madhe e tyre do të jenë në kategorinë New Artist. Këtë e bëri të ditur vetë Ardit Gjebrea, duke i quajtur këta këngëtarë si “New International Artist”.
-
-
-          <div class="row">
-            <p class="single-date">15.09.2019</p>
-            <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
-              <img
-                v-if="hoverR"
-                @click="goToBlog('Blog1')"
-                src="@/assets/img/blogs_right_hover.svg"
-                alt
-              />
-              <img v-else @click="goToBlog('Blog1')" src="@/assets/img/blogs_right_normal.svg" alt />
-            </div>
-
-            <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
-              <img
-                v-if="hoverL"
-                @click="goToBlog('Blog7')"
-                src="@/assets/img/blogs_left_hover.svg"
-                alt
-              />
-              <img v-else @click="goToBlog('Blog7')" src="@/assets/img/blogs_left_normal.svg" alt />
-            </div>
-          </div>
-
-          <h3 class="bio-text">te ngjashme</h3>
-            <br>
-            <div class="row">
-              <div class="col-lg-6">
-                              <div class="blog-card" @click="goToBlog('Blog1')">
-                <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-1.jpg" alt />
-                <h2 class="blog-card-title">Ja kush jane 3 artistët e parë BIG! </h2>
-              </div>
-
-              </div>
-              <div class="col-lg-6">
-                              <div class="blog-card " @click="goToBlog('Blog2')">
-                <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-2.jpg" alt />
-                <h2 class="blog-card-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
-              </div>
-
-              </div>
-            </div>
-
-
-
-          <br>
-          <br>
-
+  <div>
+    <div class="blog-page">
+      <div class="row justify-content-between artist-row align-items-center h-15">
+        <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
+          <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
+        </div>
+        <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
+          <img
+            src="@/assets/img/artistet_arrow_left.svg"
+            alt
+            class="back-icon center-block respond-width"
+          />
         </div>
       </div>
 
-          
+      <div class="row blog-row">
+        <div class="col-md-5 col-12 image-col">
+          <img class="blog-image" src="@/assets/img/blog/Blog-01-cropped.jpg" alt />
+        </div>
+        <div class="col-md-7 col-xs-12 blog-col">
+          <div class="container">
+            <h1 class="single-blog-title">Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
+            <hr />
+            <p
+              class="blog-content"
+            >Në vitet e kaluara të festivalit “Kënga Magjike” ka pasur raste, kur qoftë në Kategorinë BIG, qoftë në kategorinë New Artist, kanë konkurruar këngëtarë të huaj. E reja në këtë edicion të festivalit është se do të ketë më shumë se 10 këngëtarë të huaj dhe pjesa më e madhe e tyre do të jenë në kategorinë New Artist. Këtë e bëri të ditur vetë Ardit Gjebrea, duke deklaruar edhe krijimin e një kategorietë re në këtë festival - International Artist.</p>
+            <div class="row">
+              <p class="single-date">15.09.2019</p>
+              <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
+                <img
+                  v-if="hoverR"
+                  @click="goToBlog('Blog1')"
+                  src="@/assets/img/blogs_right_hover.svg"
+                  alt
+                />
+                <img
+                  v-else
+                  @click="goToBlog('Blog1')"
+                  src="@/assets/img/blogs_right_normal.svg"
+                  alt
+                />
+              </div>
 
-        <FooterWhite v-if="windowWidth > 770"  />
-         
+              <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
+                <img
+                  v-if="hoverL"
+                  @click="goToBlog('Blog7')"
+                  src="@/assets/img/blogs_left_hover.svg"
+                  alt
+                />
+                <img v-else @click="goToBlog('Blog7')" src="@/assets/img/blogs_left_normal.svg" alt />
+              </div>
+            </div>
 
+            <h3 class="bio-text">te ngjashme</h3>
+            <br />
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="blog-card" @click="goToBlog('Blog1')">
+                  <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-1.jpg" alt />
+                  <h2 class="blog-card-title">Ja kush jane 3 artistët e parë BIG!</h2>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="blog-card" @click="goToBlog('Blog2')">
+                  <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-2.jpg" alt />
+                  <h2 class="blog-card-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
+                </div>
+              </div>
+            </div>
 
-    </div>
-          <FooterSingleBlogMobile v-if="windowWidth < 770" />
-  </div>
+            <br />
+            <br />
           </div>
+        </div>
+
+        <FooterWhite v-if="windowWidth > 770" />
+      </div>
+      <FooterSingleBlogMobile v-if="windowWidth < 770" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -110,7 +99,6 @@ export default {
   },
   data() {
     return {
-      
       windowWidth: window.innerWidth,
       hoverR: false,
       hoverL: false
@@ -119,11 +107,21 @@ export default {
   head: {
     // To use "this" in the component, it is necessary to return the object through a function
     meta: [
-      { p: 'og:image', c: 'https://previews.dropbox.com/p/thumb/AAhWJg81YsX6lAsMiG9e97vkk0HEsWDdOlYkyct1iChmj19Y-UPIAUi0_K1nrlPlcPapXsOtgWLZu40gxfjZG6SSQA_GOHrn-gQujs7G4cmxsSCmYHBtfZbGdFyyiqJc-sq68I_jwPAUkBGgnNhEi3CdGE1GiN34frK89Z9d5ZgNOANvNpr9g_yahj5fixt7ffoJuAEHQk-DUww8FQ2THZJOpmKJXKcKAolqw1_DzHkLjqI-2I9aL1L6ykt4Uw-xEHVllHiFMBFDUFQ433lLaxybBvGgoikO-Im1Vkc4H-knVZXqRfGa8Ep2zLIFr8Uv6DMh3BYNqd_h6EH4Jkjxs8-kEHk_e0abQK1MLINBBbY9hQ/p.jpeg?fv_content=true&size_mode=5' },
-      { p: 'og:url', c: 'https://kengamagjike.com/blog01'},
-      { p: 'og:title', c: 'Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj'},
-      { p: 'og:description', c: 'Në vitet e kaluara të festivalit “Kënga Magjike” ka pasur raste, kur qoftë në Kategorinë BIG, qoftë në kategorinë New Artist, kanë konkurruar këngëtarë të huaj.'},
-      
+      {
+        p: "og:image",
+        c:
+          "https://previews.dropbox.com/p/thumb/AAhWJg81YsX6lAsMiG9e97vkk0HEsWDdOlYkyct1iChmj19Y-UPIAUi0_K1nrlPlcPapXsOtgWLZu40gxfjZG6SSQA_GOHrn-gQujs7G4cmxsSCmYHBtfZbGdFyyiqJc-sq68I_jwPAUkBGgnNhEi3CdGE1GiN34frK89Z9d5ZgNOANvNpr9g_yahj5fixt7ffoJuAEHQk-DUww8FQ2THZJOpmKJXKcKAolqw1_DzHkLjqI-2I9aL1L6ykt4Uw-xEHVllHiFMBFDUFQ433lLaxybBvGgoikO-Im1Vkc4H-knVZXqRfGa8Ep2zLIFr8Uv6DMh3BYNqd_h6EH4Jkjxs8-kEHk_e0abQK1MLINBBbY9hQ/p.jpeg?fv_content=true&size_mode=5"
+      },
+      { p: "og:url", c: "https://kengamagjike.com/blog01" },
+      {
+        p: "og:title",
+        c: "Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj"
+      },
+      {
+        p: "og:description",
+        c:
+          "Në vitet e kaluara të festivalit “Kënga Magjike” ka pasur raste, kur qoftë në Kategorinë BIG, qoftë në kategorinë New Artist, kanë konkurruar këngëtarë të huaj."
+      }
     ]
   },
   methods: {
@@ -157,13 +155,11 @@ export default {
 
 
 <style lang="scss" scoped>
-
-
 @import "@/assets/sass/abstracts/_mixins.scss";
 
 @font-face {
   font-family: Panton;
-  src: url('../assets/Fonts/panton-semibold.OTF');
+  src: url("../assets/Fonts/panton-semibold.OTF");
   font-weight: bold;
 }
 
@@ -206,8 +202,8 @@ export default {
   width: 5rem;
 }
 
-.blog-card:hover{
-  cursor:pointer;
+.blog-card:hover {
+  cursor: pointer;
 }
 
 .blog-card-title {
@@ -216,7 +212,6 @@ export default {
   font-size: 2.3rem;
   width: 90%;
   margin-top: 2rem;
-
 }
 
 .blog-card-image {
@@ -314,8 +309,8 @@ hr {
   font-size: 3rem;
   padding-left: 5rem;
   padding-right: 5rem;
-    @include respond(phone) {
-    margin-bottom:80px;
+  @include respond(phone) {
+    margin-bottom: 80px;
   }
 }
 .blog-page {

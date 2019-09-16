@@ -1,18 +1,19 @@
 <template>
-
 <div>
   <head>
-    <meta property="og:title" content="The Rock"/>
-    <meta property="og:type" content="movie"/>
-    <meta property="og:url" content="http://www.imdb.com/title/tt0117500/"/>
-    <meta property="og:image" content="http://ia.media-imdb.com/rock.jpg"/>
-    <meta property="og:site_name" content="IMDb"/>
-    <meta property="fb:admins" content="USER_ID"/>
-    <meta property="og:description"
-          content="A group of U.S. Marines, under command of
+    <meta property="og:title" content="The Rock" />
+    <meta property="og:type" content="movie" />
+    <meta property="og:url" content="http://www.imdb.com/title/tt0117500/" />
+    <meta property="og:image" content="http://ia.media-imdb.com/rock.jpg" />
+    <meta property="og:site_name" content="IMDb" />
+    <meta property="fb:admins" content="USER_ID" />
+    <meta
+      property="og:description"
+      content="A group of U.S. Marines, under command of
                    a renegade general, take over Alcatraz and
                    threaten San Francisco Bay with biological
-                   weapons."/>
+                   weapons."
+    />
   </head>
   <div class="blog-page">
     <div class="row justify-content-between artist-row align-items-center h-15">
@@ -30,30 +31,22 @@
 
     <div class="row blog-row">
       <div class="col-md-5 col-12 image-col">
-        <img
-          class="blog-image"
-          src="@/assets/img/blog/Blog-0-crop.jpg"
-          alt
-        />
+        <img class="blog-image" src="@/assets/img/blog/Blog-0-crop.jpg" alt />
       </div>
       <div class="col-md-7 col-xs-12 blog-col">
         <div class="container">
           <h1 class="single-blog-title">Kënga Magjike, këtë vit 6 anëtarë jurie</h1>
           <hr />
-          <p
-            class="blog-content"
-          >
-          Në javën e parë të programit “E Diela Shqiptare”, në orarin dedikuar festivalit “Kënga Magjike”, nuk u zbuluan këngëtarët, por gjashtë anëtarët e jurisë.
-<br><br>
-Po, pooo gjashtë anëtarë!
-<br><br>
-Dy prej tyre kanë qenë edhe vitin e kaluar pjesë e kësaj jurie; kantautori Armend Rexhepagiqi dhe instrumentisti Arben Skënderi. Kësaj dysheje profesionistësh i bashkohet edhe këgëtarja e njohur Jonida Maliqi. Po gazetarin Enkel Demi e kishit parë në ndonjë panel jurie!? Ja do keni mundësinë ta ndiqni çdo të diel, deri në përfundim të festivalit “Kënga Magjike 2019”.
-<br><br>
-Ja u bënë 4 anëtarë. Po 2 të fundit kush janë?  Ata janë dy, por vota e tyre do të vlejë sa për një; DJ Miss Rose & DJ Stone. Një çift DJ, çift edhe profesionalisht, por edhe ne jetën personale; do të jenë  pjesë e panelit të jurisë së festivalit “Kënga Magjike 2019”.
-
-
-
-
+          <p class="blog-content">
+            Në javën e parë të programit “E Diela Shqiptare”, në orarin dedikuar festivalit “Kënga Magjike”, nuk u zbuluan këngëtarët, por gjashtë anëtarët e jurisë.
+            <br />
+            <br />Vitin e kaluar anëtarë të kësaj jurie kanë qenë kantautori Armend Rexhepagiqi dhe artisti Arben Skënderi. Së bashku me ta, këtë vit bashkohet edhe këngëtarja e njohur Jonida Maliqi.
+            <br />
+            <br />Gjithashtu një emër shumë i njohur në gazetari, Enkel Demi do të jetë pjesë e kësaj jurie.
+            <br />
+            <br />
+Dhe për të përmbushur spektrin e gjerë të anëtarëve tëjurisë, nuk mund të mungonte edhe gjykimi DJ, ata të cilët janë në kontakt non stop me prurjet e muzikës së fundit. Dj Miss Rose dhe DJ Stone; a do të jenë ata të dy në një mendje apo do të kenë kontradikta, sepse vota e të dy DJ-ve në këtë juri do të vlejë një. Anëtarët e një jurie duhet të jenë gjithmonë numër tek.
+          </p>
           <div class="row">
             <p class="single-date">15.09.2019</p>
             <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
@@ -78,42 +71,32 @@ Ja u bënë 4 anëtarë. Po 2 të fundit kush janë?  Ata janë dy, por vota e t
           </div>
 
           <h3 class="bio-text">te ngjashme</h3>
-            <br>
-            <div class="row">
-              <div class="col-lg-6">
-                              <div class="blog-card" @click="goToBlog('Blog1')">
+          <br />
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="blog-card" @click="goToBlog('Blog1')">
                 <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-1.jpg" alt />
-                <h2 class="blog-card-title">Ja kush jane 3 artistët e parë BIG! </h2>
+                <h2 class="blog-card-title">Ja kush jane 3 artistët e parë BIG!</h2>
               </div>
-
-              </div>
-              <div class="col-lg-6">
-                              <div class="blog-card " @click="goToBlog('Blog2')">
+            </div>
+            <div class="col-lg-6">
+              <div class="blog-card" @click="goToBlog('Blog2')">
                 <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-2.jpg" alt />
                 <h2 class="blog-card-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
               </div>
-
-              </div>
             </div>
+          </div>
 
-
-
-          <br>
-          <br>
-
+          <br />
+          <br />
         </div>
       </div>
 
-          
-
-        <FooterWhite v-if="windowWidth > 770"  />
-         
-
-
+      <FooterWhite v-if="windowWidth > 770" />
     </div>
-          <FooterSingleBlogMobile v-if="windowWidth < 770" />
+    <FooterSingleBlogMobile v-if="windowWidth < 770" />
   </div>
-          </div>
+</div>
 </template>
 
 <script>
@@ -133,7 +116,6 @@ export default {
   },
   data() {
     return {
-      
       windowWidth: window.innerWidth,
       hoverR: false,
       hoverL: false
@@ -142,11 +124,18 @@ export default {
   head: {
     // To use "this" in the component, it is necessary to return the object through a function
     meta: [
-      { p: 'og:image', c: 'https://previews.dropbox.com/p/thumb/AAi0w_d1Zwra6nfZUTNvBBf6E_pcdXu_ZlaE-qOw8p0nDDwCbQmfp8jxYjBdBBgiNJLmP-P1iDnHCjjGOMmQ8nql7uWmSC9fie60LWKFsRMgl-jli5B5fXjA6pYzchXw39beZEHziASFUOU5BXjxpFTpCuOZIqa3yQ178M559oepOM5TK-PG4NC0bHmZcTST4iuZRPZOKSY09uxCWYoak8AYjeV3KVeSLYdUrOsemymybW0UN-KvMlDtGRvrltOAHm7yLtW1NL7uzT0-wtqDmewUefRCAxdSYiZwUv4sQLbN3SiaFTZ8UcYG-iz5V93VUF7rnenFrjMVKbMSyQtz84xTNlRcaXgpUz9NtdMuMbkqjA/p.jpeg?fv_content=true&size_mode=5' },
-      { p: 'og:url', c: 'https://kengamagjike.com/blog0'},
-      { p: 'og:title', c: 'Kënga Magjike, këtë vit 6 anëtarë jurie'},
-      { p: 'og:description', c: 'Në javën e parë të programit “E Diela Shqiptare”, në orarin dedikuar festivalit “Kënga Magjike”, nuk u zbuluan këngëtarët, por gjashtë anëtarët e jurisë.'},
-      
+      {
+        p: "og:image",
+        c:
+          "https://previews.dropbox.com/p/thumb/AAi0w_d1Zwra6nfZUTNvBBf6E_pcdXu_ZlaE-qOw8p0nDDwCbQmfp8jxYjBdBBgiNJLmP-P1iDnHCjjGOMmQ8nql7uWmSC9fie60LWKFsRMgl-jli5B5fXjA6pYzchXw39beZEHziASFUOU5BXjxpFTpCuOZIqa3yQ178M559oepOM5TK-PG4NC0bHmZcTST4iuZRPZOKSY09uxCWYoak8AYjeV3KVeSLYdUrOsemymybW0UN-KvMlDtGRvrltOAHm7yLtW1NL7uzT0-wtqDmewUefRCAxdSYiZwUv4sQLbN3SiaFTZ8UcYG-iz5V93VUF7rnenFrjMVKbMSyQtz84xTNlRcaXgpUz9NtdMuMbkqjA/p.jpeg?fv_content=true&size_mode=5"
+      },
+      { p: "og:url", c: "https://kengamagjike.com/blog0" },
+      { p: "og:title", c: "Kënga Magjike, këtë vit 6 anëtarë jurie" },
+      {
+        p: "og:description",
+        c:
+          "Në javën e parë të programit “E Diela Shqiptare”, në orarin dedikuar festivalit “Kënga Magjike”, nuk u zbuluan këngëtarët, por gjashtë anëtarët e jurisë."
+      }
     ]
   },
   methods: {
@@ -180,13 +169,11 @@ export default {
 
 
 <style lang="scss" scoped>
-
-
 @import "@/assets/sass/abstracts/_mixins.scss";
 
 @font-face {
   font-family: Panton;
-  src: url('../assets/Fonts/panton-semibold.OTF');
+  src: url("../assets/Fonts/panton-semibold.OTF");
   font-weight: bold;
 }
 
@@ -229,8 +216,8 @@ export default {
   width: 5rem;
 }
 
-.blog-card:hover{
-  cursor:pointer;
+.blog-card:hover {
+  cursor: pointer;
 }
 
 .blog-card-title {
@@ -239,7 +226,6 @@ export default {
   font-size: 2.3rem;
   width: 90%;
   margin-top: 2rem;
-
 }
 
 .blog-card-image {
@@ -337,8 +323,8 @@ hr {
   font-size: 3rem;
   padding-left: 5rem;
   padding-right: 5rem;
-    @include respond(phone) {
-    margin-bottom:80px;
+  @include respond(phone) {
+    margin-bottom: 80px;
   }
 }
 .blog-page {

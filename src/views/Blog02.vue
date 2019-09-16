@@ -1,94 +1,85 @@
 <template>
-<div>
-  <div class="blog-page">
-    <div class="row justify-content-between artist-row align-items-center h-15">
-      <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
-        <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
-      </div>
-      <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
-        <img
-          src="@/assets/img/artistet_arrow_left.svg"
-          alt
-          class="back-icon center-block respond-width"
-        />
-      </div>
-    </div>
-
-    <div class="row blog-row">
-      <div class="col-md-5 col-12 image-col">
-        <img
-          class="blog-image"
-          src="@/assets/img/blog/Blog-02-cropped.jpg"
-          alt
-        />
-      </div>
-      <div class="col-md-7 col-xs-12 blog-col">
-        <div class="container">
-          <h1 class="single-blog-title">Ndryshon sistemi i votimit në Kënga Magjike</h1>
-          <hr />
-          <p
-            class="blog-content"
-          >Në eksperiencën 20 vjeçare të Festivalit Kënga Magjike, thembra e Akilit ka qenë Votimi. Që prej vitit 2010, këngëtarët gjysmëfinalistë, kanë deklaruar votën e tyre të hapur, duke përcaktuar kështu këngëtarët e natës finale dhe fituesin e festivalit. Ky vit sjell një ndryshim rrënjësor në sistemin e votimit. Këngëtarët do të vijojnë t`i deklarojnë votat e tyre hapur, dhe ata çmimin e parë e vlerësojnë me 30 pikë. Pjesë e votimit do të jenë edhe anëtarët e jurisë, të cilët duhet të dalin me një vendim unanim, dhe për çmimin e parë do të kenë në dispozicion 150 pikë. Por, në këtë edicion, do të votojë edhe publiku, dhe ata kanë jo pak, por 300 pikë për çmimin e parë të festivalit.  
-          <div class="row">
-            <p class="single-date">15.09.2019</p>
-            <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
-              <img
-                v-if="hoverR"
-                @click="goToBlog('Blog1')"
-                src="@/assets/img/blogs_right_hover.svg"
-                alt
-              />
-              <img v-else @click="goToBlog('Blog1')" src="@/assets/img/blogs_right_normal.svg" alt />
-            </div>
-
-            <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
-              <img
-                v-if="hoverL"
-                @click="goToBlog('Blog7')"
-                src="@/assets/img/blogs_left_hover.svg"
-                alt
-              />
-              <img v-else @click="goToBlog('Blog7')" src="@/assets/img/blogs_left_normal.svg" alt />
-            </div>
-          </div>
-
-          <h3 class="bio-text">te ngjashme</h3>
-            <br>
-            <div class="row">
-              <div class="col-lg-6">
-                              <div class="blog-card" @click="goToBlog('Blog1')">
-                <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-1.jpg" alt />
-                <h2 class="blog-card-title">Ja kush jane 3 artistët e parë BIG! </h2>
-              </div>
-
-              </div>
-              <div class="col-lg-6">
-                              <div class="blog-card " @click="goToBlog('Blog2')">
-                <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-2.jpg" alt />
-                <h2 class="blog-card-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
-              </div>
-
-              </div>
-            </div>
-
-
-
-          <br>
-          <br>
-
+  <div>
+    <div class="blog-page">
+      <div class="row justify-content-between artist-row align-items-center h-15">
+        <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
+          <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
+        </div>
+        <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
+          <img
+            src="@/assets/img/artistet_arrow_left.svg"
+            alt
+            class="back-icon center-block respond-width"
+          />
         </div>
       </div>
 
-          
+      <div class="row blog-row">
+        <div class="col-md-5 col-12 image-col">
+          <img class="blog-image" src="@/assets/img/blog/Blog-02-cropped.jpg" alt />
+        </div>
+        <div class="col-md-7 col-xs-12 blog-col">
+          <div class="container">
+            <h1 class="single-blog-title">Ndryshon sistemi i votimit në Kënga Magjike</h1>
+            <hr />
+            <p
+              class="blog-content"
+            >Në eksperiencën 20 vjeçare të Festivalit Kënga Magjike, thembra e Akilit ka qenë Votimi. Që prej vitit 2010, këngëtarët gjysmëfinalistë, kanë deklaruar votën e tyre të hapur, duke përcaktuar kështu këngëtarët e natës finale dhe fituesin e festivalit. Ky vit sjell një ndryshim rrënjësor në sistemin e votimit. Këngëtarët do të vijojnë t`i deklarojnë votat e tyre hapur, dhe ata çmimin e parë e vlerësojnë me 30 pikë. Pjesë e votimit do të jenë edhe anëtarët e jurisë, të cilët duhet të dalin me një vendim unanim, dhe për çmimin e parë do të kenë në dispozicion 150 pikë. Por, në këtë edicion, do të votojë edhe publiku, dhe ata kanë jo pak, por 300 pikë për çmimin e parë të festivalit. Dhe ky raport do të mbetet edhe për pikët e tjera, sa i përket vlerësimit të jurisë dhe pikëve të këngëtarëve.</p>
+            <div class="row">
+              <p class="single-date">15.09.2019</p>
+              <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
+                <img
+                  v-if="hoverR"
+                  @click="goToBlog('Blog1')"
+                  src="@/assets/img/blogs_right_hover.svg"
+                  alt
+                />
+                <img
+                  v-else
+                  @click="goToBlog('Blog1')"
+                  src="@/assets/img/blogs_right_normal.svg"
+                  alt
+                />
+              </div>
 
-        <FooterWhite v-if="windowWidth > 770"  />
-         
+              <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
+                <img
+                  v-if="hoverL"
+                  @click="goToBlog('Blog7')"
+                  src="@/assets/img/blogs_left_hover.svg"
+                  alt
+                />
+                <img v-else @click="goToBlog('Blog7')" src="@/assets/img/blogs_left_normal.svg" alt />
+              </div>
+            </div>
 
+            <h3 class="bio-text">te ngjashme</h3>
+            <br />
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="blog-card" @click="goToBlog('Blog1')">
+                  <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-1.jpg" alt />
+                  <h2 class="blog-card-title">Ja kush jane 3 artistët e parë BIG!</h2>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="blog-card" @click="goToBlog('Blog2')">
+                  <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-2.jpg" alt />
+                  <h2 class="blog-card-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
+                </div>
+              </div>
+            </div>
 
-    </div>
-          <FooterSingleBlogMobile v-if="windowWidth < 770" />
-  </div>
+            <br />
+            <br />
           </div>
+        </div>
+
+        <FooterWhite v-if="windowWidth > 770" />
+      </div>
+      <FooterSingleBlogMobile v-if="windowWidth < 770" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -108,21 +99,27 @@ export default {
   },
   data() {
     return {
-      
       windowWidth: window.innerWidth,
       hoverR: false,
       hoverL: false
     };
   },
-  
+
   head: {
     // To use "this" in the component, it is necessary to return the object through a function
     meta: [
-      { p: 'og:image', c: 'https://previews.dropbox.com/p/thumb/AAisnD3aY-Yt4ad-aYUqa3eCwKFZbavtuyesCXOu3oWhaBIKOMtduCzcitGJ0cXtfoXKWbId5Ash9vVGpYBXpwvSxVZp-TPtieATqj4VRL9uRVOfJ1ToVvgadt44Ozo3BO0IIs7QV4kmy4WnRMc6Qs3d_jCVTe6C4Esw-ydi6C_yTSBsxWNFLffL8AuBJ1_SP8TS_fGMGh3wZh3-idWKjvChm3SgxPC5eEG1VeHuOnQzMLQ6Nm9iId8dF1IjGLBPkL66fsNMAY2chehuN49aSJfb55x96uB0J7eabdHs4M5GjwjD440BiurOXwTg0eDobMXOnwWWnQAaiZUGAhVuc9m8EyrNLJV-Y0x2NW00Mp1GJQ/p.jpeg?fv_content=true&size_mode=5' },
-      { p: 'og:url', c: 'https://kengamagjike.com/blog02'},
-      { p: 'og:title', c: 'Ndryshon sistemi i votimit në Kënga Magjike'},
-      { p: 'og:description', c: 'Në eksperiencën 20 vjeçare të Festivalit Kënga Magjike, thembra e Akilit ka qenë Votimi. Që prej vitit 2010, këngëtarët gjysmëfinalistë, kanë deklaruar votën e tyre të hapur, duke përcaktuar kështu këngëtarët e natës finale dhe fituesin e festivalit.'},
-      
+      {
+        p: "og:image",
+        c:
+          "https://previews.dropbox.com/p/thumb/AAisnD3aY-Yt4ad-aYUqa3eCwKFZbavtuyesCXOu3oWhaBIKOMtduCzcitGJ0cXtfoXKWbId5Ash9vVGpYBXpwvSxVZp-TPtieATqj4VRL9uRVOfJ1ToVvgadt44Ozo3BO0IIs7QV4kmy4WnRMc6Qs3d_jCVTe6C4Esw-ydi6C_yTSBsxWNFLffL8AuBJ1_SP8TS_fGMGh3wZh3-idWKjvChm3SgxPC5eEG1VeHuOnQzMLQ6Nm9iId8dF1IjGLBPkL66fsNMAY2chehuN49aSJfb55x96uB0J7eabdHs4M5GjwjD440BiurOXwTg0eDobMXOnwWWnQAaiZUGAhVuc9m8EyrNLJV-Y0x2NW00Mp1GJQ/p.jpeg?fv_content=true&size_mode=5"
+      },
+      { p: "og:url", c: "https://kengamagjike.com/blog02" },
+      { p: "og:title", c: "Ndryshon sistemi i votimit në Kënga Magjike" },
+      {
+        p: "og:description",
+        c:
+          "Në eksperiencën 20 vjeçare të Festivalit Kënga Magjike, thembra e Akilit ka qenë Votimi. Që prej vitit 2010, këngëtarët gjysmëfinalistë, kanë deklaruar votën e tyre të hapur, duke përcaktuar kështu këngëtarët e natës finale dhe fituesin e festivalit."
+      }
     ]
   },
   methods: {
@@ -156,13 +153,11 @@ export default {
 
 
 <style lang="scss" scoped>
-
-
 @import "@/assets/sass/abstracts/_mixins.scss";
 
 @font-face {
   font-family: Panton;
-  src: url('../assets/Fonts/panton-semibold.OTF');
+  src: url("../assets/Fonts/panton-semibold.OTF");
   font-weight: bold;
 }
 
@@ -205,8 +200,8 @@ export default {
   width: 5rem;
 }
 
-.blog-card:hover{
-  cursor:pointer;
+.blog-card:hover {
+  cursor: pointer;
 }
 
 .blog-card-title {
@@ -215,7 +210,6 @@ export default {
   font-size: 2.3rem;
   width: 90%;
   margin-top: 2rem;
-
 }
 
 .blog-card-image {
@@ -313,8 +307,8 @@ hr {
   font-size: 3rem;
   padding-left: 5rem;
   padding-right: 5rem;
-    @include respond(phone) {
-    margin-bottom:80px;
+  @include respond(phone) {
+    margin-bottom: 80px;
   }
 }
 .blog-page {
