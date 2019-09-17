@@ -12,10 +12,8 @@ import JuriaJonida from "./views/JuriaJonida.vue";
 import JuriaDj from "./views/JuriaDj.vue";
 import JuriaEnkel from "./views/JuriaEnkel.vue";
 
-
 import Blogs from "./views/Blogs.vue";
 import SingleBlog from "./views/SingleBlog.vue";
-
 
 import Blog1 from "./views/Blog1.vue";
 import Blog2 from "./views/Blog2.vue";
@@ -30,7 +28,6 @@ import Blog0 from "./views/Blog0.vue";
 import Blog01 from "./views/Blog01.vue";
 import Blog02 from "./views/Blog02.vue";
 
-
 import Rregullore from "./views/Rregullore.vue";
 import Voto from "./views/Voto.vue";
 import VotoArtist from "./views/VotoArtist.vue";
@@ -40,6 +37,7 @@ Vue.use(Router);
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
+  // base: "/:lang",
   routes: [
     {
       path: "/",
@@ -65,7 +63,6 @@ export default new Router({
       component: Juria,
       meta: { transition: "overlay-right" }
     },
-
 
     {
       path: "/arbenskenderi",
@@ -98,7 +95,6 @@ export default new Router({
       meta: { transition: "overlay-right" }
     },
 
-
     {
       path: "/artist/:name",
       name: "SingleArtist",
@@ -117,7 +113,6 @@ export default new Router({
       component: SingleBlog,
       meta: { transition: "overlay-left" }
     },
-
 
     {
       path: "/blog1",
@@ -186,13 +181,8 @@ export default new Router({
       meta: { transition: "overlay-left" }
     },
 
-
-
-
-
-
     {
-      path: "/rregullore",
+      path: "/:lang/rregullore",
       name: "Rregullore",
       component: Rregullore,
       meta: { transition: "overlay-left" }
