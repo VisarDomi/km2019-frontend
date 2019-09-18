@@ -29,30 +29,19 @@
       logoBlack="true"
     />
     <HeaderMobile v-if="windowWidth < 750" />
-    <HeroSection2 data-id="0" />
-    <!-- <div class="fullpage-container">
-      <div class="fullpage-wp" v-fullpage="opts" ref="fullpage">
-      </div> -->
-      
-        <ArtistsSectionJuria data-id="1" v-if="windowWidth > 600" />
-        <ArtistsMobile v-else />
 
-        <AcrossYearsSection data-id="2" v-if="windowWidth > 750" />
-        <AcrossYearsMobile v-else />
-<!-- 
+    <HeroSection />
 
-        <SubmissionSection data-id="3" v-if="windowWidth > 950" />
-        <SubmissionMobile v-else /> -->
+    <AcrossYearsSection v-if="windowWidth > 750" />
+    <AcrossYearsMobile v-else />
 
-        <NewsSection data-id="4" v-if="windowWidth > 950" />
-        <NewsMobile v-else />
+    <NewsSection v-if="windowWidth > 950" />
+    <NewsMobile v-else />
 
-        <div style="position:relative;">
+    <ArtistsSectionJuria v-if="windowWidth > 600" />
+    <ArtistsMobile v-else />
 
-        <SponsorSectionz /> 
-        </div>
-    <!-- </div> -->
-
+    <SponsorSectionz />
   </div>
 </template>
 
@@ -110,7 +99,7 @@ export default {
       opts: {
         start: 0,
         dir: "v",
-        duration: 200,
+        duration: 500,
         beforeChange: function(currentSlideEl, currenIndex, nextIndex) {},
         afterChange: function(currentSlideEl, currenIndex) {}
       },
@@ -168,4 +157,3 @@ export default {
   // height: 100vh;
 }
 </style>
-

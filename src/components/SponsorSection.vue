@@ -13,7 +13,7 @@
     <div class="container ">
 
 
-      <div class="row no-gutters justify-content-center">
+      <div class="row no-gutters justify-content-center" style="padding-bottom:15%; padding-top:10%;">
 
         <div class="col-3">
           <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/1_bashkiatirane_logo.png" alt="">
@@ -274,6 +274,6 @@ export default {
 
 .section-sponsorz {
   position: relative;
-  height: 100vh;
+  // height: 100vh;
 }
 </style>

@@ -10,7 +10,7 @@
       <a href="javascript:void(0)" class="closebtn" @click="closeNavR()">×</a>
       <a href="#">&nbsp;</a>
       <a href="#" @click="moveTo(1)">juria</a>
-      <a href="#" @click="moveTo(2)">ndvr vite</a>
+      <a href="#" @click="moveTo(2)">ndër vite</a>
       <!-- <a href="#" @click="moveTo(3)">#magjike</a> -->
       <a href="#" @click="moveTo(3)">të reja</a>
       <a href="#" class="high-index pos-relative" @click="goToRregullore()">rregullore</a>

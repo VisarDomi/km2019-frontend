@@ -6,10 +6,7 @@
                   </slide>
 
       </carousel> -->
-          <div class="row go-up mt-5 ml-0">
-            <h1 class="header-text">ndër vite</h1>
-          </div>
-          <div class="row ml-0">
+          <div class="row ml-0 pt-5">
             <div class="slider-img-container  w-80 mx-auto">
                         <div class="embed-responsive embed-responsive-4by3 ">
                           <iframe
@@ -21,6 +18,9 @@
             </div>
           </div>
 
+          <div class="row go-up ml-0" style="margin-top:-5rem;">
+            <h1 class="header-text">ndër vite</h1>
+          </div>
           <div class="row ml-0">
             
             <p class="description">
