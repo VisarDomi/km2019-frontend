@@ -1,5 +1,33 @@
 <template>
   <div class="home">
+    <!-- <HeaderHero v-if="windowWidth > 750" /> -->
+    <HeaderHero
+      v-if="windowWidth > 750 && this.section == 'HeroSection'"
+      menutype="menu__items--white"
+      iconWhite="true"
+    />
+    <HeaderHero
+      v-if="windowWidth > 750 && this.section == 'JuriaSection'"
+      menutype="menu__items--black"
+      logoBlack="true"
+    />
+    <HeaderHero
+      v-if="windowWidth > 750 && this.section == 'AcrossYearsSection'"
+      menutype="menu__items--white"
+      logoWhite="true"
+      iconWhite="true"
+    />
+    <HeaderHero
+      v-if="windowWidth > 750 && this.section == 'BlogSection'"
+      menutype="menu__items--white"
+      logoWhite="true"
+      iconWhite="true"
+    />
+    <HeaderHero
+      v-if="windowWidth > 750 && this.section == 'SponsorSection'"
+      menutype="menu__items--black"
+      logoBlack="true"
+    />
     <HeaderMobile v-if="windowWidth < 750" />
     <HeroSection2 data-id="0" />
     <!-- <div class="fullpage-container">
@@ -35,10 +63,9 @@ import ComingSoon from "@/components/ComingSoon.vue";
 import FooterBlackMobile from "@/components/Footer/FooterBlackMobile.vue";
 
 import HeaderMobile from "@/components/Headers/MobileHeader.vue";
-import LandingSection from "@/components/LandingSection.vue";
+import HeaderHero from "@/components/Headers/HeaderHero.vue";
 
 import HeroSection from "@/components/HeroSection.vue";
-import HeroSection2 from "@/components/HeroSection2.vue";
 
 import ArtistsSection from "@/components/ArtistsSection.vue";
 import ArtistsSectionJuria from "@/components/ArtistsSectionJuria.vue";
@@ -63,9 +90,7 @@ export default {
   components: {
     FooterBlackMobile,
     ComingSoon,
-    LandingSection,
     HeroSection,
-    HeroSection2,
     ArtistsSection,
     ArtistsSectionJuria,
     ArtistsMobile,
@@ -77,7 +102,8 @@ export default {
     NewsMobile,
 
     SponsorSectionz,
-    HeaderMobile
+    HeaderMobile,
+    HeaderHero
   },
   data() {
     return {
@@ -88,23 +114,46 @@ export default {
         beforeChange: function(currentSlideEl, currenIndex, nextIndex) {},
         afterChange: function(currentSlideEl, currenIndex) {}
       },
+      section: "HeroSection",
       windowWidth: window.innerWidth
     };
   },
   methods: {
-    moveTo: function(index) {
-      console.log("h");
-      this.$refs.fullpage.$fullpage.moveTo(index, true);
+    handleScroll(event) {
+      // console.log("scrolling", window.scrollY);
+      if (window.scrollY > 0 && window.scrollY < window.innerHeight - 100) {
+        this.section = "HeroSection";
+      } else if (
+        window.scrollY > window.innerHeight - 100 &&
+        window.scrollY < window.innerHeight * 2 - 100
+      ) {
+        this.section = "AcrossYearsSection";
+      } else if (
+        window.scrollY > window.innerHeight * 2 - 100 &&
+        window.scrollY < window.innerHeight * 3 - 100
+      ) {
+        this.section = "BlogSection";
+      } else if (
+        window.scrollY > window.innerHeight * 3 - 100 &&
+        window.scrollY < window.innerHeight * 4 - 100
+      ) {
+        this.section = "JuriaSection";
+      } else if (window.scrollY > window.innerHeight * 4 - 100) {
+        console.log("Sponsors");
+        this.section = "SponsorSection";
+      }
     }
   },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
   mounted() {
-    eventBus.$on("changeSection", payload => {
-      this.moveTo(payload);
-    });
-    eventBus.$on("changeSectionFromFooter", payload => {
-      console.log("probably from footer");
-      this.moveTo(payload);
-    });
+    // eventBus.$on("changeSection", payload => {
+    //   this.moveTo(payload);
+    // });
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;

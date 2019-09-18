@@ -238,8 +238,6 @@ import FooterBlack from "@/components/Footer/FooterBlack.vue";
 import FooterBlackSmall from "@/components/Footer/FooterBlackSmall.vue";
 import FooterBlackMobile from "@/components/Footer/FooterBlackMobile.vue";
 import Footer from "@/components/Footer/FooterWhite.vue";
-import HeaderHero from "@/components/Headers/HeaderHero.vue";
-import HeaderMobile from "@/components/Headers/MobileHeader.vue";
 
 export default {
   name: "SponsorSectionz",
@@ -247,9 +245,7 @@ export default {
     FooterBlack,
     FooterBlackSmall,
     FooterBlackMobile,
-    Footer,
-    HeaderHero,
-    HeaderMobile
+    Footer
   },
   data() {
     return {
@@ -268,6 +264,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.spacer {
+  height: 15rem;
+}
+
 .img-sponsor {
   width: 28vh;
 }

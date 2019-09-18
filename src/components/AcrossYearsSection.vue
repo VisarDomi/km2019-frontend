@@ -1,11 +1,6 @@
 <template>
-  <div class="section-acrossyears">
-    <HeaderHero
-      menutype="menu__items--white"
-      logoWhite="true"
-      iconWhite="true"
-      v-if="windowWidth > 950"
-    />
+  <div class="section-acrossyears" id="nder-vite">
+    <div class="spacer"></div>
     <div class="row go-up--small h-20">
       <div class="col-lg-12 offset-1">
         <h1 class="header-text">ndër vite</h1>
@@ -52,7 +47,6 @@
 </template>
 
 <script>
-import HeaderHero from "@/components/Headers/HeaderHero.vue";
 export default {
   name: "AcrossYearsSection",
   methods: {
@@ -63,9 +57,7 @@ export default {
       this.$refs.carousel.goToPage(this.$refs.carousel.getPreviousPage());
     }
   },
-  components: {
-    HeaderHero
-  },
+  components: {},
   data() {
     return {
       windowWidth: window.innerWidth
@@ -82,6 +74,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+.spacer {
+  height: 15rem;
+}
 
 .h-20 {
   height: 20%;
@@ -202,8 +197,8 @@ export default {
 .go-up {
   margin-top: -10rem;
   &--small {
-    margin-top: -5rem;
-    margin-bottom: -2rem;
+    margin-top: -6rem;
+    margin-bottom: -6rem;
   }
 }
 

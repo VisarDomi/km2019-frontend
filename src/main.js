@@ -11,6 +11,9 @@ import VueCarousel from "vue-carousel";
 Vue.config.productionTip = false;
 import VuePageTransition from "vue-page-transition";
 
+import vueScrollTo from "vue-scrollto";
+Vue.use(vueScrollTo);
+
 Vue.use(VuePageTransition);
 import VueI18n from "vue-i18n";
 Vue.use(VueI18n);

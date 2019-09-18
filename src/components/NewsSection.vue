@@ -1,11 +1,6 @@
 <template>
-  <div class="section-news">
-    <HeaderHero
-      menutype="menu__items--white"
-      iconWhite="true"
-      logoWhite="true"
-      v-if="windowWidth > 750"
-    />
+  <div class="section-news" id="te-reja">
+    <div class="spacer"></div>
     <div class="row h-25">
       <div class="header-container">
         <h1>&nbsp;&nbsp;&nbsp;të reja</h1>
@@ -76,13 +71,10 @@
 </template>
 
 <script>
-import HeaderHero from "@/components/Headers/HeaderHero.vue";
 export default {
   name: "NewsSection",
 
-  components: {
-    HeaderHero
-  },
+  components: {},
   data() {
     return {
       windowWidth: window.innerWidth
@@ -109,7 +101,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
-
+.spacer {
+  height: 15rem;
+}
 .blog__image:hover {
   cursor: pointer;
 }

@@ -1,7 +1,9 @@
 <template>
   <div class="blogs">
     <div class="row justify-content-between artist-row align-items-center h-15">
-      <div class="col-lg-2 col-md-3 offset-sm-1 offset-lg-0 offset-1 col-sm-3 col-6 text-center logo-col-sm">
+      <div
+        class="col-lg-2 col-md-3 offset-sm-1 offset-lg-0 offset-1 col-sm-3 col-6 text-center logo-col-sm"
+      >
         <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
       <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToHome()">
@@ -35,91 +37,111 @@
         :paginationEnabled="false"
         :navigationEnabled="false"
       >
-
         <slide>
-          <div class="h-100 slide-column" >
-            <img src="@/assets/img/blog/Blog-02-gray.jpg" class="img-blog img-fluid" alt="">
-            <h1 class="blog-title" @click="goToBlog('Blog02')">Ndryshon sistemi i votimit në Kënga Magjike</h1>
-
-            <h3 class="date">15.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" >
-            <img src="@/assets/img/blog/Blog-01-gray.jpg" class="img-blog img-fluid" alt="">
-            <h1 class="blog-title" @click="goToBlog('Blog01')">Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
+          <div class="h-100 slide-column">
+            <img src="@/assets/img/blog/Blog-02-gray.jpg" class="img-blog img-fluid" alt />
+            <h1
+              class="blog-title"
+              @click="goToBlog('Blog02')"
+            >Ndryshon sistemi i votimit në Kënga Magjike</h1>
 
             <h3 class="date">15.09.2019</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column" >
-            <img src="@/assets/img/blog/Blog-0-gray.jpg" class="img-blog img-fluid" alt="">
-            <h1 class="blog-title" @click="goToBlog('Blog0')">Kënga Magjike, këtë vit 6 anëtarë jurie </h1>
+          <div class="h-100 slide-column">
+            <img src="@/assets/img/blog/Blog-01-gray.jpg" class="img-blog img-fluid" alt />
+            <h1
+              class="blog-title"
+              @click="goToBlog('Blog01')"
+            >Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
 
             <h3 class="date">15.09.2019</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column" >
-            <img src="@/assets/img/blog/Blog-1.jpg" class="img-blog img-fluid" alt="">
-            <h1 class="blog-title" @click="goToBlog('Blog1')">Ja kush janë 3 artistët e parë BIG! </h1>
+          <div class="h-100 slide-column">
+            <img src="@/assets/img/blog/Blog-0-gray.jpg" class="img-blog img-fluid" alt />
+            <h1
+              class="blog-title"
+              @click="goToBlog('Blog0')"
+            >Kënga Magjike, këtë vit 6 anëtarë jurie</h1>
+
+            <h3 class="date">15.09.2019</h3>
+          </div>
+        </slide>
+        <slide>
+          <div class="h-100 slide-column">
+            <img src="@/assets/img/blog/Blog-1.jpg" class="img-blog img-fluid" alt />
+            <h1 class="blog-title" @click="goToBlog('Blog1')">Ja kush janë 3 artistët e parë BIG!</h1>
 
             <h3 class="date">14.09.2019</h3>
           </div>
         </slide>
         <slide>
           <div class="h-100 slide-column">
-            <img src="@/assets/img/blog/Blog-2-gray.jpg" class="img-blog img-fluid" alt="">
-            <h1 class="blog-title" @click="goToBlog('Blog2')">Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
+            <img src="@/assets/img/blog/Blog-2-gray.jpg" class="img-blog img-fluid" alt />
+            <h1
+              class="blog-title"
+              @click="goToBlog('Blog2')"
+            >Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
 
             <h3 class="date">22.01.2019</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column" >
-            <img src="@/assets/img/blog/Blog-3-gray.jpg" class="img-blog img-fluid" alt="">
+          <div class="h-100 slide-column">
+            <img src="@/assets/img/blog/Blog-3-gray.jpg" class="img-blog img-fluid" alt />
             <h1 class="blog-title" @click="goToBlog('Blog3')">Fifi dhe Mc Kresha betejë në skenë!</h1>
 
             <h3 class="date">22.11.2018</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column" >
-            <img src="@/assets/img/blog/Blog-4-gray.jpg" class="img-blog img-fluid" alt="">
-            <h1 class="blog-title" @click="goToBlog('Blog4')">Atmosferë serenatash në skenën e Këngës Magjike</h1>
+          <div class="h-100 slide-column">
+            <img src="@/assets/img/blog/Blog-4-gray.jpg" class="img-blog img-fluid" alt />
+            <h1
+              class="blog-title"
+              @click="goToBlog('Blog4')"
+            >Atmosferë serenatash në skenën e Këngës Magjike</h1>
 
             <h3 class="date">5.11.2018</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column" >
-            <img src="@/assets/img/blog/Blog-5-gray.jpg" class="img-blog img-fluid" alt="">
-            <h1 class="blog-title" @click="goToBlog('Blog5')">Mishela Rrapo: Presidenti turk u përlot prej meje</h1>
+          <div class="h-100 slide-column">
+            <img src="@/assets/img/blog/Blog-5-gray.jpg" class="img-blog img-fluid" alt />
+            <h1
+              class="blog-title"
+              @click="goToBlog('Blog5')"
+            >Mishela Rrapo: Presidenti turk u përlot prej meje</h1>
 
             <h3 class="date">14.11.2018</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column" >
-            <img src="@/assets/img/blog/Blog-7-gray.jpg" class="img-blog img-fluid" alt="">
+          <div class="h-100 slide-column">
+            <img src="@/assets/img/blog/Blog-7-gray.jpg" class="img-blog img-fluid" alt />
             <h1 class="blog-title" @click="goToBlog('Blog6')">Evi Reçi nuk dua binjake!!</h1>
 
             <h3 class="date">16.10.2018</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column" >
-            <img src="@/assets/img/blog/Blog-fifi-gray.jpg" class="img-blog img-fluid" alt="">
+          <div class="h-100 slide-column">
+            <img src="@/assets/img/blog/Blog-fifi-gray.jpg" class="img-blog img-fluid" alt />
             <h1 class="blog-title" @click="goToBlog('Blog7')">Fifi, nje imituese perfekte!</h1>
 
             <h3 class="date">10.10.2018</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column" >
-            <img src="@/assets/img/blog/Blog-mentor-gray.jpg" class="img-blog img-fluid" alt="">
-            <h1 class="blog-title" @click="goToBlog('Blog8')">Hera e pare e Mentor Haziri-t...Ja doli?!</h1>
+          <div class="h-100 slide-column">
+            <img src="@/assets/img/blog/Blog-mentor-gray.jpg" class="img-blog img-fluid" alt />
+            <h1
+              class="blog-title"
+              @click="goToBlog('Blog8')"
+            >Hera e pare e Mentor Haziri-t...Ja doli?!</h1>
 
             <h3 class="date">5.10.2019</h3>
           </div>
@@ -128,7 +150,7 @@
     </div>
     <!-- <FooterBlack v-if="windowWidth > 770" /> -->
     <FooterWhite v-if="windowWidth > 770" />
-      <FooterSingleBlogMobile v-else />
+    <FooterSingleBlogMobile v-else />
     <!-- <FooterBlackSmall v-if="windowWidth < 770 && windowWidth > 600" /> -->
   </div>
 </template>
@@ -196,7 +218,7 @@ export default {
       this.$refs.carousel.goToPage(this.$refs.carousel.getPreviousPage());
     },
     goToHome() {
-      this.$router.push({ name: "Home" });
+      this.$router.push({ path: `/#te-reja` });
     },
     goToBlog(blogname) {
       this.$router.push({ name: blogname });
@@ -219,17 +241,16 @@ export default {
 </style>
 
 <style scoped lang="scss">
-  @import "@/assets/sass/abstracts/_mixins.scss";
+@import "@/assets/sass/abstracts/_mixins.scss";
 
-.logo-col-sm{
-
+.logo-col-sm {
 }
 
-.img-blog{
-  height:100%;
+.img-blog {
+  height: 100%;
   object-fit: cover;
-  position:absolute;
-  z-index:-10;
+  position: absolute;
+  z-index: -10;
   // width:100%;
 }
 .carousel-right {
@@ -278,7 +299,6 @@ export default {
 .slide-column:hover {
   background: -webkit-linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7));
 
-  
   background: -moz-linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7));
   background: -o-linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7));
   background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7));
@@ -291,9 +311,9 @@ export default {
   cursor: pointer;
 }
 
-.img-logo{
-      @include respond(small-screen) {
-    margin-left:15%;
+.img-logo {
+  @include respond(small-screen) {
+    margin-left: 15%;
   }
 }
 .img-next-arrow {
@@ -338,17 +358,17 @@ export default {
   font-size: 4.5rem;
   line-height: 1;
 
-    @include respond(small-screen) {
-    padding-top:5%;
+  @include respond(small-screen) {
+    padding-top: 5%;
   }
 
-  @include respond(phone){
-    padding-top:50%;
+  @include respond(phone) {
+    padding-top: 50%;
   }
 }
 @font-face {
   font-family: Panton;
-  src: url('../assets/Fonts/panton-semibold.OTF');
+  src: url("../assets/Fonts/panton-semibold.OTF");
   font-weight: bold;
 }
 .date {
@@ -358,11 +378,11 @@ export default {
   z-index: 30;
   font-family: Panton;
   background: white;
-      width: 10rem;
-    margin-left: 10%;
-    font-weight: 700;
-    font-size: 1.8rem;
-    padding: 0.6rem;
+  width: 10rem;
+  margin-left: 10%;
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding: 0.6rem;
   // left: 2rem;
 }
 

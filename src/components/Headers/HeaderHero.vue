@@ -1,13 +1,13 @@
 <template>
   <!-- <div> -->
-  <div class="row align-items-center menu__items pos-relative" v-bind:class="menutype">
+  <div class="header-hero row align-items-center menu__items" v-bind:class="menutype">
     <div class="col-xl-3 col-lg-4 col-sm-4 high-index">
       <span class="d-lg-inline-block" href="#" v-if="logoBlack">
         <img
           src="@/assets/img/logoblack.svg"
           alt="Logo"
           class="img-logo logo respond-width--logo"
-          @click="moveTo(0)"
+          v-scroll-to="'#kengamagjike'"
         />
       </span>
       <span class="d-lg-inline-block" href="#" v-if="logoWhite">
@@ -15,20 +15,20 @@
           src="@/assets/img/logowhite.svg"
           alt="Logo"
           class="img-logo logo respond-width--logo"
-          @click="moveTo(0)"
+          v-scroll-to="'#kengamagjike'"
         />
       </span>
     </div>
     <div
       class="col-lg-1 col-sm-1 offset-xl-4 offset-lg-3 offset-sm-3 cmi"
-      @click="moveTo(1)"
+      v-scroll-to="'#juria'"
     >{{$t('juria')}}</div>
-    <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(2)">ndër vite</div>
+    <div class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#nder-vite'">ndër vite</div>
     <!-- <div class="col-lg-1 col-sm-1 cmi" @click="changeLange('al')">al</div>
     <div class="col-lg-1 col-sm-1 cmi" @click="changeLange('en')">en</div>-->
     <!-- <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(3)">#fotome</div> -->
     <!-- <div class="col-lg-1 col-sm-1 cmi"></div> -->
-    <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(3)">të reja</div>
+    <div class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#te-reja'">të reja</div>
     <div class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rregullore</div>
     <div class="col-lg-1 col-sm-1 high-index">
       <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
@@ -141,8 +141,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
-.pos-relative{
-  position: relative
+.header-hero {
+  position: fixed;
+  z-index: 9999;
+  top: 0%;
+  right: 4%;
+  width: 100%;
 }
 
 .respond-width {

@@ -1,6 +1,6 @@
 <template>
-  <div class="section-artists" id="section-artists">
-    <!-- <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 750" /> -->
+  <div class="section-artists" id="juria">
+    <div class="spacer"></div>
     <div class="row">
       <div class="col-lg-12 text-center">
         <h1 class="header-text">juria</h1>
@@ -75,7 +75,6 @@
 </template>
 
 <script>
-import HeaderHero from "@/components/Headers/HeaderHero.vue";
 export default {
   name: "ArtistsSection",
   methods: {
@@ -83,9 +82,7 @@ export default {
       this.$router.push({ name: routename });
     }
   },
-  components: {
-    HeaderHero
-  },
+  components: {},
   data() {
     return {
       artists: [
@@ -130,6 +127,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_mixins.scss";
+.spacer {
+  height: 15rem;
+}
+
 .ml-6 {
   margin-left: 3%;
 }
