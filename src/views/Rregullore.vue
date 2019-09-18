@@ -12,25 +12,20 @@
     <div class="row align-items-center justify-content-center row-title">
       <div class="col-xl-7 col-lg-9 col-md-12 text-center">
         <div class="row align-items-center justify-content-center">
-          <h1 class="jumbo-title-artistet">rregullore</h1>
+          <h1 class="jumbo-title-artistet">{{$t(`rregulloreTitle`)}}</h1>
         </div>
       </div>
     </div>
 
     <div class="containertext">
-      <h1 class="title-rregullat">
-        Rregulla te pjesemarrjes ne
-        Festivalin Kenga Magjike 2019
-      </h1>
+      <h1 class="title-rregullat">{{$t(`rregulloreFirstHeader`)}}</h1>
 
       <div>
         <p class="card-text">
-          Kenget duhet te jene origjinale, te padegjuara me pare dhe te krijuara enkas per “Kenga Magjike 2019”.
+          {{$t('rregulloreFirstSectionPreview1')}}
           <br />
           <br />
-          <span
-            class="font-weight-bold"
-          >Kenget e paraqitura në “Kenga Magjike 2019” nuk duhet të jenë te gjata më shume se 3 minuta e 45 sekonda.</span>
+          <span class="font-weight-bold">{{$t('rregulloreFirstSectionPreview2')}}</span>
         </p>
         <b-collapse id="collapse-1" class="mt-2">
           <b-card>
@@ -231,6 +226,8 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
+
+    this.$i18n.locale = this.$route.params.lang;
   },
   methods: {
     goToHome() {
@@ -260,6 +257,9 @@ export default {
 
 .spacer {
   height: 7rem;
+  @include respond(phone) {
+    height: 20rem;
+  }
 }
 
 .kategoria {

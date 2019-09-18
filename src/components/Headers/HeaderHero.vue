@@ -22,8 +22,10 @@
     <div
       class="col-lg-1 col-sm-1 offset-xl-4 offset-lg-3 offset-sm-3 cmi"
       @click="moveTo(1)"
-    >juria</div>
+    >{{$t('juria')}}</div>
     <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(2)">ndër vite</div>
+    <!-- <div class="col-lg-1 col-sm-1 cmi" @click="changeLange('al')">al</div>
+    <div class="col-lg-1 col-sm-1 cmi" @click="changeLange('en')">en</div>-->
     <!-- <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(3)">#fotome</div> -->
     <!-- <div class="col-lg-1 col-sm-1 cmi"></div> -->
     <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(3)">të reja</div>
@@ -75,7 +77,13 @@ export default {
       eventBus.$emit("changeSection", index);
     },
     goToRregullore() {
-      this.$router.push({ name: "Rregullore" });
+      this.$router.push({
+        name: "Rregullore",
+        params: { lang: "al" }
+      });
+    },
+    changeLange(lang) {
+      this.$i18n.locale = lang;
     },
     collapseMenu() {
       var Items = document.getElementsByClassName("cmi");
@@ -84,6 +92,7 @@ export default {
           // console.log(i, Items[i]);
           Items[i].style.opacity = 0;
           Items[i].style.transition = "all 1s";
+          // Items[i].sytle.display = "none";
 
           // if (i % 5 == 0) {
           //   Items[i].style.transform = "translate(43vw, 0)";
@@ -97,13 +106,13 @@ export default {
           //   Items[i].style.transform = "translate(9vw, 0)";
           // }
           if (i % 4 == 0) {
-            Items[i].style.transform = "translate(1px, 0)";
+            Items[i].style.transform = "translate(5vw, 0)";
           } else if (i % 4 == 1) {
-            Items[i].style.transform = "translate(1px, 0)";
+            Items[i].style.transform = "translate(5vw, 0)";
           } else if (i % 4 == 2) {
-            Items[i].style.transform = "translate(1px, 0)";
+            Items[i].style.transform = "translate(5vw, 0)";
           } else if (i % 4 == 3) {
-            Items[i].style.transform = "translate(1px, 0)";
+            Items[i].style.transform = "translate(5vw, 0)";
           }
         }
 
@@ -113,6 +122,7 @@ export default {
           Items[i].style.opacity = 1;
           Items[i].style.transition = "all 1s";
           Items[i].style.transform = "translate(0, 0)";
+          Items[i].style.display = "inline-block";
         }
         this.shouldHide = true;
       }

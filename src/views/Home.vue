@@ -1,9 +1,5 @@
 <template>
   <div class="home">
-
-    <!-- <ComingSoon>
-    </ComingSoon> -->
-
     <HeaderMobile v-if="windowWidth < 750" />
     <HeroSection2 data-id="0" />
     <!-- <div class="fullpage-container">
@@ -28,8 +24,6 @@
         <SponsorSectionz /> 
         </div>
     <!-- </div> -->
-
-
 
   </div>
 </template>

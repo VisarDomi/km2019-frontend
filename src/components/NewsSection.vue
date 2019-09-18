@@ -27,7 +27,7 @@
           <div class="blog__image blog__image--1" @click="goToBlog('Blog1')">
             <div class="blog__footer">
               <p class="blog__footer--date">14.09.2019</p>
-              <p class="blog__footer--title">Ja kush jane 3 artistët e parë BIG! </p>
+              <p class="blog__footer--title">Ja kush jane 3 artistët e parë BIG!</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -60,8 +60,7 @@
           <div class="blog__image blog__image--4" @click="goToBlog('Blog02')">
             <div class="blog__footer">
               <p class="blog__footer--date">15.09.2018</p>
-              <p class="blog__footer--title">
-Ndryshon sistemi i votimit në Kënga Magjike</p>
+              <p class="blog__footer--title">Ndryshon sistemi i votimit në Kënga Magjike</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -111,9 +110,8 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
-
-.blog__image:hover{
-  cursor:pointer;
+.blog__image:hover {
+  cursor: pointer;
 }
 .graphic-right {
   position: absolute;
@@ -244,6 +242,9 @@ export default {
 
 .section-news {
   background-color: #0e1032;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .go-up {

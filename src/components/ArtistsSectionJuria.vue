@@ -6,82 +6,58 @@
         <h1 class="header-text">juria</h1>
       </div>
     </div>
-    <div class="row px-6 ">
-
-      <div class="col-6">
-        <div
-          class="artist-card abs-bottom"
-          :class="{'abs-bottom--up': index % 2 === 0}"
-          @click="goToJuria('JuriaArmend')"
-        >
+    <div class="row respond-height">
+      <div class="col-lg-2 col-sm-2 col-7 ml-6">
+        <div class="artist-card abs-bottom" @click="goToJuria('JuriaArmend')">
           <div class="img-container">
             <img src="@/assets/img/juria/armend.jpg" alt />
           </div>
           <p class="artist-card__name go-up--small">ARMEND REXHEPAGIQI</p>
           <!-- <br />
-          <p class="artist-card__song">{{artist.songtilte}}</p> -->
+          <p class="artist-card__song">{{artist.songtilte}}</p>-->
         </div>
       </div>
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
-        <div
-          class="artist-card abs-bottom"
-          :class="{'abs-bottom--up': index % 2 === 0}"
-          @click="goToJuria('JuriaJonida')"
-        >
+        <div class="artist-card abs-bottom" @click="goToJuria('JuriaJonida')">
           <div class="img-container">
             <img src="@/assets/img/juria/jonida.jpg" alt />
           </div>
           <p class="artist-card__name go-up--small">JONIDA MALIQI</p>
           <!-- <br />
-          <p class="artist-card__song">{{artist.songtilte}}</p> -->
+          <p class="artist-card__song">{{artist.songtilte}}</p>-->
         </div>
       </div>
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
-        <div
-          class="artist-card abs-bottom"
-          :class="{'abs-bottom--up': index % 2 === 0}"
-          @click="goToJuria('JuriaArben')"
-        >
+        <div class="artist-card abs-bottom" @click="goToJuria('JuriaArben')">
           <div class="img-container">
             <img src="@/assets/img/juria/Arben.jpg" alt />
           </div>
           <p class="artist-card__name go-up--small">ARBEN SKËNDERI</p>
           <!-- <br />
-          <p class="artist-card__song">{{artist.songtilte}}</p> -->
+          <p class="artist-card__song">{{artist.songtilte}}</p>-->
         </div>
       </div>
 
-
-
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
-        <div
-          class="artist-card abs-bottom"
-          :class="{'abs-bottom--up': index % 2 === 0}"
-          @click="goToJuria('JuriaEnkel')"
-        >
+        <div class="artist-card abs-bottom" @click="goToJuria('JuriaEnkel')">
           <div class="img-container">
             <img src="@/assets/img/juria/enkel.jpg" alt />
           </div>
           <p class="artist-card__name go-up--small">ENKEL DEMI</p>
           <!-- <br />
-          <p class="artist-card__song">{{artist.songtilte}}</p> -->
+          <p class="artist-card__song">{{artist.songtilte}}</p>-->
         </div>
       </div>
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
-        <div
-          class="artist-card abs-bottom"
-          :class="{'abs-bottom--up': index % 2 === 0}"
-          @click="goToJuria('JuriaDj')"
-        >
+        <div class="artist-card abs-bottom" @click="goToJuria('JuriaDj')">
           <div class="img-container">
             <img src="@/assets/img/juria/djs.jpg" alt />
           </div>
           <p class="artist-card__name go-up--small">DJ MISS ROSE & DJ STONE</p>
           <!-- <br />
-          <p class="artist-card__song">{{artist.songtilte}}</p> -->
+          <p class="artist-card__song">{{artist.songtilte}}</p>-->
         </div>
       </div>
-
     </div>
 
     <div class="row mt-6">
@@ -251,11 +227,6 @@ export default {
   margin-top: 8rem;
 }
 
-.px-6 {
-  margin-right: 4rem;
-  margin-left: 4rem;
-}
-
 .btn {
   padding: 1rem 12rem;
   border: 2px solid black;
@@ -288,19 +259,22 @@ export default {
 
 .section-artists {
   background-color: white;
-  height:1000px;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 .header-text {
   margin-top: -9rem;
   text-align: center;
   font-family: Vollkorn;
-  // color: black;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px black;
   font-size: 25rem;
   @include respond(4k-desktop) {
     font-size: 30rem;
+    margin-top: 2%;
+    margin-bottom: -5%;
   }
   @include respond(small-screen) {
     margin-top: -10%;
