@@ -92,6 +92,7 @@ export default {
           // console.log(i, Items[i]);
           Items[i].style.opacity = 0;
           Items[i].style.transition = "all 1s";
+          // Items[i].sytle.display = "none";
 
           // if (i % 5 == 0) {
           //   Items[i].style.transform = "translate(43vw, 0)";
@@ -105,13 +106,13 @@ export default {
           //   Items[i].style.transform = "translate(9vw, 0)";
           // }
           if (i % 4 == 0) {
-            Items[i].style.transform = "translate(36vw, 0)";
+            Items[i].style.transform = "translate(5vw, 0)";
           } else if (i % 4 == 1) {
-            Items[i].style.transform = "translate(27vw, 0)";
+            Items[i].style.transform = "translate(5vw, 0)";
           } else if (i % 4 == 2) {
-            Items[i].style.transform = "translate(18vw, 0)";
+            Items[i].style.transform = "translate(5vw, 0)";
           } else if (i % 4 == 3) {
-            Items[i].style.transform = "translate(9vw, 0)";
+            Items[i].style.transform = "translate(5vw, 0)";
           }
         }
 
@@ -121,6 +122,7 @@ export default {
           Items[i].style.opacity = 1;
           Items[i].style.transition = "all 1s";
           Items[i].style.transform = "translate(0, 0)";
+          Items[i].style.display = "inline-block";
         }
         this.shouldHide = true;
       }

@@ -6,7 +6,7 @@
         <h1 class="header-text">juria</h1>
       </div>
     </div>
-    <div class="row px-6 respond-height">
+    <div class="row respond-height">
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
         <div class="artist-card abs-bottom" @click="goToJuria('JuriaArmend')">
           <div class="img-container">
@@ -227,11 +227,6 @@ export default {
   margin-top: 8rem;
 }
 
-.px-6 {
-  margin-right: 4rem;
-  margin-left: 4rem;
-}
-
 .btn {
   padding: 1rem 12rem;
   border: 2px solid black;
@@ -264,18 +259,22 @@ export default {
 
 .section-artists {
   background-color: white;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 .header-text {
   margin-top: -9rem;
   text-align: center;
   font-family: Vollkorn;
-  // color: black;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px black;
   font-size: 25rem;
   @include respond(4k-desktop) {
     font-size: 30rem;
+    margin-top: 2%;
+    margin-bottom: -5%;
   }
   @include respond(small-screen) {
     margin-top: -10%;

@@ -35,7 +35,7 @@
       <div class="col-md-2 border-left-white">
         <p class="footer-item">
           <a href="https://boldcrest.com/">
-          <img src="@/assets/img/logocrestfooterblack.svg" alt="" style="width:250px;padding-left:30px;">
+            <img src="@/assets/img/logocrestfooterblack.svg" alt class="crest-logo" />
           </a>
         </p>
       </div>
@@ -68,10 +68,24 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
-.footer-container{
-  padding-left:35px;
+.crest-logo {
+  width: 250px;
+  padding-left: 30px;
+  @include respond(small-screen) {
+    padding-left: 0;
+    transform: scale(0.8);
+  }
 }
 
+.logo-footer {
+  @include respond(small-screen) {
+    transform: scale(0.8);
+  }
+}
+
+.footer-container {
+  padding-left: 35px;
+}
 
 .footer-item {
   cursor: pointer;
@@ -127,6 +141,7 @@ export default {
   bottom: 0%;
   width: 100%;
   height: 13%;
+  overflow: hidden;
   background-color: #0e1032;
   &-item {
     color: white;
