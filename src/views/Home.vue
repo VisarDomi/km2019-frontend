@@ -12,7 +12,13 @@
       logoBlack="true"
     />
     <HeaderHero
-      v-if="windowWidth > 750 && this.section == 'AcrossYearsBlogSection'"
+      v-if="windowWidth > 750 && this.section == 'AcrossYearsSection'"
+      menutype="menu__items--white"
+      logoWhite="true"
+      iconWhite="true"
+    />
+    <HeaderHero
+      v-if="windowWidth > 750 && this.section == 'BlogSection'"
       menutype="menu__items--white"
       logoWhite="true"
       iconWhite="true"
@@ -26,14 +32,14 @@
 
     <HeroSection />
 
-    <ArtistsSectionJuria v-if="windowWidth > 600" />
-    <!-- <ArtistsMobile v-else /> -->
-
-    <AcrossYearsSection data-id="2" v-if="windowWidth > 750" />
+    <AcrossYearsSection v-if="windowWidth > 750" />
     <!-- <AcrossYearsMobile v-else />-->
 
-    <NewsSection data-id="4" v-if="windowWidth > 950" />
+    <NewsSection v-if="windowWidth > 950" />
     <!-- <NewsMobile v-else /> -->
+
+    <ArtistsSectionJuria v-if="windowWidth > 600" />
+    <!-- <ArtistsMobile v-else /> -->
 
     <SponsorSectionz />
   </div>
@@ -97,7 +103,7 @@ export default {
         beforeChange: function(currentSlideEl, currenIndex, nextIndex) {},
         afterChange: function(currentSlideEl, currenIndex) {}
       },
-      section: "",
+      section: "HeroSection",
       windowWidth: window.innerWidth
     };
   },
@@ -105,20 +111,22 @@ export default {
     handleScroll(event) {
       // console.log("scrolling", window.scrollY);
       if (window.scrollY > 0 && window.scrollY < window.innerHeight - 100) {
-        console.log("herosection");
         this.section = "HeroSection";
       } else if (
         window.scrollY > window.innerHeight - 100 &&
         window.scrollY < window.innerHeight * 2 - 100
       ) {
-        console.log("juriasection");
-        this.section = "JuriaSection";
+        this.section = "AcrossYearsSection";
       } else if (
         window.scrollY > window.innerHeight * 2 - 100 &&
+        window.scrollY < window.innerHeight * 3 - 100
+      ) {
+        this.section = "BlogSection";
+      } else if (
+        window.scrollY > window.innerHeight * 3 - 100 &&
         window.scrollY < window.innerHeight * 4 - 100
       ) {
-        console.log("nder vite");
-        this.section = "AcrossYearsBlogSection";
+        this.section = "JuriaSection";
       } else if (window.scrollY > window.innerHeight * 4 - 100) {
         console.log("Sponsors");
         this.section = "SponsorSection";

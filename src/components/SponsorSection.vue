@@ -1,5 +1,5 @@
 <template>
-  <div class="section-sponsorz h-100">
+  <div class="section-sponsorz h-100" id="section-sponsorz">
     <div v-if="windowWidth > 950">
       <div class="spacer"></div>
 

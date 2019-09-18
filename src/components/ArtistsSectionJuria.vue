@@ -1,5 +1,5 @@
 <template>
-  <div class="section-artists" id="section-artists">
+  <div class="section-artists" id="juria">
     <div class="spacer"></div>
     <div class="row">
       <div class="col-lg-12 text-center">

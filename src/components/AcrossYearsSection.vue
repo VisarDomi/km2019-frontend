@@ -1,5 +1,5 @@
 <template>
-  <div class="section-acrossyears">
+  <div class="section-acrossyears" id="nder-vite">
     <div class="spacer"></div>
     <div class="row go-up--small h-20">
       <div class="col-lg-12 offset-1">
@@ -197,8 +197,8 @@ export default {
 .go-up {
   margin-top: -10rem;
   &--small {
-    margin-top: -5rem;
-    margin-bottom: -2rem;
+    margin-top: -6rem;
+    margin-bottom: -6rem;
   }
 }
 
