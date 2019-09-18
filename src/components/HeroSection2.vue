@@ -58,7 +58,8 @@ export default {
   }
 }
 .section-hero {
-  background-color: #0e1032;
+  // background-color: #0e1032;
+  height: 100vh;
 }
 
 .logo {
@@ -66,6 +67,7 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 2;
   // @include respond(phone) {
   //   margin-top: 5rem;
   // }

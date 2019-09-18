@@ -1,6 +1,8 @@
 <template>
-  <div class="section-sponsorz h-100">
+  <div class="section-sponsorz ">
 
+
+    <!-- if larger than tablet -->
     <div v-if="windowWidth > 950">
       <HeaderHero
         menutype="menu__items--black"
@@ -8,14 +10,7 @@
         v-if="windowWidth > 950"
       />
 
-
-
-
-
-
-
-
-    <div class="container h-75">
+    <div class="container ">
 
 
       <div class="row no-gutters justify-content-center">
@@ -81,22 +76,19 @@
     </div>
 
 
-
-
-
-
-
     <FooterBlack v-if="windowWidth > 770" />
 
     </div>
 
+
+    <!-- if mobile -->
     <div v-else-if="windowWidth< 770">
     <HeaderMobile />
 
-    <div class="container h-75">
+    <div class="container ">
 
 
-      <div class="row no-gutters justify-content-center" style="margin-top:40%;">
+      <div class="row no-gutters justify-content-center" style="margin-top:30%; margin-bottom:20%;">
 
         <div class="col-4">
           <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/1_bashkiatirane_logo.png" alt="">
@@ -162,7 +154,7 @@
     </div>
 
 
-
+    <!-- tablet -->
     <div v-else>
       <HeaderHero
         menutype="menu__items--black"
@@ -170,10 +162,10 @@
         
       />
 
-    <div class="container h-75">
+    <div class="container ">
 
 
-      <div class="row no-gutters justify-content-center" style="margin-top:40%;">
+      <div class="row no-gutters justify-content-center" style="margin-top:40%; margin-bottom:20%;">
 
         <div class="col-4">
           <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/1_bashkiatirane_logo.png" alt="">
@@ -237,11 +229,6 @@
 
     <FooterBlackSmall  />
     </div>
-
-
-
-
-
 
   </div>
 </template>

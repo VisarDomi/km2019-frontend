@@ -1,12 +1,12 @@
 <template>
   <div class="mobile-news">
-    <div class="row h-15 align-items-center">
+    <div class="row h-15 align-items-center ml-0" style="width:100%;">
       <h1 class="title">juria</h1>
     </div>
 
     <!-- <div class="row h-50 justify-content-center mt-6"> -->
-    <div class="row h-100">
-      <carousel
+    <div class="row ml-0" style="width:100%;">
+      <!-- <carousel
         ref="carouselArtistsMobile"
         :perPage="1"
         :paginationEnabled="false"
@@ -15,9 +15,11 @@
 
 
         <slide>
+        </slide>
+</carousel> -->
 
-          <div class="row " style="margin-bottom:20px;">
-            <div class="col-6 col-left">
+          <div class="row ml-0" style="margin-bottom:50px; margin:10px; margin-top:20px;width:100%;">
+            <div class="col-6 ">
               <div class="artist-card" @click="goToRoute('JuriaArben')">
                 <div class="img-container">
                   <img src="@/assets/img/juria/Arben.jpg" alt />
@@ -25,7 +27,7 @@
                 <p class="artist-card__name inside-card">ARBEN SKËNDERI</p>
               </div>
             </div>
-            <div class="col-6 col-right">
+            <div class="col-6 ">
               <div class="artist-card" @click="goToRoute('JuriaArmend')">
                 <div class="img-container">
                   <img src="@/assets/img/juria/armend.jpg" alt />
@@ -36,8 +38,8 @@
             
           </div>
 
-          <div class="row " style="">
-            <div class="col-6 col-left">
+          <div class="row ml-0" style="margin-bottom:50px; margin:10px;width:100%;">
+            <div class="col-6 ">
               <div class="artist-card" @click="goToRoute('JuriaDj')">
                 <div class="img-container">
                   <img src="@/assets/img/juria/djs.jpg" alt />
@@ -45,7 +47,7 @@
                 <p class="artist-card__name inside-card">DJ MISS ROSE & DJ STONE</p>
               </div>
             </div>
-            <div class="col-6 col-right">
+            <div class="col-6 ">
               <div class="artist-card" @click="goToRoute('JuriaJonida')">
                 <div class="img-container">
                   <img src="@/assets/img/juria/jonida.jpg" alt />
@@ -53,7 +55,10 @@
                 <p class="artist-card__name inside-card">JONIDA MALIQI</p>
               </div>
             </div>
-                        <div class="col-6 col-left" style="margin-top:10px;">
+          </div>
+
+          <div class="row mb-5 ml-0" style=" margin:10px;width:100%;">
+            <div class="col-6 " style="margin-top:10px;">
               <div class="artist-card" @click="goToRoute('JuriaEnkel')">
                 <div class="img-container">
                   <img src="@/assets/img/juria/enkel.jpg" alt />
@@ -67,7 +72,7 @@
              -->
 
 
-        </slide>
+        
 
 
 
@@ -132,7 +137,7 @@
 
 
 
-      </carousel>
+      
     </div>
     <!-- </div> -->
     <div class="graphic-right"></div>
@@ -217,6 +222,12 @@ export default {
 };
 </script>
 
+
+<style>
+.row{
+  width:100%;
+}
+</style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";

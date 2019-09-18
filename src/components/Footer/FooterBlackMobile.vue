@@ -4,15 +4,15 @@
 
 
 
-      <div class="row">
+      <div class="row ml-0">
         
-        <div class="col-5">
+        <div class="col-5 pl-0 pr-0">
           <img src="@/assets/img/logowhite.svg" class="logo" alt="">
         </div>
 
-        <div class="col-7">
+        <div class="col-7 pr-0">
 
-          <div class="row links-row">
+          <div class="row links-row ml-0">
 
             <div class="col-4">
 
@@ -45,7 +45,7 @@
 
       <hr class="footer-separator">
 
-      <div class="row" style="margin-bottom:10px;">
+      <div class="row " style="margin-bottom:10px;">
 
         <div class="col-1">
           <img src="@/assets/img/icon facebook white.svg" class="social-1" alt />
@@ -59,7 +59,7 @@
           <img src="@/assets/img/icon youtube white.svg" class="social-1" alt />
         </div>
 
-        <div class="col-4 offset-4" style="padding-left:40px; padding-top:5px;">
+        <div class="col-4 offset-4" style="padding-top:10px;">
           <a href="https://boldcrest.com/">
           <img src="@/assets/img/logocrestfooterblack.svg" alt="">
           </a>
@@ -111,9 +111,9 @@ hr {
 
 .footer-container{
   background:#0e1032;
-  height:14rem;
-  position:absolute;
-  bottom:0%;
+  // height:14rem;
+  // position:absolute;
+  // bottom:0%;
   width:100%;
   padding:2rem;
 }

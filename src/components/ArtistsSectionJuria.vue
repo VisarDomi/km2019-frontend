@@ -1,14 +1,14 @@
 <template>
   <div class="section-artists" id="section-artists">
-    <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 750" />
+    <!-- <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 750" /> -->
     <div class="row">
       <div class="col-lg-12 text-center">
         <h1 class="header-text">juria</h1>
       </div>
     </div>
-    <div class="row px-6 respond-height">
+    <div class="row px-6 ">
 
-      <div class="col-lg-2 col-sm-2 col-7 ml-6">
+      <div class="col-6">
         <div
           class="artist-card abs-bottom"
           :class="{'abs-bottom--up': index % 2 === 0}"
@@ -288,6 +288,7 @@ export default {
 
 .section-artists {
   background-color: white;
+  height:1000px;
 }
 
 .header-text {

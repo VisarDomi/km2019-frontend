@@ -1,8 +1,53 @@
 <template>
-  <div class="mobile-news">
-    <div class="row h-20 align-items-center">
-      <h1 class="title">&nbsp;të reja</h1>
+  <div class="mobile-news" style="position:relative;">
+    <div class="row  align-items-center ml-0">
+      <h1 class="title">të reja</h1>
     </div>
+
+
+
+    <div class="row  ml-0">
+      <div class="col-12 " style="padding-left:0px;padding-right:0px;height:70vh;">
+        <carousel
+        ref="carouselNewsMobile"
+        :perPage="1"
+        :paginationEnabled="false"
+        :navigationEnabled="false"
+      >
+        <slide>
+          <img src="@/assets/img/blog/Blog-0-gray.jpg" alt="" class="img-fluid" style="height:100%;width:100%;object-fit:cover;" @click="goToBlog('Blog0')">
+          <div class="title-date-div">
+
+                      <h1 class="blog-title-section" @click="goToBlog('Blog0')">Kënga Magjike, këtë vit 6 anëtarë jurie</h1>
+
+            <h3 class="home-mobile-date">05.09.2019</h3>
+          </div>
+        </slide>
+        <slide>
+          <img src="@/assets/img/blog/Blog-1.jpg" alt="" class="img-fluid" style="height:100%;width:100%;object-fit:cover;" @click="goToBlog('Blog1')">
+          <div class="title-date-div">
+
+                      <h1 class="blog-title-section" @click="goToBlog('Blog1')">Ja kush jane 3 artistët e parë BIG!</h1>
+
+            <h3 class="home-mobile-date">14.09.2019</h3>
+          </div>
+        </slide>
+                <slide>
+          <img src="@/assets/img/blog/Blog-01-gray.jpg" alt="" class="img-fluid" style="height:100%;width:100%;object-fit:cover;" @click="goToBlog('Blog01')">
+          <div class="title-date-div">
+
+                      <h1 class="blog-title-section" @click="goToBlog('Blog01')">Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
+
+            <h3 class="home-mobile-date">15.09.2019</h3>
+          </div>
+        </slide>
+        </carousel>
+      </div>
+    </div>
+
+
+
+
 
     <a @click.prevent="nextSlide">
       <div class="carousel-right">
@@ -14,8 +59,9 @@
         <img class="img-fluid img-left-arrow" src="@/assets/img/button previous_posts.svg" alt />
       </div>
     </a>
+<!-- 
 
-    <div class="row h-60 justify-content-center mt-6">
+    <div class="row  justify-content-center h-80" style="width:100%;">
       <carousel
         ref="carouselNewsMobile"
         :perPage="1"
@@ -23,7 +69,7 @@
         :navigationEnabled="false"
       >
         <slide>
-          <div class="h-100 slide-column">
+          <div class=" slide-column">
             <img src="@/assets/img/blog/Blog-0-gray.jpg" class="img-blog img-fluid" alt="">
             <h1 class="blog-title" @click="goToBlog('Blog0')">Kënga Magjike, këtë vit 6 anëtarë jurie</h1>
 
@@ -31,7 +77,7 @@
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column" >
+          <div class=" slide-column" >
             <img src="@/assets/img/blog/Blog-1.jpg" class="img-blog img-fluid" alt="">
             <h1 class="blog-title" @click="goToBlog('Blog1')">Ja kush jane 3 artistët e parë BIG! </h1>
 
@@ -39,7 +85,7 @@
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column" >
+          <div class=" slide-column" >
             <img src="@/assets/img/blog/Blog-01-gray.jpg" class="img-blog img-fluid" alt="">
             <h1 class="blog-title" @click="goToBlog('Blog01')">Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
 
@@ -49,11 +95,12 @@
       </carousel>
     </div>
 
-    <div class="row">
-      <div class="w-108 text-center btn-container">
-        <a @click="goToBlogs()" class="btn more-btn" style="color:#c360b5;">Me shumë lajme</a>
+    -->
+    <div class="row ml-0">
+      <div class=" text-center ml-auto mr-auto ">
+        <a @click="goToBlogs()" class="btn more-btn" style="color:#c360b5;">Më shumë lajme</a>
       </div>
-    </div>
+    </div> 
   </div>
 </template>
 
@@ -108,7 +155,9 @@ export default {
 
 .more-btn:hover{cursor:pointer;}
 
-
+.img-fluid{
+  width:88%;
+}
 .img-blog{
   height:100%;
   object-fit: cover;
@@ -153,34 +202,40 @@ export default {
   background-color: #0e1032;
 }
 
-.blog-date-section {
+.title-date-div{
+  position:absolute;
+  top: 20%; 
+}
+
+.home-mobile-date {
   color: #c360b5;
   // position: absolute;
-  // top: 38rem;
+  // top: 40%;
   z-index: 30;
   font-family: Panton;
   background: white;
-  font-weight: 700;
-  font-size: 2.3rem;
-  padding: 11px 11px 11px 11px;
-  // left: 4rem;
-  margin-left: 30%;
-  width: 28%;
+      width: 10rem;
+    margin-left: 10%;
+    font-weight: 700;
+    font-size: 1.8rem;
+    padding: 0.6rem;
+  // left: 2rem;
 }
 
 .blog-title-section {
-  padding-top: 38%;
-  padding-left: 20%;
   color: white;
   z-index: 30;
-  // position: relative;
+  // position: absolute;
   font-family: Vollkorn;
-  // top: 23rem;
-  width: 100%;
+  // top: 38%;
+  width: 84%;
   text-align: left;
-  // left: 4rem;
+  font-size: 4.5rem;
+  // padding-top: 38%;
+  padding-left: 10%;
   font-size: 4.5rem;
   line-height: 1;
+
 }
 
 .w-108 {
@@ -193,7 +248,7 @@ export default {
   // color: black;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px white;
-  font-size: 15rem;
+  font-size: 12rem;
   margin-top: 8rem;
 }
 
@@ -218,7 +273,8 @@ export default {
   font-family: Ubuntu;
   font-weight: 700;
   font-size: 3rem;
-  margin-top: 8rem;
+  margin-top: 3rem;
+  margin-bottom:3rem;
 }
 
 .mt-6 {

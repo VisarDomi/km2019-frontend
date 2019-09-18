@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="artist-container container">
+    <div class="artist-container container" style="height: 77.5vh;">
       <div class="row go-up--small">
         <div class="col-lg-6">
           <div class="img-container">
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col share-col" style="">
           <p class="share-text">Shperndaje:</p>
           <span>
@@ -39,7 +39,7 @@
             <i class="fa fa-whatsapp"></i>
           </span>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="spacer"></div>
     <FooterWhite v-if="windowWidth > 770" />

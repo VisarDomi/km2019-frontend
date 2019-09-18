@@ -62,6 +62,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+.mobile-header{
+  position:fixed;
+  top:30px;
+  right: 30px;
+  z-index:5;
+}
+
 .bottom-graphic {
   position: absolute;
   bottom: 0%;

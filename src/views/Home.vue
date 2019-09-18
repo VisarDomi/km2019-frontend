@@ -5,25 +5,29 @@
     </ComingSoon> -->
 
     <HeaderMobile v-if="windowWidth < 750" />
-    <div class="fullpage-container">
+    <HeroSection2 data-id="0" />
+    <!-- <div class="fullpage-container">
       <div class="fullpage-wp" v-fullpage="opts" ref="fullpage">
-        <HeroSection2 data-id="0" />
-
+      </div> -->
+      
         <ArtistsSectionJuria data-id="1" v-if="windowWidth > 600" />
         <ArtistsMobile v-else />
 
         <AcrossYearsSection data-id="2" v-if="windowWidth > 750" />
         <AcrossYearsMobile v-else />
+<!-- 
 
-        <!-- <SubmissionSection data-id="3" v-if="windowWidth > 950" />
+        <SubmissionSection data-id="3" v-if="windowWidth > 950" />
         <SubmissionMobile v-else /> -->
 
         <NewsSection data-id="4" v-if="windowWidth > 950" />
         <NewsMobile v-else />
 
-        <SponsorSectionz />
-      </div>
-    </div>
+        <div style="position:relative;">
+
+        <SponsorSectionz /> 
+        </div>
+    <!-- </div> -->
 
 
 
@@ -86,7 +90,7 @@ export default {
       opts: {
         start: 0,
         dir: "v",
-        duration: 500,
+        duration: 200,
         beforeChange: function(currentSlideEl, currenIndex, nextIndex) {},
         afterChange: function(currentSlideEl, currenIndex) {}
       },
@@ -118,6 +122,7 @@ export default {
 
 <style lang="scss">
 .home {
-  height: 100vh;
+  // height: 100vh;
 }
 </style>
+

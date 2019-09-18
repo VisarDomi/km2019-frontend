@@ -1,11 +1,17 @@
 <template>
   <div class="section-acrossyears">
-    <div class="carousel-container h-100">
+    <!-- <div class="carousel-container ">
       <carousel ref="carousel" :perPageCustom="[[0,1]]" :paginationEnabled="false">
         <slide>
-          <div class="row h-50 mt-9">
-            <div class="slider-img-container h-100 w-80 mx-auto">
-                        <div class="embed-responsive embed-responsive-4by3 h-100">
+                  </slide>
+
+      </carousel> -->
+          <div class="row go-up mt-5 ml-0">
+            <h1 class="header-text">ndër vite</h1>
+          </div>
+          <div class="row ml-0">
+            <div class="slider-img-container  w-80 mx-auto">
+                        <div class="embed-responsive embed-responsive-4by3 ">
                           <iframe
                             class="embed-responsive-item"
                             src="https://www.youtube.com/embed/N6zn-y-G2dA"
@@ -15,13 +21,8 @@
             </div>
           </div>
 
-          <div class="row go-up">
-            <h1 class="header-text">ndër vite</h1>
-          </div>
-          <div class="row">
-            <!-- <p class="year">2015</p> -->
-          </div>
-          <div class="row">
+          <div class="row ml-0">
+            
             <p class="description">
               Festivali Kënga Magjike lindi në vitin 1999, si një alternativë ndryshe, një koncept i ri, një kontribut tjetër në muzikën e lehtë, duke u bërë kështu një prej eventeve më të rëndësishëm në historinë e muzikës shqiptare. Pothuaj të gjithë artistët shqiptarë, e kanë prekur magjinë e kësaj skene. Prej vitit 2016, struktura e festivalit ka ndryshuar, duke shtuar edhe kategorinë New Artist. Pas 20 vitesh eksperiencë, ky edicion sjell të rejat që janë diksutuar dhe kërkuar nga vetë artistët dhe publiku; mënyra e votimit dhe të kënduarit live.  
             </p>
@@ -39,9 +40,7 @@
               </div>
             </div>
           </div> -->
-        </slide>
 
-      </carousel>
     </div>
   </div>
 </template>
@@ -107,7 +106,7 @@ export default {
 }
 
 .go-up {
-  margin-top: -4rem;
+  padding-top: 2rem;
 }
 
 .year {
@@ -121,9 +120,11 @@ export default {
 
 .description {
   color: #c360b5;
-      font-size: 1.78vh;
+      font-size: 2rem;
   margin-left: 5rem;
   width: 80%;
+  margin-top:3rem;
+  margin-bottom:2rem;
 }
 
 .section-acrossyears {

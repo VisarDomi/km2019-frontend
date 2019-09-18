@@ -1,6 +1,6 @@
 <template>
   <!-- <div> -->
-  <div class="row align-items-center menu__items" v-bind:class="menutype">
+  <div class="row align-items-center menu__items pos-relative" v-bind:class="menutype">
     <div class="col-xl-3 col-lg-4 col-sm-4 high-index">
       <span class="d-lg-inline-block" href="#" v-if="logoBlack">
         <img
@@ -97,13 +97,13 @@ export default {
           //   Items[i].style.transform = "translate(9vw, 0)";
           // }
           if (i % 4 == 0) {
-            Items[i].style.transform = "translate(36vw, 0)";
+            Items[i].style.transform = "translate(1px, 0)";
           } else if (i % 4 == 1) {
-            Items[i].style.transform = "translate(27vw, 0)";
+            Items[i].style.transform = "translate(1px, 0)";
           } else if (i % 4 == 2) {
-            Items[i].style.transform = "translate(18vw, 0)";
+            Items[i].style.transform = "translate(1px, 0)";
           } else if (i % 4 == 3) {
-            Items[i].style.transform = "translate(9vw, 0)";
+            Items[i].style.transform = "translate(1px, 0)";
           }
         }
 
@@ -131,6 +131,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+.pos-relative{
+  position: relative
+}
+
 .respond-width {
   @include respond(4k-desktop) {
     width: 25%;
