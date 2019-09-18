@@ -1,7 +1,7 @@
 <template>
   <div class="section-sponsorz h-100">
     <div v-if="windowWidth > 950">
-      <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 950" />
+      <div class="spacer"></div>
 
       <div class="container h-75">
         <div class="row no-gutters justify-content-center">
@@ -87,7 +87,7 @@
     </div>
 
     <div v-else-if="windowWidth< 770">
-      <HeaderMobile />
+      <div class="spacer"></div>
 
       <div class="container h-75">
         <div class="row no-gutters justify-content-center" style="margin-top:40%;">
@@ -173,7 +173,7 @@
     </div>
 
     <div v-else>
-      <HeaderHero menutype="menu__items--black" logoBlack="true" />
+      <div class="spacer"></div>
 
       <div class="container h-75">
         <div class="row no-gutters justify-content-center" style="margin-top:40%;">
@@ -257,6 +257,7 @@
 
       <FooterBlackSmall />
     </div>
+    <div class="spacer"></div>
   </div>
 </template>
 
@@ -265,8 +266,6 @@ import FooterBlack from "@/components/Footer/FooterBlack.vue";
 import FooterBlackSmall from "@/components/Footer/FooterBlackSmall.vue";
 import FooterBlackMobile from "@/components/Footer/FooterBlackMobile.vue";
 import Footer from "@/components/Footer/FooterWhite.vue";
-import HeaderHero from "@/components/Headers/HeaderHero.vue";
-import HeaderMobile from "@/components/Headers/MobileHeader.vue";
 
 export default {
   name: "SponsorSectionz",
@@ -274,9 +273,7 @@ export default {
     FooterBlack,
     FooterBlackSmall,
     FooterBlackMobile,
-    Footer,
-    HeaderHero,
-    HeaderMobile
+    Footer
   },
   data() {
     return {
@@ -295,6 +292,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.spacer {
+  height: 15rem;
+}
+
 .img-sponsor {
   width: 28vh;
 }

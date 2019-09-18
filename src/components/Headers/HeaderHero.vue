@@ -1,6 +1,6 @@
 <template>
   <!-- <div> -->
-  <div class="row align-items-center menu__items" v-bind:class="menutype">
+  <div class="header-hero row align-items-center menu__items" v-bind:class="menutype">
     <div class="col-xl-3 col-lg-4 col-sm-4 high-index">
       <span class="d-lg-inline-block" href="#" v-if="logoBlack">
         <img
@@ -141,6 +141,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+.header-hero {
+  position: fixed;
+  z-index: 9999;
+  top: 0%;
+  right: 4%;
+  width: 100%;
+}
+
 .respond-width {
   @include respond(4k-desktop) {
     width: 25%;
