@@ -32,6 +32,8 @@ import Rregullore from "./views/Rregullore.vue";
 import Voto from "./views/Voto.vue";
 import VotoArtist from "./views/VotoArtist.vue";
 
+import NotFound from "./views/NotFound.vue";
+
 Vue.use(Router);
 
 export default new Router({
@@ -45,6 +47,7 @@ export default new Router({
       component: Home,
       meta: { transition: "overlay-left" }
     },
+    { path: '*', component: NotFound },
     {
       path: "/artists",
       name: "Artists",
