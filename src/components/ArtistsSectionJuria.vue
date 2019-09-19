@@ -1,5 +1,5 @@
 <template>
-  <div class="section-artists" id="juria">
+  <div class="section-juria" id="juria">
     <div class="spacer"></div>
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -9,9 +9,8 @@
     <div class="row respond-height">
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
         <div class="artist-card abs-bottom" @click="goToJuria('JuriaArmend')">
-          <div class="img-container">
-            <img src="@/assets/img/juria/armend.jpg" alt />
-          </div>
+          <div class="img-container"></div>
+          <img src="@/assets/juria/j1_hover.png" alt />
           <p class="artist-card__name go-up--small">ARMEND REXHEPAGIQI</p>
           <!-- <br />
           <p class="artist-card__song">{{artist.songtilte}}</p>-->
@@ -20,7 +19,7 @@
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
         <div class="artist-card abs-bottom" @click="goToJuria('JuriaJonida')">
           <div class="img-container">
-            <img src="@/assets/img/juria/jonida.jpg" alt />
+            <img src="@/assets/juria/j2_hover.png" alt />
           </div>
           <p class="artist-card__name go-up--small">JONIDA MALIQI</p>
           <!-- <br />
@@ -30,7 +29,7 @@
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
         <div class="artist-card abs-bottom" @click="goToJuria('JuriaArben')">
           <div class="img-container">
-            <img src="@/assets/img/juria/Arben.jpg" alt />
+            <img src="@/assets/juria/j3_hover.png" alt />
           </div>
           <p class="artist-card__name go-up--small">ARBEN SKËNDERI</p>
           <!-- <br />
@@ -41,7 +40,7 @@
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
         <div class="artist-card abs-bottom" @click="goToJuria('JuriaEnkel')">
           <div class="img-container">
-            <img src="@/assets/img/juria/enkel.jpg" alt />
+            <img src="@/assets/juria/j4_hover.png" alt />
           </div>
           <p class="artist-card__name go-up--small">ENKEL DEMI</p>
           <!-- <br />
@@ -51,7 +50,7 @@
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
         <div class="artist-card abs-bottom" @click="goToJuria('JuriaDj')">
           <div class="img-container">
-            <img src="@/assets/img/juria/djs.jpg" alt />
+            <img src="@/assets/juria/j5_hover.png" alt />
           </div>
           <p class="artist-card__name go-up--small">DJ MISS ROSE & DJ STONE</p>
           <!-- <br />
@@ -127,6 +126,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+.img-container {
+}
+
 .spacer {
   height: 15rem;
 }
@@ -258,8 +261,8 @@ export default {
   }
 }
 
-.section-artists {
-  background-color: white;
+.section-juria {
+  background-color: #0e1032;
   height: 100vh;
   overflow: hidden;
   position: relative;
@@ -270,7 +273,7 @@ export default {
   text-align: center;
   font-family: Vollkorn;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px black;
+  -webkit-text-stroke: 2px white;
   font-size: 25rem;
   @include respond(4k-desktop) {
     font-size: 30rem;

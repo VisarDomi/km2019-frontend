@@ -8,8 +8,9 @@
     />
     <HeaderHero
       v-if="windowWidth > 750 && this.section == 'JuriaSection'"
-      menutype="menu__items--black"
-      logoBlack="true"
+      menutype="menu__items--white"
+      logoWhite="true"
+      iconWhite="true"
     />
     <HeaderHero
       v-if="windowWidth > 750 && this.section == 'AcrossYearsSection'"

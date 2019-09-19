@@ -55,7 +55,7 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="artist-card abs-bottom" @click="goToJuria('JuriaJonida')">
+          <div class="artist-card abs-bottom" @click="goToJuria('JuriaEnkel')">
             <div class="img-container">
               <img class="img" src="@/assets/juria/j4_hover.png" alt />
             </div>

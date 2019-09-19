@@ -19,7 +19,7 @@
         <p class="footer-item" @click="changeSection(3)">të reja</p>
       </div>
       <div class="col-md-1 temporary-spread">
-        <p class="footer-item" @click="changeSection(4)">rregullore</p>
+        <p class="footer-item" @click="changeRoute('Rregullore')">rregullore</p>
       </div>
       <!-- <div class="col-md-1 pl-6">
         <p class="footer-item">voto</p>
