@@ -6,64 +6,98 @@
       </div>
       <div
         class="col-lg-1 col-sm-2 col-xs-3 col-3 vertical-center back-hover-artist"
-        @click="goToHome()"
+        @click="goToArtists()"
       >
-        <img src="@/assets/img/artistet_arrow_left.svg" alt class="back-icon center-block" />
+        <img src="@/assets/img/artistet_arrow_right.svg" alt class="back-icon center-block" />
       </div>
     </div>
 
-    <div class="artist-container container" style="height: 77.5vh;">
-      <div class="row go-up--small">
-        <div class="col-lg-6">
+    <div class="artist-container container">
+      <div class="row">
+        <div class="col-lg-4">
           <div class="img-container">
-            <img class="img" src="@/assets/img/juria/Arben.jpg" alt />
+            <img class="img" src="@/assets/juria/j3_hover.png" alt />
           </div>
         </div>
-        <div class="col-lg-5 top-padded-col">
+        <div class="col-lg-6 ml-5 top-padded-col">
           <h1 class="artist-name">Arben</h1>
-          <h1 class="artist-surname">Skënderi</h1>
-          <!-- <h2 class="artist-songtitle">loose yourself to dance</h2> -->
+          <h1 class="artist-surname">Skënderaj</h1>
           <h3 class="bio-text">bio</h3>
           <h4
             class="bio-description"
-          >Instrumentist i talentuar, pedagog, aktualisht drejtues i shtëpisë së produksionit franko –shqiptare “On Off Productions”. Arben Skënderi është  për herë të dytë anëtar  jurie për kategorinë New Artist, pasi ka qenë pjesë e vlerësimit të artistëve të rinj edhe në “Kënga Magjike 2018”.</h4>
+          >Është cilësuar si një prej legjendave të muzikës shqiptare. Artist unik, kantautor, kompozitor dhe autor këngësh mjaft të njohura. Armend Rexhepagiq me gjykimin e tij korrekt, profesional dhe pak shpotitës, ishte pjesë e jurisë së festivalit "Kënga Magjike" për kategorinë New Artist, edhe në edicionin e 20-të.</h4>
         </div>
       </div>
 
-      <!-- <div class="row">
-        <div class="col share-col" style="">
-          <p class="share-text">Shperndaje:</p>
-          <span>
-            <i class="fa fa-facebook facebook-icon" style="margin-right:5px;"></i>
-            <i class="fa fa-instagram" style="margin-right:5px;"></i>
-            <i class="fa fa-whatsapp"></i>
-          </span>
+      <div class="row">
+        <div class="col">
+          <h1 class="trigger-text">Anetare te tjere te jurise:</h1>
         </div>
-      </div> -->
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="artist-card abs-bottom" @click="goToJuria('JuriaEneda')">
+            <div class="img-container">
+              <img class="img" src="@/assets/juria/j2_hover.png" alt />
+            </div>
+            <p class="artist-card__name go-up--small">Emer Mbiemer</p>
+            <br />
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="artist-card abs-bottom" @click="goToJuria('JuriaArmend')">
+            <div class="img-container">
+              <img class="img" src="@/assets/juria/j1_hover.png" alt />
+            </div>
+            <p class="artist-card__name go-up--small">Emer Mbiemer</p>
+            <br />
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="artist-card abs-bottom" @click="goToJuria('JuriaEnkel')">
+            <div class="img-container">
+              <img class="img" src="@/assets/juria/j4_hover.png" alt />
+            </div>
+            <p class="artist-card__name go-up--small">Emer Mbiemer</p>
+            <br />
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="artist-card abs-bottom" @click="goToJuria('JuriaDj')">
+            <div class="img-container">
+              <img class="img" src="@/assets/juria/j5_hover.png" alt />
+            </div>
+            <p class="artist-card__name go-up--small">Emer Mbiemer</p>
+            <br />
+          </div>
+        </div>
+      </div>
     </div>
     <div class="spacer"></div>
     <FooterWhite v-if="windowWidth > 770" />
-    <FooterWhiteSmall v-else-if="windowWidth < 770 && windowWidth > 600" />
-      <FooterJuriaMobile v-else/>
-
+    <FooterWhiteSmall v-if="windowWidth < 770 && windowWidth > 600" />
+    <FooterWhiteMobile v-else />
   </div>
 </template>
 
 <script>
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
-import FooterJuriaMobile from "@/components/Footer/FooterJuriaMobile.vue";
+import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
 import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
 // @ is an alias to /src
 
 export default {
   name: "SingleArtist",
   components: {
+    FooterWhiteMobile,
     FooterWhite,
-    FooterJuriaMobile,
     FooterWhiteSmall
   },
   data() {
-    return { windowWidth: window.innerWidth };
+    return {
+      windowWidth: window.innerWidth
+    };
   },
   methods: {
     goToArtists() {
@@ -71,6 +105,9 @@ export default {
     },
     goToHome() {
       this.$router.push({ name: "Home" });
+    },
+    goToJuria(routename) {
+      this.$router.push({ name: routename });
     }
   },
   mounted() {
@@ -86,23 +123,8 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
-
-.share-col{
-margin-bottom:50px;
-  @include respond(phone) {
-    height: 70px;
-  }
-}
-.img-container {
-  // width: 100%;
-}
-.img {
-  max-width: 100%;
-  height: auto;
-}
-
 .spacer {
-  height: 4rem;
+  height: 15rem;
 }
 
 .artist-name {
@@ -188,13 +210,7 @@ margin-bottom:50px;
   font-size: 1.2rem;
 }
 .artist-container {
-  background: linear-gradient(#0e1032, #000);
-  height:100%;
-  // margin-bottom:6%;
   margin-top: 5rem;
-    @include respond(phone) {
-    margin-bottom:50px;
-  }
 }
 
 i.fa {
@@ -230,10 +246,11 @@ body {
 }
 
 .artist-page {
-  // height:100vh;
-  // height: 100%;
+  // height: 100vh;
+  position: relative;
+  height: 100%;
   @include respond(phone) {
-    height: 100vh;
+    height: 100%;
   }
 
   @include respond(tab-port) {
@@ -243,12 +260,9 @@ body {
   @include respond(tab-land) {
     // height:100vh;
   }
-  // background: lightsalmon;
-  // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  //   url("../../src/assets/img/sonimala2j.png") no-repeat;
-  background: linear-gradient(#0e1032, #000);
-  background-size: cover;
-  background-attachment: fixed;
+  background-color: #0e1032;
+  // background-size: cover;
+  // background-attachment: fixed;
 }
 
 .menu-row {
@@ -281,12 +295,14 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
+.img {
+  width: 100%;
+}
 .artist-card {
   // width: 90%;
   img {
     height: 100%;
-    width: 100%;
+    // width: 100%;
     z-index: -1;
   }
   &__name {
@@ -317,9 +333,6 @@ body {
   margin-top: -10rem;
   &--small {
     margin-top: -4rem;
-      @include respond(phone) {
-    padding-top: 30px;
-  }
   }
 }
 </style>
