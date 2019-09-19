@@ -83,7 +83,7 @@ kitaristëve. Një këngë plot ritëm e sjellë këtë herë nga Klajdi për di
 
           
 
-        <FooterWhite v-if="windowWidth > 770"  />
+        <FooterSingleBlog v-if="windowWidth > 770"  />
          
 
 
@@ -98,14 +98,14 @@ kitaristëve. Një këngë plot ritëm e sjellë këtë herë nga Klajdi për di
 
 import { Carousel, Slide } from "vue-carousel";
 
-import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterSingleBlog from "@/components/Footer/FooterSingleBlog.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
 export default {
   name: "SingleBlog",
   components: {
     Carousel,
     Slide,
-    FooterWhite,
+    FooterSingleBlog,
     FooterSingleBlogMobile
   },
   data() {

@@ -31,13 +31,15 @@
                 <img
                   v-if="hoverR"
                   @click="goToBlog('Blog1')"
-                  src="@/assets/img/buttons_export/button_tereja_right_h.svg" style="width:6rem;"
+                  src="@/assets/img/buttons_export/button_tereja_right_h.svg"
+                  style="width:6rem;"
                   alt
                 />
                 <img
                   v-else
                   @click="goToBlog('Blog1')"
-                  src="@/assets/img/buttons_export/button_tereja_right.svg" style="width:6rem;"
+                  src="@/assets/img/buttons_export/button_tereja_right.svg"
+                  style="width:6rem;"
                   alt
                 />
               </div>
@@ -46,10 +48,17 @@
                 <img
                   v-if="hoverL"
                   @click="goToBlog('Blog7')"
-                  src="@/assets/img/buttons_export/button_tereja_left_h.svg" style="width:6rem;"
+                  src="@/assets/img/buttons_export/button_tereja_left_h.svg"
+                  style="width:6rem;"
                   alt
                 />
-                <img v-else @click="goToBlog('Blog7')" src="@/assets/img/buttons_export/button_tereja_left.svg" style="width:6rem;" alt />
+                <img
+                  v-else
+                  @click="goToBlog('Blog7')"
+                  src="@/assets/img/buttons_export/button_tereja_left.svg"
+                  style="width:6rem;"
+                  alt
+                />
               </div>
             </div>
 
@@ -75,7 +84,7 @@
           </div>
         </div>
 
-        <FooterWhite v-if="windowWidth > 770" />
+        <FooterSingleBlog v-if="windowWidth > 770" />
       </div>
       <FooterSingleBlogMobile v-if="windowWidth < 770" />
     </div>
@@ -87,15 +96,15 @@
 
 import { Carousel, Slide } from "vue-carousel";
 
-import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterSingleBlog from "@/components/Footer/FooterSingleBlog.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
 export default {
   name: "SingleBlog",
   components: {
     Carousel,
     Slide,
-    FooterWhite,
-    FooterSingleBlogMobile
+    FooterSingleBlogMobile,
+    FooterSingleBlog
   },
   data() {
     return {

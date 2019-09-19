@@ -1,9 +1,7 @@
 <template>
   <div class="blogs">
     <div class="row justify-content-between artist-row align-items-center h-15 ml-0">
-      <div
-        class="col-lg-2 col-md-3 offset-sm-1 offset-lg-0  col-sm-3 col-6 text-center logo-col-sm"
-      >
+      <div class="col-lg-2 col-md-3 offset-sm-1 offset-lg-0 col-sm-3 col-6 text-center logo-col-sm">
         <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
       <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToHome()">
@@ -22,13 +20,37 @@
       </div>-->
 
       <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
-        <img v-if="hoverR" @click.prevent="nextSlide" src="@/assets/img/buttons_export/button_tereja_right_h.svg" style="width:6rem;" alt />
-        <img v-else @click.prevent="nextSlide" src="@/assets/img/buttons_export/button_tereja_right.svg" style="width:6rem;" alt />
+        <img
+          v-if="hoverR"
+          @click.prevent="nextSlide"
+          src="@/assets/img/buttons_export/button_tereja_right_h.svg"
+          style="width:6rem;"
+          alt
+        />
+        <img
+          v-else
+          @click.prevent="nextSlide"
+          src="@/assets/img/buttons_export/button_tereja_right.svg"
+          style="width:6rem;"
+          alt
+        />
       </div>
 
       <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
-        <img v-if="hoverL" @click.prevent="prevSlide" src="@/assets/img/buttons_export/button_tereja_left_h.svg" style="width:6rem;" alt />
-        <img v-else @click.prevent="prevSlide" src="@/assets/img/buttons_export/button_tereja_left.svg" style="width:6rem;" alt />
+        <img
+          v-if="hoverL"
+          @click.prevent="prevSlide"
+          src="@/assets/img/buttons_export/button_tereja_left_h.svg"
+          style="width:6rem;"
+          alt
+        />
+        <img
+          v-else
+          @click.prevent="prevSlide"
+          src="@/assets/img/buttons_export/button_tereja_left.svg"
+          style="width:6rem;"
+          alt
+        />
       </div>
 
       <carousel

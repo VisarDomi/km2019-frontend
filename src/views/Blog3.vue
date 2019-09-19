@@ -84,7 +84,7 @@ publikut një Rap Battle duke shpalosur gjithë talentin e tyre.
 
           
 
-        <FooterWhite v-if="windowWidth > 770"  />
+        <FooterSingleBlog v-if="windowWidth > 770"  />
          
 
 
@@ -99,14 +99,14 @@ publikut një Rap Battle duke shpalosur gjithë talentin e tyre.
 
 import { Carousel, Slide } from "vue-carousel";
 
-import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterSingleBlog from "@/components/Footer/FooterSingleBlog.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
 export default {
   name: "SingleBlog",
   components: {
     Carousel,
     Slide,
-    FooterWhite,
+    FooterSingleBlog,
     FooterSingleBlogMobile
   },
   data() {

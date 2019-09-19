@@ -1,96 +1,94 @@
 <template>
-<div>
-  <div class="blog-page">
-    <div class="row justify-content-between artist-row align-items-center h-15">
-      <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
-        <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
-      </div>
-      <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
-        <img
-          src="@/assets/img/artistet_arrow_left.svg"
-          alt
-          class="back-icon center-block respond-width"
-        />
-      </div>
-    </div>
-
-    <div class="row blog-row">
-      <div class="col-md-5 col-12 image-col">
-        <img
-          class="blog-image"
-          src="@/assets/img/blog/Blog-mentor.jpg"
-          alt
-        />
-      </div>
-      <div class="col-md-7 col-xs-12 blog-col">
-        <div class="container">
-          <h1 class="single-blog-title">Hera e pare e Mentor Haziri-t...Ja doli?!</h1>
-          <hr />
-          <p
-            class="blog-content"
-          >Mentor Haziri merr pjese per here te pare ne festivalin Kenga Magjike, ndaj stafi vendosi qe intervisten e tij, t'a realizonte ne forme ''testi'', ku Mentori i duhej te pergjigjej disa pyetjeve ne lidhje me vete festivalin Kenga Magjike nder vite...Disa pyetje u gjeten, por disa te tjera jo, duke bere qe pergjigjien apo ''zemerimin'' ne lidhje me pergjigjien e pasakte, tja kthejne vete personazhet e pyetjes (me videomesazh). Nje surprize per te gjithe, ishte nje video-mesazh, nga nje prej bashkepuntoreve me te afert te tij, Flori Mumajesi, i cili nuk e fshehu zemerimin e tij per Mentorin.
-
-
-          <div class="row">
-            <p class="single-date">11.9.2018</p>
-            <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
-              <img
-                v-if="hoverR"
-                @click="goToBlog('Blog1')"
-                src="@/assets/img/buttons_export/button_tereja_right_h.svg" style="width:6rem;"
-                alt
-              />
-              <img v-else @click="goToBlog('Blog1')" src="@/assets/img/buttons_export/button_tereja_right.svg" style="width:6rem;" alt />
-            </div>
-
-            <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
-              <img
-                v-if="hoverL"
-                @click="goToBlog('Blog7')"
-                src="@/assets/img/buttons_export/button_tereja_left_h.svg" style="width:6rem;"
-                alt
-              />
-              <img v-else @click="goToBlog('Blog7')" src="@/assets/img/buttons_export/button_tereja_left.svg" style="width:6rem;" alt />
-            </div>
-          </div>
-
-          <h3 class="bio-text">te ngjashme</h3>
-            <br>
-            <div class="row">
-              <div class="col-lg-6">
-                              <div class="blog-card" @click="goToBlog('Blog1')">
-                <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-1.jpg" alt />
-                <h2 class="blog-card-title">Ja kush jane 3 artistët e parë BIG! </h2>
-              </div>
-
-              </div>
-              <div class="col-lg-6">
-                              <div class="blog-card " @click="goToBlog('Blog2')">
-                <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-2.jpg" alt />
-                <h2 class="blog-card-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
-              </div>
-
-              </div>
-            </div>
-
-
-
-          <br>
-          <br>
-
+  <div>
+    <div class="blog-page">
+      <div class="row justify-content-between artist-row align-items-center h-15">
+        <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
+          <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
+        </div>
+        <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
+          <img
+            src="@/assets/img/artistet_arrow_left.svg"
+            alt
+            class="back-icon center-block respond-width"
+          />
         </div>
       </div>
 
-          
+      <div class="row blog-row">
+        <div class="col-md-5 col-12 image-col">
+          <img class="blog-image" src="@/assets/img/blog/Blog-mentor.jpg" alt />
+        </div>
+        <div class="col-md-7 col-xs-12 blog-col">
+          <div class="container">
+            <h1 class="single-blog-title">Hera e pare e Mentor Haziri-t...Ja doli?!</h1>
+            <hr />
+            <p
+              class="blog-content"
+            >Mentor Haziri merr pjese per here te pare ne festivalin Kenga Magjike, ndaj stafi vendosi qe intervisten e tij, t'a realizonte ne forme ''testi'', ku Mentori i duhej te pergjigjej disa pyetjeve ne lidhje me vete festivalin Kenga Magjike nder vite...Disa pyetje u gjeten, por disa te tjera jo, duke bere qe pergjigjien apo ''zemerimin'' ne lidhje me pergjigjien e pasakte, tja kthejne vete personazhet e pyetjes (me videomesazh). Nje surprize per te gjithe, ishte nje video-mesazh, nga nje prej bashkepuntoreve me te afert te tij, Flori Mumajesi, i cili nuk e fshehu zemerimin e tij per Mentorin.</p>
+            <div class="row">
+              <p class="single-date">11.9.2018</p>
+              <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
+                <img
+                  v-if="hoverR"
+                  @click="goToBlog('Blog1')"
+                  src="@/assets/img/buttons_export/button_tereja_right_h.svg"
+                  style="width:6rem;"
+                  alt
+                />
+                <img
+                  v-else
+                  @click="goToBlog('Blog1')"
+                  src="@/assets/img/buttons_export/button_tereja_right.svg"
+                  style="width:6rem;"
+                  alt
+                />
+              </div>
 
-        <FooterWhite v-if="windowWidth > 770"  />
-         
+              <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
+                <img
+                  v-if="hoverL"
+                  @click="goToBlog('Blog7')"
+                  src="@/assets/img/buttons_export/button_tereja_left_h.svg"
+                  style="width:6rem;"
+                  alt
+                />
+                <img
+                  v-else
+                  @click="goToBlog('Blog7')"
+                  src="@/assets/img/buttons_export/button_tereja_left.svg"
+                  style="width:6rem;"
+                  alt
+                />
+              </div>
+            </div>
 
+            <h3 class="bio-text">te ngjashme</h3>
+            <br />
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="blog-card" @click="goToBlog('Blog1')">
+                  <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-1.jpg" alt />
+                  <h2 class="blog-card-title">Ja kush jane 3 artistët e parë BIG!</h2>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="blog-card" @click="goToBlog('Blog2')">
+                  <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-2.jpg" alt />
+                  <h2 class="blog-card-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
+                </div>
+              </div>
+            </div>
 
-    </div>
-          <FooterSingleBlogMobile v-if="windowWidth < 770" />
-  </div>
+            <br />
+            <br />
           </div>
+        </div>
+
+        <FooterSingleBlog v-if="windowWidth > 770" />
+      </div>
+      <FooterSingleBlogMobile v-if="windowWidth < 770" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -98,19 +96,18 @@
 
 import { Carousel, Slide } from "vue-carousel";
 
-import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterSingleBlog from "@/components/Footer/FooterSingleBlog.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
 export default {
   name: "SingleBlog",
   components: {
     Carousel,
     Slide,
-    FooterWhite,
+    FooterSingleBlog,
     FooterSingleBlogMobile
   },
   data() {
     return {
-      
       windowWidth: window.innerWidth,
       hoverR: false,
       hoverL: false
@@ -147,13 +144,11 @@ export default {
 
 
 <style lang="scss" scoped>
-
-
 @import "@/assets/sass/abstracts/_mixins.scss";
 
 @font-face {
   font-family: Panton;
-  src: url('../assets/Fonts/panton-semibold.OTF');
+  src: url("../assets/Fonts/panton-semibold.OTF");
   font-weight: bold;
 }
 
@@ -194,8 +189,8 @@ export default {
   width: 5rem;
 }
 
-.blog-card:hover{
-  cursor:pointer;
+.blog-card:hover {
+  cursor: pointer;
 }
 
 .blog-card-title {
@@ -204,7 +199,6 @@ export default {
   font-size: 2.3rem;
   width: 90%;
   margin-top: 2rem;
-
 }
 
 .blog-card-image {
@@ -302,8 +296,8 @@ hr {
   font-size: 3rem;
   padding-left: 5rem;
   padding-right: 5rem;
-    @include respond(phone) {
-    margin-bottom:80px;
+  @include respond(phone) {
+    margin-bottom: 80px;
   }
 }
 .blog-page {

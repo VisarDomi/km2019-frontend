@@ -1,57 +1,75 @@
 <template>
   <div class="mobile-news" style="position:relative;">
-    <div class="row  align-items-center ml-0">
+    <div class="row align-items-center ml-0">
       <h1 class="title">të reja</h1>
     </div>
 
-
-
-    <div class="row  ml-0">
-      <div class="col-12 " style="padding-left:0px;padding-right:0px;height:70vh;">
+    <div class="row ml-0">
+      <div class="col-12" style="padding-left:0px;padding-right:0px;height:70vh;">
         <carousel
-        ref="carouselNewsMobile"
-        :perPage="1"
-        :autoplay="true"
-        :autoplayTimeout="2500"
-        :loop="true"
-        :autoplayHoverPause="false"
-        :paginationEnabled="false"
-        :navigationEnabled="false"
-      >
-        <slide>
-          <img src="@/assets/img/blog/Blog-0-gray.jpg" alt="" class="img-fluid" style="height:100%;width:100%;object-fit:cover;" @click="goToBlog('Blog0')">
-          <div class="title-date-div">
+          ref="carouselNewsMobile"
+          :perPage="1"
+          :autoplay="true"
+          :autoplayTimeout="2500"
+          :loop="true"
+          :autoplayHoverPause="false"
+          :paginationEnabled="false"
+          :navigationEnabled="false"
+        >
+          <slide>
+            <img
+              src="@/assets/img/blog/Blog-0-gray.jpg"
+              alt
+              class="img-fluid"
+              style="height:100%;width:100%;object-fit:cover;"
+              @click="goToBlog('Blog0')"
+            />
+            <div class="title-date-div">
+              <h1
+                class="blog-title-section"
+                @click="goToBlog('Blog0')"
+              >Kënga Magjike, këtë vit 6 anëtarë jurie</h1>
 
-                      <h1 class="blog-title-section" @click="goToBlog('Blog0')">Kënga Magjike, këtë vit 6 anëtarë jurie</h1>
+              <h3 class="home-mobile-date">05.09.2019</h3>
+            </div>
+          </slide>
+          <slide>
+            <img
+              src="@/assets/img/blog/Blog-1.jpg"
+              alt
+              class="img-fluid"
+              style="height:100%;width:100%;object-fit:cover;"
+              @click="goToBlog('Blog1')"
+            />
+            <div class="title-date-div">
+              <h1
+                class="blog-title-section"
+                @click="goToBlog('Blog1')"
+              >Ja kush jane 3 artistët e parë BIG!</h1>
 
-            <h3 class="home-mobile-date">05.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <img src="@/assets/img/blog/Blog-1.jpg" alt="" class="img-fluid" style="height:100%;width:100%;object-fit:cover;" @click="goToBlog('Blog1')">
-          <div class="title-date-div">
+              <h3 class="home-mobile-date">14.09.2019</h3>
+            </div>
+          </slide>
+          <slide>
+            <img
+              src="@/assets/img/blog/Blog-01-gray.jpg"
+              alt
+              class="img-fluid"
+              style="height:100%;width:100%;object-fit:cover;"
+              @click="goToBlog('Blog01')"
+            />
+            <div class="title-date-div">
+              <h1
+                class="blog-title-section"
+                @click="goToBlog('Blog01')"
+              >Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
 
-                      <h1 class="blog-title-section" @click="goToBlog('Blog1')">Ja kush jane 3 artistët e parë BIG!</h1>
-
-            <h3 class="home-mobile-date">14.09.2019</h3>
-          </div>
-        </slide>
-                <slide>
-          <img src="@/assets/img/blog/Blog-01-gray.jpg" alt="" class="img-fluid" style="height:100%;width:100%;object-fit:cover;" @click="goToBlog('Blog01')">
-          <div class="title-date-div">
-
-                      <h1 class="blog-title-section" @click="goToBlog('Blog01')">Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
-
-            <h3 class="home-mobile-date">15.09.2019</h3>
-          </div>
-        </slide>
+              <h3 class="home-mobile-date">15.09.2019</h3>
+            </div>
+          </slide>
         </carousel>
       </div>
     </div>
-
-
-
-
 
     <!-- <a @click.prevent="nextSlide">
       <div class="carousel-right" >
@@ -62,8 +80,8 @@
       <div class="carousel-left">
         <img class="img-fluid img-left-arrow" src="@/assets/img/button previous_posts.svg" alt />
       </div>
-    </a> -->
-<!-- 
+    </a>-->
+    <!-- 
 
     <div class="row  justify-content-center h-80" style="width:100%;">
       <carousel
@@ -101,10 +119,10 @@
 
     -->
     <div class="row ml-0">
-      <div class=" text-center ml-auto mr-auto ">
+      <div class="text-center ml-auto mr-auto">
         <a @click="goToBlogs()" class="btn more-btn" style="color:#c360b5;">Më shumë lajme</a>
       </div>
-    </div> 
+    </div>
   </div>
 </template>
 
@@ -136,8 +154,8 @@ export default {
     goToBlogs() {
       this.$router.push({ name: "Blogs" });
     },
-    goToBlog(blogname){
-      this.$router.push({name:blogname});
+    goToBlog(blogname) {
+      this.$router.push({ name: blogname });
     },
     prevSlide() {
       this.$refs.carouselNewsMobile.goToPage(
@@ -157,19 +175,20 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
-.more-btn:hover{cursor:pointer;}
-
-.img-fluid{
-  width:88%;
+.more-btn:hover {
+  cursor: pointer;
 }
-.img-blog{
-  height:100%;
+
+.img-fluid {
+  width: 88%;
+}
+.img-blog {
+  height: 100%;
   object-fit: cover;
-  position:absolute;
-  z-index:-10;
+  position: absolute;
+  z-index: -10;
   // width:100%;
 }
-
 
 .img-next-arrow {
   width: 7rem;
@@ -204,11 +223,12 @@ export default {
 
 .mobile-news {
   background-color: #0e1032;
+  position: relative !important;
 }
 
-.title-date-div{
-  position:absolute;
-  top: 20%; 
+.title-date-div {
+  position: absolute;
+  top: 20%;
 }
 
 .home-mobile-date {
@@ -218,11 +238,11 @@ export default {
   z-index: 30;
   font-family: Panton;
   background: white;
-      width: 10rem;
-    margin-left: 10%;
-    font-weight: 700;
-    font-size: 1.8rem;
-    padding: 0.6rem;
+  width: 10rem;
+  margin-left: 10%;
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding: 0.6rem;
   // left: 2rem;
 }
 
@@ -239,7 +259,6 @@ export default {
   padding-left: 10%;
   font-size: 4.5rem;
   line-height: 1;
-
 }
 
 .w-108 {
@@ -278,7 +297,7 @@ export default {
   font-weight: 700;
   font-size: 3rem;
   margin-top: 3rem;
-  margin-bottom:3rem;
+  margin-bottom: 3rem;
 }
 
 .mt-6 {
