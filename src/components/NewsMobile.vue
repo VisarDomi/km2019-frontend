@@ -11,6 +11,9 @@
         <carousel
         ref="carouselNewsMobile"
         :perPage="1"
+        :autoplay="true"
+        :autoplayTimeout="2500"
+        :loop="true"
         :paginationEnabled="false"
         :navigationEnabled="false"
       >
@@ -49,8 +52,8 @@
 
 
 
-    <a @click.prevent="nextSlide">
-      <div class="carousel-right">
+    <!-- <a @click.prevent="nextSlide">
+      <div class="carousel-right" >
         <img class="img-fluid img-next-arrow" src="@/assets/img/button next_posts.svg" alt />
       </div>
     </a>
@@ -58,7 +61,7 @@
       <div class="carousel-left">
         <img class="img-fluid img-left-arrow" src="@/assets/img/button previous_posts.svg" alt />
       </div>
-    </a>
+    </a> -->
 <!-- 
 
     <div class="row  justify-content-center h-80" style="width:100%;">
@@ -176,7 +179,7 @@ export default {
   bottom: 13%;
   right: 5rem;
   padding-top: 19px;
-  z-index: 99;
+  z-index: 4;
 }
 .carousel-right:hover {
   cursor: pointer;

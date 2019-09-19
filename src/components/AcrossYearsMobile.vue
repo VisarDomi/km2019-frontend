@@ -131,7 +131,7 @@ export default {
   background-color: #0e1032;
 }
 .header-text {
-  z-index: 20;
+  z-index: 4;
   position: relative;
   color: #c360b5;
   // margin-top: -10%;

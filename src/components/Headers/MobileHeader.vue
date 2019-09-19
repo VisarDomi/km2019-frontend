@@ -13,7 +13,7 @@
       <a href="#" @click="moveTo(2)">ndër vite</a>
       <!-- <a href="#" @click="moveTo(3)">#magjike</a> -->
       <a href="#" @click="moveTo(3)">të reja</a>
-      <a href="#" class="high-index pos-relative" @click="goToRregullore()">rregullore</a>
+      <a  class="high-index pos-relative" @click="goToRregullore()">rregullore</a>
       <div class="bottom-graphic" @click="moveTo(0)">
         <img src="@/assets/img/Path 2649.svg" alt />
       </div>
