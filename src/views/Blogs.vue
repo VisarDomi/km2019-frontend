@@ -339,6 +339,19 @@ export default {
 .img-next-arrow {
   width: 6rem;
 }
+
+
+  @media only screen and (max-width : 320px) {
+
+
+  .carousel-right{
+    bottom:24%;
+  }
+
+  .carousel-left{
+    bottom:24%;
+  }
+  }
 </style>
 
 
@@ -384,7 +397,15 @@ export default {
   @include respond(phone) {
     padding-top: 18rem;
   }
+
+
 }
+  @media only screen and (max-width : 320px) {
+  .blog-title{
+    padding-top:10rem;
+  }
+
+  }
 @font-face {
   font-family: Panton;
   src: url("../assets/Fonts/panton-semibold.OTF");
