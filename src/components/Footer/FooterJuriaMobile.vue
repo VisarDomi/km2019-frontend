@@ -59,7 +59,7 @@
           <img src="@/assets/img/icon youtube black.svg" class="social-1" alt />
         </div>
 
-        <div class="col-4 offset-4" style="padding-left:35px; padding-top:5px;">
+        <div class="col-4 offset-3" style="padding-left:35px; padding-top:5px;">
           <a href="https://boldcrest.com/">
           <img src="@/assets/img/logocrestfooterwhite.svg" alt="">
           </a>
@@ -111,7 +111,7 @@ hr {
 
 .footer-container{
   background:white;
-  height:14rem;
+  height:16rem;
   position:relative;
   bottom:0%;
   width:100%;
