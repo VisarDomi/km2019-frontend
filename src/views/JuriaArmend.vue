@@ -77,7 +77,7 @@
     <div class="spacer"></div>
     <FooterWhite v-if="windowWidth > 770" />
     <FooterWhiteSmall v-if="windowWidth < 770 && windowWidth > 600" />
-    <FooterWhiteMobile v-else />
+    <FooterWhiteMobile v-if="windowWidth < 600" />
   </div>
 </template>
 
