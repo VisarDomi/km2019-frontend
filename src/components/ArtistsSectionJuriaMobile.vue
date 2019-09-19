@@ -1,5 +1,5 @@
 <template>
-  <div class="mobile-artists">
+  <div class="mobile-artists pb-5 pt-5">
     <div class="row h-15 align-items-center ml-0" style="width:100%;">
       <h1 class="title">juria</h1>
     </div>

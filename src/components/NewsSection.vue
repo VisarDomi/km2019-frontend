@@ -1,5 +1,5 @@
 <template>
-  <div class="section-news" id="te-reja">
+  <div class="section-news pt-5 pb-5" id="te-reja">
     <div class="spacer"></div>
     <div class="row h-25">
       <div class="header-container">
