@@ -120,7 +120,7 @@
     -->
     <div class="row ml-0" style="margin-top: 18px;">
       <div class="text-center ml-auto mr-auto">
-        <a @click="goToBlogs()" class="btn more-btn" style="color:#c360b5;">Më shumë lajme</a>
+        <a @click="goToBlogs()" class="btn more-btn" style="color:white;">Më shumë lajme</a>
       </div>
     </div>
   </div>
@@ -222,7 +222,7 @@ export default {
 }
 
 .mobile-news {
-  background-color: #0e1032;
+  background-color: #47b8b0;
   position: relative !important;
 }
 
@@ -232,7 +232,7 @@ export default {
 }
 
 .home-mobile-date {
-  color: #c360b5;
+  color: #47b8b0;
   // position: absolute;
   // top: 40%;
   z-index: 30;
@@ -290,8 +290,8 @@ export default {
 
 .btn {
   padding: 0.5rem 7rem;
-  color: #c360b5;
-  border: 2px solid #c360b5;
+  color: white;
+  border: 2px solid white;
   border-radius: 10rem;
   font-family: Ubuntu;
   font-weight: 700;

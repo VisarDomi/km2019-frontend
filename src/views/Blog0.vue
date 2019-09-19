@@ -18,7 +18,7 @@
   <div class="blog-page">
     <div class="row justify-content-between artist-row align-items-center h-15">
       <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
-        <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
+        <img src="@/assets/img/logoblog.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
       <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
         <img
@@ -44,8 +44,7 @@
             <br />
             <br />Gjithashtu një emër shumë i njohur në gazetari, Enkel Demi do të jetë pjesë e kësaj jurie.
             <br />
-            <br />
-Dhe për të përmbushur spektrin e gjerë të anëtarëve tëjurisë, nuk mund të mungonte edhe gjykimi DJ, ata të cilët janë në kontakt non stop me prurjet e muzikës së fundit. Dj Miss Rose dhe DJ Stone; a do të jenë ata të dy në një mendje apo do të kenë kontradikta, sepse vota e të dy DJ-ve në këtë juri do të vlejë një. Anëtarët e një jurie duhet të jenë gjithmonë numër tek.
+            <br />Dhe për të përmbushur spektrin e gjerë të anëtarëve tëjurisë, nuk mund të mungonte edhe gjykimi DJ, ata të cilët janë në kontakt non stop me prurjet e muzikës së fundit. Dj Miss Rose dhe DJ Stone; a do të jenë ata të dy në një mendje apo do të kenë kontradikta, sepse vota e të dy DJ-ve në këtë juri do të vlejë një. Anëtarët e një jurie duhet të jenë gjithmonë numër tek.
           </p>
           <div class="row">
             <p class="single-date">15.09.2019</p>
@@ -53,20 +52,34 @@ Dhe për të përmbushur spektrin e gjerë të anëtarëve tëjurisë, nuk mund 
               <img
                 v-if="hoverR"
                 @click="goToBlog('Blog1')"
-                src="@/assets/img/buttons_export/button_tereja_right_h.svg" style="width:6rem;"
+                src="@/assets/img/buttons_export/button_tereja_right_h.svg"
+                style="width:6rem;"
                 alt
               />
-              <img v-else @click="goToBlog('Blog1')" src="@/assets/img/buttons_export/button_tereja_right.svg" style="width:6rem;" alt />
+              <img
+                v-else
+                @click="goToBlog('Blog1')"
+                src="@/assets/img/buttons_export/button_tereja_right.svg"
+                style="width:6rem;"
+                alt
+              />
             </div>
 
             <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
               <img
                 v-if="hoverL"
                 @click="goToBlog('Blog7')"
-                src="@/assets/img/buttons_export/button_tereja_left_h.svg" style="width:6rem;"
+                src="@/assets/img/buttons_export/button_tereja_left_h.svg"
+                style="width:6rem;"
                 alt
               />
-              <img v-else @click="goToBlog('Blog7')" src="@/assets/img/buttons_export/button_tereja_left.svg" style="width:6rem;" alt />
+              <img
+                v-else
+                @click="goToBlog('Blog7')"
+                src="@/assets/img/buttons_export/button_tereja_left.svg"
+                style="width:6rem;"
+                alt
+              />
             </div>
           </div>
 
@@ -264,7 +277,7 @@ export default {
   width: fit-content;
   margin-top: 3rem;
   font-family: Panton;
-  color: #c360b5;
+  color: #47b8b0;
   // position: absolute;
   // top: 50rem;
   z-index: 30;
@@ -317,7 +330,7 @@ hr {
   margin: 0;
 }
 .blog-col {
-  background: #c360b5;
+  background: #47b8b0;
   font-size: 3rem;
   padding-left: 5rem;
   padding-right: 5rem;
@@ -327,7 +340,7 @@ hr {
 }
 .blog-page {
   height: 100vh;
-  background: #c360b5;
+  background: #47b8b0;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -339,7 +352,7 @@ hr {
 }
 
 .back-hover:hover {
-  background: #d17ac4;
+  background: #47b8b0;
   cursor: pointer;
 }
 
@@ -358,7 +371,7 @@ hr {
   margin-right: 0px;
   margin-left: 0px;
   height: 10rem;
-  background: #ce73c1;
+  background: #47b8b0;
   position: fixed;
   top: 0;
   z-index: 9999;

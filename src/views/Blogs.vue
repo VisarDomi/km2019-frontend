@@ -283,7 +283,6 @@ export default {
   /* padding-top: 19px; */
   z-index: 99;
   border-radius: 50%;
-  // background-color: #c360b5;
 }
 .carousel-right:hover {
   cursor: pointer;
@@ -302,7 +301,6 @@ export default {
   bottom: 21%;
   left: 5rem;
   border-radius: 50%;
-  // background-color: #c360b5;
   /* padding-top: 15px; */
 }
 
@@ -319,11 +317,11 @@ export default {
 }
 
 .slide-column:hover {
-  background: -webkit-linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7));
+  background: -webkit-linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7));
 
-  background: -moz-linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7));
-  background: -o-linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7));
-  background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7));
+  background: -moz-linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7));
+  background: -o-linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7));
+  background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7));
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -363,7 +361,6 @@ export default {
 
 .blog-title:hover {
   cursor: pointer;
-  // color: #C360B5;
 }
 
 .blog-title {
@@ -394,7 +391,7 @@ export default {
   font-weight: bold;
 }
 .date {
-  color: #c360b5;
+  color: #47b8b0;
   // position: absolute;
   // top: 50rem;
   z-index: 30;
@@ -414,7 +411,7 @@ export default {
 //on mobile breakpoint change to 100%;
 .blogs {
   height: 100vh;
-  background: #c360b5;
+  background: #47b8b0;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -426,7 +423,7 @@ export default {
 }
 
 .back-hover:hover {
-  background: #d17ac4;
+  background: #47b8b0;
   cursor: pointer;
 }
 
@@ -445,7 +442,7 @@ export default {
   margin-right: 0px;
   margin-left: 0px;
   height: 10rem;
-  background: #ce73c1;
+  background: #47b8b0;
 }
 
 .carousel-container {
