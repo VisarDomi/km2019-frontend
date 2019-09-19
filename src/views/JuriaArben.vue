@@ -41,7 +41,7 @@
             <div class="img-container">
               <img class="img" src="@/assets/juria/j2_hover.png" alt />
             </div>
-            <p class="artist-card__name go-up--small">Emer Mbiemer</p>
+            <p class="artist-card__name go-up--small">Jonida Maliqi</p>
             <br />
           </div>
         </div>
@@ -50,7 +50,7 @@
             <div class="img-container">
               <img class="img" src="@/assets/juria/j1_hover.png" alt />
             </div>
-            <p class="artist-card__name go-up--small">Emer Mbiemer</p>
+            <p class="artist-card__name go-up--small">Armend Rexhepagiqi</p>
             <br />
           </div>
         </div>
@@ -59,7 +59,7 @@
             <div class="img-container">
               <img class="img" src="@/assets/juria/j4_hover.png" alt />
             </div>
-            <p class="artist-card__name go-up--small">Emer Mbiemer</p>
+            <p class="artist-card__name go-up--small">Enkel Demi</p>
             <br />
           </div>
         </div>
@@ -68,7 +68,7 @@
             <div class="img-container">
               <img class="img" src="@/assets/juria/j5_hover.png" alt />
             </div>
-            <p class="artist-card__name go-up--small">Emer Mbiemer</p>
+            <p class="artist-card__name go-up--small">Dj Miss Rose & Dj Stone</p>
             <br />
           </div>
         </div>
@@ -300,6 +300,9 @@ body {
 }
 .artist-card {
   // width: 90%;
+  @include respond(phone) {
+    margin-bottom: 5rem;
+  }
   img {
     height: 100%;
     // width: 100%;
