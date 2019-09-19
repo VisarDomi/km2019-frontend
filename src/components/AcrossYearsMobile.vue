@@ -84,7 +84,7 @@ export default {
 }
 .navigation-container {
   width: 100%;
-  background-color: #1a1c3c;
+  background-color: #0e1032;
 
   position: absolute;
   bottom: 0;

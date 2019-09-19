@@ -192,7 +192,7 @@ export default {
     color: white;
     font-size: 2rem;
     padding: 4px 1rem;
-    background-color: black;
+    background-color: #0e1023;
     font-family: Vollkorn;
     display: inline-block;
     border: solid 2px white;
@@ -273,7 +273,7 @@ export default {
   text-align: center;
   font-family: Vollkorn;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px white;
+  -webkit-text-stroke: 2px #47b8b0;
   font-size: 25rem;
   @include respond(4k-desktop) {
     font-size: 30rem;

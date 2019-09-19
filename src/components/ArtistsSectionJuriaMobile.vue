@@ -156,7 +156,7 @@ export default {
 
 .mobile-artists {
   position: relative;
-  background: #0e1023;
+  background: #0e1032;
 }
 
 .col-left {
@@ -279,7 +279,7 @@ export default {
     color: white;
     font-size: 2rem;
     padding: 4px 1rem;
-    background-color: black;
+    background-color: #0e1032;
     font-family: Vollkorn;
     display: inline-block;
     border: solid 2px white;
