@@ -121,17 +121,17 @@ export default {
 
 .btn {
   padding: 0.5rem 5rem;
-  border: 2px solid #c76cba;
+  border: 2px solid white;
   border-radius: 10rem;
 
   font-family: Ubuntu;
   font-weight: 700;
   font-size: 2rem;
-  color: #c76cba;
+  color: white;
   &:hover {
     border: 0px;
-    color: white;
-    background-color: #c76cba;
+    color: #47b8b0;
+    background-color: white;
   }
   &:focus {
     transform: translateY(4px);
@@ -157,7 +157,7 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       &:hover {
-        background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7)),
+        background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
           url("../assets/img/blog/Blog-1.jpg");
         background-repeat: no-repeat;
         background-size: cover;
@@ -170,7 +170,7 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       &:hover {
-        background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7)),
+        background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
           url("../assets/img/blog/Blog-0-gray.jpg");
         background-repeat: no-repeat;
         background-size: cover;
@@ -183,7 +183,7 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       &:hover {
-        background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7)),
+        background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
           url("../assets/img/blog/Blog-01-gray-cropped.jpg");
         background-repeat: no-repeat;
         background-size: cover;
@@ -196,7 +196,7 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       &:hover {
-        background: linear-gradient(rgba(#c76cba, 0.7), rgba(#c76cba, 0.7)),
+        background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
           url("../assets/img/blog/Blog-02-gray-cropped.jpg");
         background-repeat: no-repeat;
         background-size: cover;
@@ -213,7 +213,7 @@ export default {
     left: 10%;
     font-family: Ubuntu;
     &--date {
-      background-color: #c360b5;
+      background-color: #47b8b0;
       display: inline-block;
       color: white;
       font-family: Panton;
@@ -235,7 +235,7 @@ export default {
 }
 
 .section-news {
-  background-color: #0e1032;
+  background-color: #47b8b0;
   position: relative;
   height: 100vh;
   overflow: hidden;

@@ -239,7 +239,7 @@ export default {
   width: fit-content;
   margin-top: 3rem;
   font-family: Panton;
-  color: #c360b5;
+  color: #47b8b0;
   // position: absolute;
   // top: 50rem;
   z-index: 30;
@@ -292,7 +292,7 @@ hr {
   margin: 0;
 }
 .blog-col {
-  background: #c360b5;
+  background: #47b8b0;
   font-size: 3rem;
   padding-left: 5rem;
   padding-right: 5rem;
@@ -302,7 +302,7 @@ hr {
 }
 .blog-page {
   height: 100vh;
-  background: #c360b5;
+  background: #47b8b0;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -314,7 +314,7 @@ hr {
 }
 
 .back-hover:hover {
-  background: #d17ac4;
+  background: #47b8b0;
   cursor: pointer;
 }
 
@@ -333,7 +333,7 @@ hr {
   margin-right: 0px;
   margin-left: 0px;
   height: 10rem;
-  background: #ce73c1;
+  background: #47b8b0;
   position: fixed;
   top: 0;
   z-index: 9999;
