@@ -25,11 +25,52 @@
         <p class="footer-item">voto</p>
       </div>-->
 
-      <div class="col-md-2 border-left-white icons-center">
+      <div class="col-md-2 border-left-white ">
         <div class="icons horizontal-center">
-          <img src="@/assets/img/icon facebook white.svg" class="social-1" alt />
-          <img src="@/assets/img/icon instagram white.svg" class="social-2" alt />
-          <img src="@/assets/img/icon youtube white.svg" class="social-3" alt />
+
+
+          <div class="row ml-0">
+
+          <div class="col-4">
+
+          <div @mouseover="hoverFB = true" @mouseleave="hoverFB = false">
+            <a v-if="hoverFB" target="_blank" href="https://www.facebook.com/kengamagjikeofficial/">
+            <img  src="@/assets/img/footer_export/social_white_fb_h.svg" style="width:4rem;"   alt />
+            </a>
+            <a v-else target="_blank" href="https://www.facebook.com/kengamagjikeofficial/">
+            <img  src="@/assets/img/footer_export/social_white_fb.svg"   style="width:4rem;"  alt />
+            </a>
+          </div>
+          </div>
+
+
+<div class="col-4">
+          <div @mouseover="hoverIG = true" @mouseleave="hoverIG = false">
+            <a v-if="hoverIG" target="_blank" href="https://www.instagram.com/kengamagjikeofficial/">
+            <img  src="@/assets/img/footer_export/social_white_ig_h.svg" style="width:4rem;"    alt />
+            </a>
+            <a v-else target="_blank" href="https://www.instagram.com/kengamagjikeofficial/">
+            <img  src="@/assets/img/footer_export/social_white_ig.svg"   style="width:4rem;"  alt />
+            </a>
+          </div>
+          </div>
+
+
+<div class="col-4">
+          <div @mouseover="hoverYT = true" @mouseleave="hoverYT = false">
+            <a v-if="hoverYT" target="_blank" href="https://www.youtube.com/user/officialkengamagjike">
+            <img  src="@/assets/img/footer_export/social_white_yt_h.svg" style="width:4rem;"    alt />
+            </a>
+            <a v-else target="_blank" href="https://www.youtube.com/user/officialkengamagjike">
+            <img  src="@/assets/img/footer_export/social_white_yt.svg"   style="width:4rem;"  alt />
+            </a>
+          </div>
+          </div>
+
+          </div>
+
+
+
         </div>
       </div>
       <div class="col-md-2 border-left-white">
@@ -48,7 +89,11 @@ import { eventBus } from "@/main";
 export default {
   name: "FooterBlack",
   data() {
-    return {};
+    return {
+      hoverFB: false,
+      hoverYT: false, 
+      hoverIG: false
+    };
   },
   methods: {
     changeRoute(name) {
@@ -94,15 +139,30 @@ export default {
   &-1 {
     position: absolute;
     left: 14%;
+    top:-100%;
+  }
+  &-1:hover{
+    cursor:pointer;
   }
   &-2 {
     position: absolute;
     left: 42%;
+    top:-100%;
+  }
+  &-2:hover{
+    cursor:pointer;
   }
   &-3 {
     // position: absolute;
     // left: 2%;
     padding-left: 64%;
+    top:-100%;
+  }
+  &-3
+    :hover
+  {
+    cursor:pointer;
+  
   }
 }
 

@@ -1,16 +1,16 @@
 <template>
   <div class="footer">
-    <div class="row h-50 vertical-center">
-      <div class="col-md-2 ">
-        <div class="abs-center" @click="changeRoute('Home')">
-          <img src="@/assets/img/logoblack.svg" class="footer-image-logo" alt />
+    <div class="row h-50 vertical-center footer-container">
+      <div class="col-md-2">
+        <div class="abs-center">
+          <img class="logo-footer" src="@/assets/img/logoblack.svg" alt @click="changeSection(0)" />
         </div>
       </div>
-      <div class="col-md-1 pl-6 temporary-spread border-left-black">
-        <p class="footer-item align-centered pl-5" @click="changeSection(1)">juria</p>
+      <div class="col-md-1 pl-7 temporary-spread border-left-black">
+        <p class="footer-item align-centered" @click="changeSection(1)">juria</p>
       </div>
       <!-- <div class="col-md-1 pl-6">
-        <p class="footer-item" @click="changeSection(3)">#fotome</p>
+        <p class="footer-item">#fotome</p>
       </div>-->
       <div class="col-md-1 pl-6 temporary-spread">
         <p class="footer-item" @click="changeSection(2)">ndër vite</p>
@@ -19,29 +19,65 @@
         <p class="footer-item" @click="changeSection(3)">të reja</p>
       </div>
       <div class="col-md-1 temporary-spread">
-        <p class="footer-item" @click="changeRoute('Rregullore')">rregullore</p>
+        <p class="footer-item" @click="changeSection(4)">rregullore</p>
       </div>
       <!-- <div class="col-md-1 pl-6">
-        <p class="footer-item" @click="changeRoute('Voto')">voto</p>
+        <p class="footer-item">voto</p>
       </div>-->
 
-      <div class="col-md-2 border-left-black icons-center">
+      <div class="col-md-2 border-left-black ">
         <div class="icons horizontal-center">
-          <a target="_blank" href="https://www.facebook.com/kengamagjikeofficial/">
-          <img src="@/assets/img/icon facebook black.svg" class="social-1" alt />
-          </a>
-          <a href="https://www.youtube.com/user/officialkengamagjike" target="_blank" rel="noopener noreferrer">
-          <img src="@/assets/img/icon youtube black.svg" class="social-3" alt />
-          </a>
-          <a href="https://www.instagram.com/kengamagjikeofficial/" target="_blank" rel="noopener noreferrer">
-          <img src="@/assets/img/icon instagram black.svg" class="social-2" alt />
-          </a>
+
+
+          <div class="row ml-0">
+
+          <div class="col-4">
+
+          <div @mouseover="hoverFB = true" @mouseleave="hoverFB = false">
+            <a v-if="hoverFB" target="_blank" href="https://www.facebook.com/kengamagjikeofficial/">
+            <img  src="@/assets/img/footer_export/social_blue_fb_h.svg" style="width:4rem;"   alt />
+            </a>
+            <a v-else target="_blank" href="https://www.facebook.com/kengamagjikeofficial/">
+            <img  src="@/assets/img/footer_export/social_blue_fb.svg"   style="width:4rem;"  alt />
+            </a>
+          </div>
+          </div>
+
+
+<div class="col-4">
+          <div @mouseover="hoverIG = true" @mouseleave="hoverIG = false">
+            <a v-if="hoverIG" target="_blank" href="https://www.instagram.com/kengamagjikeofficial/">
+            <img  src="@/assets/img/footer_export/social_blue_ig_h.svg" style="width:4rem;"    alt />
+            </a>
+            <a v-else target="_blank" href="https://www.instagram.com/kengamagjikeofficial/">
+            <img  src="@/assets/img/footer_export/social_blue_ig.svg"   style="width:4rem;"  alt />
+            </a>
+          </div>
+          </div>
+
+
+<div class="col-4">
+          <div @mouseover="hoverYT = true" @mouseleave="hoverYT = false">
+            <a v-if="hoverYT" target="_blank" href="https://www.youtube.com/user/officialkengamagjike">
+            <img  src="@/assets/img/footer_export/social_blue_yt_h.svg" style="width:4rem;"    alt />
+            </a>
+            <a v-else target="_blank" href="https://www.youtube.com/user/officialkengamagjike">
+            <img  src="@/assets/img/footer_export/social_blue_yt.svg"   style="width:4rem;"  alt />
+            </a>
+          </div>
+          </div>
+
+          </div>
+
+
+
         </div>
       </div>
-      <div class="col-md-2 col-sm-1 border-left-black">
+      <div class="col-md-2 border-left-black">
         <p class="footer-item">
           <a href="https://boldcrest.com/">
-          <img src="@/assets/img/logocrestfooterwhite.svg" alt="" style="width:250px;padding-left:30px;"></a>
+            <img src="@/assets/img/logocrestfooterwhite.svg" alt class="crest-logo" />
+          </a>
         </p>
       </div>
     </div>
@@ -51,9 +87,13 @@
 <script>
 import { eventBus } from "@/main";
 export default {
-  name: "FooterWhite",
+  name: "FooterBlack",
   data() {
-    return {};
+    return {
+      hoverFB: false,
+      hoverYT: false, 
+      hoverIG: false
+    };
   },
   methods: {
     changeRoute(name) {
@@ -73,24 +113,41 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
-
-.footer-image-logo{
-        @include respond(small-screen) {
-    margin-left:4%;
+.crest-logo {
+  width: 250px;
+  padding-left: 30px;
+  @include respond(small-screen) {
+    padding-left: 0;
+    transform: scale(0.8);
   }
 }
 
+.logo-footer {
+  @include respond(small-screen) {
+    transform: scale(0.8);
+  }
+}
+
+.footer-container {
+  padding-left: 35px;
+}
+
+.footer-item {
+  cursor: pointer;
+}
 .social {
   &-1 {
     position: absolute;
-    left: 16%;
+    left: 14%;
+    top:-100%;
   }
   &-1:hover{
     cursor:pointer;
   }
   &-2 {
     position: absolute;
-    left: 43%;
+    left: 42%;
+    top:-100%;
   }
   &-2:hover{
     cursor:pointer;
@@ -99,9 +156,13 @@ export default {
     // position: absolute;
     // left: 2%;
     padding-left: 64%;
+    top:-100%;
   }
-  &-3:hover{
+  &-3
+    :hover
+  {
     cursor:pointer;
+  
   }
 }
 
@@ -109,15 +170,14 @@ export default {
   margin-right: 3%;
 }
 
-.footer-item {
-  cursor: pointer;
-}
-
 .icons-center {
   padding-left: 4%;
 }
 .pl-6 {
   padding-left: 1%;
+}
+.pl-7 {
+  padding-left: 4%;
 }
 
 .border-left-black {
@@ -137,10 +197,11 @@ export default {
 }
 
 .footer {
-  position: relative;
+  position: absolute;
   bottom: 0%;
   width: 100%;
-  height: 8rem;
+  height: 13%;
+  overflow: hidden;
   background-color: white;
   &-item {
     color: black;
