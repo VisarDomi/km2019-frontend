@@ -7,7 +7,7 @@
         </div>
 
         <div class="col-7">
-          <div class="row links-row">
+          <div class="row links-row ml-0">
             <div class="col-4">
               <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')">artistët</div>
 

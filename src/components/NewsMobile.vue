@@ -118,7 +118,7 @@
     </div>
 
     -->
-    <div class="row ml-0" style="margin-top: 18px;">
+    <div class="row ml-0" style="">
       <div class="text-center ml-auto mr-auto">
         <a @click="goToBlogs()" class="btn more-btn" style="color:white;">Më shumë lajme</a>
       </div>
