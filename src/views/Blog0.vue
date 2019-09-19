@@ -194,6 +194,9 @@ export default {
   position: absolute;
   right: 8rem;
   margin-top: 19px;
+  @include respond(phone) {
+    margin-top:13px;
+  }
   border-radius: 50%;
   // background-color: white;
 }
@@ -210,6 +213,9 @@ export default {
   position: absolute;
   right: 15rem;
   margin-top: 19px;
+  @include respond(phone) {
+    margin-top:13px;
+  }
   border-radius: 50%;
   // background-color: white;
 }
@@ -242,6 +248,9 @@ export default {
 .blog-card-image {
   filter: grayscale(100%);
   width: 90%;
+  @include respond(phone) {
+    width: 100%;
+  }
   height: 20rem;
   object-fit: cover;
 }
@@ -265,7 +274,14 @@ export default {
   position: relative;
   vertical-align: middle;
   width: 100%;
+
+  @include respond(phone) {
+    width:80%;
+  }
+
 }
+
+
 
 .bio-text:after {
   left: 0.5em;

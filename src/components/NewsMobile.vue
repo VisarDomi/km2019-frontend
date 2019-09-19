@@ -10,7 +10,7 @@
           ref="carouselNewsMobile"
           :perPage="1"
           :autoplay="true"
-          :autoplayTimeout="2500"
+          :autoplayTimeout="3000"
           :loop="true"
           :autoplayHoverPause="false"
           :paginationEnabled="false"
@@ -337,6 +337,8 @@ export default {
 .title {
   margin-left: auto;
   margin-right: auto;
+      margin-top: 5rem;
+    margin-bottom: 4rem;
 }
 
 .h-5 {

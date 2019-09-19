@@ -97,7 +97,7 @@
       <div class="container">
         <div
           class="row no-gutters justify-content-center"
-          style="margin-top:30%; margin-bottom:20%;"
+          style="margin-top:17%; margin-bottom:20%;"
         >
           <div class="col-4">
             <img
