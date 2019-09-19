@@ -77,13 +77,14 @@
         </b-collapse>
         <b-button
           v-b-toggle.collapse-1
-          variant="primary"
           size="lg"
-          class="more-button"
+          class="improved-button"
           :class="{'rotated': RregulloreExpanded}"
           @click="RregulloreMoreClicked()"
+
+          
         >
-          <img src="@/assets/img/artistet arrow l-5.svg" alt />
+          <img src="@/assets/img/buttons_export/button_rregullore_down.svg" style="width:8rem;" alt />
         </b-button>
       </div>
 
@@ -120,16 +121,17 @@
               </p>
             </b-card>
           </b-collapse>
-          <b-button
-            v-b-toggle.collapse-2
-            variant="primary"
-            size="lg"
-            class="more-button"
-            :class="{'rotated': BigExpanded}"
-            @click="BigMoreClicked()"
-          >
-            <img src="@/assets/img/artistet arrow l-5.svg" alt />
-          </b-button>
+        <b-button
+          v-b-toggle.collapse-2
+          size="lg"
+          class="improved-button"
+          :class="{'rotated': RregulloreExpanded}"
+          @click="RregulloreMoreClicked()"
+
+          
+        >
+          <img src="@/assets/img/buttons_export/button_rregullore_down.svg" style="width:8rem;" alt />
+        </b-button>
         </div>
 
         <h1 class="title-rregullat" style="margin-top:20px;">New Artist</h1>
@@ -159,16 +161,17 @@
               </p>
             </b-card>
           </b-collapse>
-          <b-button
-            v-b-toggle.collapse-3
-            variant="primary"
-            size="lg"
-            class="more-button"
-            :class="{'rotated': NewExpanded}"
-            @click="NewMoreClicked()"
-          >
-            <img src="@/assets/img/artistet arrow l-5.svg" alt />
-          </b-button>
+        <b-button
+          v-b-toggle.collapse-3
+          size="lg"
+          class="improved-button"
+          :class="{'rotated': RregulloreExpanded}"
+          @click="RregulloreMoreClicked()"
+
+          
+        >
+          <img src="@/assets/img/buttons_export/button_rregullore_down.svg" style="width:8rem;" alt />
+        </b-button>
         </div>
 
         <h1 class="title-rregullat" style="margin-top:20px;">International Artist</h1>
@@ -251,6 +254,80 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+.improved-button{
+  background:none;
+  border-color:transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.btn{
+  background:none;
+  border-color:transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.improved-button:focus {
+    background:none;
+  border-color:transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+.btn:focus{
+    background:none;
+  border-color:transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.improved-button:active{
+    background:none;
+  border-color:transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.btn:active{
+    background:none;
+  border-color:transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+
+.btn-secondary:active{
+    background:none;
+  border-color:transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+
+.improved-button:hover{
+    background:none;
+  border-color:transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.btn:hover{
+    background:none;
+  border-color:transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+
+.btn-secondary:hover{
+    background:none;
+  border-color:transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+
 .rotated {
   transform: rotate(180deg);
 }

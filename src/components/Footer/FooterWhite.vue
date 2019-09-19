@@ -27,9 +27,15 @@
 
       <div class="col-md-2 border-left-black icons-center">
         <div class="icons horizontal-center">
+          <a target="_blank" href="https://www.facebook.com/kengamagjikeofficial/">
           <img src="@/assets/img/icon facebook black.svg" class="social-1" alt />
-          <img src="@/assets/img/icon instagram black.svg" class="social-2" alt />
+          </a>
+          <a href="https://www.youtube.com/user/officialkengamagjike" target="_blank" rel="noopener noreferrer">
           <img src="@/assets/img/icon youtube black.svg" class="social-3" alt />
+          </a>
+          <a href="https://www.instagram.com/kengamagjikeofficial/" target="_blank" rel="noopener noreferrer">
+          <img src="@/assets/img/icon instagram black.svg" class="social-2" alt />
+          </a>
         </div>
       </div>
       <div class="col-md-2 col-sm-1 border-left-black">
@@ -79,14 +85,23 @@ export default {
     position: absolute;
     left: 16%;
   }
+  &-1:hover{
+    cursor:pointer;
+  }
   &-2 {
     position: absolute;
     left: 43%;
+  }
+  &-2:hover{
+    cursor:pointer;
   }
   &-3 {
     // position: absolute;
     // left: 2%;
     padding-left: 64%;
+  }
+  &-3:hover{
+    cursor:pointer;
   }
 }
 
