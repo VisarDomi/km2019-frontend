@@ -44,20 +44,20 @@
               <img
                 v-if="hoverR"
                 @click.prevent="nextSlide"
-                src="@/assets/img/blogs_right_hover.svg"
+                src="@/assets/img/buttons_export/button_tereja_right_h.svg" style="width:6rem;"
                 alt
               />
-              <img v-else @click.prevent="nextSlide" src="@/assets/img/blogs_right_normal.svg" alt />
+              <img v-else @click.prevent="nextSlide" src="@/assets/img/buttons_export/button_tereja_right.svg" style="width:6rem;" alt />
             </div>
 
             <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
               <img
                 v-if="hoverL"
                 @click.prevent="prevSlide"
-                src="@/assets/img/blogs_left_hover.svg"
+                src="@/assets/img/buttons_export/button_tereja_left_h.svg" style="width:6rem;"
                 alt
               />
-              <img v-else @click.prevent="prevSlide" src="@/assets/img/blogs_left_normal.svg" alt />
+              <img v-else @click.prevent="prevSlide" src="@/assets/img/buttons_export/button_tereja_left.svg" style="width:6rem;" alt />
             </div>
           </div>
 
@@ -177,7 +177,6 @@ export default {
 .carousel-right:hover {
   cursor: pointer;
   border-radius: 50%;
-  background-color: white;
 }
 
 .img-left-arrow {
@@ -195,7 +194,6 @@ export default {
 .carousel-left:hover {
   cursor: pointer;
   border-radius: 50%;
-  background-color: white;
 }
 
 .img-logo:hover {

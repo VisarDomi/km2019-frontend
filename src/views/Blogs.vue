@@ -1,8 +1,8 @@
 <template>
   <div class="blogs">
-    <div class="row justify-content-between artist-row align-items-center h-15">
+    <div class="row justify-content-between artist-row align-items-center h-15 ml-0">
       <div
-        class="col-lg-2 col-md-3 offset-sm-1 offset-lg-0 offset-1 col-sm-3 col-6 text-center logo-col-sm"
+        class="col-lg-2 col-md-3 offset-sm-1 offset-lg-0  col-sm-3 col-6 text-center logo-col-sm"
       >
         <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
@@ -22,13 +22,13 @@
       </div>-->
 
       <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
-        <img v-if="hoverR" @click.prevent="nextSlide" src="@/assets/img/blogs_right_hover.svg" alt />
-        <img v-else @click.prevent="nextSlide" src="@/assets/img/blogs_right_normal.svg" alt />
+        <img v-if="hoverR" @click.prevent="nextSlide" src="@/assets/img/buttons_export/button_tereja_right_h.svg" style="width:6rem;" alt />
+        <img v-else @click.prevent="nextSlide" src="@/assets/img/buttons_export/button_tereja_right.svg" style="width:6rem;" alt />
       </div>
 
       <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
-        <img v-if="hoverL" @click.prevent="prevSlide" src="@/assets/img/blogs_left_hover.svg" alt />
-        <img v-else @click.prevent="prevSlide" src="@/assets/img/blogs_left_normal.svg" alt />
+        <img v-if="hoverL" @click.prevent="prevSlide" src="@/assets/img/buttons_export/button_tereja_left_h.svg" style="width:6rem;" alt />
+        <img v-else @click.prevent="prevSlide" src="@/assets/img/buttons_export/button_tereja_left.svg" style="width:6rem;" alt />
       </div>
 
       <carousel
@@ -256,17 +256,17 @@ export default {
 .carousel-right {
   position: absolute;
   /* bottom: 5rem; */
-  bottom: 19%;
+  bottom: 21%;
   right: 5rem;
   /* padding-top: 19px; */
   z-index: 99;
   border-radius: 50%;
-  background-color: #c360b5;
+  // background-color: #c360b5;
 }
 .carousel-right:hover {
   cursor: pointer;
   border-radius: 50%;
-  background-color: white;
+  // background-color: white;
 }
 
 .img-left-arrow {
@@ -277,17 +277,17 @@ export default {
   z-index: 99;
   position: absolute;
   /* bottom: 5rem; */
-  bottom: 19%;
+  bottom: 21%;
   left: 5rem;
   border-radius: 50%;
-  background-color: #c360b5;
+  // background-color: #c360b5;
   /* padding-top: 15px; */
 }
 
 .carousel-left:hover {
   cursor: pointer;
   border-radius: 50%;
-  background-color: white;
+  // background-color: white;
 }
 
 .slide-column {
@@ -353,7 +353,7 @@ export default {
   width: 84%;
   text-align: left;
   font-size: 4.5rem;
-  padding-top: 38%;
+  padding-top: 18rem;
   padding-left: 10%;
   font-size: 4.5rem;
   line-height: 1;
@@ -363,7 +363,7 @@ export default {
   }
 
   @include respond(phone) {
-    padding-top: 50%;
+    padding-top: 18rem;
   }
 }
 @font-face {

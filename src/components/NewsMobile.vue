@@ -14,6 +14,7 @@
         :autoplay="true"
         :autoplayTimeout="2500"
         :loop="true"
+        :autoplayHoverPause="false"
         :paginationEnabled="false"
         :navigationEnabled="false"
       >

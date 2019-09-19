@@ -88,7 +88,7 @@
       </div>
 
       <div>
-        <h1 class="jumbo-title-artistet kategoria" style="font-size:8rem;">Sipas Kategorise</h1>
+        <h1 class="jumbo-title-artistet kategoria" style="font-size:7rem;">Sipas Kategorise</h1>
 
         <h1 class="title-rregullat" style="margin-top:20px;">BIG</h1>
 
@@ -322,6 +322,9 @@ export default {
   margin-top: 3%;
   text-align: center;
   margin-bottom: 0px;
+    @include respond(phone) {
+    margin:6%;
+  }
 }
 
 .title-rregullat {
@@ -340,6 +343,9 @@ export default {
 
 .row-title {
   margin-top: 8rem;
+    @include respond(phone) {
+    margin-top:4rem;
+  }
 }
 
 .jumbo-title-artistet {

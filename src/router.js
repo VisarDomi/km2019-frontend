@@ -185,7 +185,7 @@ export default new Router({
     },
 
     {
-      path: "/:lang/rregullore",
+      path: "/rregullore",
       name: "Rregullore",
       component: Rregullore,
       meta: { transition: "overlay-left" }
