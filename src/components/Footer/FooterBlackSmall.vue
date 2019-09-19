@@ -17,7 +17,7 @@
       <div class="col-sm-3">
         <div class="icons abs-right">
           <img src="@/assets/img/icon twitter white.svg" class="mr-3" alt />
-          <img src="@/assets/img/icon facebook white.svg" class="mr-3" alt />
+          <img src="@/assets/img/icon facebook white.svg"   class="mr-3" alt />
           <img src="@/assets/img/icon instagram white.svg" class="mr-3" alt />
           <img src="@/assets/img/icon snapchat white.svg" class="mr-3" alt />
           <img src="@/assets/img/icon youtube white.svg" class="mr-3" alt />
