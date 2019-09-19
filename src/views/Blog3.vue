@@ -3,7 +3,7 @@
   <div class="blog-page">
     <div class="row justify-content-between artist-row align-items-center h-15">
       <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
-        <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
+        <img src="@/assets/img/logoblog.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
       <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
         <img

@@ -60,110 +60,89 @@
         :navigationEnabled="false"
       >
         <slide>
-          <div class="h-100 slide-column">
+          <div class="h-100 slide-column" @click="goToBlog('Blog02')">
             <img src="@/assets/img/blog/Blog-02-gray.jpg" class="img-blog img-fluid" alt />
-            <h1
-              class="blog-title"
-              @click="goToBlog('Blog02')"
-            >Ndryshon sistemi i votimit në Kënga Magjike</h1>
+            <h1 class="blog-title">Ndryshon sistemi i votimit në Kënga Magjike</h1>
 
             <h3 class="date">15.09.2019</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column">
+          <div class="h-100 slide-column" @click="goToBlog('Blog01')">
             <img src="@/assets/img/blog/Blog-01-gray.jpg" class="img-blog img-fluid" alt />
-            <h1
-              class="blog-title"
-              @click="goToBlog('Blog01')"
-            >Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
+            <h1 class="blog-title">Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
 
             <h3 class="date">15.09.2019</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column">
+          <div class="h-100 slide-column" @click="goToBlog('Blog0')">
             <img src="@/assets/img/blog/Blog-0-gray.jpg" class="img-blog img-fluid" alt />
-            <h1
-              class="blog-title"
-              @click="goToBlog('Blog0')"
-            >Kënga Magjike, këtë vit 6 anëtarë jurie</h1>
+            <h1 class="blog-title">Kënga Magjike, këtë vit 6 anëtarë jurie</h1>
 
             <h3 class="date">15.09.2019</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column">
+          <div class="h-100 slide-column" @click="goToBlog('Blog1')">
             <img src="@/assets/img/blog/Blog-1.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title" @click="goToBlog('Blog1')">Ja kush janë 3 artistët e parë BIG!</h1>
+            <h1 class="blog-title">Ja kush janë 3 artistët e parë BIG!</h1>
 
             <h3 class="date">14.09.2019</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column">
+          <div class="h-100 slide-column" @click="goToBlog('Blog2')">
             <img src="@/assets/img/blog/Blog-2-gray.jpg" class="img-blog img-fluid" alt />
-            <h1
-              class="blog-title"
-              @click="goToBlog('Blog2')"
-            >Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
+            <h1 class="blog-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
 
             <h3 class="date">22.01.2019</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column">
+          <div class="h-100 slide-column" @click="goToBlog('Blog3')">
             <img src="@/assets/img/blog/Blog-3-gray.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title" @click="goToBlog('Blog3')">Fifi dhe Mc Kresha betejë në skenë!</h1>
+            <h1 class="blog-title">Fifi dhe Mc Kresha betejë në skenë!</h1>
 
             <h3 class="date">22.11.2018</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column">
+          <div class="h-100 slide-column" @click="goToBlog('Blog4')">
             <img src="@/assets/img/blog/Blog-4-gray.jpg" class="img-blog img-fluid" alt />
-            <h1
-              class="blog-title"
-              @click="goToBlog('Blog4')"
-            >Atmosferë serenatash në skenën e Këngës Magjike</h1>
+            <h1 class="blog-title">Atmosferë serenatash në skenën e Këngës Magjike</h1>
 
             <h3 class="date">5.11.2018</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column">
+          <div class="h-100 slide-column" @click="goToBlog('Blog5')">
             <img src="@/assets/img/blog/Blog-5-gray.jpg" class="img-blog img-fluid" alt />
-            <h1
-              class="blog-title"
-              @click="goToBlog('Blog5')"
-            >Mishela Rrapo: Presidenti turk u përlot prej meje</h1>
+            <h1 class="blog-title">Mishela Rrapo: Presidenti turk u përlot prej meje</h1>
 
             <h3 class="date">14.11.2018</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column">
+          <div class="h-100 slide-column" @click="goToBlog('Blog6')">
             <img src="@/assets/img/blog/Blog-7-gray.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title" @click="goToBlog('Blog6')">Evi Reçi nuk dua binjake!!</h1>
+            <h1 class="blog-title">Evi Reçi nuk dua binjake!!</h1>
 
             <h3 class="date">16.10.2018</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column">
+          <div class="h-100 slide-column" @click="goToBlog('Blog7')">
             <img src="@/assets/img/blog/Blog-fifi-gray.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title" @click="goToBlog('Blog7')">Fifi, nje imituese perfekte!</h1>
+            <h1 class="blog-title">Fifi, nje imituese perfekte!</h1>
 
             <h3 class="date">10.10.2018</h3>
           </div>
         </slide>
         <slide>
-          <div class="h-100 slide-column">
+          <div class="h-100 slide-column" @click="goToBlog('Blog8')">
             <img src="@/assets/img/blog/Blog-mentor-gray.jpg" class="img-blog img-fluid" alt />
-            <h1
-              class="blog-title"
-              @click="goToBlog('Blog8')"
-            >Hera e pare e Mentor Haziri-t...Ja doli?!</h1>
+            <h1 class="blog-title">Hera e pare e Mentor Haziri-t...Ja doli?!</h1>
 
             <h3 class="date">5.10.2019</h3>
           </div>

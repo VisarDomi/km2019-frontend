@@ -18,6 +18,14 @@
           v-scroll-to="'#kengamagjike'"
         />
       </span>
+      <span class="d-lg-inline-block" href="#" v-if="logoGreen">
+        <img
+          src="@/assets/img/logoblog.svg"
+          alt="Logo"
+          class="img-logo logo respond-width--logo"
+          v-scroll-to="'#kengamagjike'"
+        />
+      </span>
     </div>
     <div
       class="col-lg-1 col-sm-1 offset-xl-4 offset-lg-3 offset-sm-3 cmi"
@@ -69,6 +77,7 @@ export default {
     menutype: "",
     iconWhite: "",
     logoBlack: "",
+    logoGreen: "",
     logoWhite: ""
   },
   methods: {

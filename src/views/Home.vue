@@ -21,7 +21,7 @@
     <HeaderHero
       v-if="windowWidth > 750 && this.section == 'BlogSection'"
       menutype="menu__items--white"
-      logoWhite="true"
+      logoGreen="true"
       iconWhite="true"
     />
     <HeaderHero
