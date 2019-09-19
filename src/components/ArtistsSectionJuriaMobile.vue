@@ -18,62 +18,56 @@
         </slide>
       </carousel>-->
 
-      <!-- <slide>
-          <div class="card-2 mt-30" v-for="artist in artists1" :key="artist.id">
-            <div class="artist-card" @click="goToRoute('SingleArtist')">
-              <div class="img-container">
-                <img :src="artist.img" alt />
-              </div>
-              <p class="artist-card__name inside-card">{{artist.name}}</p>
-              <br />
-              <p class="artist-card__song go-up">{{artist.song}}</p>
+      <div class="row ml-0" style="margin-bottom:50px; margin:10px; margin-top:20px;width:100%;">
+        <div class="col-6">
+          <div class="artist-card" @click="goToRoute('JuriaArben')">
+            <div class="img-container">
+              <img src="@/assets/juria/j3_normal.png" alt />
             </div>
+            <p class="artist-card__name inside-card">ARBEN SKËNDERI</p>
           </div>
-        </slide>
-        <slide>
-          <div class="card-2 mt-30" v-for="artist in artists2" :key="artist.id">
-            <div class="artist-card" @click="goToRoute('SingleArtist')">
-              <div class="img-container">
-                <img :src="artist.img" alt />
-              </div>
-              <p class="artist-card__name inside-card">{{artist.name}}</p>
-              <br />
-              <p class="artist-card__song go-up">{{artist.song}}</p>
+        </div>
+        <div class="col-6">
+          <div class="artist-card" @click="goToRoute('JuriaArmend')">
+            <div class="img-container">
+              <img src="@/assets/juria/j1_normal.png" alt />
             </div>
+            <p class="artist-card__name inside-card">ARMEND REXHEPAGIQ</p>
           </div>
-        </slide>
-        <slide>
-          <div class="card-2 mt-30" v-for="artist in artists3" :key="artist.id">
-            <div class="artist-card" @click="goToRoute('SingleArtist')">
-              <div class="img-container">
-                <img :src="artist.img" alt />
-              </div>
-              <p class="artist-card__name inside-card">{{artist.name}}</p>
-              <br />
-              <p class="artist-card__song go-up">{{artist.song}}</p>
-            </div>
-          </div>
-        </slide>
-        <slide>
-          <div class="card-2 mt-30" v-for="artist in artists4" :key="artist.id">
-            <div class="artist-card" @click="goToRoute('SingleArtist')">
-              <div class="img-container">
-                <img :src="artist.img" alt />
-              </div>
-              <p class="artist-card__name inside-card">{{artist.name}}</p>
-              <br />
-              <p class="artist-card__song go-up">{{artist.song}}</p>
-            </div>
-          </div>
-      </slide>-->
-    </div>
-    <!-- </div> -->
-    <!-- <div class="graphic-right"></div> -->
-    <!-- <div class="row">
-      <div class="w-100 text-center btn-container">
-        <a href="#" @click="goToRoute('Artists')" class="btn" style="margin-left:8%;">lexo me shumë</a>
+        </div>
       </div>
-    </div>-->
+
+      <div class="row ml-0" style="margin-bottom:50px; margin:10px;width:100%;">
+        <div class="col-6">
+          <div class="artist-card" @click="goToRoute('JuriaDj')">
+            <div class="img-container">
+              <img src="@/assets/juria/j5_normal.png" alt />
+            </div>
+            <p class="artist-card__name inside-card">DJ MISS ROSE & DJ STONE</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="artist-card" @click="goToRoute('JuriaJonida')">
+            <div class="img-container">
+              <img src="@/assets/juria/j2_normal.png" alt />
+            </div>
+            <p class="artist-card__name inside-card">JONIDA MALIQI</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-5 ml-0" style=" margin:10px;width:100%;">
+        <div class="col-6" style="margin-top:10px;">
+          <div class="artist-card" @click="goToRoute('JuriaEnkel')">
+            <div class="img-container">
+              <img src="@/assets/juria/j4_normal.png" alt />
+            </div>
+            <p class="artist-card__name inside-card">ENKEL DEMI</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 30px;"></div>
+    </div>
   </div>
 </template>
 
@@ -162,6 +156,7 @@ export default {
 
 .mobile-artists {
   position: relative;
+  background: #0e1023;
 }
 
 .col-left {
@@ -247,7 +242,7 @@ export default {
   font-family: Vollkorn;
   // color: black;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px black;
+  -webkit-text-stroke: 2px white;
   font-size: 10rem;
   margin-top: 2rem;
 }

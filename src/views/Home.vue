@@ -40,7 +40,8 @@
     <NewsMobile v-else />
 
     <ArtistsSectionJuria v-if="windowWidth > 600" />
-    <ArtistsMobile v-else />
+    <ArtistsSectionJuriaMobile v-else />
+    <!-- <ArtistsMobile v-else /> -->
 
     <SponsorSectionz />
   </div>
@@ -59,6 +60,7 @@ import HeroSection from "@/components/HeroSection.vue";
 
 import ArtistsSection from "@/components/ArtistsSection.vue";
 import ArtistsSectionJuria from "@/components/ArtistsSectionJuria.vue";
+import ArtistsSectionJuriaMobile from "@/components/ArtistsSectionJuriaMobile.vue";
 import ArtistsMobile from "@/components/ArtistsMobile.vue";
 
 import AcrossYearsSection from "@/components/AcrossYearsSection.vue";
@@ -83,6 +85,7 @@ export default {
     HeroSection,
     ArtistsSection,
     ArtistsSectionJuria,
+    ArtistsSectionJuriaMobile,
     ArtistsMobile,
     AcrossYearsSection,
     AcrossYearsMobile,
