@@ -1,24 +1,23 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import store from "./store";
+import { ApiService } from "./store/services/api";
+import store from "./store/index";
 import VueHead from "vue-head";
-
 import axios from "axios";
-
 import "./registerServiceWorker";
 import VueCarousel from "vue-carousel";
-Vue.config.productionTip = false;
 import VuePageTransition from "vue-page-transition";
-
 import vueScrollTo from "vue-scrollto";
-Vue.use(vueScrollTo);
-
-Vue.use(VuePageTransition);
 import VueI18n from "vue-i18n";
+import { al, en } from "./translations";
+
+Vue.use(vueScrollTo);
+Vue.config.productionTip = false;
+Vue.use(VuePageTransition);
 Vue.use(VueI18n);
 
-import { al, en } from "./translations";
+ApiService.init();
 
 export const i18n = new VueI18n({
   locale: "al",

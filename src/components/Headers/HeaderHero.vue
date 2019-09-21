@@ -28,16 +28,14 @@
       </span>
     </div>
     <div
-      class="col-lg-1 col-sm-1 offset-xl-4 offset-lg-3 offset-sm-3 cmi"
+      class="col-lg-1 col-sm-1 offset-xl-3 offset-lg-2 offset-sm-2 cmi"
       v-scroll-to="'#juria'"
     >{{$t('juria')}}</div>
     <div class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#nder-vite'">ndër vite</div>
-    <!-- <div class="col-lg-1 col-sm-1 cmi" @click="changeLange('al')">al</div>
-    <div class="col-lg-1 col-sm-1 cmi" @click="changeLange('en')">en</div>-->
-    <!-- <div class="col-lg-1 col-sm-1 cmi" @click="moveTo(3)">#fotome</div> -->
-    <!-- <div class="col-lg-1 col-sm-1 cmi"></div> -->
     <div class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#te-reja'">të reja</div>
     <div class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rregullore</div>
+    <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-if="this.lang == 'en'">Shqip</div>
+    <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-else>English</div>
     <div class="col-lg-1 col-sm-1 high-index">
       <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
         <img
@@ -63,6 +61,8 @@
 </template>
 
 <script>
+import { getLanguage, saveLanguage } from "@/store/services/storage";
+
 import { eventBus } from "@/main";
 
 export default {
@@ -70,7 +70,8 @@ export default {
   data() {
     return {
       shouldHide: true,
-      listMenu: []
+      listMenu: [],
+      lang: ""
     };
   },
   props: {
@@ -91,8 +92,14 @@ export default {
         params: { lang: "al" }
       });
     },
-    changeLange(lang) {
-      this.$i18n.locale = lang;
+    changeLang() {
+      if (this.lang == "en") {
+        saveLanguage("al");
+        this.lang = "al";
+      } else {
+        saveLanguage("en");
+        this.lang = "en";
+      }
     },
     collapseMenu() {
       var Items = document.getElementsByClassName("cmi");
@@ -102,18 +109,8 @@ export default {
           Items[i].style.opacity = 0;
           Items[i].style.transition = "all 1s";
           // Items[i].sytle.display = "none";
+          Items[i].style.pointerEvents = "none";
 
-          // if (i % 5 == 0) {
-          //   Items[i].style.transform = "translate(43vw, 0)";
-          // } else if (i % 5 == 1) {
-          //   Items[i].style.transform = "translate(36vw, 0)";
-          // } else if (i % 5 == 2) {
-          //   Items[i].style.transform = "translate(27vw, 0)";
-          // } else if (i % 5 == 3) {
-          //   Items[i].style.transform = "translate(18vw, 0)";
-          // } else if (i % 5 == 4) {
-          //   Items[i].style.transform = "translate(9vw, 0)";
-          // }
           if (i % 4 == 0) {
             Items[i].style.transform = "translate(5vw, 0)";
           } else if (i % 4 == 1) {
@@ -131,7 +128,9 @@ export default {
           Items[i].style.opacity = 1;
           Items[i].style.transition = "all 1s";
           Items[i].style.transform = "translate(0, 0)";
-          Items[i].style.display = "inline-block";
+          Items[i].style.pointerEvents = "auto";
+
+          // Items[i].style.display = "inline-block";
         }
         this.shouldHide = true;
       }
@@ -143,6 +142,7 @@ export default {
       this.shouldHide = payload;
     });
     this.collapseMenu();
+    this.lang = getLanguage();
   }
 };
 </script>

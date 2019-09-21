@@ -5,11 +5,7 @@
         <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
       <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToHome()">
-        <img
-          src="@/assets/img/artistet_arrow_right.svg"
-          alt
-          class="back-icon center-block "
-        />
+        <img src="@/assets/img/artistet_arrow_right.svg" alt class="back-icon center-block" />
       </div>
     </div>
 
@@ -24,7 +20,7 @@
       </div>
     </div>
 
-    <div class="row mx-6 row-artists">
+    <!-- <div class="row mx-6 row-artists">
       <div class="col-lg-3">
         <div class="artist-card" @click="goToArtist()">
           <div class="h-75 artist-card">
@@ -91,9 +87,9 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- <div class="row mx-6 row-artists">
-      <div class="col-lg-3" v-for="artist in this.artists" :key="artist.id">
+    </div>-->
+    <div class="row mx-6 row-artists">
+      <div class="col-lg-3" v-for="artist of getArtists" :key="artist.id">
         <div class="artist-card" @click="goToArtist(artist)">
           <div class="h-75 artist-card">
             <div class="img-container">
@@ -105,12 +101,12 @@
           </div>
         </div>
       </div>
-    </div>-->
+    </div>
 
     <div class="spacer"></div>
     <FooterWhite v-if="windowWidth > 770" />
     <FooterWhiteSmall v-if="windowWidth < 770 && windowWidth > 600" />
-      <FooterWhiteMobile v-else />
+    <FooterWhiteMobile v-if="windowWidth < 600" />
   </div>
 </template>
 
@@ -119,6 +115,9 @@ import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
 import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
 // @ is an alias to /src
+import { LIST_ARTIST } from "@/store/actions.type";
+import { SET_ARTIST } from "@/store/mutations.type";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Artists",
@@ -134,39 +133,36 @@ export default {
     };
   },
   methods: {
-    goToArtist() {
-      this.$router.push({ name: "SingleArtist" });
+    async goToArtist(artist) {
+      console.log(artist.id);
+      this.$router.push({
+        name: "SingleArtist",
+        params: { slug: artist.name, id: artist.id }
+      });
     },
     goToHome() {
       this.$router.push({ name: "Home" });
     },
-
-    async getArtists() {
-      const axios = require("axios");
-      axios.defaults.headers.common = {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json"
+    async fetchArtists() {
+      const TableName = "KM2019-Artist";
+      const Limit = "100";
+      const params = {
+        TableName,
+        Limit
       };
-      let artists = axios
-        .get("https://fw9cy4j1y6.execute-api.eu-west-1.amazonaws.com/Dev/api", {
-          params: {
-            TableName: "KM2019-Artist",
-            Limit: "100"
-          }
-        })
-        .then(res => {
-          let resItems = res.data["Items"];
-          this.artists = resItems;
-        });
+      await this.$store.dispatch(LIST_ARTIST, params);
     }
   },
-  mounted() {
+  async mounted() {
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
     });
-    this.getArtists();
+    this.fetchArtists();
+  },
+  computed: {
+    ...mapGetters(["getArtists"])
   }
 };
 </script>

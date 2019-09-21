@@ -24,8 +24,9 @@
           </div>
         </div>
         <div class="col-lg-5 top-padded-col">
-          <h1 class="artist-name">Soni</h1>
-          <h1 class="artist-surname">Malaj</h1>
+          <h1 class="artist-name">{{getArtist.name}}</h1>
+          <!-- <h1 class="artist-surname">Malaj</h1>
+          <h1 class="artist-surname">{{getArtist.name}}</h1>-->
           <h2 class="artist-songtitle">loose yourself to dance</h2>
           <h3 class="bio-text">bio</h3>
           <h4
@@ -93,7 +94,7 @@
     <div class="spacer"></div>
     <FooterWhite v-if="windowWidth > 770" />
     <FooterWhiteSmall v-if="windowWidth < 770 && windowWidth > 600" />
-      <FooterWhiteMobile v-else />
+    <FooterWhiteMobile v-if="windowWidth < 600" />
   </div>
 </template>
 
@@ -102,6 +103,9 @@ import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
 import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
 // @ is an alias to /src
+import { mapGetters } from "vuex";
+import { GET_ARTIST } from "@/store/actions.type";
+import { SET_ARTIST } from "@/store/mutations.type";
 
 export default {
   name: "SingleArtist",
@@ -120,16 +124,33 @@ export default {
       this.$router.push({ name: "Artists" });
     },
     goToHome() {
-      this.$router.push({ name: "Home" });
+      console.log("artist: ", getArtist);
+      // this.$router.push({ name: "Home" });
+    },
+    async fetchArtist(artistId) {
+      const TableName = "KM2019-Artist";
+      const id = artistId;
+      const params = {
+        TableName,
+        id
+      };
+      this.$store.dispatch(GET_ARTIST, params);
+      console.log(getArtist);
+      console.log(this.getArtist);
     }
   },
-  mounted() {
+  computed: {
+    ...mapGetters(["getArtist"])
+  },
+  async mounted() {
+    console.log("fetch: ", this.$route.params.id);
+    await this.fetchArtist(this.$route.params.id);
+
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
     });
-    // this.getArtists();
   }
 };
 </script>

@@ -117,9 +117,9 @@ export default {
       this.$router.push({ name: name });
     },
     changeSection(index) {
-      this.$router.push({ name: "Home" });
-      console.log("after push");
-      eventBus.$emit("changeSectionFromFooter", index);
+      this.$router.push({ name: "Home", hash: "#nder-vite" });
+      // console.log("after push");
+      // eventBus.$emit("changeSectionFromFooter", index);
       // console.log("from footer");
     }
   }
@@ -130,8 +130,8 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
-.height-10 {
-  height: 10% !important;
+.height-5 {
+  height: 5% !important;
 }
 
 .crest-logo {
@@ -219,7 +219,7 @@ export default {
   bottom: 0%;
   width: 100%;
   // height: 13%;
-  height: 5%;
+  height: 10%;
   overflow: hidden;
   background-color: white;
   &-item {

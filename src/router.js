@@ -1,3 +1,5 @@
+import { setMeta } from "@/common/functions";
+
 import Vue from "vue";
 import Router from "vue-router";
 
@@ -47,19 +49,19 @@ export default new Router({
       component: Home,
       meta: { transition: "overlay-left" }
     },
-    { path: '*', component: NotFound },
+    { path: "*", component: NotFound },
     {
       path: "/artists",
       name: "Artists",
       component: Artists,
       meta: { transition: "overlay-right" }
     },
-    {
-      path: "/artist",
-      name: "SingleArtist",
-      component: SingleArtist,
-      meta: { transition: "overlay-right" }
-    },
+    // {
+    //   path: "/artist",
+    //   name: "SingleArtist",
+    //   component: SingleArtist,
+    //   meta: { transition: "overlay-right" }
+    // },
     {
       path: "/juria",
       name: "Juria",
@@ -98,11 +100,17 @@ export default new Router({
       meta: { transition: "overlay-right" }
     },
 
+    // {
+    //   path: "/artist/:name",
+    //   name: "SingleArtist",
+    //   component: SingleArtist,
+    //   meta: { transition: "overlay-right" }
+    // },
     {
-      path: "/artist/:name",
+      path: "/artist/:slug",
       name: "SingleArtist",
       component: SingleArtist,
-      meta: { transition: "overlay-right" }
+      meta: setMeta("SingleArtist", true)
     },
     {
       path: "/blogs",
