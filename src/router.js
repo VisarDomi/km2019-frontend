@@ -56,19 +56,30 @@ export default new Router({
       component: Artists,
       meta: { transition: "overlay-right" }
     },
-    // {
-    //   path: "/artist",
-    //   name: "SingleArtist",
-    //   component: SingleArtist,
-    //   meta: { transition: "overlay-right" }
-    // },
     {
       path: "/juria",
       name: "Juria",
       component: Juria,
       meta: { transition: "overlay-right" }
     },
-
+    {
+      path: "/artist/:slug",
+      name: "SingleArtist",
+      component: SingleArtist,
+      meta: setMeta("SingleArtist", true)
+    },
+    {
+      path: "/voto",
+      name: "Voto",
+      component: Voto,
+      meta: { transition: "overlay-left" }
+    },
+    {
+      path: "/voto-artist/:slug",
+      name: "VotoArtist",
+      component: VotoArtist,
+      meta: setMeta("VotoArtist", true)
+    },
     {
       path: "/arbenskenderi",
       name: "JuriaArben",
@@ -98,19 +109,6 @@ export default new Router({
       name: "JuriaEnkel",
       component: JuriaEnkel,
       meta: { transition: "overlay-right" }
-    },
-
-    // {
-    //   path: "/artist/:name",
-    //   name: "SingleArtist",
-    //   component: SingleArtist,
-    //   meta: { transition: "overlay-right" }
-    // },
-    {
-      path: "/artist/:slug",
-      name: "SingleArtist",
-      component: SingleArtist,
-      meta: setMeta("SingleArtist", true)
     },
     {
       path: "/blogs",
@@ -196,18 +194,6 @@ export default new Router({
       path: "/rregullore",
       name: "Rregullore",
       component: Rregullore,
-      meta: { transition: "overlay-left" }
-    },
-    {
-      path: "/voto",
-      name: "Voto",
-      component: Voto,
-      meta: { transition: "overlay-left" }
-    },
-    {
-      path: "/voto-artist",
-      name: "VotoArtist",
-      component: VotoArtist,
       meta: { transition: "overlay-left" }
     }
   ]

@@ -14,36 +14,54 @@
     </div>
     <div class="row h-75 align-items-center">
       <div class="col-lg-7 offset-lg-2">
-        <span class="artist-name">Soni Malaj</span>
+        <span class="artist-name">{{getArtist.name}}</span>
         <hr />
         <span class="artist-song">Loose Yourself to dance</span>
       </div>
       <div class="col-lg-1">
-        <img @click="goToVotoArtist()" src="@/assets/img/selected.svg" alt class="voto-img" />
+        <img src="@/assets/img/selected.svg" alt class="voto-img" />
       </div>
     </div>
     <div class="button-container">
-      <a href="#" class="btn" @click="goToArtists()">Dërgo votën tënde</a>
+      <b-button class="btn" v-b-modal.my-modal>Dërgo votën tënde</b-button>
     </div>
+    <b-modal id="my-modal">
+      <amplify-authenticator></amplify-authenticator>
+    </b-modal>
   </div>
 </template>
 
 
 <script>
+import { mapGetters } from "vuex";
+import { GET_ARTIST } from "@/store/actions.type";
 export default {
   name: "VotoArtist",
   components: {},
   data() {
     return {};
   },
-  mounted() {},
+  async mounted() {
+    await this.fetchArtist(this.$route.params.id);
+  },
   methods: {
-    goToVotoArtist() {
-      this.$router.push({ name: "VotoArtist" });
-    },
     goToHome() {
       this.$router.push({ name: "Home" });
+    },
+    async fetchArtist(artistId) {
+      const TableName = "KM2019-Artist";
+      const id = artistId;
+      const params = {
+        TableName,
+        id
+      };
+      this.$store.dispatch(GET_ARTIST, params);
+      console.log(getArtist);
+      console.log(this.getArtist);
     }
+  },
+  computed: {
+    ...mapGetters(["getArtist"])
   }
 };
 </script>

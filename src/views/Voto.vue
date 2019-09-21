@@ -24,14 +24,14 @@
       </div>
     </div>
 
-    <div class="row voto-artist-row voto-card mt-5" v-for="artist in artists" :key="artist.name">
+    <div class="row voto-artist-row voto-card mt-5" v-for="artist of getArtists" :key="artist.name">
       <div class="col-lg-7 offset-lg-2">
         <span class="artist-name">{{artist.name}}</span>
         <hr />
         <span class="artist-song">{{artist.song}}</span>
       </div>
       <div class="col-lg-1">
-        <img @click="goToVotoArtist()" src="@/assets/img/Ellipse 13.svg" alt class="voto-img" />
+        <img @click="goToVotoArtist(artist)" src="@/assets/img/Ellipse 13.svg" alt class="voto-img" />
       </div>
     </div>
     <div class="spacer"></div>
@@ -44,6 +44,11 @@
 <script>
 import Footer from "@/components/Footer/FooterWhite.vue";
 import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
+
+import { LIST_ARTIST } from "@/store/actions.type";
+import { SET_ARTIST } from "@/store/mutations.type";
+import { mapGetters } from "vuex";
+
 export default {
   name: "Voto",
   components: {
@@ -52,27 +57,35 @@ export default {
   },
   data() {
     return {
-      windowWidth: window.innerWidth,
-      artists: [
-        { name: "John Wick", song: "La Vendetta" },
-        { name: "Chamunda", song: "Goddess of war and famine" },
-        { name: "Mike Tyson", song: "suplex!!!" },
-        { name: "Batman", song: "I'm batman" },
-        { name: "Daft", song: "Loose yourself to dance" },
-        { name: "Daft", song: "Loose yourself to dance" }
-      ]
+      windowWidth: window.innerWidth
     };
   },
-  mounted() {
+  async mounted() {
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
     });
+    this.fetchArtists();
+  },
+  computed: {
+    ...mapGetters(["getArtists"])
   },
   methods: {
-    goToVotoArtist() {
-      this.$router.push({ name: "VotoArtist" });
+    goToVotoArtist(artist) {
+      this.$router.push({
+        name: "VotoArtist",
+        params: { slug: artist.name, id: artist.id }
+      });
+    },
+    async fetchArtists() {
+      const TableName = "KM2019-Artist";
+      const Limit = "100";
+      const params = {
+        TableName,
+        Limit
+      };
+      await this.$store.dispatch(LIST_ARTIST, params);
     },
     goToHome() {
       this.$router.push({ name: "Home" });

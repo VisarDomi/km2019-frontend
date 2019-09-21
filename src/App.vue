@@ -5,10 +5,34 @@
 </template>
 
 <script>
+import { AmplifyEventBus } from 'aws-amplify-vue'
+import { Auth } from 'aws-amplify'
+
+
 export default {
   name: "App",
   data() {
-    return {};
+    return {
+      signedIn: false
+    }
+  },
+  beforeCreate() {
+    AmplifyEventBus.$on('authState', info => {
+      if (info === 'signedIn') {
+        this.signedIn = true
+        this.$router.push('/voto')
+      }
+      if (info === 'signedOut') {
+        this.$router.push('/auth')
+        this.signedIn = false
+      }
+    });
+
+    Auth.currentAuthenticatedUser()
+      .then(user => {
+        this.signedIn = true
+      })
+      .catch(() => this.signedIn = false)
   }
 };
 </script>
