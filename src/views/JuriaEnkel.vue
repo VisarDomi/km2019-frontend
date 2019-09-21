@@ -6,7 +6,7 @@
       </div>
       <div
         class="col-lg-1 col-sm-2 col-xs-3 col-3 vertical-center back-hover-artist"
-        @click="goToArtists()"
+        @click="goToHome()"
       >
         <img src="@/assets/img/artistet_arrow_right.svg" alt class="back-icon center-block" />
       </div>

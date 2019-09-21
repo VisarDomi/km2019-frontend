@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="footer" v-bind:class="height">
     <div class="row h-50 vertical-center footer-container">
       <div class="col-md-2">
         <div class="abs-center">
@@ -25,52 +25,66 @@
         <p class="footer-item">voto</p>
       </div>-->
 
-      <div class="col-md-2 border-left-black ">
+      <div class="col-md-2 border-left-black">
         <div class="icons horizontal-center">
-
-
           <div class="row ml-0">
+            <div class="col-4">
+              <div @mouseover="hoverFB = true" @mouseleave="hoverFB = false">
+                <a
+                  v-if="hoverFB"
+                  target="_blank"
+                  href="https://www.facebook.com/kengamagjikeofficial/"
+                >
+                  <img
+                    src="@/assets/img/footer_export/social_blue_fb_h.svg"
+                    style="width:4rem;"
+                    alt
+                  />
+                </a>
+                <a v-else target="_blank" href="https://www.facebook.com/kengamagjikeofficial/">
+                  <img src="@/assets/img/footer_export/social_blue_fb.svg" style="width:4rem;" alt />
+                </a>
+              </div>
+            </div>
 
-          <div class="col-4">
+            <div class="col-4">
+              <div @mouseover="hoverIG = true" @mouseleave="hoverIG = false">
+                <a
+                  v-if="hoverIG"
+                  target="_blank"
+                  href="https://www.instagram.com/kengamagjikeofficial/"
+                >
+                  <img
+                    src="@/assets/img/footer_export/social_blue_ig_h.svg"
+                    style="width:4rem;"
+                    alt
+                  />
+                </a>
+                <a v-else target="_blank" href="https://www.instagram.com/kengamagjikeofficial/">
+                  <img src="@/assets/img/footer_export/social_blue_ig.svg" style="width:4rem;" alt />
+                </a>
+              </div>
+            </div>
 
-          <div @mouseover="hoverFB = true" @mouseleave="hoverFB = false">
-            <a v-if="hoverFB" target="_blank" href="https://www.facebook.com/kengamagjikeofficial/">
-            <img  src="@/assets/img/footer_export/social_blue_fb_h.svg" style="width:4rem;"   alt />
-            </a>
-            <a v-else target="_blank" href="https://www.facebook.com/kengamagjikeofficial/">
-            <img  src="@/assets/img/footer_export/social_blue_fb.svg"   style="width:4rem;"  alt />
-            </a>
+            <div class="col-4">
+              <div @mouseover="hoverYT = true" @mouseleave="hoverYT = false">
+                <a
+                  v-if="hoverYT"
+                  target="_blank"
+                  href="https://www.youtube.com/user/officialkengamagjike"
+                >
+                  <img
+                    src="@/assets/img/footer_export/social_blue_yt_h.svg"
+                    style="width:4rem;"
+                    alt
+                  />
+                </a>
+                <a v-else target="_blank" href="https://www.youtube.com/user/officialkengamagjike">
+                  <img src="@/assets/img/footer_export/social_blue_yt.svg" style="width:4rem;" alt />
+                </a>
+              </div>
+            </div>
           </div>
-          </div>
-
-
-<div class="col-4">
-          <div @mouseover="hoverIG = true" @mouseleave="hoverIG = false">
-            <a v-if="hoverIG" target="_blank" href="https://www.instagram.com/kengamagjikeofficial/">
-            <img  src="@/assets/img/footer_export/social_blue_ig_h.svg" style="width:4rem;"    alt />
-            </a>
-            <a v-else target="_blank" href="https://www.instagram.com/kengamagjikeofficial/">
-            <img  src="@/assets/img/footer_export/social_blue_ig.svg"   style="width:4rem;"  alt />
-            </a>
-          </div>
-          </div>
-
-
-<div class="col-4">
-          <div @mouseover="hoverYT = true" @mouseleave="hoverYT = false">
-            <a v-if="hoverYT" target="_blank" href="https://www.youtube.com/user/officialkengamagjike">
-            <img  src="@/assets/img/footer_export/social_blue_yt_h.svg" style="width:4rem;"    alt />
-            </a>
-            <a v-else target="_blank" href="https://www.youtube.com/user/officialkengamagjike">
-            <img  src="@/assets/img/footer_export/social_blue_yt.svg"   style="width:4rem;"  alt />
-            </a>
-          </div>
-          </div>
-
-          </div>
-
-
-
         </div>
       </div>
       <div class="col-md-2 border-left-black">
@@ -91,9 +105,12 @@ export default {
   data() {
     return {
       hoverFB: false,
-      hoverYT: false, 
+      hoverYT: false,
       hoverIG: false
     };
+  },
+  props: {
+    height: ""
   },
   methods: {
     changeRoute(name) {
@@ -112,6 +129,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+.height-10 {
+  height: 10% !important;
+}
 
 .crest-logo {
   width: 250px;
@@ -139,30 +160,27 @@ export default {
   &-1 {
     position: absolute;
     left: 14%;
-    top:-100%;
+    top: -100%;
   }
-  &-1:hover{
-    cursor:pointer;
+  &-1:hover {
+    cursor: pointer;
   }
   &-2 {
     position: absolute;
     left: 42%;
-    top:-100%;
+    top: -100%;
   }
-  &-2:hover{
-    cursor:pointer;
+  &-2:hover {
+    cursor: pointer;
   }
   &-3 {
     // position: absolute;
     // left: 2%;
     padding-left: 64%;
-    top:-100%;
+    top: -100%;
   }
-  &-3
-    :hover
-  {
-    cursor:pointer;
-  
+  &-3 :hover {
+    cursor: pointer;
   }
 }
 
@@ -200,7 +218,8 @@ export default {
   position: absolute;
   bottom: 0%;
   width: 100%;
-  height: 13%;
+  // height: 13%;
+  height: 5%;
   overflow: hidden;
   background-color: white;
   &-item {

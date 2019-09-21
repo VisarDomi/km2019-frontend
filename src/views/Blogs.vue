@@ -150,7 +150,7 @@
       </carousel>
     </div>
     <!-- <FooterBlack v-if="windowWidth > 770" /> -->
-    <FooterWhite v-if="windowWidth > 770" />
+    <FooterWhite v-if="windowWidth > 770" height="height-10" />
     <FooterSingleBlogMobile v-else />
     <!-- <FooterBlackSmall v-if="windowWidth < 770 && windowWidth > 600" /> -->
   </div>

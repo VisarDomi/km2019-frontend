@@ -19,9 +19,17 @@ export default {
   background: #0e1032 !important;
   z-index: 9999999;
 }
+.overlay-left-green {
+  background: #47b8b0 !important;
+  z-index: 9999999;
+}
+.overlay-right-green {
+  background: #47b8b0 !important;
+  z-index: 9999999;
+}
 
 .overlay-left {
   background: #0e1032 !important;
-  z-index: 9999999;
+  z-index: 9999999; 
 }
 </style>
