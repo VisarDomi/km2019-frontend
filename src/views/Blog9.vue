@@ -316,6 +316,12 @@ hr {
   position: fixed;
   transform: scale(0.6);
   margin-left: -20rem;
+
+  @include respond(phone) {
+    transform: scale(0.5);
+    margin-left: -55rem;
+    margin-top: -16rem;
+  }
 }
 
 .blog-row {

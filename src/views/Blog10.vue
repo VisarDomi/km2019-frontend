@@ -310,6 +310,11 @@ hr {
   position: fixed;
   transform: scale(0.7);
   margin-left: -21rem;
+  @include respond(phone) {
+    transform: scale(0.5);
+    margin-left: -55rem;
+    margin-top: -16rem;
+  }
 }
 
 .blog-row {

@@ -313,6 +313,12 @@ hr {
   height: 100%;
   height: calc(100vh);
   position: fixed;
+
+  @include respond(phone) {
+    transform: scale(0.3) !important;
+    margin-left: -67rem !important;
+    margin-top: -27rem !important;
+  }
 }
 
 .blog-row {
@@ -322,7 +328,7 @@ hr {
   background: #47b8b0;
   padding: 0;
   @include respond(small-screen) {
-    height: 45%;
+    height: 34rem;
   }
   margin: 0;
 }
