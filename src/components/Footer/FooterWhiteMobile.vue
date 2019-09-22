@@ -11,17 +11,21 @@
             <div class="col-4">
               <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')">artistët</div>
 
-              <div class="row" @click="changeRoute('Home')">ndër vite</div>
+              <a class="row" href="/#nder-vite-mobile">ndër vite</a>
             </div>
 
             <div class="col-4">
               <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')">#magjike</div>
 
-              <div class="row" @click="changeRoute('Home')">të reja</div>
+              <a class="row" href="/#te-reja-mobile">të reja</a>
             </div>
 
             <div class="col-4">
-              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')">rregullore</div>
+              <div
+                class="row"
+                style="margin-bottom:5px;"
+                @click="changeRoute('Rregullore')"
+              >rregullore</div>
 
               <div class="row" @click="changeRoute('Home')">voto</div>
             </div>
@@ -94,7 +98,14 @@ export default {
 .social-1 {
   width: 25px;
 }
-
+a {
+  color: black;
+  text-decoration: none;
+  :focus {
+    color: black;
+    text-decoration: none;
+  }
+}
 .footer-separator {
   color: #0e1032;
 }

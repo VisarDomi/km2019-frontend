@@ -7,19 +7,19 @@
         </div>
       </div>
       <div class="col-md-1 pl-7 temporary-spread border-left-black">
-        <p class="footer-item align-centered" @click="changeSection(1)">juria</p>
+        <a class="footer-item align-centered" href="/#juria">juria</a>
       </div>
       <!-- <div class="col-md-1 pl-6">
         <p class="footer-item">#fotome</p>
       </div>-->
       <div class="col-md-1 pl-6 temporary-spread">
-        <p class="footer-item" @click="changeSection(2)">ndër vite</p>
+        <a class="footer-item" href="/#nder-vite">ndër vite</a>
       </div>
       <div class="col-md-1 pl-6 temporary-spread">
-        <p class="footer-item" @click="changeSection(3)">të reja</p>
+        <a class="footer-item" href="/#te-reja">të reja</a>
       </div>
       <div class="col-md-1 temporary-spread">
-        <p class="footer-item" @click="changeSection(4)">rregullore</p>
+        <a class="footer-item" @click="gotoRregullore()">rregullore</a>
       </div>
       <!-- <div class="col-md-1 pl-6">
         <p class="footer-item">voto</p>
@@ -121,6 +121,9 @@ export default {
       // console.log("after push");
       // eventBus.$emit("changeSectionFromFooter", index);
       // console.log("from footer");
+    },
+    gotoRregullore() {
+      this.$router.push({ name: "Rregullore" });
     }
   }
 };

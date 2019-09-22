@@ -1,99 +1,92 @@
 <template>
-<div>
-  <div class="blog-page">
-    <div class="row justify-content-between artist-row align-items-center h-15">
-      <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
-        <img src="@/assets/img/logoblog.svg" @click="goToHome()" class="logo-img img-logo" alt />
-      </div>
-      <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
-        <img
-          src="@/assets/img/artistet_arrow_left.svg"
-          alt
-          class="back-icon center-block respond-width"
-        />
-      </div>
-    </div>
-
-    <div class="row blog-row">
-      <div class="col-md-5 col-12 image-col">
-        <img
-          class="blog-image"
-          src="@/assets/img/blog/Blog-1.jpg"
-          alt
-        />
-      </div>
-      <div class="col-md-7 col-xs-12 blog-col">
-        <div class="container">
-          <h1 class="single-blog-title">Ja kush jane 3 artistët e parë BIG! </h1>
-          <hr />
-          <p
-            class="blog-content"
-          >Lindita, Genti Deda dhe Rea Nuhu janë tre artistët BIG që do  të çelin siparin e festivalit “Kënga Magjike”, duke prezantuar këngët e tyre në fazën e parë të këtij festivali në programin “E Diela Shqiptare”.  Në datën 22 shtator veç kategorisë BIG, do të prezantojnë këngën e tyre edhe 5 konkurrentët e kategorisë New Artist. Nga eksperienca e vitit të kaluar, numri i këngëtarëve të kësaj kategorie të cilët kaluan në fazën gjysmëfinale te festivalit, ishte më i lartë se sa këngëtarët e kategorisë BIG. 
-<br><br>
-Si do të shkojë ky vit...?! 
-<br><br>
-Koha dhe këngëtarët do të tregojnë gjithçka.
-
-          <div class="row">
-            <p class="single-date">14.09.2019</p>
-            <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
-              <img
-                v-if="hoverR"
-                @click="goToBlog('Blog2')"
-                src="@/assets/img/buttons_export/button_tereja_right_h.svg" style="width:6rem;"
-                alt
-              />
-              <img v-else @click="goToBlog('Blog2')" src="@/assets/img/buttons_export/button_tereja_right.svg" style="width:6rem;" alt />
-            </div>
-
-            <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
-              <img
-                v-if="hoverL"
-                @click="goToBlog('Blog8')"
-                src="@/assets/img/buttons_export/button_tereja_left_h.svg" style="width:6rem;"
-                alt
-              />
-              <img v-else @click="goToBlog('Blog8')" src="@/assets/img/buttons_export/button_tereja_left.svg" style="width:6rem;" alt />
-            </div>
-          </div>
-
-          <h3 class="bio-text">te ngjashme</h3>
-            <br>
-            <div class="row">
-              <div class="col-lg-6">
-                              <div class="blog-card" @click="goToBlog('Blog3')">
-                <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-3.jpg" alt />
-                <h2 class="blog-card-title">Fifi dhe Mc Kresha betejë në skenë!</h2>
-              </div>
-
-              </div>
-              <div class="col-lg-6">
-                              <div class="blog-card " @click="goToBlog('Blog2')">
-                <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-2.jpg" alt />
-                <h2 class="blog-card-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
-              </div>
-
-              </div>
-            </div>
-
-
-
-          <br>
-          <br>
-
+  <div>
+    <div class="blog-page">
+      <div class="row justify-content-between artist-row align-items-center h-15">
+        <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
+          <img src="@/assets/img/logoblog.svg" @click="goToHome()" class="logo-img img-logo" alt />
+        </div>
+        <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
+          <img
+            src="@/assets/img/artistet_arrow_left.svg"
+            alt
+            class="back-icon center-block respond-width"
+          />
         </div>
       </div>
 
-          
+      <div class="row blog-row">
+        <div class="col-md-5 col-12 image-col">
+          <img class="blog-image" src="@/assets/img/blog/Blog-1.jpg" alt />
+        </div>
+        <div class="col-md-7 col-xs-12 blog-col">
+          <div class="container">
+            <h1 class="single-blog-title">Ja kush jane 3 artistët e parë BIG!</h1>
+            <hr />
+            <p class="blog-content">{{this.blog['body']}}</p>
+            <div class="row">
+              <p class="single-date">{{this.blog['date']}}</p>
+              <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
+                <img
+                  v-if="hoverR"
+                  @click="goToBlog('Blog2')"
+                  src="@/assets/img/buttons_export/button_tereja_right_h.svg"
+                  style="width:6rem;"
+                  alt
+                />
+                <img
+                  v-else
+                  @click="goToBlog('Blog2')"
+                  src="@/assets/img/buttons_export/button_tereja_right.svg"
+                  style="width:6rem;"
+                  alt
+                />
+              </div>
 
-        <FooterSingleBlog v-if="windowWidth > 770"  />
-         
+              <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
+                <img
+                  v-if="hoverL"
+                  @click="goToBlog('Blog8')"
+                  src="@/assets/img/buttons_export/button_tereja_left_h.svg"
+                  style="width:6rem;"
+                  alt
+                />
+                <img
+                  v-else
+                  @click="goToBlog('Blog8')"
+                  src="@/assets/img/buttons_export/button_tereja_left.svg"
+                  style="width:6rem;"
+                  alt
+                />
+              </div>
+            </div>
 
+            <h3 class="bio-text">te ngjashme</h3>
+            <br />
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="blog-card" @click="goToBlog('Blog3')">
+                  <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-3.jpg" alt />
+                  <h2 class="blog-card-title">Fifi dhe Mc Kresha betejë në skenë!</h2>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="blog-card" @click="goToBlog('Blog2')">
+                  <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-2.jpg" alt />
+                  <h2 class="blog-card-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
+                </div>
+              </div>
+            </div>
 
-    </div>
-          <FooterSingleBlogMobile v-if="windowWidth < 770" />
-  </div>
+            <br />
+            <br />
           </div>
+        </div>
+
+        <FooterSingleBlog v-if="windowWidth > 770" />
+      </div>
+      <FooterSingleBlogMobile v-if="windowWidth < 770" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -113,20 +106,35 @@ export default {
   },
   data() {
     return {
-      
       windowWidth: window.innerWidth,
       hoverR: false,
-      hoverL: false
+      hoverL: false,
+      blog: {
+        title: "",
+        body: `Lindita, Genti Deda dhe Rea Nuhu janë tre artistët BIG që do të çelin siparin e festivalit “Kënga Magjike”, duke prezantuar këngët e tyre në fazën e parë të këtij festivali në programin “E Diela Shqiptare”. Në datën 22 shtator veç kategorisë BIG, do të prezantojnë këngën e tyre edhe 5 konkurrentët e kategorisë New Artist. Nga eksperienca e vitit të kaluar, numri i këngëtarëve të kësaj kategorie të cilët kaluan në fazën gjysmëfinale te festivalit, ishte më i lartë se sa këngëtarët e kategorisë BIG.
+             
+              Si do të shkojë ky vit...?!
+              
+              Koha dhe këngëtarët do të tregojnë gjithçka.`,
+        date: "14.09.2019"
+      }
     };
   },
   head: {
     // To use "this" in the component, it is necessary to return the object through a function
     meta: [
-      { p: 'og:image', c: 'https://previews.dropbox.com/p/thumb/AAiMHszbD4-8Qlpt-wfpBN8BOjSNgArSJl3c0uhXkofMXQEI9qmzM7zkwuUnLPPBtdSq4uUYDbAetrAf5gGgK5quqAfa9toLaX-2BU27741sxIw5pvrlIk7OMOd4uFqluteI_UlceoR1FolpzbHPu7Hj7ED7osvCj224cyjXmDFYTopk9CyJ657seAJgbFg8Nh0pGdDn59ACzMobLh1UevXYFWzjiahRFrLSmuBKqwStSZR9T0aLK_RC80AzzFZgJMWC2r_xw5H2RgxMYpC2ml4R9h5g8AAq_ueViMW4gIdIDcQ19rb8zq24boHulKcDPBZ8-cjTPUcKkuig3YutCZl56rwVZaZxSxKLlIiu5hQWhg/p.jpeg?fv_content=true&size_mode=5' },
-      { p: 'og:url', c: 'https://kengamagjike.com/blog1'},
-      { p: 'og:title', c: 'Ja kush jane 3 artistët e parë BIG!'},
-      { p: 'og:description', c: 'Lindita, Genti Deda dhe Rea Nuhu janë tre artistët BIG që do  të çelin siparin e festivalit “Kënga Magjike”, duke prezantuar këngët e tyre në fazën e parë të këtij festivali në programin “E Diela Shqiptare”.'},
-      
+      {
+        p: "og:image",
+        c:
+          "https://previews.dropbox.com/p/thumb/AAiMHszbD4-8Qlpt-wfpBN8BOjSNgArSJl3c0uhXkofMXQEI9qmzM7zkwuUnLPPBtdSq4uUYDbAetrAf5gGgK5quqAfa9toLaX-2BU27741sxIw5pvrlIk7OMOd4uFqluteI_UlceoR1FolpzbHPu7Hj7ED7osvCj224cyjXmDFYTopk9CyJ657seAJgbFg8Nh0pGdDn59ACzMobLh1UevXYFWzjiahRFrLSmuBKqwStSZR9T0aLK_RC80AzzFZgJMWC2r_xw5H2RgxMYpC2ml4R9h5g8AAq_ueViMW4gIdIDcQ19rb8zq24boHulKcDPBZ8-cjTPUcKkuig3YutCZl56rwVZaZxSxKLlIiu5hQWhg/p.jpeg?fv_content=true&size_mode=5"
+      },
+      { p: "og:url", c: "https://kengamagjike.com/blog1" },
+      { p: "og:title", c: "Ja kush jane 3 artistët e parë BIG!" },
+      {
+        p: "og:description",
+        c:
+          "Lindita, Genti Deda dhe Rea Nuhu janë tre artistët BIG që do  të çelin siparin e festivalit “Kënga Magjike”, duke prezantuar këngët e tyre në fazën e parë të këtij festivali në programin “E Diela Shqiptare”."
+      }
     ]
   },
   methods: {
@@ -160,13 +168,11 @@ export default {
 
 
 <style lang="scss" scoped>
-
-
 @import "@/assets/sass/abstracts/_mixins.scss";
 
 @font-face {
   font-family: Panton;
-  src: url('../assets/Fonts/panton-semibold.OTF');
+  src: url("../assets/Fonts/panton-semibold.OTF");
   font-weight: bold;
 }
 
@@ -175,7 +181,7 @@ export default {
   right: 8rem;
   margin-top: 19px;
   @include respond(phone) {
-    margin-top:13px;
+    margin-top: 13px;
   }
   border-radius: 50%;
   // background-color: white;
@@ -194,7 +200,7 @@ export default {
   right: 15rem;
   margin-top: 19px;
   @include respond(phone) {
-    margin-top:13px;
+    margin-top: 13px;
   }
   border-radius: 50%;
   // background-color: white;
@@ -213,8 +219,8 @@ export default {
   width: 5rem;
 }
 
-.blog-card:hover{
-  cursor:pointer;
+.blog-card:hover {
+  cursor: pointer;
 }
 
 .blog-card-title {
@@ -223,7 +229,6 @@ export default {
   font-size: 2.3rem;
   width: 90%;
   margin-top: 2rem;
-
 }
 
 .blog-card-image {
@@ -257,9 +262,8 @@ export default {
   width: 100%;
 
   @include respond(phone) {
-    width:80%;
+    width: 80%;
   }
-
 }
 
 .bio-text:after {
@@ -329,8 +333,8 @@ hr {
   font-size: 3rem;
   padding-left: 5rem;
   padding-right: 5rem;
-    @include respond(phone) {
-    margin-bottom:80px;
+  @include respond(phone) {
+    margin-bottom: 80px;
   }
 }
 .blog-page {
