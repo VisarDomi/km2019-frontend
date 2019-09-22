@@ -123,6 +123,29 @@ export default {
       hoverL: false
     };
   },
+  head: {
+    // To use "this" in the component, it is necessary to return the object through a function
+    meta: [
+      {
+        p: "og:image",
+        c:
+          "https://previews.dropbox.com/p/thumb/AAgs98OeUp3-JUP0ovxRnjRr7fYL61n3vsQoMFQa3K4OFt3iHhj22gKKDF6YUmzHB1Ev1q_EWv5kCSnI7G7RcyoF-3vJU4KoAjV4Akos1xEZCP7bLizyTwDkX70b8WsBAZ5Jo_d8KPkEuvcqFAJeVKz-zdo0XnckU3A2uXurTl4e5dCtz9s842WCrllP31I7bDw2y6psO611PZu88YsRDuwXvmft6Xlt4C-BtPtp__ajOuo2jOEFEmxsaML6bOsP4SleeCX6xvJTeMNP1khIZnuTIC_KIPuWgo1tPdRVff7mYGTCPjTlmXEAb1Riu1opwh-MoRG1b8Nqw-WNMkRriE5d/p.jpeg?fv_content=true&size_mode=5"
+      },
+      {
+        p: "og:url",
+        c: "https://kengamagjike.com/blog12"
+      },
+      {
+        p: "og:title",
+        c: "Nisin konkurimin “New Artist”, pesë të parët nën “lupën” e jurisë"
+      },
+      {
+        p: "og:description",
+        c:
+          "Java e parë e konkurimit për kategorinë 'New Artist' solli pesë artistë të rinj..."
+      }
+    ]
+  },
   methods: {
     nextSlide() {
       this.$refs.carousel.goToPage(this.$refs.carousel.getNextPage());
@@ -298,16 +321,16 @@ hr {
 }
 .blog-image {
   object-fit: cover;
-  height: 100%;
-  height: calc(100vh);
   position: fixed;
+  transform: scale(0.7);
+  margin-left: -21rem;
 }
 
 .blog-row {
   height: 100%;
 }
 .image-col {
-  background: salmon;
+  background: #47b8b0;
   padding: 0;
   @include respond(small-screen) {
     height: 45%;

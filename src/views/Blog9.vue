@@ -125,7 +125,7 @@ export default {
       {
         p: "og:image",
         c:
-          "https://previews.dropbox.com/p/thumb/AAhv92KcC0OnaZDmTy3FBLEfX2K3WdiQljOXP2ifn0pwliHncRjoN_Ob0dtYPOl7kRGkb6Wy0JPs2JlfdJzuMxGx9jZzWr5NtE2kORMW3nQPaYwq45bgj9QjYy9Oq1hOILX3HWHuwyqWM3Z9JP8aSs1z2_XxY9VFnQH8T98wJv7RsyCCrivSVWdRe06wOgHx3jwc4mXz_5QC98Gzx4OSRuuE2NfokLLPYRcdKCRUS9n7R0nba2a5lgtm4BS2ga6AxOztzn0MWa2cr89DyEqP9Qo6w1HjttDNWXvjUlrFJEUHYUW5VV851qzSjwItSvxodrsfDqnM7a7RM6CVhMwJt-9-/p.jpeg?fv_content=true&size_mode=5"
+          "https://previews.dropbox.com/p/thumb/AAgC54iB2rw9Y24lfuUk4ZQqzikB8tueL1GplmwijSlVvr5LNw5pCbj14OHR1H-OpFce4uRTkxW5HSkOnNScSyMseNZ5upSB9gBimFtoxnZRWm3ovFmO1GXUhbMLSvAp-UXWpPM6BRxgHp4mXzY0DM4Io5-KpYvuXAVJgj4mTB9AoTcz1lh_Iy3_ZxzpHkyAkyeD784N1psMUXBs6R6ZUnfpm6YaB5yZDWc0rDgz2J2Y610jXowr5LKCUxMhpK2MGowK0A-6_pHuQYaqfnWll75jj_pgYUpDaC5a16827MRsBuVjRGLh22TJkrhkX_f8uUvpzvQGlqx6AL0KhQ9xR62Bf9m1aBJG1_URpnQIHIadHQ/p.jpeg?fv_content=true&size_mode=5"
       },
       { p: "og:url", c: "https://kengamagjike.com/blog9" },
       {

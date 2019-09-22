@@ -108,6 +108,26 @@ export default {
     FooterSingleBlog,
     FooterSingleBlogMobile
   },
+  head: {
+    // To use "this" in the component, it is necessary to return the object through a function
+    meta: [
+      {
+        p: "og:image",
+        c:
+          "https://previews.dropbox.com/p/thumb/AAgC54iB2rw9Y24lfuUk4ZQqzikB8tueL1GplmwijSlVvr5LNw5pCbj14OHR1H-OpFce4uRTkxW5HSkOnNScSyMseNZ5upSB9gBimFtoxnZRWm3ovFmO1GXUhbMLSvAp-UXWpPM6BRxgHp4mXzY0DM4Io5-KpYvuXAVJgj4mTB9AoTcz1lh_Iy3_ZxzpHkyAkyeD784N1psMUXBs6R6ZUnfpm6YaB5yZDWc0rDgz2J2Y610jXowr5LKCUxMhpK2MGowK0A-6_pHuQYaqfnWll75jj_pgYUpDaC5a16827MRsBuVjRGLh22TJkrhkX_f8uUvpzvQGlqx6AL0KhQ9xR62Bf9m1aBJG1_URpnQIHIadHQ/p.jpeg?fv_content=true&size_mode=5"
+      },
+      { p: "og:url", c: "https://kengamagjike.com/blog11" },
+      {
+        p: "og:title",
+        c: "Genti Deda: U kërkoj falje këngëtarëve...."
+      },
+      {
+        p: "og:description",
+        c:
+          "Për herë të parë si këngëtar BIG në festivalin Kënga Magjike, Genti Deda prezantoi përpara publikut..."
+      }
+    ]
+  },
   data() {
     return {
       windowWidth: window.innerWidth,
@@ -299,7 +319,7 @@ hr {
   height: 100%;
 }
 .image-col {
-  background: salmon;
+  background: #47b8b0;
   padding: 0;
   @include respond(small-screen) {
     height: 45%;
@@ -315,11 +335,11 @@ hr {
     margin-bottom: 80px;
   }
 }
-.blog-page {
-  height: 100vh;
-  background: #47b8b0;
-  background-size: cover;
-  background-attachment: fixed;
+.blog-image {
+  object-fit: cover;
+  position: fixed;
+  transform: scale(0.5);
+  margin-left: -36rem;
 }
 
 .vertical-center {
