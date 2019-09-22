@@ -61,6 +61,7 @@ import {
   SET_ARTIST
 } from "@/store/mutations.type";
 import { Auth } from "aws-amplify";
+import { PUT } from "@/store/actions.type";
 
 export default {
   name: "VotoArtist",
@@ -79,8 +80,27 @@ export default {
     goToVoto() {
       this.$router.push({ name: "Voto" });
     },
-    voto() {
-      console.log("Votova");
+    async voto() {
+      const TableName = "KM2019-Vote";
+      const id = this.$route.params.id;
+      const username = this.user.username;
+      const params = {
+        TableName,
+        artistId: id,
+        username
+      };
+      console.log("put send");
+      await this.$store
+        .dispatch(PUT, params)
+        .then(data => {
+          console.log("data is", data);
+        })
+        .catch(err => {
+          console.log(Object.assign({}, err));
+        });
+      // console.log("res", res);
+      console.log("put send");
+      // this.$store.dispatch();
     },
     test(obj) {
       return Object.keys(obj).length !== 0;
