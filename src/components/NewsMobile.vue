@@ -88,6 +88,29 @@
           </slide>
           <slide>
             <img
+              src="@/assets/img/blog/Blog-11.jpg"
+              alt
+              class="img-fluid"
+              style="height:100%;width:100%;object-fit:cover;"
+              @click="goToBlog('Blog11')"
+            />
+            <div class="title-date-div">
+              <h1
+                class="blog-title-section"
+                @click="goToBlog('Blog11')"
+                v-if="this.lang == 'en'"
+              >Genti Deda finds his perfect girl.</h1>
+              <h1
+                class="blog-title-section"
+                @click="goToBlog('Blog11')"
+                v-else
+              >Genti Deda "zbulon" shoqen e zemrës.</h1>
+
+              <h3 class="home-mobile-date">22.09.2019</h3>
+            </div>
+          </slide>
+          <slide>
+            <img
               src="@/assets/img/blog/Blog-12.jpg"
               alt
               class="img-fluid"

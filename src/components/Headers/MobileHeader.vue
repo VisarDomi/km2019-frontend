@@ -9,13 +9,19 @@
     <div id="mySidenavR" class="sidenavR">
       <a href="javascript:void(0)" class="closebtn" @click="closeNavR()">×</a>
       <a href="#">&nbsp;</a>
-      <a href="#" v-scroll-to="'#juria-mobile'">juria</a>
+      <a href="#" v-if="this.lang == 'en'" v-scroll-to="'#juria-mobile'">jury</a>
+      <a href="#" v-else v-scroll-to="'#juria-mobile'">juria</a>
 
-      <a href="#" v-scroll-to="'#nder-vite-mobile'">ndër vite</a>
-      <a href="#" v-scroll-to="'#te-reja-mobile'">të reja</a>
+      <a href="#" v-if="this.lang == 'en'" v-scroll-to="'#nder-vite-mobile'">through the years</a>
+      <a href="#" v-else v-scroll-to="'#nder-vite-mobile'">ndër vite</a>
+
+      <a href="#" v-if="this.lang == 'en'" v-scroll-to="'#te-reja-mobile'">news</a>
+      <a href="#" v-else v-scroll-to="'#te-reja-mobile'">të reja</a>
+
       <a href="#" @click="changeLang()" v-if="this.lang == 'en'">Shqip</a>
       <a href="#" @click="changeLang()" v-else>English</a>
-      <a class="high-index pos-relative" @click="goToRregullore()">rregullore</a>
+      <a v-if="this.lang == 'en'" class="high-index pos-relative" @click="goToRregullore()">jury</a>
+      <a v-else class="high-index pos-relative" @click="goToRregullore()">rregullore</a>
       <div class="bottom-graphic" @click="moveTo(0)">
         <img src="@/assets/img/Path 2649.svg" alt />
       </div>

@@ -70,7 +70,7 @@
         <slide>
           <div class="h-100 slide-column" @click="goToBlog('Blog11')">
             <img src="@/assets/img/blog/Blog-11.jpg" class="img-blog img-fluid grey-scale" alt />
-            <h1 class="blog-title">Genti Deda: U kërkoj falje këngëtarëve....</h1>
+            <h1 class="blog-title">Genti Deda "zbulon" shoqen e zemrës.</h1>
 
             <h3 class="date">22.09.2019</h3>
           </div>

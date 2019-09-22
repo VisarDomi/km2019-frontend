@@ -25,15 +25,18 @@
             >Nisin konkurimin “New Artist”, pesë të parët nën “lupën” e jurisë</h1>
             <hr />
             <p class="blog-content">
-              Java e parë e konkurimit për kategorinë "New Artist" solli pesë artistë të rinj të cilët nën gjykimin e jurisë profesioniste konkurruan për të kaluar në fazën e parë të kualifikimit.
-              <br />
-              <br />KHUBA - arriti të marrë 4 votat jeshile të jurisë.
-              <br />
-              <br />J Gashi ft Enxhi Ngota - nuk mundën të kalojnë këtë fazë pasi morën tre vota të kuqe nga juria.
-              <br />
-              <br />SISMA - Djemtë që vinin nga Italia, pjesëmarrës në “Sanremo Junior” arritën të bindin të gjithë anetarët e jurisë t'u jepnin jeshile duke i kaluar kështu në fazën tjetër.
-              <br />
-              <br />Malvina Likaj - mori katër vota të kuqe dhe një jeshile ndërsa i njëjti votim u dha edhe për GretaA. Për çdo javë konkurrentët e kategorisë "New Artist" do të këndojnë live para jurisë. Ata do të nisin konkurrimin pa u prezantuar me jurinë, ndërsa kjo e fundit do të njihet me ta vetëm pas performacës.
+
+            Java e parë e konkurimit për kategorinë "New Artist" solli pesë artistë të rinj të cilët nën gjykimin e jurisë profesioniste konkurruan për të kaluar në fazën e parë të kualifikimit.
+            <br /><br />
+            KHUBA - arriti të marrë 4 votat jeshile të jurisë.
+            <br /><br />
+
+            J Gashi ft Enxhi Ngota - nuk mundën të kalojnë këtë fazë pasi morën tre vota të kuqe nga juria.
+            <br /><br />
+
+            SISMA - Djemtë që vinin nga Italia, pjesëmarrës në “Sanremo Giovani” arritën të bindin të gjithë anetarët e jurisë t'u jepnin jeshile duke i kaluar kështu në fazën tjetër.
+            <br /><br />
+            Malvina Likaj - mori katër vota të kuqe dhe një jeshile ndërsa i njëjti votim u dha edhe për  Gretaa. Për çdo javë konkurrentët e kategorisë "New Artist" do të këndojnë live para jurisë. Ata do të nisin konkurrimin pa u prezantuar me jurinë, ndërsa kjo e fundit do të njihet me ta vetëm pas performacës.
             </p>
             <div class="row">
               <p class="single-date">13.11.2018</p>

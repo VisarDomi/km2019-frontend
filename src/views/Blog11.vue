@@ -20,13 +20,11 @@
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
-            <h1 class="single-blog-title">Genti Deda: U kërkoj falje këngëtarëve....</h1>
+            <h1 class="single-blog-title">Genti Deda "zbulon" shoqen e zemrës.</h1>
             <hr />
-            <p class="blog-content">
-              Për herë të parë si këngëtar BIG në festivalin Kënga Magjike, Genti Deda prezantoi përpara publikut këngën e tij “Nuk ta fal”.
-              <br />
-              <br />Pikërisht falja ishte kryefjala e intervistës së Gentit. I ngacmuar në studion e programit “E Diela Shqiptare” në lidhje me mënyrën e tij të votimin në vitin e kaluar, Genti Deda u kërkoi falje disa prej artistëve konkurrentë të cilët ai i kishte votuar me 0 pikë.
-            </p>
+            <p
+              class="blog-content"
+            >Për herë të parë si këngëtar BIG në festivalin Kënga Magjike, Genti Deda prezantoi përpara publikut këngën e tij “Nuk ta fal”. Nisur nga fakti që në profilin e tij në Instagram Genti i ka të gjitha fotografitë vetëm, ai u ngacmua për një foto me një vajzë misterioze. Për herë të parë Genti zbuloi se shoqja e tij e zemrës quhet Ajsi. Edhe pse e pranoi këtë publikisht, Genti ende nuk ka postuar asnjë foto çift në Instagram.</p>
             <div class="row">
               <p class="single-date">13.11.2018</p>
               <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
