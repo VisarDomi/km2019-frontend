@@ -78,6 +78,8 @@
 </template>
 
 <script>
+import { API_URL } from "@/store/services/api";
+
 export default {
   name: "NewsMobile",
   data() {
@@ -124,7 +126,7 @@ export default {
         "Content-Type": "application/json"
       };
       let artists = axios
-        .get("https://fw9cy4j1y6.execute-api.eu-west-1.amazonaws.com/Dev/api", {
+        .get(API_URL, {
           params: {
             TableName: "KM2019-Artist",
             Limit: "100"

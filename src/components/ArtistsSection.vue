@@ -69,6 +69,8 @@
 <script>
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 import axios from "axios";
+import { API_URL } from "@/store/services/api";
+
 // import { ArtistService } from "@/api.js";
 export default {
   name: "ArtistsSection",
@@ -96,7 +98,7 @@ export default {
         "Content-Type": "application/json"
       };
       let artists = axios
-        .get("https://fw9cy4j1y6.execute-api.eu-west-1.amazonaws.com/Dev/api", {
+        .get(API_URL, {
           params: {
             TableName: "KM2019-Artist",
             Limit: "100"

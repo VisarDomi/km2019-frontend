@@ -188,12 +188,12 @@ export default new Router({
       component: Blog10,
       meta: { transition: "overlay-left" }
     },
-    // {
-    //   path: "/blog11",
-    //   name: "Blog11",
-    //   component: Blog11,
-    //   meta: { transition: "overlay-left" }
-    // },
+    {
+      path: "/blog11",
+      name: "Blog11",
+      component: Blog11,
+      meta: { transition: "overlay-left" }
+    },
     {
       path: "/blog12",
       name: "Blog12",
