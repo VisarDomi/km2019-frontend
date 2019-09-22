@@ -26,6 +26,11 @@ import Blog6 from "./views/Blog6.vue";
 import Blog7 from "./views/Blog7.vue";
 
 import Blog8 from "./views/Blog8.vue";
+import Blog9 from "./views/Blog9.vue";
+import Blog10 from "./views/Blog10.vue";
+import Blog11 from "./views/Blog11.vue";
+import Blog12 from "./views/Blog12.vue";
+
 import Blog0 from "./views/Blog0.vue";
 import Blog01 from "./views/Blog01.vue";
 import Blog02 from "./views/Blog02.vue";
@@ -87,7 +92,7 @@ export default new Router({
       meta: { transition: "overlay-right" }
     },
     {
-      path: "/armendrexhepagiq",
+      path: "/armendrexhepagiqi",
       name: "JuriaArmend",
       component: JuriaArmend,
       meta: { transition: "overlay-right" }
@@ -169,6 +174,30 @@ export default new Router({
       path: "/blog8",
       name: "Blog8",
       component: Blog8,
+      meta: { transition: "overlay-left" }
+    },
+    {
+      path: "/blog9",
+      name: "Blog9",
+      component: Blog9,
+      meta: { transition: "overlay-left" }
+    },
+    {
+      path: "/blog10",
+      name: "Blog10",
+      component: Blog10,
+      meta: { transition: "overlay-left" }
+    },
+    {
+      path: "/blog11",
+      name: "Blog11",
+      component: Blog11,
+      meta: { transition: "overlay-left" }
+    },
+    {
+      path: "/blog12",
+      name: "Blog12",
+      component: Blog12,
       meta: { transition: "overlay-left" }
     },
     {

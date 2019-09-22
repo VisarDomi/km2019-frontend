@@ -3,7 +3,8 @@
     <div class="spacer"></div>
     <div class="row h-25">
       <div class="header-container">
-        <h1>&nbsp;&nbsp;&nbsp;të reja</h1>
+        <h1 v-if="this.lang == 'en'">&nbsp;&nbsp;&nbsp;News</h1>
+        <h1 v-else>&nbsp;&nbsp;&nbsp;të reja</h1>
       </div>
     </div>
     <div class="middle h-50 go-up">
@@ -19,10 +20,10 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--1" @click="goToBlog('Blog1')">
+          <div class="blog__image blog__image--1" @click="goToBlog('Blog9')">
             <div class="blog__footer">
-              <p class="blog__footer--date">14.09.2019</p>
-              <p class="blog__footer--title">Ja kush jane 3 artistët e parë BIG!</p>
+              <p class="blog__footer--date">22.09.2019</p>
+              <p class="blog__footer--title">Lindita: Katër femrat shqiptare që kam për zemër...</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -30,10 +31,10 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--2" @click="goToBlog('Blog0')">
+          <div class="blog__image blog__image--2" @click="goToBlog('Blog11')">
             <div class="blog__footer">
-              <p class="blog__footer--date">15.09.2019</p>
-              <p class="blog__footer--title">Kënga Magjike, këtë vit 6 anëtarë jurie</p>
+              <p class="blog__footer--date">22.09.2019</p>
+              <p class="blog__footer--title">Genti Deda: U kërkoj falje këngëtarëve....</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -41,10 +42,12 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--3" @click="goToBlog('Blog01')">
+          <div class="blog__image blog__image--3" @click="goToBlog('Blog10')">
             <div class="blog__footer">
-              <p class="blog__footer--date">15.09.2019</p>
-              <p class="blog__footer--title">Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</p>
+              <p class="blog__footer--date">22.09.2019</p>
+              <p
+                class="blog__footer--title"
+              >Rea Nuhu gjen në “E Diela Shqiptare” veshjet e babait...</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -52,10 +55,12 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--4" @click="goToBlog('Blog02')">
+          <div class="blog__image blog__image--4" @click="goToBlog('Blog12')">
             <div class="blog__footer">
-              <p class="blog__footer--date">15.09.2018</p>
-              <p class="blog__footer--title">Ndryshon sistemi i votimit në Kënga Magjike</p>
+              <p class="blog__footer--date">22.09.2018</p>
+              <p
+                class="blog__footer--title"
+              >Nisin konkurimin “New Artist”, pesë të parët nën “lupën” e jurisë</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -71,13 +76,16 @@
 </template>
 
 <script>
+import { getLanguage, saveLanguage } from "@/store/services/storage";
+import { eventBus } from "@/main";
 export default {
   name: "NewsSection",
 
   components: {},
   data() {
     return {
-      windowWidth: window.innerWidth
+      windowWidth: window.innerWidth,
+      lang: ""
     };
   },
   methods: {
@@ -94,6 +102,10 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
+    eventBus.$on("changeLanguage", payload => {
+      this.lang = payload;
+    });
+    this.lang = getLanguage();
   }
 };
 </script>
@@ -152,54 +164,62 @@ export default {
   &__image {
     &--1 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-1.jpg");
+        url("../assets/img/blog/Blog-9.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-1.jpg");
+          url("../assets/img/blog/Blog-9.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
       }
     }
     &--2 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-0-gray.jpg");
+        url("../assets/img/blog/Blog-11.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-0-gray.jpg");
+          url("../assets/img/blog/Blog-11.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
       }
     }
     &--3 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-01-gray-cropped.jpg");
+        url("../assets/img/blog/Blog-10.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-01-gray-cropped.jpg");
+          url("../assets/img/blog/Blog-10.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
       }
     }
     &--4 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-02-gray-cropped.jpg");
+        url("../assets/img/blog/Blog-12.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-02-gray-cropped.jpg");
+          url("../assets/img/blog/Blog-12.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
       }
     }
     width: 100%;

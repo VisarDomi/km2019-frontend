@@ -9,15 +9,48 @@
         <div class="col-7">
           <div class="row links-row ml-0">
             <div class="col-4">
-              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')">artistët</div>
+              <div
+                class="row"
+                style="margin-bottom:5px;"
+                @click="changeRoute('Home')"
+                v-if="this.lang == 'en'"
+              >artists</div>
+              <div
+                class="row"
+                style="margin-bottom:5px;"
+                @click="changeRoute('Home')"
+                v-else
+              >artistët</div>
 
-              <div class="row" v-scroll-to="'#nder-vite-mobile'">ndër vite</div>
+              <div
+                class="row"
+                v-scroll-to="'#nder-vite-mobile'"
+                v-if="this.lang == 'en'"
+              >through years</div>
+              <div
+                class="row"
+                style="margin-bottom:5px;"
+                @click="changeRoute('Home')"
+                v-else
+              >ndër vite</div>
             </div>
 
             <div class="col-4">
-              <div class="row" style="margin-bottom:5px;" v-scroll-to="'#te-reja-mobile'">të reja</div>
+              <div
+                class="row"
+                style="margin-bottom:5px;"
+                v-scroll-to="'#te-reja-mobile'"
+                v-if="this.lang == 'en'"
+              >news</div>
+              <div
+                class="row"
+                style="margin-bottom:5px;"
+                @click="changeRoute('Home')"
+                v-else
+              >të reja</div>
 
-              <div class="row" v-scroll-to="'#juria-mobile'">juria</div>
+              <div class="row" v-scroll-to="'#juria-mobile'" v-if="this.lang == 'en'">jury</div>
+              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')" v-else>juria</div>
             </div>
 
             <div class="col-4">
@@ -25,9 +58,17 @@
                 class="row"
                 style="margin-bottom:5px;"
                 @click="changeRoute('Rregullore')"
+                v-if="this.lang == 'en'"
+              >rules</div>
+              <div
+                class="row"
+                style="margin-bottom:5px;"
+                @click="changeRoute('Rregullore')"
+                v-else
               >rregullore</div>
 
-              <div class="row" @click="changeRoute('Home')">voto</div>
+              <div class="row" @click="changeRoute('Home')" v-if="this.lang == 'en'">vote</div>
+              <div class="row" @click="changeRoute('Home')" v-else>voto</div>
             </div>
           </div>
         </div>
@@ -73,11 +114,26 @@
 </template>
 
 <script>
+import { getLanguage, saveLanguage } from "@/store/services/storage";
+
+import { eventBus } from "@/main";
+
 export default {
   methods: {
     changeRoute(name) {
       this.$router.push({ name: name });
     }
+  },
+  data() {
+    return {
+      lang: ""
+    };
+  },
+  mounted() {
+    eventBus.$on("changeLanguage", payload => {
+      this.lang = payload;
+    });
+    this.lang = getLanguage();
   }
 };
 </script>

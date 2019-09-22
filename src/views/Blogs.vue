@@ -60,6 +60,39 @@
         :navigationEnabled="false"
       >
         <slide>
+          <div class="h-100 slide-column" @click="goToBlog('Blog9')">
+            <img src="@/assets/img/blog/Blog-9.jpg" class="img-blog img-fluid grey-scale" alt />
+            <h1 class="blog-title">Lindita: Katër femrat shqiptare që kam për zemër...</h1>
+
+            <h3 class="date">22.09.2019</h3>
+          </div>
+        </slide>
+        <slide>
+          <div class="h-100 slide-column" @click="goToBlog('Blog11')">
+            <img src="@/assets/img/blog/Blog-11.jpg" class="img-blog img-fluid grey-scale" alt />
+            <h1 class="blog-title">Genti Deda: U kërkoj falje këngëtarëve....</h1>
+
+            <h3 class="date">22.09.2019</h3>
+          </div>
+        </slide>
+        <slide>
+          <div class="h-100 slide-column" @click="goToBlog('Blog10')">
+            <img src="@/assets/img/blog/Blog-10.jpg" class="img-blog img-fluid grey-scale" alt />
+            <h1 class="blog-title">Rea Nuhu gjen në “E Diela Shqiptare” veshjet e babait...</h1>
+
+            <h3 class="date">22.09.2019</h3>
+          </div>
+        </slide>
+        <slide>
+          <div class="h-100 slide-column" @click="goToBlog('Blog12')">
+            <img src="@/assets/img/blog/Blog-12.jpg" class="img-blog img-fluid grey-scale" alt />
+            <h1 class="blog-title">Nisin konkurimin “New Artist”, pesë të parët nën “lupën” e jurisë</h1>
+
+            <h3 class="date">22.09.2019</h3>
+          </div>
+        </slide>
+
+        <slide>
           <div class="h-100 slide-column" @click="goToBlog('Blog02')">
             <img src="@/assets/img/blog/Blog-02-gray.jpg" class="img-blog img-fluid" alt />
             <h1 class="blog-title">Ndryshon sistemi i votimit në Kënga Magjike</h1>
@@ -243,8 +276,9 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
-
-.logo-col-sm {
+.grey-scale {
+  // -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  // filter: grayscale(100%);
 }
 
 .img-blog {
@@ -319,18 +353,15 @@ export default {
   width: 6rem;
 }
 
-
-  @media only screen and (max-width : 320px) {
-
-
-  .carousel-right{
-    bottom:24%;
+@media only screen and (max-width: 320px) {
+  .carousel-right {
+    bottom: 24%;
   }
 
-  .carousel-left{
-    bottom:24%;
+  .carousel-left {
+    bottom: 24%;
   }
-  }
+}
 </style>
 
 
@@ -376,15 +407,12 @@ export default {
   @include respond(phone) {
     padding-top: 18rem;
   }
-
-
 }
-  @media only screen and (max-width : 320px) {
-  .blog-title{
-    padding-top:10rem;
+@media only screen and (max-width: 320px) {
+  .blog-title {
+    padding-top: 10rem;
   }
-
-  }
+}
 @font-face {
   font-family: Panton;
   src: url("../assets/Fonts/panton-semibold.OTF");

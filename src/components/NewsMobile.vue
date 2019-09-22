@@ -1,7 +1,8 @@
 <template>
-  <div class="mobile-news" style="position:relative;" id='te-reja-mobile'>
+  <div class="mobile-news" style="position:relative;" id="te-reja-mobile">
     <div class="row align-items-center ml-0">
-      <h1 class="title">të reja</h1>
+      <h1 class="title" v-if="this.lang == 'en'">news</h1>
+      <h1 class="title" v-else>të reja</h1>
     </div>
 
     <div class="row ml-0">
@@ -18,53 +19,94 @@
         >
           <slide>
             <img
-              src="@/assets/img/blog/Blog-0-gray.jpg"
+              src="@/assets/img/blog/Blog-9.jpg"
               alt
               class="img-fluid"
               style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog0')"
+              @click="goToBlog('Blog9')"
             />
             <div class="title-date-div">
               <h1
                 class="blog-title-section"
-                @click="goToBlog('Blog0')"
-              >Kënga Magjike, këtë vit 6 anëtarë jurie</h1>
+                @click="goToBlog('Blog9')"
+                v-if="this.lang == 'en'"
+              >Lindita: Four albanian wemen that are awesome...</h1>
+              <h1
+                class="blog-title-section"
+                @click="goToBlog('Blog9')"
+                v-else
+              >Lindita: Katër femrat shqiptare që kam për zemër...</h1>
 
-              <h3 class="home-mobile-date">05.09.2019</h3>
+              <h3 class="home-mobile-date">22.09.2019</h3>
             </div>
           </slide>
           <slide>
             <img
-              src="@/assets/img/blog/Blog-1.jpg"
+              src="@/assets/img/blog/Blog-11.jpg"
               alt
               class="img-fluid"
               style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog1')"
+              @click="goToBlog('Blog11')"
             />
             <div class="title-date-div">
               <h1
                 class="blog-title-section"
-                @click="goToBlog('Blog1')"
-              >Ja kush jane 3 artistët e parë BIG!</h1>
+                @click="goToBlog('Blog11')"
+                v-if="this.lang == 'en'"
+              >Genti Deda: I apologize to the singers....</h1>
+              <h1
+                class="blog-title-section"
+                @click="goToBlog('Blog11')"
+                v-else
+              >Genti Deda: U kërkoj falje këngëtarëve....</h1>
 
-              <h3 class="home-mobile-date">14.09.2019</h3>
+              <h3 class="home-mobile-date">22.09.2019</h3>
             </div>
           </slide>
           <slide>
             <img
-              src="@/assets/img/blog/Blog-01-gray.jpg"
+              src="@/assets/img/blog/Blog-10.jpg"
               alt
               class="img-fluid"
               style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog01')"
+              @click="goToBlog('Blog10')"
             />
             <div class="title-date-div">
               <h1
                 class="blog-title-section"
-                @click="goToBlog('Blog01')"
-              >Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
+                @click="goToBlog('Blog10')"
+                v-if="this.lang == 'en'"
+              >Rea Nuhu finds in “E Diela Shqiptare” his fathers clothes...</h1>
+              <h1
+                class="blog-title-section"
+                @click="goToBlog('Blog10')"
+                v-else
+              >Rea Nuhu gjen në “E Diela Shqiptare” veshjet e babait...</h1>
 
-              <h3 class="home-mobile-date">15.09.2019</h3>
+              <h3 class="home-mobile-date">22.09.2019</h3>
+            </div>
+          </slide>
+          <slide>
+            <img
+              src="@/assets/img/blog/Blog-12.jpg"
+              alt
+              class="img-fluid"
+              style="height:100%;width:100%;object-fit:cover;"
+              @click="goToBlog('Blog12')"
+            />
+            <div class="title-date-div">
+              <h1
+                class="blog-title-section"
+                @click="goToBlog('Blog12')"
+                v-if="this.lang == 'en'"
+              >Launch the "New Artist" competition, the first five under the jury's "magnifying glass."</h1>
+              <h1
+                class="blog-title-section"
+                @click="goToBlog('Blog12')"
+                v-else
+              >Nisin konkurimin “New Artist”, pesë të parët nën “lupën” e jurisë</h1>
+
+              <h3 class="home-mobile-date">22.09.2019</h3>
             </div>
           </slide>
         </carousel>
@@ -118,7 +160,7 @@
     </div>
 
     -->
-    <div class="row ml-0" style="">
+    <div class="row ml-0" style>
       <div class="text-center ml-auto mr-auto">
         <a @click="goToBlogs()" class="btn more-btn" style="color:white;">Më shumë lajme</a>
       </div>
@@ -127,6 +169,9 @@
 </template>
 
 <script>
+import { getLanguage, saveLanguage } from "@/store/services/storage";
+
+import { eventBus } from "@/main";
 export default {
   name: "NewsMobile",
   data() {
@@ -142,7 +187,8 @@ export default {
           songtilte: "Flori Mumajesi fitues i Kënga Magjike 2018!",
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         }
-      ]
+      ],
+      lang: ""
     };
   },
   methods: {
@@ -167,6 +213,10 @@ export default {
     setTimeout(() => {
       this.$forceUpdate();
     }, 800);
+    eventBus.$on("changeLanguage", payload => {
+      this.lang = payload;
+    });
+    this.lang = getLanguage();
   }
 };
 </script>
@@ -337,8 +387,8 @@ export default {
 .title {
   margin-left: auto;
   margin-right: auto;
-      margin-top: 5rem;
-    margin-bottom: 4rem;
+  margin-top: 5rem;
+  margin-bottom: 4rem;
 }
 
 .h-5 {

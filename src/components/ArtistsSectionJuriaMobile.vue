@@ -1,7 +1,8 @@
 <template>
-  <div class="mobile-artists pb-5 pt-5" id='juria-mobile'>
+  <div class="mobile-artists pb-5 pt-5" id="juria-mobile">
     <div class="row h-15 align-items-center ml-0" style="width:100%;">
-      <h1 class="title">juria</h1>
+      <h1 class="title" v-if="this.lang == 'en'">jury</h1>
+      <h1 class="title" v-else>juria</h1>
     </div>
 
     <!-- <div class="row h-50 justify-content-center mt-6"> -->
@@ -20,30 +21,11 @@
 
       <div class="row ml-0" style="margin-bottom:50px; margin:10px; margin-top:20px;width:100%;">
         <div class="col-6">
-          <div class="artist-card" @click="goToRoute('JuriaArben')">
-            <div class="img-container">
-              <img src="@/assets/juria/j3_normal.png" alt />
-            </div>
-            <p class="artist-card__name inside-card">ARBEN SKËNDERI</p>
-          </div>
-        </div>
-        <div class="col-6">
           <div class="artist-card" @click="goToRoute('JuriaArmend')">
             <div class="img-container">
               <img src="@/assets/juria/j1_normal.png" alt />
             </div>
-            <p class="artist-card__name inside-card">ARMEND REXHEPAGIQ</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row ml-0" style="margin-bottom:50px; margin:10px;width:100%;">
-        <div class="col-6">
-          <div class="artist-card" @click="goToRoute('JuriaDj')">
-            <div class="img-container">
-              <img src="@/assets/juria/j5_normal.png" alt />
-            </div>
-            <p class="artist-card__name inside-card">DJ MISS ROSE & DJ STONE</p>
+            <p class="artist-card__name inside-card">ARMEND REXHEPAGIQI</p>
           </div>
         </div>
         <div class="col-6">
@@ -56,7 +38,15 @@
         </div>
       </div>
 
-      <div class="row mb-5 ml-0" style=" margin:10px;width:100%;">
+      <div class="row ml-0" style="margin-bottom:50px; margin:10px;width:100%;">
+        <div class="col-6">
+          <div class="artist-card" @click="goToRoute('JuriaArben')">
+            <div class="img-container">
+              <img src="@/assets/juria/j3_normal.png" alt />
+            </div>
+            <p class="artist-card__name inside-card">ARBEN SKËNDERI</p>
+          </div>
+        </div>
         <div class="col-6" style="margin-top:10px;">
           <div class="artist-card" @click="goToRoute('JuriaEnkel')">
             <div class="img-container">
@@ -66,12 +56,27 @@
           </div>
         </div>
       </div>
+
+      <div class="row mb-5 ml-0" style=" margin:10px;width:100%;">
+        <div class="col-6">
+          <div class="artist-card" @click="goToRoute('JuriaDj')">
+            <div class="img-container">
+              <img src="@/assets/juria/j5_normal.png" alt />
+            </div>
+            <p class="artist-card__name inside-card">DJ MISS ROSE & DJ STONE</p>
+          </div>
+        </div>
+      </div>
       <div class="row" style="margin-bottom: 30px;"></div>
     </div>
   </div>
 </template>
 
 <script>
+import { getLanguage, saveLanguage } from "@/store/services/storage";
+
+import { eventBus } from "@/main";
+
 export default {
   name: "NewsMobile",
   data() {
@@ -91,7 +96,8 @@ export default {
       artists1: [],
       artists2: [],
       artists3: [],
-      artists4: []
+      artists4: [],
+      lang: ""
     };
   },
   methods: {
@@ -140,6 +146,10 @@ export default {
     setTimeout(() => {
       this.$forceUpdate();
     }, 500);
+    eventBus.$on("changeLanguage", payload => {
+      this.lang = payload;
+    });
+    this.lang = getLanguage();
   }
 };
 </script>
