@@ -1,5 +1,5 @@
 <template>
-  <div class="mobile-news" style="position:relative;">
+  <div class="mobile-news" style="position:relative;" id='te-reja-mobile'>
     <div class="row align-items-center ml-0">
       <h1 class="title">të reja</h1>
     </div>

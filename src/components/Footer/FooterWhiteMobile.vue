@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="footer-container">
+    <div class="footer-container" v-bind:class="gClass">
       <div class="row">
         <div class="col-5">
           <img src="@/assets/img/logoblack.svg" class="logo" alt @click="changeRoute('Home')" />
@@ -74,12 +74,23 @@ export default {
     changeRoute(name) {
       this.$router.push({ name: name });
     }
+  },
+  props: {
+    gClass: ""
   }
 };
 </script>
 
 
 <style lang="scss" scoped>
+.rel {
+  position: relative !important;
+}
+
+.height-5 {
+  height: 5% !important;
+}
+
 .social-1 {
   width: 25px;
 }

@@ -3,7 +3,7 @@
     <div class="footer-container">
       <div class="row">
         <div class="col-5">
-          <img src="@/assets/img/logowhite.svg" class="logo" alt @click="changeRoute('Home')" />
+          <img src="@/assets/img/logowhite.svg" class="logo" alt v-scroll-to="'#kengamagjike'" />
         </div>
 
         <div class="col-7">
@@ -11,17 +11,21 @@
             <div class="col-4">
               <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')">artistët</div>
 
-              <div class="row" @click="changeRoute('Home')">ndër vite</div>
+              <div class="row" v-scroll-to="'#nder-vite-mobile'">ndër vite</div>
             </div>
 
             <div class="col-4">
-              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')">#magjike</div>
+              <div class="row" style="margin-bottom:5px;" v-scroll-to="'#te-reja-mobile'">të reja</div>
 
-              <div class="row" @click="changeRoute('Home')">të reja</div>
+              <div class="row" v-scroll-to="'#juria-mobile'">juria</div>
             </div>
 
             <div class="col-4">
-              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')">rregullore</div>
+              <div
+                class="row"
+                style="margin-bottom:5px;"
+                @click="changeRoute('Rregullore')"
+              >rregullore</div>
 
               <div class="row" @click="changeRoute('Home')">voto</div>
             </div>

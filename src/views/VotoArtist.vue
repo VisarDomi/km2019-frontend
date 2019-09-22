@@ -12,7 +12,7 @@
         />
       </div>
     </div>
-    <div class="row h-75 align-items-center">
+    <div class="row h-75 align-items-center" v-if="windowWidth > 600">
       <div class="col-lg-7 offset-lg-2">
         <span class="artist-name">{{getArtist.name}}</span>
         <hr />
@@ -22,21 +22,37 @@
         <img src="@/assets/img/selected.svg" alt class="voto-img" />
       </div>
     </div>
+    <div class="row h-75 align-items-center" v-else>
+      <div class="col-lg-7 offset-lg-2 mobile-width-75 rel">
+        <span class="artist-name">{{getArtist.name}}</span>
+        <hr />
+        <span class="artist-song">{{getArtist.song}}</span>
+        <img src="@/assets/img/selected.svg" alt class="voto-img" />
+      </div>
+    </div>
     <div class="button-container" v-if="test(user)">
       <b-button class="btn" @click="voto()">Dërgo votën tënde</b-button>
     </div>
     <div class="button-container" v-else>
       <b-button class="btn" v-b-modal.my-modal>Rregjistrohu</b-button>
     </div>
+    <div class="spacer"></div>
     <b-modal id="my-modal">
       You must only register once to vote
       <amplify-authenticator></amplify-authenticator>
     </b-modal>
+    <Footer v-if="windowWidth > 770" />
+    <FooterSmall v-if="windowWidth < 770 && windowWidth > 600" />
+    <FooterMobile gClass="height-5 rel" v-if="windowWidth < 600" />
   </div>
 </template>
 
 
 <script>
+import Footer from "@/components/Footer/FooterWhite.vue";
+import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
+import FooterMobile from "@/components/Footer/FooterWhiteMobile.vue";
+
 import { mapGetters } from "vuex";
 import { GET_ARTIST } from "@/store/actions.type";
 import {
@@ -48,16 +64,16 @@ import { Auth } from "aws-amplify";
 
 export default {
   name: "VotoArtist",
-  components: {},
+  components: {
+    Footer,
+    FooterSmall,
+    FooterMobile
+  },
   data() {
     return {
+      windowWidth: window.innerWidth,
       user: {}
     };
-  },
-  async mounted() {
-    await this.fetchArtist(this.$route.params.id);
-    console.log(getArtist);
-    console.log(this.getArtist);
   },
   methods: {
     goToVoto() {
@@ -81,6 +97,17 @@ export default {
       this.$store.commit(STOP_LOADING);
     }
   },
+  computed: {
+    ...mapGetters(["getArtist"])
+  },
+  async mounted() {
+    await this.fetchArtist(this.$route.params.id);
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
+  },
   beforeCreate() {
     Auth.currentAuthenticatedUser()
       .then(user => {
@@ -91,9 +118,6 @@ export default {
         console.log("not signed in...");
         console.log("user: ", this.test(this.user));
       });
-  },
-  computed: {
-    ...mapGetters(["getArtist"])
   }
 };
 </script>
@@ -101,15 +125,37 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
+.spacer {
+  height: 16rem;
+}
+
+.rel {
+  @include respond(phone) {
+    position: relative;
+  }
+}
+.mobile-width-75 {
+  @include respond(phone) {
+    width: 75% !important;
+    margin-left: 4%;
+  }
+}
+
 .button-container {
   position: absolute;
-  bottom: 20%;
+  bottom: 14%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @include respond(phone) {
+    width: 80%;
+  }
 }
 
 .btn {
   padding: 1rem 12rem;
+  @include respond(phone) {
+    padding: 3rem 7rem;
+  }
   border-radius: 10rem;
 
   font-family: Ubuntu;
@@ -120,6 +166,11 @@ export default {
 }
 .voto-img {
   margin-top: 13%;
+  @include respond(phone) {
+    position: absolute;
+    right: -28%;
+    margin-top: -19%;
+  }
 }
 hr {
   margin-top: 0%;
@@ -144,6 +195,7 @@ hr {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../src/assets/img/sonimala2j.png") no-repeat;
   background-size: cover;
+  background-position: center top;
   background-attachment: fixed;
 }
 .logo-img {

@@ -3,20 +3,20 @@
     <div class="row h-50 vertical-center footer-container">
       <div class="col-md-2">
         <div class="abs-center">
-          <img class="logo-footer" src="@/assets/img/logowhite.svg" alt @click="changeSection(0)" />
+          <img class="logo-footer" src="@/assets/img/logowhite.svg" alt v-scroll-to="'#magjike'" />
         </div>
       </div>
       <div class="col-md-1 pl-7 temporary-spread border-left-white">
-        <p class="footer-item align-centered" @click="changeSection(1)">juria</p>
+        <p class="footer-item align-centered" v-scroll-to="'#juria'">juria</p>
       </div>
       <!-- <div class="col-md-1 pl-6">
         <p class="footer-item">#fotome</p>
       </div>-->
       <div class="col-md-1 pl-6 temporary-spread">
-        <p class="footer-item" @click="changeSection(2)">ndër vite</p>
+        <p class="footer-item" v-scroll-to="'#nder-vite'">ndër vite</p>
       </div>
       <div class="col-md-1 pl-6 temporary-spread">
-        <p class="footer-item" @click="changeSection(3)">të reja</p>
+        <p class="footer-item" v-scroll-to="'#te-reja'">të reja</p>
       </div>
       <div class="col-md-1 temporary-spread">
         <p class="footer-item" @click="changeRoute('Rregullore')">rregullore</p>

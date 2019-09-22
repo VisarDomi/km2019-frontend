@@ -149,7 +149,6 @@ export default {
     ...mapGetters(["getArtist"])
   },
   async mounted() {
-    console.log("fetch: ", this.$route.params.id);
     await this.fetchArtist(this.$route.params.id);
 
     this.$nextTick(() => {
@@ -165,6 +164,9 @@ export default {
 @import "@/assets/sass/abstracts/_mixins.scss";
 .spacer {
   height: 15rem;
+  @include respond(phone) {
+    height: 22rem;
+  }
 }
 
 .artist-name {

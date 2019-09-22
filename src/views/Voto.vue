@@ -25,7 +25,7 @@
     </div>
 
     <div class="row voto-artist-row voto-card mt-5" v-for="artist of getArtists" :key="artist.name">
-      <div class="col-lg-7 offset-lg-2">
+      <div class="col-lg-7 offset-lg-2 mobile-width-75 rel">
         <span class="artist-name">{{artist.name}}</span>
         <hr />
         <span class="artist-song">{{artist.song}}</span>
@@ -37,6 +37,7 @@
     <div class="spacer"></div>
     <Footer v-if="windowWidth > 770" />
     <FooterSmall v-if="windowWidth < 770 && windowWidth > 600" />
+    <FooterMobile v-if="windowWidth < 600" />
   </div>
 </template>
 
@@ -44,6 +45,7 @@
 <script>
 import Footer from "@/components/Footer/FooterWhite.vue";
 import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
+import FooterMobile from "@/components/Footer/FooterWhiteMobile.vue";
 
 import { LIST_ARTIST } from "@/store/actions.type";
 import { SET_ARTIST } from "@/store/mutations.type";
@@ -53,7 +55,8 @@ export default {
   name: "Voto",
   components: {
     Footer,
-    FooterSmall
+    FooterSmall,
+    FooterMobile
   },
   data() {
     return {
@@ -90,19 +93,38 @@ export default {
   },
   computed: {
     ...mapGetters(["getArtists"])
-  },
+  }
 };
 </script>
 
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+.rel {
+  @include respond(phone) {
+    position: relative;
+  }
+}
+.mobile-width-75 {
+  @include respond(phone) {
+    width: 75% !important;
+    margin-left: 4%;
+  }
+}
 .spacer {
   // background: #0e1032;
   height: 17rem;
+  @include respond(phone) {
+    height: 25rem;
+  }
 }
 
 .voto-img {
   margin-top: 13%;
+  @include respond(phone) {
+    position: absolute;
+    right: 0%;
+    margin-top: -19%;
+  }
 }
 
 hr {
@@ -148,6 +170,7 @@ hr {
   -webkit-text-stroke: 2px white;
   font-family: Vollkorn;
   font-size: 12rem;
+  margin-left: 11%;
 }
 
 .s1 {
@@ -202,8 +225,14 @@ input[type="search"] {
   padding-left: 10px;
   color: transparent;
   cursor: pointer;
+
   &:focus {
     width: 330px !important;
+    @include respond(phone) {
+      margin-left: 15%;
+      width: 200px !important;
+      padding-left: 70px !important;
+    }
 
     color: white !important;
     font-size: 3rem;

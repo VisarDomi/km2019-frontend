@@ -170,6 +170,9 @@ export default {
 @import "@/assets/sass/abstracts/_mixins.scss";
 .spacer {
   height: 15rem;
+  @include respond(phone) {
+    height: 22rem;
+  }
   background: #0e1032;
 }
 .respond-width {
