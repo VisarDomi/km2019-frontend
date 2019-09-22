@@ -3,7 +3,7 @@ import axios from "axios";
 import VueAxios from "vue-axios";
 import { myError } from "@/common/functions";
 const API_URL =
-  "https://fw9cy4j1y6.execute-api.eu-west-1.amazonaws.com/Prod1/api";
+  "https://fw9cy4j1y6.execute-api.eu-west-1.amazonaws.com/Dev/api";
 
 export const ApiService = {
   init() {
