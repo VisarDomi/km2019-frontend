@@ -406,6 +406,7 @@ export default {
       });
     });
 
+    this.lang = getLanguage();
     this.$i18n.locale = this.$route.params.lang;
   },
   methods: {
@@ -425,9 +426,6 @@ export default {
       this.RregulloreExpanded = !this.RregulloreExpanded;
     }
   },
-  mounted() {
-    this.lang = getLanguage();
-  }
 };
 </script>
 

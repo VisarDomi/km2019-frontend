@@ -18,7 +18,7 @@
         <hr />
         <span class="artist-song">{{getArtist.song}}</span>
       </div>
-      <div class="col-lg-1">
+      <div class="col-lg-1" @click="goToVoto()">
         <img src="@/assets/img/selected.svg" alt class="voto-img" />
       </div>
     </div>
@@ -27,7 +27,7 @@
         <span class="artist-name">{{getArtist.name}}</span>
         <hr />
         <span class="artist-song">{{getArtist.song}}</span>
-        <img src="@/assets/img/selected.svg" alt class="voto-img" />
+        <img src="@/assets/img/selected.svg" alt class="voto-img" @click="goToVoto()" />
       </div>
     </div>
     <div class="button-container" v-if="test(user)">

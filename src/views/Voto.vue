@@ -24,14 +24,19 @@
       </div>
     </div>
 
-    <div class="row voto-artist-row voto-card mt-5" v-for="artist of getArtists" :key="artist.name">
+    <div
+      class="row voto-artist-row voto-card mt-5"
+      v-for="artist of getArtists"
+      :key="artist.name"
+      @click="goToVotoArtist(artist)"
+    >
       <div class="col-lg-7 offset-lg-2 mobile-width-75 rel">
         <span class="artist-name">{{artist.name}}</span>
         <hr />
         <span class="artist-song">{{artist.song}}</span>
       </div>
       <div class="col-lg-1">
-        <img @click="goToVotoArtist(artist)" src="@/assets/img/Ellipse 13.svg" alt class="voto-img" />
+        <img src="@/assets/img/Ellipse 13.svg" alt class="voto-img" />
       </div>
     </div>
     <div class="spacer"></div>

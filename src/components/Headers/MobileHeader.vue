@@ -62,6 +62,7 @@ export default {
         saveLanguage("en");
         this.lang = "en";
       }
+      eventBus.$emit("changeLanguage", this.lang);
     }
   },
   mounted() {

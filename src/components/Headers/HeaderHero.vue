@@ -28,12 +28,29 @@
       </span>
     </div>
     <div
+      v-if="this.lang == 'en'"
       class="col-lg-1 col-sm-1 offset-xl-3 offset-lg-2 offset-sm-2 cmi"
       v-scroll-to="'#juria'"
-    >{{$t('juria')}}</div>
-    <div class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#nder-vite'">ndër vite</div>
-    <div class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#te-reja'">të reja</div>
-    <div class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rregullore</div>
+    >jury</div>
+    <div
+      v-else
+      class="col-lg-1 col-sm-1 offset-xl-3 offset-lg-2 offset-sm-2 cmi"
+      v-scroll-to="'#juria'"
+    >juria</div>
+
+    <div
+      v-if="this.lang == 'en'"
+      class="col-lg-1 col-sm-1 cmi"
+      v-scroll-to="'#nder-vite'"
+    >through years</div>
+    <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#nder-vite'">ndër vite</div>
+
+    <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#te-reja'">news</div>
+    <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#te-reja'">të reja</div>
+
+    <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rules</div>
+    <div v-else class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rregullore</div>
+
     <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-if="this.lang == 'en'">Shqip</div>
     <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-else>English</div>
     <div class="col-lg-1 col-sm-1 high-index">
@@ -66,7 +83,7 @@ import { getLanguage, saveLanguage } from "@/store/services/storage";
 import { eventBus } from "@/main";
 
 export default {
-  name: "HeaderWhite",
+  name: "HeaderHero",
   data() {
     return {
       shouldHide: true,
@@ -100,6 +117,7 @@ export default {
         saveLanguage("en");
         this.lang = "en";
       }
+      eventBus.$emit("changeLanguage", this.lang);
     },
     collapseMenu() {
       var Items = document.getElementsByClassName("cmi");

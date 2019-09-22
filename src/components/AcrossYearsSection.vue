@@ -3,7 +3,8 @@
     <div class="spacer"></div>
     <div class="row go-up--small h-20">
       <div class="col-lg-12 offset-1">
-        <h1 class="header-text">ndër vite</h1>
+        <h1 class="header-text header-text--small" v-if="this.lang == 'en'">Through the years</h1>
+        <h1 class="header-text" v-else>ndër vite</h1>
       </div>
     </div>
     <div class="row h-50">
@@ -14,31 +15,25 @@
         <img src="@/assets/img/Group 158.svg" alt />
       </div>
       <div class="container h-100">
-        <!-- <a @click.prevent="nextSlide">
-          <div class="carousel-right">
-            <img class="img-fluid img-next-arrow" src="@/assets/img/ndervite_right.svg" alt />
-          </div>
-        </a>
-        <a @click.prevent="prevSlide">
-          <div class="carousel-left">
-            <img class="img-fluid img-left-arrow" src="@/assets/img/ndervite_left.svg" alt />
-          </div>
-        </a>-->
         <div class="slider-img-container h-100">
           <div class="embed-responsive embed-responsive-4by3 h-100">
             <iframe
               class="embed-responsive-item"
-              src="https://www.youtube.com/embed/N6zn-y-G2dA"
+              src="https://www.youtube.com/embed/EvktbPe1gV0"
               allowfullscreen
             ></iframe>
           </div>
-          <!-- <p class="year">2017</p> -->
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-9 offset-lg-2">
         <p
+          v-if="this.lang == 'en'"
+          class="description"
+        >The festival ‘Kënga Magjike’ was created in 1999, as a new concept with a different approach to add more values to the Albanian music industry. Throughout the years, this festival turned into one of the most important events on the history of Albanian music. Almost every potential artist of Albania, felt the magic of this scene. Since 2016, the structure of the festival changed, by adding the category ‘New Artist’. After 20 years of experience, this edition will bring new initiatives created by artists and the public themselves like: singing live and voting.</p>
+        <p
+          v-else
           class="description"
         >Festivali Kënga Magjike lindi në vitin 1999, si një alternativë ndryshe, një koncept i ri, një kontribut tjetër në muzikën e lehtë, duke u bërë kështu një prej eventeve më të rëndësishëm në historinë e muzikës shqiptare. Pothuaj të gjithë artistët shqiptarë, e kanë prekur magjinë e kësaj skene. Prej vitit 2016, struktura e festivalit ka ndryshuar, duke shtuar edhe kategorinë New Artist. Pas 20 vitesh eksperiencë, ky edicion sjell të rejat që janë diksutuar dhe kërkuar nga vetë artistët dhe publiku; mënyra e votimit dhe të kënduarit live.</p>
       </div>
@@ -47,6 +42,9 @@
 </template>
 
 <script>
+import { getLanguage, saveLanguage } from "@/store/services/storage";
+import { eventBus } from "@/main";
+
 export default {
   name: "AcrossYearsSection",
   methods: {
@@ -60,13 +58,18 @@ export default {
   components: {},
   data() {
     return {
-      windowWidth: window.innerWidth
+      windowWidth: window.innerWidth,
+      lang: ""
     };
   },
   mounted() {
     window.onresize = () => {
       this.windowWidth = window.innerWidth;
     };
+    eventBus.$on("changeLanguage", payload => {
+      this.lang = payload;
+    });
+    this.lang = getLanguage();
   }
 };
 </script>
@@ -182,6 +185,9 @@ export default {
   line-height: 15rem;
   margin-bottom: 4%; //lg only
   margin-left: 5%;
+  &--small {
+    font-size: 14rem;
+  }
   @include respond(4k-desktop) {
     margin-top: 5%;
     font-size: 25rem;
