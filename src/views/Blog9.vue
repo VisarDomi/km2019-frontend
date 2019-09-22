@@ -119,6 +119,25 @@ export default {
       hoverL: false
     };
   },
+  head: {
+    // To use "this" in the component, it is necessary to return the object through a function
+    meta: [
+      {
+        p: "og:image",
+        c:
+          "https://previews.dropbox.com/p/thumb/AAhv92KcC0OnaZDmTy3FBLEfX2K3WdiQljOXP2ifn0pwliHncRjoN_Ob0dtYPOl7kRGkb6Wy0JPs2JlfdJzuMxGx9jZzWr5NtE2kORMW3nQPaYwq45bgj9QjYy9Oq1hOILX3HWHuwyqWM3Z9JP8aSs1z2_XxY9VFnQH8T98wJv7RsyCCrivSVWdRe06wOgHx3jwc4mXz_5QC98Gzx4OSRuuE2NfokLLPYRcdKCRUS9n7R0nba2a5lgtm4BS2ga6AxOztzn0MWa2cr89DyEqP9Qo6w1HjttDNWXvjUlrFJEUHYUW5VV851qzSjwItSvxodrsfDqnM7a7RM6CVhMwJt-9-/p.jpeg?fv_content=true&size_mode=5"
+      },
+      { p: "og:url", c: "https://kengamagjike.com/blog9" },
+      {
+        p: "og:title",
+        c: "Lindita: Katër femrat shqiptare që kam për zemër..."
+      },
+      {
+        p: "og:description",
+        c: "Rikthehet pas nëntë vitesh në Festivalin Kënga Magjike, Lindita."
+      }
+    ]
+  },
   methods: {
     nextSlide() {
       this.$refs.carousel.goToPage(this.$refs.carousel.getNextPage());
@@ -294,16 +313,16 @@ hr {
 }
 .blog-image {
   object-fit: cover;
-  height: 100%;
-  height: calc(100vh);
   position: fixed;
+  transform: scale(0.6);
+  margin-left: -20rem;
 }
 
 .blog-row {
   height: 100%;
 }
 .image-col {
-  background: salmon;
+  background: #47b8b0;
   padding: 0;
   @include respond(small-screen) {
     height: 45%;
