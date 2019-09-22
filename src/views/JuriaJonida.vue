@@ -25,7 +25,7 @@
           <h3 class="bio-text">bio</h3>
           <h4
             class="bio-description"
-          >Është cilësuar si një prej legjendave të muzikës shqiptare. Artist unik, kantautor, kompozitor dhe autor këngësh mjaft të njohura. Armend Rexhepagiq me gjykimin e tij korrekt, profesional dhe pak shpotitës, ishte pjesë e jurisë së festivalit "Kënga Magjike" për kategorinë New Artist, edhe në edicionin e 20-të.</h4>
+          >Këngëtarja e njohur është fituese e shumë çmimeve të festivaleve muzikore, madje këtë vit ajo, përfaqësoi Shqipërinë në “Eurovision Song Contest 2019”. Përveçse si këngëtare, Jonida Maliqi tashmë njihet edhe si ikonë mode. Në festivalin “Kënga Magjike” ajo ka fituar çmimin e parë në vitin 2008, një festival, ku ajo mban rekordin si një nga këngëtarët me pjesëmarrjen më të lartë (9 herë).</h4>
         </div>
       </div>
 

@@ -25,7 +25,7 @@
           <h3 class="bio-text">bio</h3>
           <h4
             class="bio-description"
-          >Është cilësuar si një prej legjendave të muzikës shqiptare. Artist unik, kantautor, kompozitor dhe autor këngësh mjaft të njohura. Armend Rexhepagiq me gjykimin e tij korrekt, profesional dhe pak shpotitës, ishte pjesë e jurisë së festivalit "Kënga Magjike" për kategorinë New Artist, edhe në edicionin e 20-të.</h4>
+          >Gazetar i suksesshëm, shkrimtar, moderator televiziv dhe radiofonik. Enkel Demi me një karrierë tashmë solide, është njëkohësisht edhe autor i emisioneve të ndryshme televizive dhe autor i dy librave: "Hide mbi kalldrëm" dhe "Gurët e vetmisë". Për herë të parë pjesë e jurisë së festivalit “Kënga Magjike”.</h4>
         </div>
       </div>
 

@@ -25,7 +25,9 @@
           <h3 class="bio-text">bio</h3>
           <h4
             class="bio-description"
-          >Është cilësuar si një prej legjendave të muzikës shqiptare. Artist unik, kantautor, kompozitor dhe autor këngësh mjaft të njohura. Armend Rexhepagiq me gjykimin e tij korrekt, profesional dhe pak shpotitës, ishte pjesë e jurisë së festivalit "Kënga Magjike" për kategorinë New Artist, edhe në edicionin e 20-të.</h4>
+          >
+          Instrumentist i talentuar, pedagog, aktualisht drejtues i shtëpisë së produksionit franko –shqiptare “On Off Productions”. Arben Skënderi është  për herë të dytë anëtar  jurie për kategorinë New Artist, pasi ka qenë pjesë e vlerësimit të artistëve të rinj edhe në “Kënga Magjike 2018”.
+          </h4>
         </div>
       </div>
 
