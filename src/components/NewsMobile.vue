@@ -40,7 +40,7 @@
               <h3 class="home-mobile-date">22.09.2019</h3>
             </div>
           </slide>
-          <slide>
+          <!-- <slide>
             <img
               src="@/assets/img/blog/Blog-11.jpg"
               alt
@@ -62,7 +62,7 @@
 
               <h3 class="home-mobile-date">22.09.2019</h3>
             </div>
-          </slide>
+          </slide>-->
           <slide>
             <img
               src="@/assets/img/blog/Blog-10.jpg"

@@ -31,10 +31,10 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--2" @click="goToBlog('Blog11')">
+          <div class="blog__image blog__image--2" @click="goToBlog('Blog1')">
             <div class="blog__footer">
-              <p class="blog__footer--date">22.09.2019</p>
-              <p class="blog__footer--title">Genti Deda: U kërkoj falje këngëtarëve....</p>
+              <p class="blog__footer--date">14.09.2019</p>
+              <p class="blog__footer--title">Ja kush jane 3 artistët e parë BIG!</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -179,14 +179,14 @@ export default {
     }
     &--2 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-11.jpg");
+        url("../assets/img/blog/Blog-1.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-11.jpg");
+          url("../assets/img/blog/Blog-1.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
