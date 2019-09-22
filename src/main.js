@@ -60,7 +60,6 @@ Vue.use(VueCarousel);
 export const eventBus = new Vue();
 
 router.beforeEach((to, from, next) => {
-  console.log("before each");
   // const lang = to.params.lang;
 
   // if (!["al", "en"].includes(lang)) return next("al");

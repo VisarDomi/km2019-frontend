@@ -4,7 +4,7 @@
       <div class="col-lg-3 col-sm-3 col-6 text-center">
         <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
-      <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToHome()">
+      <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToVoto()">
         <img
           src="@/assets/img/artistet_arrow_right.svg"
           alt
@@ -16,16 +16,20 @@
       <div class="col-lg-7 offset-lg-2">
         <span class="artist-name">{{getArtist.name}}</span>
         <hr />
-        <span class="artist-song">Loose Yourself to dance</span>
+        <span class="artist-song">{{getArtist.song}}</span>
       </div>
       <div class="col-lg-1">
         <img src="@/assets/img/selected.svg" alt class="voto-img" />
       </div>
     </div>
-    <div class="button-container">
-      <b-button class="btn" v-b-modal.my-modal>Dërgo votën tënde</b-button>
+    <div class="button-container" v-if="test(user)">
+      <b-button class="btn" @click="voto()">Dërgo votën tënde</b-button>
+    </div>
+    <div class="button-container" v-else>
+      <b-button class="btn" v-b-modal.my-modal>Rregjistrohu</b-button>
     </div>
     <b-modal id="my-modal">
+      You must only register once to vote
       <amplify-authenticator></amplify-authenticator>
     </b-modal>
   </div>
@@ -35,18 +39,35 @@
 <script>
 import { mapGetters } from "vuex";
 import { GET_ARTIST } from "@/store/actions.type";
+import {
+  START_LOADING,
+  STOP_LOADING,
+  SET_ARTIST
+} from "@/store/mutations.type";
+import { Auth } from "aws-amplify";
+
 export default {
   name: "VotoArtist",
   components: {},
   data() {
-    return {};
+    return {
+      user: {}
+    };
   },
   async mounted() {
     await this.fetchArtist(this.$route.params.id);
+    console.log(getArtist);
+    console.log(this.getArtist);
   },
   methods: {
-    goToHome() {
-      this.$router.push({ name: "Home" });
+    goToVoto() {
+      this.$router.push({ name: "Voto" });
+    },
+    voto() {
+      console.log("Votova");
+    },
+    test(obj) {
+      return Object.keys(obj).length !== 0;
     },
     async fetchArtist(artistId) {
       const TableName = "KM2019-Artist";
@@ -55,10 +76,21 @@ export default {
         TableName,
         id
       };
+      this.$store.commit(START_LOADING);
       this.$store.dispatch(GET_ARTIST, params);
-      console.log(getArtist);
-      console.log(this.getArtist);
+      this.$store.commit(STOP_LOADING);
     }
+  },
+  beforeCreate() {
+    Auth.currentAuthenticatedUser()
+      .then(user => {
+        this.user = user;
+        console.log(this.user);
+      })
+      .catch(() => {
+        console.log("not signed in...");
+        console.log("user: ", this.test(this.user));
+      });
   },
   computed: {
     ...mapGetters(["getArtist"])

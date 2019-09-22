@@ -105,7 +105,11 @@ import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
 // @ is an alias to /src
 import { mapGetters } from "vuex";
 import { GET_ARTIST } from "@/store/actions.type";
-import { SET_ARTIST } from "@/store/mutations.type";
+import {
+  START_LOADING,
+  STOP_LOADING,
+  SET_ARTIST
+} from "@/store/mutations.type";
 
 export default {
   name: "SingleArtist",
@@ -134,9 +138,11 @@ export default {
         TableName,
         id
       };
+      this.$store.commit(START_LOADING);
       this.$store.dispatch(GET_ARTIST, params);
-      console.log(getArtist);
-      console.log(this.getArtist);
+      this.$store.commit(STOP_LOADING);
+      // console.log(getArtist);
+      // console.log(this.getArtist);
     }
   },
   computed: {

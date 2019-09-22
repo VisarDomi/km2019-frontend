@@ -60,17 +60,6 @@ export default {
       windowWidth: window.innerWidth
     };
   },
-  async mounted() {
-    this.$nextTick(() => {
-      window.addEventListener("resize", () => {
-        this.windowWidth = window.innerWidth;
-      });
-    });
-    this.fetchArtists();
-  },
-  computed: {
-    ...mapGetters(["getArtists"])
-  },
   methods: {
     goToVotoArtist(artist) {
       this.$router.push({
@@ -90,7 +79,18 @@ export default {
     goToHome() {
       this.$router.push({ name: "Home" });
     }
-  }
+  },
+  async mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        this.windowWidth = window.innerWidth;
+      });
+    });
+    this.fetchArtists();
+  },
+  computed: {
+    ...mapGetters(["getArtists"])
+  },
 };
 </script>
 

@@ -134,7 +134,6 @@ export default {
   },
   methods: {
     async goToArtist(artist) {
-      console.log(artist.id);
       this.$router.push({
         name: "SingleArtist",
         params: { slug: artist.name, id: artist.id }

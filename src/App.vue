@@ -5,34 +5,34 @@
 </template>
 
 <script>
-import { AmplifyEventBus } from 'aws-amplify-vue'
-import { Auth } from 'aws-amplify'
-
+import { AmplifyEventBus } from "aws-amplify-vue";
+import { Auth } from "aws-amplify";
 
 export default {
   name: "App",
   data() {
     return {
       signedIn: false
-    }
+    };
   },
   beforeCreate() {
-    AmplifyEventBus.$on('authState', info => {
-      if (info === 'signedIn') {
-        this.signedIn = true
-        this.$router.push('/voto')
+    AmplifyEventBus.$on("authState", info => {
+      if (info === "signedIn") {
+        this.signedIn = true;
+        // this.$router.push('/voto')
+        this.$router.go();
       }
-      if (info === 'signedOut') {
-        this.$router.push('/auth')
-        this.signedIn = false
+      if (info === "signedOut") {
+        this.$router.push("/auth");
+        this.signedIn = false;
       }
     });
 
     Auth.currentAuthenticatedUser()
       .then(user => {
-        this.signedIn = true
+        this.signedIn = true;
       })
-      .catch(() => this.signedIn = false)
+      .catch(() => (this.signedIn = false));
   }
 };
 </script>
@@ -54,6 +54,6 @@ export default {
 
 .overlay-left {
   background: #0e1032 !important;
-  z-index: 9999999; 
+  z-index: 9999999;
 }
 </style>
