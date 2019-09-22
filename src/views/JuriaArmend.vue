@@ -25,7 +25,7 @@
           <h3 class="bio-text">bio</h3>
           <h4
             class="bio-description"
-          >Është cilësuar si një prej legjendave të muzikës shqiptare. Artist unik, kantautor, kompozitor dhe autor këngësh mjaft të njohura. Armend Rexhepagiq me gjykimin e tij korrekt, profesional dhe pak shpotitës, ishte pjesë e jurisë së festivalit "Kënga Magjike" për kategorinë New Artist, edhe në edicionin e 20-të.</h4>
+          >Është cilësuar si një prej legjendave të muzikës shqiptare. Artist unik, kantautor, kompozitor dhe autor këngësh mjaft të njohura, tashmë për të dytin vit anëtar i jurisë në “Kënga Magjike”. Armend Rexhepagiqi, me reagimet e tij prej showman-i, ndërthurur me gjykimin e tij të thellë profesional, vitin e kaluar, fitoi jo vetëm simpatinë e publikut, por edhe të vetë konkurrentëve.</h4>
         </div>
       </div>
 

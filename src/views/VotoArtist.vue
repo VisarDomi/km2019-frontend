@@ -34,11 +34,11 @@
       <b-button class="btn" @click="voto()">Dërgo votën tënde</b-button>
     </div>
     <div class="button-container" v-else>
-      <b-button class="btn" v-b-modal.my-modal>Rregjistrohu</b-button>
+      <b-button class="btn" v-b-modal.my-modal>Voto</b-button>
     </div>
     <div class="spacer"></div>
     <b-modal id="my-modal">
-      You must only register once to vote
+      You must be registered to vote
       <amplify-authenticator></amplify-authenticator>
     </b-modal>
     <Footer v-if="windowWidth > 770" />

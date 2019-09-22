@@ -63,7 +63,7 @@ export default new Router({
       meta: { transition: "overlay-right" }
     },
     {
-      path: "/artist/:slug",
+      path: "/artist/:slug/:id",
       name: "SingleArtist",
       component: SingleArtist,
       meta: setMeta("SingleArtist", true)
@@ -75,7 +75,7 @@ export default new Router({
       meta: { transition: "overlay-left" }
     },
     {
-      path: "/voto-artist/:slug",
+      path: "/voto-artist/:slug/:id",
       name: "VotoArtist",
       component: VotoArtist,
       meta: setMeta("VotoArtist", true)

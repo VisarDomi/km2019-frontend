@@ -25,7 +25,7 @@
           <h3 class="bio-text">bio</h3>
           <h4
             class="bio-description"
-          >Është cilësuar si një prej legjendave të muzikës shqiptare. Artist unik, kantautor, kompozitor dhe autor këngësh mjaft të njohura. Armend Rexhepagiq me gjykimin e tij korrekt, profesional dhe pak shpotitës, ishte pjesë e jurisë së festivalit "Kënga Magjike" për kategorinë New Artist, edhe në edicionin e 20-të.</h4>
+          >Ata janë një çift DJ, çift jo vetëm profesionalisht. Erida dhe Arbri Kadena, një çift bashkëshortësh, të cilët jetojnë mes dy jetësh; asaj të ditës dhe asaj të natës. Veç profesioneve përkatëse, ata prej vitesh performojnë muzikë në clubet më në zë në Shqipëri. Viti 2019 ishte mjaft i suksesshëm për çiftin e DJ-ve. Ata janë dy, por a do të kenë të dy të njëjtin mendim apo do të kenë kontradikta, sepse vota e tyre në këtë juri, do të vlejë 1.</h4>
         </div>
       </div>
 
