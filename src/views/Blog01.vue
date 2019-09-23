@@ -119,7 +119,7 @@ export default {
       {
         p: "og:image",
         c:
-          "https://previews.dropbox.com/p/thumb/AAhWJg81YsX6lAsMiG9e97vkk0HEsWDdOlYkyct1iChmj19Y-UPIAUi0_K1nrlPlcPapXsOtgWLZu40gxfjZG6SSQA_GOHrn-gQujs7G4cmxsSCmYHBtfZbGdFyyiqJc-sq68I_jwPAUkBGgnNhEi3CdGE1GiN34frK89Z9d5ZgNOANvNpr9g_yahj5fixt7ffoJuAEHQk-DUww8FQ2THZJOpmKJXKcKAolqw1_DzHkLjqI-2I9aL1L6ykt4Uw-xEHVllHiFMBFDUFQ433lLaxybBvGgoikO-Im1Vkc4H-knVZXqRfGa8Ep2zLIFr8Uv6DMh3BYNqd_h6EH4Jkjxs8-kEHk_e0abQK1MLINBBbY9hQ/p.jpeg?fv_content=true&size_mode=5"
+          "https://s3.eu-west-1.amazonaws.com/kengamagjike2019/fdxghgdfh%2F%2FGroup%20168.jpg"
       },
       { p: "og:url", c: "https://kengamagjike.com/blog01" },
       {
