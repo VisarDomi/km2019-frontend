@@ -22,7 +22,8 @@ module.exports = {
           "/blog9",
           "/blog10",
           "/blog11",
-          "/blog12"
+          "/blog12",
+          "/artist/Lindita/232bd58d-ff5d-41ad-a95b-eac60fdb5cb1"
         ]
       })
     ]

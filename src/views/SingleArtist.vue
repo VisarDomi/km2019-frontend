@@ -90,6 +90,46 @@ export default {
       artists: []
     };
   },
+  head: {
+    meta: [
+      {
+        p: "og:image",
+        c: "https://s3.eu-west-1.amazonaws.com/kengamagjike2019/Artists%2F%2FProfileL.jpg"
+      },
+      {
+        p: "og:url",
+        c: "https://kengamagjike.com/artist/Lindita/232bd58d-ff5d-41ad-a95b-eac60fdb5cb1"
+      },
+      {
+        p: "og:title",
+        c: "Lindita"
+      },
+      {
+        p: "og:description",
+        c: "Description"
+      }
+    ]
+  },
+  // head: {
+  //   meta: [
+  //     {
+  //       p: "og:image",
+  //       c: () => {return this.getArtist.drobboxImg}
+  //     },
+  //     {
+  //       p: "og:url",
+  //       c: () => { return this.$route.path }
+  //     },
+  //     {
+  //       p: "og:title",
+  //       c: () => { return this.getArtist.name }
+  //     },
+  //     {
+  //       p: "og:description",
+  //       c: () => { return this.getArtist.song }
+  //     }
+  //   ]
+  // },
   methods: {
     goToArtists() {
       this.$router.push({ name: "Artists" });
