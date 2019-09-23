@@ -26,43 +26,19 @@
               @click="goToBlog('Blog9')"
             />
             <div class="title-date-div">
+              <h3 class="home-mobile-date">22.09.2019</h3>
               <h1
                 class="blog-title-section"
                 @click="goToBlog('Blog9')"
                 v-if="this.lang == 'en'"
-              >Lindita: Four albanian wemen that are awesome...</h1>
+              >Lindita: Four albanian women that are awesome...</h1>
               <h1
                 class="blog-title-section"
                 @click="goToBlog('Blog9')"
                 v-else
               >Lindita: Katër femrat shqiptare që kam për zemër...</h1>
-
-              <h3 class="home-mobile-date">22.09.2019</h3>
             </div>
           </slide>
-          <!-- <slide>
-            <img
-              src="@/assets/img/blog/Blog-11.jpg"
-              alt
-              class="img-fluid"
-              style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog11')"
-            />
-            <div class="title-date-div">
-              <h1
-                class="blog-title-section"
-                @click="goToBlog('Blog11')"
-                v-if="this.lang == 'en'"
-              >Genti Deda: I apologize to the singers....</h1>
-              <h1
-                class="blog-title-section"
-                @click="goToBlog('Blog11')"
-                v-else
-              >Genti Deda: U kërkoj falje këngëtarëve....</h1>
-
-              <h3 class="home-mobile-date">22.09.2019</h3>
-            </div>
-          </slide>-->
           <slide>
             <img
               src="@/assets/img/blog/Blog-10.jpg"
@@ -72,6 +48,7 @@
               @click="goToBlog('Blog10')"
             />
             <div class="title-date-div">
+              <h3 class="home-mobile-date">22.09.2019</h3>
               <h1
                 class="blog-title-section"
                 @click="goToBlog('Blog10')"
@@ -82,8 +59,6 @@
                 @click="goToBlog('Blog10')"
                 v-else
               >Rea Nuhu gjen në “E Diela Shqiptare” veshjet e babait...</h1>
-
-              <h3 class="home-mobile-date">22.09.2019</h3>
             </div>
           </slide>
           <slide>
@@ -95,6 +70,7 @@
               @click="goToBlog('Blog11')"
             />
             <div class="title-date-div">
+              <h3 class="home-mobile-date">22.09.2019</h3>
               <h1
                 class="blog-title-section"
                 @click="goToBlog('Blog11')"
@@ -105,8 +81,6 @@
                 @click="goToBlog('Blog11')"
                 v-else
               >Genti Deda "zbulon" shoqen e zemrës.</h1>
-
-              <h3 class="home-mobile-date">22.09.2019</h3>
             </div>
           </slide>
           <slide>
@@ -118,6 +92,7 @@
               @click="goToBlog('Blog12')"
             />
             <div class="title-date-div">
+              <h3 class="home-mobile-date">22.09.2019</h3>
               <h1
                 class="blog-title-section"
                 @click="goToBlog('Blog12')"
@@ -128,61 +103,11 @@
                 @click="goToBlog('Blog12')"
                 v-else
               >Nisin konkurimin “New Artist”, pesë të parët nën “lupën” e jurisë</h1>
-
-              <h3 class="home-mobile-date">22.09.2019</h3>
             </div>
           </slide>
         </carousel>
       </div>
     </div>
-
-    <!-- <a @click.prevent="nextSlide">
-      <div class="carousel-right" >
-        <img class="img-fluid img-next-arrow" src="@/assets/img/button next_posts.svg" alt />
-      </div>
-    </a>
-    <a @click.prevent="prevSlide">
-      <div class="carousel-left">
-        <img class="img-fluid img-left-arrow" src="@/assets/img/button previous_posts.svg" alt />
-      </div>
-    </a>-->
-    <!-- 
-
-    <div class="row  justify-content-center h-80" style="width:100%;">
-      <carousel
-        ref="carouselNewsMobile"
-        :perPage="1"
-        :paginationEnabled="false"
-        :navigationEnabled="false"
-      >
-        <slide>
-          <div class=" slide-column">
-            <img src="@/assets/img/blog/Blog-0-gray.jpg" class="img-blog img-fluid" alt="">
-            <h1 class="blog-title" @click="goToBlog('Blog0')">Kënga Magjike, këtë vit 6 anëtarë jurie</h1>
-
-            <h3 class="date">05.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class=" slide-column" >
-            <img src="@/assets/img/blog/Blog-1.jpg" class="img-blog img-fluid" alt="">
-            <h1 class="blog-title" @click="goToBlog('Blog1')">Ja kush jane 3 artistët e parë BIG! </h1>
-
-            <h3 class="date">14.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class=" slide-column" >
-            <img src="@/assets/img/blog/Blog-01-gray.jpg" class="img-blog img-fluid" alt="">
-            <h1 class="blog-title" @click="goToBlog('Blog01')">Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
-
-            <h3 class="date">15.09.2019</h3>
-          </div>
-        </slide>
-      </carousel>
-    </div>
-
-    -->
     <div class="row ml-0" style>
       <div class="text-center ml-auto mr-auto">
         <a @click="goToBlogs()" class="btn more-btn" style="color:white;">Më shumë lajme</a>
@@ -316,6 +241,8 @@ export default {
   font-weight: 700;
   font-size: 1.8rem;
   padding: 0.6rem;
+
+  margin-top: 40%;
   // left: 2rem;
 }
 
@@ -332,6 +259,7 @@ export default {
   padding-left: 10%;
   font-size: 4.5rem;
   line-height: 1;
+  margin-top: 7%;
 }
 
 .w-108 {
@@ -363,7 +291,7 @@ export default {
 
 .btn {
   padding: 0.5rem 7rem;
-  color: white;
+  color: white !important;
   border: 2px solid white;
   border-radius: 10rem;
   font-family: Ubuntu;
@@ -371,6 +299,10 @@ export default {
   font-size: 3rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
+}
+
+a:not([href]):not([tabindex]) {
+  color: white !important;
 }
 
 .mt-6 {

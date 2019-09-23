@@ -53,7 +53,7 @@
         <div class="col-lg-3" v-for="artist of artists" :key="artist.id">
           <div class="artist-card abs-bottom" @click="goToArtist(artist)">
             <div class="img-container">
-              <img src="@/assets/img/Kejsi Tola.svg" alt />
+              <img :src="artist.img" alt />
             </div>
             <p class="artist-card__name go-up--small">{{artist.name}}</p>
             <br />

@@ -20,76 +20,8 @@
       </div>
     </div>
 
-    <!-- <div class="row mx-6 row-artists">
-      <div class="col-lg-3">
-        <div class="artist-card" @click="goToArtist()">
-          <div class="h-75 artist-card">
-            <div class="img-container">
-              <img src="@/assets/img/Soni Malaj.svg" alt />
-            </div>
-            <p class="artist-card__name go-up--small">Soni Malaj</p>
-            <p class="artist-card__song">Loose Yourself to Dance</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="artist-card" @click="goToArtist()">
-          <div class="h-75 artist-card">
-            <div class="img-container">
-              <img src="@/assets/img/Eneda Tarifa.svg" alt />
-            </div>
-            <p class="artist-card__name go-up--small">Eneda Tarifa</p>
-            <p class="artist-card__song">Loose Yourself to Dance</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="artist-card" @click="goToArtist()">
-          <div class="h-75 artist-card">
-            <div class="img-container">
-              <img src="@/assets/img/Kejsi Tola.svg" alt />
-            </div>
-            <p class="artist-card__name go-up--small">Kejsi Tola</p>
-            <p class="artist-card__song">Loose Yourself to Dance</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="artist-card" @click="goToArtist()">
-          <div class="h-75 artist-card">
-            <div class="img-container">
-              <img src="@/assets/img/Klajdi Haruni.svg" alt />
-            </div>
-            <p class="artist-card__name go-up--small">Klajdi Haruni</p>
-            <p class="artist-card__song">Loose Yourself to Dance</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="artist-card" @click="goToArtist()">
-          <div class="h-75 artist-card">
-            <div class="img-container">
-              <img src="@/assets/img/Rozana Radi.svg" alt />
-            </div>
-            <p class="artist-card__name go-up--small">Rozana Radi</p>
-            <p class="artist-card__song">Loose Yourself to Dance</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="artist-card" @click="goToArtist()">
-          <div class="h-75 artist-card">
-            <div class="img-container">
-              <img src="@/assets/img/Alar Band.svg" alt />
-            </div>
-            <p class="artist-card__name go-up--small">Alar Band</p>
-            <p class="artist-card__song">Loose Yourself to Dance</p>
-          </div>
-        </div>
-      </div>
-    </div>-->
     <div class="row mx-6 row-artists">
-      <div class="col-lg-3" v-for="artist of getArtists" :key="artist.id">
+      <div class="col-lg-3" v-for="artist of this.artists" :key="artist.id">
         <div class="artist-card" @click="goToArtist(artist)">
           <div class="h-75 artist-card">
             <div class="img-container">
@@ -150,6 +82,27 @@ export default {
         Limit
       };
       await this.$store.dispatch(LIST_ARTIST, params);
+      for (let i in [1, 2, 3, 4, 5]) {
+        this.artists.push({});
+      }
+      for (let artist of this.getArtists) {
+        if (artist.name == "Lindita") {
+          this.artists[0] = artist;
+          // continue
+        }
+        if (artist.name == "Genti Deda") {
+          this.artists[1] = artist;
+        }
+        if (artist.name == "Rea Nuhu") {
+          this.artists[2] = artist;
+        }
+        if (artist.name == "Khuba") {
+          this.artists[3] = artist;
+        }
+        if (artist.name == "Sisma") {
+          this.artists[4] = artist;
+        }
+      }
     }
   },
   async mounted() {

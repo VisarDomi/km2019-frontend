@@ -33,8 +33,8 @@
 
     <HeroSection />
 
-    <!-- <ArtistsSection v-if="windowWidth > 750" />
-    <ArtistsMobile v-else />-->
+    <ArtistsSection v-if="windowWidth > 750" />
+    <ArtistsMobile v-else />
 
     <AcrossYearsSection v-if="windowWidth > 750" />
     <AcrossYearsMobile v-else />

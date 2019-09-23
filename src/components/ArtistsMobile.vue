@@ -293,7 +293,8 @@ export default {
   position: relative;
   width: 100%;
   z-index: 4;
-  margin-top: 1rem;
+  margin-top: -2rem;
+
   img {
     height: 100%;
     width: 100%;
