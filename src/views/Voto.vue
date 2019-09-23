@@ -69,6 +69,26 @@ export default {
       artists: [],
     };
   },
+  head: {
+    meta: [
+      {
+        p: "og:image",
+        c: "https://previews.dropbox.com/p/orig/AAiw-cYaloTVLdWD8fWErzvYqDLTBW31Idi9FkwScC84ADKkfwY9ZApAz4CuQBXOPlBlHc2jOtEJWjkx0TY6yIlwYf49i_9RsWMlUFmHPTrmeOJjLcuSLzVFFM0hmTlNjkxvlRBoQ_g74sUY5ixqtNYcmuVGeQXrxZrfnWihtClEEBh43Dn2yrMMWaSQ_V75H5Walckh-9iXFeft7-1LRbrtCCtSF1Dy74g0puG8LxW-OoCML152ozLJvWELOpfR5dUUjnbjiodQp9diiEkhB75LupOIdOd6Ye14otJMoIfQga2pvBg8mIoqUezKysB5bhs/p.svg?fv_content=true&size_mode=5"
+      },
+      {
+        p: "og:url",
+        c: "https://kengamagjike.com/voto"
+      },
+      {
+        p: "og:title",
+        c: "Kenga Magjike 2019"
+      },
+      {
+        p: "og:description",
+        c: "Voto kengetarin tuaj te preferuar..."
+      }
+    ]
+  },
   methods: {
     goToVotoArtist(artist) {
       this.$router.push({
