@@ -19,7 +19,7 @@
         <a class="footer-item" href="/#te-reja">të reja</a>
       </div>
       <div class="col-md-1 temporary-spread">
-        <a class="footer-item" @click="gotoRregullore()">rregullore</a>
+        <div class="footer-item" @click="gotoRregullore()">rregullore</div>
       </div>
       <!-- <div class="col-md-1 pl-6">
         <p class="footer-item">voto</p>
@@ -132,7 +132,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
-
+a,
+a:focus,
+a:visited {
+  // color: black !important;
+}
 .height-5 {
   height: 5% !important;
 }

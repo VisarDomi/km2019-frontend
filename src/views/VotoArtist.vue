@@ -34,13 +34,14 @@
       <b-button class="btn" @click="voto()" :disabled="this.disabled">Dërgo votën tënde</b-button>
     </div>
     <div class="button-container" v-else>
-      <b-button class="btn" v-b-modal.my-modal>Voto</b-button>
+      <b-button class="btn centered-voto" v-b-modal.my-modal>Voto</b-button>
     </div>
     <div class="spacer"></div>
     <b-modal id="my-modal">
       <h5 class="m-2" style="text-align: center;">Sign in or create a new account to vote</h5>
       <div id="auth">
-        <amplify-authenticator :authConfig="authConfig"></amplify-authenticator>
+        <!-- <amplify-authenticator :authConfig="authConfig"></amplify-authenticator> -->
+        <AmplifyAuthenticator></AmplifyAuthenticator>
       </div>
     </b-modal>
     <Footer v-if="windowWidth > 770" />
@@ -54,6 +55,8 @@
 import Footer from "@/components/Footer/FooterWhite.vue";
 import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
 import FooterMobile from "@/components/Footer/FooterWhiteMobile.vue";
+
+import AmplifyAuthenticator from "@/components/AwsCustomComponent.vue";
 
 import { mapGetters } from "vuex";
 import { GET_ARTIST, PUT_VOTES } from "@/store/actions.type";
@@ -71,7 +74,8 @@ export default {
   components: {
     Footer,
     FooterSmall,
-    FooterMobile
+    FooterMobile,
+    AmplifyAuthenticator
   },
   data() {
     return {
@@ -183,6 +187,16 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+.centered-voto {
+  margin-left: 25%;
+}
+
+.Input__input___2Sh1s {
+  @include respond(phone) {
+    width: 75% !important;
+  }
+}
 
 .spacer {
   height: 16rem;
