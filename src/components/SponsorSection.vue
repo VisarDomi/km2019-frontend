@@ -84,6 +84,13 @@
               alt
             />
           </div>
+          <div class="col-3">
+            <img
+              class="img-fluid img-sponsor"
+              src="@/assets/img/sponsors/15_curaprox_logo.png"
+              alt
+            />
+          </div>
         </div>
       </div>
 
