@@ -38,10 +38,13 @@
     </div>
     <div class="spacer"></div>
     <b-modal id="my-modal">
-      <h5 class="m-2" style="text-align: center;">Sign in or create a new account to vote</h5>
-      <div id="auth">
-        <!-- <amplify-authenticator :authConfig="authConfig"></amplify-authenticator> -->
-        <AmplifyAuthenticator></AmplifyAuthenticator>
+      <h5
+        class="m-2"
+        style="text-align: center; font-size: 14px; font-weight: 700;"
+      >Sign in or create a new account to vote</h5>
+      <Loading v-if="getIsLoading" />
+      <div id="auth" v-else>
+        <amplify-authenticator :authConfig="authConfig"></amplify-authenticator>
       </div>
     </b-modal>
     <Footer v-if="windowWidth > 770" />
@@ -55,8 +58,7 @@
 import Footer from "@/components/Footer/FooterWhite.vue";
 import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
 import FooterMobile from "@/components/Footer/FooterWhiteMobile.vue";
-
-import AmplifyAuthenticator from "@/components/AwsCustomComponent.vue";
+import Loading from "@/components/Loading.vue";
 
 import { mapGetters } from "vuex";
 import { GET_ARTIST, PUT_VOTES } from "@/store/actions.type";
@@ -75,7 +77,7 @@ export default {
     Footer,
     FooterSmall,
     FooterMobile,
-    AmplifyAuthenticator
+    Loading
   },
   data() {
     return {
@@ -137,7 +139,10 @@ export default {
         accessToken
       };
       console.log("put send");
+      this.$store.commit(START_LOADING);
       await this.$store.dispatch(PUT_VOTES, params);
+      this.$store.commit(STOP_LOADING);
+
       this.disabled = true;
       // if (this.getVote === "Voted.") {
       // }

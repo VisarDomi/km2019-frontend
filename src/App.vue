@@ -62,6 +62,29 @@ a:not([href]):not([tabindex]) {
   text-decoration: none;
 }
 
+[class^="Form__formSection"]{
+  color: red !important;
+  font-size: 14px;
+}
+[class^="Input__input"]{
+  @include respond(phone){
+    width: 75%;
+    }
+    
+}
+#auth{
+  overflow: hidden;
+}
+[class^="Button__button"]{
+  @include respond(phone){
+    width: 75% !important;
+  }
+}
+[class^="Section__sectionFooterSecondaryContent"]{
+  @include respond(phone){
+    text-align: left;
+  }
+}
 // for amazon
 :root {
   /* Colors */

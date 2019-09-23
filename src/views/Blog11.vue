@@ -117,7 +117,7 @@ export default {
       { p: "og:url", c: "https://kengamagjike.com/blog11" },
       {
         p: "og:title",
-        c: "Genti Deda: U kërkoj falje këngëtarëve...."
+        c: "Genti Deda 'zbulon' shoqen e zemrës."
       },
       {
         p: "og:description",
