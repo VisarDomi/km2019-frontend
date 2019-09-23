@@ -16,11 +16,12 @@
       <div class="row">
         <div class="col-lg-7">
           <div class="embed-responsive embed-responsive-16by9">
-            <iframe
+            <!-- <iframe
               class="embed-responsive-item"
               src="https://www.youtube.com/embed/GnxAhRj38Qk"
               allowfullscreen
-            ></iframe>
+            ></iframe>-->
+            <iframe class="embed-responsive-item" :src="getArtist.video" allowfullscreen></iframe>
           </div>
         </div>
         <div class="col-lg-5 top-padded-col">
@@ -146,6 +147,15 @@ export default {
     await this.fetchArtist(this.$route.params.id);
     this.fetchArtists();
 
+    let artistPage = document.getElementsByClassName("artist-page")[0];
+    console.log("artistPage: ", artistPage);
+    artistPage.style.background =
+      "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
+      this.getArtist["bg-img"] +
+      "), no-repeat ";
+
+    artistPage.style.backgroundSize = "cover";
+    artistPage.style.backgroundAttachment = "fixed";
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
@@ -298,8 +308,8 @@ body {
     // height:100vh;
   }
   // background: lightsalmon;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../src/assets/img/sonimala2j.png") no-repeat;
+  // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  //   url("../../src/assets/img/sonimala2j.png") no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
