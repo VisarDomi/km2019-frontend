@@ -27,7 +27,8 @@ module.exports = {
           "/artist/Genti%20Deda/264ddaaf-c658-4b12-ae5d-55de99e5c8cc",
           "/artist/Rea%20Nuhu/5bb5c061-b2b7-4cf5-9f7f-85c8de94d231",
           "/artist/Khuba/7b7b993b-20bd-4cd4-b17a-d6a4fc6c63d6",
-          "/artist/Sisma/8a2ed33d-38db-4558-a022-a1a120ff5228"
+          "/artist/Sisma/8a2ed33d-38db-4558-a022-a1a120ff5228",
+          "/voto"
         ]
       })
     ]
