@@ -12,6 +12,7 @@
         :class="{'ml-6': !nrArtists(6)}"
         v-for="(artist, index) in this.artists"
         :key="artist.name"
+        @click="goToArtist(artist)"
       >
         <div class="artist-card abs-bottom" :class="{'abs-bottom--up': index % 2 === 0}">
           <div>
@@ -84,6 +85,12 @@ export default {
         return true;
       }
       return false;
+    },
+    goToArtist(artist) {
+      this.$router.push({
+        name: "SingleArtist",
+        params: { slug: artist.name, id: artist.id }
+      });
     },
     myClass() {
       let nrColumns = this.artists2Row.length;
