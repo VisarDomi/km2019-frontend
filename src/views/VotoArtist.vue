@@ -32,15 +32,15 @@
     </div>
     <div class="button-container" v-if="test(user)">
       <b-button class="btn" @click="voto()" :disabled="this.disabled">Dërgo votën tënde</b-button>
+      <div>Sending</div>
     </div>
     <div class="button-container" v-else>
       <b-button class="btn centered-voto" v-b-modal.my-modal>Voto</b-button>
     </div>
     <div class="spacer"></div>
     <b-modal id="my-modal">
-      <h5 class="m-2" style="text-align: center; font-size: 14px; font-weight: 700;">
-        <div v-if="getIsLoading">Loading</div>
-        <div v-else>Sign in or create a new account to vote</div>
+      <h5 class="m-2" style="text-align: center; font-size: 12px; font-weight: 700;">
+        <div>Loading...</div>
       </h5>
 
       <div id="auth">
@@ -146,7 +146,7 @@ export default {
       await this.$store.dispatch(PUT_VOTES, params).catch(err => {
         console.log("err is", err);
         this.$store.commit(STOP_LOADING);
-        this.isError = err.response.status
+        this.isError = err.response.status;
         console.log("this.isError is", this.isError);
       });
       this.disabled = true;
