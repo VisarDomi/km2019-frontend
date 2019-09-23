@@ -32,7 +32,8 @@
     </div>
     <div class="button-container" v-if="test(user)">
       <b-button class="btn" @click="voto()" :disabled="this.disabled">Dërgo votën tënde</b-button>
-      <div>Sending</div>
+      <div v-if="getIsLoading" class="my-text-message">Duke derguar</div>
+      <div v-if="voteSent" class="my-text-message">Vota u dergua</div>
     </div>
     <div class="button-container" v-else>
       <b-button class="btn centered-voto" v-b-modal.my-modal>Voto</b-button>
@@ -83,6 +84,7 @@ export default {
   },
   data() {
     return {
+      voteSent: false,
       isError: null,
       windowWidth: window.innerWidth,
       user: {},
@@ -147,9 +149,11 @@ export default {
         console.log("err is", err);
         this.$store.commit(STOP_LOADING);
         this.isError = err.response.status;
+        this.voteSent = false;
         console.log("this.isError is", this.isError);
       });
       this.disabled = true;
+      this.voteSent = true;
       this.$store.commit(STOP_LOADING);
       // if (this.getVote === "Voted.") {
       // }
@@ -217,6 +221,18 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+.my-text-message {
+  color: white;
+  font-size: 5rem;
+  font-weight: 800;
+  margin-left: 14%;
+  @include respond(phone){
+    font-size: 3rem;
+  margin-left: 22%;
+
+  }
+}
 
 .centered-voto {
   margin-left: 25%;
