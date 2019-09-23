@@ -38,8 +38,10 @@
     </div>
     <div class="spacer"></div>
     <b-modal id="my-modal">
-      You must be registered to vote
-      <amplify-authenticator></amplify-authenticator>
+      <h5 class="m-2" style="text-align: center;">Sign in or create a new account to vote</h5>
+      <div id="auth">
+        <amplify-authenticator :authConfig="authConfig"></amplify-authenticator>
+      </div>
     </b-modal>
     <Footer v-if="windowWidth > 770" />
     <FooterSmall v-if="windowWidth < 770 && windowWidth > 600" />
@@ -62,7 +64,7 @@ import {
 } from "@/store/mutations.type";
 import { Auth } from "aws-amplify";
 import { PUT } from "@/store/actions.type";
-import {aws_user_pools_web_client_id} from "@/main"
+import { aws_user_pools_web_client_id } from "@/main";
 
 export default {
   name: "VotoArtist",
@@ -75,7 +77,40 @@ export default {
     return {
       windowWidth: window.innerWidth,
       user: {},
-      disabled: false
+      disabled: false,
+      authConfig: {
+        signInConfig: {
+          header: "Sign In"
+        },
+        signUpConfig: {
+          header: "Sign Up",
+          hideAllDefaults: true,
+          signUpFields: [
+            {
+              label: "Username",
+              key: "username",
+              required: true,
+              displayOrder: 1,
+              type: "string"
+            },
+            {
+              label: "Email",
+              key: "email",
+              required: true,
+              displayOrder: 2,
+              type: "string",
+              signUpWith: true
+            },
+            {
+              label: "Password",
+              key: "password",
+              required: true,
+              displayOrder: 3,
+              type: "password"
+            }
+          ]
+        }
+      }
     };
   },
   methods: {
@@ -87,8 +122,11 @@ export default {
       const id = this.$route.params.id;
       const username = this.user.username;
       const storage = this.user.storage;
-      const accessToken = storage[`CognitoIdentityServiceProvider.${aws_user_pools_web_client_id}.${username}.accessToken`]
-      console.log("accessToken", accessToken)
+      const accessToken =
+        storage[
+          `CognitoIdentityServiceProvider.${aws_user_pools_web_client_id}.${username}.accessToken`
+        ];
+      console.log("accessToken", accessToken);
       const params = {
         TableName,
         artistId: id,

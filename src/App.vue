@@ -56,4 +56,27 @@ export default {
   background: #0e1032 !important;
   z-index: 9999999;
 }
+
+a:not([href]):not([tabindex]) {
+  color: #007bff !important;
+  text-decoration: none;
+}
+
+// for amazon
+:root {
+  /* Colors */
+  --amazonOrange: #007bff; /* Redefined to dark green */
+  --lightAmazonOrange: #31465f;
+  --darkAmazonOrange: #152939;
+  --squidInk: #232f3e;
+  --lightSquidInk: #31465f;
+  --deepSquidInk: #152939;
+  --grey: #828282;
+  --lightGrey: #c4c4c4;
+  --silver: #e1e4ea;
+  --darkBlue: #31465f;
+  --red: #dd3f5b;
+  --white: #ffffff;
+  --light-blue: #00a1c9;
+}
 </style>
