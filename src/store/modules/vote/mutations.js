@@ -1,4 +1,4 @@
-import { SET_VOTES, SET_VOTE } from "../../mutations.type";
+import { SET_VOTES, SET_VOTE, SET_VOTE_ERR } from "../../mutations.type";
 
 export const mutations = {
   [SET_VOTES](state, votes) {
@@ -6,5 +6,8 @@ export const mutations = {
   },
   [SET_VOTE](state, vote) {
     state.vote = vote;
+  },
+  [SET_VOTE_ERR](state, voteErr) {
+    state.voteErr = voteErr;
   }
 };

@@ -7,6 +7,7 @@ export const SET_ARTISTS = "setArtists";
 export const SET_ARTIST = "setArtist";
 
 export const SET_VOTE = "setVote";
+export const SET_VOTE_ERR = "setVoteErr";
 export const SET_VOTES = "setVotes";
 
 // album
