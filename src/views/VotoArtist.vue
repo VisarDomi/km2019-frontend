@@ -160,6 +160,13 @@ export default {
     test(obj) {
       return Object.keys(obj).length !== 0;
     },
+
+    goToHome() {
+      this.$router.push({
+        name: "Home",
+        params: { lang: "al" }
+      });
+    },
     async fetchArtist(artistId) {
       const TableName = "KM2019-Artist";
       const id = artistId;
@@ -168,20 +175,31 @@ export default {
         id
       };
       this.$store.commit(START_LOADING);
-      this.$store.dispatch(GET_ARTIST, params);
+      await this.$store.dispatch(GET_ARTIST, params);
       this.$store.commit(STOP_LOADING);
     }
   },
-  computed: {
-    ...mapGetters(["getArtist", "getIsLoading", "getVote"])
-  },
   async mounted() {
     await this.fetchArtist(this.$route.params.id);
+
+    let votoPage = document.getElementsByClassName("voto-artist")[0];
+    console.log(votoPage);
+    votoPage.style.background =
+      "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
+      this.getArtist["bg-img"] +
+      "), no-repeat ";
+    votoPage.style.backgroundPosition = "center top";
+    votoPage.style.backgroundSize = "cover";
+    votoPage.style.backgroundAttachment = "fixed";
+
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
     });
+  },
+  computed: {
+    ...mapGetters(["getArtist", "getIsLoading", "getVote"])
   },
   beforeCreate() {
     Auth.currentAuthenticatedUser()
@@ -277,11 +295,11 @@ hr {
 
 .voto-artist {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../../src/assets/img/sonimala2j.png") no-repeat;
-  background-size: cover;
-  background-position: center top;
-  background-attachment: fixed;
+  // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  //   url("../../src/assets/img/sonimala2j.png") no-repeat;
+  // background-size: cover;
+  // background-position: center top;
+  // background-attachment: fixed;
 }
 .logo-img {
   width: 50%;
