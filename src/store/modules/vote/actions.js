@@ -1,6 +1,6 @@
 import { ApiService } from "../../services/api";
 import { LIST_VOTE, PUT_VOTES } from "../../actions.type";
-import { SET_VOTES, SET_VOTE } from "../../mutations.type";
+import { SET_VOTES, SET_VOTE, SET_VOTE_ERR } from "../../mutations.type";
 
 export const actions = {
   async [LIST_VOTE](context, payload) {
@@ -20,7 +20,7 @@ export const actions = {
       })
       .catch(err => {
         console.log("fail voted", Object.assign({}, err));
-        context.commit(SET_VOTE, err);
+        context.commit(SET_VOTE_ERR, err);
       });
   }
 };

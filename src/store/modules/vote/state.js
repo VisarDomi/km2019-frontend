@@ -1,4 +1,5 @@
 export const state = {
   votes: [],
-  vote: {}
+  vote: {},
+  voteErr: null,
 };
