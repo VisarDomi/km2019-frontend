@@ -1,12 +1,12 @@
 <template>
-  <div class="mobile-artists pb-5 pt-5">
+  <div class="mobile-artists pb-5 pt-5" id="artists-mobile">
     <div class="row h-15 align-items-center ml-0" style="width:100%;">
       <h1 class="title">artistët</h1>
     </div>
     <div class="row ml-0" style="width:100%;">
       <div class="row ml-0" style="margin: 34px 10px 34px;width: 100%;">
         <div class="col-6" v-for="artist in artists1" :key="artist.id">
-          <div class="artist-card">
+          <div class="artist-card" @click=goToArtist(artist)>
             <div class="img-container">
               <img :src="artist.img" alt />
             </div>
@@ -18,7 +18,7 @@
       </div>
       <div class="row ml-0" style="margin: 34px 10px; width: 100%;">
         <div class="col-6" v-for="artist in artists2" :key="artist.id">
-          <div class="artist-card">
+          <div class="artist-card" @click=goToArtist(artist)>
             <div class="img-container">
               <img :src="artist.img" alt />
             </div>
@@ -30,7 +30,7 @@
       </div>
       <div class="row ml-0" style="margin: 34px 10px; width: 100%;">
         <div class="col-6" v-for="artist in artists3" :key="artist.id">
-          <div class="artist-card">
+          <div class="artist-card" @click=goToArtist(artist)>
             <div class="img-container">
               <img :src="artist.img" alt />
             </div>

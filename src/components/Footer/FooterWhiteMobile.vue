@@ -9,7 +9,7 @@
         <div class="col-7">
           <div class="row links-row ml-0">
             <div class="col-4">
-              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')">artistët</div>
+              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Artists')">artistët</div>
 
               <a class="row" href="/#nder-vite-mobile">ndër vite</a>
             </div>
@@ -27,7 +27,7 @@
                 @click="changeRoute('Rregullore')"
               >rregullore</div>
 
-              <div class="row" @click="changeRoute('Home')">voto</div>
+              <div class="row" @click="changeRoute('Voto')">voto</div>
             </div>
           </div>
         </div>
@@ -77,7 +77,11 @@ export default {
   methods: {
     changeRoute(name) {
       this.$router.push({ name: name });
-    }
+    },
+    goToVoto() {
+      // console.log("h");
+      this.$router.push({ name: "Voto" });
+    },
   },
   props: {
     gClass: ""

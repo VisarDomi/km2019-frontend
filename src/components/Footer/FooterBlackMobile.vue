@@ -12,13 +12,13 @@
               <div
                 class="row"
                 style="margin-bottom:5px;"
-                @click="changeRoute('Home')"
+                @click="changeRoute('Artists')"
                 v-if="this.lang == 'en'"
               >artists</div>
               <div
                 class="row"
                 style="margin-bottom:5px;"
-                @click="changeRoute('Home')"
+                @click="changeRoute('Artists')"
                 v-else
               >artistët</div>
 
@@ -67,8 +67,8 @@
                 v-else
               >rregullore</div>
 
-              <div class="row" @click="changeRoute('Home')" v-if="this.lang == 'en'">vote</div>
-              <div class="row" @click="changeRoute('Home')" v-else>voto</div>
+              <div class="row" @click="changeRoute('Voto')" v-if="this.lang == 'en'">vote</div>
+              <div class="row" @click="changeRoute('Voto')" v-else>voto</div>
             </div>
           </div>
         </div>
@@ -122,7 +122,11 @@ export default {
   methods: {
     changeRoute(name) {
       this.$router.push({ name: name });
-    }
+    },
+    goToVoto() {
+      // console.log("h");
+      this.$router.push({ name: "Voto" });
+    },
   },
   data() {
     return {

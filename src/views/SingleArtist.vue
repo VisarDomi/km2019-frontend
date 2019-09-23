@@ -16,18 +16,11 @@
       <div class="row">
         <div class="col-lg-7">
           <div class="embed-responsive embed-responsive-16by9">
-            <!-- <iframe
-              class="embed-responsive-item"
-              src="https://www.youtube.com/embed/GnxAhRj38Qk"
-              allowfullscreen
-            ></iframe>-->
             <iframe class="embed-responsive-item" :src="getArtist.video" allowfullscreen></iframe>
           </div>
         </div>
         <div class="col-lg-5 top-padded-col">
           <h1 class="artist-name">{{getArtist.name}}</h1>
-          <!-- <h1 class="artist-surname">Malaj</h1>
-          <h1 class="artist-surname">{{getArtist.name}}</h1>-->
           <h2 class="artist-songtitle">{{getArtist.song}}</h2>
           <h3 class="bio-text">bio</h3>
           <h4
@@ -43,6 +36,7 @@
             <i class="fa fa-facebook facebook-icon" style="margin-right:5px;"></i>
             <i class="fa fa-instagram" style="margin-right:5px;"></i>
             <i class="fa fa-whatsapp"></i>
+            <button class='btn' @click="sendToVoto()">Voto</button> 
           </span>
           <br />
           <h1 class="trigger-text">Vetem nje kenge do degjosh?</h1>
@@ -100,7 +94,14 @@ export default {
     goToArtists() {
       this.$router.push({ name: "Artists" });
     },
-
+    sendToVoto(){
+      let name = this.getArtist.name
+      let id = this.getArtist.id
+      this.$router.push({
+        name: "VotoArtist",
+        params: { slug: name, id: id }
+      });
+    },
     goToArtist(artist) {
       this.$router.push({
         name: "SingleArtist",
@@ -173,6 +174,16 @@ export default {
   @include respond(phone) {
     height: 22rem;
   }
+}
+
+.btn{
+      color: white;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius: 24px;
+    margin-left: 12%;
+    padding: 6px 25px;
+
 }
 
 .artist-name {
