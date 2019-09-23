@@ -6,6 +6,9 @@ export const STOP_LOADING = "stopLoading";
 export const SET_ARTISTS = "setArtists";
 export const SET_ARTIST = "setArtist";
 
+export const SET_VOTE = "setVote";
+export const SET_VOTES = "setVotes";
+
 // album
 export const SET_ALBUMS = "setAlbums";
 export const SET_ALBUM = "setAlbum";

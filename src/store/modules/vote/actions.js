@@ -1,6 +1,6 @@
 import { ApiService } from "../../services/api";
-import { LIST_VOTE } from "../../actions.type";
-import { SET_VOTES } from "../../mutations.type";
+import { LIST_VOTE, PUT_VOTES } from "../../actions.type";
+import { SET_VOTES, SET_VOTE } from "../../mutations.type";
 
 export const actions = {
   async [LIST_VOTE](context, payload) {
@@ -12,4 +12,15 @@ export const actions = {
       // console.log("There is no Items in the response object");
     }
   },
+  async [PUT_VOTES](context, payload) {
+    await ApiService.put(payload)
+      .then(res => {
+        console.log("success voted", res);
+        context.commit(SET_VOTE, res);
+      })
+      .catch(err => {
+        console.log("fail voted", Object.assign({}, err));
+        context.commit(SET_VOTE, err);
+      });
+  }
 };

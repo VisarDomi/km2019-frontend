@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="button-container" v-if="test(user)">
-      <b-button class="btn" @click="voto()">Dërgo votën tënde</b-button>
+      <b-button class="btn" @click="voto()" :disabled="this.disabled">Dërgo votën tënde</b-button>
     </div>
     <div class="button-container" v-else>
       <b-button class="btn" v-b-modal.my-modal>Voto</b-button>
@@ -54,7 +54,7 @@ import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
 import FooterMobile from "@/components/Footer/FooterWhiteMobile.vue";
 
 import { mapGetters } from "vuex";
-import { GET_ARTIST } from "@/store/actions.type";
+import { GET_ARTIST, PUT_VOTES } from "@/store/actions.type";
 import {
   START_LOADING,
   STOP_LOADING,
@@ -73,7 +73,8 @@ export default {
   data() {
     return {
       windowWidth: window.innerWidth,
-      user: {}
+      user: {},
+      disabled: false
     };
   },
   methods: {
@@ -90,16 +91,12 @@ export default {
         username
       };
       console.log("put send");
-      await this.$store
-        .dispatch(PUT, params)
-        .then(data => {
-          console.log("data is", data);
-        })
-        .catch(err => {
-          console.log(Object.assign({}, err));
-        });
+      await this.$store.dispatch(PUT_VOTES, params);
+      this.disabled = true;
+      // if (this.getVote === "Voted.") {
+      // }
       // console.log("res", res);
-      console.log("put send");
+      // console.log("put send");
       // this.$store.dispatch();
     },
     test(obj) {
@@ -118,7 +115,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["getArtist"])
+    ...mapGetters(["getArtist", "getIsLoading", "getVote"])
   },
   async mounted() {
     await this.fetchArtist(this.$route.params.id);
