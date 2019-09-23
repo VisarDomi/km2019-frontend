@@ -20,7 +20,7 @@ export const actions = {
       })
       .catch(err => {
         console.log("fail voted", Object.assign({}, err));
-        context.commit(SET_VOTE_ERR, err);
+        context.commit(SET_VOTE_ERR, Object.assign({}, err));
       });
   }
 };

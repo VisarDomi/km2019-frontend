@@ -31,9 +31,10 @@
       </div>
     </div>
     <div class="button-container" v-if="test(user)">
-      <b-button class="btn" @click="voto()" :disabled="this.disabled">Dërgo votën tënde</b-button>
-      <div v-if="getIsLoading" class="my-text-message">Duke derguar</div>
-      <div v-if="voteSent" class="my-text-message">Vota u dergua</div>
+      <b-button class="btn" @click="voto()">Dërgo votën tënde</b-button>
+      <div v-if="getIsLoading" class="my-text-message">Duke dërguar votën</div>
+      <!-- <div v-if="voteSent" class="my-text-message">Vota u dergua</div> -->
+      <div v-if="voteSent" class="my-text-message">{{this.message}}</div>
     </div>
     <div class="button-container" v-else>
       <b-button class="btn centered-voto" v-b-modal.my-modal>Voto</b-button>
@@ -60,6 +61,7 @@
 import Footer from "@/components/Footer/FooterWhite.vue";
 import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
 import FooterMobile from "@/components/Footer/FooterWhiteMobile.vue";
+import {sleep} from "@/common/functions"
 
 import AmplifyAuthenticator from "@/components/AwsCustomComponent.vue";
 
@@ -146,22 +148,23 @@ export default {
       };
       console.log("put send");
       this.$store.commit(START_LOADING);
-      await this.$store.dispatch(PUT_VOTES, params).catch(err => {
-        console.log("err is", err);
-        if (err.status === 501) {
-          this.$store.dispatch(PUT_VOTES, params)
+      await this.$store.dispatch(PUT_VOTES, params);
+      await sleep(1000)
+      await this.$store.dispatch(PUT_VOTES, params);
+      if (this.getVoteErr !== null) {
+        console.log("this.getVoteErr", this.getVoteErr);
+        if (this.getVoteErr.response.status === 501) {
+          this.$store.dispatch(PUT_VOTES, params);
+          this.message = "Provoni përsëri";
+          this.disabled = false;
+        } else if (this.getVoteErr.response.status === 409) {
+          this.message = "Votoni përsëri nesër";
         }
-        if (err.status === 409) {
-          this.message = "Voto perseri neser"
-        }
-        this.$store.commit(STOP_LOADING);
-        this.isError = err.response.status;
-        this.voteSent = false;
-        console.log("this.isError is", this.isError);
-      });
+      }
+      this.voteSent = false;
+
       this.disabled = true;
       this.voteSent = true;
-      this.message = "";
       this.$store.commit(STOP_LOADING);
       // if (this.getVote === "Voted.") {
       // }
@@ -211,17 +214,17 @@ export default {
     });
   },
   computed: {
-    ...mapGetters(["getArtist", "getIsLoading", "getVote"])
+    ...mapGetters(["getArtist", "getIsLoading", "getVote", "getVoteErr"])
   },
   beforeCreate() {
     Auth.currentAuthenticatedUser()
       .then(user => {
         this.user = user;
-        console.log(this.user);
+        // console.log(this.user);
       })
       .catch(() => {
         console.log("not signed in...");
-        console.log("user: ", this.test(this.user));
+        // console.log("user: ", this.test(this.user));
       });
   }
 };
@@ -232,13 +235,12 @@ export default {
 
 .my-text-message {
   color: white;
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 800;
-  margin-left: 14%;
-  @include respond(phone){
+  margin-left: 4%;
+  @include respond(phone) {
     font-size: 3rem;
-  margin-left: 22%;
-
+    margin-left: 10%;
   }
 }
 
