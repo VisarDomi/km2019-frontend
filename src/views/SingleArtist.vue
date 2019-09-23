@@ -23,8 +23,10 @@
           <h1 class="artist-name">{{getArtist.name}}</h1>
           <h2 class="artist-songtitle">{{getArtist.song}}</h2>
           <h3 class="bio-text">bio</h3>
-          <h4 class="bio-description">{{getArtist.bio}}</h4>
-        </div>
+          <h4
+            class="bio-description"
+          >{{getArtist.bio}}
+          </h4></div>
       </div>
 
       <div class="row">
@@ -34,7 +36,7 @@
             <i class="fa fa-facebook facebook-icon" style="margin-right:5px;"></i>
             <i class="fa fa-instagram" style="margin-right:5px;"></i>
             <i class="fa fa-whatsapp"></i>
-            <button class="btn" @click="sendToVoto()">Voto</button>
+            <button class='btn' @click="sendToVoto()">Voto</button> 
           </span>
           <br />
           <h1 class="trigger-text">Vetem nje kenge do degjosh?</h1>
@@ -82,26 +84,6 @@ export default {
     FooterWhite,
     FooterWhiteSmall
   },
-  head: {
-    meta: [
-      {
-        p: "og:image",
-        c: () => {return this.getArtist.drobboxImg}
-      },
-      {
-        p: "og:url",
-        c: () => { return this.$route.path }
-      },
-      {
-        p: "og:title",
-        c: () => { return this.getArtist.name }
-      },
-      {
-        p: "og:description",
-        c: () => { return this.getArtist.song }
-      }
-    ]
-  },
   data() {
     return {
       windowWidth: window.innerWidth,
@@ -112,9 +94,9 @@ export default {
     goToArtists() {
       this.$router.push({ name: "Artists" });
     },
-    sendToVoto() {
-      let name = this.getArtist.name;
-      let id = this.getArtist.id;
+    sendToVoto(){
+      let name = this.getArtist.name
+      let id = this.getArtist.id
       this.$router.push({
         name: "VotoArtist",
         params: { slug: name, id: id }
@@ -167,6 +149,7 @@ export default {
     this.fetchArtists();
 
     let artistPage = document.getElementsByClassName("artist-page")[0];
+    // console.log("artistPage: ", artistPage);
     artistPage.style.background =
       "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
       this.getArtist["bg-img"] +
@@ -174,7 +157,7 @@ export default {
 
     artistPage.style.backgroundSize = "cover";
     artistPage.style.backgroundAttachment = "fixed";
-
+    
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
@@ -193,13 +176,14 @@ export default {
   }
 }
 
-.btn {
-  color: white;
-  font-size: 20px;
-  border: 1px solid white;
-  border-radius: 24px;
-  margin-left: 12%;
-  padding: 6px 25px;
+.btn{
+      color: white;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius: 24px;
+    margin-left: 12%;
+    padding: 6px 25px;
+
 }
 
 .artist-name {
