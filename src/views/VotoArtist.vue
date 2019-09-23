@@ -84,6 +84,7 @@ export default {
   },
   data() {
     return {
+      message: "",
       voteSent: false,
       isError: null,
       windowWidth: window.innerWidth,
@@ -147,6 +148,12 @@ export default {
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(PUT_VOTES, params).catch(err => {
         console.log("err is", err);
+        if (err.status === 501) {
+          this.$store.dispatch(PUT_VOTES, params)
+        }
+        if (err.status === 409) {
+          this.message = "Voto perseri neser"
+        }
         this.$store.commit(STOP_LOADING);
         this.isError = err.response.status;
         this.voteSent = false;
@@ -154,6 +161,7 @@ export default {
       });
       this.disabled = true;
       this.voteSent = true;
+      this.message = "";
       this.$store.commit(STOP_LOADING);
       // if (this.getVote === "Voted.") {
       // }

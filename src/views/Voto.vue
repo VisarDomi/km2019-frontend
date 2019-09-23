@@ -26,7 +26,7 @@
 
     <div
       class="row voto-artist-row voto-card mt-5"
-      v-for="artist of getArtists"
+      v-for="artist of this.artists"
       :key="artist.name"
       @click="goToVotoArtist(artist)"
     >
@@ -65,7 +65,8 @@ export default {
   },
   data() {
     return {
-      windowWidth: window.innerWidth
+      windowWidth: window.innerWidth,
+      artists: [],
     };
   },
   methods: {
@@ -83,6 +84,27 @@ export default {
         Limit
       };
       await this.$store.dispatch(LIST_ARTIST, params);
+      for (let i in [1, 2, 3, 4, 5]) {
+        this.artists.push({});
+      }
+      for (let artist of this.getArtists) {
+        if (artist.name == "Lindita") {
+          this.artists[0] = artist;
+          // continue
+        }
+        if (artist.name == "Genti Deda") {
+          this.artists[1] = artist;
+        }
+        if (artist.name == "Rea Nuhu") {
+          this.artists[2] = artist;
+        }
+        if (artist.name == "Khuba") {
+          this.artists[3] = artist;
+        }
+        if (artist.name == "Sisma") {
+          this.artists[4] = artist;
+        }
+      }
     },
     goToHome() {
       this.$router.push({ name: "Home" });
