@@ -7,19 +7,23 @@
         </div>
       </div>
       <div class="col-md-1 pl-7 temporary-spread border-left-white">
-        <p class="footer-item align-centered" v-scroll-to="'#juria'">juria</p>
+        <p class="footer-item align-centered" v-scroll-to="'#juria'" v-if="this.lang == 'en'">the jury</p>
+        <p class="footer-item align-centered" v-scroll-to="'#juria'" v-else>juria</p>
       </div>
       <!-- <div class="col-md-1 pl-6">
         <p class="footer-item">#fotome</p>
       </div>-->
       <div class="col-md-1 pl-6 temporary-spread">
-        <p class="footer-item" v-scroll-to="'#nder-vite'">ndër vite</p>
+        <p class="footer-item" v-scroll-to="'#nder-vite'" v-if="this.lang == 'en'">through the years</p>
+        <p class="footer-item" v-scroll-to="'#nder-vite'" v-else>ndër vite</p>
       </div>
       <div class="col-md-1 pl-6 temporary-spread">
-        <p class="footer-item" v-scroll-to="'#te-reja'">të reja</p>
+        <p class="footer-item" v-scroll-to="'#te-reja'" v-if="this.lang == 'en'">news</p>
+        <p class="footer-item" v-scroll-to="'#te-reja'" v-else>të reja</p>
       </div>
       <div class="col-md-1 temporary-spread">
-        <p class="footer-item" @click="changeRoute('Rregullore')">rregullore</p>
+        <p class="footer-item" @click="changeRoute('Rregullore')" v-if="this.lang == 'en'">rules</p>
+        <p class="footer-item" @click="changeRoute('Rregullore')" v-else>rregullore</p>
       </div>
       <!-- <div class="col-md-1 pl-6">
         <p class="footer-item">voto</p>
@@ -100,13 +104,15 @@
 
 <script>
 import { eventBus } from "@/main";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 export default {
   name: "FooterBlack",
   data() {
     return {
       hoverFB: false,
       hoverYT: false,
-      hoverIG: false
+      hoverIG: false,
+      lang: ""
     };
   },
   methods: {
@@ -119,6 +125,10 @@ export default {
       eventBus.$emit("changeSectionFromFooter", index);
       // // console.log("from footer");
     }
+  },
+  mounted() {
+    
+    this.lang = getLanguage();
   }
 };
 </script>

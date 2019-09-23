@@ -67,7 +67,8 @@
             </div>
           </div>
           <div class="more text-center w-100 mt-5">
-            <a href="#" class="btn" @click="goToBlogs()">lexo më shumë</a>
+            <a href="#" class="btn" @click="goToBlogs()" v-if="this.lang == 'en'">read more</a>
+            <a href="#" class="btn" @click="goToBlogs()" v-else>lexo më shumë</a>
           </div>
         </div>
       </div>

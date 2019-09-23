@@ -7,19 +7,23 @@
         </div>
       </div>
       <div class="col-md-1 pl-7 temporary-spread border-left-black">
-        <a class="footer-item align-centered" href="/#juria">juria</a>
+        <a class="footer-item align-centered" href="/#juria" v-if="this.lang == 'en'">the jury</a>
+        <a class="footer-item align-centered" href="/#juria" v-else>juria</a>
       </div>
       <!-- <div class="col-md-1 pl-6">
         <p class="footer-item">#fotome</p>
       </div>-->
       <div class="col-md-1 pl-6 temporary-spread">
-        <a class="footer-item" href="/#nder-vite">ndër vite</a>
+        <a class="footer-item" href="/#nder-vite" v-if="this.lang == 'en'">Through the years</a>
+        <a class="footer-item" href="/#nder-vite" v-else>ndër vite</a>
       </div>
       <div class="col-md-1 pl-6 temporary-spread">
-        <a class="footer-item" href="/#te-reja">të reja</a>
+        <a class="footer-item" href="/#te-reja" v-if="this.lang == 'en'">news</a>
+        <a class="footer-item" href="/#te-reja" v-else>të reja</a>
       </div>
       <div class="col-md-1 temporary-spread">
-        <div class="footer-item" @click="gotoRregullore()">rregullore</div>
+        <div class="footer-item" @click="gotoRregullore()" v-if="this.lang == 'en'">rules</div>
+        <div class="footer-item" @click="gotoRregullore()" v-else>rregullore</div>
       </div>
       <!-- <div class="col-md-1 pl-6">
         <p class="footer-item">voto</p>
@@ -99,6 +103,7 @@
 </template>
 
 <script>
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 import { eventBus } from "@/main";
 export default {
   name: "FooterBlack",
@@ -106,7 +111,8 @@ export default {
     return {
       hoverFB: false,
       hoverYT: false,
-      hoverIG: false
+      hoverIG: false,
+      lang: "",
     };
   },
   props: {
@@ -125,6 +131,10 @@ export default {
     gotoRregullore() {
       this.$router.push({ name: "Rregullore" });
     }
+  },
+  mounted(){
+    
+    this.lang = getLanguage();
   }
 };
 </script>

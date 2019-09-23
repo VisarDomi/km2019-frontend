@@ -3,7 +3,8 @@
     <div class="spacer"></div>
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h1 class="header-text">juria</h1>
+        <h1 class="header-text" v-if="this.lang == 'en'">the jury</h1>
+        <h1 class="header-text" v-else>juria</h1>
       </div>
     </div>
     <div class="row respond-height">
@@ -74,6 +75,7 @@
 </template>
 
 <script>
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 export default {
   name: "ArtistsSection",
   methods: {
@@ -111,7 +113,8 @@ export default {
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         }
       ],
-      windowWidth: window.innerWidth
+      windowWidth: window.innerWidth,
+      lang: ""
     };
   },
   mounted() {
@@ -120,6 +123,7 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
+    this.lang = getLanguage();
   }
 };
 </script>

@@ -9,25 +9,34 @@
         <div class="col-7">
           <div class="row links-row ml-0">
             <div class="col-4">
-              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Artists')">artistët</div>
+              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Artists')" v-if="this.lang == 'en'">artists</div>
+              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Artists')" v-else>artistët</div>
 
-              <a class="row" href="/#nder-vite-mobile">ndër vite</a>
+              <a class="row" href="/#nder-vite-mobile" v-if="this.lang == 'en'">Through the years</a>
+              <a class="row" href="/#nder-vite-mobile" v-else>nder vite</a>
             </div>
 
             <div class="col-4">
               <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')">#magjike</div>
 
-              <a class="row" href="/#te-reja-mobile">të reja</a>
+              <a class="row" href="/#te-reja-mobile" v-if="this.lang == 'en'">news</a>
+              <a class="row" href="/#te-reja-mobile" v-else>të reja</a>
             </div>
 
             <div class="col-4">
               <div
                 class="row"
                 style="margin-bottom:5px;"
-                @click="changeRoute('Rregullore')"
+                @click="changeRoute('Rregullore')" v-if="this.lang == 'en'"
+              >rules</div>
+              <div
+                class="row"
+                style="margin-bottom:5px;"
+                @click="changeRoute('Rregullore')" v-else
               >rregullore</div>
 
-              <div class="row" @click="changeRoute('Voto')">voto</div>
+              <div class="row" @click="changeRoute('Voto')" v-if="this.lang == 'en'">vote</div>
+              <div class="row" @click="changeRoute('Voto')" v-else>voto</div>
             </div>
           </div>
         </div>
@@ -73,6 +82,8 @@
 </template>
 
 <script>
+import { getLanguage, saveLanguage } from "@/store/services/storage";
+
 export default {
   methods: {
     changeRoute(name) {
@@ -83,8 +94,16 @@ export default {
       this.$router.push({ name: "Voto" });
     },
   },
+  data() {
+    return {
+      lang: "",
+    }
+  },
   props: {
     gClass: ""
+  },
+  mounted(){
+    this.lang = getLanguage();
   }
 };
 </script>

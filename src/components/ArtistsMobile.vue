@@ -1,7 +1,8 @@
 <template>
   <div class="mobile-artists pb-5 pt-5" id="artists-mobile">
     <div class="row h-15 align-items-center ml-0" style="width:100%;">
-      <h1 class="title">artistët</h1>
+      <h1 class="title" v-if="this.lang == 'en'">artists</h1>
+      <h1 class="title" v-else>artistët</h1>
     </div>
     <div class="row ml-0" style="width:100%;">
       <div class="row ml-0" style="margin: 34px 10px 34px;width: 100%;">
@@ -12,7 +13,8 @@
             </div>
             <p class="artist-card__name inside-card">{{artist.name}}</p>
             <br />
-            <p class="artist-card__song go-up">{{artist.song}}</p>
+            <p class="artist-card__song go-up" v-if="lang == 'en'">{{artist.songEng}}</p>
+            <p class="artist-card__song go-up" v-else>{{artist.song}}</p>
           </div>
         </div>
       </div>
@@ -24,7 +26,8 @@
             </div>
             <p class="artist-card__name inside-card">{{artist.name}}</p>
             <br />
-            <p class="artist-card__song go-up">{{artist.song}}</p>
+            <p class="artist-card__song go-up" v-if="lang == 'en'">{{artist.songEng}}</p>
+            <p class="artist-card__song go-up" v-else>{{artist.song}}</p>
           </div>
         </div>
       </div>
@@ -36,7 +39,8 @@
             </div>
             <p class="artist-card__name inside-card">{{artist.name}}</p>
             <br />
-            <p class="artist-card__song go-up">{{artist.song}}</p>
+            <p class="artist-card__song go-up" v-if="lang == 'en'">{{artist.songEng}}</p>
+            <p class="artist-card__song go-up" v-else>{{artist.song}}</p>
           </div>
         </div>
       </div>
@@ -47,6 +51,14 @@
             @click="goToRoute('Artists')"
             class="btn"
             style="margin-left:8%;"
+            v-if="this.lang == 'en'"
+          >more artists</a>
+          <a
+            href="#"
+            @click="goToRoute('Artists')"
+            class="btn"
+            style="margin-left:8%;"
+            v-else
           >më shumë artistë</a>
         </div>
       </div>
@@ -58,6 +70,8 @@
 import { LIST_ARTIST } from "@/store/actions.type";
 import { SET_ARTIST } from "@/store/mutations.type";
 import { mapGetters } from "vuex";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
+
 export default {
   name: "NewsMobile",
   data() {
@@ -65,7 +79,8 @@ export default {
       artists1: [],
       artists2: [],
       artists3: [],
-      artists4: []
+      artists4: [],
+      lang: ""
     };
   },
   methods: {
@@ -141,6 +156,7 @@ export default {
     setTimeout(() => {
       this.$forceUpdate();
     }, 500);
+    this.lang = getLanguage();
   },
   computed: {
     ...mapGetters(["getArtists"])

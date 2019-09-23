@@ -12,7 +12,8 @@
     <div class="row align-items-center justify-content-center row-title">
       <div class="col-xl-7 col-lg-9 col-md-12 text-center">
         <div class="row align-items-center justify-content-center">
-          <h1 class="jumbo-title-artistet">artistët</h1>
+          <h1 class="jumbo-title-artistet" v-if="this.lang == 'en'">artists</h1>
+          <h1 class="jumbo-title-artistet" v-else>artistët</h1>
 
           <!-- <img src="@/assets/img/search_icon.svg" alt="" class="search-icon"> -->
           <input type="search" placeholder="Search" />
@@ -29,7 +30,8 @@
             </div>
             <p class="artist-card__name go-up--small">{{artist.name}}</p>
             <br />
-            <p class="artist-card__song">{{artist.song}}</p>
+            <p class="artist-card__song" v-if="lang == 'en'">{{artist.songEng}}</p>
+            <p class="artist-card__song" v-else>{{artist.song}}</p>
           </div>
         </div>
       </div>
@@ -51,6 +53,7 @@ import { LIST_ARTIST } from "@/store/actions.type";
 import { SET_ARTIST } from "@/store/mutations.type";
 import { mapGetters } from "vuex";
 
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 export default {
   name: "Artists",
   components: {
@@ -61,6 +64,7 @@ export default {
   data() {
     return {
       windowWidth: window.innerWidth,
+      lang: "",
       artists: []
     };
   },
@@ -112,6 +116,7 @@ export default {
       });
     });
     this.fetchArtists();
+    this.lang = getLanguage();
   },
   computed: {
     ...mapGetters(["getArtists"])

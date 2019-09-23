@@ -3,7 +3,8 @@
     <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 750" />
     <div class="row go-up--small">
       <div class="col-lg-12 text-center">
-        <h1 class="header-text">artistët</h1>
+        <h1 class="header-text" v-if="this.lang == 'en'">artistet</h1>
+        <h1 class="header-text" v-else>artistët</h1>
       </div>
     </div>
     <div class="row px-6 respond-height" v-if="nrArtists(5) || nrArtists(6)">
@@ -20,7 +21,8 @@
           </div>
           <p class="artist-card__name go-up--small">{{artist.name}}</p>
           <br />
-          <p class="artist-card__song">{{artist.song}}</p>
+          <p class="artist-card__song" v-if="lang == 'en'">{{artist.songEng}}</p>
+          <p class="artist-card__song" v-else>{{artist.song}}</p>
         </div>
       </div>
     </div>
@@ -55,7 +57,8 @@
         class="col-lg-6 offset-lg-3 col-12 text-center"
         :class="{'mt-6' : nrArtists(5) || nrArtists(6)}"
       >
-        <a href="#" class="btn" @click="goToArtists()">më shumë artistë</a>
+        <a href="#" class="btn" @click="goToArtists()" v-if="this.lang == 'en'">more artists</a>
+        <a href="#" class="btn" @click="goToArtists()" v-else>më shumë artistë</a>
       </div>
     </div>
     <div class="graphic-left w-50" v-if="windowWidth > 950">
@@ -70,6 +73,8 @@
 <script>
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 import axios from "axios";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
+
 
 import { LIST_ARTIST } from "@/store/actions.type";
 import { SET_ARTIST } from "@/store/mutations.type";
@@ -138,6 +143,7 @@ export default {
     return {
       artists: [],
       artists2Row: [],
+      lang: "",
       windowWidth: window.innerWidth
     };
   },
@@ -148,6 +154,7 @@ export default {
       });
     });
     this.fetchArtists();
+    this.lang = getLanguage();
   },
   computed: {
     ...mapGetters(["getArtists"])

@@ -21,17 +21,30 @@
         </div>
         <div class="col-lg-5 top-padded-col">
           <h1 class="artist-name">{{getArtist.name}}</h1>
-          <h2 class="artist-songtitle">{{getArtist.song}}</h2>
+          <h2 class="artist-songtitle" 
+            v-if="this.lang == 'en'">{{getArtist.songEng}}</h2>
+
+          <h2 class="artist-songtitle" 
+            v-else>{{getArtist.song}}</h2>
+
           <h3 class="bio-text">bio</h3>
           <h4
             class="bio-description"
+            v-if="this.lang == 'en'"
+          >{{getArtist.bioEng}}
+          </h4>
+          <h4
+            class="bio-description"
+            v-else
           >{{getArtist.bio}}
-          </h4></div>
+          </h4>
+          </div>
       </div>
 
       <div class="row">
         <div class="col">
-          <p class="share-text">Shperndaje:</p>
+          <p class="share-text" v-if="this.lang == 'en'">Shperndaje:</p>
+          <p class="share-text" v-else>Share:</p>
           <span>
             <i class="fa fa-facebook facebook-icon" style="margin-right:5px;"></i>
             <i class="fa fa-instagram" style="margin-right:5px;"></i>
@@ -39,7 +52,10 @@
             <button class='btn' @click="sendToVoto()">Voto</button> 
           </span>
           <br />
-          <h1 class="trigger-text">Vetem nje kenge do degjosh?</h1>
+          <h1 class="trigger-text" 
+            v-if="this.lang == 'en'">Only one song will you hear?</h1>
+          <h1 class="trigger-text" 
+            v-else>Vetem nje kenge do degjosh?</h1>
         </div>
       </div>
 
@@ -77,6 +93,9 @@ import {
   SET_ARTIST
 } from "@/store/mutations.type";
 
+import { getLanguage, saveLanguage } from "@/store/services/storage";
+
+
 export default {
   name: "SingleArtist",
   components: {
@@ -87,7 +106,8 @@ export default {
   data() {
     return {
       windowWidth: window.innerWidth,
-      artists: []
+      artists: [],
+      lang: ""
     };
   },
   // head: {
@@ -188,11 +208,13 @@ export default {
     await this.fetchArtist(this.$route.params.id);
     this.fetchArtists();
 
+    this.lang = getLanguage();
+
     let artistPage = document.getElementsByClassName("artist-page")[0];
     // console.log("artistPage: ", artistPage);
     artistPage.style.background =
       "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
-      this.getArtist["bg-img"] +
+      this.getArtist["bgImg"] +
       "), no-repeat ";
 
     artistPage.style.backgroundSize = "cover";

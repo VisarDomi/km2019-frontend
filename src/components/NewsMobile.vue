@@ -110,7 +110,8 @@
     </div>
     <div class="row ml-0" style>
       <div class="text-center ml-auto mr-auto">
-        <a @click="goToBlogs()" class="btn more-btn" style="color:white;">Më shumë lajme</a>
+        <a @click="goToBlogs()" class="btn more-btn" style="color:white;" v-if="this.lang == 'en'">more news</a>
+        <a @click="goToBlogs()" class="btn more-btn" style="color:white;" v-else>Më shumë lajme</a>
       </div>
     </div>
   </div>
