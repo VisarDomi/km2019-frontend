@@ -73,7 +73,7 @@ export default {
     meta: [
       {
         p: "og:image",
-        c: "https://previews.dropbox.com/p/thumb/AAjetZWkmr1AgCJVdj2yQHmrvynIDQ8zMyslaobI95MHPHWAO92v-0SAUgfJwGorICCWSLYRVmvsoIe81uMV8Lj3apx63P3y4BvLF4bQp9b4PjQ9kpEXHYNWg7-dxiXsPq6IV-n9Ot2B132_F254hhRrjJ1lwRIiC6bmMs9Hx6BoWUQekrz4q9hu4L0tUzTDLp2Mxgan05FAmbEmZnCrW24xNiLa8QT83JonauN_XOBbs4xaqPdL0bSfPrMpsI6SKcyI0hJ09rSVEXrZFmO89R9rXzZ-ZQDOKZhy7lF_w0YlpkuvDipNQq7jE4qy_suVG__yAaW-bwFCDACcjcTR--Gt7RABf08AS7iyOrpFqHWvXQ/p.png?fv_content=true&size_mode=5"
+        c: "https://s3.eu-west-1.amazonaws.com/kengamagjike2019/fdxghgdfh%2F%2FGroup%20168.jpg"
       },
       {
         p: "og:url",
