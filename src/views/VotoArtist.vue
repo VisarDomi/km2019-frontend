@@ -42,8 +42,8 @@
         class="m-2"
         style="text-align: center; font-size: 14px; font-weight: 700;"
       >Sign in or create a new account to vote</h5>
-      <Loading v-if="getIsLoading" />
-      <div id="auth" v-else>
+      <!-- <Loading v-if="getIsLoading" /> -->
+      <div id="auth">
         <amplify-authenticator :authConfig="authConfig"></amplify-authenticator>
       </div>
     </b-modal>
@@ -58,7 +58,7 @@
 import Footer from "@/components/Footer/FooterWhite.vue";
 import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
 import FooterMobile from "@/components/Footer/FooterWhiteMobile.vue";
-import Loading from "@/components/Loading.vue";
+// import Loading from "@/components/Loading.vue";
 
 import { mapGetters } from "vuex";
 import { GET_ARTIST, PUT_VOTES } from "@/store/actions.type";
@@ -77,7 +77,7 @@ export default {
     Footer,
     FooterSmall,
     FooterMobile,
-    Loading
+    // Loading
   },
   data() {
     return {
