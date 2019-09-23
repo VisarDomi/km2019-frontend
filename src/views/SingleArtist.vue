@@ -156,6 +156,7 @@ export default {
 
     artistPage.style.backgroundSize = "cover";
     artistPage.style.backgroundAttachment = "fixed";
+    
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
