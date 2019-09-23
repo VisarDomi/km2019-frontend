@@ -15,7 +15,7 @@ export const ApiService = {
     Vue.axios.defaults.baseURL = API_URL;
   },
   async put(payload) {
-    // console.log(`put payload is:`, payload);
+    // // console.log(`put payload is:`, payload);
     try {
       return Vue.axios.put(``, payload);
     } catch (error) {
@@ -23,7 +23,7 @@ export const ApiService = {
     }
   },
   async get(params) {
-    // console.log(`get params is:`, params);
+    // // console.log(`get params is:`, params);
     try {
       return Vue.axios.get(``, { params });
     } catch (error) {
@@ -31,7 +31,7 @@ export const ApiService = {
     }
   },
   async delete(payload) {
-    // console.log(`delete payload is:`, payload);
+    // // console.log(`delete payload is:`, payload);
     try {
       return Vue.axios.delete(``, { data: payload });
     } catch (error) {

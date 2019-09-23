@@ -121,7 +121,7 @@ export default {
         Limit
       };
       await this.$store.dispatch(LIST_ARTIST, params);
-      console.log(this.getArtists);
+      // console.log(this.getArtists);
       this.artists1.push({});
       this.artists1.push({});
       this.artists2.push({});
@@ -149,7 +149,7 @@ export default {
       }
 
       // let resItems = this.getArtists;
-      // console.log("resItems: ", resItems);
+      // // console.log("resItems: ", resItems);
       // this.artists1 = [...resItems.splice(0, 2)];
       // this.artists2 = [...resItems.splice(0, 2)];
       // this.artists3 = [...resItems.splice(0, 2)];

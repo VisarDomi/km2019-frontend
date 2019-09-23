@@ -140,19 +140,19 @@ export default {
         storage[
           `CognitoIdentityServiceProvider.${aws_user_pools_web_client_id}.${username}.accessToken`
         ];
-      console.log("accessToken", accessToken);
+      // console.log("accessToken", accessToken);
       const params = {
         TableName,
         artistId: id,
         accessToken
       };
-      console.log("put send");
+      // console.log("put send");
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(PUT_VOTES, params);
       await sleep(1000)
       await this.$store.dispatch(PUT_VOTES, params);
       if (this.getVoteErr !== null) {
-        console.log("this.getVoteErr", this.getVoteErr);
+        // console.log("this.getVoteErr", this.getVoteErr);
         if (this.getVoteErr.response.status === 501) {
           this.$store.dispatch(PUT_VOTES, params);
           this.message = "Provoni përsëri";
@@ -168,8 +168,8 @@ export default {
       this.$store.commit(STOP_LOADING);
       // if (this.getVote === "Voted.") {
       // }
-      // console.log("res", res);
-      // console.log("put send");
+      // // console.log("res", res);
+      // // console.log("put send");
       // this.$store.dispatch();
     },
     test(obj) {
@@ -198,7 +198,7 @@ export default {
     await this.fetchArtist(this.$route.params.id);
 
     let votoPage = document.getElementsByClassName("voto-artist")[0];
-    console.log(votoPage);
+    // console.log(votoPage);
     votoPage.style.background =
       "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
       this.getArtist["bg-img"] +
@@ -220,11 +220,11 @@ export default {
     Auth.currentAuthenticatedUser()
       .then(user => {
         this.user = user;
-        // console.log(this.user);
+        // // console.log(this.user);
       })
       .catch(() => {
-        console.log("not signed in...");
-        // console.log("user: ", this.test(this.user));
+        // console.log("not signed in...");
+        // // console.log("user: ", this.test(this.user));
       });
   }
 };

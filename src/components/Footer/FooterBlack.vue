@@ -115,9 +115,9 @@ export default {
     },
     changeSection(index) {
       this.$router.push({ name: "Home" });
-      console.log("after push");
+      // console.log("after push");
       eventBus.$emit("changeSectionFromFooter", index);
-      // console.log("from footer");
+      // // console.log("from footer");
     }
   }
 };

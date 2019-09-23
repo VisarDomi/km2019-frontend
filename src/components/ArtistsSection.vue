@@ -107,7 +107,7 @@ export default {
         Limit
       };
       await this.$store.dispatch(LIST_ARTIST, params);
-      // console.log(this.getArtists);
+      // // console.log(this.getArtists);
       for (let i in [1, 2, 3, 4, 5]) {
         this.artists.push({});
       }

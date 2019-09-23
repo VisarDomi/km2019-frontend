@@ -48,7 +48,7 @@ export default {
       eventBus.$emit("changeSection", index);
     },
     goToRregullore() {
-      console.log("h");
+      // console.log("h");
       this.$router.push({ name: "Rregullore" });
     },
     openNavR() {

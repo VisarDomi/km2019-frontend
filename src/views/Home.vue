@@ -115,7 +115,7 @@ export default {
   },
   methods: {
     handleScroll(event) {
-      // console.log("scrolling", window.scrollY);
+      // // console.log("scrolling", window.scrollY);
       if (window.scrollY > 0 && window.scrollY < window.innerHeight - 100) {
         this.section = "HeroSection";
       } else if (
@@ -134,7 +134,7 @@ export default {
       ) {
         this.section = "JuriaSection";
       } else if (window.scrollY > window.innerHeight * 4 - 100) {
-        console.log("Sponsors");
+        // console.log("Sponsors");
         this.section = "SponsorSection";
       }
     }

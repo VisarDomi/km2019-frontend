@@ -148,7 +148,7 @@ export default {
     this.fetchArtists();
 
     let artistPage = document.getElementsByClassName("artist-page")[0];
-    console.log("artistPage: ", artistPage);
+    // console.log("artistPage: ", artistPage);
     artistPage.style.background =
       "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
       this.getArtist["bg-img"] +
