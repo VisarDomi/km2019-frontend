@@ -62,6 +62,7 @@ import {
 } from "@/store/mutations.type";
 import { Auth } from "aws-amplify";
 import { PUT } from "@/store/actions.type";
+import {aws_user_pools_web_client_id} from "@/main"
 
 export default {
   name: "VotoArtist",
@@ -85,10 +86,13 @@ export default {
       const TableName = "KM2019-Vote";
       const id = this.$route.params.id;
       const username = this.user.username;
+      const storage = this.user.storage;
+      const accessToken = storage[`CognitoIdentityServiceProvider.${aws_user_pools_web_client_id}.${username}.accessToken`]
+      console.log("accessToken", accessToken)
       const params = {
         TableName,
         artistId: id,
-        username
+        accessToken
       };
       console.log("put send");
       await this.$store.dispatch(PUT_VOTES, params);
