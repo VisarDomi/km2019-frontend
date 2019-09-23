@@ -1,76 +1,54 @@
 <template>
-  <div class="mobile-artists">
+  <div class="mobile-artists pb-5 pt-5">
     <div class="row h-15 align-items-center ml-0" style="width:100%;">
       <h1 class="title">artistët</h1>
     </div>
-
-    <!-- <div class="row h-50 justify-content-center mt-6"> -->
-    <div class="row ml-0 master-row" style="width:100%;">
-      <carousel
-        ref="carouselArtistsMobile"
-        :perPage="2"
-        :paginationEnabled="false"
-        :navigationEnabled="false"
-      >
-        <slide>
-          <div class="card-2 mt-30" v-for="artist in artists1" :key="artist.id">
-            <div class="artist-card" @click="goToArtist(artist)">
-              <div class="img-container">
-                <img :src="artist.img" alt />
-              </div>
-              <p class="artist-card__name inside-card">{{artist.name}}</p>
-              <br />
-              <p class="artist-card__song go-up">{{artist.song}}</p>
+    <div class="row ml-0" style="width:100%;">
+      <div class="row ml-0" style="margin: 34px 10px 34px;width: 100%;">
+        <div class="col-6" v-for="artist in artists1" :key="artist.id">
+          <div class="artist-card">
+            <div class="img-container">
+              <img :src="artist.img" alt />
             </div>
+            <p class="artist-card__name inside-card">{{artist.name}}</p>
+            <br />
+            <p class="artist-card__song go-up">{{artist.song}}</p>
           </div>
-        </slide>
-        <slide>
-          <div class="card-2 mt-30" v-for="artist in artists2" :key="artist.id">
-            <div class="artist-card" @click="goToArtist(artist)">
-              <div class="img-container">
-                <img :src="artist.img" alt />
-              </div>
-              <p class="artist-card__name inside-card">{{artist.name}}</p>
-              <br />
-              <p class="artist-card__song go-up">{{artist.song}}</p>
+        </div>
+      </div>
+      <div class="row ml-0" style="margin: 34px 10px; width: 100%;">
+        <div class="col-6" v-for="artist in artists2" :key="artist.id">
+          <div class="artist-card">
+            <div class="img-container">
+              <img :src="artist.img" alt />
             </div>
+            <p class="artist-card__name inside-card">{{artist.name}}</p>
+            <br />
+            <p class="artist-card__song go-up">{{artist.song}}</p>
           </div>
-        </slide>
-        <slide>
-          <div class="card-2 mt-30" v-for="artist in artists3" :key="artist.id">
-            <div class="artist-card" @click="goToArtist(artist)">
-              <div class="img-container">
-                <img :src="artist.img" alt />
-              </div>
-              <p class="artist-card__name inside-card">{{artist.name}}</p>
-              <br />
-              <p class="artist-card__song go-up">{{artist.song}}</p>
+        </div>
+      </div>
+      <div class="row ml-0" style="margin: 34px 10px; width: 100%;">
+        <div class="col-6" v-for="artist in artists3" :key="artist.id">
+          <div class="artist-card">
+            <div class="img-container">
+              <img :src="artist.img" alt />
             </div>
+            <p class="artist-card__name inside-card">{{artist.name}}</p>
+            <br />
+            <p class="artist-card__song go-up">{{artist.song}}</p>
           </div>
-        </slide>
-        <slide>
-          <div class="card-2 mt-30" v-for="artist in artists4" :key="artist.id">
-            <div class="artist-card" @click="goToArtist(artist)">
-              <div class="img-container">
-                <img :src="artist.img" alt />
-              </div>
-              <p class="artist-card__name inside-card">{{artist.name}}</p>
-              <br />
-              <p class="artist-card__song go-up">{{artist.song}}</p>
-            </div>
-          </div>
-        </slide>
-      </carousel>
-    </div>
-    <div class="graphic-right"></div>
-    <div class="row">
-      <div class="w-100 text-center btn-container">
-        <a
-          href="#"
-          @click="goToRoute('Artists')"
-          class="btn"
-          style="margin-left:8%;"
-        >më shumë artistë</a>
+        </div>
+      </div>
+      <div class="row h-10rem">
+        <div class="w-100 text-center btn-container">
+          <a
+            href="#"
+            @click="goToRoute('Artists')"
+            class="btn"
+            style="margin-left:8%;"
+          >më shumë artistë</a>
+        </div>
       </div>
     </div>
   </div>
@@ -132,10 +110,10 @@ export default {
           this.artists1[0] = artist;
         }
         if (artist.name == "Genti Deda") {
-          this.artists2[0] = artist;
+          this.artists1[1] = artist;
         }
         if (artist.name == "Rea Nuhu") {
-          this.artists1[1] = artist;
+          this.artists2[0] = artist;
           // this.artists2.push(artist);
         }
         if (artist.name == "Khuba") {
@@ -186,9 +164,12 @@ export default {
   height: 100%;
 }
 
+.h-10rem {
+  height: 10rem;
+}
+
 .mobile-artists {
   position: relative;
-  height: 100vh;
 }
 
 .col-left {
@@ -201,15 +182,6 @@ export default {
   padding-left: 20px;
 }
 
-.graphic-right {
-  width: 2px;
-  height: 70%;
-  background-color: black;
-  position: absolute;
-  bottom: 15%;
-  right: 0%;
-  box-shadow: -3px 0 3px 0 black;
-}
 .pt-10 {
   padding-top: 10%;
 }
@@ -301,8 +273,7 @@ export default {
   position: relative;
   width: 100%;
   z-index: 4;
-  margin-top: -2rem;
-
+  margin-top: 1rem;
   img {
     height: 100%;
     width: 100%;
@@ -312,13 +283,12 @@ export default {
     color: white;
     font-size: 2rem;
     padding: 4px 1rem;
-    background-color: black;
+    background-color: #0e1032;
     font-family: Vollkorn;
     display: inline-block;
     border: solid 2px white;
 
-    margin-bottom: 67px;
-    margin-left: -2px;
+    margin-bottom: 2px;
   }
   &__song {
     border: 1px solid black;
@@ -330,7 +300,6 @@ export default {
     padding: 6px 1rem;
     font-size: 1.5rem;
     line-height: 2rem;
-    margin-top: 15px;
   }
 }
 
@@ -341,9 +310,6 @@ export default {
 
 .h-5 {
   height: 5%;
-}
-.h-10 {
-  height: 10%;
 }
 .h-15 {
   height: 15%;

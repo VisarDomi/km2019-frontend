@@ -1,24 +1,11 @@
 <template>
-  <div class="mobile-artists pb-5 pt-5" id="juria-mobile">
+  <div class="mobile-juria pb-5 pt-5" id="juria-mobile">
     <div class="row h-15 align-items-center ml-0" style="width:100%;">
       <h1 class="title" v-if="this.lang == 'en'">jury</h1>
       <h1 class="title" v-else>juria</h1>
     </div>
 
-    <!-- <div class="row h-50 justify-content-center mt-6"> -->
     <div class="row ml-0" style="width:100%;">
-      <!-- <carousel
-        ref="carouselArtistsMobile"
-        :perPage="1"
-        :paginationEnabled="false"
-        :navigationEnabled="false"
-      >
-
-
-        <slide>
-        </slide>
-      </carousel>-->
-
       <div class="row ml-0" style="margin-bottom:50px; margin:10px; margin-top:20px;width:100%;">
         <div class="col-6">
           <div class="artist-card" @click="goToRoute('JuriaArmend')">
@@ -164,7 +151,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
-.mobile-artists {
+.mobile-juria {
   position: relative;
   background: #0e1032;
 }
