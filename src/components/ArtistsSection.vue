@@ -122,7 +122,6 @@ export default {
           this.artists[4] = artist;
         }
       }
-      console.log(this.artists);
     }
   },
   components: {
