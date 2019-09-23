@@ -21,8 +21,11 @@
       <a href="#" v-if="this.lang == 'en'" v-scroll-to="'#te-reja-mobile'">news</a>
       <a href="#" v-else v-scroll-to="'#te-reja-mobile'">të reja</a>
 
-      <a href="#" @click="goToVoto()" v-if="this.lang == 'en'" v-scroll-to="'#te-reja-mobile'">vote</a>
-      <a href="#" @click="goToVoto()" v-else v-scroll-to="'#te-reja-mobile'">voto</a>
+      <a href="#" @click="goToVoto()" v-if="this.lang == 'en'">vote</a>
+      <a href="#" @click="goToVoto()" v-else>voto</a>
+
+      <a href="#" @click="goToRregullore()" v-if="this.lang == 'en'" >rules</a>
+      <a href="#" @click="goToRregullore()" v-else >rregullore</a>
 
       <a href="#" @click="changeLang()" v-if="this.lang == 'en'">Shqip</a>
       <a href="#" @click="changeLang()" v-else>English</a>

@@ -29,12 +29,12 @@
     </div>
     <div
       v-if="this.lang == 'en'"
-      class="col-lg-1 col-sm-1 offset-xl-3 offset-lg-2 offset-sm-2 cmi"
+      class="col-lg-1 col-sm-1 offset-xl-1 cmi"
       v-scroll-to="'#juria'"
-    >jury</div>
+    >the jury</div>
     <div
       v-else
-      class="col-lg-1 col-sm-1 offset-xl-3 offset-lg-2 offset-sm-2 cmi"
+      class="col-lg-1 col-sm-1 offset-xl-1 cmi"
       v-scroll-to="'#juria'"
     >juria</div>
 
@@ -48,11 +48,19 @@
     <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#te-reja'">news</div>
     <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#te-reja'">të reja</div>
 
+    <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#section-artists'">artists</div>
+    <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#section-artists'">artistët</div>
+
     <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rules</div>
     <div v-else class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rregullore</div>
 
+
+    <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" @click="goToVoto()">vote</div>
+    <div v-else class="col-lg-1 col-sm-1 cmi" @click="goToVoto()">voto</div>
+
     <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-if="this.lang == 'en'">Shqip</div>
     <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-else>English</div>
+
     <div class="col-lg-1 col-sm-1 high-index">
       <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
         <img
@@ -107,6 +115,11 @@ export default {
       this.$router.push({
         name: "Rregullore",
         params: { lang: "al" }
+      });
+    },
+    goToVoto() {
+      this.$router.push({
+        name: "Voto",
       });
     },
     changeLang() {
