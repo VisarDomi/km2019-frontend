@@ -69,9 +69,10 @@
 <script>
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 import axios from "axios";
-import { API_URL } from "@/store/services/api";
 
-// import { ArtistService } from "@/api.js";
+import { LIST_ARTIST } from "@/store/actions.type";
+import { SET_ARTIST } from "@/store/mutations.type";
+import { mapGetters } from "vuex";
 export default {
   name: "ArtistsSection",
   methods: {
@@ -91,30 +92,37 @@ export default {
       }
       return `col-lg-3--spacer`;
     },
-    async getArtists() {
-      const axios = require("axios");
-      axios.defaults.headers.common = {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json"
+    async fetchArtists() {
+      const TableName = "KM2019-Artist";
+      const Limit = "100";
+      const params = {
+        TableName,
+        Limit
       };
-      let artists = axios
-        .get(API_URL, {
-          params: {
-            TableName: "KM2019-Artist",
-            Limit: "100"
-          }
-        })
-        .then(res => {
-          let resItems = res.data["Items"];
-          if (resItems.length <= 6) {
-            this.artists = resItems;
-          } else {
-            let coppy1 = [...resItems];
-            this.artists = [...coppy1.splice(0, 4)];
-            let coppy2 = [...resItems];
-            this.artists2Row = coppy2.splice(4, resItems.length);
-          }
-        });
+      await this.$store.dispatch(LIST_ARTIST, params);
+      // console.log(this.getArtists);
+      for (let i in [1, 2, 3, 4, 5]) {
+        this.artists.push({});
+      }
+      for (let artist of this.getArtists) {
+        if (artist.name == "Lindita") {
+          this.artists[0] = artist;
+          // continue
+        }
+        if (artist.name == "Genti Deda") {
+          this.artists[1] = artist;
+        }
+        if (artist.name == "Rea Nuhu") {
+          this.artists[2] = artist;
+        }
+        if (artist.name == "Khuba") {
+          this.artists[3] = artist;
+        }
+        if (artist.name == "Sisma") {
+          this.artists[4] = artist;
+        }
+      }
+      console.log(this.artists);
     }
   },
   components: {
@@ -133,7 +141,10 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
-    this.getArtists();
+    this.fetchArtists();
+  },
+  computed: {
+    ...mapGetters(["getArtists"])
   }
 };
 </script>
@@ -339,10 +350,12 @@ export default {
 
 .section-artists {
   background-color: white;
+  height: 100vh;
+  position: relative;
 }
 
 .header-text {
-  margin-top: -9rem;
+  margin-top: 4rem;
   text-align: center;
   font-family: Vollkorn;
   // color: black;

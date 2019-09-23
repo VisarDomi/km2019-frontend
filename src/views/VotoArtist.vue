@@ -43,8 +43,8 @@
         style="text-align: center; font-size: 14px; font-weight: 700;"
       >Sign in or create a new account to vote</h5>
       <div id="auth">
-        <!-- <amplify-authenticator :authConfig="authConfig"></amplify-authenticator> -->
-        <AmplifyAuthenticator></AmplifyAuthenticator>
+        <amplify-authenticator :authConfig="authConfig"></amplify-authenticator>
+        <!-- <AmplifyAuthenticator></AmplifyAuthenticator> -->
       </div>
     </b-modal>
     <Footer v-if="windowWidth > 770" />

@@ -1,26 +1,20 @@
 <template>
   <div class="mobile-artists">
     <div class="row h-15 align-items-center ml-0" style="width:100%;">
-      <h1 class="title">juria</h1>
+      <h1 class="title">artistët</h1>
     </div>
 
     <!-- <div class="row h-50 justify-content-center mt-6"> -->
-    <div class="row ml-0" style="width:100%;">
-      <!-- <carousel
+    <div class="row ml-0 master-row" style="width:100%;">
+      <carousel
         ref="carouselArtistsMobile"
-        :perPage="1"
+        :perPage="2"
         :paginationEnabled="false"
         :navigationEnabled="false"
       >
-
-
         <slide>
-        </slide>
-      </carousel>-->
-
-      <!-- <slide>
           <div class="card-2 mt-30" v-for="artist in artists1" :key="artist.id">
-            <div class="artist-card" @click="goToRoute('SingleArtist')">
+            <div class="artist-card" @click="goToArtist(artist)">
               <div class="img-container">
                 <img :src="artist.img" alt />
               </div>
@@ -32,7 +26,7 @@
         </slide>
         <slide>
           <div class="card-2 mt-30" v-for="artist in artists2" :key="artist.id">
-            <div class="artist-card" @click="goToRoute('SingleArtist')">
+            <div class="artist-card" @click="goToArtist(artist)">
               <div class="img-container">
                 <img :src="artist.img" alt />
               </div>
@@ -44,7 +38,7 @@
         </slide>
         <slide>
           <div class="card-2 mt-30" v-for="artist in artists3" :key="artist.id">
-            <div class="artist-card" @click="goToRoute('SingleArtist')">
+            <div class="artist-card" @click="goToArtist(artist)">
               <div class="img-container">
                 <img :src="artist.img" alt />
               </div>
@@ -56,7 +50,7 @@
         </slide>
         <slide>
           <div class="card-2 mt-30" v-for="artist in artists4" :key="artist.id">
-            <div class="artist-card" @click="goToRoute('SingleArtist')">
+            <div class="artist-card" @click="goToArtist(artist)">
               <div class="img-container">
                 <img :src="artist.img" alt />
               </div>
@@ -65,37 +59,31 @@
               <p class="artist-card__song go-up">{{artist.song}}</p>
             </div>
           </div>
-      </slide>-->
+        </slide>
+      </carousel>
     </div>
-    <!-- </div> -->
-    <!-- <div class="graphic-right"></div> -->
-    <!-- <div class="row">
+    <div class="graphic-right"></div>
+    <div class="row">
       <div class="w-100 text-center btn-container">
-        <a href="#" @click="goToRoute('Artists')" class="btn" style="margin-left:8%;">lexo me shumë</a>
+        <a
+          href="#"
+          @click="goToRoute('Artists')"
+          class="btn"
+          style="margin-left:8%;"
+        >më shumë artistë</a>
       </div>
-    </div>-->
+    </div>
   </div>
 </template>
 
 <script>
-import { API_URL } from "@/store/services/api";
-
+import { LIST_ARTIST } from "@/store/actions.type";
+import { SET_ARTIST } from "@/store/mutations.type";
+import { mapGetters } from "vuex";
 export default {
   name: "NewsMobile",
   data() {
     return {
-      artists: [
-        {
-          name: "name",
-          songtitle: "songtitle songtitle songtitle",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "name",
-          songtitle: "songtitle songtitle songtitle",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        }
-      ],
       artists1: [],
       artists2: [],
       artists3: [],
@@ -114,40 +102,62 @@ export default {
         this.$refs.carouselArtistsMobile.getNextPage()
       );
     },
+    goToArtist(artist) {
+      this.$router.push({
+        name: "SingleArtist",
+        params: { slug: artist.name, id: artist.id }
+      });
+    },
     prevSlide() {
       this.$refs.carouselArtistsMobile.goToPage(
         this.$refs.carouselArtistsMobile.getPreviousPage()
       );
     },
-    async getArtists() {
-      const axios = require("axios");
-      axios.defaults.headers.common = {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json"
+    async fetchArtists() {
+      const TableName = "KM2019-Artist";
+      const Limit = "100";
+      const params = {
+        TableName,
+        Limit
       };
-      let artists = axios
-        .get(API_URL, {
-          params: {
-            TableName: "KM2019-Artist",
-            Limit: "100"
-          }
-        })
-        .then(res => {
-          let resItems = res.data["Items"];
-          this.artists1 = [...resItems.splice(0, 2)];
-          this.artists2 = [...resItems.splice(0, 2)];
-          this.artists3 = [...resItems.splice(0, 2)];
-          if (resItems.length > 0) {
-            this.artists4 = [...resItems.splice(0, 2)];
-          }
-        });
+      await this.$store.dispatch(LIST_ARTIST, params);
+      console.log(this.getArtists);
+      for (let artist of this.getArtists) {
+        if (artist.name == "Lindita") {
+          this.artists1.push(artist);
+        }
+        if (artist.name == "Genti Deda") {
+          this.artists1.push(artist);
+        }
+        if (artist.name == "Rea Nuhu") {
+          this.artists2.push(artist);
+        }
+        if (artist.name == "Khuba") {
+          this.artists2.push(artist);
+        }
+        if (artist.name == "Sisma") {
+          this.artists3.push(artist);
+        }
+      }
+
+      // let resItems = this.getArtists;
+      // console.log("resItems: ", resItems);
+      // this.artists1 = [...resItems.splice(0, 2)];
+      // this.artists2 = [...resItems.splice(0, 2)];
+      // this.artists3 = [...resItems.splice(0, 2)];
+      // if (resItems.length > 0) {
+      //   this.artists4 = [...resItems.splice(0, 2)];
+      // }
     }
   },
   mounted() {
-    this.getArtists();
+    this.fetchArtists();
     setTimeout(() => {
       this.$forceUpdate();
     }, 500);
+  },
+  computed: {
+    ...mapGetters(["getArtists"])
   }
 };
 </script>
@@ -162,8 +172,15 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
+.master-row {
+  margin-left: -1rem !important;
+  margin-top: -5%;
+  height: 100%;
+}
+
 .mobile-artists {
   position: relative;
+  height: 100vh;
 }
 
 .col-left {
@@ -291,7 +308,8 @@ export default {
     display: inline-block;
     border: solid 2px white;
 
-    margin-bottom: 2px;
+    margin-bottom: 67px;
+    margin-left: -2px;
   }
   &__song {
     border: 1px solid black;
@@ -303,6 +321,7 @@ export default {
     padding: 6px 1rem;
     font-size: 1.5rem;
     line-height: 2rem;
+    margin-top: 15px;
   }
 }
 

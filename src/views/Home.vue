@@ -33,6 +33,9 @@
 
     <HeroSection />
 
+    <ArtistsSection v-if="windowWidth > 750" />
+    <ArtistsMobile v-else />
+
     <AcrossYearsSection v-if="windowWidth > 750" />
     <AcrossYearsMobile v-else />
 
@@ -41,7 +44,6 @@
 
     <ArtistsSectionJuria v-if="windowWidth > 600" />
     <ArtistsSectionJuriaMobile v-else />
-    <!-- <ArtistsMobile v-else /> -->
 
     <SponsorSectionz />
   </div>

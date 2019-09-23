@@ -27,7 +27,7 @@
           <h1 class="artist-name">{{getArtist.name}}</h1>
           <!-- <h1 class="artist-surname">Malaj</h1>
           <h1 class="artist-surname">{{getArtist.name}}</h1>-->
-          <h2 class="artist-songtitle">loose yourself to dance</h2>
+          <h2 class="artist-songtitle">{{getArtist.song}}</h2>
           <h3 class="bio-text">bio</h3>
           <h4
             class="bio-description"
@@ -49,44 +49,14 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-3">
-          <div class="artist-card abs-bottom">
+        <div class="col-lg-3" v-for="artist of artists" :key="artist.id">
+          <div class="artist-card abs-bottom" @click="goToArtist(artist)">
             <div class="img-container">
               <img src="@/assets/img/Kejsi Tola.svg" alt />
             </div>
-            <p class="artist-card__name go-up--small">Kejsi Tola</p>
+            <p class="artist-card__name go-up--small">{{artist.name}}</p>
             <br />
-            <p class="artist-card__song">Loose Yourself to Dance</p>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="artist-card abs-bottom">
-            <div class="img-container">
-              <img src="@/assets/img/Klajdi Haruni.svg" alt />
-            </div>
-            <p class="artist-card__name go-up--small">Klajdi Haruni</p>
-            <br />
-            <p class="artist-card__song">Loose Yourself to Dance</p>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="artist-card abs-bottom">
-            <div class="img-container">
-              <img src="@/assets/img/Alar Band.svg" alt />
-            </div>
-            <p class="artist-card__name go-up--small">Alar Band</p>
-            <br />
-            <p class="artist-card__song">Loose Yourself to Dance</p>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="artist-card abs-bottom">
-            <div class="img-container">
-              <img src="@/assets/img/Rozana Radi.svg" alt />
-            </div>
-            <p class="artist-card__name go-up--small">Rozana Radi</p>
-            <br />
-            <p class="artist-card__song">Loose Yourself to Dance</p>
+            <p class="artist-card__song">{{artist.song}}</p>
           </div>
         </div>
       </div>
@@ -103,6 +73,7 @@ import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
 import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
 // @ is an alias to /src
+import { LIST_ARTIST } from "@/store/actions.type";
 import { mapGetters } from "vuex";
 import { GET_ARTIST } from "@/store/actions.type";
 import {
@@ -120,16 +91,24 @@ export default {
   },
   data() {
     return {
-      windowWidth: window.innerWidth
+      windowWidth: window.innerWidth,
+      artists: []
     };
   },
   methods: {
     goToArtists() {
       this.$router.push({ name: "Artists" });
     },
+
+    goToArtist(artist) {
+      this.$router.push({
+        name: "SingleArtist",
+        params: { slug: artist.name, id: artist.id }
+      });
+      this.$router.go(0);
+    },
     goToHome() {
-      console.log("artist: ", getArtist);
-      // this.$router.push({ name: "Home" });
+      this.$router.push({ name: "Home" });
     },
     async fetchArtist(artistId) {
       const TableName = "KM2019-Artist";
@@ -139,17 +118,33 @@ export default {
         id
       };
       this.$store.commit(START_LOADING);
-      this.$store.dispatch(GET_ARTIST, params);
+      await this.$store.dispatch(GET_ARTIST, params);
       this.$store.commit(STOP_LOADING);
-      // console.log(getArtist);
-      // console.log(this.getArtist);
+    },
+    async fetchArtists() {
+      const TableName = "KM2019-Artist";
+      const Limit = "100";
+      const params = {
+        TableName,
+        Limit
+      };
+      await this.$store.dispatch(LIST_ARTIST, params);
+      for (let artist of this.getArtists) {
+        if (artist.name !== this.getArtist.name) {
+          this.artists.push(artist);
+        }
+      }
+    },
+    goToHome() {
+      this.$router.push({ name: "Home" });
     }
   },
   computed: {
-    ...mapGetters(["getArtist"])
+    ...mapGetters(["getArtist", "getArtists"])
   },
   async mounted() {
     await this.fetchArtist(this.$route.params.id);
+    this.fetchArtists();
 
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
