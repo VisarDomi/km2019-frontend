@@ -1,7 +1,7 @@
 <template>
   <div class="mobile-juria pb-5 pt-5" id="juria-mobile">
     <div class="row h-15 align-items-center ml-0" style="width:100%;">
-      <h1 class="title" v-if="this.lang == 'en'">jury</h1>
+      <h1 class="title" v-if="this.lang == 'en'">the jury</h1>
       <h1 class="title" v-else>juria</h1>
     </div>
 

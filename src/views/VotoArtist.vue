@@ -252,7 +252,7 @@ export default {
     // console.log(votoPage);
     votoPage.style.background =
       "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
-      this.getArtist["bg-img"] +
+      this.getArtist["bgImg"] +
       "), no-repeat ";
     votoPage.style.backgroundPosition = "center top";
     votoPage.style.backgroundSize = "cover";

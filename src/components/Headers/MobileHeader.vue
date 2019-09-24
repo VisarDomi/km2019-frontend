@@ -12,14 +12,15 @@
       <a href="#" v-if="this.lang == 'en'" v-scroll-to="'#artists-mobile'">artists</a>
       <a href="#" v-else v-scroll-to="'#artists-mobile'">artistët</a>
 
-      <a href="#" v-if="this.lang == 'en'" v-scroll-to="'#juria-mobile'">the jury</a>
-      <a href="#" v-else v-scroll-to="'#juria-mobile'">juria</a>
 
       <a href="#" v-if="this.lang == 'en'" v-scroll-to="'#nder-vite-mobile'">through the years</a>
       <a href="#" v-else v-scroll-to="'#nder-vite-mobile'">ndër vite</a>
 
       <a href="#" v-if="this.lang == 'en'" v-scroll-to="'#te-reja-mobile'">news</a>
       <a href="#" v-else v-scroll-to="'#te-reja-mobile'">të reja</a>
+
+      <a href="#" v-if="this.lang == 'en'" v-scroll-to="'#juria-mobile'">the jury</a>
+      <a href="#" v-else v-scroll-to="'#juria-mobile'">juria</a>
 
       <a href="#" @click="goToVoto()" v-if="this.lang == 'en'">vote</a>
       <a href="#" @click="goToVoto()" v-else>voto</a>
@@ -76,9 +77,11 @@ export default {
       if (this.lang == "en") {
         saveLanguage("al");
         this.lang = "al";
+        this.$router.go(0)
       } else {
         saveLanguage("en");
         this.lang = "en";
+        this.$router.go(0)
       }
       eventBus.$emit("changeLanguage", this.lang);
     }

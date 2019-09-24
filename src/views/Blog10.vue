@@ -16,7 +16,7 @@
 
       <div class="row blog-row">
         <div class="col-md-5 col-12 image-col">
-          <img class="blog-image" src="@/assets/img/blog/Blog-10.jpg" alt />
+          <img class="blog-image" src="@/assets/img/blog/Lajmi per Rea Nuhu.jpg" alt />
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
@@ -31,7 +31,12 @@
             <hr />
             <p
               class="blog-content"
+              v-if="this.lang == 'en'"
             >Rea Nuhu returns for the third year in a row to ‘Kënga Magjike’ festival with her new song ‘Për mua’. Often artists get provoked about their personal lives during the interviews and Rea found herself part of the provocations too. In the studio of ‘E Diela Shqiptare’ she found her father’s clothes that she couldn’t remember where she left. Like most of her peers leaving personal things in her close friend’s house, Rea had forgotten that they had been in Henry’s home for nearly a year.</p>
+            <p
+              class="blog-content"
+              v-else
+            >Kthehet për të tretin vit rradhazi në Kënga Magjike, Rea Nuhu. “Për mua” është titulli i këngës me të cilën Rea konkurron në këtë edicion të festivalit “Kënga Magjike”. Shpeshherë artistët përmes intervistave ngacmohen mbi jetën e tyre personale, as Rea nuk i shpëtoi pyetjeve “provokuese”. Në studion e emisionit “E Diela Shqiptare”, Rea gjeti rrobat e babait të cilat nuk mbante mend se ku i kishte lënë. Si shumica e moshatarëve të saj që lënë sende personale në shtëpinë e shokut të ngushtë, Rea kishte harruar që prej gati një viti ato gjendeshin në shtëpinë e Henrit.</p>
             <div class="row">
               <p class="single-date">13.11.2018</p>
               <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">

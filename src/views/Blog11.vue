@@ -16,7 +16,7 @@
 
       <div class="row blog-row">
         <div class="col-md-5 col-12 image-col">
-          <img class="blog-image" src="@/assets/img/blog/Blog-11.jpg" alt />
+          <img class="blog-image" src="@/assets/img/blog/Lajmi per Genti Deda.jpg" alt />
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
@@ -30,6 +30,10 @@
               class="blog-content"
               v-if="this.lang == 'en'"
             >For the first time as a participant in the BIG category at ‘Kënga Magjike’; Genti Deda presented his song ‘Nuk ta fal’ to the public. Given that in his Instagram profile Genti doesn’t reveal his personal life, he was questioned about one picture with a mysterious girl. For the first time, Gent revealed in his interview at ‘Kënga Magjike’ who his heart belongs to and her name is Ajsi. Genti has not posted any photo of the couple on his Instragram yet.</p>
+            <p
+              class="blog-content"
+              v-else
+            >Për herë të parë si këngëtar BIG në festivalin Kënga Magjike, Genti Deda prezantoi përpara publikut këngën e tij “Nuk ta fal”. Nisur nga fakti që në profilin e tij në Instagram Genti i ka të gjitha fotografitë vetëm, ai u ngacmua për një foto me një vajzë misterioze. Për herë të parë Genti zbuloi se shoqja e tij e zemrës quhet Ajsi. Edhe pse e pranoi këtë publikisht, Genti ende nuk ka postuar asnjë foto çift në Instagram.</p>
             <div class="row">
               <p class="single-date">13.11.2018</p>
               <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
@@ -329,10 +333,11 @@ hr {
   height: 100%;
   height: calc(100vh);
   position: fixed;
+  margin-left: 13rem;
 
   @include respond(phone) {
-    transform: scale(0.3) !important;
-    margin-left: -67rem !important;
+    transform: scale(0.5) !important;
+    margin-left: -6rem !important;
     margin-top: -27rem !important;
   }
 }
@@ -356,12 +361,6 @@ hr {
   @include respond(phone) {
     margin-bottom: 80px;
   }
-}
-.blog-image {
-  object-fit: cover;
-  position: fixed;
-  transform: scale(0.5);
-  margin-left: -36rem;
 }
 
 .vertical-center {

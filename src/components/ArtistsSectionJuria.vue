@@ -4,7 +4,7 @@
     <div class="spacer"></div>
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h1 class="header-text" v-if="this.lang == 'en'">the jury</h1>
+        <h1 class="header-text" v-if="lang == 'en'">the jury</h1>
         <h1 class="header-text" v-else>juria</h1>
       </div>
     </div>

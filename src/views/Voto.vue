@@ -19,7 +19,7 @@
           <h1 class="jumbo-title-voto">voto</h1>
 
           <!-- <img src="@/assets/img/search_icon.svg" alt="" class="search-icon"> -->
-          <input type="search" placeholder="Search" />
+          <!-- <input type="search" placeholder="Search" /> -->
         </div>
       </div>
     </div>
