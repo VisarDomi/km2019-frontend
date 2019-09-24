@@ -6,7 +6,7 @@
     />-->
     <div class="row go-up--small">
       <div class="col-lg-12 text-center">
-        <h1 class="header-text" v-if="this.lang == 'en'">artistet</h1>
+        <h1 class="header-text" v-if="lang == 'en'">artists</h1>
         <h1 class="header-text" v-else>artistët</h1>
       </div>
     </div>
