@@ -1,5 +1,6 @@
 <template>
   <div class="section-juria" id="juria">
+    <HeaderHero menutype="menu__items--white" logoWhite="true" iconWhite="true" />
     <div class="spacer"></div>
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -76,6 +77,7 @@
 
 <script>
 import { getLanguage, saveLanguage } from "@/store/services/storage";
+import HeaderHero from "@/components/Headers/HeaderHero.vue";
 export default {
   name: "ArtistsSection",
   methods: {
@@ -83,7 +85,7 @@ export default {
       this.$router.push({ name: routename });
     }
   },
-  components: {},
+  components: { HeaderHero },
   data() {
     return {
       artists: [

@@ -32,11 +32,7 @@
       class="col-lg-1 col-sm-1 offset-xl-1 cmi"
       v-scroll-to="'#juria'"
     >the jury</div>
-    <div
-      v-else
-      class="col-lg-1 col-sm-1 offset-xl-1 cmi"
-      v-scroll-to="'#juria'"
-    >juria</div>
+    <div v-else class="col-lg-1 col-sm-1 offset-xl-1 cmi" v-scroll-to="'#juria'">juria</div>
 
     <div
       v-if="this.lang == 'en'"
@@ -48,12 +44,15 @@
     <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#te-reja'">news</div>
     <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#te-reja'">të reja</div>
 
-    <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#section-artists'">artists</div>
+    <div
+      v-if="this.lang == 'en'"
+      class="col-lg-1 col-sm-1 cmi"
+      v-scroll-to="'#section-artists'"
+    >artists</div>
     <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#section-artists'">artistët</div>
 
     <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rules</div>
     <div v-else class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rregullore</div>
-
 
     <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" @click="goToVoto()">vote</div>
     <div v-else class="col-lg-1 col-sm-1 cmi" @click="goToVoto()">voto</div>
@@ -119,7 +118,7 @@ export default {
     },
     goToVoto() {
       this.$router.push({
-        name: "Voto",
+        name: "Voto"
       });
     },
     changeLang() {
@@ -182,7 +181,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 .header-hero {
-  position: fixed;
+  position: relative;
   z-index: 9999;
   top: 0%;
   right: 4%;

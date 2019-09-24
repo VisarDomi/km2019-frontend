@@ -1,5 +1,9 @@
 <template>
   <div class="section-artists" id="section-artists">
+    <HeaderHero
+      menutype="menu__items--black"
+      logoBlack="true"
+    />
     <div class="row go-up--small">
       <div class="col-lg-12 text-center">
         <h1 class="header-text" v-if="this.lang == 'en'">artistet</h1>

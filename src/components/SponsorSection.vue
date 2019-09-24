@@ -1,9 +1,8 @@
 <template>
   <div class="section-sponsorz padder">
+    <HeaderHero menutype="menu__items--black" logoBlack="true" />
     <!-- if larger than tablet -->
     <div v-if="windowWidth > 950">
-      <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 950" />
-
       <div class="container">
         <div
           class="row no-gutters justify-content-center"
@@ -130,7 +129,7 @@
             </a>
           </div>
           <div class="col-3">
-            <a href="https://www.smeg.com/smeg-world/albania-shqiperise/" target="_blank">
+            <a href=" https://instagram.com/smeg.al?igshid=sw4oviy3afmj" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
             </a>
           </div>
@@ -270,7 +269,7 @@
             </a>
           </div>
           <div class="col-4">
-            <a href=" https://www.smeg.com/smeg-world/albania-shqiperise/" target="_blank">
+            <a href="  https://instagram.com/smeg.al?igshid=sw4oviy3afmj" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
             </a>
           </div>
@@ -410,7 +409,7 @@
             </a>
           </div>
           <div class="col-4">
-            <a href="https://www.smeg.com/smeg-world/albania-shqiperise/" target="_blank">
+            <a href=" https://instagram.com/smeg.al?igshid=sw4oviy3afmj" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
             </a>
           </div>
@@ -427,6 +426,7 @@ import FooterBlack from "@/components/Footer/FooterBlack.vue";
 import FooterBlackSmall from "@/components/Footer/FooterBlackSmall.vue";
 import FooterBlackMobile from "@/components/Footer/FooterBlackMobile.vue";
 import Footer from "@/components/Footer/FooterWhite.vue";
+import HeaderHero from "@/components/Headers/HeaderHero.vue";
 
 export default {
   name: "SponsorSectionz",
@@ -434,7 +434,8 @@ export default {
     FooterBlack,
     FooterBlackSmall,
     FooterBlackMobile,
-    Footer
+    Footer,
+    HeaderHero
   },
   data() {
     return {

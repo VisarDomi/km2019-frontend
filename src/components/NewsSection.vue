@@ -1,5 +1,6 @@
 <template>
   <div class="section-news pt-5 pb-5" id="te-reja">
+    <HeaderHero menutype="menu__items--white" logoGreen="true" iconWhite="true" />
     <div class="spacer"></div>
     <div class="row h-25">
       <div class="header-container">
@@ -79,10 +80,11 @@
 <script>
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 import { eventBus } from "@/main";
+import HeaderHero from "@/components/Headers/HeaderHero.vue";
 export default {
   name: "NewsSection",
 
-  components: {},
+  components: { HeaderHero },
   data() {
     return {
       windowWidth: window.innerWidth,

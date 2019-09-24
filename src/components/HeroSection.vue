@@ -1,6 +1,7 @@
 
 <template>
   <div class="section-hero" id="kengamagjike">
+    <HeaderHero menutype="menu__items--white" iconWhite="true" />
     <img src="@/assets/img/logo.svg" alt="Kenga Magjike logo" class="logo w-50 h-50 z-2" />
     <div class="bg-video">
       <video class="bg-video__content" autoplay muted loop>
@@ -11,10 +12,13 @@
 </template>
 
 <script>
+import HeaderHero from "@/components/Headers/HeaderHero.vue";
 export default {
   name: "HeroSection",
 
-  components: {},
+  components: {
+    HeaderHero
+  },
   methods: {},
   data() {
     return {

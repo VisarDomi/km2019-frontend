@@ -1,5 +1,6 @@
 <template>
   <div class="section-acrossyears" id="nder-vite">
+    <HeaderHero menutype="menu__items--white" logoWhite="true" iconWhite="true" />
     <div class="spacer"></div>
     <div class="row go-up--small h-20">
       <div class="col-lg-12 offset-1">
@@ -44,6 +45,7 @@
 <script>
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 import { eventBus } from "@/main";
+import HeaderHero from "@/components/Headers/HeaderHero.vue";
 
 export default {
   name: "AcrossYearsSection",
@@ -55,7 +57,9 @@ export default {
       this.$refs.carousel.goToPage(this.$refs.carousel.getPreviousPage());
     }
   },
-  components: {},
+  components: {
+    HeaderHero
+  },
   data() {
     return {
       windowWidth: window.innerWidth,
