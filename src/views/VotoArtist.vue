@@ -181,48 +181,6 @@ export default {
         this.voteSentSuccess = false;
       }
     },
-
-    // old script
-    // async voto() {
-    //   const TableName = "KM2019-Vote";
-    //   const id = this.$route.params.id;
-    //   const username = this.user.username;
-    //   const storage = this.user.storage;
-    //   const accessToken =
-    //     storage[
-    //       `CognitoIdentityServiceProvider.${aws_user_pools_web_client_id}.${username}.accessToken`
-    //     ];
-    //   // console.log("accessToken", accessToken);
-    //   const params = {
-    //     TableName,
-    //     artistId: id,
-    //     accessToken
-    //   };
-    //   // console.log("put send");
-    //   this.$store.commit(START_LOADING);
-    //   await this.$store.dispatch(PUT_VOTES, params);
-    //   await sleep(1000);
-    //   await this.$store.dispatch(PUT_VOTES, params);
-    //   if (this.getVoteErr !== null) {
-    //     // console.log("this.getVoteErr", this.getVoteErr);
-    //     this.voteSent = false;
-    //     if (this.getVoteErr.response.status === 501) {
-    //       this.$store.dispatch(PUT_VOTES, params);
-    //       this.message = "Provoni përsëri";
-    //       this.disabled = false;
-    //       this.voteSent = false;
-    //     } else if (this.getVoteErr.response.status === 409) {
-    //       this.voteSent = true;
-    //       this.message = "Votoni përsëri nesër";
-    //       this.disabled = true;
-    //     }
-    //   } else {
-
-    //     this.disabled = true;
-    //     this.voteSent = true;
-    //   }
-    //   this.$store.commit(STOP_LOADING);
-    // },
     test(obj) {
       return Object.keys(obj).length !== 0;
     },
@@ -247,10 +205,10 @@ export default {
     }
   },
   async mounted() {
-    const voted = getVote()
-    const now = new Date()
-    const today = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}Z`)
-    if (today - voted < 0 & voted !== null) {
+    let voted = getVote()
+    let now = new Date()
+    let today = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`)
+    if (voted - today > 0 & voted !== null) {
       this.disabled = true;
     }
     this.lang = getLanguage();
