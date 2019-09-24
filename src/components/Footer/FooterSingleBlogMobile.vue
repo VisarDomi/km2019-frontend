@@ -9,8 +9,8 @@
         <div class="col-7">
           <div class="row links-row ml-0">
             <a class="col-4">
-              <a class="row" style="margin-bottom:5px;" @click="changeRoute('Home')" v-if="this.lang == 'en'">artists</a>
-              <a class="row" style="margin-bottom:5px;" @click="changeRoute('Home')" v-else>artistët</a>
+              <a class="row" style="margin-bottom:5px;" href="/#artists-mobile" v-if="this.lang == 'en'">artists</a>
+              <a class="row" style="margin-bottom:5px;" href="/#artists-mobile" v-else>artistët</a>
 
               <a class="row" href="/#nder-vite-mobile" v-if="this.lang == 'en'">throgh the years</a>
               <a class="row" href="/#nder-vite-mobile" v-else>ndër vite</a>
@@ -87,12 +87,20 @@ export default {
     };
   },
   mounted(){
-    this.lang = getlanguage();
+    this.lang = getLanguage();
   }
 };
 </script>
 
 <style lang="scss" scoped>
+a{
+  color: black !important;
+  text-decoration: none !important;
+  &:visited{
+    color: black !important
+  }
+}
+
 .social-1 {
   width: 25px;
 }
