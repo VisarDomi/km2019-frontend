@@ -1,7 +1,7 @@
 
 <template>
   <div class="section-hero" id="kengamagjike">
-    <HeaderHero menutype="menu__items--white" iconWhite="true" />
+    <HeaderHero menutype="menu__items--white" iconWhite="true" v-if="windowWidth > 750" />
     <img src="@/assets/img/logo.svg" alt="Kenga Magjike logo" class="logo w-50 h-50 z-2" />
     <div class="bg-video">
       <video class="bg-video__content" autoplay muted loop>

@@ -61,7 +61,11 @@
       >
         <slide>
           <div class="h-100 slide-column" @click="goToBlog('Blog9')">
-            <img src="@/assets/img/blog/Blog-9.jpg" class="img-blog img-fluid grey-scale" alt />
+            <img
+              src="@/assets/img/blog/Lajmi per Linditen.png"
+              class="img-blog img-fluid grey-scale"
+              alt
+            />
             <h1 class="blog-title">Lindita: Katër femrat shqiptare që kam për zemër...</h1>
 
             <h3 class="date">22.09.2019</h3>
@@ -69,7 +73,11 @@
         </slide>
         <slide>
           <div class="h-100 slide-column" @click="goToBlog('Blog11')">
-            <img src="@/assets/img/blog/Blog-11.jpg" class="img-blog img-fluid grey-scale" alt />
+            <img
+              src="@/assets/img/blog/Lajmi per Genti Deda.jpg"
+              class="img-blog img-fluid grey-scale"
+              alt
+            />
             <h1 class="blog-title">Genti Deda "zbulon" shoqen e zemrës.</h1>
 
             <h3 class="date">22.09.2019</h3>
@@ -77,7 +85,11 @@
         </slide>
         <slide>
           <div class="h-100 slide-column" @click="goToBlog('Blog10')">
-            <img src="@/assets/img/blog/Blog-10.jpg" class="img-blog img-fluid grey-scale" alt />
+            <img
+              src="@/assets/img/blog/Lajmi per Rea Nuhu.jpg"
+              class="img-blog img-fluid grey-scale"
+              alt
+            />
             <h1 class="blog-title">Rea Nuhu gjen në “E Diela Shqiptare” veshjet e babait...</h1>
 
             <h3 class="date">22.09.2019</h3>

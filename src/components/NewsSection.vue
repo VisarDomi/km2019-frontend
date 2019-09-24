@@ -24,7 +24,14 @@
           <div class="blog__image blog__image--1" @click="goToBlog('Blog9')">
             <div class="blog__footer">
               <p class="blog__footer--date">22.09.2019</p>
-              <p class="blog__footer--title">Lindita: Katër femrat shqiptare që kam për zemër...</p>
+              <p
+                class="blog__footer--title"
+                v-if="this.lang == 'en'"
+              >Lindita names top four Albanian women she really admires</p>
+              <p
+                class="blog__footer--title"
+                v-else
+              >Lindita: Katër femrat shqiptare që kam për zemër...</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -35,7 +42,11 @@
           <div class="blog__image blog__image--2" @click="goToBlog('Blog11')">
             <div class="blog__footer">
               <p class="blog__footer--date">22.09.2019</p>
-              <p class="blog__footer--title">Genti Deda "zbulon" shoqen e zemrës.</p>
+              <p
+                class="blog__footer--title"
+                v-if="this.lang == 'en'"
+              >Genti Deda ‘reveals’ the person who his heart belongs to</p>
+              <p class="blog__footer--title" v-else>Genti Deda "zbulon" shoqen e zemrës.</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -48,6 +59,11 @@
               <p class="blog__footer--date">22.09.2019</p>
               <p
                 class="blog__footer--title"
+                v-if="this.lang == 'en'"
+              >Rea Nuhu finds her father’s wardrobe in ‘E Diela Shqiptare’</p>
+              <p
+                class="blog__footer--title"
+                v-else
               >Rea Nuhu gjen në “E Diela Shqiptare” veshjet e babait...</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
@@ -61,6 +77,11 @@
               <p class="blog__footer--date">22.09.2018</p>
               <p
                 class="blog__footer--title"
+                v-if="this.lang == 'en'"
+              >Launch the "New Artist" competition, the first five under the jury's "magnifying glass."</p>
+              <p
+                class="blog__footer--title"
+                v-else
               >Nisin konkurimin “New Artist”, pesë të parët nën “lupën” e jurisë</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
@@ -167,14 +188,14 @@ export default {
   &__image {
     &--1 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-9.jpg");
+        url("../assets/img/blog/Lajmi per Linditen.png");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-9.jpg");
+          url("../assets/img/blog/Lajmi per Linditen.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -182,14 +203,14 @@ export default {
     }
     &--2 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-11.jpg");
+        url("../assets/img/blog/Lajmi per Genti Deda.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-11.jpg");
+          url("../assets/img/blog/Lajmi per Genti Deda.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -197,14 +218,14 @@ export default {
     }
     &--3 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-10.jpg");
+        url("../assets/img/blog/Lajmi per Rea Nuhu.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-10.jpg");
+          url("../assets/img/blog/Lajmi per Rea Nuhu.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

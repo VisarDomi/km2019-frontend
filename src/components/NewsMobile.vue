@@ -19,7 +19,7 @@
         >
           <slide>
             <img
-              src="@/assets/img/blog/Blog-9.jpg"
+              src="@/assets/img/blog/Lajmi per Linditen.png"
               alt
               class="img-fluid"
               style="height:100%;width:100%;object-fit:cover;"
@@ -31,7 +31,7 @@
                 class="blog-title-section"
                 @click="goToBlog('Blog9')"
                 v-if="this.lang == 'en'"
-              >Lindita: Four albanian women that are awesome...</h1>
+              >Lindita names top four Albanian women she really admires</h1>
               <h1
                 class="blog-title-section"
                 @click="goToBlog('Blog9')"
@@ -41,7 +41,7 @@
           </slide>
           <slide>
             <img
-              src="@/assets/img/blog/Blog-10.jpg"
+              src="@/assets/img/blog/Lajmi per Rea Nuhu.jpg"
               alt
               class="img-fluid"
               style="height:100%;width:100%;object-fit:cover;"
@@ -53,7 +53,7 @@
                 class="blog-title-section"
                 @click="goToBlog('Blog10')"
                 v-if="this.lang == 'en'"
-              >Rea Nuhu finds in “E Diela Shqiptare” his fathers clothes...</h1>
+              >Rea Nuhu finds her father’s wardrobe in ‘E Diela Shqiptare’</h1>
               <h1
                 class="blog-title-section"
                 @click="goToBlog('Blog10')"
@@ -63,7 +63,7 @@
           </slide>
           <slide>
             <img
-              src="@/assets/img/blog/Blog-11.jpg"
+              src="@/assets/img/blog/Lajmi per Genti Deda.jpg"
               alt
               class="img-fluid"
               style="height:100%;width:100%;object-fit:cover;"
@@ -75,7 +75,7 @@
                 class="blog-title-section"
                 @click="goToBlog('Blog11')"
                 v-if="this.lang == 'en'"
-              >Genti Deda finds his perfect girl.</h1>
+              >Genti Deda ‘reveals’ the person who his heart belongs to</h1>
               <h1
                 class="blog-title-section"
                 @click="goToBlog('Blog11')"
@@ -110,7 +110,12 @@
     </div>
     <div class="row ml-0" style>
       <div class="text-center ml-auto mr-auto">
-        <a @click="goToBlogs()" class="btn more-btn" style="color:white;" v-if="this.lang == 'en'">more news</a>
+        <a
+          @click="goToBlogs()"
+          class="btn more-btn"
+          style="color:white;"
+          v-if="this.lang == 'en'"
+        >more news</a>
         <a @click="goToBlogs()" class="btn more-btn" style="color:white;" v-else>Më shumë lajme</a>
       </div>
     </div>
@@ -243,7 +248,7 @@ export default {
   font-size: 1.8rem;
   padding: 0.6rem;
 
-  margin-top: 40%;
+  margin-top: 17%;
   // left: 2rem;
 }
 
