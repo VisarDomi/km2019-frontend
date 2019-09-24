@@ -30,6 +30,10 @@
               class="blog-content"
               v-if="this.lang == 'en'"
             >For the first time as a participant in the BIG category at ‘Kënga Magjike’; Genti Deda presented his song ‘Nuk ta fal’ to the public. Given that in his Instagram profile Genti doesn’t reveal his personal life, he was questioned about one picture with a mysterious girl. For the first time, Gent revealed in his interview at ‘Kënga Magjike’ who his heart belongs to and her name is Ajsi. Genti has not posted any photo of the couple on his Instragram yet.</p>
+            <p
+              class="blog-content"
+              v-else
+            >Për herë të parë si këngëtar BIG në festivalin Kënga Magjike, Genti Deda prezantoi përpara publikut këngën e tij “Nuk ta fal”. Nisur nga fakti që në profilin e tij në Instagram Genti i ka të gjitha fotografitë vetëm, ai u ngacmua për një foto me një vajzë misterioze. Për herë të parë Genti zbuloi se shoqja e tij e zemrës quhet Ajsi. Edhe pse e pranoi këtë publikisht, Genti ende nuk ka postuar asnjë foto çift në Instagram.</p>
             <div class="row">
               <p class="single-date">13.11.2018</p>
               <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
