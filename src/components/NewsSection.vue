@@ -1,6 +1,6 @@
 <template>
   <div class="section-news pt-5 pb-5" id="te-reja">
-    <HeaderHero menutype="menu__items--white" logoGreen="true" iconWhite="true" />
+    <!-- <HeaderHero menutype="menu__items--white" logoGreen="true" iconWhite="true" /> -->
     <div class="spacer"></div>
     <div class="row h-25">
       <div class="header-container">

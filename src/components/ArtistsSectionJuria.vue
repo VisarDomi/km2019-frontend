@@ -1,6 +1,6 @@
 <template>
   <div class="section-juria" id="juria">
-    <HeaderHero menutype="menu__items--white" logoWhite="true" iconWhite="true" />
+    <!-- <HeaderHero menutype="menu__items--white" logoWhite="true" iconWhite="true" /> -->
     <div class="spacer"></div>
     <div class="row">
       <div class="col-lg-12 text-center">

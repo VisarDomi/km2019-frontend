@@ -60,7 +60,7 @@
     <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-if="this.lang == 'en'">Shqip</div>
     <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-else>English</div>
 
-    <div class="col-lg-1 col-sm-1 high-index">
+    <!-- <div class="col-lg-1 col-sm-1 high-index">
       <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
         <img
           v-if="shouldHide"
@@ -79,7 +79,7 @@
         />
         <img v-if="!shouldHide" src="@/assets/img/icon_menu_black.svg" class="respond-width" alt />
       </span>
-    </div>
+    </div>-->
   </div>
   <!-- </div> -->
 </template>
@@ -93,7 +93,7 @@ export default {
   name: "HeaderHero",
   data() {
     return {
-      shouldHide: true,
+      shouldHide: false,
       listMenu: [],
       lang: ""
     };
@@ -185,7 +185,7 @@ export default {
   z-index: 9999;
   top: 0%;
   right: 4%;
-  width: 100%;
+  width: 104%;
 }
 
 .respond-width {

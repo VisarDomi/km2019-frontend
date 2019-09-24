@@ -1,9 +1,9 @@
 <template>
   <div class="section-artists" id="section-artists">
-    <HeaderHero
+    <!-- <HeaderHero
       menutype="menu__items--black"
       logoBlack="true"
-    />
+    />-->
     <div class="row go-up--small">
       <div class="col-lg-12 text-center">
         <h1 class="header-text" v-if="this.lang == 'en'">artistet</h1>
@@ -367,6 +367,7 @@ export default {
   background-color: white;
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 .header-text {

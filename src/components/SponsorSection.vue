@@ -1,6 +1,6 @@
 <template>
   <div class="section-sponsorz padder">
-    <HeaderHero menutype="menu__items--black" logoBlack="true" />
+    <!-- <HeaderHero menutype="menu__items--black" logoBlack="true" /> -->
     <!-- if larger than tablet -->
     <div v-if="windowWidth > 950">
       <div class="container">
@@ -75,7 +75,13 @@
           </div>
 
           <div class="col-3">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/10_vezareas_logo.png" alt />
+            <a href="https://m.facebook.com/Reas-557325781036724/">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/10_vezareas_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-3">
@@ -209,7 +215,13 @@
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/10_vezareas_logo.png" alt />
+            <a href=" https://m.facebook.com/Reas-557325781036724/">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/10_vezareas_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-4">
