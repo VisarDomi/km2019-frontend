@@ -13,6 +13,9 @@ import VueI18n from "vue-i18n";
 import { al, en } from "./translations";
 import Amplify, * as AmplifyModules from "aws-amplify";
 import { AmplifyPlugin } from "aws-amplify-vue";
+import injectInitialState from './utils/inject-initial-state';
+
+
 
 export const aws_user_pools_web_client_id = "5qbjv29p8e8f2vv05c7dmr37fs"
 
@@ -61,7 +64,24 @@ Vue.use(VueCarousel);
 
 export const eventBus = new Vue();
 
-router.beforeEach((to, from, next) => {
+
+if (window.__INITIAL_STATE__) store.replaceState(window.__INITIAL_STATE__)
+
+router.beforeResolve(async (to, from, next) => {
+  try {
+    const components = router.getMatchedComponents(to)
+    await Promise.all(components.map(x => x.fetch && x.fetch({ store })))
+
+    if (window.__PRERENDER_INJECTED) injectInitialState(store.state)
+  } catch (error) {
+    console.log(error)
+  }
+  return next()
+})
+
+
+
+// router.beforeEach((to, from, next) => {
   // const lang = to.params.lang;
 
   // if (!["al", "en"].includes(lang)) return next("al");
@@ -69,8 +89,8 @@ router.beforeEach((to, from, next) => {
   // if (i18n.locale !== lang) {
   //   i18n.locale = lang;
   // }
-  return next();
-});
+//   return next();
+// });
 
 new Vue({
   router,
