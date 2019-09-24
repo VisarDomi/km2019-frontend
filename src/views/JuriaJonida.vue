@@ -25,13 +25,24 @@
           <h3 class="bio-text">bio</h3>
           <h4
             class="bio-description"
-          >Këngëtarja e njohur është fituese e shumë çmimeve të festivaleve muzikore, madje këtë vit ajo, përfaqësoi Shqipërinë në “Eurovision Song Contest 2019”. Përveçse si këngëtare, Jonida Maliqi tashmë njihet edhe si ikonë mode. Në festivalin “Kënga Magjike” ajo ka fituar çmimin e parë në vitin 2008, një festival, ku ajo mban rekordin si një nga këngëtarët me pjesëmarrjen më të lartë (9 herë).</h4>
+            v-if="this.lang == 'en'"
+          >
+The famous singer is the winner of many awards at music festivals, even this year she represented Albania at the "Eurovision Song Contest 2019". In addition to being a singer, Jonida Maliqi is now also known as a fashion icon. At Kënga Magjike Festival, she won the first prize in 2008, a festival where she holds the record as one of the highest performing singers (9 times).          </h4>
+          <h4
+            class="bio-description"
+            v-else
+          >
+          Këngëtarja e njohur është fituese e shumë çmimeve të festivaleve muzikore, madje këtë vit ajo, përfaqësoi Shqipërinë në “Eurovision Song Contest 2019”. Përveçse si këngëtare, Jonida Maliqi tashmë njihet edhe si ikonë mode. Në festivalin “Kënga Magjike” ajo ka fituar çmimin e parë në vitin 2008, një festival, ku ajo mban rekordin si një nga këngëtarët me pjesëmarrjen më të lartë (9 herë).
+          </h4>
         </div>
       </div>
 
       <div class="row">
         <div class="col">
-          <h1 class="trigger-text">Anetare te tjere te jurise:</h1>
+          <h1 class="trigger-text" 
+            v-if="this.lang == 'en'">Other jury participants:</h1>
+          <h1 class="trigger-text" 
+            v-else>Anetare te tjere te jurise:</h1>
         </div>
       </div>
 
@@ -85,6 +96,7 @@
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
 import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 // @ is an alias to /src
 
 export default {
@@ -92,6 +104,7 @@ export default {
   components: {
     FooterWhiteMobile,
     FooterWhite,
+      lang: "",
     FooterWhiteSmall
   },
   data() {
@@ -116,6 +129,7 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
+    this.lang = getLanguage();
     // this.getArtists();
   }
 };

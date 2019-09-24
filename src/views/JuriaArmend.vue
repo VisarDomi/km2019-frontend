@@ -25,13 +25,22 @@
           <h3 class="bio-text">bio</h3>
           <h4
             class="bio-description"
-          >Është cilësuar si një prej legjendave të muzikës shqiptare. Artist unik, kantautor, kompozitor dhe autor këngësh mjaft të njohura, tashmë për të dytin vit anëtar i jurisë në “Kënga Magjike”. Armend Rexhepagiqi, me reagimet e tij prej showman-i, ndërthurur me gjykimin e tij të thellë profesional, vitin e kaluar, fitoi jo vetëm simpatinë e publikut, por edhe të vetë konkurrentëve.</h4>
+            v-if="this.lang == 'en'"
+          >
+          He is considered one of the legends of Albanian music. Unique artist, songwriter, composer and lyricist of many well-known songs, returns for his second year as a jury member in Kënga Magjike. Armend Rexhepagiqi, with his showman reactions, combined with his profound professional judgment, won not only the sympathy of the public but also of the competitors themselves last year.          
+          </h4>
+          <h4
+            class="bio-description"
+            v-else
+          >Është cilësuar si një prej legjendave të muzikës shqiptare. Artist unik, kantautor, kompozitor dhe autor këngësh mjaft të njohura, tashmë për të dytin vit anëtar i jurisë në “Kënga Magjike”. Armend Rexhepagiqi, me reagimet e tij prej showman-i, ndërthurur me gjykimin e tij të thellë profesional, vitin e kaluar, fitoi jo vetëm simpatinë e publikut, por edhe të vetë konkurrentëve.
+          </h4>
         </div>
       </div>
 
       <div class="row mt-5">
         <div class="col">
-          <h1 class="trigger-text">Anetare te tjere te jurise:</h1>
+          <h1 class="trigger-text" v-if="this.lang == 'en'">Other jury participants:</h1>
+          <h1 class="trigger-text" v-else>Anetare te tjere te jurise:</h1>
         </div>
       </div>
 
@@ -85,6 +94,7 @@
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
 import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 // @ is an alias to /src
 
 export default {
@@ -92,6 +102,7 @@ export default {
   components: {
     FooterWhiteMobile,
     FooterWhite,
+      lang: "",
     FooterWhiteSmall
   },
   data() {
@@ -116,6 +127,7 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
+    this.lang = getLanguage();
     // this.getArtists();
   }
 };

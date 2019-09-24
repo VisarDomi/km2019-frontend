@@ -24,7 +24,11 @@
           <h1 class="artist-surname">Skënderaj</h1>
           <h3 class="bio-text">bio</h3>
           <h4
-            class="bio-description"
+            class="bio-description" v-if="this.lang == 'en'"
+          >
+Talented instrumentalist, lecturer, currently head of the French-Albanian production house "On Off Productions". Arben Skender is for the second time a member of the jury for the category New Artist, as he was part of the evaluation of new artists in the 2018 edition as well. </h4>
+          <h4
+            class="bio-description" v-else
           >
           Instrumentist i talentuar, pedagog, aktualisht drejtues i shtëpisë së produksionit franko –shqiptare “On Off Productions”. Arben Skënderi është  për herë të dytë anëtar  jurie për kategorinë New Artist, pasi ka qenë pjesë e vlerësimit të artistëve të rinj edhe në “Kënga Magjike 2018”.
           </h4>
@@ -33,7 +37,8 @@
 
       <div class="row">
         <div class="col">
-          <h1 class="trigger-text">Anetare te tjere te jurise:</h1>
+          <h1 class="trigger-text" v-if="this.lang == 'en'">Other jury participants:</h1>
+          <h1 class="trigger-text" v-else>Anetare te tjere te jurise:</h1>
         </div>
       </div>
 
@@ -87,6 +92,7 @@
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
 import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 // @ is an alias to /src
 
 export default {
@@ -94,6 +100,7 @@ export default {
   components: {
     FooterWhiteMobile,
     FooterWhite,
+      lang: "",
     FooterWhiteSmall
   },
   data() {
@@ -118,6 +125,7 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
+    this.lang = getLanguage();
     // this.getArtists();
   }
 };

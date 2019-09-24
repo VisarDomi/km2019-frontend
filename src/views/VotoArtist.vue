@@ -36,7 +36,7 @@
       <b-button class="btn" @click="voteFirstWeek()" :disabled="disabled">Dërgoni votën</b-button>
       <div v-if="getIsLoading" class="my-text-message">Duke dërguar votën</div>
       <div v-if="voteSentSuccess" class="my-text-message">{{this.message}}</div>
-      <div v-if="disabled & !voteSentSuccess" class="my-text-message">Ju keni votuar për sot</div>
+      <div v-if="disabled & !voteSentSuccess" class="my-text-message">Ju keni votuar për sot!</div>
     </div>
     <!-- new login -->
 

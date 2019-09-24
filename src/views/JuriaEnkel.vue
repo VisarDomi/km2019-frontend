@@ -25,13 +25,20 @@
           <h3 class="bio-text">bio</h3>
           <h4
             class="bio-description"
+            v-if="this.lang == 'en'"
+          >
+          Successful journalist, writer, television and radio moderator. Enkel Demi with an already solid career, is also the author of various television shows and author of two books: "Hide mbi Kalldrëm" and "Gurët e Vetmisë". For the first time part of the jury of the festival.
+          <h4
+            class="bio-description"
+            v-else
           >Gazetar i suksesshëm, shkrimtar, moderator televiziv dhe radiofonik. Enkel Demi me një karrierë tashmë solide, është njëkohësisht edhe autor i emisioneve të ndryshme televizive dhe autor i dy librave: "Hide mbi kalldrëm" dhe "Gurët e vetmisë". Për herë të parë pjesë e jurisë së festivalit “Kënga Magjike”.</h4>
         </div>
       </div>
 
       <div class="row">
         <div class="col">
-          <h1 class="trigger-text">Anetare te tjere te jurise:</h1>
+          <h1 class="trigger-text" v-if="this.lang == 'en'">Other jury participants:</h1>
+          <h1 class="trigger-text" v-else>Anetare te tjere te jurise:</h1>
         </div>
       </div>
 
@@ -85,6 +92,7 @@
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
 import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 // @ is an alias to /src
 
 export default {
@@ -92,6 +100,7 @@ export default {
   components: {
     FooterWhiteMobile,
     FooterWhite,
+      lang: "",
     FooterWhiteSmall
   },
   data() {
@@ -116,6 +125,7 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
+    this.lang = getLanguage();
     // this.getArtists();
   }
 };

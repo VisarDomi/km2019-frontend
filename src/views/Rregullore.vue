@@ -407,7 +407,6 @@ export default {
     });
 
     this.lang = getLanguage();
-    this.$i18n.locale = this.$route.params.lang;
   },
   methods: {
     goToHome() {
