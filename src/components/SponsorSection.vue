@@ -85,11 +85,10 @@
             />
           </div>
           <div class="col-3">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/15_curaprox_logo.png"
-              alt
-            />
+            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/15_curaprox_logo.png" alt />
+          </div>
+          <div class="col-3">
+            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
           </div>
         </div>
       </div>
@@ -181,6 +180,12 @@
               alt
             />
           </div>
+          <div class="col-4">
+            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/15_curaprox_logo.png" alt />
+          </div>
+          <div class="col-4">
+            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
+          </div>
         </div>
       </div>
 
@@ -270,6 +275,12 @@
               src="@/assets/img/sponsors/14_geraldina_logo.png"
               alt
             />
+          </div>
+          <div class="col-4">
+            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/15_curaprox_logo.png" alt />
+          </div>
+          <div class="col-4">
+            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
           </div>
         </div>
       </div>
