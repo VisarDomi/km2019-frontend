@@ -75,13 +75,7 @@
           </div>
 
           <div class="col-3">
-            <a href target="_blank">
-              <img
-                class="img-fluid img-sponsor"
-                src="@/assets/img/sponsors/10_vezareas_logo.png"
-                alt
-              />
-            </a>
+            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/10_vezareas_logo.png" alt />
           </div>
 
           <div class="col-3">
@@ -215,13 +209,7 @@
           </div>
 
           <div class="col-4">
-            <a href target="_blank">
-              <img
-                class="img-fluid img-sponsor"
-                src="@/assets/img/sponsors/10_vezareas_logo.png"
-                alt
-              />
-            </a>
+            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/10_vezareas_logo.png" alt />
           </div>
 
           <div class="col-4">
@@ -355,13 +343,7 @@
           </div>
 
           <div class="col-4">
-            <a href target="_blank">
-              <img
-                class="img-fluid img-sponsor"
-                src="@/assets/img/sponsors/10_vezareas_logo.png"
-                alt
-              />
-            </a>
+            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/10_vezareas_logo.png" alt />
           </div>
 
           <div class="col-4">
