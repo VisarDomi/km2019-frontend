@@ -20,11 +20,18 @@
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
-            <h1 class="single-blog-title">Rea Nuhu gjen në “E Diela Shqiptare” veshjet e babait...</h1>
+            <h1
+              class="single-blog-title"
+              v-if="this.lang == 'en'"
+            >Rea Nuhu finds her father’s wardrobe in ‘E Diela Shqiptare’</h1>
+            <h1
+              class="single-blog-title"
+              v-else
+            >Rea Nuhu gjen në “E Diela Shqiptare” veshjet e babait...</h1>
             <hr />
             <p
               class="blog-content"
-            >Kthehet për të tretin vit rradhazi në Kënga Magjike, Rea Nuhu. “Për mua” është titulli i këngës me të cilën Rea konkurron në këtë edicion të festivalit “Kënga Magjike”. Shpeshherë artistët përmes intervistave ngacmohen mbi jetën e tyre personale, as Rea nuk i shpëtoi pyetjeve “provokuese”. Në studion e emisionit “E Diela Shqiptare”, Rea gjeti rrobat e babait të cilat nuk mbante mend se ku i kishte lënë. Si shumica e moshatarëve të saj që lënë sende personale në shtëpinë e shokut të ngushtë, Rea kishte harruar që prej gati një viti ato gjendeshin në shtëpinë e Henrit.</p>
+            >Rea Nuhu returns for the third year in a row to ‘Kënga Magjike’ festival with her new song ‘Për mua’. Often artists get provoked about their personal lives during the interviews and Rea found herself part of the provocations too. In the studio of ‘E Diela Shqiptare’ she found her father’s clothes that she couldn’t remember where she left. Like most of her peers leaving personal things in her close friend’s house, Rea had forgotten that they had been in Henry’s home for nearly a year.</p>
             <div class="row">
               <p class="single-date">13.11.2018</p>
               <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
@@ -62,19 +69,28 @@
               </div>
             </div>
 
-            <h3 class="bio-text">te ngjashme</h3>
+            <h3 class="bio-text" v-if="this.lang == 'en'">similar</h3>
+            <h3 class="bio-text" v-else>te ngjashme</h3>
             <br />
             <div class="row">
               <div class="col-lg-6">
                 <div class="blog-card" @click="goToBlog('Blog1')">
                   <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-1.jpg" alt />
-                  <h2 class="blog-card-title">Ja kush jane 3 artistët e parë BIG!</h2>
+                  <h2
+                    class="blog-card-title"
+                    v-if="this.lang == 'en'"
+                  >These are the first 3 BIG artists!</h2>
+                  <h2 class="blog-card-title" v-else>Ja kush jane 3 artistët e parë BIG!</h2>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="blog-card" @click="goToBlog('Blog2')">
                   <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-2.jpg" alt />
-                  <h2 class="blog-card-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
+                  <h2
+                    class="blog-card-title"
+                    v-if="this.lang == 'en'"
+                  >Flori Mumajesi winner of "Kënga Magjike 2018!"</h2>
+                  <h2 class="blog-card-title" v-else>Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
                 </div>
               </div>
             </div>
@@ -98,6 +114,7 @@ import { Carousel, Slide } from "vue-carousel";
 
 import FooterSingleBlog from "@/components/Footer/FooterSingleBlog.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 export default {
   name: "SingleBlog",
   components: {
@@ -110,7 +127,8 @@ export default {
     return {
       windowWidth: window.innerWidth,
       hoverR: false,
-      hoverL: false
+      hoverL: false,
+      lang: ""
     };
   },
   head: {
@@ -155,6 +173,7 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
+    this.lang = getLanguage();
   }
 };
 </script>

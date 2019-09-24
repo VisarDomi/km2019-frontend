@@ -20,11 +20,16 @@
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
-            <h1 class="single-blog-title">Genti Deda "zbulon" shoqen e zemrës.</h1>
+            <h1
+              class="single-blog-title"
+              v-if="this.lang == 'en'"
+            >Genti Deda ‘reveals’ the person who his heart belongs to</h1>
+            <h1 class="single-blog-title" v-else>Genti Deda "zbulon" shoqen e zemrës.</h1>
             <hr />
             <p
               class="blog-content"
-            >Për herë të parë si këngëtar BIG në festivalin Kënga Magjike, Genti Deda prezantoi përpara publikut këngën e tij “Nuk ta fal”. Nisur nga fakti që në profilin e tij në Instagram Genti i ka të gjitha fotografitë vetëm, ai u ngacmua për një foto me një vajzë misterioze. Për herë të parë Genti zbuloi se shoqja e tij e zemrës quhet Ajsi. Edhe pse e pranoi këtë publikisht, Genti ende nuk ka postuar asnjë foto çift në Instagram.</p>
+              v-if="this.lang == 'en'"
+            >For the first time as a participant in the BIG category at ‘Kënga Magjike’; Genti Deda presented his song ‘Nuk ta fal’ to the public. Given that in his Instagram profile Genti doesn’t reveal his personal life, he was questioned about one picture with a mysterious girl. For the first time, Gent revealed in his interview at ‘Kënga Magjike’ who his heart belongs to and her name is Ajsi. Genti has not posted any photo of the couple on his Instragram yet.</p>
             <div class="row">
               <p class="single-date">13.11.2018</p>
               <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
@@ -62,19 +67,28 @@
               </div>
             </div>
 
-            <h3 class="bio-text">te ngjashme</h3>
+            <h3 class="bio-text" v-if="this.lang == 'en'">similar</h3>
+            <h3 class="bio-text" v-else>te ngjashme</h3>
             <br />
             <div class="row">
               <div class="col-lg-6">
                 <div class="blog-card" @click="goToBlog('Blog1')">
                   <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-1.jpg" alt />
-                  <h2 class="blog-card-title">Ja kush jane 3 artistët e parë BIG!</h2>
+                  <h2
+                    class="blog-card-title"
+                    v-if="this.lang == 'en'"
+                  >These are the first 3 BIG artists!</h2>
+                  <h2 class="blog-card-title" v-else>Ja kush jane 3 artistët e parë BIG!</h2>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="blog-card" @click="goToBlog('Blog2')">
                   <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-2.jpg" alt />
-                  <h2 class="blog-card-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
+                  <h2
+                    class="blog-card-title"
+                    v-if="this.lang == 'en'"
+                  >Flori Mumajesi winner of "Kënga Magjike 2018!"</h2>
+                  <h2 class="blog-card-title" v-else>Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
                 </div>
               </div>
             </div>
@@ -98,6 +112,8 @@ import { Carousel, Slide } from "vue-carousel";
 
 import FooterSingleBlog from "@/components/Footer/FooterSingleBlog.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
+
 export default {
   name: "SingleBlog",
   components: {
@@ -130,7 +146,8 @@ export default {
     return {
       windowWidth: window.innerWidth,
       hoverR: false,
-      hoverL: false
+      hoverL: false,
+      lang: ""
     };
   },
   methods: {
@@ -156,6 +173,7 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
+    this.lang = getLanguage();
   }
 };
 </script>

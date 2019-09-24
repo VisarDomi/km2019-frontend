@@ -20,15 +20,21 @@
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
-            <h1 class="single-blog-title">Lindita: Katër femrat shqiptare që kam për zemër...</h1>
+            <h1
+              class="single-blog-title"
+              v-if="this.lang == 'en'"
+            >Lindita names top four Albanian women she really admires</h1>
+            <h1 class="single-blog-title" v-else>Lindita: Katër femrat shqiptare që kam për zemër...</h1>
             <hr />
-            <p class="blog-content">
+            <p class="blog-content" v-if="this.lang == 'en'">
+              She returns after nine years at ‘Kënga Magjike’ festival with a great performance, Lindita was the first BIG artist to present her song ‘Want my love’ on the stage of the program ‘E Diela Shqiptare’.
+              <br />
+              <br />Lindita was also surprised to receive a message from a very close friend of hers, the American model Halle Calhoun. Halle has been part of Lindita’s highly successful clip ‘Murda’. Halle also asked Lindita which Albanian women she would choose to be in her role instead and Lindita replied that there were four Albanian women that she really admires: Emina Cunmulaj, Vidane Zeneli, Tuna and Nora Istrefi.
+            </p>
+            <p class="blog-content" v-else>
               Rikthehet pas nëntë vitesh në Festivalin Kënga Magjike, Lindita.
               <br />
               <br />Me një super performancë, Lindita ishte e para artiste BIG e cila prezantoi këngën e saj “Want my love” në skenën e programit “E Diela Shqiptare”.
-              <br />
-              <br />Gjatë intervistës së saj me Ardit Gjebrean, ajo përmendi një ndër momentet më emocionuese të karrierës së saj; të kënduarit me Stevie Wonder.
-              <br />
               <br />Lindita gjithashtu u surprizua kur pa se në whatsapp-in e saj kishte ardhur një mesazh nga një mikeshë mjaft e ngushtë e saj, modelja amerikane Halle Calhoun. Halle ka qenë pjesë e klipit mjaft të suksesshëm “Murda” të Linditës, një klip mjaft sensual, i cili u vë në qendër të diskutimeve në momentin e publikimit. E pyetur nga Halle se cilën nga femrat shqiptare do të zgjidhte Lindita në vend të saj, ajo u përgjigj se kishte mjaft për zemër katër prej tyre: Emina Cunmulaj, Vidane Zeneli, Tuna dhe Nora Istrefi.
             </p>
             <div class="row">
@@ -68,19 +74,28 @@
               </div>
             </div>
 
-            <h3 class="bio-text">te ngjashme</h3>
+            <h3 class="bio-text" v-if="this.lang == 'en'">similar</h3>
+            <h3 class="bio-text" v-else>te ngjashme</h3>
             <br />
             <div class="row">
               <div class="col-lg-6">
                 <div class="blog-card" @click="goToBlog('Blog1')">
                   <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-1.jpg" alt />
-                  <h2 class="blog-card-title">Ja kush jane 3 artistët e parë BIG!</h2>
+                  <h2
+                    class="blog-card-title"
+                    v-if="this.lang == 'en'"
+                  >These are the first 3 BIG artists!</h2>
+                  <h2 class="blog-card-title" v-else>Ja kush jane 3 artistët e parë BIG!</h2>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="blog-card" @click="goToBlog('Blog2')">
                   <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-2.jpg" alt />
-                  <h2 class="blog-card-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
+                  <h2
+                    class="blog-card-title"
+                    v-if="this.lang == 'en'"
+                  >Flori Mumajesi winner of "Kënga Magjike 2018!"</h2>
+                  <h2 class="blog-card-title" v-else>Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
                 </div>
               </div>
             </div>
@@ -101,6 +116,7 @@
 // @ is an alias to /src
 
 import { Carousel, Slide } from "vue-carousel";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 
 import FooterSingleBlog from "@/components/Footer/FooterSingleBlog.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
@@ -116,7 +132,8 @@ export default {
     return {
       windowWidth: window.innerWidth,
       hoverR: false,
-      hoverL: false
+      hoverL: false,
+      lang: ""
     };
   },
   head: {
@@ -161,6 +178,7 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
+    this.lang = getLanguage();
   }
 };
 </script>

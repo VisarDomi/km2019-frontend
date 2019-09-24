@@ -22,21 +22,35 @@
           <div class="container">
             <h1
               class="single-blog-title"
+              v-if="this.lang == 'en'"
+            >Five ‘New Artists’ were launched this Sunday under the jury’s ‘magnet’</h1>
+            <h1
+              class="single-blog-title"
+              v-else
             >Nisin konkurimin “New Artist”, pesë të parët nën “lupën” e jurisë</h1>
             <hr />
-            <p class="blog-content">
-
-            Java e parë e konkurimit për kategorinë "New Artist" solli pesë artistë të rinj të cilët nën gjykimin e jurisë profesioniste konkurruan për të kaluar në fazën e parë të kualifikimit.
-            <br /><br />
-            KHUBA - arriti të marrë 4 votat jeshile të jurisë.
-            <br /><br />
-
-            J Gashi ft Enxhi Ngota - nuk mundën të kalojnë këtë fazë pasi morën tre vota të kuqe nga juria.
-            <br /><br />
-
-            SISMA - Djemtë që vinin nga Italia, pjesëmarrës në “Sanremo Giovani” arritën të bindin të gjithë anetarët e jurisë t'u jepnin jeshile duke i kaluar kështu në fazën tjetër.
-            <br /><br />
-            Malvina Likaj - mori katër vota të kuqe dhe një jeshile ndërsa i njëjti votim u dha edhe për  Gretaa. Për çdo javë konkurrentët e kategorisë "New Artist" do të këndojnë live para jurisë. Ata do të nisin konkurrimin pa u prezantuar me jurinë, ndërsa kjo e fundit do të njihet me ta vetëm pas performacës.
+            <p class="blog-content" v-if="this.lang == 'en'">
+              Java e parë e konkurimit për kategorinë "New Artist" solli pesë artistë të rinj të cilët nën gjykimin e jurisë profesioniste konkurruan për të kaluar në fazën e parë të kualifikimit.
+              <br />
+              <br />KHUBA - arriti të marrë 4 votat jeshile të jurisë.
+              <br />
+              <br />J Gashi ft Enxhi Ngota - nuk mundën të kalojnë këtë fazë pasi morën tre vota të kuqe nga juria.
+              <br />
+              <br />SISMA - Djemtë që vinin nga Italia, pjesëmarrës në “Sanremo Giovani” arritën të bindin të gjithë anetarët e jurisë t'u jepnin jeshile duke i kaluar kështu në fazën tjetër.
+              <br />
+              <br />Malvina Likaj - mori katër vota të kuqe dhe një jeshile ndërsa i njëjti votim u dha edhe për Gretaa. Për çdo javë konkurrentët e kategorisë "New Artist" do të këndojnë live para jurisë. Ata do të nisin konkurrimin pa u prezantuar me jurinë, ndërsa kjo e fundit do të njihet me ta vetëm pas performacës.
+            </p>
+            <p class="blog-content" v-else>
+              The first week of competition for the category ‘New Artist’ brought five young artists in stage who, under the judgment of a professional jury, competed to enter the first stage of qualification.
+              <br />
+              <br />
+              <br />From these artists, Khuba managed to get 4 green jury votes.; J Gashi ft Enxhi Ngota couldn’t pass this stage after receiving three red votes from the jury.
+              <br />
+              <br />SISMA, the boys coming from Italy who participated in ‘Sanremo Giovani’ managed to persuade all jury members to give them the green lights, which means passing directly to the next stage.
+              <br />
+              <br />Malvina Likaj, also competed in this category but she was voted with four reds and one green, meaning that she couldn’t pass this stage. The same vote was cast for Gretaa as well.
+              <br />
+              <br />Competitors of the category ‘New Artist’ will sing live in front of the jury every week. They will start the competition without introducing themselves to the jury, and after the performance they will present themselves.
             </p>
             <div class="row">
               <p class="single-date">13.11.2018</p>
@@ -75,19 +89,28 @@
               </div>
             </div>
 
-            <h3 class="bio-text">te ngjashme</h3>
+            <h3 class="bio-text" v-if="this.lang == 'en'">similar</h3>
+            <h3 class="bio-text" v-else>te ngjashme</h3>
             <br />
             <div class="row">
               <div class="col-lg-6">
                 <div class="blog-card" @click="goToBlog('Blog1')">
                   <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-1.jpg" alt />
-                  <h2 class="blog-card-title">Ja kush jane 3 artistët e parë BIG!</h2>
+                  <h2
+                    class="blog-card-title"
+                    v-if="this.lang == 'en'"
+                  >These are the first 3 BIG artists!</h2>
+                  <h2 class="blog-card-title" v-else>Ja kush jane 3 artistët e parë BIG!</h2>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div class="blog-card" @click="goToBlog('Blog2')">
                   <img class="blog-card-image img-fluid" src="@/assets/img/blog/Blog-2.jpg" alt />
-                  <h2 class="blog-card-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
+                  <h2
+                    class="blog-card-title"
+                    v-if="this.lang == 'en'"
+                  >Flori Mumajesi winner of "Kënga Magjike 2018!"</h2>
+                  <h2 class="blog-card-title" v-else>Flori Mumajesi fitues i Kënga Magjike 2018!</h2>
                 </div>
               </div>
             </div>
