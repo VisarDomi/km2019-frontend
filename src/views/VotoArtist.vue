@@ -14,9 +14,10 @@
     </div>
     <div class="row h-75 align-items-center" v-if="windowWidth > 600">
       <div class="col-lg-7 offset-lg-2">
-        <span class="artist-name">{{getArtist.name}}</span>
+        <span class="artist-name" >{{getArtist.name}}</span>
         <hr />
-        <span class="artist-song">{{getArtist.song}}</span>
+        <span class="artist-song" v-if="this.lang == 'en'">{{getArtist.songEng}}</span>
+        <span class="artist-song" v-else>{{getArtist.song}}</span>
       </div>
       <div class="col-lg-1" @click="goToVoto()">
         <img src="@/assets/img/selected.svg" alt class="voto-img" />
@@ -24,9 +25,10 @@
     </div>
     <div class="row h-75 align-items-center" v-else>
       <div class="col-lg-7 offset-lg-2 mobile-width-75 rel">
-        <span class="artist-name">{{getArtist.name}}</span>
+        <span class="artist-name" >{{getArtist.nameEng}}</span>
         <hr />
-        <span class="artist-song">{{getArtist.song}}</span>
+        <span class="artist-song" v-if="this.lang == 'en'">{{getArtist.songEng}}</span>
+        <span class="artist-song" v-else>{{getArtist.song}}</span>
         <img src="@/assets/img/selected.svg" alt class="voto-img" @click="goToVoto()" />
       </div>
     </div>
@@ -92,6 +94,7 @@ import { PUT } from "@/store/actions.type";
 import { aws_user_pools_web_client_id } from "@/main";
 
 import { getVote, saveVote, destroyVote } from "@/store/services/storage";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 
 export default {
   name: "VotoArtist",
@@ -99,6 +102,7 @@ export default {
     Footer,
     FooterSmall,
     FooterMobile,
+      lang: "",
     AmplifyAuthenticator
   },
   data() {
@@ -247,6 +251,7 @@ export default {
     if( Date.now() - getVote() < 86400000) {
       this.disabled = true
     }
+    this.lang = getLanguage();
     await this.fetchArtist(this.$route.params.id);
 
     let votoPage = document.getElementsByClassName("voto-artist")[0];
