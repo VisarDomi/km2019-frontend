@@ -236,7 +236,7 @@ export default {
     async fetchArtist(artistId) {
       const TableName = "KM2019-Artist";
       const id = artistId;
-      console.log("artistId", artistId);
+      // console.log("artistId", artistId);
       const params = {
         TableName,
         id
