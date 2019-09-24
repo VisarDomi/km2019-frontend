@@ -28,5 +28,10 @@ module.exports = {
       })
     ]
   },
-  chainWebpack: config => config.output.filename(`app.${Date.now()}.js`)
+  chainWebpack: config =>
+    config.output.filename(
+      process.env.VUE_CLI_MODERN_MODE && !process.env.VUE_CLI_MODERN_BUILD
+        ? `app-legacy.${Date.now()}.js`
+        : `app.${Date.now()}.js`
+    )
 };
