@@ -16,7 +16,7 @@
 
       <div class="row blog-row">
         <div class="col-md-5 col-12 image-col">
-          <img class="blog-image" src="@/assets/img/blog/Blog-11.jpg" alt />
+          <img class="blog-image" src="@/assets/img/blog/Lajmi per Genti Deda.jpg" alt />
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
@@ -333,10 +333,11 @@ hr {
   height: 100%;
   height: calc(100vh);
   position: fixed;
+  margin-left: 13rem;
 
   @include respond(phone) {
-    transform: scale(0.3) !important;
-    margin-left: -67rem !important;
+    transform: scale(0.5) !important;
+    margin-left: -6rem !important;
     margin-top: -27rem !important;
   }
 }
@@ -360,12 +361,6 @@ hr {
   @include respond(phone) {
     margin-bottom: 80px;
   }
-}
-.blog-image {
-  object-fit: cover;
-  position: fixed;
-  transform: scale(0.5);
-  margin-left: -36rem;
 }
 
 .vertical-center {

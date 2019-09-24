@@ -16,7 +16,7 @@
 
       <div class="row blog-row">
         <div class="col-md-5 col-12 image-col">
-          <img class="blog-image" src="@/assets/img/blog/Blog-9.jpg" alt />
+          <img class="blog-image" src="@/assets/img/blog/Lajmi per Linditen.png" alt />
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
@@ -332,12 +332,12 @@ hr {
 .blog-image {
   object-fit: cover;
   position: fixed;
-  transform: scale(0.6);
-  margin-left: -20rem;
+  // transform: scale(0.6);
+  // margin-left: -20rem;
 
-  @include respond(phone) {
+  @include respond(phone) {    
     transform: scale(0.5);
-    margin-left: -55rem;
+    margin-left: -22rem;
     margin-top: -16rem;
   }
 }

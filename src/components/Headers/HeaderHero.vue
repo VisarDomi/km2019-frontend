@@ -1,5 +1,4 @@
 <template>
-  <!-- <div> -->
   <div class="header-hero row align-items-center menu__items" v-bind:class="menutype">
     <div class="col-xl-3 col-lg-4 col-sm-4 high-index">
       <span class="d-lg-inline-block" href="#" v-if="logoBlack">
@@ -30,9 +29,9 @@
     <div
       v-if="this.lang == 'en'"
       class="col-lg-1 col-sm-1 offset-xl-1 cmi"
-      v-scroll-to="'#juria'"
-    >the jury</div>
-    <div v-else class="col-lg-1 col-sm-1 offset-xl-1 cmi" v-scroll-to="'#juria'">juria</div>
+      v-scroll-to="'#section-artists'"
+    >artists</div>
+    <div v-else class="col-lg-1 col-sm-1 cmi offset-xl-1 cmi" v-scroll-to="'#section-artists'">artistët</div>
 
     <div
       v-if="this.lang == 'en'"
@@ -47,9 +46,9 @@
     <div
       v-if="this.lang == 'en'"
       class="col-lg-1 col-sm-1 cmi"
-      v-scroll-to="'#section-artists'"
-    >artists</div>
-    <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#section-artists'">artistët</div>
+      v-scroll-to="'#juria'"
+    >the jury</div>
+    <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#juria'">juria</div>
 
     <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rules</div>
     <div v-else class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rregullore</div>
@@ -60,28 +59,7 @@
     <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-if="this.lang == 'en'">Shqip</div>
     <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-else>English</div>
 
-    <!-- <div class="col-lg-1 col-sm-1 high-index">
-      <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
-        <img
-          v-if="shouldHide"
-          src="@/assets/img/icon_menu_close_white.svg"
-          class="respond-width"
-          alt
-        />
-        <img v-if="!shouldHide" src="@/assets/img/icon_menu.svg" class="respond-width" alt />
-      </span>
-      <span class="navigation__icon" @click="collapseMenu" v-else>
-        <img
-          v-if="shouldHide"
-          src="@/assets/img/icon_menu_close_black.svg"
-          class="respond-width"
-          alt
-        />
-        <img v-if="!shouldHide" src="@/assets/img/icon_menu_black.svg" class="respond-width" alt />
-      </span>
-    </div>-->
   </div>
-  <!-- </div> -->
 </template>
 
 <script>
@@ -125,9 +103,11 @@ export default {
       if (this.lang == "en") {
         saveLanguage("al");
         this.lang = "al";
+        this.$router.go(0)
       } else {
         saveLanguage("en");
         this.lang = "en";
+        this.$router.go(0)
       }
       eventBus.$emit("changeLanguage", this.lang);
     },

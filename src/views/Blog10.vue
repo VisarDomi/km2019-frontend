@@ -16,7 +16,7 @@
 
       <div class="row blog-row">
         <div class="col-md-5 col-12 image-col">
-          <img class="blog-image" src="@/assets/img/blog/Blog-10.jpg" alt />
+          <img class="blog-image" src="@/assets/img/blog/Lajmi per Rea Nuhu.jpg" alt />
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
