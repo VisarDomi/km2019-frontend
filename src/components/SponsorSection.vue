@@ -9,7 +9,7 @@
           style="padding-bottom:15%; padding-top:10%;"
         >
           <div class="col-3">
-            <a href="www.tirana.al" target="_blank">
+            <a href="https://www.tirana.al" target="_blank">
               <img
                 class="img-fluid img-sponsor"
                 src="@/assets/img/sponsors/1_bashkiatirane_logo.png"
@@ -19,13 +19,13 @@
           </div>
 
           <div class="col-3">
-            <a href="www.pirro.al" target="_blank">
+            <a href="https://www.pirro.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/2_pirro_logo.png" alt />
             </a>
           </div>
 
           <div class="col-3">
-            <a href="www.hako.al" target="_blank">
+            <a href="https://www.hako.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/3_hako_logo.png" alt />
             </a>
           </div>
@@ -41,25 +41,25 @@
           </div>
 
           <div class="col-3">
-            <a href="www.era.al" target="_blank">
+            <a href="https://www.era.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/5_Era_logo.png" alt />
             </a>
           </div>
 
           <div class="col-3">
-            <a href=" www.tess.al" target="_blank">
+            <a href="https://www.tess.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
             </a>
           </div>
 
           <div class="col-3">
-            <a href=" www.prima.al" target="_blank">
+            <a href="https://www.prima.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/7_prima_logo.png" alt />
             </a>
           </div>
 
           <div class="col-3">
-            <a href="www.pierrecardin.al" target="_blank">
+            <a href="https://www.pierrecardin.al" target="_blank">
               <img
                 class="img-fluid img-sponsor"
                 src="@/assets/img/sponsors/8_pierrecardin_logo.png"
@@ -69,7 +69,7 @@
           </div>
 
           <div class="col-3">
-            <a href="www.spar.al" target="_blank">
+            <a href="https://www.spar.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/9_spar_logo.png" alt />
             </a>
           </div>
@@ -79,7 +79,7 @@
           </div>
 
           <div class="col-3">
-            <a href="http://www.hidrosistem.al/" target="_blank">
+            <a href="https://http://www.hidrosistem.al/" target="_blank">
               <img
                 class="img-fluid img-sponsor"
                 src="@/assets/img/sponsors/11_hidrosistem_logo.png"
@@ -95,7 +95,7 @@
           </div>
 
           <div class="col-3">
-            <a href="www.kgjs.al" target="_blank">
+            <a href="https://www.kgjs.al" target="_blank">
               <img
                 class="img-fluid img-sponsor"
                 src="@/assets/img/sponsors/13_klinikagjermaeesyrit_logo.png"
@@ -105,7 +105,7 @@
           </div>
 
           <div class="col-3">
-            <a href="www.geraldinasposa.com" target="_blank">
+            <a href="https://www.geraldinasposa.com" target="_blank">
               <img
                 class="img-fluid img-sponsor"
                 src="@/assets/img/sponsors/14_geraldina_logo.png"
@@ -123,7 +123,7 @@
             </a>
           </div>
           <div class="col-3">
-            <a href=" https://instagram.com/smeg.al?igshid=sw4oviy3afmj" target="_blank">
+            <a href="https://instagram.com/smeg.al?igshid=sw4oviy3afmj" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
             </a>
           </div>
@@ -143,7 +143,7 @@
           style="margin-top:17%; margin-bottom:20%;"
         >
           <div class="col-4">
-            <a href="www.tirana.al" target="_blank">
+            <a href="https://www.tirana.al" target="_blank">
               <img
                 class="img-fluid img-sponsor"
                 src="@/assets/img/sponsors/1_bashkiatirane_logo.png"
@@ -153,13 +153,13 @@
           </div>
 
           <div class="col-4">
-            <a href="www.pirro.al" target="_blank">
+            <a href="https://www.pirro.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/2_pirro_logo.png" alt />
             </a>
           </div>
 
           <div class="col-4">
-            <a href="www.hako.al" target="_blank">
+            <a href="https://www.hako.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/3_hako_logo.png" alt />
             </a>
           </div>
@@ -175,25 +175,25 @@
           </div>
 
           <div class="col-4">
-            <a href="www.era.al" target="_blank">
+            <a href="https://www.era.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/5_Era_logo.png" alt />
             </a>
           </div>
 
           <div class="col-4">
-            <a href="www.tess.al" target="_blank">
+            <a href="https://www.tess.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
             </a>
           </div>
 
           <div class="col-4">
-            <a href="www.prima.al" target="_blank">
+            <a href="https://www.prima.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/7_prima_logo.png" alt />
             </a>
           </div>
 
           <div class="col-4">
-            <a href="www.pierrecardin.al" target="_blank">
+            <a href="https://www.pierrecardin.al" target="_blank">
               <img
                 class="img-fluid img-sponsor"
                 src="@/assets/img/sponsors/8_pierrecardin_logo.png"
@@ -203,7 +203,7 @@
           </div>
 
           <div class="col-4">
-            <a href="www.spar.al" target="_blank">
+            <a href="https://www.spar.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/9_spar_logo.png" alt />
             </a>
           </div>
@@ -213,7 +213,7 @@
           </div>
 
           <div class="col-4">
-            <a href=" http://www.hidrosistem.al/" target="_blank">
+            <a href="http://www.hidrosistem.al/" target="_blank">
               <img
                 class="img-fluid img-sponsor"
                 src="@/assets/img/sponsors/11_hidrosistem_logo.png"
@@ -229,7 +229,7 @@
           </div>
 
           <div class="col-4">
-            <a href="www.kgjs.al" target="_blank">
+            <a href="https://www.kgjs.al" target="_blank">
               <img
                 class="img-fluid img-sponsor"
                 src="@/assets/img/sponsors/13_klinikagjermaeesyrit_logo.png"
@@ -239,7 +239,7 @@
           </div>
 
           <div class="col-4">
-            <a href="www.geraldinasposa.com" target="_blank">
+            <a href="https://www.geraldinasposa.com" target="_blank">
               <img
                 class="img-fluid img-sponsor"
                 src="@/assets/img/sponsors/14_geraldina_logo.png"
@@ -257,7 +257,7 @@
             </a>
           </div>
           <div class="col-4">
-            <a href="  https://instagram.com/smeg.al?igshid=sw4oviy3afmj" target="_blank">
+            <a href="https://instagram.com/smeg.al?igshid=sw4oviy3afmj" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
             </a>
           </div>
