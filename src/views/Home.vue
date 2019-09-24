@@ -1,13 +1,12 @@
 <template>
   <div class="home">
-    <!-- <HeaderHero v-if="windowWidth > 750" /> -->
     <HeaderHero
-      v-if="windowWidth > 750 && this.section == 'HeroSection'"
       menutype="menu__items--white"
       iconWhite="true"
+      v-if="windowWidth > 750 && this.section == 'HeroSection'"
     />
     <HeaderHero
-      v-if="windowWidth > 750 && this.section == 'JuriaSection'"
+      v-if="windowWidth > 750 && this.section == 'JurySection'"
       menutype="menu__items--white"
       logoWhite="true"
       iconWhite="true"
@@ -29,6 +28,11 @@
       menutype="menu__items--black"
       logoBlack="true"
     />
+    <HeaderHero
+      v-if="windowWidth > 750 && this.section == 'ArtistSection'"
+      menutype="menu__items--black"
+      logoBlack="true"
+    />
     <HeaderMobile v-if="windowWidth < 750" />
 
     <HeroSection />
@@ -42,8 +46,8 @@
     <NewsSection v-if="windowWidth > 950" />
     <NewsMobile v-else />
 
-    <ArtistsSectionJuria v-if="windowWidth > 600" />
-    <ArtistsSectionJuriaMobile v-else />
+    <JuriaSection v-if="windowWidth > 600" />
+    <JuriaMobile v-else />
 
     <SponsorSectionz />
   </div>
@@ -61,9 +65,10 @@ import HeaderHero from "@/components/Headers/HeaderHero.vue";
 import HeroSection from "@/components/HeroSection.vue";
 
 import ArtistsSection from "@/components/ArtistsSection.vue";
-import ArtistsSectionJuria from "@/components/ArtistsSectionJuria.vue";
-import ArtistsSectionJuriaMobile from "@/components/ArtistsSectionJuriaMobile.vue";
 import ArtistsMobile from "@/components/ArtistsMobile.vue";
+
+import JuriaSection from "@/components/ArtistsSectionJuria.vue";
+import JuriaMobile from "@/components/ArtistsSectionJuriaMobile.vue";
 
 import AcrossYearsSection from "@/components/AcrossYearsSection.vue";
 import AcrossYearsMobile from "@/components/AcrossYearsMobile.vue";
@@ -86,9 +91,9 @@ export default {
     ComingSoon,
     HeroSection,
     ArtistsSection,
-    ArtistsSectionJuria,
-    ArtistsSectionJuriaMobile,
     ArtistsMobile,
+    JuriaSection,
+    JuriaMobile,
     AcrossYearsSection,
     AcrossYearsMobile,
     SubmissionSection,
@@ -122,21 +127,27 @@ export default {
         window.scrollY > window.innerHeight - 100 &&
         window.scrollY < window.innerHeight * 2 - 100
       ) {
-        this.section = "AcrossYearsSection";
+        this.section = "ArtistSection";
       } else if (
         window.scrollY > window.innerHeight * 2 - 100 &&
         window.scrollY < window.innerHeight * 3 - 100
       ) {
-        this.section = "BlogSection";
+        this.section = "AcrossYearsSection";
       } else if (
         window.scrollY > window.innerHeight * 3 - 100 &&
         window.scrollY < window.innerHeight * 4 - 100
       ) {
-        this.section = "JuriaSection";
-      } else if (window.scrollY > window.innerHeight * 4 - 100) {
+        this.section = "BlogSection";
+      } else if (
+        window.scrollY > window.innerHeight * 4 - 100 &&
+        window.scrollY < window.innerHeight * 5 - 100
+      ) {
         // console.log("Sponsors");
+        this.section = "JurySection";
+      } else if (window.scrollY > window.innerHeight * 5 - 100) {
         this.section = "SponsorSection";
       }
+      console.log(this.section);
     }
   },
   created() {
@@ -159,7 +170,4 @@ export default {
 </script>
 
 <style lang="scss">
-.home {
-  // height: 100vh;
-}
 </style>

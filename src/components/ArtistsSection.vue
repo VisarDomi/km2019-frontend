@@ -1,6 +1,5 @@
 <template>
   <div class="section-artists" id="section-artists">
-    <HeaderHero menutype="menu__items--black" logoBlack="true" v-if="windowWidth > 750" />
     <div class="row go-up--small">
       <div class="col-lg-12 text-center">
         <h1 class="header-text" v-if="this.lang == 'en'">artistet</h1>
@@ -74,7 +73,6 @@
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 import axios from "axios";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
-
 
 import { LIST_ARTIST } from "@/store/actions.type";
 import { SET_ARTIST } from "@/store/mutations.type";
