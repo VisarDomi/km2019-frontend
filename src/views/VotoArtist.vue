@@ -30,16 +30,29 @@
         <img src="@/assets/img/selected.svg" alt class="voto-img" @click="goToVoto()" />
       </div>
     </div>
-    <div class="button-container" v-if="test(user)">
-      <b-button class="btn" @click="voto()">Dërgo votën tënde</b-button>
+
+    <!-- new login -->
+    <div class="button-container">
+      <b-button class="btn" @click="voteFirstWeek()" :disabled="disabled">Dërgoni votën</b-button>
       <div v-if="getIsLoading" class="my-text-message">Duke dërguar votën</div>
-      <!-- <div v-if="voteSent" class="my-text-message">Vota u dergua</div> -->
+      <div v-if="voteSentSuccess" class="my-text-message">{{this.message}}</div>
+      <div v-if="disabled & !voteSentSuccess" class="my-text-message">Ju keni votuar për këtë javë</div>
+    </div>
+    <!-- new login -->
+
+    <!-- old login -->
+    <!-- <div class="button-container" v-if="test(user)">
+      <b-button class="btn" @click="voto()">Dërgo votën</b-button>
+      <div v-if="getIsLoading" class="my-text-message">Duke dërguar votën</div>
       <div v-if="voteSent" class="my-text-message">{{this.message}}</div>
     </div>
     <div class="button-container" v-else>
       <b-button class="btn centered-voto" v-b-modal.my-modal>Voto</b-button>
-    </div>
+    </div> -->
+    <!-- old login -->
     <div class="spacer"></div>
+
+    <!-- pop up -->
     <b-modal id="my-modal">
       <h5 class="m-2" style="text-align: center; font-size: 12px; font-weight: 700;">
         <div>Loading...</div>
@@ -50,6 +63,8 @@
         <!-- <AmplifyAuthenticator></AmplifyAuthenticator> -->
       </div>
     </b-modal>
+    <!-- pop up -->
+
     <Footer v-if="windowWidth > 770" />
     <FooterSmall v-if="windowWidth < 770 && windowWidth > 600" />
     <FooterMobile gClass="height-5 rel" v-if="windowWidth < 600" />
@@ -61,7 +76,7 @@
 import Footer from "@/components/Footer/FooterWhite.vue";
 import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
 import FooterMobile from "@/components/Footer/FooterWhiteMobile.vue";
-import {sleep} from "@/common/functions"
+import { sleep } from "@/common/functions";
 
 import AmplifyAuthenticator from "@/components/AwsCustomComponent.vue";
 
@@ -76,6 +91,8 @@ import { Auth } from "aws-amplify";
 import { PUT } from "@/store/actions.type";
 import { aws_user_pools_web_client_id } from "@/main";
 
+import { getVote, saveVote, destroyVote } from "@/store/services/storage";
+
 export default {
   name: "VotoArtist",
   components: {
@@ -88,6 +105,7 @@ export default {
     return {
       message: "",
       voteSent: false,
+      voteSentSuccess: false,
       isError: null,
       windowWidth: window.innerWidth,
       user: {},
@@ -131,47 +149,77 @@ export default {
     goToVoto() {
       this.$router.push({ name: "Voto" });
     },
-    async voto() {
+    async voteFirstWeek() {
       const TableName = "KM2019-Vote";
       const id = this.$route.params.id;
-      const username = this.user.username;
-      const storage = this.user.storage;
-      const accessToken =
-        storage[
-          `CognitoIdentityServiceProvider.${aws_user_pools_web_client_id}.${username}.accessToken`
-        ];
-      // console.log("accessToken", accessToken);
       const params = {
         TableName,
         artistId: id,
-        accessToken
       };
-      // console.log("put send");
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(PUT_VOTES, params);
-      await sleep(1000)
-      await this.$store.dispatch(PUT_VOTES, params);
+      // await sleep(1000);
+      // await this.$store.dispatch(PUT_VOTES, params);
+      this.$store.commit(STOP_LOADING);
       if (this.getVoteErr !== null) {
         // console.log("this.getVoteErr", this.getVoteErr);
         if (this.getVoteErr.response.status === 501) {
           this.$store.dispatch(PUT_VOTES, params);
+          this.voteSentSuccess = false;
           this.message = "Provoni përsëri";
-          this.disabled = false;
-        } else if (this.getVoteErr.response.status === 409) {
-          this.message = "Votoni përsëri nesër";
+          this.disabled = false
         }
+      } else {
+        saveVote("first week")
+        this.voteSentSuccess = true;
+        this.message = "Vota u dërgua me sukses";
+        this.disabled = true
+        await sleep(3000)
+        this.voteSentSuccess = false
       }
-      this.voteSent = false;
-
-      this.disabled = true;
-      this.voteSent = true;
-      this.$store.commit(STOP_LOADING);
-      // if (this.getVote === "Voted.") {
-      // }
-      // // console.log("res", res);
-      // // console.log("put send");
-      // this.$store.dispatch();
     },
+
+    // old script
+    // async voto() {
+    //   const TableName = "KM2019-Vote";
+    //   const id = this.$route.params.id;
+    //   const username = this.user.username;
+    //   const storage = this.user.storage;
+    //   const accessToken =
+    //     storage[
+    //       `CognitoIdentityServiceProvider.${aws_user_pools_web_client_id}.${username}.accessToken`
+    //     ];
+    //   // console.log("accessToken", accessToken);
+    //   const params = {
+    //     TableName,
+    //     artistId: id,
+    //     accessToken
+    //   };
+    //   // console.log("put send");
+    //   this.$store.commit(START_LOADING);
+    //   await this.$store.dispatch(PUT_VOTES, params);
+    //   await sleep(1000);
+    //   await this.$store.dispatch(PUT_VOTES, params);
+    //   if (this.getVoteErr !== null) {
+    //     // console.log("this.getVoteErr", this.getVoteErr);
+    //     this.voteSent = false;
+    //     if (this.getVoteErr.response.status === 501) {
+    //       this.$store.dispatch(PUT_VOTES, params);
+    //       this.message = "Provoni përsëri";
+    //       this.disabled = false;
+    //       this.voteSent = false;
+    //     } else if (this.getVoteErr.response.status === 409) {
+    //       this.voteSent = true;
+    //       this.message = "Votoni përsëri nesër";
+    //       this.disabled = true;
+    //     }
+    //   } else {
+
+    //     this.disabled = true;
+    //     this.voteSent = true;
+    //   }
+    //   this.$store.commit(STOP_LOADING);
+    // },
     test(obj) {
       return Object.keys(obj).length !== 0;
     },
@@ -185,6 +233,7 @@ export default {
     async fetchArtist(artistId) {
       const TableName = "KM2019-Artist";
       const id = artistId;
+      console.log("artistId", artistId)
       const params = {
         TableName,
         id
@@ -195,6 +244,9 @@ export default {
     }
   },
   async mounted() {
+    if( getVote("vote") === "first week") {
+      this.disabled = true
+    }
     await this.fetchArtist(this.$route.params.id);
 
     let votoPage = document.getElementsByClassName("voto-artist")[0];
@@ -235,11 +287,12 @@ export default {
 
 .my-text-message {
   color: white;
+  width: 100%;
   font-size: 3rem;
   font-weight: 800;
   margin-left: 4%;
   @include respond(phone) {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-left: 10%;
   }
 }

@@ -66,14 +66,15 @@ export default {
   data() {
     return {
       windowWidth: window.innerWidth,
-      artists: [],
+      artists: []
     };
   },
   head: {
     meta: [
       {
         p: "og:image",
-        c: "https://previews.dropbox.com/p/thumb/AAjqnkGyCgiX4XqouopfXwFN2ciIjIdsn30Fz8s_AxCWh_xiLbogQhFXrjkHUAUnoxc-Qk8vqXHWDBX2n5ioMPVdhHtggd8co7OPJWAx1VDGdfp1cTJhDYPlo6WlTbuFAcb6VzRwmAeaCvTviTGgPFewi45Wun569ZAMDYtIBDYBoDCXScRk1-xeKkbw-PlzWMYKjzJoksSX-vfy-0s2ya7HUZ5LVMCQ69tZDPQvB2lOKJ8tKyyF3OYxnvv4AQw-T2w2dVo5y-eFTb1lmrGtFgxBPckoAE7W-QR3Kc2SAP5s4-9TWwtabuIWdOAb4XoslUZ41qv1cOauqO5cGu3eyYeq5O4l3dlDRtgJHxyUCJPBSA/p.png?fv_content=true&size_mode=5"
+        c:
+          "https://previews.dropbox.com/p/thumb/AAjqnkGyCgiX4XqouopfXwFN2ciIjIdsn30Fz8s_AxCWh_xiLbogQhFXrjkHUAUnoxc-Qk8vqXHWDBX2n5ioMPVdhHtggd8co7OPJWAx1VDGdfp1cTJhDYPlo6WlTbuFAcb6VzRwmAeaCvTviTGgPFewi45Wun569ZAMDYtIBDYBoDCXScRk1-xeKkbw-PlzWMYKjzJoksSX-vfy-0s2ya7HUZ5LVMCQ69tZDPQvB2lOKJ8tKyyF3OYxnvv4AQw-T2w2dVo5y-eFTb1lmrGtFgxBPckoAE7W-QR3Kc2SAP5s4-9TWwtabuIWdOAb4XoslUZ41qv1cOauqO5cGu3eyYeq5O4l3dlDRtgJHxyUCJPBSA/p.png?fv_content=true&size_mode=5"
       },
       {
         p: "og:url",
