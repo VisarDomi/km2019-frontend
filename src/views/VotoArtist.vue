@@ -174,8 +174,8 @@ export default {
       } else {
         let now = new Date();
         let tomorrow = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()+1}`);
-        console.log("tomorrow", tomorrow)
-        console.log("tomorrow.toGMTString()", tomorrow.toGMTString())
+        // console.log("tomorrow", tomorrow)
+        // console.log("tomorrow.toGMTString()", tomorrow.toGMTString())
         document.cookie = `vote=${Date.now()};expires=${tomorrow.toGMTString()}`;
         this.voteSentSuccess = true;
         this.message = "Vota u dërgua me sukses";
@@ -210,7 +210,7 @@ export default {
   async mounted() {
     let cookies = document.cookie;
     if (cookies !== null) {
-      console.log("cookie.split(';')", cookies.split(';'))
+      // console.log("cookie.split(';')", cookies.split(';'))
       for (let cookie of cookies.split(';')) {
         if (cookie.split("=")[0]==="vote") {
           let voted = cookie.split("=")[1];
