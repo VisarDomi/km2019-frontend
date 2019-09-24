@@ -62,31 +62,31 @@ Vue.use(VueCarousel);
 
 export const eventBus = new Vue();
 
-import { currentVersion } from "./registerServiceWorker"
+// import { currentVersion } from "./registerServiceWorker"
 
 router.beforeEach(async (to, from, next) => {
-  if (getVersion() !== currentVersion) {
-    // version outdated
-    // get version from server and save it in localstorage
-    // reload window to get new js
-    // console.log("not version 0.2");
-    const params = {
-      version: "version"
-    };
-    await ApiService.get(params)
-      .then(response => {
-        console.log("response", response);
-        const version = response.data.version;
-        saveVersion(version);
-        window.location.reload(true);
-      })
-      .catch(err => {
-        console.log("err", Object.assign({}, err));
-        return next();
-      });
-  } else {
+  // if (getVersion() !== currentVersion) {
+  //   // version outdated
+  //   // get version from server and save it in localstorage
+  //   // reload window to get new js
+  //   // console.log("not version 0.2");
+  //   const params = {
+  //     version: "version"
+  //   };
+  //   await ApiService.get(params)
+  //     .then(response => {
+  //       console.log("response", response);
+  //       const version = response.data.version;
+  //       saveVersion(version);
+  //       window.location.reload(true);
+  //     })
+  //     .catch(err => {
+  //       console.log("err", Object.assign({}, err));
+  //       return next();
+  //     });
+  // } else {
   return next();
-  }
+  // }
 });
 
 router.beforeEach((to, from, next) => {

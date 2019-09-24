@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 import { register } from 'register-service-worker'
-export const currentVersion = "0.7"
+// export const currentVersion = "0.7"
 
 // if (process.env.NODE_ENV === 'production') {
   register(`${process.env.BASE_URL}service-worker.js`, {
@@ -13,7 +13,7 @@ export const currentVersion = "0.7"
     },
     registered () {
       console.log('Service worker has been registered.')
-      console.log('currentVersion', currentVersion)
+      // console.log('currentVersion', currentVersion)
     },
     cached () {
       console.log('Content has been cached for offline use.')
