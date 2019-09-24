@@ -7,7 +7,7 @@
     <div class="row ml-0" style="width:100%;">
       <div class="row ml-0" style="margin: 34px 10px 34px;width: 100%;">
         <div class="col-6" v-for="artist in artists1" :key="artist.id">
-          <div class="artist-card" @click=goToArtist(artist)>
+          <div class="artist-card" @click="goToArtist(artist)">
             <div class="img-container">
               <img :src="artist.img" alt />
             </div>
@@ -20,7 +20,7 @@
       </div>
       <div class="row ml-0" style="margin: 34px 10px; width: 100%;">
         <div class="col-6" v-for="artist in artists2" :key="artist.id">
-          <div class="artist-card" @click=goToArtist(artist)>
+          <div class="artist-card" @click="goToArtist(artist)">
             <div class="img-container">
               <img :src="artist.img" alt />
             </div>
@@ -33,7 +33,7 @@
       </div>
       <div class="row ml-0" style="margin: 34px 10px; width: 100%;">
         <div class="col-6" v-for="artist in artists3" :key="artist.id">
-          <div class="artist-card" @click=goToArtist(artist)>
+          <div class="artist-card" @click="goToArtist(artist)">
             <div class="img-container">
               <img :src="artist.img" alt />
             </div>
@@ -151,12 +151,12 @@ export default {
       // }
     }
   },
-  mounted() {
-    this.fetchArtists();
+  async mounted() {
+    this.lang = getLanguage();
     setTimeout(() => {
       this.$forceUpdate();
     }, 500);
-    this.lang = getLanguage();
+    await this.fetchArtists();
   },
   computed: {
     ...mapGetters(["getArtists"])

@@ -48,7 +48,7 @@
     </div>
     <div class="button-container" v-else>
       <b-button class="btn centered-voto" v-b-modal.my-modal>Voto</b-button>
-    </div> -->
+    </div>-->
     <!-- old login -->
     <div class="spacer"></div>
 
@@ -81,14 +81,13 @@ import { sleep } from "@/common/functions";
 import AmplifyAuthenticator from "@/components/AwsCustomComponent.vue";
 
 import { mapGetters } from "vuex";
-import { GET_ARTIST, PUT_VOTES } from "@/store/actions.type";
+import { GET_ARTIST, PUT_VOTES, PUT } from "@/store/actions.type";
 import {
   START_LOADING,
   STOP_LOADING,
   SET_ARTIST
 } from "@/store/mutations.type";
 import { Auth } from "aws-amplify";
-import { PUT } from "@/store/actions.type";
 import { aws_user_pools_web_client_id } from "@/main";
 
 import { getVote, saveVote, destroyVote } from "@/store/services/storage";
@@ -154,7 +153,7 @@ export default {
       const id = this.$route.params.id;
       const params = {
         TableName,
-        artistId: id,
+        artistId: id
       };
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(PUT_VOTES, params);
@@ -167,15 +166,15 @@ export default {
           this.$store.dispatch(PUT_VOTES, params);
           this.voteSentSuccess = false;
           this.message = "Provoni përsëri";
-          this.disabled = false
+          this.disabled = false;
         }
       } else {
-        saveVote(Date.now())
+        saveVote(Date.now());
         this.voteSentSuccess = true;
         this.message = "Vota u dërgua me sukses";
-        this.disabled = true
-        await sleep(3000)
-        this.voteSentSuccess = false
+        this.disabled = true;
+        await sleep(3000);
+        this.voteSentSuccess = false;
       }
     },
 
@@ -233,7 +232,7 @@ export default {
     async fetchArtist(artistId) {
       const TableName = "KM2019-Artist";
       const id = artistId;
-      console.log("artistId", artistId)
+      console.log("artistId", artistId);
       const params = {
         TableName,
         id
@@ -244,8 +243,8 @@ export default {
     }
   },
   async mounted() {
-    if( Date.now() - getVote() < 86400000) {
-      this.disabled = true
+    if (Date.now() - getVote() < 86400000) {
+      this.disabled = true;
     }
     await this.fetchArtist(this.$route.params.id);
 
