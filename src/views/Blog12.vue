@@ -30,17 +30,6 @@
             >Nisin konkurimin “New Artist”, pesë të parët nën “lupën” e jurisë</h1>
             <hr />
             <p class="blog-content" v-if="this.lang == 'en'">
-              Java e parë e konkurimit për kategorinë "New Artist" solli pesë artistë të rinj të cilët nën gjykimin e jurisë profesioniste konkurruan për të kaluar në fazën e parë të kualifikimit.
-              <br />
-              <br />KHUBA - arriti të marrë 4 votat jeshile të jurisë.
-              <br />
-              <br />J Gashi ft Enxhi Ngota - nuk mundën të kalojnë këtë fazë pasi morën tre vota të kuqe nga juria.
-              <br />
-              <br />SISMA - Djemtë që vinin nga Italia, pjesëmarrës në “Sanremo Giovani” arritën të bindin të gjithë anetarët e jurisë t'u jepnin jeshile duke i kaluar kështu në fazën tjetër.
-              <br />
-              <br />Malvina Likaj - mori katër vota të kuqe dhe një jeshile ndërsa i njëjti votim u dha edhe për Gretaa. Për çdo javë konkurrentët e kategorisë "New Artist" do të këndojnë live para jurisë. Ata do të nisin konkurrimin pa u prezantuar me jurinë, ndërsa kjo e fundit do të njihet me ta vetëm pas performacës.
-            </p>
-            <p class="blog-content" v-else>
               The first week of competition for the category ‘New Artist’ brought five young artists in stage who, under the judgment of a professional jury, competed to enter the first stage of qualification.
               <br />
               <br />
@@ -51,6 +40,17 @@
               <br />Malvina Likaj, also competed in this category but she was voted with four reds and one green, meaning that she couldn’t pass this stage. The same vote was cast for Gretaa as well.
               <br />
               <br />Competitors of the category ‘New Artist’ will sing live in front of the jury every week. They will start the competition without introducing themselves to the jury, and after the performance they will present themselves.
+            </p>
+            <p class="blog-content" v-else>
+              Java e parë e konkurimit për kategorinë "New Artist" solli pesë artistë të rinj të cilët nën gjykimin e jurisë profesioniste konkurruan për të kaluar në fazën e parë të kualifikimit.
+              <br />
+              <br />KHUBA - arriti të marrë 4 votat jeshile të jurisë.
+              <br />
+              <br />J Gashi ft Enxhi Ngota - nuk mundën të kalojnë këtë fazë pasi morën tre vota të kuqe nga juria.
+              <br />
+              <br />SISMA - Djemtë që vinin nga Italia, pjesëmarrës në “Sanremo Giovani” arritën të bindin të gjithë anetarët e jurisë t'u jepnin jeshile duke i kaluar kështu në fazën tjetër.
+              <br />
+              <br />Malvina Likaj - mori katër vota të kuqe dhe një jeshile ndërsa i njëjti votim u dha edhe për Gretaa. Për çdo javë konkurrentët e kategorisë "New Artist" do të këndojnë live para jurisë. Ata do të nisin konkurrimin pa u prezantuar me jurinë, ndërsa kjo e fundit do të njihet me ta vetëm pas performacës.
             </p>
             <div class="row">
               <p class="single-date">13.11.2018</p>
@@ -134,6 +134,7 @@ import { Carousel, Slide } from "vue-carousel";
 
 import FooterSingleBlog from "@/components/Footer/FooterSingleBlog.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 export default {
   name: "SingleBlog",
   components: {
@@ -146,7 +147,8 @@ export default {
     return {
       windowWidth: window.innerWidth,
       hoverR: false,
-      hoverL: false
+      hoverL: false,
+      lang: ""
     };
   },
   head: {
@@ -195,6 +197,7 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
+    this.lang = getLanguage();
   }
 };
 </script>
