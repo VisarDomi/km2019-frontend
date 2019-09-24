@@ -63,7 +63,7 @@ Vue.use(VueCarousel);
 export const eventBus = new Vue();
 
 router.beforeEach(async (to, from, next) => {
-  if (getVersion() !== "0.5") {
+  if (getVersion() !== "0.6") {
     // version outdated
     // get version from server and save it in localstorage
     // reload window to get new js
