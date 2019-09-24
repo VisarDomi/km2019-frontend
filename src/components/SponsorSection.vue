@@ -10,85 +10,129 @@
           style="padding-bottom:15%; padding-top:10%;"
         >
           <div class="col-3">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/1_bashkiatirane_logo.png"
-              alt
-            />
+            <a href="www.tirana.al" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/1_bashkiatirane_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-3">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/2_pirro_logo.png" alt />
+            <a href="www.pirro.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/2_pirro_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-3">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/3_hako_logo.png" alt />
+            <a href="www.hako.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/3_hako_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-3">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/4_tylol_hot_logo.png" alt />
+            <a href="https://www.intermed.al/tylolhot-2/" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/4_tylol_hot_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-3">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/5_Era_logo.png" alt />
+            <a href="www.era.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/5_Era_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-3">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
+            <a href=" www.tess.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-3">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/7_prima_logo.png" alt />
+            <a href=" www.prima.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/7_prima_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-3">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/8_pierrecardin_logo.png"
-              alt
-            />
+            <a href="www.pierrecardin.al" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/8_pierrecardin_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-3">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/9_spar_logo.png" alt />
+            <a href="www.spar.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/9_spar_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-3">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/10_vezareas_logo.png" alt />
+            <a href target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/10_vezareas_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-3">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/11_hidrosistem_logo.png"
-              alt
-            />
+            <a href="http://www.hidrosistem.al/" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/11_hidrosistem_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-3">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/12_Eglo_logo.png" alt />
+            <a href="https://www.teoren.al/en/" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/12_Eglo_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-3">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/13_klinikagjermaeesyrit_logo.png"
-              alt
-            />
+            <a href="www.kgjs.al" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/13_klinikagjermaeesyrit_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-3">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/14_geraldina_logo.png"
-              alt
-            />
+            <a href="www.geraldinasposa.com" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/14_geraldina_logo.png"
+                alt
+              />
+            </a>
           </div>
           <div class="col-3">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/15_curaprox_logo.png" alt />
+            <a href="https://www.curaprox.com/al-sq" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/15_curaprox_logo.png"
+                alt
+              />
+            </a>
           </div>
           <div class="col-3">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
+            <a href="https://www.smeg.com/smeg-world/albania-shqiperise/" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
+            </a>
           </div>
         </div>
       </div>
@@ -106,85 +150,129 @@
           style="margin-top:17%; margin-bottom:20%;"
         >
           <div class="col-4">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/1_bashkiatirane_logo.png"
-              alt
-            />
+            <a href="www.tirana.al" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/1_bashkiatirane_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/2_pirro_logo.png" alt />
+            <a href="www.pirro.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/2_pirro_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/3_hako_logo.png" alt />
+            <a href="www.hako.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/3_hako_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/4_tylol_hot_logo.png" alt />
+            <a href="https://www.intermed.al/tylolhot-2/" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/4_tylol_hot_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/5_Era_logo.png" alt />
+            <a href="www.era.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/5_Era_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
+            <a href="www.tess.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/7_prima_logo.png" alt />
+            <a href="www.prima.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/7_prima_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-4">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/8_pierrecardin_logo.png"
-              alt
-            />
+            <a href="www.pierrecardin.al" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/8_pierrecardin_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/9_spar_logo.png" alt />
+            <a href="www.spar.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/9_spar_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/10_vezareas_logo.png" alt />
+            <a href target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/10_vezareas_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-4">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/11_hidrosistem_logo.png"
-              alt
-            />
+            <a href=" http://www.hidrosistem.al/" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/11_hidrosistem_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/12_Eglo_logo.png" alt />
+            <a href="https://www.teoren.al/en/" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/12_Eglo_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-4">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/13_klinikagjermaeesyrit_logo.png"
-              alt
-            />
+            <a href="www.kgjs.al" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/13_klinikagjermaeesyrit_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-4">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/14_geraldina_logo.png"
-              alt
-            />
+            <a href="www.geraldinasposa.com" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/14_geraldina_logo.png"
+                alt
+              />
+            </a>
           </div>
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/15_curaprox_logo.png" alt />
+            <a href="https://www.curaprox.com/al-sq" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/15_curaprox_logo.png"
+                alt
+              />
+            </a>
           </div>
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
+            <a href=" https://www.smeg.com/smeg-world/albania-shqiperise/" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
+            </a>
           </div>
         </div>
       </div>
@@ -202,85 +290,129 @@
           style="margin-top:40%; margin-bottom:20%;"
         >
           <div class="col-4">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/1_bashkiatirane_logo.png"
-              alt
-            />
+            <a href="www.tirana.al" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/1_bashkiatirane_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/2_pirro_logo.png" alt />
+            <a href="www.pirro.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/2_pirro_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/3_hako_logo.png" alt />
+            <a href="www.hako.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/3_hako_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/4_tylol_hot_logo.png" alt />
+            <a href="https://www.intermed.al/tylolhot-2/" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/4_tylol_hot_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/5_Era_logo.png" alt />
+            <a href=" www.era.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/5_Era_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
+            <a href="www.tess.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/7_prima_logo.png" alt />
+            <a href="www.prima.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/7_prima_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-4">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/8_pierrecardin_logo.png"
-              alt
-            />
+            <a href="www.pierrecardin.al" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/8_pierrecardin_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/9_spar_logo.png" alt />
+            <a href="www.spar.al" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/9_spar_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/10_vezareas_logo.png" alt />
+            <a href target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/10_vezareas_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-4">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/11_hidrosistem_logo.png"
-              alt
-            />
+            <a href="http://www.hidrosistem.al/" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/11_hidrosistem_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/12_Eglo_logo.png" alt />
+            <a href="https://www.teoren.al/en/" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/12_Eglo_logo.png" alt />
+            </a>
           </div>
 
           <div class="col-4">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/13_klinikagjermaeesyrit_logo.png"
-              alt
-            />
+            <a href="www.kgjs.al" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/13_klinikagjermaeesyrit_logo.png"
+                alt
+              />
+            </a>
           </div>
 
           <div class="col-4">
-            <img
-              class="img-fluid img-sponsor"
-              src="@/assets/img/sponsors/14_geraldina_logo.png"
-              alt
-            />
+            <a href="www.geraldinasposa.com" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/14_geraldina_logo.png"
+                alt
+              />
+            </a>
           </div>
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/15_curaprox_logo.png" alt />
+            <a href="https://www.curaprox.com/al-sq" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/15_curaprox_logo.png"
+                alt
+              />
+            </a>
           </div>
           <div class="col-4">
-            <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
+            <a href="https://www.smeg.com/smeg-world/albania-shqiperise/" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
+            </a>
           </div>
         </div>
       </div>
