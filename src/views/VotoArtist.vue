@@ -36,7 +36,7 @@
       <b-button class="btn" @click="voteFirstWeek()" :disabled="disabled">Dërgoni votën</b-button>
       <div v-if="getIsLoading" class="my-text-message">Duke dërguar votën</div>
       <div v-if="voteSentSuccess" class="my-text-message">{{this.message}}</div>
-      <div v-if="disabled & !voteSentSuccess" class="my-text-message">Ju keni votuar për këtë javë</div>
+      <div v-if="disabled & !voteSentSuccess" class="my-text-message">Ju keni votuar për sot</div>
     </div>
     <!-- new login -->
 
@@ -170,7 +170,7 @@ export default {
           this.disabled = false
         }
       } else {
-        saveVote("first week")
+        saveVote(Date.now())
         this.voteSentSuccess = true;
         this.message = "Vota u dërgua me sukses";
         this.disabled = true
@@ -244,7 +244,7 @@ export default {
     }
   },
   async mounted() {
-    if( getVote("vote") === "first week") {
+    if( Date.now() - getVote() < 86400000) {
       this.disabled = true
     }
     await this.fetchArtist(this.$route.params.id);
