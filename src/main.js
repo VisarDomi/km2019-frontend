@@ -13,8 +13,9 @@ import VueI18n from "vue-i18n";
 import { al, en } from "./translations";
 import Amplify, * as AmplifyModules from "aws-amplify";
 import { AmplifyPlugin } from "aws-amplify-vue";
+import { getVersion, saveVersion } from "@/store/services/storage";
 
-export const aws_user_pools_web_client_id = "5qbjv29p8e8f2vv05c7dmr37fs"
+export const aws_user_pools_web_client_id = "5qbjv29p8e8f2vv05c7dmr37fs";
 
 const awsmobile = {
   aws_project_region: "eu-west-1",
@@ -60,6 +61,31 @@ Vue.use(VueFullpage);
 Vue.use(VueCarousel);
 
 export const eventBus = new Vue();
+
+router.beforeEach(async (to, from, next) => {
+  if (getVersion() !== "0.3") {
+    // version outdated
+    // get version from server and save it in localstorage
+    // reload window to get new js
+    // console.log("not version 0.2");
+    const params = {
+      version: "version"
+    };
+    await ApiService.get(params)
+      .then(response => {
+        console.log("response", response);
+        const version = response.data.version;
+        saveVersion(version);
+        window.location.reload(true);
+      })
+      .catch(err => {
+        console.log("err", Object.assign({}, err));
+        return next();
+      });
+  } else {
+    return next();
+  }
+});
 
 router.beforeEach((to, from, next) => {
   // const lang = to.params.lang;

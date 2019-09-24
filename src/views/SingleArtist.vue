@@ -84,9 +84,8 @@ import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
 import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
 // @ is an alias to /src
-import { LIST_ARTIST } from "@/store/actions.type";
+import { LIST_ARTIST, GET_ARTIST } from "@/store/actions.type";
 import { mapGetters } from "vuex";
-import { GET_ARTIST } from "@/store/actions.type";
 import {
   START_LOADING,
   STOP_LOADING,
@@ -205,10 +204,10 @@ export default {
     ...mapGetters(["getArtist", "getArtists"])
   },
   async mounted() {
+    this.lang = getLanguage();
     await this.fetchArtist(this.$route.params.id);
     this.fetchArtists();
 
-    this.lang = getLanguage();
 
     let artistPage = document.getElementsByClassName("artist-page")[0];
     // console.log("artistPage: ", artistPage);

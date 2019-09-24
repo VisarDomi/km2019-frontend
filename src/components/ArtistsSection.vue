@@ -149,14 +149,14 @@ export default {
       windowWidth: window.innerWidth
     };
   },
-  mounted() {
+  async mounted() {
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
     });
-    this.fetchArtists();
     this.lang = getLanguage();
+    await this.fetchArtists();
   },
   computed: {
     ...mapGetters(["getArtists"])
