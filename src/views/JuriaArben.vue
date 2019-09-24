@@ -100,11 +100,11 @@ export default {
   components: {
     FooterWhiteMobile,
     FooterWhite,
-      lang: "",
     FooterWhiteSmall
   },
   data() {
     return {
+      lang: "",
       windowWidth: window.innerWidth
     };
   },
