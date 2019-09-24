@@ -124,6 +124,7 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   mounted() {
+    console.log("Home")
     // eventBus.$on("changeSection", payload => {
     //   this.moveTo(payload);
     // });
