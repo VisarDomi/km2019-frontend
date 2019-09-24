@@ -3,23 +3,27 @@
     <div class="row h-50 vertical-center footer-container">
       <div class="col-md-2">
         <div class="abs-center">
-          <img class="logo-footer" src="@/assets/img/logoblack.svg" alt @click="changeSection(0)" />
+          <img class="logo-footer" src="@/assets/img/logoblack.svg" alt @click="changeRoute('Home')" />
         </div>
       </div>
       <div class="col-md-1 pl-7 temporary-spread border-left-black">
-        <p class="footer-item align-centered" @click="changeSection(1)">juria</p>
+        <p class="footer-item align-centered" @click="changeSection(1)" v-if="this.lang == 'en'">the jury</p>
+        <p class="footer-item align-centered" @click="changeSection(1)" v-else>juria</p>
       </div>
       <!-- <div class="col-md-1 pl-6">
         <p class="footer-item">#fotome</p>
       </div>-->
       <div class="col-md-1 pl-6 temporary-spread">
-        <p class="footer-item" @click="changeSection(2)">ndër vite</p>
+        <a class="footer-item"  href="/#nder-vite" v-if="this.lang == 'en'">through the years</a>
+        <a class="footer-item" href="/#nder-vite" v-else>ndër vite</a>
       </div>
       <div class="col-md-1 pl-6 temporary-spread">
-        <p class="footer-item" @click="changeSection(3)">të reja</p>
+        <a class="footer-item" href="/#te-reja" v-if="this.lang == 'en'">news</a>
+        <a class="footer-item" href="/#te-reja" v-else>të reja</a>
       </div>
       <div class="col-md-1 temporary-spread">
-        <p class="footer-item" @click="changeSection(4)">rregullore</p>
+        <p class="footer-item" @click="changeRoute('Rregullore')" v-if="this.lang == 'en'">rules</p>
+        <p class="footer-item" @click="changeRoute('Rregullore')" v-else>rregullore</p>
       </div>
       <!-- <div class="col-md-1 pl-6">
         <p class="footer-item">voto</p>
@@ -100,13 +104,15 @@
 
 <script>
 import { eventBus } from "@/main";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 export default {
   name: "FooterSingleBlog",
   data() {
     return {
       hoverFB: false,
       hoverYT: false,
-      hoverIG: false
+      hoverIG: false,
+      lang: ""
     };
   },
   methods: {
@@ -119,6 +125,9 @@ export default {
       eventBus.$emit("changeSectionFromFooter", index);
       // // console.log("from footer");
     }
+  },
+  mounted(){
+    this.lang = getLanguage();
   }
 };
 </script>

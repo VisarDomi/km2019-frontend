@@ -8,20 +8,25 @@
 
         <div class="col-7">
           <div class="row links-row ml-0">
-            <div class="col-4">
-              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')">artistët</div>
+            <a class="col-4">
+              <a class="row" style="margin-bottom:5px;" href="/#artists-mobile" v-if="this.lang == 'en'">artists</a>
+              <a class="row" style="margin-bottom:5px;" href="/#artists-mobile" v-else>artistët</a>
 
-              <div class="row" @click="changeRoute('Home')">ndër vite</div>
+              <a class="row" href="/#nder-vite-mobile" v-if="this.lang == 'en'">throgh the years</a>
+              <a class="row" href="/#nder-vite-mobile" v-else>ndër vite</a>
+            </a>
+
+            <div class="col-4">
+              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')" v-if="this.lang == 'en'">#magjike</div>
+              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')" v-else>#magjike</div>
+
+              <div class="row" href="/#te-reja-mobile" v-if="this.lang == 'en'">të reja</div>
+              <div class="row" href="/#te-reja-mobile" v-else>të reja</div>
             </div>
 
             <div class="col-4">
-              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')">#magjike</div>
-
-              <div class="row" @click="changeRoute('Home')">të reja</div>
-            </div>
-
-            <div class="col-4">
-              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Home')">rregullore</div>
+              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Rules')" v-if="this.lang == 'en'">rules</div>
+              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Rules')" v-else>rregullore</div>
 
               <div class="row" @click="changeRoute('Home')">voto</div>
             </div>
@@ -69,16 +74,33 @@
 </template>
 
 <script>
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 export default {
   methods: {
     changeRoute(name) {
       this.$router.push({ name: name });
     }
+  },
+  data() {
+    return {
+      lang: ""
+    };
+  },
+  mounted(){
+    this.lang = getLanguage();
   }
 };
 </script>
 
 <style lang="scss" scoped>
+a{
+  color: black !important;
+  text-decoration: none !important;
+  &:visited{
+    color: black !important
+  }
+}
+
 .social-1 {
   width: 25px;
 }

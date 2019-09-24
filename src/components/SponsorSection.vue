@@ -439,7 +439,7 @@
 
       <FooterBlack v-if="windowWidth > 770" />
     </div>
-
+    <FooterBlackMobile v-if="windowWidth < 770" />
   </div>
 </template>
 

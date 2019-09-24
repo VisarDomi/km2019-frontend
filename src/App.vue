@@ -58,7 +58,7 @@ export default {
 }
 
 a:not([href]):not([tabindex]) {
-  color: #007bff !important;
+  // color: #007bff !important;
   text-decoration: none;
 }
 
