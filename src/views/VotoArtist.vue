@@ -14,7 +14,7 @@
     </div>
     <div class="row h-75 align-items-center" v-if="windowWidth > 600">
       <div class="col-lg-7 offset-lg-2">
-        <span class="artist-name" >{{getArtist.name}}</span>
+        <span class="artist-name">{{getArtist.name}}</span>
         <hr />
         <span class="artist-song" v-if="this.lang == 'en'">{{getArtist.songEng}}</span>
         <span class="artist-song" v-else>{{getArtist.song}}</span>
@@ -25,7 +25,7 @@
     </div>
     <div class="row h-75 align-items-center" v-else>
       <div class="col-lg-7 offset-lg-2 mobile-width-75 rel">
-        <span class="artist-name" >{{getArtist.nameEng}}</span>
+        <span class="artist-name">{{getArtist.nameEng}}</span>
         <hr />
         <span class="artist-song" v-if="this.lang == 'en'">{{getArtist.songEng}}</span>
         <span class="artist-song" v-else>{{getArtist.song}}</span>
@@ -92,7 +92,6 @@ import {
 import { Auth } from "aws-amplify";
 import { aws_user_pools_web_client_id } from "@/main";
 
-import { getVote, saveVote, destroyVote } from "@/store/services/storage";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 
 export default {
@@ -173,7 +172,10 @@ export default {
           this.disabled = false;
         }
       } else {
-        saveVote(Date.now());
+        let now = new Date();
+        let tomorrow = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()+1}`);
+        console.log("tomorrow", tomorrow)
+        document.cookie = `vote=${Date.now()}; expires=${tomorrow}`;
         this.voteSentSuccess = true;
         this.message = "Vota u dërgua me sukses";
         this.disabled = true;
@@ -205,11 +207,14 @@ export default {
     }
   },
   async mounted() {
-    let voted = getVote()
-    let now = new Date()
-    let today = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`)
-    if (voted - today > 0 & voted !== null) {
-      this.disabled = true;
+    let cookie = document.cookie;
+    if (cookie !== null) {
+      let voted = cookie.split("=")[1];
+      let now = new Date();
+      let today = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`);
+      if (voted - today > 0) {
+        this.disabled = true;
+      }
     }
     this.lang = getLanguage();
     await this.fetchArtist(this.$route.params.id);
