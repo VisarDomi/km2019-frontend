@@ -16,7 +16,8 @@
     <div class="row align-items-center justify-content-center row-title">
       <div class="col-xl-7 col-lg-9 col-md-12 text-center">
         <div class="row align-items-center justify-content-center">
-          <h1 class="jumbo-title-voto">voto</h1>
+          <h1 class="jumbo-title-voto" v-if="this.lang == 'en'">vote</h1>
+          <h1 class="jumbo-title-voto" v-else>voto</h1>
 
           <!-- <img src="@/assets/img/search_icon.svg" alt="" class="search-icon"> -->
           <!-- <input type="search" placeholder="Search" /> -->
@@ -33,7 +34,8 @@
       <div class="col-lg-7 offset-lg-2 mobile-width-75 rel">
         <span class="artist-name">{{artist.name}}</span>
         <hr />
-        <span class="artist-song">{{artist.song}}</span>
+        <span class="artist-song" v-if="lang == 'en'">{{artist.songEng}}</span>
+        <span class="artist-song" v-else>{{artist.song}}</span>
       </div>
       <div class="col-lg-1">
         <img src="@/assets/img/Ellipse 13.svg" alt class="voto-img" />
@@ -55,12 +57,14 @@ import FooterMobile from "@/components/Footer/FooterWhiteMobile.vue";
 import { LIST_ARTIST } from "@/store/actions.type";
 import { SET_ARTIST } from "@/store/mutations.type";
 import { mapGetters } from "vuex";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
 
 export default {
   name: "Voto",
   components: {
     Footer,
     FooterSmall,
+      lang: "",
     FooterMobile
   },
   data() {
@@ -138,6 +142,7 @@ export default {
       });
     });
     this.fetchArtists();
+    this.lang = getLanguage();
   },
   computed: {
     ...mapGetters(["getArtists"])
