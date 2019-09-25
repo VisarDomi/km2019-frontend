@@ -17,7 +17,7 @@
               />
             </a>
           </div>
-          
+
           <div class="col-3">
             <a href="https://instagram.com/smeg.al?igshid=sw4oviy3afmj" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
@@ -52,7 +52,6 @@
             </a>
           </div>
 
-
           <div class="col-3">
             <a href="https://m.facebook.com/Reas-557325781036724/">
               <img
@@ -63,7 +62,6 @@
             </a>
           </div>
 
-
           <div class="col-3">
             <a href="https://www.intermed.al/tylolhot-2/" target="_blank">
               <img
@@ -73,7 +71,7 @@
               />
             </a>
           </div>
-          
+
           <div class="col-3">
             <a href="https://www.curaprox.com/al-sq" target="_blank">
               <img
@@ -83,7 +81,6 @@
               />
             </a>
           </div>
-
 
           <div class="col-3">
             <a href="http://http://www.hidrosistem.al/" target="_blank">
@@ -112,6 +109,15 @@
           </div>
 
           <div class="col-3">
+            <a
+              href="https://www.plazatirana.com/sq/?Hotelnames=ALTIRHTLHotelThePlaz&d=30d-xppc&partner=FB-PACK-PPC-15&campaignId=632185893%7C32037204978%7Ckwd-kwd-186420274625&device=c&network=google&gclid=Cj0KCQjwoKzsBRC5ARIsAITcwXFuwJLvQ6PhndKpq-TRO10QySs-3ReLnOHMyumTTiCwVAWvIz0LdYMaAg5NEALw_wcB"
+              target="_blank"
+            >
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/17_plaza_logo.jpg" alt />
+            </a>
+          </div>
+
+          <div class="col-3">
             <a href="https://www.geraldinasposa.com" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -133,15 +139,11 @@
             </a>
           </div>
 
-
-
           <div class="col-3">
             <a href="http://www.tess.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
             </a>
           </div>
-
-
         </div>
       </div>
 
@@ -164,7 +166,7 @@
               />
             </a>
           </div>
-          
+
           <div class="col-4">
             <a href="https://instagram.com/smeg.al?igshid=sw4oviy3afmj" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
@@ -199,7 +201,6 @@
             </a>
           </div>
 
-
           <div class="col-4">
             <a href="https://m.facebook.com/Reas-557325781036724/">
               <img
@@ -210,7 +211,6 @@
             </a>
           </div>
 
-
           <div class="col-4">
             <a href="https://www.intermed.al/tylolhot-2/" target="_blank">
               <img
@@ -220,7 +220,7 @@
               />
             </a>
           </div>
-          
+
           <div class="col-4">
             <a href="https://www.curaprox.com/al-sq" target="_blank">
               <img
@@ -230,7 +230,6 @@
               />
             </a>
           </div>
-
 
           <div class="col-4">
             <a href="http://http://www.hidrosistem.al/" target="_blank">
@@ -259,6 +258,15 @@
           </div>
 
           <div class="col-4">
+            <a
+              href="https://www.plazatirana.com/sq/?Hotelnames=ALTIRHTLHotelThePlaz&d=30d-xppc&partner=FB-PACK-PPC-15&campaignId=632185893%7C32037204978%7Ckwd-kwd-186420274625&device=c&network=google&gclid=Cj0KCQjwoKzsBRC5ARIsAITcwXFuwJLvQ6PhndKpq-TRO10QySs-3ReLnOHMyumTTiCwVAWvIz0LdYMaAg5NEALw_wcB"
+              target="_blank"
+            >
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/17_plaza_logo.png" alt />
+            </a>
+          </div>
+
+          <div class="col-4">
             <a href="https://www.geraldinasposa.com" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -280,15 +288,11 @@
             </a>
           </div>
 
-
-
           <div class="col-4">
             <a href="http://www.tess.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
             </a>
           </div>
-
-
         </div>
       </div>
 
@@ -309,7 +313,7 @@
               />
             </a>
           </div>
-          
+
           <div class="col-4">
             <a href="https://instagram.com/smeg.al?igshid=sw4oviy3afmj" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
@@ -344,7 +348,6 @@
             </a>
           </div>
 
-
           <div class="col-4">
             <a href="https://m.facebook.com/Reas-557325781036724/">
               <img
@@ -355,7 +358,6 @@
             </a>
           </div>
 
-
           <div class="col-4">
             <a href="https://www.intermed.al/tylolhot-2/" target="_blank">
               <img
@@ -365,7 +367,7 @@
               />
             </a>
           </div>
-          
+
           <div class="col-4">
             <a href="https://www.curaprox.com/al-sq" target="_blank">
               <img
@@ -375,7 +377,6 @@
               />
             </a>
           </div>
-
 
           <div class="col-4">
             <a href="http://http://www.hidrosistem.al/" target="_blank">
@@ -404,6 +405,15 @@
           </div>
 
           <div class="col-4">
+            <a
+              href="https://www.plazatirana.com/sq/?Hotelnames=ALTIRHTLHotelThePlaz&d=30d-xppc&partner=FB-PACK-PPC-15&campaignId=632185893%7C32037204978%7Ckwd-kwd-186420274625&device=c&network=google&gclid=Cj0KCQjwoKzsBRC5ARIsAITcwXFuwJLvQ6PhndKpq-TRO10QySs-3ReLnOHMyumTTiCwVAWvIz0LdYMaAg5NEALw_wcB"
+              target="_blank"
+            >
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/17_plaza_logo.png" alt />
+            </a>
+          </div>
+
+          <div class="col-4">
             <a href="https://www.geraldinasposa.com" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -425,15 +435,11 @@
             </a>
           </div>
 
-
-
           <div class="col-4">
             <a href="http://www.tess.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
             </a>
           </div>
-
-
         </div>
       </div>
 
