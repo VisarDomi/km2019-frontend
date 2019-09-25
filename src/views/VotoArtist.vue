@@ -174,8 +174,8 @@ export default {
       } else {
         let now = new Date();
         let tomorrow = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()+1}`);
-        console.log("tomorrow", tomorrow)
-        console.log("tomorrow.toGMTString()", tomorrow.toGMTString())
+        // console.log("tomorrow", tomorrow)
+        // console.log("tomorrow.toGMTString()", tomorrow.toGMTString())
         document.cookie = `vote=${Date.now()};expires=${tomorrow.toGMTString()}`;
         this.voteSentSuccess = true;
         this.message = "Vota u dërgua me sukses";
