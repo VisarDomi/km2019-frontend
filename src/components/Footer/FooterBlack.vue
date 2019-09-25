@@ -6,22 +6,31 @@
           <img class="logo-footer" src="@/assets/img/logowhite.svg" alt v-scroll-to="'#magjike'" />
         </div>
       </div>
-      <div class="col-md-1 pl-7 temporary-spread border-left-white">
-        <p class="footer-item align-centered" v-scroll-to="'#juria'" v-if="this.lang == 'en'">the jury</p>
-        <p class="footer-item align-centered" v-scroll-to="'#juria'" v-else>juria</p>
+      <div class="col-md-1 pl-6 border-left-white">
+        <p class="footer-item" v-scroll-to="'#section-artists'" v-if="this.lang == 'en'">artists</p>
+        <p class="footer-item" v-scroll-to="'#section-artists'" v-else>artistet</p>
       </div>
-      <!-- <div class="col-md-1 pl-6">
-        <p class="footer-item">#fotome</p>
-      </div>-->
-      <div class="col-md-1 pl-6 temporary-spread">
+      <div class="col-md-1 pl-6">
         <p class="footer-item" v-scroll-to="'#nder-vite'" v-if="this.lang == 'en'">through the years</p>
         <p class="footer-item" v-scroll-to="'#nder-vite'" v-else>ndër vite</p>
       </div>
-      <div class="col-md-1 pl-6 temporary-spread">
+      <div class="col-md-1 pl-6">
         <p class="footer-item" v-scroll-to="'#te-reja'" v-if="this.lang == 'en'">news</p>
         <p class="footer-item" v-scroll-to="'#te-reja'" v-else>të reja</p>
       </div>
-      <div class="col-md-1 temporary-spread">
+      <div class="col-md-1 pl-6">
+        <p
+          class="footer-item align-centered"
+          v-scroll-to="'#juria'"
+          v-if="this.lang == 'en'"
+        >the jury</p>
+        <p class="footer-item align-centered" v-scroll-to="'#juria'" v-else>juria</p>
+      </div>
+      <div class="col-md-1">
+        <p class="footer-item" @click="changeRoute('Voto')" v-if="this.lang == 'en'">vote</p>
+        <p class="footer-item" @click="changeRoute('Voto')" v-else>voto</p>
+      </div>
+      <div class="col-md-1">
         <p class="footer-item" @click="changeRoute('Rregullore')" v-if="this.lang == 'en'">rules</p>
         <p class="footer-item" @click="changeRoute('Rregullore')" v-else>rregullore</p>
       </div>
@@ -127,7 +136,6 @@ export default {
     }
   },
   mounted() {
-    
     this.lang = getLanguage();
   }
 };

@@ -6,28 +6,30 @@
           <img class="logo-footer" src="@/assets/img/logoblack.svg" alt @click="changeSection(0)" />
         </div>
       </div>
-      <div class="col-md-1 pl-7 temporary-spread border-left-black">
-        <a class="footer-item align-centered" href="/#juria" v-if="this.lang == 'en'">the jury</a>
-        <a class="footer-item align-centered" href="/#juria" v-else>juria</a>
+      <div class="col-md-1" border-left-black>
+        <a class="footer-item" href="/#section-artists" v-if="this.lang == 'en'">artists</a>
+        <a class="footer-item" href="/#section-artists" v-else>artistet</a>
       </div>
-      <!-- <div class="col-md-1 pl-6">
-        <p class="footer-item">#fotome</p>
-      </div>-->
-      <div class="col-md-1 pl-6 temporary-spread">
+      <div class="col-md-1">
         <a class="footer-item" href="/#nder-vite" v-if="this.lang == 'en'">Through the years</a>
         <a class="footer-item" href="/#nder-vite" v-else>ndër vite</a>
       </div>
-      <div class="col-md-1 pl-6 temporary-spread">
+      <div class="col-md-1">
         <a class="footer-item" href="/#te-reja" v-if="this.lang == 'en'">news</a>
         <a class="footer-item" href="/#te-reja" v-else>të reja</a>
       </div>
-      <div class="col-md-1 temporary-spread">
+      <div class="col-md-1">
+        <a class="footer-item align-centered" href="/#juria" v-if="this.lang == 'en'">the jury</a>
+        <a class="footer-item align-centered" href="/#juria" v-else>juria</a>
+      </div>
+      <div class="col-md-1">
+        <a class="footer-item" @click="gotoVoto()" v-if="this.lang == 'en'">vote</a>
+        <a class="footer-item" @click="gotoVoto()" v-else>voto</a>
+      </div>
+      <div class="col-md-1">
         <div class="footer-item" @click="gotoRregullore()" v-if="this.lang == 'en'">rules</div>
         <div class="footer-item" @click="gotoRregullore()" v-else>rregullore</div>
       </div>
-      <!-- <div class="col-md-1 pl-6">
-        <p class="footer-item">voto</p>
-      </div>-->
 
       <div class="col-md-2 border-left-black">
         <div class="icons horizontal-center">
@@ -112,7 +114,7 @@ export default {
       hoverFB: false,
       hoverYT: false,
       hoverIG: false,
-      lang: "",
+      lang: ""
     };
   },
   props: {
@@ -130,10 +132,12 @@ export default {
     },
     gotoRregullore() {
       this.$router.push({ name: "Rregullore" });
+    },
+    gotoVoto() {
+      this.$router.push({ name: "Voto" });
     }
   },
-  mounted(){
-    
+  mounted() {
     this.lang = getLanguage();
   }
 };
