@@ -115,7 +115,7 @@
           class="btn more-btn"
           style="color:white;"
           v-if="this.lang == 'en'"
-        >more news</a>
+        >read more</a>
         <a @click="goToBlogs()" class="btn more-btn" style="color:white;" v-else>Më shumë lajme</a>
       </div>
     </div>

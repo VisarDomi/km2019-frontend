@@ -90,7 +90,7 @@
             </div>
 
             <h3 class="bio-text" v-if="this.lang == 'en'">similar</h3>
-            <h3 class="bio-text" v-else>te ngjashme</h3>
+            <h3 class="bio-text" v-else>të ngjashme</h3>
             <br />
             <div class="row">
               <div class="col-lg-6">

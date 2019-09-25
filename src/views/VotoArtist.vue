@@ -25,7 +25,7 @@
     </div>
     <div class="row h-75 align-items-center" v-else>
       <div class="col-lg-7 offset-lg-2 mobile-width-75 rel">
-        <span class="artist-name">{{getArtist.nameEng}}</span>
+        <span class="artist-name">{{getArtist.name}}</span>
         <hr />
         <span class="artist-song" v-if="this.lang == 'en'">{{getArtist.songEng}}</span>
         <span class="artist-song" v-else>{{getArtist.song}}</span>
@@ -35,10 +35,27 @@
 
     <!-- new login -->
     <div class="button-container">
-      <b-button class="btn" @click="voteFirstWeek()" :disabled="disabled">Dërgoni votën</b-button>
-      <div v-if="getIsLoading" class="my-text-message">Duke dërguar votën</div>
+      <b-button
+        class="btn"
+        @click="voteFirstWeek()"
+        :disabled="disabled"
+        v-if="this.lang == 'en'"
+      >Vote</b-button>
+      <b-button class="btn" @click="voteFirstWeek()" :disabled="disabled" v-else>Dërgoni votën</b-button>
+
+      <div v-if="getIsLoading & this.lang == 'en'" class="my-text-message">Sending vote...</div>
+      <div v-if="getIsLoading & this.lang == 'al'" class="my-text-message">Duke dërguar votën...</div>
+
       <div v-if="voteSentSuccess" class="my-text-message">{{this.message}}</div>
-      <div v-if="disabled & !voteSentSuccess" class="my-text-message">Ju keni votuar për sot!</div>
+
+      <div
+        v-if="disabled & !voteSentSuccess & lang == 'en'"
+        class="my-text-message"
+      >You have voted for today!</div>
+      <div
+        v-if="disabled & !voteSentSuccess & lang == 'al'"
+        class="my-text-message"
+      >Ju keni votuar për sot!</div>
     </div>
     <!-- new login -->
 
@@ -168,17 +185,27 @@ export default {
         if (this.getVoteErr.response.status === 501) {
           this.$store.dispatch(PUT_VOTES, params);
           this.voteSentSuccess = false;
-          this.message = "Provoni përsëri";
+          if (this.lang == "en") {
+            this.message = "Try Again";
+          } else {
+            this.message = "Provoni përsëri";
+          }
           this.disabled = false;
         }
       } else {
         let now = new Date();
-        let tomorrow = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()+1}`);
-        console.log("tomorrow", tomorrow)
-        console.log("tomorrow.toGMTString()", tomorrow.toGMTString())
+        let tomorrow = new Date(
+          `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate() + 1}`
+        );
+        console.log("tomorrow", tomorrow);
+        console.log("tomorrow.toGMTString()", tomorrow.toGMTString());
         document.cookie = `vote=${Date.now()};expires=${tomorrow.toGMTString()}`;
         this.voteSentSuccess = true;
-        this.message = "Vota u dërgua me sukses";
+        if (this.lang == "en") {
+          this.message = "Your vote has been recorded!";
+        } else {
+          this.message = "Vota u dërgua me sukses";
+        }
         this.disabled = true;
         await sleep(3000);
         this.voteSentSuccess = false;
@@ -211,14 +238,16 @@ export default {
     let cookies = document.cookie;
     if (cookies !== null) {
       // console.log("cookie.split(';')", cookies.split(';'))
-      for (let cookie of cookies.split(';')) {
+      for (let cookie of cookies.split(";")) {
         // console.log("current cookie: ", cookie)
         // console.log("cookie.split", cookie.split('=')[0])
-        if (cookie.split("=")[0].trim()==="vote") {
+        if (cookie.split("=")[0].trim() === "vote") {
           let voted = cookie.split("=")[1];
           // console.log("voted_cookied: ", voted);
           let now = new Date();
-          let today = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`);
+          let today = new Date(
+            `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`
+          );
           if (voted - today > 0) {
             this.disabled = true;
           }

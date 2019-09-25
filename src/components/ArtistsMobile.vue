@@ -13,8 +13,8 @@
             </div>
             <p class="artist-card__name inside-card">{{artist.name}}</p>
             <br />
-            <p class="artist-card__song go-up" v-if="lang == 'en'">{{artist.songEng}}</p>
-            <p class="artist-card__song go-up" v-else>{{artist.song}}</p>
+            <p class="artist-card__song inside-card--down" v-if="lang == 'en'">{{artist.songEng}}</p>
+            <p class="artist-card__song inside-card--down" v-else>{{artist.song}}</p>
           </div>
         </div>
       </div>
@@ -26,8 +26,8 @@
             </div>
             <p class="artist-card__name inside-card">{{artist.name}}</p>
             <br />
-            <p class="artist-card__song go-up" v-if="lang == 'en'">{{artist.songEng}}</p>
-            <p class="artist-card__song go-up" v-else>{{artist.song}}</p>
+            <p class="artist-card__song inside-card--down" v-if="lang == 'en'">{{artist.songEng}}</p>
+            <p class="artist-card__song inside-card--down" v-else>{{artist.song}}</p>
           </div>
         </div>
       </div>
@@ -39,8 +39,8 @@
             </div>
             <p class="artist-card__name inside-card">{{artist.name}}</p>
             <br />
-            <p class="artist-card__song go-up" v-if="lang == 'en'">{{artist.songEng}}</p>
-            <p class="artist-card__song go-up" v-else>{{artist.song}}</p>
+            <p class="artist-card__song inside-card--down" v-if="lang == 'en'">{{artist.songEng}}</p>
+            <p class="artist-card__song inside-card--down" v-else>{{artist.song}}</p>
           </div>
         </div>
       </div>
@@ -181,7 +181,7 @@ export default {
 }
 
 .h-10rem {
-  height: 10rem;
+  height: 16rem;
 }
 
 .mobile-artists {
@@ -203,7 +203,11 @@ export default {
 }
 .inside-card {
   position: absolute;
-  bottom: -16%;
+  top: 91%;
+  &--down {
+    position: absolute;
+    top: 111%;
+  }
 }
 
 .go-up {
@@ -304,7 +308,7 @@ export default {
     display: inline-block;
     border: solid 2px white;
 
-    margin-bottom: 2px;
+    margin-bottom: 9px;
   }
   &__song {
     border: 1px solid black;
