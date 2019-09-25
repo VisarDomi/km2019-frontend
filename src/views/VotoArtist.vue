@@ -212,8 +212,11 @@ export default {
     if (cookies !== null) {
       // console.log("cookie.split(';')", cookies.split(';'))
       for (let cookie of cookies.split(';')) {
-        if (cookie.split("=")[0]==="vote") {
+        // console.log("current cookie: ", cookie)
+        // console.log("cookie.split", cookie.split('=')[0])
+        if (cookie.split("=")[0].trim()==="vote") {
           let voted = cookie.split("=")[1];
+          // console.log("voted_cookied: ", voted);
           let now = new Date();
           let today = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`);
           if (voted - today > 0) {
