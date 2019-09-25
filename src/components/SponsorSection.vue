@@ -262,7 +262,7 @@
               href="https://www.plazatirana.com/sq/?Hotelnames=ALTIRHTLHotelThePlaz&d=30d-xppc&partner=FB-PACK-PPC-15&campaignId=632185893%7C32037204978%7Ckwd-kwd-186420274625&device=c&network=google&gclid=Cj0KCQjwoKzsBRC5ARIsAITcwXFuwJLvQ6PhndKpq-TRO10QySs-3ReLnOHMyumTTiCwVAWvIz0LdYMaAg5NEALw_wcB"
               target="_blank"
             >
-              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/17_plaza_logo.png" alt />
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/17_plaza_logo.jpg" alt />
             </a>
           </div>
 
@@ -409,7 +409,7 @@
               href="https://www.plazatirana.com/sq/?Hotelnames=ALTIRHTLHotelThePlaz&d=30d-xppc&partner=FB-PACK-PPC-15&campaignId=632185893%7C32037204978%7Ckwd-kwd-186420274625&device=c&network=google&gclid=Cj0KCQjwoKzsBRC5ARIsAITcwXFuwJLvQ6PhndKpq-TRO10QySs-3ReLnOHMyumTTiCwVAWvIz0LdYMaAg5NEALw_wcB"
               target="_blank"
             >
-              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/17_plaza_logo.png" alt />
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/17_plaza_logo.jpg" alt />
             </a>
           </div>
 
