@@ -14,7 +14,7 @@
     </div>
     <div class="row h-75 align-items-center" v-if="windowWidth > 600">
       <div class="col-lg-7 offset-lg-2">
-        <span class="artist-name" >{{getArtist.name}}</span>
+        <span class="artist-name">{{getArtist.name}}</span>
         <hr />
         <span class="artist-song" v-if="this.lang == 'en'">{{getArtist.songEng}}</span>
         <span class="artist-song" v-else>{{getArtist.song}}</span>
@@ -25,7 +25,7 @@
     </div>
     <div class="row h-75 align-items-center" v-else>
       <div class="col-lg-7 offset-lg-2 mobile-width-75 rel">
-        <span class="artist-name" >{{getArtist.nameEng}}</span>
+        <span class="artist-name">{{getArtist.nameEng}}</span>
         <hr />
         <span class="artist-song" v-if="this.lang == 'en'">{{getArtist.songEng}}</span>
         <span class="artist-song" v-else>{{getArtist.song}}</span>
@@ -92,7 +92,6 @@ import {
 import { Auth } from "aws-amplify";
 import { aws_user_pools_web_client_id } from "@/main";
 
-import { getVote, saveVote, destroyVote } from "@/store/services/storage";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 
 export default {
@@ -101,11 +100,11 @@ export default {
     Footer,
     FooterSmall,
     FooterMobile,
-      lang: "",
     AmplifyAuthenticator
   },
   data() {
     return {
+      lang: "",
       message: "",
       voteSent: false,
       voteSentSuccess: false,
@@ -173,7 +172,11 @@ export default {
           this.disabled = false;
         }
       } else {
-        saveVote(Date.now());
+        let now = new Date();
+        let tomorrow = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()+1}`);
+        console.log("tomorrow", tomorrow)
+        console.log("tomorrow.toGMTString()", tomorrow.toGMTString())
+        document.cookie = `vote=${Date.now()};expires=${tomorrow.toGMTString()}`;
         this.voteSentSuccess = true;
         this.message = "Vota u dërgua me sukses";
         this.disabled = true;
@@ -181,48 +184,6 @@ export default {
         this.voteSentSuccess = false;
       }
     },
-
-    // old script
-    // async voto() {
-    //   const TableName = "KM2019-Vote";
-    //   const id = this.$route.params.id;
-    //   const username = this.user.username;
-    //   const storage = this.user.storage;
-    //   const accessToken =
-    //     storage[
-    //       `CognitoIdentityServiceProvider.${aws_user_pools_web_client_id}.${username}.accessToken`
-    //     ];
-    //   // console.log("accessToken", accessToken);
-    //   const params = {
-    //     TableName,
-    //     artistId: id,
-    //     accessToken
-    //   };
-    //   // console.log("put send");
-    //   this.$store.commit(START_LOADING);
-    //   await this.$store.dispatch(PUT_VOTES, params);
-    //   await sleep(1000);
-    //   await this.$store.dispatch(PUT_VOTES, params);
-    //   if (this.getVoteErr !== null) {
-    //     // console.log("this.getVoteErr", this.getVoteErr);
-    //     this.voteSent = false;
-    //     if (this.getVoteErr.response.status === 501) {
-    //       this.$store.dispatch(PUT_VOTES, params);
-    //       this.message = "Provoni përsëri";
-    //       this.disabled = false;
-    //       this.voteSent = false;
-    //     } else if (this.getVoteErr.response.status === 409) {
-    //       this.voteSent = true;
-    //       this.message = "Votoni përsëri nesër";
-    //       this.disabled = true;
-    //     }
-    //   } else {
-
-    //     this.disabled = true;
-    //     this.voteSent = true;
-    //   }
-    //   this.$store.commit(STOP_LOADING);
-    // },
     test(obj) {
       return Object.keys(obj).length !== 0;
     },
@@ -236,7 +197,7 @@ export default {
     async fetchArtist(artistId) {
       const TableName = "KM2019-Artist";
       const id = artistId;
-      console.log("artistId", artistId);
+      // console.log("artistId", artistId);
       const params = {
         TableName,
         id
@@ -247,8 +208,22 @@ export default {
     }
   },
   async mounted() {
-    if (Date.now() - getVote() < 86400000) {
-      this.disabled = true;
+    let cookies = document.cookie;
+    if (cookies !== null) {
+      // console.log("cookie.split(';')", cookies.split(';'))
+      for (let cookie of cookies.split(';')) {
+        // console.log("current cookie: ", cookie)
+        // console.log("cookie.split", cookie.split('=')[0])
+        if (cookie.split("=")[0].trim()==="vote") {
+          let voted = cookie.split("=")[1];
+          // console.log("voted_cookied: ", voted);
+          let now = new Date();
+          let today = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`);
+          if (voted - today > 0) {
+            this.disabled = true;
+          }
+        }
+      }
     }
     this.lang = getLanguage();
     await this.fetchArtist(this.$route.params.id);

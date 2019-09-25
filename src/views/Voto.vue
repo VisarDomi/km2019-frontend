@@ -16,7 +16,7 @@
     <div class="row align-items-center justify-content-center row-title">
       <div class="col-xl-7 col-lg-9 col-md-12 text-center">
         <div class="row align-items-center justify-content-center">
-          <h1 class="jumbo-title-voto" v-if="this.lang == 'en'">vote</h1>
+          <h1 class="jumbo-title-voto" v-if="lang == 'en'">vote</h1>
           <h1 class="jumbo-title-voto" v-else>voto</h1>
 
           <!-- <img src="@/assets/img/search_icon.svg" alt="" class="search-icon"> -->
@@ -64,12 +64,12 @@ export default {
   components: {
     Footer,
     FooterSmall,
-      lang: "",
     FooterMobile
   },
   data() {
     return {
       windowWidth: window.innerWidth,
+      lang: "",
       artists: []
     };
   },
@@ -136,13 +136,13 @@ export default {
     }
   },
   async mounted() {
+    this.lang = getLanguage();
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
     });
     this.fetchArtists();
-    this.lang = getLanguage();
   },
   computed: {
     ...mapGetters(["getArtists"])

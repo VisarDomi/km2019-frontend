@@ -1,5 +1,5 @@
-const path = require('path')
-const PrerenderSPAPlugin = require('prerender-spa-plugin')
+const path = require("path");
+const PrerenderSPAPlugin = require("prerender-spa-plugin");
 
 module.exports = {
   configureWebpack: {
@@ -26,6 +26,28 @@ module.exports = {
           "/voto"
         ]
       })
-    ]
+    ],
+    output: {
+      filename: `app.${Date.now()}.js`,
+      chunkFilename: `chunk.${Date.now()}.js`,
+    }
+  },
+  // chainWebpack: config => {
+  //   config.output.filename(
+  //     process.env.VUE_CLI_MODERN_MODE && !process.env.VUE_CLI_MODERN_BUILD
+  //       ? `app-legacy.${Date.now()}.js`
+  //       : `app.${Date.now()}.js`
+  //   );
+  //   config.output.chuckFilename(
+  //     process.env.VUE_CLI_MODERN_MODE && !process.env.VUE_CLI_MODERN_BUILD
+  //       ? `chuck-legacy.${Date.now()}.js`
+  //       : `chuck.${Date.now()}.js`
+  //   );
+  // },
+  css: {
+    extract: {
+      filename: `app.${Date.now()}.css`,
+      chunkFilename: `chunk.${Date.now()}.css`,
+    }
   }
 };

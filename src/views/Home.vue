@@ -114,7 +114,7 @@ export default {
       } else if (window.scrollY > window.innerHeight * 5 - 100) {
         this.section = "SponsorSection";
       }
-      console.log(this.section);
+      // console.log(this.section);
     }
   },
   created() {

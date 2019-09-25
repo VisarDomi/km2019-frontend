@@ -1,26 +1,24 @@
 <template>
-<div id="notfound">
-<div class="notfound">
-<div class="notfound-404">
-<h1>404</h1>
-<h2>Page not found</h2>
-</div>
-<a href="/">Kënga Magjike</a>
-</div>
-</div>
+  <div id="notfound">
+    <div class="notfound">
+      <div class="notfound-404">
+        <h1>404</h1>
+        <h2>Page not found</h2>
+      </div>
+      <a href="/">Kënga Magjike</a>
+    </div>
+  </div>
 </template>
 
 
 <script>
-export default {
-  
-}
+export default {};
 </script>
 
 <style scoped>
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -39,8 +37,8 @@ body {
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .notfound {
@@ -58,13 +56,13 @@ body {
 }
 
 .notfound .notfound-404 h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50% , -50%);
-      -ms-transform: translate(-50% , -50%);
-          transform: translate(-50% , -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   font-size: 224px;
   font-weight: 900;
   margin-top: 0px;
@@ -76,9 +74,8 @@ body {
   letter-spacing: -20px;
 }
 
-
 .notfound .notfound-404 h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   position: absolute;
   left: 0;
   right: 0;
@@ -93,7 +90,7 @@ body {
 }
 
 .notfound a {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   display: inline-block;
   text-transform: uppercase;
   color: #ff005a;
@@ -112,14 +109,14 @@ body {
 }
 
 @media only screen and (max-width: 767px) {
-    .notfound .notfound-404 h2 {
-        font-size: 24px;
-    }
+  .notfound .notfound-404 h2 {
+    font-size: 24px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
   .notfound .notfound-404 h1 {
-      font-size: 182px;
+    font-size: 182px;
   }
 }
 </style>

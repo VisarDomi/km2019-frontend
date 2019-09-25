@@ -31,7 +31,7 @@
       </div>
 
       <div class="row">
-        <div class="col share-col" style="">
+        <div class="col share-col" style>
           <p class="share-text">Shperndaje:</p>
           <span>
             <i class="fa fa-facebook facebook-icon" style="margin-right:5px;"></i>
@@ -44,8 +44,7 @@
     <div class="spacer"></div>
     <FooterWhite v-if="windowWidth > 770" />
     <FooterWhiteSmall v-else-if="windowWidth < 770 && windowWidth > 600" />
-      <FooterJuriaMobile v-else/>
-
+    <FooterJuriaMobile v-else />
   </div>
 </template>
 
@@ -63,7 +62,9 @@ export default {
     FooterWhiteSmall
   },
   data() {
-    return { windowWidth: window.innerWidth };
+    return {
+      windowWidth: window.innerWidth
+    };
   },
   methods: {
     goToArtists() {
@@ -87,8 +88,8 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
-.share-col{
-margin-bottom:50px;
+.share-col {
+  margin-bottom: 50px;
   @include respond(phone) {
     height: 70px;
   }
@@ -189,11 +190,11 @@ margin-bottom:50px;
 }
 .artist-container {
   background: linear-gradient(#0e1032, #000);
-  height:100%;
+  height: 100%;
   // margin-bottom:6%;
   margin-top: 5rem;
-    @include respond(phone) {
-    margin-bottom:50px;
+  @include respond(phone) {
+    margin-bottom: 50px;
   }
 }
 
@@ -317,9 +318,9 @@ body {
   margin-top: -10rem;
   &--small {
     margin-top: -4rem;
-      @include respond(phone) {
-    padding-top: 30px;
-  }
+    @include respond(phone) {
+      padding-top: 30px;
+    }
   }
 }
 </style>

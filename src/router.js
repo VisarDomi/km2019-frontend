@@ -40,6 +40,7 @@ import Voto from "./views/Voto.vue";
 import VotoArtist from "./views/VotoArtist.vue";
 
 import NotFound from "./views/NotFound.vue";
+import About from "./views/About.vue";
 
 Vue.use(Router);
 
@@ -55,6 +56,7 @@ export default new Router({
       meta: { transition: "overlay-left" }
     },
     { path: "*", component: NotFound },
+    { path: "/about", component: About },
     {
       path: "/artists",
       name: "Artists",
