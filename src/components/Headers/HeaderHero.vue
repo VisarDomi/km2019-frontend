@@ -29,10 +29,10 @@
     </div>
     <div
       v-if="this.lang == 'en'"
-      class="col-lg-1 col-sm-1 offset-xl-1 cmi"
+      class="col-lg-1 col-sm-1 offset-xl-2 cmi"
       v-scroll-to="'#juria'"
     >the jury</div>
-    <div v-else class="col-lg-1 col-sm-1 offset-xl-1 cmi" v-scroll-to="'#juria'">juria</div>
+    <div v-else class="col-lg-1 col-sm-1 offset-xl-2 cmi" v-scroll-to="'#juria'">juria</div>
 
     <div
       v-if="this.lang == 'en'"
@@ -66,7 +66,7 @@
       <span class="font-weight-normal">/EN</span>
     </div>
 
-    <div class="col-lg-1 col-sm-1 high-index">
+    <!-- <div class="col-lg-1 col-sm-1 high-index">
       <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
         <img
           v-if="shouldHide"
@@ -85,7 +85,7 @@
         />
         <img v-if="!shouldHide" src="@/assets/img/icon_menu_black.svg" class="respond-width" alt />
       </span>
-    </div>
+    </div>-->
   </div>
   <!-- </div> -->
 </template>
@@ -99,7 +99,7 @@ export default {
   name: "HeaderHero",
   data() {
     return {
-      shouldHide: true,
+      shouldHide: false,
       listMenu: [],
       lang: ""
     };
@@ -162,7 +162,7 @@ export default {
           }
         }
 
-        this.shouldHide = false;
+        // this.shouldHide = false;
       } else {
         for (var i = 0; i < Items.length; i++) {
           Items[i].style.opacity = 1;
@@ -172,7 +172,7 @@ export default {
 
           // Items[i].style.display = "inline-block";
         }
-        this.shouldHide = true;
+        // this.shouldHide = true;
       }
       eventBus.$emit("menuState", this.shouldHide);
     }
