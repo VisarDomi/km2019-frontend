@@ -286,7 +286,7 @@ export default {
   },
   async mounted() {
     this.lang = getLanguage();
-    console.log("this.lang", this.lang)
+    // console.log("this.lang", this.lang)
     // if (this.getVoteErr.response.data === "Ip has already voted for today") {
     //   this.message = "Ju keni votuar për sot!";
     //   this.disabled = true;

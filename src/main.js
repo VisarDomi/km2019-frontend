@@ -30,23 +30,6 @@ Amplify.configure(awsmobile);
 // Amplify.configure(config)
 Vue.use(AmplifyPlugin, AmplifyModules);
 
-
-// var endpoint = 'http://ip-api.com/json/?fields=query';
-
-// var xhr = new XMLHttpRequest();
-// xhr.onreadystatechange = function() {
-// 	if (this.readyState == 4 && this.status == 200) {
-//     var response = JSON.parse(this.responseText);
-//     console.log("response is:" , response)
-// 		if(response.status !== 'success') {
-// 			console.log('query failed: ' + response.message);
-// 			return
-// 		}
-// 	}
-// };
-// xhr.open('GET', endpoint, true);
-// xhr.send();
-
 Vue.use(vueScrollTo);
 Vue.config.productionTip = false;
 Vue.use(VuePageTransition);
