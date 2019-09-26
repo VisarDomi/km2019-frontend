@@ -1,6 +1,6 @@
 <template>
   <!-- <div> -->
-  <div class="header-hero row align-items-center menu__items" v-bind:class="menutype">
+  <div class="header-hero row align-items-center menu__items row-no-margin" v-bind:class="menutype">
     <div class="col-xl-3 col-lg-4 col-sm-4 high-index">
       <span class="d-lg-inline-block" href="#" v-if="logoBlack">
         <img
@@ -194,10 +194,14 @@ export default {
   position: fixed;
   z-index: 9999;
   top: 0%;
-  right: 4%;
+  // right: 4%;
+  height: 10rem;
   width: 100%;
+  background-color: rgba(#0e1032, 1);
 }
-
+.row-no-margin {
+  margin-left: 0 !important;
+}
 .respond-width {
   @include respond(4k-desktop) {
     width: 25%;

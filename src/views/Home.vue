@@ -1,11 +1,12 @@
 <template>
   <div class="home">
     <HeaderHero
-      v-if="windowWidth > 750 && this.section == 'HeroSection'"
+      v-if="windowWidth > 750"
+      logoWhite="true"
       menutype="menu__items--white"
       iconWhite="true"
     />
-    <HeaderHero
+    <!-- <HeaderHero
       v-if="windowWidth > 750 && this.section == 'JurySection'"
       menutype="menu__items--white"
       logoWhite="true"
@@ -32,7 +33,7 @@
       v-if="windowWidth > 750 && this.section == 'ArtistSection'"
       menutype="menu__items--black"
       logoBlack="true"
-    />
+    />-->
     <HeaderMobile v-if="windowWidth < 750" />
 
     <HeroSection />
