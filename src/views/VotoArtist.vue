@@ -37,8 +37,7 @@
     <div class="button-container">
       <b-button class="btn" @click="voteFirstWeek()" :disabled="disabled">Dërgoni votën</b-button>
       <div v-if="getIsLoading" class="my-text-message">Duke dërguar votën</div>
-      <div v-if="voteSentSuccess" class="my-text-message">{{this.message}}</div>
-      <div v-if="disabled & !voteSentSuccess" class="my-text-message">Ju keni votuar për sot!</div>
+      <div v-if="disabled" class="my-text-message">{{this.message}}</div>
     </div>
     <!-- new login -->
 
@@ -79,11 +78,17 @@ import Footer from "@/components/Footer/FooterWhite.vue";
 import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
 import FooterMobile from "@/components/Footer/FooterWhiteMobile.vue";
 import { sleep } from "@/common/functions";
+import axios from "axios";
 
 import AmplifyAuthenticator from "@/components/AwsCustomComponent.vue";
 
 import { mapGetters } from "vuex";
-import { GET_ARTIST, PUT_VOTES, PUT } from "@/store/actions.type";
+import {
+  GET_ARTIST,
+  PUT_VOTES,
+  PUT,
+  GET_HAS_VOTED
+} from "@/store/actions.type";
 import {
   START_LOADING,
   STOP_LOADING,
@@ -151,12 +156,38 @@ export default {
     goToVoto() {
       this.$router.push({ name: "Voto" });
     },
+    async getIp() {
+      const endpoint = "https://api.ipgeolocation.io/ipgeo";
+      const ipParams = {
+        apiKey: "9e6368cad8654c6e867dcbc3b8a2fec9",
+        fields: ""
+      };
+      axios.defaults.headers.common = {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json"
+      };
+      let ip = "";
+      await axios
+        .get(endpoint, { params: ipParams })
+        .then(response => {
+          // console.log("response", response);
+          ip = response.data.ip;
+        })
+        .catch(err => {
+          return console.log("err", Object.assign({}, err));
+        });
+      // console.log("ip", ip);
+      return ip;
+    },
     async voteFirstWeek() {
+      this.disabled = true
+      let ip = await this.getIp();
       const TableName = "KM2019-Vote";
       const id = this.$route.params.id;
       const params = {
         TableName,
-        artistId: id
+        artistId: id,
+        ip
       };
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(PUT_VOTES, params);
@@ -167,21 +198,28 @@ export default {
         // console.log("this.getVoteErr", this.getVoteErr);
         if (this.getVoteErr.response.status === 501) {
           this.$store.dispatch(PUT_VOTES, params);
-          this.voteSentSuccess = false;
+          // this.voteSentSuccess = false;
           this.message = "Provoni përsëri";
           this.disabled = false;
+        } else if (this.getVoteErr.response.status === 409) {
+          this.message = "Ju keni votuar për sot!";
+          this.disabled = true;
+          // this.voteSentSuccess = false;
         }
       } else {
-        let now = new Date();
-        let tomorrow = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()+1}`);
+        // this.$store.commit(SET_VOTE_ERR, null)
+        // let now = new Date();
+        // let tomorrow = new Date(
+        //   `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate() + 1}`
+        // );
         // console.log("tomorrow", tomorrow)
         // console.log("tomorrow.toGMTString()", tomorrow.toGMTString())
-        document.cookie = `vote=${Date.now()};expires=${tomorrow.toGMTString()}`;
-        this.voteSentSuccess = true;
-        this.message = "Vota u dërgua me sukses";
+        // document.cookie = `vote=${Date.now()};expires=${tomorrow.toGMTString()}`;
+        // this.voteSentSuccess = true;
         this.disabled = true;
-        await sleep(3000);
-        this.voteSentSuccess = false;
+        this.message = "Vota u dërgua me sukses";
+        // await sleep(3000);
+        // this.voteSentSuccess = false;
       }
     },
     test(obj) {
@@ -205,26 +243,51 @@ export default {
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(GET_ARTIST, params);
       this.$store.commit(STOP_LOADING);
+    },
+    async setDisabled() {
+      this.disabled = true;
+      let ip = await this.getIp();
+      const params = {
+        ip
+      };
+      await this.$store.dispatch(GET_HAS_VOTED, params);
+      // console.log("this.getHasVoted", this.getHasVoted);
+      if (this.getHasVoted) {
+        this.disabled = true;
+      } else if (this.getHasVoted === false) {
+        this.disabled = false;
+      }
     }
   },
   async mounted() {
-    let cookies = document.cookie;
-    if (cookies !== null) {
-      // console.log("cookie.split(';')", cookies.split(';'))
-      for (let cookie of cookies.split(';')) {
-        // console.log("current cookie: ", cookie)
-        // console.log("cookie.split", cookie.split('=')[0])
-        if (cookie.split("=")[0].trim()==="vote") {
-          let voted = cookie.split("=")[1];
-          // console.log("voted_cookied: ", voted);
-          let now = new Date();
-          let today = new Date(`${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}`);
-          if (voted - today > 0) {
-            this.disabled = true;
-          }
-        }
-      }
-    }
+    await this.setDisabled()
+    // if (this.getVoteErr.response.data === "Ip has already voted for today") {
+    //   this.message = "Ju keni votuar për sot!";
+    //   this.disabled = true;
+    //   // this.voteSentSuccess = false;
+    // } else {
+    //   this.disabled = false;
+    // }
+    // let cookies = document.cookie;
+    // if (cookies !== null) {
+    //   // console.log("cookie.split(';')", cookies.split(';'))
+    //   for (let cookie of cookies.split(";")) {
+    //     // console.log("current cookie: ", cookie)
+    //     // console.log("cookie.split", cookie.split('=')[0])
+    //     if (cookie.split("=")[0].trim() === "vote") {
+    //       let voted = cookie.split("=")[1];
+    //       // console.log("voted_cookied: ", voted);
+    //       let now = new Date();
+    //       let today = new Date(
+    //         `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`
+    //       );
+    //       if (voted - today > 0) {
+    //         this.disabled = true;
+    //       }
+    //     }
+    //   }
+    // }
+
     this.lang = getLanguage();
     await this.fetchArtist(this.$route.params.id);
 
@@ -245,7 +308,13 @@ export default {
     });
   },
   computed: {
-    ...mapGetters(["getArtist", "getIsLoading", "getVote", "getVoteErr"])
+    ...mapGetters([
+      "getArtist",
+      "getIsLoading",
+      "getVote",
+      "getVoteErr",
+      "getHasVoted"
+    ])
   },
   beforeCreate() {
     Auth.currentAuthenticatedUser()
