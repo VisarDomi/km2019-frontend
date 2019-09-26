@@ -20,7 +20,7 @@ export const actions = {
   async [GET_HAS_VOTED](context, payload) {
     await ApiService.get(payload)
       .then(response => {
-        console.log("response is", response);
+        // console.log("response is", response);
         if (response.status === 200) {
           // // console.log("Artist list (data.Items of the response)", data.Items);
           context.commit(SET_HAS_VOTED, false);

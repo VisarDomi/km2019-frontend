@@ -3,31 +3,38 @@
     <div class="row h-50 vertical-center footer-container">
       <div class="col-md-2">
         <div class="abs-center">
-          <img class="logo-footer" src="@/assets/img/logoblack.svg" alt @click="changeRoute('Home')" />
+          <img
+            class="logo-footer"
+            src="@/assets/img/logoblack.svg"
+            alt
+            @click="changeRoute('Home')"
+          />
         </div>
       </div>
-      <div class="col-md-1 pl-7 temporary-spread border-left-black">
-        <p class="footer-item align-centered" @click="changeSection(1)" v-if="this.lang == 'en'">the jury</p>
-        <p class="footer-item align-centered" @click="changeSection(1)" v-else>juria</p>
+      <div class="col-md-1 border-left-black">
+        <a class="footer-item" href="/#section-artists" v-if="this.lang == 'en'">artists</a>
+        <a class="footer-item" href="/#section-artists" v-else>artistet</a>
       </div>
-      <!-- <div class="col-md-1 pl-6">
-        <p class="footer-item">#fotome</p>
-      </div>-->
-      <div class="col-md-1 pl-6 temporary-spread">
-        <a class="footer-item"  href="/#nder-vite" v-if="this.lang == 'en'">through the years</a>
+      <div class="col-md-1">
+        <a class="footer-item" href="/#nder-vite" v-if="this.lang == 'en'">through the years</a>
         <a class="footer-item" href="/#nder-vite" v-else>ndër vite</a>
       </div>
-      <div class="col-md-1 pl-6 temporary-spread">
+      <div class="col-md-1">
         <a class="footer-item" href="/#te-reja" v-if="this.lang == 'en'">news</a>
         <a class="footer-item" href="/#te-reja" v-else>të reja</a>
       </div>
-      <div class="col-md-1 temporary-spread">
+      <div class="col-md-1">
+        <a class="footer-item" href="/#juria" v-if="this.lang == 'en'">the jury</a>
+        <a class="footer-item" href="/#juria" v-else>juria</a>
+      </div>
+      <div class="col-md-1">
+        <p class="footer-item" @click="changeRoute('Voto')" v-if="this.lang == 'en'">vote</p>
+        <p class="footer-item" @click="changeRoute('Voto')" v-else>voto</p>
+      </div>
+      <div class="col-md-1">
         <p class="footer-item" @click="changeRoute('Rregullore')" v-if="this.lang == 'en'">rules</p>
         <p class="footer-item" @click="changeRoute('Rregullore')" v-else>rregullore</p>
       </div>
-      <!-- <div class="col-md-1 pl-6">
-        <p class="footer-item">voto</p>
-      </div>-->
 
       <div class="col-md-2 border-left-black">
         <div class="icons horizontal-center">
@@ -126,7 +133,7 @@ export default {
       // // console.log("from footer");
     }
   },
-  mounted(){
+  mounted() {
     this.lang = getLanguage();
   }
 };
@@ -218,9 +225,9 @@ export default {
 
 .footer {
   position: relative;
-  bottom: 0%;
+  // bottom: 4rem;
   width: 100%;
-  height: 13%;
+  height: 8rem;
   overflow: hidden;
   background-color: white;
   &-item {

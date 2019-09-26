@@ -21,24 +21,17 @@
         </div>
         <div class="col-lg-5 top-padded-col">
           <h1 class="artist-name">{{getArtist.name}}</h1>
-          <h2 class="artist-songtitle" 
-            v-if="this.lang == 'en'">{{getArtist.songEng}}</h2>
+          <h2 class="artist-songtitle" v-if="this.lang == 'en'">{{getArtist.songEng}}</h2>
 
-          <h2 class="artist-songtitle" 
-            v-else>{{getArtist.song}}</h2>
+          <h2 class="artist-songtitle" v-else>{{getArtist.song}}</h2>
 
           <h3 class="bio-text">bio</h3>
-          <h4
-            class="bio-description"
-            v-if="this.lang == 'en'"
-          >{{getArtist.bioEng}}
-          </h4>
-          <h4
-            class="bio-description"
-            v-else
-          >{{getArtist.bio}}
-          </h4>
-          </div>
+          <h4 class="bio-description" v-if="this.lang == 'en'">{{getArtist.bioEng}}</h4>
+          <h4 class="bio-description" v-else>{{getArtist.bio}}</h4>
+
+          <button class="btn" @click="sendToVoto()" v-if="this.lang == 'en'">Vote</button>
+          <button class="btn" @click="sendToVoto()" v-else>Voto</button>
+        </div>
       </div>
 
       <div class="row">
@@ -49,13 +42,10 @@
             <i class="fa fa-facebook facebook-icon" style="margin-right:5px;"></i>
             <i class="fa fa-instagram" style="margin-right:5px;"></i>
             <i class="fa fa-whatsapp"></i>
-            <button class='btn' @click="sendToVoto()">Voto</button> 
           </span>
           <br />
-          <h1 class="trigger-text" 
-            v-if="this.lang == 'en'">Only one song will you hear?</h1>
-          <h1 class="trigger-text" 
-            v-else>Vetem nje kenge do degjosh?</h1>
+          <h1 class="trigger-text" v-if="this.lang == 'en'">Will you listen to only one song</h1>
+          <h1 class="trigger-text" v-else>Vetem nje kenge do degjosh?</h1>
         </div>
       </div>
 
@@ -93,7 +83,6 @@ import {
 } from "@/store/mutations.type";
 
 import { getLanguage, saveLanguage } from "@/store/services/storage";
-
 
 export default {
   name: "SingleArtist",
@@ -153,9 +142,9 @@ export default {
     goToArtists() {
       this.$router.push({ name: "Artists" });
     },
-    sendToVoto(){
-      let name = this.getArtist.name
-      let id = this.getArtist.id
+    sendToVoto() {
+      let name = this.getArtist.name;
+      let id = this.getArtist.id;
       this.$router.push({
         name: "VotoArtist",
         params: { slug: name, id: id }
@@ -208,7 +197,6 @@ export default {
     await this.fetchArtist(this.$route.params.id);
     this.fetchArtists();
 
-
     let artistPage = document.getElementsByClassName("artist-page")[0];
     // console.log("artistPage: ", artistPage);
     artistPage.style.background =
@@ -218,7 +206,7 @@ export default {
 
     artistPage.style.backgroundSize = "cover";
     artistPage.style.backgroundAttachment = "fixed";
-    
+
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
@@ -237,14 +225,17 @@ export default {
   }
 }
 
-.btn{
-      color: white;
-    font-size: 20px;
-    border: 1px solid white;
-    border-radius: 24px;
-    margin-left: 12%;
-    padding: 6px 25px;
-
+.btn {
+  color: white;
+  font-size: 20px;
+  border: 1px solid white;
+  border-radius: 24px;
+  // margin-left: 12%;
+  padding: 6px 25px;
+  &:hover {
+    color: black;
+    background-color: white;
+  }
 }
 
 .artist-name {

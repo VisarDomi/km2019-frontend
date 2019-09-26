@@ -4,66 +4,69 @@
       menutype="menu__items--black"
       logoBlack="true"
     />-->
-    <div class="row go-up--small">
-      <div class="col-lg-12 text-center">
-        <h1 class="header-text" v-if="lang == 'en'">artists</h1>
-        <h1 class="header-text" v-else>artistët</h1>
-      </div>
-    </div>
-    <div class="row px-6 respond-height" v-if="nrArtists(5) || nrArtists(6)">
-      <div
-        class="col-lg-2 col-sm-2 pos-relative"
-        :class="{'ml-6': !nrArtists(6)}"
-        v-for="(artist, index) in this.artists"
-        :key="artist.name"
-        @click="goToArtist(artist)"
-      >
-        <div class="artist-card abs-bottom" :class="{'abs-bottom--up': index % 2 === 0}">
-          <div>
-            <img :src="artist.img" alt />
-          </div>
-          <p class="artist-card__name go-up--small">{{artist.name}}</p>
-          <br />
-          <p class="artist-card__song" v-if="lang == 'en'">{{artist.songEng}}</p>
-          <p class="artist-card__song" v-else>{{artist.song}}</p>
+    <div class="container-fluid mods">
+      <div class="row go-up--small">
+        <div class="col-lg-12 text-center">
+          <h1 class="header-text" v-if="lang == 'en'">artists</h1>
+          <h1 class="header-text" v-else>artistët</h1>
         </div>
       </div>
-    </div>
-    <div class="row respond-height go-up--medium" v-if="nrArtists(4)">
-      <div class="col-lg-3--spacer"></div>
-      <div class="col-lg-2 mx--2" v-for="artist in this.artists" :key="artist.name">
-        <div class="artist-card abs-bottom">
-          <div>
-            <img :src="artist.img" alt />
-            <p class="artist-card__name inside-card">Ronald Domi</p>
+      <div class="row px-6 respond-height" v-if="nrArtists(5) || nrArtists(6)">
+        <div
+          class="col-lg-2 col-sm-2 pos-relative"
+          :class="{'ml-6': !nrArtists(6)}"
+          v-for="(artist, index) in this.artists"
+          :key="artist.name"
+          @click="goToArtist(artist)"
+        >
+          <div class="artist-card abs-bottom" :class="{'abs-bottom--up': index % 2 === 0}">
+            <div>
+              <img :src="artist.img" alt />
+            </div>
+            <p class="artist-card__name go-up--small">{{artist.name}}</p>
             <br />
-            <p class="artist-card__song mb-5">Loose yourself to dance</p>
+            <p class="artist-card__song" v-if="lang == 'en'">{{artist.songEng}}</p>
+            <p class="artist-card__song" v-else>{{artist.song}}</p>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row respond-height go-up--small" v-if="nrArtists(4)">
-      <div :class="myClass()"></div>
-      <div class="col-lg-2 mx--2" v-for="artist in this.artists2Row" :key="artist.name">
-        <div class="artist-card abs-bottom">
-          <div>
-            <img :src="artist.img" alt />
-            <p class="artist-card__name inside-card">Ronald Domi</p>
-            <br />
-            <p class="artist-card__song mb-5">Loose yourself to dance</p>
+      <div class="row respond-height go-up--medium" v-if="nrArtists(4)">
+        <div class="col-lg-3--spacer"></div>
+        <div class="col-lg-2 mx--2" v-for="artist in this.artists" :key="artist.name">
+          <div class="artist-card abs-bottom">
+            <div>
+              <img :src="artist.img" alt />
+              <p class="artist-card__name inside-card">Ronald Domi</p>
+              <br />
+              <p class="artist-card__song mb-5">Loose yourself to dance</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row mt--2" :class="{'mt-4' : nrArtists(5) || nrArtists(6)}">
-      <div
-        class="col-lg-6 offset-lg-3 col-12 text-center"
-        :class="{'mt-6' : nrArtists(5) || nrArtists(6)}"
-      >
-        <a href="#" class="btn" @click="goToArtists()" v-if="this.lang == 'en'">more artists</a>
-        <a href="#" class="btn" @click="goToArtists()" v-else>më shumë artistë</a>
+      <div class="row respond-height go-up--small" v-if="nrArtists(4)">
+        <div :class="myClass()"></div>
+        <div class="col-lg-2 mx--2" v-for="artist in this.artists2Row" :key="artist.name">
+          <div class="artist-card abs-bottom">
+            <div>
+              <img :src="artist.img" alt />
+              <p class="artist-card__name inside-card">Ronald Domi</p>
+              <br />
+              <p class="artist-card__song mb-5">Loose yourself to dance</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt--2" :class="{'mt-4' : nrArtists(5) || nrArtists(6)}">
+        <div
+          class="col-lg-6 offset-lg-3 col-12 text-center"
+          :class="{'mt-6' : nrArtists(5) || nrArtists(6)}"
+        >
+          <a href="#" class="btn" @click="goToArtists()" v-if="this.lang == 'en'">more artists</a>
+          <a href="#" class="btn" @click="goToArtists()" v-else>më shumë artistë</a>
+        </div>
       </div>
     </div>
+
     <div class="graphic-left w-50" v-if="windowWidth > 950">
       <img src="@/assets/img/Group 171.svg" alt />
     </div>
@@ -169,6 +172,11 @@ export default {
 .mx--2 {
   margin-right: -2%;
   margin-left: -2%;
+}
+
+.mods {
+  height: 80%;
+  margin-top: 5%;
 }
 
 .mt--2 {
@@ -314,7 +322,7 @@ export default {
   height: 35%;
 }
 .mt-6 {
-  margin-top: 8rem;
+  margin-top: 7rem;
 }
 
 .px-6 {

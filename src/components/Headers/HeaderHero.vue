@@ -1,5 +1,6 @@
 <template>
-  <div class="header-hero row align-items-center menu__items" v-bind:class="menutype">
+  <!-- <div> -->
+  <div class="header-hero row align-items-center menu__items row-no-margin" v-bind:class="menutype">
     <div class="col-xl-3 col-lg-4 col-sm-4 high-index">
       <span class="d-lg-inline-block" href="#" v-if="logoBlack">
         <img
@@ -28,10 +29,10 @@
     </div>
     <div
       v-if="this.lang == 'en'"
-      class="col-lg-1 col-sm-1 offset-xl-1 cmi"
-      v-scroll-to="'#section-artists'"
-    >artists</div>
-    <div v-else class="col-lg-1 col-sm-1 cmi offset-xl-1 cmi" v-scroll-to="'#section-artists'">artistët</div>
+      class="col-lg-1 col-sm-1 offset-xl-2 cmi"
+      v-scroll-to="'#juria'"
+    >the jury</div>
+    <div v-else class="col-lg-1 col-sm-1 offset-xl-2 cmi" v-scroll-to="'#juria'">juria</div>
 
     <div
       v-if="this.lang == 'en'"
@@ -46,9 +47,9 @@
     <div
       v-if="this.lang == 'en'"
       class="col-lg-1 col-sm-1 cmi"
-      v-scroll-to="'#juria'"
-    >the jury</div>
-    <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#juria'">juria</div>
+      v-scroll-to="'#section-artists'"
+    >artists</div>
+    <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#section-artists'">artistët</div>
 
     <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rules</div>
     <div v-else class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rregullore</div>
@@ -56,10 +57,37 @@
     <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" @click="goToVoto()">vote</div>
     <div v-else class="col-lg-1 col-sm-1 cmi" @click="goToVoto()">voto</div>
 
-    <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-if="this.lang == 'en'">Shqip</div>
-    <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-else>English</div>
+    <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-if="this.lang == 'en'">
+      <span class="font-weight-normal">AL/</span>
+      EN
+    </div>
+    <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-else>
+      AL
+      <span class="font-weight-normal">/EN</span>
+    </div>
 
+    <!-- <div class="col-lg-1 col-sm-1 high-index">
+      <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
+        <img
+          v-if="shouldHide"
+          src="@/assets/img/icon_menu_close_white.svg"
+          class="respond-width"
+          alt
+        />
+        <img v-if="!shouldHide" src="@/assets/img/icon_menu.svg" class="respond-width" alt />
+      </span>
+      <span class="navigation__icon" @click="collapseMenu" v-else>
+        <img
+          v-if="shouldHide"
+          src="@/assets/img/icon_menu_close_black.svg"
+          class="respond-width"
+          alt
+        />
+        <img v-if="!shouldHide" src="@/assets/img/icon_menu_black.svg" class="respond-width" alt />
+      </span>
+    </div>-->
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -103,11 +131,13 @@ export default {
       if (this.lang == "en") {
         saveLanguage("al");
         this.lang = "al";
-        this.$router.go(0)
+        this.$router.go(0);
+        saveLanguage("al");
       } else {
         saveLanguage("en");
         this.lang = "en";
-        this.$router.go(0)
+        saveLanguage("en");
+        this.$router.go(0);
       }
       eventBus.$emit("changeLanguage", this.lang);
     },
@@ -132,7 +162,7 @@ export default {
           }
         }
 
-        this.shouldHide = false;
+        // this.shouldHide = false;
       } else {
         for (var i = 0; i < Items.length; i++) {
           Items[i].style.opacity = 1;
@@ -142,7 +172,7 @@ export default {
 
           // Items[i].style.display = "inline-block";
         }
-        this.shouldHide = true;
+        // this.shouldHide = true;
       }
       eventBus.$emit("menuState", this.shouldHide);
     }
@@ -161,13 +191,17 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 .header-hero {
-  position: relative;
+  position: fixed;
   z-index: 9999;
   top: 0%;
-  right: 4%;
-  width: 104%;
+  // right: 4%;
+  height: 10rem;
+  width: 100%;
+  background-color: rgba(#0e1032, 1);
 }
-
+.row-no-margin {
+  margin-left: 0 !important;
+}
 .respond-width {
   @include respond(4k-desktop) {
     width: 25%;
@@ -188,6 +222,7 @@ export default {
     cursor: pointer;
   }
   z-index: 1000;
+  font-weight: bold;
 }
 
 .logo {

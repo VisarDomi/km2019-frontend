@@ -25,7 +25,7 @@
     </div>
     <div class="row h-75 align-items-center" v-else>
       <div class="col-lg-7 offset-lg-2 mobile-width-75 rel">
-        <span class="artist-name">{{getArtist.nameEng}}</span>
+        <span class="artist-name">{{getArtist.name}}</span>
         <hr />
         <span class="artist-song" v-if="this.lang == 'en'">{{getArtist.songEng}}</span>
         <span class="artist-song" v-else>{{getArtist.song}}</span>
@@ -35,8 +35,17 @@
 
     <!-- new login -->
     <div class="button-container">
-      <b-button class="btn" @click="voteFirstWeek()" :disabled="disabled">Dërgoni votën</b-button>
-      <div v-if="getIsLoading" class="my-text-message">Duke dërguar votën</div>
+      <b-button
+        class="btn"
+        @click="voteFirstWeek()"
+        :disabled="disabled"
+        v-if="this.lang == 'en'"
+      >Vote</b-button>
+      <b-button class="btn" @click="voteFirstWeek()" :disabled="disabled" v-else>Dërgoni votën</b-button>
+
+      <div v-if="getIsLoading & this.lang == 'en'" class="my-text-message">Sending vote...</div>
+      <div v-if="getIsLoading & this.lang != 'en'" class="my-text-message">Duke dërguar votën...</div>
+
       <div v-if="disabled" class="my-text-message">{{this.message}}</div>
     </div>
     <!-- new login -->
@@ -180,7 +189,7 @@ export default {
       return ip;
     },
     async voteFirstWeek() {
-      this.disabled = true
+      this.disabled = true;
       let ip = await this.getIp();
       const TableName = "KM2019-Vote";
       const id = this.$route.params.id;
@@ -198,11 +207,18 @@ export default {
         // console.log("this.getVoteErr", this.getVoteErr);
         if (this.getVoteErr.response.status === 501) {
           this.$store.dispatch(PUT_VOTES, params);
-          // this.voteSentSuccess = false;
-          this.message = "Provoni përsëri";
+          if (this.lang == "en") {
+            this.message = "Try Again";
+          } else {
+            this.message = "Provoni përsëri";
+          }
           this.disabled = false;
         } else if (this.getVoteErr.response.status === 409) {
-          this.message = "Ju keni votuar për sot!";
+          if (this.lang == "en") {
+            this.message = "You have already voted for today!";
+          } else {
+            this.message = "Ju keni votuar për sot!";
+          }
           this.disabled = true;
           // this.voteSentSuccess = false;
         }
@@ -217,7 +233,11 @@ export default {
         // document.cookie = `vote=${Date.now()};expires=${tomorrow.toGMTString()}`;
         // this.voteSentSuccess = true;
         this.disabled = true;
-        this.message = "Vota u dërgua me sukses";
+        if (this.lang == "en") {
+          this.message = "Your vote has been recorded!";
+        } else {
+          this.message = "Vota u dërgua me sukses";
+        }
         // await sleep(3000);
         // this.voteSentSuccess = false;
       }
@@ -253,6 +273,11 @@ export default {
       await this.$store.dispatch(GET_HAS_VOTED, params);
       // console.log("this.getHasVoted", this.getHasVoted);
       if (this.getHasVoted) {
+        if (this.lang == "en") {
+          this.message = "You have already voted for today!";
+        } else {
+          this.message = "Ju keni votuar për sot!";
+        }
         this.disabled = true;
       } else if (this.getHasVoted === false) {
         this.disabled = false;
@@ -260,7 +285,8 @@ export default {
     }
   },
   async mounted() {
-    await this.setDisabled()
+    this.lang = getLanguage();
+    console.log("this.lang", this.lang)
     // if (this.getVoteErr.response.data === "Ip has already voted for today") {
     //   this.message = "Ju keni votuar për sot!";
     //   this.disabled = true;
@@ -288,8 +314,6 @@ export default {
     //   }
     // }
 
-    this.lang = getLanguage();
-    await this.fetchArtist(this.$route.params.id);
 
     let votoPage = document.getElementsByClassName("voto-artist")[0];
     // console.log(votoPage);
@@ -306,6 +330,10 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
+    await this.setDisabled();
+    // console.log("this.message", this.message);
+    await this.fetchArtist(this.$route.params.id);
+
   },
   computed: {
     ...mapGetters([
