@@ -75,7 +75,7 @@
                 class="blog__footer--title"
                 @click="goToBlog('Blog11')"
                 v-if="this.lang == 'en'"
-              >Genti Deda ‘reveals’ the person who his heart belongs to his heart belongs to</h1>
+              >Genti Deda ‘reveals’ the person who his heart belongs to.</h1>
               <h1
                 class="blog__footer--title"
                 @click="goToBlog('Blog11')"
