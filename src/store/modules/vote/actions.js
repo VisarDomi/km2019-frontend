@@ -1,6 +1,11 @@
 import { ApiService } from "../../services/api";
-import { LIST_VOTE, PUT_VOTES } from "../../actions.type";
-import { SET_VOTES, SET_VOTE, SET_VOTE_ERR } from "../../mutations.type";
+import { LIST_VOTE, PUT_VOTES, GET_HAS_VOTED } from "../../actions.type";
+import {
+  SET_VOTES,
+  SET_VOTE,
+  SET_VOTE_ERR,
+  SET_HAS_VOTED
+} from "../../mutations.type";
 
 export const actions = {
   async [LIST_VOTE](context, payload) {
@@ -11,6 +16,22 @@ export const actions = {
     } else {
       // // console.log("There is no Items in the response object");
     }
+  },
+  async [GET_HAS_VOTED](context, payload) {
+    await ApiService.get(payload)
+      .then(response => {
+        // console.log("response is", response);
+        if (response.status === 200) {
+          // // console.log("Artist list (data.Items of the response)", data.Items);
+          context.commit(SET_HAS_VOTED, false);
+        } else if (response.status === 409) {
+          context.commit(SET_HAS_VOTED, true);
+          //   // // console.log("There is no Items in the response object");
+        }
+      })
+      .catch(err => {
+        context.commit(SET_VOTE_ERR, Object.assign({}, err));
+      });
   },
   async [PUT_VOTES](context, payload) {
     await ApiService.put(payload)
