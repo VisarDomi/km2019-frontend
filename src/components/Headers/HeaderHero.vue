@@ -231,7 +231,7 @@ export default {
 .menu__items {
   text-align: center;
   font-family: Ubuntu;
-  height: 15rem;
+  height: 7rem;
   font-size: 1.7rem;
   @include respond(4k-desktop) {
     font-size: 4rem;

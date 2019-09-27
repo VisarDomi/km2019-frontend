@@ -25,15 +25,15 @@
               style="height:100%;width:100%;object-fit:cover;"
               @click="goToBlog('Blog9')"
             />
-            <div class="title-date-div">
-              <h3 class="home-mobile-date">22.09.2019</h3>
+            <div class="blog__footer">
+              <h3 class="blog__footer--date">22.09.2019</h3>
               <h1
-                class="blog-title-section"
+                class="blog__footer--title"
                 @click="goToBlog('Blog9')"
                 v-if="this.lang == 'en'"
               >Lindita names top four Albanian women she really admires</h1>
               <h1
-                class="blog-title-section"
+                class="blog__footer--title"
                 @click="goToBlog('Blog9')"
                 v-else
               >Lindita: Katër femrat shqiptare që kam për zemër...</h1>
@@ -47,15 +47,15 @@
               style="height:100%;width:100%;object-fit:cover;"
               @click="goToBlog('Blog10')"
             />
-            <div class="title-date-div">
-              <h3 class="home-mobile-date">22.09.2019</h3>
+            <div class="blog__footer">
+              <h3 class="blog__footer--date">22.09.2019</h3>
               <h1
-                class="blog-title-section"
+                class="blog__footer--title"
                 @click="goToBlog('Blog10')"
                 v-if="this.lang == 'en'"
               >Rea Nuhu finds her father’s wardrobe in ‘E Diela Shqiptare’</h1>
               <h1
-                class="blog-title-section"
+                class="blog__footer--title"
                 @click="goToBlog('Blog10')"
                 v-else
               >Rea Nuhu gjen në “E Diela Shqiptare” veshjet e babait...</h1>
@@ -69,15 +69,15 @@
               style="height:100%;width:100%;object-fit:cover;"
               @click="goToBlog('Blog11')"
             />
-            <div class="title-date-div">
-              <h3 class="home-mobile-date">22.09.2019</h3>
+            <div class="blog__footer">
+              <h3 class="blog__footer--date">22.09.2019</h3>
               <h1
-                class="blog-title-section"
+                class="blog__footer--title"
                 @click="goToBlog('Blog11')"
                 v-if="this.lang == 'en'"
-              >Genti Deda ‘reveals’ the person who his heart belongs to</h1>
+              >Genti Deda ‘reveals’ the person who his heart belongs to his heart belongs to</h1>
               <h1
-                class="blog-title-section"
+                class="blog__footer--title"
                 @click="goToBlog('Blog11')"
                 v-else
               >Genti Deda "zbulon" shoqen e zemrës.</h1>
@@ -91,15 +91,15 @@
               style="height:100%;width:100%;object-fit:cover;"
               @click="goToBlog('Blog12')"
             />
-            <div class="title-date-div">
-              <h3 class="home-mobile-date">22.09.2019</h3>
+            <div class="blog__footer">
+              <h3 class="blog__footer--date">22.09.2019</h3>
               <h1
-                class="blog-title-section"
+                class="blog__footer--title"
                 @click="goToBlog('Blog12')"
                 v-if="this.lang == 'en'"
               >Launch the "New Artist" competition, the first five under the jury's "magnifying glass."</h1>
               <h1
-                class="blog-title-section"
+                class="blog__footer--title"
                 @click="goToBlog('Blog12')"
                 v-else
               >Nisin konkurimin “New Artist”, pesë të parët nën “lupën” e jurisë</h1>
@@ -230,42 +230,33 @@ export default {
   position: relative !important;
 }
 
-.title-date-div {
+.blog__footer {
+  z-index: 20;
   position: absolute;
-  top: 20%;
-}
-
-.home-mobile-date {
-  color: #47b8b0;
-  // position: absolute;
-  // top: 40%;
-  z-index: 30;
-  font-family: Panton;
-  background: white;
-  width: 10rem;
+  bottom: 0%;
   margin-left: 10%;
-  font-weight: 700;
-  font-size: 1.8rem;
-  padding: 0.6rem;
-
-  margin-top: 17%;
-  // left: 2rem;
-}
-
-.blog-title-section {
-  color: white;
-  z-index: 30;
-  // position: absolute;
-  font-family: Vollkorn;
-  // top: 38%;
-  width: 84%;
-  text-align: left;
-  font-size: 4.5rem;
-  // padding-top: 38%;
-  padding-left: 10%;
-  font-size: 4.5rem;
-  line-height: 1;
-  margin-top: 7%;
+  font-family: Ubuntu;
+  &--date {
+    color: #47b8b0 !important;
+    background: white;
+    display: inline-block;
+    color: white;
+    font-family: Panton;
+    font-weight: 700;
+    font-size: 1.8rem;
+    padding: 0.6rem;
+  }
+  &--title {
+    color: white;
+    font-weight: bold;
+    font-size: 4.5rem;
+    font-family: Vollkorn;
+    width: 84%;
+    line-height: 1;
+  }
+  &--other {
+    color: white;
+  }
 }
 
 .w-108 {
