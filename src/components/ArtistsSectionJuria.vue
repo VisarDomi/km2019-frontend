@@ -33,7 +33,7 @@
           <div class="img-container">
             <img src="@/assets/juria/j3_hover.png" alt />
           </div>
-          <p class="artist-card__name go-up--small">ARBEN SKËNDERI</p>
+          <p class="artist-card__name go-up--small">ARBEN SKËNDERAJ</p>
           <!-- <br />
           <p class="artist-card__song">{{artist.songtilte}}</p>-->
         </div>

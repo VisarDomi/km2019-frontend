@@ -88,7 +88,7 @@ export default new Router({
       meta: setMeta("VotoArtist", true)
     },
     {
-      path: "/arbenskenderi",
+      path: "/arbenskenderaj",
       name: "JuriaArben",
       component: JuriaArben,
       meta: { transition: "overlay-right" }

@@ -22,11 +22,11 @@
       <a href="#" v-if="this.lang == 'en'" v-scroll-to="'#juria-mobile'">the jury</a>
       <a href="#" v-else v-scroll-to="'#juria-mobile'">juria</a>
 
-      <a href="#" @click="goToVoto()" v-if="this.lang == 'en'">vote</a>
-      <a href="#" @click="goToVoto()" v-else>voto</a>
+      <a href="#" @click="changeRoute('Voto')" v-if="this.lang == 'en'">vote</a>
+      <a href="#" @click="changeRoute('Voto')" v-else>voto</a>
 
-      <a href="#" @click="goToRregullore()" v-if="this.lang == 'en'" >rules</a>
-      <a href="#" @click="goToRregullore()" v-else >rregullore</a>
+      <a href="#" @click="changeRoute('Rregullore')" v-if="this.lang == 'en'" >rules</a>
+      <a href="#" @click="changeRoute('Rregullore')" v-else >rregullore</a>
 
       <a href="#" @click="changeLang()" v-if="this.lang == 'en'">Shqip</a>
       <a href="#" @click="changeLang()" v-else>English</a>
@@ -55,8 +55,8 @@ export default {
     iconWhite: ""
   },
   methods: {
-    moveTo(index) {
-      eventBus.$emit("changeSection", index);
+    changeRoute(name) {
+      this.$router.push({ name: name });
     },
     goToRregullore() {
       // console.log("h");

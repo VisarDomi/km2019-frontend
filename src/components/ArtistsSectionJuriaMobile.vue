@@ -31,7 +31,7 @@
             <div class="img-container">
               <img src="@/assets/juria/j3_normal.png" alt />
             </div>
-            <p class="artist-card__name inside-card">ARBEN SKËNDERI</p>
+            <p class="artist-card__name inside-card">ARBEN SKËNDERAJ</p>
           </div>
         </div>
         <div class="col-6" style="margin-top:10px;">
