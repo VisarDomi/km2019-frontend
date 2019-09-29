@@ -44,7 +44,7 @@
             <p class="blog-content" v-else>
 Në javën e dytë të festivalit Kënga Magjike, për kategorinë New Artist, ishte dita e 5 butonave.
 <br><br>
-Të katër konkurrentët e javës kaluan nwn gjykimin e jurisw. Tre prej tyre morën 5 vota jeshile, vetëm MIN3 u votua më 5 të kuqe, nga të gjithë anëtarët e jurisë.
+Të katër konkurrentët e javës kaluan nën gjykimin e jurisë. Tre prej tyre morën 5 vota jeshile, vetëm MIN3 u votua më 5 të kuqe, nga të gjithë anëtarët e jurisë.
 <br><br>
 Alex Alexandër, këngëtari suedez, ardhur në Shqipëri posaçërisht për festivalin Kënga Magjike, përveçse bëri për vete publikun me një superperformancë, kaloi edhe fazën e parë të Kënga Magjike.
 <br><br>
