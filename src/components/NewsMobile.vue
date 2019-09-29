@@ -19,26 +19,101 @@
         >
           <slide>
             <img
-              src="@/assets/img/blog/Lajmi per Linditen.png"
+              src="@/assets/img/blog/Blog-13.jpg"
               alt
               class="img-fluid"
               style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog9')"
+              @click="goToBlog('Blog13')"
             />
             <div class="blog__footer">
-              <h3 class="blog__footer--date">22.09.2019</h3>
+              <h3 class="blog__footer--date">29.09.2019</h3>
               <h1
                 class="blog__footer--title"
-                @click="goToBlog('Blog9')"
+                @click="goToBlog('Blog13')"
                 v-if="this.lang == 'en'"
-              >Lindita names top four Albanian women she really admires</h1>
+              >Erik Lloshi: The difficult moment of my life</h1>
               <h1
                 class="blog__footer--title"
-                @click="goToBlog('Blog9')"
+                @click="goToBlog('Blog13')"
                 v-else
-              >Lindita: Katër femrat shqiptare që kam për zemër...</h1>
+              >Erik Lloshi: Momenti i vështirë i jetës sime</h1>
             </div>
           </slide>
+
+
+
+
+          <slide>
+            <img
+              src="@/assets/img/blog/Blog-14.jpg"
+              alt
+              class="img-fluid"
+              style="height:100%;width:100%;object-fit:cover;"
+              @click="goToBlog('Blog14')"
+            />
+            <div class="blog__footer">
+              <h3 class="blog__footer--date">29.09.2019</h3>
+              <h1
+                class="blog__footer--title"
+                @click="goToBlog('Blog14')"
+                v-if="this.lang == 'en'"
+              >Elia imitates them. Will Samanta Karavella and Albërie Hadërgjonaj hold grudges?</h1>
+              <h1
+                class="blog__footer--title"
+                @click="goToBlog('Blog14')"
+                v-else
+              >Elia i imiton. A do ti mbajnë mëri Samanta Karavella dhe Albërie Hadërgjonaj?</h1>
+            </div>
+          </slide>
+
+
+          <slide>
+            <img
+              src="@/assets/img/blog/Blog-15.jpg"
+              alt
+              class="img-fluid"
+              style="height:100%;width:100%;object-fit:cover;"
+              @click="goToBlog('Blog15')"
+            />
+            <div class="blog__footer">
+              <h3 class="blog__footer--date">29.09.2019</h3>
+              <h1
+                class="blog__footer--title"
+                @click="goToBlog('Blog15')"
+                v-if="this.lang == 'en'"
+              >Korab Shaqiri's son "A Phenomenon"</h1>
+              <h1
+                class="blog__footer--title"
+                @click="goToBlog('Blog15')"
+                v-else
+              >Djali i Korab Shaqirit "Fenomen"</h1>
+            </div>
+          </slide>
+
+          <slide>
+            <img
+              src="@/assets/img/blog/Blog-16.jpg"
+              alt
+              class="img-fluid"
+              style="height:100%;width:100%;object-fit:cover;"
+              @click="goToBlog('Blog16')"
+            />
+            <div class="blog__footer">
+              <h3 class="blog__footer--date">29.09.2019</h3>
+              <h1
+                class="blog__footer--title"
+                @click="goToBlog('Blog16')"
+                v-if="this.lang == 'en'"
+              >Week 2 / 3 New Artists pass the stage</h1>
+              <h1
+                class="blog__footer--title"
+                @click="goToBlog('Blog16')"
+                v-else
+              >Java e dytë/ Kaluan fazën e parë 3 New Artist</h1>
+            </div>
+          </slide>
+
+
           <slide>
             <img
               src="@/assets/img/blog/Lajmi per Rea Nuhu.jpg"

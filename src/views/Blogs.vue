@@ -60,6 +60,54 @@
         :navigationEnabled="false"
       >
         <slide>
+          <div class="h-100 slide-column" @click="goToBlog('Blog13')">
+            <img
+              src="@/assets/img/blog/Blog-13.jpg"
+              class="img-blog img-fluid grey-scale"
+              alt
+            />
+            <h1 class="blog-title">Erik Lloshi: Momenti i vështirë i jetës sime</h1>
+
+            <h3 class="date">29.09.2019</h3>
+          </div>
+        </slide>
+        <slide>
+          <div class="h-100 slide-column" @click="goToBlog('Blog14')">
+            <img
+              src="@/assets/img/blog/Blog-14.jpg"
+              class="img-blog img-fluid grey-scale"
+              alt
+            />
+            <h1 class="blog-title">Elia i imiton. A do ti mbajnë mëri Samanta Karavella dhe Albërie Hadërgjonaj?</h1>
+
+            <h3 class="date">29.09.2019</h3>
+          </div>
+        </slide>
+        <slide>
+          <div class="h-100 slide-column" @click="goToBlog('Blog15')">
+            <img
+              src="@/assets/img/blog/Blog-15.jpg"
+              class="img-blog img-fluid grey-scale"
+              alt
+            />
+            <h1 class="blog-title">Djali i Korab Shaqirit "Fenomen"</h1>
+
+            <h3 class="date">29.09.2019</h3>
+          </div>
+        </slide>
+        <slide>
+          <div class="h-100 slide-column" @click="goToBlog('Blog16')">
+            <img
+              src="@/assets/img/blog/Blog-16.jpg"
+              class="img-blog img-fluid grey-scale"
+              alt
+            />
+            <h1 class="blog-title">Java e dytë/ Kaluan fazën e parë 3 New Artist</h1>
+
+            <h3 class="date">29.09.2019</h3>
+          </div>
+        </slide>
+        <slide>
           <div class="h-100 slide-column" @click="goToBlog('Blog9')">
             <img
               src="@/assets/img/blog/Lajmi per Linditen.png"
