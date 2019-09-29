@@ -23,6 +23,10 @@ module.exports = {
           "/blog10",
           "/blog11",
           "/blog12",
+          "/blog13",
+          "/blog14",
+          "/blog15",
+          "/blog16",
           "/voto"
         ]
       })
