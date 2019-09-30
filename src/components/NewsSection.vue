@@ -79,7 +79,7 @@ Hadërgjonaj?</p>
               <p
                 class="blog__footer--title"
                 v-if="this.lang == 'en'"
-              >Korab Shaqiri's son "A Phenomenon"</p>
+              >Second week/ 3 New Artists proceed to next round</p>
               <p
                 class="blog__footer--title"
                 v-else
