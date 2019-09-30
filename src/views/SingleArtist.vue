@@ -118,26 +118,26 @@ export default {
   //     }
   //   ]
   // },
-  // head: {
-  //   meta: [
-  //     {
-  //       p: "og:image",
-  //       c: () => {return this.getArtist.drobboxImg}
-  //     },
-  //     {
-  //       p: "og:url",
-  //       c: () => { return this.$route.path }
-  //     },
-  //     {
-  //       p: "og:title",
-  //       c: () => { return this.getArtist.name }
-  //     },
-  //     {
-  //       p: "og:description",
-  //       c: () => { return this.getArtist.song }
-  //     }
-  //   ]
-  // },
+  head: {
+    meta: [
+      {
+        p: "og:image",
+        c: () => {return this.getArtist.drobboxImg}
+      },
+      {
+        p: "og:url",
+        c: () => { return this.$route.path }
+      },
+      {
+        p: "og:title",
+        c: () => { return this.getArtist.name }
+      },
+      {
+        p: "og:description",
+        c: () => { return this.getArtist.song }
+      }
+    ]
+  },
   methods: {
     goToArtists() {
       this.$router.push({ name: "Artists" });
