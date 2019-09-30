@@ -28,7 +28,7 @@ module.exports = {
           "/blog15",
           "/blog16",
           "/voto",
-          "https://kengamagjike.com/artist/Elia/2b6c6e54-1620-4143-81ac-375d2d8fef51"
+          // "https://kengamagjike.com/artist/Elia/2b6c6e54-1620-4143-81ac-375d2d8fef51"
         ]
       })
     ],
