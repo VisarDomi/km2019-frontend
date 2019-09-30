@@ -66,7 +66,8 @@
               class="img-blog img-fluid grey-scale"
               alt
             />
-            <h1 class="blog-title">Erik Lloshi: Momenti i vështirë i jetës sime</h1>
+            <h1 class="blog-title" v-if="this.lang == 'en'">Erik Lloshi: The difficult moment of my life</h1>
+            <h1 class="blog-title" v-else>Erik Lloshi: Momenti i vështirë i jetës sime</h1>
 
             <h3 class="date">29.09.2019</h3>
           </div>
@@ -78,7 +79,8 @@
               class="img-blog img-fluid grey-scale"
               alt
             />
-            <h1 class="blog-title">Elia i imiton. A do ti mbajnë mëri Samanta Karavella dhe Albërie Hadërgjonaj?</h1>
+            <h1 class="blog-title" v-if="this.lang == 'en'">Elia imitates them. Will Samanta Karavella and Albërie Hadërgjonaj hold grudges?</h1>
+            <h1 class="blog-title" v-else>Elia i imiton. A do ti mbajnë mëri Samanta Karavella dhe Albërie Hadërgjonaj?</h1>
 
             <h3 class="date">29.09.2019</h3>
           </div>
@@ -90,7 +92,8 @@
               class="img-blog img-fluid grey-scale"
               alt
             />
-            <h1 class="blog-title">Djali i Korab Shaqirit "Fenomen"</h1>
+            <h1 class="blog-title" v-if="this.lang == 'en'">Korab Shaqiri's son "A Phenomenon"</h1>
+            <h1 class="blog-title" v-else>Djali i Korab Shaqirit "Fenomen"</h1>
 
             <h3 class="date">29.09.2019</h3>
           </div>
@@ -102,7 +105,8 @@
               class="img-blog img-fluid grey-scale"
               alt
             />
-            <h1 class="blog-title">Java e dytë/ Kaluan fazën e parë 3 New Artist</h1>
+            <h1 class="blog-title" v-if="this.lang == 'en'">Week 2 / 3 New Artists pass the stage</h1>
+            <h1 class="blog-title" v-else>Java e dytë/ Kaluan fazën e parë 3 New Artist</h1>
 
             <h3 class="date">29.09.2019</h3>
           </div>
@@ -114,7 +118,8 @@
               class="img-blog img-fluid grey-scale"
               alt
             />
-            <h1 class="blog-title">Lindita: Katër femrat shqiptare që kam për zemër...</h1>
+            <h1 class="blog-title" v-if="this.lang == 'en'">Lindita names top four Albanian women she really admires</h1>
+            <h1 class="blog-title" v-else>Lindita: Katër femrat shqiptare që kam për zemër...</h1>
 
             <h3 class="date">22.09.2019</h3>
           </div>
@@ -126,7 +131,8 @@
               class="img-blog img-fluid grey-scale"
               alt
             />
-            <h1 class="blog-title">Genti Deda "zbulon" shoqen e zemrës.</h1>
+            <h1 class="blog-title" v-if="this.lang == 'en'">Genti Deda ‘reveals’ the person who his heart belongs to</h1>
+            <h1 class="blog-title" v-else>Genti Deda "zbulon" shoqen e zemrës.</h1>
 
             <h3 class="date">22.09.2019</h3>
           </div>
@@ -252,7 +258,10 @@
 
 
 <script>
+
+import { getLanguage } from "@/store/services/storage";
 import { Carousel, Slide } from "vue-carousel";
+import { eventBus } from "@/main";
 import FooterBlack from "@/components/Footer/FooterBlack.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
@@ -269,6 +278,7 @@ export default {
   },
   data() {
     return {
+      lang: "",
       windowWidth: window.innerWidth,
       artists: [
         {
@@ -324,6 +334,7 @@ export default {
         this.windowWidth = window.innerWidth;
       });
     });
+    this.lang = getLanguage();
   }
 };
 </script>
