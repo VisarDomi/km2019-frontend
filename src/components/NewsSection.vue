@@ -21,17 +21,17 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--1" @click="goToBlog('Blog9')">
+          <div class="blog__image blog__image--1" @click="goToBlog('Blog13')">
             <div class="blog__footer">
-              <p class="blog__footer--date">22.09.2019</p>
+              <p class="blog__footer--date">29.09.2019</p>
               <p
                 class="blog__footer--title"
                 v-if="this.lang == 'en'"
-              >Lindita names top four Albanian women she really admires</p>
+              >Erik Lloshi: The difficult moment of my life</p>
               <p
                 class="blog__footer--title"
                 v-else
-              >Lindita: Katër femrat shqiptare që kam për zemër...</p>
+              >Erik Lloshi: Momenti i vështirë i jetës sime</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -39,14 +39,15 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--2" @click="goToBlog('Blog11')">
+          <div class="blog__image blog__image--2" @click="goToBlog('Blog14')">
             <div class="blog__footer">
-              <p class="blog__footer--date">22.09.2019</p>
+              <p class="blog__footer--date">29.09.2019</p>
               <p
                 class="blog__footer--title"
                 v-if="this.lang == 'en'"
-              >Genti Deda ‘reveals’ the person who his heart belongs to</p>
-              <p class="blog__footer--title" v-else>Genti Deda "zbulon" shoqen e zemrës.</p>
+              >Elia imitates them. Will Samanta Karavella and Albërie Hadërgjonaj hold grudges?</p>
+              <p class="blog__footer--title" v-else>Elia i imiton. A do ti mbajnë mëri Samanta Karavella dhe Albërie
+Hadërgjonaj?</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -54,17 +55,17 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--3" @click="goToBlog('Blog10')">
+          <div class="blog__image blog__image--3" @click="goToBlog('Blog15')">
             <div class="blog__footer">
-              <p class="blog__footer--date">22.09.2019</p>
+              <p class="blog__footer--date">29.09.2019</p>
               <p
                 class="blog__footer--title"
                 v-if="this.lang == 'en'"
-              >Rea Nuhu finds her father’s wardrobe in ‘E Diela Shqiptare’</p>
+              >Korab Shaqiri's son "A Phenomenon"</p>
               <p
                 class="blog__footer--title"
                 v-else
-              >Rea Nuhu gjen në “E Diela Shqiptare” veshjet e babait...</p>
+              >Djali i Korab Shaqirit &quot;Fenomen&quot;</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -72,17 +73,17 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--4" @click="goToBlog('Blog12')">
+          <div class="blog__image blog__image--4" @click="goToBlog('Blog16')">
             <div class="blog__footer">
-              <p class="blog__footer--date">22.09.2018</p>
+              <p class="blog__footer--date">29.09.2018</p>
               <p
                 class="blog__footer--title"
                 v-if="this.lang == 'en'"
-              >Launch the "New Artist" competition, the first five under the jury's "magnifying glass."</p>
+              >Korab Shaqiri's son "A Phenomenon"</p>
               <p
                 class="blog__footer--title"
                 v-else
-              >Nisin konkurimin “New Artist”, pesë të parët nën “lupën” e jurisë</p>
+              >Java e dytë/ Kaluan fazën e parë 3 New Artist</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -188,14 +189,14 @@ export default {
   &__image {
     &--1 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Lajmi per Linditen.png");
+        url("../assets/img/blog/Blog-13.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Lajmi per Linditen.png");
+          url("../assets/img/blog/Blog-13.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -203,14 +204,14 @@ export default {
     }
     &--2 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Lajmi per Genti Deda.jpg");
+        url("../assets/img/blog/Blog-14.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Lajmi per Genti Deda.jpg");
+          url("../assets/img/blog/Blog-14.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -218,14 +219,14 @@ export default {
     }
     &--3 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Lajmi per Rea Nuhu.jpg");
+        url("../assets/img/blog/Blog-15.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Lajmi per Rea Nuhu.jpg");
+          url("../assets/img/blog/Blog-15.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -233,14 +234,14 @@ export default {
     }
     &--4 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-12.jpg");
+        url("../assets/img/blog/Blog-16.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-12.jpg");
+          url("../assets/img/blog/Blog-16.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
