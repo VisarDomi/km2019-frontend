@@ -109,26 +109,26 @@ export default {
         Limit
       };
       await this.$store.dispatch(LIST_ARTIST, params);
-      for (let i in [1, 2, 3, 4, 5,6,7,8,9,10,11]) {
+      for (let i in [1, 2, 3, 4, 5,6]) {
         this.artists.push({});
       }
       for (let artist of this.getArtists) {
-if (artist.name == "Lindita") {
-          this.artists[6] = artist;
-          // continue
-        }
-        if (artist.name == "Genti Deda") {
-          this.artists[7] = artist;
-        }
-        if (artist.name == "Rea Nuhu") {
-          this.artists[8] = artist;
-        }
-        if (artist.name == "Khuba") {
-          this.artists[9] = artist;
-        }
-        if (artist.name == "Sisma") {
-          this.artists[10] = artist;
-        }
+// if (artist.name == "Lindita") {
+//           this.artists[6] = artist;
+//           // continue
+//         }
+//         if (artist.name == "Genti Deda") {
+//           this.artists[7] = artist;
+//         }
+//         if (artist.name == "Rea Nuhu") {
+//           this.artists[8] = artist;
+//         }
+//         if (artist.name == "Khuba") {
+//           this.artists[9] = artist;
+//         }
+//         if (artist.name == "Sisma") {
+//           this.artists[10] = artist;
+//         }
 
         if (artist.name == "Erik Lloshi") {
           this.artists[0] = artist;
