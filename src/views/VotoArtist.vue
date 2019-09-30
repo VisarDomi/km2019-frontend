@@ -314,13 +314,16 @@ export default {
     //   }
     // }
 
+      await this.fetchArtist(this.$route.params.id);
 
     let votoPage = document.getElementsByClassName("voto-artist")[0];
+
     // console.log(votoPage);
     votoPage.style.background =
       "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
       this.getArtist["bgImg"] +
       "), no-repeat ";
+
     votoPage.style.backgroundPosition = "center top";
     votoPage.style.backgroundSize = "cover";
     votoPage.style.backgroundAttachment = "fixed";
@@ -332,7 +335,6 @@ export default {
     });
     await this.setDisabled();
     // console.log("this.message", this.message);
-    await this.fetchArtist(this.$route.params.id);
 
   },
   computed: {
