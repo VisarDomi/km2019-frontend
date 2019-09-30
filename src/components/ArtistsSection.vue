@@ -118,25 +118,31 @@ export default {
       };
       await this.$store.dispatch(LIST_ARTIST, params);
       // // console.log(this.getArtists);
-      for (let i in [1, 2, 3, 4, 5]) {
+      for (let i in [1, 2, 3, 4, 5,6]) {
         this.artists.push({});
       }
       for (let artist of this.getArtists) {
-        if (artist.name == "Lindita") {
+        if (artist.name == "Erik Lloshi") {
           this.artists[0] = artist;
-          // continue
         }
-        if (artist.name == "Genti Deda") {
+        if (artist.name == "Korab Shaqiri") {
           this.artists[1] = artist;
         }
-        if (artist.name == "Rea Nuhu") {
+        if (artist.name == "Elia") {
           this.artists[2] = artist;
+          // this.artists2.push(artist);
         }
-        if (artist.name == "Khuba") {
+        if (artist.name == "Alex Alexander") {
           this.artists[3] = artist;
+          // this.artists2.push(artist);
         }
-        if (artist.name == "Sisma") {
+        if (artist.name == "Laura&Elisa Gjipi") {
           this.artists[4] = artist;
+          // this.artists3.push(artist);
+        }
+        if (artist.name == "Kristi") {
+          this.artists[5] = artist;
+          // this.artists3.push(artist);
         }
       }
     }

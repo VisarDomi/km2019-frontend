@@ -240,7 +240,7 @@ a:visited {
   bottom: 0%;
   width: 100%;
   // height: 13%;
-  height: 10%;
+  height: 9rem;
   overflow: hidden;
   background-color: white;
   &-item {

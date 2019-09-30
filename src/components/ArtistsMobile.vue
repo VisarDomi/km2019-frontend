@@ -121,22 +121,26 @@ export default {
       this.artists2.push({});
       this.artists3.push({});
       for (let artist of this.getArtists) {
-        if (artist.name == "Lindita") {
+        if (artist.name == "Erik Lloshi") {
           this.artists1[0] = artist;
         }
-        if (artist.name == "Genti Deda") {
+        if (artist.name == "Korab Shaqiri") {
           this.artists1[1] = artist;
         }
-        if (artist.name == "Rea Nuhu") {
+        if (artist.name == "Elia") {
           this.artists2[0] = artist;
           // this.artists2.push(artist);
         }
-        if (artist.name == "Khuba") {
+        if (artist.name == "Alex Alexander") {
           this.artists2[1] = artist;
           // this.artists2.push(artist);
         }
-        if (artist.name == "Sisma") {
+        if (artist.name == "Laura&Elisa Gjipi") {
           this.artists3[0] = artist;
+          // this.artists3.push(artist);
+        }
+        if (artist.name == "Kristi") {
+          this.artists3[1] = artist;
           // this.artists3.push(artist);
         }
       }

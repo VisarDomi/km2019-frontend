@@ -50,7 +50,7 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-3" v-for="artist of artists" :key="artist.id">
+        <div class="col-lg-3" v-for="artist of artists.slice(0, 4).sort(() => Math.random() - 0.5)" :key="artist.id">
           <div class="artist-card abs-bottom" @click="goToArtist(artist)">
             <div class="img-container">
               <img :src="artist.img" alt />
