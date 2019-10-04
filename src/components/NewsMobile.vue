@@ -40,9 +40,6 @@
             </div>
           </slide>
 
-
-
-
           <slide>
             <img
               src="@/assets/img/blog/Blog-14.jpg"
@@ -65,7 +62,6 @@
               >Elia i imiton. A do ti mbajnë mëri Samanta Karavella dhe Albërie Hadërgjonaj?</h1>
             </div>
           </slide>
-
 
           <slide>
             <img
@@ -112,7 +108,6 @@
               >Java e dytë/ Kaluan fazën e parë 3 New Artist</h1>
             </div>
           </slide>
-
 
           <slide>
             <img
@@ -320,6 +315,9 @@ export default {
     font-weight: 700;
     font-size: 1.8rem;
     padding: 0.6rem;
+    @include respond(tab-port) {
+      font-size: 2.8rem;
+    }
   }
   &--title {
     color: white;
@@ -328,6 +326,9 @@ export default {
     font-family: Vollkorn;
     width: 84%;
     line-height: 1;
+    @include respond(tab-port) {
+      font-size: 6rem;
+    }
   }
   &--other {
     color: white;

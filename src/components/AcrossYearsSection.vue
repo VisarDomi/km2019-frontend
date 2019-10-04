@@ -226,6 +226,7 @@ export default {
   }
   @include respond(small-screen) {
     margin-top: 1rem;
+    margin-left: 5rem;
   }
 }
 

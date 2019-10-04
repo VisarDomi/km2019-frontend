@@ -28,10 +28,7 @@
                 class="blog__footer--title"
                 v-if="this.lang == 'en'"
               >Erik Lloshi: The difficult moment of my life</p>
-              <p
-                class="blog__footer--title"
-                v-else
-              >Erik Lloshi: Momenti i vështirë i jetës sime</p>
+              <p class="blog__footer--title" v-else>Erik Lloshi: Momenti i vështirë i jetës sime</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -46,8 +43,10 @@
                 class="blog__footer--title"
                 v-if="this.lang == 'en'"
               >Elia imitates them. Will Samanta Karavella and Albërie Hadërgjonaj hold grudges?</p>
-              <p class="blog__footer--title" v-else>Elia i imiton. A do ti mbajnë mëri Samanta Karavella dhe Albërie
-Hadërgjonaj?</p>
+              <p class="blog__footer--title" v-else>
+                Elia i imiton. A do ti mbajnë mëri Samanta Karavella dhe Albërie
+                Hadërgjonaj?
+              </p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -62,10 +61,7 @@ Hadërgjonaj?</p>
                 class="blog__footer--title"
                 v-if="this.lang == 'en'"
               >Korab Shaqiri's son "A Phenomenon"</p>
-              <p
-                class="blog__footer--title"
-                v-else
-              >Djali i Korab Shaqirit &quot;Fenomen&quot;</p>
+              <p class="blog__footer--title" v-else>Djali i Korab Shaqirit &quot;Fenomen&quot;</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -80,10 +76,7 @@ Hadërgjonaj?</p>
                 class="blog__footer--title"
                 v-if="this.lang == 'en'"
               >Second week/ 3 New Artists proceed to next round</p>
-              <p
-                class="blog__footer--title"
-                v-else
-              >Java e dytë/ Kaluan fazën e parë 3 New Artist</p>
+              <p class="blog__footer--title" v-else>Java e dytë/ Kaluan fazën e parë 3 New Artist</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -267,6 +260,9 @@ export default {
       font-weight: 700;
       font-size: 1.5rem;
       padding: 1px 1rem;
+      @include respond(tab-port) {
+        font-size: 2.8rem;
+      }
     }
     &--title {
       color: white;

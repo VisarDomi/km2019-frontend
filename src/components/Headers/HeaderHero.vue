@@ -236,6 +236,9 @@ export default {
   @include respond(4k-desktop) {
     font-size: 4rem;
   }
+  @include respond(tab-port) {
+    height: 14rem;
+  }
 
   &--white {
     color: white;

@@ -118,7 +118,7 @@ export default {
       };
       await this.$store.dispatch(LIST_ARTIST, params);
       // // console.log(this.getArtists);
-      for (let i in [1, 2, 3, 4, 5,6]) {
+      for (let i in [1, 2, 3, 4, 5, 6]) {
         this.artists.push({});
       }
       for (let artist of this.getArtists) {
@@ -348,6 +348,9 @@ export default {
     font-size: 5rem;
     margin-top: 20rem;
   }
+  @include respond(tab-port) {
+    margin-top: 20rem;
+  }
   &:hover {
     border: 0px;
     color: white;
@@ -404,6 +407,7 @@ export default {
   }
   @include respond(tab-port) {
     font-size: 15rem;
+    margin-top: 8rem;
   }
 }
 </style>
