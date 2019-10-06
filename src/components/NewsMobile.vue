@@ -19,162 +19,97 @@
         >
           <slide>
             <img
-              src="@/assets/img/blog/Blog-13.jpg"
+              src="@/assets/img/blog/Blog-20.jpg"
               alt
               class="img-fluid"
               style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog13')"
+              @click="goToBlog('Blog20')"
             />
             <div class="blog__footer">
-              <h3 class="blog__footer--date">29.09.2019</h3>
+              <h3 class="blog__footer--date">10.06.2019</h3>
               <h1
                 class="blog__footer--title"
-                @click="goToBlog('Blog13')"
+                @click="goToBlog('Blog20')"
                 v-if="this.lang == 'en'"
-              >Erik Lloshi: The difficult moment of my life</h1>
+              ></h1>
               <h1
                 class="blog__footer--title"
-                @click="goToBlog('Blog13')"
+                @click="goToBlog('Blog20')"
                 v-else
-              >Erik Lloshi: Momenti i vështirë i jetës sime</h1>
+              >Java 3, kalojnë fazën e parë dy New Artist</h1>
             </div>
           </slide>
 
           <slide>
             <img
-              src="@/assets/img/blog/Blog-14.jpg"
+              src="@/assets/img/blog/Blog-19.jpg"
               alt
               class="img-fluid"
               style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog14')"
+              @click="goToBlog('Blog19')"
             />
             <div class="blog__footer">
-              <h3 class="blog__footer--date">29.09.2019</h3>
+              <h3 class="blog__footer--date">10.06.2019</h3>
               <h1
                 class="blog__footer--title"
-                @click="goToBlog('Blog14')"
+                @click="goToBlog('Blog19')"
                 v-if="this.lang == 'en'"
-              >Elia imitates them. Will Samanta Karavella and Albërie Hadërgjonaj hold grudges?</h1>
+              ></h1>
               <h1
                 class="blog__footer--title"
-                @click="goToBlog('Blog14')"
+                @click="goToBlog('Blog19')"
                 v-else
-              >Elia i imiton. A do ti mbajnë mëri Samanta Karavella dhe Albërie Hadërgjonaj?</h1>
+              >Inis Neziri, kemi humbur një futbolliste...</h1>
             </div>
           </slide>
 
           <slide>
             <img
-              src="@/assets/img/blog/Blog-15.jpg"
+              src="@/assets/img/blog/Blog-18.jpg"
               alt
               class="img-fluid"
               style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog15')"
+              @click="goToBlog('Blog18')"
             />
             <div class="blog__footer">
-              <h3 class="blog__footer--date">29.09.2019</h3>
+              <h3 class="blog__footer--date">10.06.2019</h3>
               <h1
                 class="blog__footer--title"
-                @click="goToBlog('Blog15')"
+                @click="goToBlog('Blog18')"
                 v-if="this.lang == 'en'"
-              >Korab Shaqiri's son "A Phenomenon"</h1>
+              ></h1>
               <h1
                 class="blog__footer--title"
-                @click="goToBlog('Blog15')"
+                @click="goToBlog('Blog18')"
                 v-else
-              >Djali i Korab Shaqirit "Fenomen"</h1>
+              >Dylan, rikthim pas 17 vitesh në Kënga Magjike...</h1>
             </div>
           </slide>
 
           <slide>
             <img
-              src="@/assets/img/blog/Blog-16.jpg"
+              src="@/assets/img/blog/Blog-17.jpg"
               alt
               class="img-fluid"
               style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog16')"
+              @click="goToBlog('Blog17')"
             />
             <div class="blog__footer">
-              <h3 class="blog__footer--date">29.09.2019</h3>
+              <h3 class="blog__footer--date">10.06.2019</h3>
               <h1
                 class="blog__footer--title"
-                @click="goToBlog('Blog16')"
+                @click="goToBlog('Blog17')"
                 v-if="this.lang == 'en'"
-              >Week 2 / 3 New Artists pass the stage</h1>
+              ></h1>
               <h1
                 class="blog__footer--title"
-                @click="goToBlog('Blog16')"
+                @click="goToBlog('Blog17')"
                 v-else
-              >Java e dytë/ Kaluan fazën e parë 3 New Artist</h1>
+              >Rovena Dilo: Çdo femër me personalitet është DIVA...</h1>
             </div>
           </slide>
 
-          <slide>
-            <img
-              src="@/assets/img/blog/Lajmi per Rea Nuhu.jpg"
-              alt
-              class="img-fluid"
-              style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog10')"
-            />
-            <div class="blog__footer">
-              <h3 class="blog__footer--date">22.09.2019</h3>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog10')"
-                v-if="this.lang == 'en'"
-              >Rea Nuhu finds her father’s wardrobe in ‘E Diela Shqiptare’</h1>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog10')"
-                v-else
-              >Rea Nuhu gjen në “E Diela Shqiptare” veshjet e babait...</h1>
-            </div>
-          </slide>
-          <slide>
-            <img
-              src="@/assets/img/blog/Lajmi per Genti Deda.jpg"
-              alt
-              class="img-fluid"
-              style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog11')"
-            />
-            <div class="blog__footer">
-              <h3 class="blog__footer--date">22.09.2019</h3>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog11')"
-                v-if="this.lang == 'en'"
-              >Genti Deda ‘reveals’ the person who his heart belongs to.</h1>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog11')"
-                v-else
-              >Genti Deda "zbulon" shoqen e zemrës.</h1>
-            </div>
-          </slide>
-          <slide>
-            <img
-              src="@/assets/img/blog/Blog-12.jpg"
-              alt
-              class="img-fluid"
-              style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog12')"
-            />
-            <div class="blog__footer">
-              <h3 class="blog__footer--date">22.09.2019</h3>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog12')"
-                v-if="this.lang == 'en'"
-              >Launch the "New Artist" competition, the first five under the jury's "magnifying glass."</h1>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog12')"
-                v-else
-              >Nisin konkurimin “New Artist”, pesë të parët nën “lupën” e jurisë</h1>
-            </div>
-          </slide>
+          
         </carousel>
       </div>
     </div>

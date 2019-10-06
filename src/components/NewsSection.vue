@@ -21,14 +21,11 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--1" @click="goToBlog('Blog13')">
+          <div class="blog__image blog__image--1" @click="goToBlog('Blog20')">
             <div class="blog__footer">
-              <p class="blog__footer--date">29.09.2019</p>
-              <p
-                class="blog__footer--title"
-                v-if="this.lang == 'en'"
-              >Erik Lloshi: The difficult moment of my life</p>
-              <p class="blog__footer--title" v-else>Erik Lloshi: Momenti i vështirë i jetës sime</p>
+              <p class="blog__footer--date">10.06.2019</p>
+              <p class="blog__footer--title" v-if="this.lang == 'en'"></p>
+              <p class="blog__footer--title" v-else>Java 3, kalojnë fazën e parë dy New Artist</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -36,17 +33,11 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--2" @click="goToBlog('Blog14')">
+          <div class="blog__image blog__image--2" @click="goToBlog('Blog19')">
             <div class="blog__footer">
-              <p class="blog__footer--date">29.09.2019</p>
-              <p
-                class="blog__footer--title"
-                v-if="this.lang == 'en'"
-              >Elia imitates them. Will Samanta Karavella and Albërie Hadërgjonaj hold grudges?</p>
-              <p class="blog__footer--title" v-else>
-                Elia i imiton. A do ti mbajnë mëri Samanta Karavella dhe Albërie
-                Hadërgjonaj?
-              </p>
+              <p class="blog__footer--date">10.06.2019</p>
+              <p class="blog__footer--title" v-if="this.lang == 'en'"></p>
+              <p class="blog__footer--title" v-else>Inis Neziri, kemi humbur një futbolliste...</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -54,14 +45,11 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--3" @click="goToBlog('Blog15')">
+          <div class="blog__image blog__image--3" @click="goToBlog('Blog18')">
             <div class="blog__footer">
-              <p class="blog__footer--date">29.09.2019</p>
-              <p
-                class="blog__footer--title"
-                v-if="this.lang == 'en'"
-              >Korab Shaqiri's son "A Phenomenon"</p>
-              <p class="blog__footer--title" v-else>Djali i Korab Shaqirit &quot;Fenomen&quot;</p>
+              <p class="blog__footer--date">10.06.2019</p>
+              <p class="blog__footer--title" v-if="this.lang == 'en'"></p>
+              <p class="blog__footer--title" v-else>Dylan, rikthim pas 17 vitesh në Kënga Magjike...</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -69,14 +57,14 @@
           </div>
         </div>
         <div class="col-lg-3">
-          <div class="blog__image blog__image--4" @click="goToBlog('Blog16')">
+          <div class="blog__image blog__image--4" @click="goToBlog('Blog17')">
             <div class="blog__footer">
-              <p class="blog__footer--date">29.09.2018</p>
+              <p class="blog__footer--date">10.06.2019</p>
+              <p class="blog__footer--title" v-if="this.lang == 'en'"></p>
               <p
                 class="blog__footer--title"
-                v-if="this.lang == 'en'"
-              >Second week/ 3 New Artists proceed to next round</p>
-              <p class="blog__footer--title" v-else>Java e dytë/ Kaluan fazën e parë 3 New Artist</p>
+                v-else
+              >Rovena Dilo: Çdo femër me personalitet është DIVA...</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -182,14 +170,14 @@ export default {
   &__image {
     &--1 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-13.jpg");
+        url("../assets/img/blog/Blog-20.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-13.jpg");
+          url("../assets/img/blog/Blog-20.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -197,14 +185,14 @@ export default {
     }
     &--2 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-14.jpg");
+        url("../assets/img/blog/Blog-19.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-14.jpg");
+          url("../assets/img/blog/Blog-19.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -212,14 +200,14 @@ export default {
     }
     &--3 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-15.jpg");
+        url("../assets/img/blog/Blog-18.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-15.jpg");
+          url("../assets/img/blog/Blog-18.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -227,14 +215,14 @@ export default {
     }
     &--4 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-16.jpg");
+        url("../assets/img/blog/Blog-17.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-16.jpg");
+          url("../assets/img/blog/Blog-17.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

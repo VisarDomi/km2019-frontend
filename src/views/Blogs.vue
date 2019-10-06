@@ -60,6 +60,59 @@
         :navigationEnabled="false"
       >
         <slide>
+          <div class="h-100 slide-column" @click="goToBlog('Blog20')">
+            <img
+              src="@/assets/img/blog/Blog-20.jpg"
+              class="img-blog img-fluid grey-scale"
+              alt
+            />
+            <h1 class="blog-title" v-if="this.lang == 'en'"></h1>
+            <h1 class="blog-title" v-else>Java 3, kalojnë fazën e parë dy New Artist</h1>
+
+            <h3 class="date">10.06.2019</h3>
+          </div>
+        </slide>
+        <slide>
+          <div class="h-100 slide-column" @click="goToBlog('Blog19')">
+            <img
+              src="@/assets/img/blog/Blog-19.jpg"
+              class="img-blog img-fluid grey-scale"
+              alt
+            />
+            <h1 class="blog-title" v-if="this.lang == 'en'"></h1>
+            <h1 class="blog-title" v-else>Inis Neziri, kemi humbur një futbolliste...</h1>
+
+            <h3 class="date">10.06.2019</h3>
+          </div>
+        </slide>
+        <slide>
+          <div class="h-100 slide-column" @click="goToBlog('Blog18')">
+            <img
+              src="@/assets/img/blog/Blog-18.jpg"
+              class="img-blog img-fluid grey-scale"
+              alt
+            />
+            <h1 class="blog-title" v-if="this.lang == 'en'"></h1>
+            <h1 class="blog-title" v-else>Dylan, rikthim pas 17 vitesh në Kënga Magjike...</h1>
+
+            <h3 class="date">10.06.2019</h3>
+          </div>
+        </slide>
+        <slide>
+          <div class="h-100 slide-column" @click="goToBlog('Blog17')">
+            <img
+              src="@/assets/img/blog/Blog-17.jpg"
+              class="img-blog img-fluid grey-scale"
+              alt
+            />
+            <h1 class="blog-title" v-if="this.lang == 'en'"></h1>
+            <h1 class="blog-title" v-else>Rovena Dilo: Çdo femër me personalitet është DIVA...</h1>
+
+            <h3 class="date">10.06.2019</h3>
+          </div>
+        </slide>
+
+        <slide>
           <div class="h-100 slide-column" @click="goToBlog('Blog13')">
             <img
               src="@/assets/img/blog/Blog-13.jpg"
