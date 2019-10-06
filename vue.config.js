@@ -28,7 +28,7 @@ module.exports = {
           // "/blog15",
           // "/blog16",
           "/blog17",
-          "/blog18",
+          // "/blog18",
           "/blog19",
           "/blog20",
           "/voto"
