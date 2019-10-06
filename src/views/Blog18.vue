@@ -143,6 +143,10 @@ export default {
           " https://s3.eu-west-1.amazonaws.com/kengamagjike2019/blogIimages%2F%2F6tetorlajmi2.jpeg"
       },
       {
+        p: "og:url",
+        c: "https://kengamagjike.com/blog18"
+      },
+      {
         p: "og:title",
         c: "Dylan, rikthim pas 17 vitesh në Kënga Magjike..."
       },
