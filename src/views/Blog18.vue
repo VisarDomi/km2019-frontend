@@ -140,7 +140,7 @@ export default {
       {
         p: "og:image",
         c:
-          // " https://s3.eu-west-1.amazonaws.com/kengamagjike2019/blogIimages%2F%2F6tetorlajmi2.jpeg"
+          " https://s3.eu-west-1.amazonaws.com/kengamagjike2019/blogIimages%2F%2F6tetorlajmi2.jpeg"
       },
       {
         p: "og:url",
