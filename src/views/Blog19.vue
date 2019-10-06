@@ -16,7 +16,15 @@
 
       <div class="row blog-row">
         <div class="col-md-5 col-12 image-col">
-          <img class="blog-image" src="@/assets/img/blog/Blog-19.jpg" alt />
+          <div class="slider-img-container h-100">
+            <div class="embed-responsive embed-responsive-4by3 h-100">
+              <iframe
+                class="embed-responsive-item"
+                src="https://www.youtube.com/embed/j60NgUaO-kk"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
@@ -255,6 +263,10 @@ export default {
   object-fit: cover;
 }
 
+.embed-responsive-item {
+  height: 70% !important;
+}
+
 .bio-text {
   overflow: hidden;
   color: white;
@@ -329,7 +341,7 @@ hr {
   position: fixed;
   transform: scale(0.6);
   margin-left: -10rem;
-    margin-top: -11rem;
+  margin-top: -11rem;
 
   @include respond(phone) {
     transform: scale(0.3);
