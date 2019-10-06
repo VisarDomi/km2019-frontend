@@ -24,7 +24,7 @@
           <div class="blog__image blog__image--1" @click="goToBlog('Blog20')">
             <div class="blog__footer">
               <p class="blog__footer--date">10.06.2019</p>
-              <p class="blog__footer--title" v-if="this.lang == 'en'"></p>
+              <p class="blog__footer--title" v-if="this.lang == 'en'">Java 3, kalojnë fazën e parë dy New Artist</p>
               <p class="blog__footer--title" v-else>Java 3, kalojnë fazën e parë dy New Artist</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
@@ -36,7 +36,7 @@
           <div class="blog__image blog__image--2" @click="goToBlog('Blog19')">
             <div class="blog__footer">
               <p class="blog__footer--date">10.06.2019</p>
-              <p class="blog__footer--title" v-if="this.lang == 'en'"></p>
+              <p class="blog__footer--title" v-if="this.lang == 'en'">Inis Neziri, kemi humbur një futbolliste...</p>
               <p class="blog__footer--title" v-else>Inis Neziri, kemi humbur një futbolliste...</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
@@ -48,7 +48,7 @@
           <div class="blog__image blog__image--3" @click="goToBlog('Blog18')">
             <div class="blog__footer">
               <p class="blog__footer--date">10.06.2019</p>
-              <p class="blog__footer--title" v-if="this.lang == 'en'"></p>
+              <p class="blog__footer--title" v-if="this.lang == 'en'">Dylan, rikthim pas 17 vitesh në Kënga Magjike...</p>
               <p class="blog__footer--title" v-else>Dylan, rikthim pas 17 vitesh në Kënga Magjike...</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
@@ -60,7 +60,7 @@
           <div class="blog__image blog__image--4" @click="goToBlog('Blog17')">
             <div class="blog__footer">
               <p class="blog__footer--date">10.06.2019</p>
-              <p class="blog__footer--title" v-if="this.lang == 'en'"></p>
+              <p class="blog__footer--title" v-if="this.lang == 'en'">Rovena Dilo: Çdo femër me personalitet është DIVA...</p>
               <p
                 class="blog__footer--title"
                 v-else

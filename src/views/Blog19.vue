@@ -28,10 +28,12 @@
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
-            <h1 class="single-blog-title" v-if="this.lang == 'en'"></h1>
+            <h1 class="single-blog-title" v-if="this.lang == 'en'">Inis Neziri, kemi humbur një futbolliste...</h1>
             <h1 class="single-blog-title" v-else>Inis Neziri, kemi humbur një futbolliste...</h1>
             <hr />
-            <p class="blog-content" v-if="this.lang == 'en'"></p>
+            <p class="blog-content" v-if="this.lang == 'en'">
+                          E kush tha se futbolli është sport vetëm për meshkujt? Nëse nuk do të ishte një këngëtare, me siguri Inis Nezirin do ta shihnim si futbolliste. Inisi tregoi në studion e “E Diela Shqiptare” se futbolli është pasioni i saj dhe kjo video e tregon më së miri. Pas suksesit në New Wave në Rusi ku zuri vendin e parë, Inis Neziri konkurron në festivalin “Kënga Magjike” me këngën “Ishe ti”.
+            </p>
             <p
               class="blog-content"
               v-else

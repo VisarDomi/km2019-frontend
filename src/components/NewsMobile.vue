@@ -31,7 +31,7 @@
                 class="blog__footer--title"
                 @click="goToBlog('Blog20')"
                 v-if="this.lang == 'en'"
-              ></h1>
+              >Java 3, kalojnë fazën e parë dy New Artist</h1>
               <h1
                 class="blog__footer--title"
                 @click="goToBlog('Blog20')"
@@ -54,7 +54,7 @@
                 class="blog__footer--title"
                 @click="goToBlog('Blog19')"
                 v-if="this.lang == 'en'"
-              ></h1>
+              >Inis Neziri, kemi humbur një futbolliste...</h1>
               <h1
                 class="blog__footer--title"
                 @click="goToBlog('Blog19')"
@@ -77,7 +77,7 @@
                 class="blog__footer--title"
                 @click="goToBlog('Blog18')"
                 v-if="this.lang == 'en'"
-              ></h1>
+              >Dylan, rikthim pas 17 vitesh në Kënga Magjike...</h1>
               <h1
                 class="blog__footer--title"
                 @click="goToBlog('Blog18')"
@@ -100,7 +100,7 @@
                 class="blog__footer--title"
                 @click="goToBlog('Blog17')"
                 v-if="this.lang == 'en'"
-              ></h1>
+              >Rovena Dilo: Çdo femër me personalitet është DIVA...</h1>
               <h1
                 class="blog__footer--title"
                 @click="goToBlog('Blog17')"

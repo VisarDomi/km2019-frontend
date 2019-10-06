@@ -20,13 +20,14 @@
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
-            <h1 class="single-blog-title" v-if="this.lang == 'en'"></h1>
+            <h1 class="single-blog-title" v-if="this.lang == 'en'">Rovena Dilo: Çdo femër me personalitet është DIVA...</h1>
             <h1
               class="single-blog-title"
               v-else
             >Rovena Dilo: Çdo femër me personalitet është DIVA...</h1>
             <hr />
-            <p class="blog-content" v-if="this.lang == 'en'"></p>
+            <p class="blog-content" v-if="this.lang == 'en'">            Rovena Dilo e konsideron çdo femër me personalitet një DIVA. Gjatë prezantimit në “Kënga Magjike”, Dilo i është rikthyer edhe njëherë koncertit të mbajtur në 2018 “Diva Show”. E “provokuar” nga një mesazh në Whtasapp nga Elsa Lila që e ftonte për një “DIVA 2”, Dilo tha se ideja e saj për koncertin e parë ishte promovimi i femrës dhe se koncerti është bërë për të përfaqësuar çdo femër. Rovena Dilo konkurron në “Kënga Magjike 2019” me këngën “Cinderella” që është një bashkëpunim me Hit Man & Rolla.</p>
+
             <p
               class="blog-content"
               v-else

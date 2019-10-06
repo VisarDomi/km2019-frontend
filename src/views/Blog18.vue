@@ -20,10 +20,11 @@
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
-            <h1 class="single-blog-title" v-if="this.lang == 'en'"></h1>
+            <h1 class="single-blog-title" v-if="this.lang == 'en'">Dylan, rikthim pas 17 vitesh në Kënga Magjike...</h1>
             <h1 class="single-blog-title" v-else>Dylan, rikthim pas 17 vitesh në Kënga Magjike...</h1>
             <hr />
-            <p class="blog-content" v-if="this.lang == 'en'"></p>
+            <p class="blog-content" v-if="this.lang == 'en'">            “A mjaftoj unë pa ty” është kënga që rikthen pas 17 vitesh në “Kënga Magjike” Dylan. Artisti bën pjesë në kategorinë Big pasi ai ka marrë pjesë më herët në festival ku ka kënduar një pjesë nga kënga “Për një çast më ndali zemra”. Vetë Dylan ka publikuar në faqen e tij në Instagram një video nga përformaca e tij e parë në festival, kur ishte vetëm 4-vjeç.</p>
+
             <p
               class="blog-content"
               v-else
@@ -137,7 +138,7 @@ export default {
       },
       {
         p: "og:url",
-        c: "https://kengamagjike.com/blog19"
+        c: "https://kengamagjike.com/blog18"
       },
       {
         p: "og:title",

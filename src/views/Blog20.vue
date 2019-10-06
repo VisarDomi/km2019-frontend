@@ -20,14 +20,16 @@
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
-            <h1 class="single-blog-title" v-if="this.lang == 'en'"></h1>
+            <h1 class="single-blog-title" v-if="this.lang == 'en'">Java 3, kalojnë fazën e parë dy New Artist</h1>
             <h1 class="single-blog-title" v-else>Java 3, kalojnë fazën e parë dy New Artist</h1>
             <hr />
-            <p class="blog-content" v-if="this.lang == 'en'"></p>
+            <p class="blog-content" v-if="this.lang == 'en'">
+            Donat Makolli dhe Glejvis janë dy artistët e rinj që kanë arritur të bindin jurinë e New Artist t’u japë nga katër vota jeshile. Ndërkohë për tre artistët e tjerë që konkurruan në fazën New Artist, juria ka dhënë përkatësisht, 5 vota të kuqe për Andrea Vathaj, 3 të kuqe dhe 2 jeshile për Erjola Murati dhe 4 të kuqe e një jeshile për Track Band.</p>
             <p
               class="blog-content"
               v-else
-            >Donat Makolli dhe Glejvis janë dy artistët e rinj që kanë arritur të bindin jurinë e New Artist t’u japë nga katër vota jeshile. Ndërkohë për tre artistët e tjerë që konkurruan në fazën New Artist, juria ka dhënë përkatësisht, 5 vota të kuqe për Andrea Vathaj, 3 të kuqe dhe 2 jeshile për Erjola Murati dhe 4 të kuqe e një jeshile për Track Band.</p>
+            >
+            Donat Makolli dhe Glejvis janë dy artistët e rinj që kanë arritur të bindin jurinë e New Artist t’u japë nga katër vota jeshile. Ndërkohë për tre artistët e tjerë që konkurruan në fazën New Artist, juria ka dhënë përkatësisht, 5 vota të kuqe për Andrea Vathaj, 3 të kuqe dhe 2 jeshile për Erjola Murati dhe 4 të kuqe e një jeshile për Track Band.</p>
             <div class="row">
               <p class="single-date">10.06.2019</p>
               <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
