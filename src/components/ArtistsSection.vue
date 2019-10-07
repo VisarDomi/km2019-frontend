@@ -30,7 +30,7 @@
           </div>
         </div>
       </div>
-      <div class="row respond-height go-up--medium" v-if="nrArtists(4)">
+      <!-- <div class="row respond-height go-up--medium" v-if="nrArtists(4)">
         <div class="col-lg-3--spacer"></div>
         <div class="col-lg-2 mx--2" v-for="artist in this.artists" :key="artist.name">
           <div class="artist-card abs-bottom">
@@ -42,8 +42,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="row respond-height go-up--small" v-if="nrArtists(4)">
+      </div> -->
+      <!-- <div class="row respond-height go-up--small" v-if="nrArtists(4)">
         <div :class="myClass()"></div>
         <div class="col-lg-2 mx--2" v-for="artist in this.artists2Row" :key="artist.name">
           <div class="artist-card abs-bottom">
@@ -55,7 +55,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="row mt--2" :class="{'mt-4' : nrArtists(5) || nrArtists(6)}">
         <div
           class="col-lg-6 offset-lg-3 col-12 text-center"
@@ -117,34 +117,15 @@ export default {
         Limit
       };
       await this.$store.dispatch(LIST_ARTIST, params);
-      // // console.log(this.getArtists);
-      for (let i in [1, 2, 3, 4, 5,6]) {
-        this.artists.push({});
-      }
+
       for (let artist of this.getArtists) {
-        if (artist.name == "Erik Lloshi") {
-          this.artists[0] = artist;
-        }
-        if (artist.name == "Korab Shaqiri") {
-          this.artists[1] = artist;
-        }
-        if (artist.name == "Elia") {
-          this.artists[2] = artist;
-          // this.artists2.push(artist);
-        }
-        if (artist.name == "Alex Alexander") {
-          this.artists[3] = artist;
-          // this.artists2.push(artist);
-        }
-        if (artist.name == "Laura&Elisa Gjipi") {
-          this.artists[4] = artist;
-          // this.artists3.push(artist);
-        }
-        if (artist.name == "Kristi") {
-          this.artists[5] = artist;
-          // this.artists3.push(artist);
+        console.log("artist currentw eek: ", artist.isCurrentWeek)
+        if(artist.isCurrentWeek==true){
+          this.artists.push(artist);
         }
       }
+      this.artists.sort((a, b) => a.ordering - b.ordering)
+      // console.log("ordering->>", this.artists)
     }
   },
   components: {

@@ -29,7 +29,7 @@
           <h4 class="bio-description" v-if="this.lang == 'en'">{{getArtist.bioEng}}</h4>
           <h4 class="bio-description" v-else>{{getArtist.bio}}</h4>
 
-          <div v-if="getArtist.week==2">
+          <div v-if="getArtist.isCurrentWeek">
           <button class="btn" @click="sendToVoto()" v-if="this.lang == 'en'">Vote</button>
           <button class="btn" @click="sendToVoto()" v-else>Voto</button>
 

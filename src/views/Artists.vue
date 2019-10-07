@@ -86,50 +86,13 @@ export default {
         Limit
       };
       await this.$store.dispatch(LIST_ARTIST, params);
-      for (let i in [1, 2, 3, 4, 5]) {
-        this.artists.push({});
-      }
       for (let artist of this.getArtists) {
-        if (artist.name == "Lindita") {
-          this.artists[6] = artist;
-          // continue
-        }
-        if (artist.name == "Genti Deda") {
-          this.artists[7] = artist;
-        }
-        if (artist.name == "Rea Nuhu") {
-          this.artists[8] = artist;
-        }
-        if (artist.name == "Khuba") {
-          this.artists[9] = artist;
-        }
-        if (artist.name == "Sisma") {
-          this.artists[10] = artist;
-        }
-
-        if (artist.name == "Erik Lloshi") {
-          this.artists[0] = artist;
-        }
-        if (artist.name == "Korab Shaqiri") {
-          this.artists[1] = artist;
-        }
-        if (artist.name == "Elia") {
-          this.artists[2] = artist;
-          // this.artists2.push(artist);
-        }
-        if (artist.name == "Alex Alexander") {
-          this.artists[3] = artist;
-          // this.artists2.push(artist);
-        }
-        if (artist.name == "Laura&Elisa Gjipi") {
-          this.artists[4] = artist;
-          // this.artists3.push(artist);
-        }
-        if (artist.name == "Kristi") {
-          this.artists[5] = artist;
-          // this.artists3.push(artist);
-        }
+        console.log("artist currentw eek: ", artist.isCurrentWeek)
+        // if(artist.isCurrentWeek==true){
+          this.artists.push(artist);
+        // }
       }
+      this.artists.sort((a, b) => a.ordering - b.ordering)
     }
   },
   async mounted() {

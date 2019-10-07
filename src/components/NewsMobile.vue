@@ -17,169 +17,29 @@
           :paginationEnabled="false"
           :navigationEnabled="false"
         >
-          <slide>
+          <slide v-for="blog in this.blogs" :key="blog.id"> 
             <img
-              src="@/assets/img/blog/Blog-13.jpg"
+              :src="blog.img"
               alt
               class="img-fluid"
               style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog13')"
+              @click="goToBlog(blog)"
             />
             <div class="blog__footer">
-              <h3 class="blog__footer--date">29.09.2019</h3>
+              <h3 class="blog__footer--date">{{blog.date}}</h3>
               <h1
                 class="blog__footer--title"
-                @click="goToBlog('Blog13')"
-                v-if="this.lang == 'en'"
-              >Erik Lloshi: The difficult moment of my life</h1>
+                @click="goToBlog(blog)"
+                v-if="lang == 'en'"
+              >{{blog.titleEn}}</h1>
               <h1
                 class="blog__footer--title"
-                @click="goToBlog('Blog13')"
+                @click="goToBlog(blog)"
                 v-else
-              >Erik Lloshi: Momenti i vështirë i jetës sime</h1>
+              >{{blog.title}}</h1>
             </div>
           </slide>
 
-
-
-
-          <slide>
-            <img
-              src="@/assets/img/blog/Blog-14.jpg"
-              alt
-              class="img-fluid"
-              style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog14')"
-            />
-            <div class="blog__footer">
-              <h3 class="blog__footer--date">29.09.2019</h3>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog14')"
-                v-if="this.lang == 'en'"
-              >Elia imitates them. Will Samanta Karavella and Albërie Hadërgjonaj hold grudges?</h1>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog14')"
-                v-else
-              >Elia i imiton. A do ti mbajnë mëri Samanta Karavella dhe Albërie Hadërgjonaj?</h1>
-            </div>
-          </slide>
-
-
-          <slide>
-            <img
-              src="@/assets/img/blog/Blog-15.jpg"
-              alt
-              class="img-fluid"
-              style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog15')"
-            />
-            <div class="blog__footer">
-              <h3 class="blog__footer--date">29.09.2019</h3>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog15')"
-                v-if="this.lang == 'en'"
-              >Korab Shaqiri's son "A Phenomenon"</h1>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog15')"
-                v-else
-              >Djali i Korab Shaqirit "Fenomen"</h1>
-            </div>
-          </slide>
-
-          <slide>
-            <img
-              src="@/assets/img/blog/Blog-16.jpg"
-              alt
-              class="img-fluid"
-              style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog16')"
-            />
-            <div class="blog__footer">
-              <h3 class="blog__footer--date">29.09.2019</h3>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog16')"
-                v-if="this.lang == 'en'"
-              >Week 2 / 3 New Artists pass the stage</h1>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog16')"
-                v-else
-              >Java e dytë/ Kaluan fazën e parë 3 New Artist</h1>
-            </div>
-          </slide>
-
-
-          <slide>
-            <img
-              src="@/assets/img/blog/Lajmi per Rea Nuhu.jpg"
-              alt
-              class="img-fluid"
-              style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog10')"
-            />
-            <div class="blog__footer">
-              <h3 class="blog__footer--date">22.09.2019</h3>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog10')"
-                v-if="this.lang == 'en'"
-              >Rea Nuhu finds her father’s wardrobe in ‘E Diela Shqiptare’</h1>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog10')"
-                v-else
-              >Rea Nuhu gjen në “E Diela Shqiptare” veshjet e babait...</h1>
-            </div>
-          </slide>
-          <slide>
-            <img
-              src="@/assets/img/blog/Lajmi per Genti Deda.jpg"
-              alt
-              class="img-fluid"
-              style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog11')"
-            />
-            <div class="blog__footer">
-              <h3 class="blog__footer--date">22.09.2019</h3>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog11')"
-                v-if="this.lang == 'en'"
-              >Genti Deda ‘reveals’ the person who his heart belongs to.</h1>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog11')"
-                v-else
-              >Genti Deda "zbulon" shoqen e zemrës.</h1>
-            </div>
-          </slide>
-          <slide>
-            <img
-              src="@/assets/img/blog/Blog-12.jpg"
-              alt
-              class="img-fluid"
-              style="height:100%;width:100%;object-fit:cover;"
-              @click="goToBlog('Blog12')"
-            />
-            <div class="blog__footer">
-              <h3 class="blog__footer--date">22.09.2019</h3>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog12')"
-                v-if="this.lang == 'en'"
-              >Launch the "New Artist" competition, the first five under the jury's "magnifying glass."</h1>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog('Blog12')"
-                v-else
-              >Nisin konkurimin “New Artist”, pesë të parët nën “lupën” e jurisë</h1>
-            </div>
-          </slide>
         </carousel>
       </div>
     </div>
@@ -199,7 +59,8 @@
 
 <script>
 import { getLanguage, saveLanguage } from "@/store/services/storage";
-
+import { LIST_BLOGS } from "@/store/actions.type";
+import { mapGetters } from "vuex";
 import { eventBus } from "@/main";
 export default {
   name: "NewsMobile",
@@ -217,6 +78,7 @@ export default {
           img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
         }
       ],
+      blogs: [],
       lang: ""
     };
   },
@@ -229,16 +91,37 @@ export default {
     goToBlogs() {
       this.$router.push({ name: "Blogs" });
     },
-    goToBlog(blogname) {
-      this.$router.push({ name: blogname });
+    goToBlog(blog) {
+      // this.$router.push({ name: blog.title });
+      this.$router.push({
+        name: "SingleBlog",
+        params: { title: blog.title, id: blog.id}
+      });
     },
     prevSlide() {
       this.$refs.carouselNewsMobile.goToPage(
         this.$refs.carouselNewsMobile.getPreviousPage()
       );
+    },
+        async fetchBlogs() {
+      const TableName = "KM2019-Blog";
+      const Limit = "100";
+      const params = {
+        TableName,
+        Limit
+      };
+      await this.$store.dispatch(LIST_BLOGS, params);
+
+      for (let blog of this.getBlogs) {
+       if(blog.isMainHome==true){
+          this.blogs.push(blog);
+        }
+      }
+      this.blogs.sort((a, b) => a.ordering - b.ordering)
+
     }
   },
-  mounted() {
+  async mounted() {
     setTimeout(() => {
       this.$forceUpdate();
     }, 800);
@@ -246,6 +129,10 @@ export default {
       this.lang = payload;
     });
     this.lang = getLanguage();
+    await this.fetchBlogs();
+  },
+  computed: {
+    ...mapGetters(["getBlogs"])
   }
 };
 </script>

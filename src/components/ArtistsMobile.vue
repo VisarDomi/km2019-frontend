@@ -6,44 +6,21 @@
     </div>
     <div class="row ml-0" style="width:100%;">
       <div class="row ml-0" style="margin: 34px 10px 34px;width: 100%;">
-        <div class="col-6" v-for="artist in artists1" :key="artist.id">
-          <div class="artist-card" @click="goToArtist(artist)">
+        <div class="col-6  " v-for="artist in artists" :key="artist.id">
+          <div class="artist-card " @click="goToArtist(artist)">
             <div class="img-container">
               <img :src="artist.img" alt />
             </div>
-            <p class="artist-card__name inside-card">{{artist.name}}</p>
-            <br />
-            <p class="artist-card__song inside-card--down" v-if="lang == 'en'">{{artist.songEng}}</p>
-            <p class="artist-card__song inside-card--down" v-else>{{artist.song}}</p>
+              <div class="name_container">
+                <p class="artist-card__name inside-card">{{artist.name}}</p>
+                <br>
+                <p class="artist-card__song inside-card--down" v-if="lang == 'en'">{{artist.songEng}}</p>
+                <p class="artist-card__song inside-card--down" v-else>{{artist.song}}</p>
+              </div>
           </div>
         </div>
       </div>
-      <div class="row ml-0" style="margin: 34px 10px; width: 100%;">
-        <div class="col-6" v-for="artist in artists2" :key="artist.id">
-          <div class="artist-card" @click="goToArtist(artist)">
-            <div class="img-container">
-              <img :src="artist.img" alt />
-            </div>
-            <p class="artist-card__name inside-card">{{artist.name}}</p>
-            <br />
-            <p class="artist-card__song inside-card--down" v-if="lang == 'en'">{{artist.songEng}}</p>
-            <p class="artist-card__song inside-card--down" v-else>{{artist.song}}</p>
-          </div>
-        </div>
-      </div>
-      <div class="row ml-0" style="margin: 34px 10px; width: 100%;">
-        <div class="col-6" v-for="artist in artists3" :key="artist.id">
-          <div class="artist-card" @click="goToArtist(artist)">
-            <div class="img-container">
-              <img :src="artist.img" alt />
-            </div>
-            <p class="artist-card__name inside-card">{{artist.name}}</p>
-            <br />
-            <p class="artist-card__song inside-card--down" v-if="lang == 'en'">{{artist.songEng}}</p>
-            <p class="artist-card__song inside-card--down" v-else>{{artist.song}}</p>
-          </div>
-        </div>
-      </div>
+      
       <div class="row h-10rem">
         <div class="w-100 text-center btn-container">
           <a
@@ -76,10 +53,7 @@ export default {
   name: "NewsMobile",
   data() {
     return {
-      artists1: [],
-      artists2: [],
-      artists3: [],
-      artists4: [],
+      artists: [],
       lang: ""
     };
   },
@@ -114,36 +88,13 @@ export default {
         Limit
       };
       await this.$store.dispatch(LIST_ARTIST, params);
-      // console.log(this.getArtists);
-      this.artists1.push({});
-      this.artists1.push({});
-      this.artists2.push({});
-      this.artists2.push({});
-      this.artists3.push({});
+
       for (let artist of this.getArtists) {
-        if (artist.name == "Erik Lloshi") {
-          this.artists1[0] = artist;
-        }
-        if (artist.name == "Korab Shaqiri") {
-          this.artists1[1] = artist;
-        }
-        if (artist.name == "Elia") {
-          this.artists2[0] = artist;
-          // this.artists2.push(artist);
-        }
-        if (artist.name == "Alex Alexander") {
-          this.artists2[1] = artist;
-          // this.artists2.push(artist);
-        }
-        if (artist.name == "Laura&Elisa Gjipi") {
-          this.artists3[0] = artist;
-          // this.artists3.push(artist);
-        }
-        if (artist.name == "Kristi") {
-          this.artists3[1] = artist;
-          // this.artists3.push(artist);
+        if(artist.isCurrentWeek==true){
+          this.artists.push(artist);
         }
       }
+      this.artists.sort((a, b) => a.ordering - b.ordering)
 
       // let resItems = this.getArtists;
       // // console.log("resItems: ", resItems);
@@ -178,6 +129,15 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
+
+.name_container{
+
+}
+
+p{
+  margin-bottom:0rem;
+}
+
 .master-row {
   margin-left: -1rem !important;
   margin-top: -5%;
@@ -206,12 +166,12 @@ export default {
   padding-top: 10%;
 }
 .inside-card {
-  position: absolute;
-  top: 91%;
-  &--down {
-    position: absolute;
-    top: 111%;
-  }
+  // position: absolute;
+  // top: 91%;
+  // &--down {
+  //   position: absolute;
+  //   top: 111%;
+  // }
 }
 
 .go-up {
@@ -312,7 +272,7 @@ export default {
     display: inline-block;
     border: solid 2px white;
 
-    margin-bottom: 9px;
+    // margin-bottom: 9px;
   }
   &__song {
     border: 1px solid black;

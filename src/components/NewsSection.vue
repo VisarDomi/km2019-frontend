@@ -20,80 +20,36 @@
             <img src="@/assets/img/Group 159.svg" alt />
           </div>
         </div>
-        <div class="col-lg-3">
-          <div class="blog__image blog__image--1" @click="goToBlog('Blog13')">
+        <div class="col-lg-3" v-for="blog in this.blogs" :key="blog.id" style="height:100%;">
+          <div class="blog__image" @click="goToBlog(blog)"  :style="{
+          backgroundImage: 'url('+blog.img+')'
+          }" >
+            
             <div class="blog__footer">
-              <p class="blog__footer--date">29.09.2019</p>
+              <p class="blog__footer--date">{{blog.date}}</p>
               <p
                 class="blog__footer--title"
-                v-if="this.lang == 'en'"
-              >Erik Lloshi: The difficult moment of my life</p>
+                v-if="lang == 'en'"
+              >{{blog.titleEn}}</p>
               <p
                 class="blog__footer--title"
                 v-else
-              >Erik Lloshi: Momenti i vështirë i jetës sime</p>
+              >{{blog.title}}</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-3">
-          <div class="blog__image blog__image--2" @click="goToBlog('Blog14')">
-            <div class="blog__footer">
-              <p class="blog__footer--date">29.09.2019</p>
-              <p
-                class="blog__footer--title"
-                v-if="this.lang == 'en'"
-              >Elia imitates them. Will Samanta Karavella and Albërie Hadërgjonaj hold grudges?</p>
-              <p class="blog__footer--title" v-else>Elia i imiton. A do ti mbajnë mëri Samanta Karavella dhe Albërie
-Hadërgjonaj?</p>
-              <div class="blog__footer--other mb-4">
-                <img src="@/assets/img/Group 180.svg" alt />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="blog__image blog__image--3" @click="goToBlog('Blog15')">
-            <div class="blog__footer">
-              <p class="blog__footer--date">29.09.2019</p>
-              <p
-                class="blog__footer--title"
-                v-if="this.lang == 'en'"
-              >Korab Shaqiri's son "A Phenomenon"</p>
-              <p
-                class="blog__footer--title"
-                v-else
-              >Djali i Korab Shaqirit &quot;Fenomen&quot;</p>
-              <div class="blog__footer--other mb-4">
-                <img src="@/assets/img/Group 180.svg" alt />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="blog__image blog__image--4" @click="goToBlog('Blog16')">
-            <div class="blog__footer">
-              <p class="blog__footer--date">29.09.2018</p>
-              <p
-                class="blog__footer--title"
-                v-if="this.lang == 'en'"
-              >Second week/ 3 New Artists proceed to next round</p>
-              <p
-                class="blog__footer--title"
-                v-else
-              >Java e dytë/ Kaluan fazën e parë 3 New Artist</p>
-              <div class="blog__footer--other mb-4">
-                <img src="@/assets/img/Group 180.svg" alt />
-              </div>
-            </div>
-          </div>
+
+
+
+
           <div class="more text-center w-100 mt-5">
             <a href="#" class="btn" @click="goToBlogs()" v-if="this.lang == 'en'">read more</a>
             <a href="#" class="btn" @click="goToBlogs()" v-else>lexo më shumë</a>
           </div>
-        </div>
+
       </div>
     </div>
   </div>
@@ -103,12 +59,16 @@ Hadërgjonaj?</p>
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 import { eventBus } from "@/main";
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
+
+import { LIST_BLOGS } from "@/store/actions.type";
+import { mapGetters } from "vuex";
 export default {
   name: "NewsSection",
 
   components: { HeaderHero },
   data() {
     return {
+      blogs: [],
       windowWidth: window.innerWidth,
       lang: ""
     };
@@ -117,11 +77,30 @@ export default {
     goToBlogs() {
       this.$router.push({ name: "Blogs" });
     },
-    goToBlog(blogname) {
-      this.$router.push({ name: blogname });
+    goToBlog(blog) {
+      this.$router.push({ slug: blog.title });
+    },
+
+    async fetchBlogs() {
+      const TableName = "KM2019-Blog";
+      const Limit = "100";
+      const params = {
+        TableName,
+        Limit
+      };
+      await this.$store.dispatch(LIST_BLOGS, params);
+
+      for (let blog of this.getBlogs) {
+        if(blog.isMainHome==true){
+          this.blogs.push(blog);
+        }
+      }
+      this.blogs.sort((a, b) => a.ordering - b.ordering)
+      
+
     }
   },
-  mounted() {
+  async mounted() {
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
@@ -131,7 +110,15 @@ export default {
       this.lang = payload;
     });
     this.lang = getLanguage();
+    await this.fetchBlogs();
+
+  },
+  computed: {
+    ...mapGetters(["getBlogs"])
   }
+
+
+
 };
 </script>
 
@@ -187,6 +174,9 @@ export default {
 
 .blog {
   &__image {
+          background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
     &--1 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
         url("../assets/img/blog/Blog-13.jpg");

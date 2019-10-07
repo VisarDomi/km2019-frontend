@@ -59,193 +59,23 @@
         :paginationEnabled="false"
         :navigationEnabled="false"
       >
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog13')">
+        <slide v-for="blog in this.blogs" :key="blog.id">
+          <div class="h-100 slide-column" >
             <img
-              src="@/assets/img/blog/Blog-13.jpg"
+              :src="blog.img"
               class="img-blog img-fluid grey-scale"
               alt
             />
-            <h1 class="blog-title" v-if="this.lang == 'en'">Erik Lloshi: The difficult moment of my life</h1>
-            <h1 class="blog-title" v-else>Erik Lloshi: Momenti i vështirë i jetës sime</h1>
+            <div class="blog-title-container">
 
-            <h3 class="date">29.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog14')">
-            <img
-              src="@/assets/img/blog/Blog-14.jpg"
-              class="img-blog img-fluid grey-scale"
-              alt
-            />
-            <h1 class="blog-title" v-if="this.lang == 'en'">Elia imitates them. Will Samanta Karavella and Albërie Hadërgjonaj hold grudges?</h1>
-            <h1 class="blog-title" v-else>Elia i imiton. A do ti mbajnë mëri Samanta Karavella dhe Albërie Hadërgjonaj?</h1>
+            <h1 class="blog-title" v-if="lang == 'en'" @click="goToBlog(blog)">{{blog.titleEn}}</h1>
+            <h1 class="blog-title" v-else @click="goToBlog(blog)">{{blog.title}}</h1>
+            </div>
 
-            <h3 class="date">29.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog15')">
-            <img
-              src="@/assets/img/blog/Blog-15.jpg"
-              class="img-blog img-fluid grey-scale"
-              alt
-            />
-            <h1 class="blog-title" v-if="this.lang == 'en'">Korab Shaqiri's son "A Phenomenon"</h1>
-            <h1 class="blog-title" v-else>Djali i Korab Shaqirit "Fenomen"</h1>
-
-            <h3 class="date">29.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog16')">
-            <img
-              src="@/assets/img/blog/Blog-16.jpg"
-              class="img-blog img-fluid grey-scale"
-              alt
-            />
-            <h1 class="blog-title" v-if="this.lang == 'en'">Week 2 / 3 New Artists pass the stage</h1>
-            <h1 class="blog-title" v-else>Java e dytë/ Kaluan fazën e parë 3 New Artist</h1>
-
-            <h3 class="date">29.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog9')">
-            <img
-              src="@/assets/img/blog/Lajmi per Linditen.png"
-              class="img-blog img-fluid grey-scale"
-              alt
-            />
-            <h1 class="blog-title" v-if="this.lang == 'en'">Lindita names top four Albanian women she really admires</h1>
-            <h1 class="blog-title" v-else>Lindita: Katër femrat shqiptare që kam për zemër...</h1>
-
-            <h3 class="date">22.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog11')">
-            <img
-              src="@/assets/img/blog/Lajmi per Genti Deda.jpg"
-              class="img-blog img-fluid grey-scale"
-              alt
-            />
-            <h1 class="blog-title" v-if="this.lang == 'en'">Genti Deda ‘reveals’ the person who his heart belongs to</h1>
-            <h1 class="blog-title" v-else>Genti Deda "zbulon" shoqen e zemrës.</h1>
-
-            <h3 class="date">22.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog10')">
-            <img
-              src="@/assets/img/blog/Lajmi per Rea Nuhu.jpg"
-              class="img-blog img-fluid grey-scale"
-              alt
-            />
-            <h1 class="blog-title">Rea Nuhu gjen në “E Diela Shqiptare” veshjet e babait...</h1>
-
-            <h3 class="date">22.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog12')">
-            <img src="@/assets/img/blog/Blog-12.jpg" class="img-blog img-fluid grey-scale" alt />
-            <h1 class="blog-title">Nisin konkurimin “New Artist”, pesë të parët nën “lupën” e jurisë</h1>
-
-            <h3 class="date">22.09.2019</h3>
+            <h3 class="date">{{blog.date}}</h3>
           </div>
         </slide>
 
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog02')">
-            <img src="@/assets/img/blog/Blog-02-gray.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title">Ndryshon sistemi i votimit në Kënga Magjike</h1>
-
-            <h3 class="date">15.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog01')">
-            <img src="@/assets/img/blog/Blog-01-gray.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title">Kënga Magjike 2019 - Më shumë se 10 këngëtarë të huaj</h1>
-
-            <h3 class="date">15.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog0')">
-            <img src="@/assets/img/blog/Blog-0-gray.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title">Kënga Magjike, këtë vit 6 anëtarë jurie</h1>
-
-            <h3 class="date">15.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog1')">
-            <img src="@/assets/img/blog/Blog-1.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title">Ja kush janë 3 artistët e parë BIG!</h1>
-
-            <h3 class="date">14.09.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog2')">
-            <img src="@/assets/img/blog/Blog-2-gray.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
-
-            <h3 class="date">22.01.2019</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog3')">
-            <img src="@/assets/img/blog/Blog-3-gray.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title">Fifi dhe Mc Kresha betejë në skenë!</h1>
-
-            <h3 class="date">22.11.2018</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog4')">
-            <img src="@/assets/img/blog/Blog-4-gray.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title">Atmosferë serenatash në skenën e Këngës Magjike</h1>
-
-            <h3 class="date">5.11.2018</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog5')">
-            <img src="@/assets/img/blog/Blog-5-gray.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title">Mishela Rrapo: Presidenti turk u përlot prej meje</h1>
-
-            <h3 class="date">14.11.2018</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog6')">
-            <img src="@/assets/img/blog/Blog-7-gray.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title">Evi Reçi nuk dua binjake!!</h1>
-
-            <h3 class="date">16.10.2018</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog7')">
-            <img src="@/assets/img/blog/Blog-fifi-gray.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title">Fifi, nje imituese perfekte!</h1>
-
-            <h3 class="date">10.10.2018</h3>
-          </div>
-        </slide>
-        <slide>
-          <div class="h-100 slide-column" @click="goToBlog('Blog8')">
-            <img src="@/assets/img/blog/Blog-mentor-gray.jpg" class="img-blog img-fluid" alt />
-            <h1 class="blog-title">Hera e pare e Mentor Haziri-t...Ja doli?!</h1>
-
-            <h3 class="date">5.10.2019</h3>
-          </div>
-        </slide>
       </carousel>
     </div>
     <!-- <FooterBlack v-if="windowWidth > 770" /> -->
@@ -266,6 +96,9 @@ import FooterBlack from "@/components/Footer/FooterBlack.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterBlackSmall from "@/components/Footer/FooterBlackSmall.vue";
+
+import { LIST_BLOGS } from "@/store/actions.type";
+import { mapGetters } from "vuex";
 export default {
   name: "Blogs",
   components: {
@@ -278,37 +111,11 @@ export default {
   },
   data() {
     return {
+      
+      blogs: [],
       lang: "",
       windowWidth: window.innerWidth,
       artists: [
-        {
-          name: "10.10.2018",
-          songtilte: "Flori Mumajesi fitues i Kënga Magjike 2018!",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "10.10.2018",
-          songtilte:
-            "Ardit Gjebrea zbulon prezantusen per “Kënga Magjike” 2019!",
-          img:
-            "https://i2.wp.com/bordo.al/wp-content/uploads/2019/08/3F5B2EF4-32D6-4A38-AA0C-B7265F170CAE.jpeg?w=750"
-        },
-        {
-          name: "10.10.2018",
-          songtilte: "Flori Mumajesi fitues i Kënga Magjike 2018!",
-          img:
-            "https://www.kohajone.com/wp-content/uploads/2018/11/kenga-magjike.jpg"
-        },
-        {
-          name: "10.10.2018",
-          songtilte: "Kenga Magjike 2019, Vjen ndryshimi i dyte...",
-          img: "https://rapshqip.com/wp-content/uploads/2018/11/6FIHMs0WLL4.jpg"
-        },
-        {
-          name: "10.10.2018",
-          songtilte: "Flori Mumajesi fitues i Kënga Magjike 2018!",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        }
       ],
       hoverR: false,
       hoverL: false
@@ -324,17 +131,41 @@ export default {
     goToHome() {
       this.$router.push({ path: `/#te-reja` });
     },
-    goToBlog(blogname) {
-      this.$router.push({ name: blogname });
+    goToBlog(blog) {
+      // this.$router.push({ name: blog.title });
+      this.$router.push({
+        name: "SingleBlog",
+        params: { title: blog.title, id: blog.id}
+      });
+    },
+
+    async fetchBlogs() {
+      const TableName = "KM2019-Blog";
+      const Limit = "100";
+      const params = {
+        TableName,
+        Limit
+      };
+      await this.$store.dispatch(LIST_BLOGS, params);
+
+      for (let blog of this.getBlogs) {
+          this.blogs.push(blog);
+      }
+      this.blogs.sort((a, b) => b.ordering - a.ordering)
+
     }
   },
-  mounted() {
+  async mounted() {
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
     });
     this.lang = getLanguage();
+    await this.fetchBlogs();
+  },
+  computed: {
+    ...mapGetters(["getBlogs"])
   }
 };
 </script>
@@ -457,6 +288,10 @@ export default {
   cursor: pointer;
 }
 
+.blog-title-container {
+    padding-top: 12rem;
+}
+
 .blog-title {
   color: white;
   z-index: 30;
@@ -466,7 +301,7 @@ export default {
   width: 84%;
   text-align: left;
   font-size: 4.5rem;
-  padding-top: 18rem;
+  // padding-top: 18rem;
   padding-left: 10%;
   font-size: 4.5rem;
   line-height: 1;
@@ -476,7 +311,7 @@ export default {
   }
 
   @include respond(phone) {
-    padding-top: 18rem;
+    // padding-top: 18rem;
   }
 }
 @media only screen and (max-width: 320px) {

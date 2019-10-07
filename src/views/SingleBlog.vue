@@ -1,109 +1,104 @@
 <template>
-<div>
-  <div class="blog-page">
-    <div class="row justify-content-between artist-row align-items-center h-15">
-      <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
-        <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
-      </div>
-      <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
-        <img
-          src="@/assets/img/artistet_arrow_left.svg"
-          alt
-          class="back-icon center-block respond-width"
-        />
-      </div>
-    </div>
-
-    <div class="row blog-row">
-      <div class="col-md-5 col-12 image-col">
-        <img
-          class="blog-image"
-          src="https://lapsi.al/wp-content/uploads/2018/12/1-7-1024x922.jpg"
-          alt
-        />
-      </div>
-      <div class="col-md-7 col-xs-12 blog-col">
-        <div class="container">
-          <h1 class="single-blog-title">Flori Mumajesi fitues i Kënga Magjike 2018!</h1>
-          <hr />
-          <p
-            class="blog-content"
-          >Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
-          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
-          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
-          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
-          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
-          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
-          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
-          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.
-          Flori Mumajesi me këngën “Plas” ka triumfuar në edicionin e 20-të të festivalit “Kënga Magjike”. Vendi i dytë shkoi për Aurela Gacen dhe Eli Farën, i treti për duetin e Fifit me McKreshën. Nata finale dhuroi muzikë dhe një sërë çmimesh që vlerësonin projektet e artistëve. Përveç fitores, kënga e Flori Mumajesit u vlerësua edhe si “Balada më e mirë” e këtij festivali.</p>
-
-          <div class="row">
-            <p class="single-date">22.10.2019</p>
-            <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
-              <img
-                v-if="hoverR"
-                @click.prevent="nextSlide"
-                src="@/assets/img/buttons_export/button_tereja_right_h.svg" style="width:6rem;"
-                alt
-              />
-              <img v-else @click.prevent="nextSlide" src="@/assets/img/buttons_export/button_tereja_right.svg" style="width:6rem;" alt />
-            </div>
-
-            <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
-              <img
-                v-if="hoverL"
-                @click.prevent="prevSlide"
-                src="@/assets/img/buttons_export/button_tereja_left_h.svg" style="width:6rem;"
-                alt
-              />
-              <img v-else @click.prevent="prevSlide" src="@/assets/img/buttons_export/button_tereja_left.svg" style="width:6rem;" alt />
-            </div>
-          </div>
-
-          <h3 class="bio-text">te ngjashme</h3>
-
-          <carousel
-            ref="carousel"
-            :perPageCustom="[[480, 1], [768, 1], [992,2]]"
-            :paginationEnabled="false"
-          >
-            <slide>
-              <div class="blog-card">
-                <img class="blog-card-image img-fluid" src="@/assets/img/artistback.jpg" alt />
-                <h2 class="blog-card-title">Fifi dhe Mc Kresha betejë në skenë!</h2>
-              </div>
-            </slide>
-            <slide>
-              <div class="blog-card">
-                <img class="blog-card-image img-fluid" src="@/assets/img/sonimalaj.png" alt />
-                <h2 class="blog-card-title">Fifi dhe Mc Kresha betejë në skenë!</h2>
-              </div>
-            </slide>
-
-            <slide>
-              <div class="blog-card">
-                <img class="blog-card-image img-fluid" src="@/assets/img/sonimalaj.png" alt />
-                <h2 class="blog-card-title">Fifi dhe Mc Kresha betejë në skenë!</h2>
-              </div>
-            </slide>
-          </carousel>
-          <br>
-          <br>
-
+  <div>
+    <div class="blog-page">
+      <div class="row justify-content-between artist-row align-items-center h-15">
+        <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
+          <img src="@/assets/img/logoblog.svg" @click="goToHome()" class="logo-img img-logo" alt />
+        </div>
+        <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
+          <img
+            src="@/assets/img/artistet_arrow_left.svg"
+            alt
+            class="back-icon center-block respond-width"
+          />
         </div>
       </div>
 
-          
+      <div class="row blog-row">
+        <div class="col-md-5 col-12 image-col">
+          <img class="blog-image" :src="this.getBlog.img" alt />
+        </div>
+        <div class="col-md-7 col-xs-12 blog-col">
+          <div class="container">
+            <h1
+              class="single-blog-title"
+              v-if="lang == 'en'"
+            >{{this.getBlog.titleEn}}</h1>
+            <h1
+              class="single-blog-title"
+              v-else
+            >{{this.getBlog.title}}</h1>
+            <hr />
+            <p class="blog-content" v-if="lang == 'en'">
+              {{this.getBlog.bodyEn}}
+            </p>
+            <p class="blog-content" v-else>
+              {{this.getBlog.body}}
 
-        <FooterWhite v-if="windowWidth > 770"  />
-         
+            </p>
+            <div class="row">
+              <p class="single-date">{{this.getBlog.date}}</p>
+              <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
+                <img
+                  v-if="hoverR"
+                  @click="goToBlog('Blog5')"
+                  src="@/assets/img/buttons_export/button_tereja_right_h.svg"
+                  style="width:6rem;"
+                  alt
+                />
+                <img
+                  v-else
+                  @click="goToBlog('Blog5')"
+                  src="@/assets/img/buttons_export/button_tereja_right.svg"
+                  style="width:6rem;"
+                  alt
+                />
+              </div>
 
+              <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
+                <img
+                  v-if="hoverL"
+                  @click="goToBlog('Blog3')"
+                  src="@/assets/img/buttons_export/button_tereja_left_h.svg"
+                  style="width:6rem;"
+                  alt
+                />
+                <img
+                  v-else
+                  @click="goToBlog('Blog3')"
+                  src="@/assets/img/buttons_export/button_tereja_left.svg"
+                  style="width:6rem;"
+                  alt
+                />
+              </div>
+            </div>
 
-    </div>
-          <FooterSingleBlogMobile v-if="windowWidth < 770" />
-  </div>
+            <h3 class="bio-text" v-if="lang == 'en'">similar</h3>
+            <h3 class="bio-text" v-else>të ngjashme</h3>
+            <br />
+            <div class="row">
+              <div class="col-lg-6" v-for="blog in this.blogs.slice(0, 2)" :key="blog.id">
+                <div class="blog-card" @click="goToBlog(blog)">
+                  <img class="blog-card-image img-fluid" :src="blog.img" alt />
+                  <h2
+                    class="blog-card-title"
+                    v-if="lang == 'en'"
+                  >{{blog.titleEn}}</h2>
+                  <h2 class="blog-card-title" v-else>{{blog.title}}</h2>
+                </div>
+              </div>
+            </div>
+
+            <br />
+            <br />
           </div>
+        </div>
+
+        <FooterSingleBlog v-if="windowWidth > 770" />
+      </div>
+      <FooterSingleBlogMobile v-if="windowWidth < 770" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -113,6 +108,14 @@ import { Carousel, Slide } from "vue-carousel";
 
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
+
+import { GET_BLOG, LIST_BLOGS } from "@/store/actions.type";
+import { mapGetters } from "vuex";
+import { getLanguage, saveLanguage } from "@/store/services/storage";
+import {
+  START_LOADING,
+  STOP_LOADING
+} from "@/store/mutations.type";
 export default {
   name: "SingleBlog",
   components: {
@@ -123,10 +126,11 @@ export default {
   },
   data() {
     return {
-      
+      blogs: [],
       windowWidth: window.innerWidth,
       hoverR: false,
-      hoverL: false
+      hoverL: false,
+      lang: ""
     };
   },
   methods: {
@@ -139,11 +143,48 @@ export default {
     goToBlogs() {
       this.$router.push({ name: "Blogs" });
     },
+    goToBlog(blog) {
+      // this.$router.push({ name: blog.title });
+      this.$router.push({
+        name: "SingleBlog",
+        params: { title: blog.title, id: blog.id}
+      });
+    },
     goToHome() {
       this.$router.push({ name: "Home" });
-    }
+    },    
+    async fetchBlog(blogId) {
+      const TableName = "KM2019-Blog";
+      const id = blogId;
+      const params = {
+        TableName,
+        id
+      };
+      this.$store.commit(START_LOADING);
+      await this.$store.dispatch(GET_BLOG, params);
+      this.$store.commit(STOP_LOADING);
+    },
+    async fetchBlogs() {
+      const TableName = "KM2019-Blog";
+      const Limit = "100";
+      const params = {
+        TableName,
+        Limit
+      };
+      await this.$store.dispatch(LIST_BLOGS, params);
+      for (let blog of this.getBlogs) {
+          this.blogs.push(blog);
+      }
+      this.blogs.sort((a, b) => a.ordering - b.ordering)
+    },
   },
-  mounted() {
+  computed: {
+    ...mapGetters(["getBlog", "getBlogs"])
+  },
+  async mounted() {
+    this.lang = getLanguage();
+    await this.fetchBlog(this.$route.params.id);
+    await this.fetchBlogs();
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
@@ -157,13 +198,11 @@ export default {
 
 
 <style lang="scss" scoped>
-
-
 @import "@/assets/sass/abstracts/_mixins.scss";
 
 @font-face {
   font-family: Panton;
-  src: url('../assets/Fonts/panton-semibold.OTF');
+  src: url("../assets/Fonts/panton-semibold.OTF");
   font-weight: bold;
 }
 
@@ -172,7 +211,7 @@ export default {
   right: 8rem;
   margin-top: 19px;
   @include respond(phone) {
-    margin-top:13px;
+    margin-top: 13px;
   }
   border-radius: 50%;
   // background-color: white;
@@ -191,7 +230,7 @@ export default {
   right: 15rem;
   margin-top: 19px;
   @include respond(phone) {
-    margin-top:13px;
+    margin-top: 13px;
   }
   border-radius: 50%;
   // background-color: white;
@@ -210,13 +249,16 @@ export default {
   width: 5rem;
 }
 
+.blog-card:hover {
+  cursor: pointer;
+}
+
 .blog-card-title {
   font-family: Vollkorn;
   color: white;
   font-size: 2.3rem;
   width: 90%;
   margin-top: 2rem;
-
 }
 
 .blog-card-image {
@@ -250,9 +292,8 @@ export default {
   width: 100%;
 
   @include respond(phone) {
-    width:80%;
+    width: 80%;
   }
-
 }
 
 .bio-text:after {
@@ -300,17 +341,22 @@ hr {
   // margin-right: 5rem;
 }
 .blog-image {
-  object-fit: cover;
-  height: 100%;
-  height: calc(100vh);
-  position: fixed;
+      width: 100%;
+    margin-left: 2rem;
+    margin-top: 17rem;
+
+  @include respond(phone) {
+    margin-left:0rem;
+        height: 100%;
+    object-fit: cover;
+  }
 }
 
 .blog-row {
   height: 100%;
 }
 .image-col {
-  background: salmon;
+  background: #47b8b0;
   padding: 0;
   @include respond(small-screen) {
     height: 45%;
@@ -322,8 +368,8 @@ hr {
   font-size: 3rem;
   padding-left: 5rem;
   padding-right: 5rem;
-    @include respond(phone) {
-    margin-bottom:80px;
+  @include respond(phone) {
+    margin-bottom: 80px;
   }
 }
 .blog-page {

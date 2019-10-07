@@ -128,7 +128,7 @@ export default new Router({
       meta: { transition: "overlay-left" }
     },
     {
-      path: "/blog",
+      path: "/blog/:id",
       name: "SingleBlog",
       component: SingleBlog,
       meta: { transition: "overlay-left" }

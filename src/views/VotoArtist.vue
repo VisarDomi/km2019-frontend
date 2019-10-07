@@ -282,6 +282,10 @@ export default {
       } else if (this.getHasVoted === false) {
         this.disabled = false;
       }
+
+      if(this.getArtist.isCurrentWeek == false){
+        this.disabled=true;
+      }
     }
   },
   async mounted() {
