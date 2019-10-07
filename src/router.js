@@ -34,6 +34,10 @@ import Blog13 from "./views/Blog13.vue";
 import Blog14 from "./views/Blog14.vue";
 import Blog15 from "./views/Blog15.vue";
 import Blog16 from "./views/Blog16.vue";
+import Blog17 from "./views/Blog17.vue";
+import Blog18 from "./views/Blog18.vue";
+import Blog19 from "./views/Blog19.vue";
+import Blog20 from "./views/Blog20.vue";
 
 import Blog0 from "./views/Blog0.vue";
 import Blog01 from "./views/Blog01.vue";
@@ -228,6 +232,30 @@ export default new Router({
       path: "/blog16",
       name: "Blog16",
       component: Blog16,
+      meta: { transition: "overlay-left" }
+    },    
+    {
+      path: "/blog17",
+      name: "Blog17",
+      component: Blog17,
+      meta: { transition: "overlay-left" }
+    },    
+    {
+      path: "/blog18",
+      name: "Blog18",
+      component: Blog18,
+      meta: { transition: "overlay-left" }
+    },    
+    {
+      path: "/blog19",
+      name: "Blog19",
+      component: Blog19,
+      meta: { transition: "overlay-left" }
+    },    
+    {
+      path: "/blog20",
+      name: "Blog20",
+      component: Blog20,
       meta: { transition: "overlay-left" }
     },    
     {

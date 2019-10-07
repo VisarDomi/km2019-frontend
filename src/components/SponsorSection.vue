@@ -134,8 +134,8 @@
           </div>
 
           <div class="col-3">
-            <a href="https://www.pirro.al" target="_blank">
-              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/2_pirro_logo.png" alt />
+            <a href="http://www.citytaxi.al/" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/18_taxi_logo.png" alt />
             </a>
           </div>
 
@@ -283,8 +283,8 @@
           </div>
 
           <div class="col-4">
-            <a href="https://www.pirro.al" target="_blank">
-              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/2_pirro_logo.png" alt />
+            <a href="http://www.citytaxi.al/" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/18_taxi_logo.png" alt />
             </a>
           </div>
 
@@ -430,8 +430,8 @@
           </div>
 
           <div class="col-4">
-            <a href="https://www.pirro.al" target="_blank">
-              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/2_pirro_logo.png" alt />
+            <a href="http://www.citytaxi.al/" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/18_taxi_logo.png" alt />
             </a>
           </div>
 

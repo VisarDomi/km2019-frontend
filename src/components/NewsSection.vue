@@ -179,14 +179,14 @@ export default {
       background-position: center;
     &--1 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-13.jpg");
+        url("../assets/img/blog/Blog-20.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-13.jpg");
+          url("../assets/img/blog/Blog-20.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -194,14 +194,14 @@ export default {
     }
     &--2 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-14.jpg");
+        url("../assets/img/blog/Blog-19.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-14.jpg");
+          url("../assets/img/blog/Blog-19.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -209,14 +209,14 @@ export default {
     }
     &--3 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-15.jpg");
+        url("../assets/img/blog/Blog-18.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-15.jpg");
+          url("../assets/img/blog/Blog-18.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -224,14 +224,14 @@ export default {
     }
     &--4 {
       background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-16.jpg");
+        url("../assets/img/blog/Blog-17.jpg");
 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       &:hover {
         background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-16.jpg");
+          url("../assets/img/blog/Blog-17.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -257,6 +257,9 @@ export default {
       font-weight: 700;
       font-size: 1.5rem;
       padding: 1px 1rem;
+      @include respond(tab-port) {
+        font-size: 2.8rem;
+      }
     }
     &--title {
       color: white;

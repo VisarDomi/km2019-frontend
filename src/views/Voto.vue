@@ -4,7 +4,8 @@
       <div class="col-lg-3 col-sm-3 col-6 text-center">
         <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
-      <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToHome()">
+      <div class="col-lg-1 col-sm-2
+       col-3 vertical-center back-hover" @click="goToHome()">
         <img
           src="@/assets/img/artistet_arrow_right.svg"
           alt

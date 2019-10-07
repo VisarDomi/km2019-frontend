@@ -23,18 +23,22 @@ module.exports = {
           // "/blog10",
           // "/blog11",
           // "/blog12",
-          "/blog13",
-          "/blog14",
-          "/blog15",
-          "/blog16",
-          "/voto",
+          // "/blog13",
+          // "/blog14",
+          // "/blog15",
+          // "/blog16",
+          "/blog17",
+          "/blog18",
+          "/blog19",
+          "/blog20",
+          "/voto"
           // "https://kengamagjike.com/artist/Elia/2b6c6e54-1620-4143-81ac-375d2d8fef51"
         ]
       })
     ],
     output: {
       filename: `app.${Date.now()}.js`,
-      chunkFilename: `chunk.${Date.now()}.js`,
+      chunkFilename: `chunk.${Date.now()}.js`
     }
   },
   // chainWebpack: config => {
@@ -52,7 +56,7 @@ module.exports = {
   css: {
     extract: {
       filename: `app.${Date.now()}.css`,
-      chunkFilename: `chunk.${Date.now()}.css`,
+      chunkFilename: `chunk.${Date.now()}.css`
     }
   }
 };

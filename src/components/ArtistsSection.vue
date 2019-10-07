@@ -117,7 +117,6 @@ export default {
         Limit
       };
       await this.$store.dispatch(LIST_ARTIST, params);
-
       for (let artist of this.getArtists) {
         console.log("artist currentw eek: ", artist.isCurrentWeek)
         if(artist.isCurrentWeek==true){
@@ -329,6 +328,9 @@ export default {
     font-size: 5rem;
     margin-top: 20rem;
   }
+  @include respond(tab-port) {
+    margin-top: 20rem;
+  }
   &:hover {
     border: 0px;
     color: white;
@@ -385,6 +387,7 @@ export default {
   }
   @include respond(tab-port) {
     font-size: 15rem;
+    margin-top: 8rem;
   }
 }
 </style>
