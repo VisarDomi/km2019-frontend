@@ -30,9 +30,8 @@
           <h4 class="bio-description" v-else>{{getArtist.bio}}</h4>
 
           <div v-if="getArtist.isCurrentWeek">
-          <button class="btn" @click="sendToVoto()" v-if="this.lang == 'en'">Vote</button>
-          <button class="btn" @click="sendToVoto()" v-else>Voto</button>
-
+            <button class="btn" @click="sendToVoto()" v-if="this.lang == 'en'">Vote</button>
+            <button class="btn" @click="sendToVoto()" v-else>Voto</button>
           </div>
         </div>
       </div>
@@ -53,7 +52,7 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-3" v-for="artist of artists.slice(0, 4).sort(() => Math.random() - 0.5)" :key="artist.id">
+        <div class="col-lg-3" v-for="artist of artists" :key="artist.id">
           <div class="artist-card abs-bottom" @click="goToArtist(artist)">
             <div class="img-container">
               <img :src="artist.img" alt />
@@ -125,19 +124,27 @@ export default {
     meta: [
       {
         p: "og:image",
-        c: () => {return this.getArtist.drobboxImg}
+        c: () => {
+          return this.getArtist.drobboxImg;
+        }
       },
       {
         p: "og:url",
-        c: () => { return this.$route.path }
+        c: () => {
+          return this.$route.path;
+        }
       },
       {
         p: "og:title",
-        c: () => { return this.getArtist.name }
+        c: () => {
+          return this.getArtist.name;
+        }
       },
       {
         p: "og:description",
-        c: () => { return this.getArtist.song }
+        c: () => {
+          return this.getArtist.song;
+        }
       }
     ]
   },
@@ -174,6 +181,25 @@ export default {
       await this.$store.dispatch(GET_ARTIST, params);
       this.$store.commit(STOP_LOADING);
     },
+    shuffle(array) {
+      var currentIndex = array.length,
+        temporaryValue,
+        randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+
+      return array;
+    },
     async fetchArtists() {
       const TableName = "KM2019-Artist";
       const Limit = "100";
@@ -182,9 +208,14 @@ export default {
         Limit
       };
       await this.$store.dispatch(LIST_ARTIST, params);
-      for (let artist of this.getArtists) {
+      let coppy = this.getArtists.slice();
+      let shuffledArr = this.shuffle(coppy);
+      for (let artist of shuffledArr) {
         if (artist.name !== this.getArtist.name) {
           this.artists.push(artist);
+        }
+        if (this.artists.length == 4) {
+          break;
         }
       }
     },
@@ -201,7 +232,6 @@ export default {
     this.fetchArtists();
 
     let artistPage = document.getElementsByClassName("artist-page")[0];
-    // console.log("artistPage: ", artistPage);
     artistPage.style.background =
       "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
       this.getArtist["bgImg"] +
