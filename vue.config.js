@@ -27,11 +27,11 @@ module.exports = {
           // "/blog14",
           // "/blog15",
           // "/blog16",
-          "/blog17",
-          "/blog18",
-          "/blog19",
-          "/blog20",
-          "/voto"
+          // "/blog17",
+          // "/blog18",
+          // "/blog19",
+          // "/blog20",
+          // "/voto"
           // "https://kengamagjike.com/artist/Elia/2b6c6e54-1620-4143-81ac-375d2d8fef51"
         ]
       })

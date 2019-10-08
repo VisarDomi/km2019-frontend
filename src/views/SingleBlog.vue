@@ -124,6 +124,25 @@ export default {
     FooterWhite,
     FooterSingleBlogMobile
   },
+  head: {
+    // To use "this" in the component, it is necessary to return the object through a function
+    meta: [
+      {
+        p: "og:image",
+        c:
+          this.getBlog.img
+      },
+      {
+        p: "og:title",
+        c: this.getBlog.title
+      },
+      {
+        p: "og:description",
+        c:
+          this.getBlog.body
+      }
+    ]
+  },
   data() {
     return {
       blogs: [],
