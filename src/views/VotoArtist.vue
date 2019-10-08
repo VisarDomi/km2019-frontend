@@ -122,7 +122,7 @@ export default {
       {
         p: "og:image",
         c:
-          this.getArtist["bgImg"]
+          this.getArtist.bgImg
       },
       {
         p: "og:title",
