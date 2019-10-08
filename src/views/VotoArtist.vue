@@ -122,16 +122,16 @@ export default {
       {
         p: "og:image",
         c:
-          this.getArtist.bgImg
+          getArtist.bgImg
       },
       {
         p: "og:title",
-        c: this.getArtist.name
+        c: getArtist.name
       },
       {
         p: "og:description",
         c:
-          "Voto per" + this.getArtist.name
+          "Voto per" + getArtist.name
       }
     ]
   },
