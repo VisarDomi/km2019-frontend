@@ -93,39 +93,13 @@ export default {
     FooterWhite,
     FooterWhiteSmall
   },
-  data() {
-    return {
-      windowWidth: window.innerWidth,
-      artists: [],
-      lang: ""
-    };
-  },
-  // head: {
-  //   meta: [
-  //     {
-  //       p: "og:image",
-  //       c: "https://s3.eu-west-1.amazonaws.com/kengamagjike2019/Artists%2F%2FProfileL.jpg"
-  //     },
-  //     {
-  //       p: "og:url",
-  //       c: "https://kengamagjike.com/artist/Lindita/232bd58d-ff5d-41ad-a95b-eac60fdb5cb1"
-  //     },
-  //     {
-  //       p: "og:title",
-  //       c: "Lindita"
-  //     },
-  //     {
-  //       p: "og:description",
-  //       c: "Description"
-  //     }
-  //   ]
-  // },
-  head: {
+    head: {
     meta: [
       {
         p: "og:image",
         c: () => {
-          return this.getArtist.drobboxImg;
+          
+          return this.getArtist["bgImg"];
         }
       },
       {
@@ -142,6 +116,15 @@ export default {
       }
     ]
   },
+  data() {
+    return {
+      windowWidth: window.innerWidth,
+      artists: [],
+      lang: ""
+    };
+  },
+
+
   methods: {
     goToArtists() {
       this.$router.push({ name: "Artists" });
@@ -173,6 +156,7 @@ export default {
       };
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(GET_ARTIST, params);
+      console.log("meta tag for image is: ", this.getArtist["bgImg"])
       this.$store.commit(STOP_LOADING);
     },
     shuffle(array) {
