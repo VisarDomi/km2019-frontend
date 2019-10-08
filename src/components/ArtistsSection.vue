@@ -118,7 +118,6 @@ export default {
       };
       await this.$store.dispatch(LIST_ARTIST, params);
       for (let artist of this.getArtists) {
-        console.log("artist currentw eek: ", artist.isCurrentWeek)
         if(artist.isCurrentWeek==true){
           this.artists.push(artist);
         }

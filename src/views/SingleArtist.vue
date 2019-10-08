@@ -129,12 +129,6 @@ export default {
         }
       },
       {
-        p: "og:url",
-        c: () => {
-          return this.$route.path;
-        }
-      },
-      {
         p: "og:title",
         c: () => {
           return this.getArtist.name;
@@ -143,7 +137,7 @@ export default {
       {
         p: "og:description",
         c: () => {
-          return this.getArtist.song;
+          return this.getArtist.bio;
         }
       }
     ]
