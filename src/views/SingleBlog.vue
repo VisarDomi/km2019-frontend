@@ -130,16 +130,16 @@ export default {
       {
         p: "og:image",
         c:
-          this.getBlog.img
+          getBlog.img
       },
       {
         p: "og:title",
-        c: this.getBlog.title
+        c: getBlog.title
       },
       {
         p: "og:description",
         c:
-          this.getBlog.body
+          getBlog.body
       }
     ]
   },
