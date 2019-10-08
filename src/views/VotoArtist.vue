@@ -116,25 +116,25 @@ export default {
     FooterMobile,
     AmplifyAuthenticator
   },
-  head: {
-    // To use "this" in the component, it is necessary to return the object through a function
-    meta: [
-      {
-        p: "og:image",
-        c:
-          getArtist.bgImg
-      },
-      {
-        p: "og:title",
-        c: getArtist.name
-      },
-      {
-        p: "og:description",
-        c:
-          "Voto per" + getArtist.name
-      }
-    ]
-  },
+  // head: {
+  //   // To use "this" in the component, it is necessary to return the object through a function
+  //   meta: [
+  //     {
+  //       p: "og:image",
+  //       c:
+  //         getArtist.bgImg
+  //     },
+  //     {
+  //       p: "og:title",
+  //       c: getArtist.name
+  //     },
+  //     {
+  //       p: "og:description",
+  //       c:
+  //         "Voto per" + getArtist.name
+  //     }
+  //   ]
+  // },
   data() {
     return {
       lang: "",
