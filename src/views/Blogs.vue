@@ -60,22 +60,15 @@
         :navigationEnabled="false"
       >
         <slide v-for="blog in this.blogs" :key="blog.id">
-          <div class="h-100 slide-column" >
-            <img
-              :src="blog.img"
-              class="img-blog img-fluid grey-scale"
-              alt
-            />
+          <div class="h-100 slide-column">
+            <img :src="blog.img" class="img-blog img-fluid grey-scale" alt />
             <div class="blog-title-container">
-
-            <h1 class="blog-title" v-if="lang == 'en'" @click="goToBlog(blog)">{{blog.titleEn}}</h1>
-            <h1 class="blog-title" v-else @click="goToBlog(blog)">{{blog.title}}</h1>
+              <h3 class="date">{{blog.date}}</h3>
+              <h1 class="blog-title" v-if="lang == 'en'" @click="goToBlog(blog)">{{blog.titleEn}}</h1>
+              <h1 class="blog-title" v-else @click="goToBlog(blog)">{{blog.title}}</h1>
             </div>
-
-            <h3 class="date">{{blog.date}}</h3>
           </div>
         </slide>
-
       </carousel>
     </div>
     <!-- <FooterBlack v-if="windowWidth > 770" /> -->
@@ -88,7 +81,6 @@
 
 
 <script>
-
 import { getLanguage } from "@/store/services/storage";
 import { Carousel, Slide } from "vue-carousel";
 import { eventBus } from "@/main";
@@ -111,12 +103,10 @@ export default {
   },
   data() {
     return {
-      
       blogs: [],
       lang: "",
       windowWidth: window.innerWidth,
-      artists: [
-      ],
+      artists: [],
       hoverR: false,
       hoverL: false
     };
@@ -135,7 +125,7 @@ export default {
       // this.$router.push({ name: blog.title });
       this.$router.push({
         name: "SingleBlog",
-        params: { title: blog.title, id: blog.id}
+        params: { title: blog.title, id: blog.id }
       });
     },
 
@@ -149,10 +139,9 @@ export default {
       await this.$store.dispatch(LIST_BLOGS, params);
 
       for (let blog of this.getBlogs) {
-          this.blogs.push(blog);
+        this.blogs.push(blog);
       }
-      this.blogs.sort((a, b) => b.ordering - a.ordering)
-
+      this.blogs.sort((a, b) => b.ordering - a.ordering);
     }
   },
   async mounted() {
@@ -227,6 +216,7 @@ export default {
 
 .slide-column {
   background-repeat: no-repeat;
+  position: relative;
   background-size: cover;
   background-position: center;
 }
@@ -289,7 +279,8 @@ export default {
 }
 
 .blog-title-container {
-    padding-top: 12rem;
+  position: absolute;
+  bottom: 10%;
 }
 
 .blog-title {
@@ -300,7 +291,7 @@ export default {
   // top: 30rem;
   width: 84%;
   text-align: left;
-  font-size: 4.5rem;
+  font-size: 4rem;
   // padding-top: 18rem;
   padding-left: 10%;
   font-size: 4.5rem;

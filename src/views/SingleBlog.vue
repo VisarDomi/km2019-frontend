@@ -20,35 +20,23 @@
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
-            <h1
-              class="single-blog-title"
-              v-if="lang == 'en'"
-            >{{this.getBlog.titleEn}}</h1>
-            <h1
-              class="single-blog-title"
-              v-else
-            >{{this.getBlog.title}}</h1>
+            <h1 class="single-blog-title" v-if="lang == 'en'">{{this.getBlog.titleEn}}</h1>
+            <h1 class="single-blog-title" v-else>{{this.getBlog.title}}</h1>
             <hr />
-            <p class="blog-content" v-if="lang == 'en'">
-              {{this.getBlog.bodyEn}}
-            </p>
-            <p class="blog-content" v-else>
-              {{this.getBlog.body}}
-
-            </p>
+            <p class="blog-content" v-if="lang == 'en'">{{this.getBlog.bodyEn}}</p>
+            <p class="blog-content" v-else>{{this.getBlog.body}}</p>
             <div class="row">
               <p class="single-date">{{this.getBlog.date}}</p>
               <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
                 <img
                   v-if="hoverR"
-                  @click="goToBlog('Blog5')"
+                  @click="goToBlog(recBlogs[1])"
                   src="@/assets/img/buttons_export/button_tereja_right_h.svg"
                   style="width:6rem;"
                   alt
                 />
                 <img
                   v-else
-                  @click="goToBlog('Blog5')"
                   src="@/assets/img/buttons_export/button_tereja_right.svg"
                   style="width:6rem;"
                   alt
@@ -58,14 +46,13 @@
               <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
                 <img
                   v-if="hoverL"
-                  @click="goToBlog('Blog3')"
+                  @click="goToBlog(recBlogs[0])"
                   src="@/assets/img/buttons_export/button_tereja_left_h.svg"
                   style="width:6rem;"
                   alt
                 />
                 <img
                   v-else
-                  @click="goToBlog('Blog3')"
                   src="@/assets/img/buttons_export/button_tereja_left.svg"
                   style="width:6rem;"
                   alt
@@ -77,13 +64,10 @@
             <h3 class="bio-text" v-else>të ngjashme</h3>
             <br />
             <div class="row">
-              <div class="col-lg-6" v-for="blog in this.blogs.slice(0, 2)" :key="blog.id">
+              <div class="col-lg-6" v-for="blog of this.recBlogs" :key="blog.id">
                 <div class="blog-card" @click="goToBlog(blog)">
                   <img class="blog-card-image img-fluid" :src="blog.img" alt />
-                  <h2
-                    class="blog-card-title"
-                    v-if="lang == 'en'"
-                  >{{blog.titleEn}}</h2>
+                  <h2 class="blog-card-title" v-if="lang == 'en'">{{blog.titleEn}}</h2>
                   <h2 class="blog-card-title" v-else>{{blog.title}}</h2>
                 </div>
               </div>
@@ -112,10 +96,7 @@ import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.v
 import { GET_BLOG, LIST_BLOGS } from "@/store/actions.type";
 import { mapGetters } from "vuex";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
-import {
-  START_LOADING,
-  STOP_LOADING
-} from "@/store/mutations.type";
+import { START_LOADING, STOP_LOADING } from "@/store/mutations.type";
 export default {
   name: "SingleBlog",
   components: {
@@ -136,23 +117,23 @@ export default {
       {
         p: "og:title",
         c: () => {
-        this.getBlog.title
-      }
+          this.getBlog.title;
+        }
       },
       {
         p: "og:description",
         c: () => {
-        this.getBlog.body
-      }
+          this.getBlog.body;
+        }
       }
     ]
   },
   data() {
     return {
-      blogs: [],
       windowWidth: window.innerWidth,
       hoverR: false,
       hoverL: false,
+      recBlogs: [],
       lang: ""
     };
   },
@@ -168,14 +149,35 @@ export default {
     },
     goToBlog(blog) {
       // this.$router.push({ name: blog.title });
+      console.log("id", blog.id);
       this.$router.push({
         name: "SingleBlog",
-        params: { title: blog.title, id: blog.id}
+        params: { title: blog.title, id: blog.id }
       });
+      this.$router.go(0);
     },
     goToHome() {
       this.$router.push({ name: "Home" });
-    },    
+    },
+    shuffle(array) {
+      var currentIndex = array.length,
+        temporaryValue,
+        randomIndex;
+
+      // While there remain elements to shuffle...
+      while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+      }
+
+      return array;
+    },
     async fetchBlog(blogId) {
       const TableName = "KM2019-Blog";
       const id = blogId;
@@ -195,11 +197,17 @@ export default {
         Limit
       };
       await this.$store.dispatch(LIST_BLOGS, params);
-      for (let blog of this.getBlogs) {
-          this.blogs.push(blog);
+      let coppy = this.getBlogs.slice();
+      let shuffledArr = this.shuffle(coppy);
+      for (let blog of shuffledArr) {
+        if (blog.title !== this.getBlog.title) {
+          this.recBlogs.push(blog);
+        }
+        if (this.recBlogs.length == 2) {
+          break;
+        }
       }
-      this.blogs.sort((a, b) => a.ordering - b.ordering)
-    },
+    }
   },
   computed: {
     ...mapGetters(["getBlog", "getBlogs"])
@@ -364,13 +372,13 @@ hr {
   // margin-right: 5rem;
 }
 .blog-image {
-      width: 100%;
-    margin-left: 2rem;
-    margin-top: 17rem;
+  width: 100%;
+  margin-left: 2rem;
+  margin-top: 17rem;
 
   @include respond(phone) {
-    margin-left:0rem;
-        height: 100%;
+    margin-left: 0rem;
+    height: 100%;
     object-fit: cover;
   }
 }

@@ -21,20 +21,17 @@
           </div>
         </div>
         <div class="col-lg-3" v-for="blog in this.blogs" :key="blog.id" style="height:100%;">
-          <div class="blog__image" @click="goToBlog(blog)"  :style="{
+          <div
+            class="blog__image"
+            @click="goToBlog(blog)"
+            :style="{
           backgroundImage: 'url('+blog.img+')'
-          }" >
-            
+          }"
+          >
             <div class="blog__footer">
               <p class="blog__footer--date">{{blog.date}}</p>
-              <p
-                class="blog__footer--title"
-                v-if="lang == 'en'"
-              >{{blog.titleEn}}</p>
-              <p
-                class="blog__footer--title"
-                v-else
-              >{{blog.title}}</p>
+              <p class="blog__footer--title" v-if="lang == 'en'">{{blog.titleEn}}</p>
+              <p class="blog__footer--title" v-else>{{blog.title}}</p>
               <div class="blog__footer--other mb-4">
                 <img src="@/assets/img/Group 180.svg" alt />
               </div>
@@ -42,14 +39,10 @@
           </div>
         </div>
 
-
-
-
-          <div class="more text-center w-100 mt-5">
-            <a href="#" class="btn" @click="goToBlogs()" v-if="this.lang == 'en'">read more</a>
-            <a href="#" class="btn" @click="goToBlogs()" v-else>lexo më shumë</a>
-          </div>
-
+        <div class="more text-center w-100 mt-5">
+          <a href="#" class="btn" @click="goToBlogs()" v-if="this.lang == 'en'">read more</a>
+          <a href="#" class="btn" @click="goToBlogs()" v-else>lexo më shumë</a>
+        </div>
       </div>
     </div>
   </div>
@@ -78,7 +71,11 @@ export default {
       this.$router.push({ name: "Blogs" });
     },
     goToBlog(blog) {
-      this.$router.push({ slug: blog.title });
+      // this.$router.push({ name: blog.title });
+      this.$router.push({
+        name: "SingleBlog",
+        params: { title: blog.title, id: blog.id }
+      });
     },
 
     async fetchBlogs() {
@@ -91,13 +88,11 @@ export default {
       await this.$store.dispatch(LIST_BLOGS, params);
 
       for (let blog of this.getBlogs) {
-        if(blog.isMainHome==true){
+        if (blog.isMainHome == true) {
           this.blogs.push(blog);
         }
       }
-      this.blogs.sort((a, b) => a.ordering - b.ordering)
-      
-
+      this.blogs.sort((a, b) => a.ordering - b.ordering);
     }
   },
   async mounted() {
@@ -111,14 +106,10 @@ export default {
     });
     this.lang = getLanguage();
     await this.fetchBlogs();
-
   },
   computed: {
     ...mapGetters(["getBlogs"])
   }
-
-
-
 };
 </script>
 
@@ -174,74 +165,19 @@ export default {
 
 .blog {
   &__image {
-          background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-    &--1 {
-      background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-20.jpg");
-
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      &:hover {
-        background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-20.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-      }
-    }
-    &--2 {
-      background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-19.jpg");
-
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      &:hover {
-        background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-19.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-      }
-    }
-    &--3 {
-      background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-18.jpg");
-
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      &:hover {
-        background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-18.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-      }
-    }
-    &--4 {
-      background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog/Blog-17.jpg");
-
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      &:hover {
-        background: linear-gradient(rgba(#47b8b0, 0.7), rgba(#47b8b0, 0.7)),
-          url("../assets/img/blog/Blog-17.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-      }
-    }
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     width: 100%;
     height: 100%;
+    &:hover {
+      opacity: 0.7;
+      transition: all 0.3s;
+    }
   }
 
   &__footer {
+    opacity: 1 !important;
     z-index: 20;
     position: absolute;
     bottom: 0%;

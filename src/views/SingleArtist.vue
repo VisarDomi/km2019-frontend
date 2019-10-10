@@ -38,7 +38,7 @@
 
       <div class="row">
         <div class="col">
-          <p class="share-text" v-if="this.lang == 'en'">Shperndaje:</p>
+          <p class="share-text" v-if="this.lang == 'en'">Shpërndaje:</p>
           <p class="share-text" v-else>Share:</p>
           <span>
             <i class="fa fa-facebook facebook-icon" style="margin-right:5px;"></i>
@@ -47,7 +47,7 @@
           </span>
           <br />
           <h1 class="trigger-text" v-if="this.lang == 'en'">Will you listen to only one song</h1>
-          <h1 class="trigger-text" v-else>Vetem nje kenge do degjosh?</h1>
+          <h1 class="trigger-text" v-else>Vetëm një këngë do dëgjosh?</h1>
         </div>
       </div>
 
@@ -93,12 +93,11 @@ export default {
     FooterWhite,
     FooterWhiteSmall
   },
-    head: {
+  head: {
     meta: [
       {
         p: "og:image",
         c: () => {
-          
           return this.getArtist["bgImg"];
         }
       },
@@ -123,7 +122,6 @@ export default {
       lang: ""
     };
   },
-
 
   methods: {
     goToArtists() {
@@ -156,7 +154,7 @@ export default {
       };
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(GET_ARTIST, params);
-      console.log("meta tag for image is: ", this.getArtist["bgImg"])
+      console.log("meta tag for image is: ", this.getArtist["bgImg"]);
       this.$store.commit(STOP_LOADING);
     },
     shuffle(array) {
