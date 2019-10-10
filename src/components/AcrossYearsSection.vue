@@ -200,7 +200,7 @@ export default {
     font-size: 15rem;
   }
   @include respond(tab-land) {
-    font-size: 15rem;
+    font-size: 8rem;
   }
 }
 

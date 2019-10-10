@@ -363,6 +363,9 @@ export default {
   font-size: 4rem;
   margin-top: 20%;
   position: initial;
+  @include respond(tab-port) {
+    margin-top: 25%;
+  }
   // margin-left:5rem;
 }
 hr {
