@@ -2,7 +2,15 @@
 <template>
   <div class="section-hero" id="kengamagjike">
     <!-- <HeaderHero menutype="menu__items--white" iconWhite="true" v-if="windowWidth > 750" /> -->
-    <img src="@/assets/img/logo.svg" alt="Kenga Magjike logo" class="logo w-50 h-50 z-2" />
+    <img
+      data-aos="zoom-out"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="300"
+      data-aos-offset="0"
+      src="@/assets/img/logo.svg"
+      alt="Kenga Magjike logo"
+      class="logo w-50 h-50 z-2"
+    />
     <div class="bg-video">
       <video class="bg-video__content" autoplay muted loop>
         <source src="@/assets/videoplayback.webm" type="video/mp4" />
@@ -75,8 +83,8 @@ export default {
 
 .logo {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 25%;
+  left: 25%;
+  // transform: translate(-25%, -25%);
 }
 </style>

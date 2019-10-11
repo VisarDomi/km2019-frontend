@@ -4,8 +4,12 @@
     <div class="spacer"></div>
     <div class="row h-25">
       <div class="header-container">
-        <h1 v-if="this.lang == 'en'">&nbsp;&nbsp;&nbsp;News</h1>
-        <h1 v-else>&nbsp;&nbsp;&nbsp;të reja</h1>
+        <h1
+          v-if="this.lang == 'en'"
+          data-aos="fade-right"
+          data-aos-duration="700"
+        >&nbsp;&nbsp;&nbsp;News</h1>
+        <h1 v-else data-aos="fade-right" data-aos-duration="700">&nbsp;&nbsp;&nbsp;të reja</h1>
       </div>
     </div>
     <div class="middle h-50 go-up">
@@ -27,6 +31,8 @@
             :style="{
           backgroundImage: 'url('+blog.img+')'
           }"
+            data-aos="zoom-out"
+            data-aos-duration="700"
           >
             <div class="blog__footer">
               <p class="blog__footer--date">{{blog.date}}</p>
@@ -40,8 +46,24 @@
         </div>
 
         <div class="more text-center w-100 mt-5">
-          <a href="#" class="btn" @click="goToBlogs()" v-if="this.lang == 'en'">read more</a>
-          <a href="#" class="btn" @click="goToBlogs()" v-else>lexo më shumë</a>
+          <a
+            href="#"
+            class="btn"
+            @click="goToBlogs()"
+            v-if="this.lang == 'en'"
+            data-aos="fade-up"
+            data-aos-duration="700"
+            data-aos-anchor-placement="top-bottom"
+          >read more</a>
+          <a
+            href="#"
+            class="btn"
+            @click="goToBlogs()"
+            v-else
+            data-aos="fade-up"
+            data-aos-duration="700"
+            data-aos-anchor-placement="top-bottom"
+          >lexo më shumë</a>
         </div>
       </div>
     </div>

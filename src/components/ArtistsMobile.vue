@@ -1,26 +1,26 @@
 <template>
   <div class="mobile-artists pb-5 pt-5" id="artists-mobile">
     <div class="row h-15 align-items-center ml-0" style="width:100%;">
-      <h1 class="title" v-if="this.lang == 'en'">artists</h1>
-      <h1 class="title" v-else>artistët</h1>
+      <h1 class="title" v-if="this.lang == 'en'" data-aos="fade-up">artists</h1>
+      <h1 class="title" v-else data-aos="fade-up">artistët</h1>
     </div>
     <div class="row ml-0" style="width:100%;">
       <div class="row ml-0" style="margin: 34px 10px 34px;width: 100%;">
-        <div class="col-6  " v-for="artist in artists" :key="artist.id">
-          <div class="artist-card " @click="goToArtist(artist)">
+        <div class="col-6" v-for="artist in artists" :key="artist.id" data-aos="fade-up">
+          <div class="artist-card" @click="goToArtist(artist)">
             <div class="img-container">
               <img :src="artist.img" alt />
             </div>
-              <div class="name_container">
-                <p class="artist-card__name inside-card">{{artist.name}}</p>
-                <br>
-                <p class="artist-card__song inside-card--down" v-if="lang == 'en'">{{artist.songEng}}</p>
-                <p class="artist-card__song inside-card--down" v-else>{{artist.song}}</p>
-              </div>
+            <div class="name_container">
+              <p class="artist-card__name inside-card">{{artist.name}}</p>
+              <br />
+              <p class="artist-card__song inside-card--down" v-if="lang == 'en'">{{artist.songEng}}</p>
+              <p class="artist-card__song inside-card--down" v-else>{{artist.song}}</p>
+            </div>
           </div>
         </div>
       </div>
-      
+
       <div class="row h-10rem">
         <div class="w-100 text-center btn-container">
           <a
@@ -29,6 +29,8 @@
             class="btn"
             style="margin-left:8%;"
             v-if="this.lang == 'en'"
+            data-aos="zoom-out"
+            data-aos-anchor-placement="center-bottom"
           >more artists</a>
           <a
             href="#"
@@ -36,6 +38,8 @@
             class="btn"
             style="margin-left:8%;"
             v-else
+            data-aos="zoom-out"
+            data-aos-anchor-placement="top-bottom"
           >më shumë artistë</a>
         </div>
       </div>
@@ -90,11 +94,11 @@ export default {
       await this.$store.dispatch(LIST_ARTIST, params);
 
       for (let artist of this.getArtists) {
-        if(artist.isCurrentWeek==true){
+        if (artist.isCurrentWeek == true) {
           this.artists.push(artist);
         }
       }
-      this.artists.sort((a, b) => a.ordering - b.ordering)
+      this.artists.sort((a, b) => a.ordering - b.ordering);
 
       // let resItems = this.getArtists;
       // // console.log("resItems: ", resItems);
@@ -129,13 +133,11 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 
-
-.name_container{
-
+.name_container {
 }
 
-p{
-  margin-bottom:0rem;
+p {
+  margin-bottom: 0rem;
 }
 
 .master-row {

@@ -1,8 +1,13 @@
 <template>
   <div class="mobile-news" style="position:relative;" id="te-reja-mobile">
     <div class="row align-items-center ml-0">
-      <h1 class="title" v-if="this.lang == 'en'">news</h1>
-      <h1 class="title" v-else>të reja</h1>
+      <h1
+        class="title"
+        v-if="this.lang == 'en'"
+        data-aos="zoom-out"
+        data-aos-anchor-placement="center-bottom"
+      >news</h1>
+      <h1 class="title" v-else data-aos="zoom-out" data-aos-anchor-placement="center-bottom">të reja</h1>
     </div>
 
     <div class="row ml-0">
@@ -17,7 +22,7 @@
           :paginationEnabled="false"
           :navigationEnabled="false"
         >
-          <slide v-for="blog in this.blogs" :key="blog.id"> 
+          <slide v-for="blog in this.blogs" :key="blog.id">
             <img
               :src="blog.img"
               alt
@@ -32,14 +37,9 @@
                 @click="goToBlog(blog)"
                 v-if="lang == 'en'"
               >{{blog.titleEn}}</h1>
-              <h1
-                class="blog__footer--title"
-                @click="goToBlog(blog)"
-                v-else
-              >{{blog.title}}</h1>
+              <h1 class="blog__footer--title" @click="goToBlog(blog)" v-else>{{blog.title}}</h1>
             </div>
           </slide>
-
         </carousel>
       </div>
     </div>
@@ -50,8 +50,17 @@
           class="btn more-btn"
           style="color:white;"
           v-if="this.lang == 'en'"
+          data-aos="zoom-out"
+          data-aos-anchor-placement="center-bottom"
         >read more</a>
-        <a @click="goToBlogs()" class="btn more-btn" style="color:white;" v-else>Më shumë lajme</a>
+        <a
+          @click="goToBlogs()"
+          class="btn more-btn"
+          style="color:white;"
+          v-else
+          data-aos="zoom-out"
+          data-aos-anchor-placement="center-bottom"
+        >Më shumë lajme</a>
       </div>
     </div>
   </div>
@@ -95,7 +104,7 @@ export default {
       // this.$router.push({ name: blog.title });
       this.$router.push({
         name: "SingleBlog",
-        params: { title: blog.title, id: blog.id}
+        params: { title: blog.title, id: blog.id }
       });
     },
     prevSlide() {
@@ -103,7 +112,7 @@ export default {
         this.$refs.carouselNewsMobile.getPreviousPage()
       );
     },
-        async fetchBlogs() {
+    async fetchBlogs() {
       const TableName = "KM2019-Blog";
       const Limit = "100";
       const params = {
@@ -113,12 +122,11 @@ export default {
       await this.$store.dispatch(LIST_BLOGS, params);
 
       for (let blog of this.getBlogs) {
-       if(blog.isMainHome==true){
+        if (blog.isMainHome == true) {
           this.blogs.push(blog);
         }
       }
-      this.blogs.sort((a, b) => a.ordering - b.ordering)
-
+      this.blogs.sort((a, b) => a.ordering - b.ordering);
     }
   },
   async mounted() {

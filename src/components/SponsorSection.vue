@@ -8,7 +8,7 @@
           class="row no-gutters justify-content-center"
           style="padding-bottom:15%; padding-top:10%;"
         >
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down">
             <a href="https://www.tirana.al" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -18,19 +18,19 @@
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="100">
             <a href="https://instagram.com/smeg.al?igshid=sw4oviy3afmj" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="200">
             <a href="https://www.teoren.al/en/" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/12_Eglo_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="300">
             <a href="https://www.pierrecardin.al" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -40,19 +40,19 @@
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down">
             <a href="https://www.hako.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/3_hako_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="100">
             <a href="https://www.spar.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/9_spar_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="200">
             <a href="https://m.facebook.com/Reas-557325781036724/">
               <img
                 class="img-fluid img-sponsor"
@@ -62,7 +62,7 @@
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="300">
             <a href="https://www.intermed.al/tylolhot-2/" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -72,7 +72,7 @@
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down">
             <a href="https://www.curaprox.com/al-sq" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -82,7 +82,7 @@
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="100">
             <a href="http://http://www.hidrosistem.al/" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -92,7 +92,7 @@
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="200">
             <a href="https://www.kgjs.al" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -102,13 +102,13 @@
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="300">
             <a href="https://www.prima.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/7_prima_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down">
             <a
               href="https://www.plazatirana.com/sq/?Hotelnames=ALTIRHTLHotelThePlaz&d=30d-xppc&partner=FB-PACK-PPC-15&campaignId=632185893%7C32037204978%7Ckwd-kwd-186420274625&device=c&network=google&gclid=Cj0KCQjwoKzsBRC5ARIsAITcwXFuwJLvQ6PhndKpq-TRO10QySs-3ReLnOHMyumTTiCwVAWvIz0LdYMaAg5NEALw_wcB"
               target="_blank"
@@ -117,7 +117,7 @@
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="100">
             <a href="https://www.geraldinasposa.com" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -127,19 +127,19 @@
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="200">
             <a href="https://www.era.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/5_Era_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="300">
             <a href="http://www.citytaxi.al/" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/18_taxi_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-3">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-anchor-placement="top-bottom">
             <a href="http://www.tess.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
             </a>
@@ -157,7 +157,7 @@
           class="row no-gutters justify-content-center"
           style="margin-top:17%; margin-bottom:20%;"
         >
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down">
             <a href="https://www.tirana.al" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -167,19 +167,19 @@
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="100">
             <a href="https://instagram.com/smeg.al?igshid=sw4oviy3afmj" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/16_smeg_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="200">
             <a href="https://www.teoren.al/en/" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/12_Eglo_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down">
             <a href="https://www.pierrecardin.al" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -189,19 +189,19 @@
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="100">
             <a href="https://www.hako.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/3_hako_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="200">
             <a href="https://www.spar.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/9_spar_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down">
             <a href="https://m.facebook.com/Reas-557325781036724/">
               <img
                 class="img-fluid img-sponsor"
@@ -211,7 +211,7 @@
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="100">
             <a href="https://www.intermed.al/tylolhot-2/" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -221,7 +221,7 @@
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="200">
             <a href="https://www.curaprox.com/al-sq" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -231,7 +231,7 @@
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down">
             <a href="http://http://www.hidrosistem.al/" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -241,7 +241,7 @@
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="100">
             <a href="https://www.kgjs.al" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -251,13 +251,13 @@
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="200">
             <a href="https://www.prima.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/7_prima_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down">
             <a
               href="https://www.plazatirana.com/sq/?Hotelnames=ALTIRHTLHotelThePlaz&d=30d-xppc&partner=FB-PACK-PPC-15&campaignId=632185893%7C32037204978%7Ckwd-kwd-186420274625&device=c&network=google&gclid=Cj0KCQjwoKzsBRC5ARIsAITcwXFuwJLvQ6PhndKpq-TRO10QySs-3ReLnOHMyumTTiCwVAWvIz0LdYMaAg5NEALw_wcB"
               target="_blank"
@@ -266,7 +266,7 @@
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="100">
             <a href="https://www.geraldinasposa.com" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -276,19 +276,19 @@
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="200">
             <a href="https://www.era.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/5_Era_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down">
             <a href="http://www.citytaxi.al/" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/18_taxi_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-4">
+          <div class="col-4" data-aos="zoom-in-down">
             <a href="http://www.tess.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
             </a>

@@ -4,13 +4,18 @@
     <div class="spacer"></div>
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h1 class="header-text" v-if="lang == 'en'">the jury</h1>
-        <h1 class="header-text" v-else>juria</h1>
+        <h1 class="header-text" v-if="lang == 'en'" data-aos="zoom-in">the jury</h1>
+        <h1 class="header-text" v-else data-aos="zoom-in">juria</h1>
       </div>
     </div>
     <div class="row respond-height">
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
-        <div class="artist-card abs-bottom" @click="goToJuria('JuriaArmend')">
+        <div
+          class="artist-card abs-bottom"
+          data-aos="flip-left"
+          data-aos-duration="1000"
+          @click="goToJuria('JuriaArmend')"
+        >
           <div class="img-container"></div>
           <img src="@/assets/juria/j1_hover.png" alt />
           <p class="artist-card__name go-up--small">ARMEND REXHEPAGIQI</p>
@@ -19,7 +24,12 @@
         </div>
       </div>
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
-        <div class="artist-card abs-bottom" @click="goToJuria('JuriaJonida')">
+        <div
+          class="artist-card abs-bottom"
+          data-aos="flip-left"
+          data-aos-duration="1000"
+          @click="goToJuria('JuriaJonida')"
+        >
           <div class="img-container">
             <img src="@/assets/juria/j2_hover.png" alt />
           </div>
@@ -29,7 +39,12 @@
         </div>
       </div>
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
-        <div class="artist-card abs-bottom" @click="goToJuria('JuriaArben')">
+        <div
+          class="artist-card abs-bottom"
+          data-aos="flip-left"
+          data-aos-duration="1000"
+          @click="goToJuria('JuriaArben')"
+        >
           <div class="img-container">
             <img src="@/assets/juria/j3_hover.png" alt />
           </div>
@@ -40,7 +55,12 @@
       </div>
 
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
-        <div class="artist-card abs-bottom" @click="goToJuria('JuriaEnkel')">
+        <div
+          class="artist-card abs-bottom"
+          data-aos="flip-left"
+          data-aos-duration="1000"
+          @click="goToJuria('JuriaEnkel')"
+        >
           <div class="img-container">
             <img src="@/assets/juria/j4_hover.png" alt />
           </div>
@@ -50,7 +70,12 @@
         </div>
       </div>
       <div class="col-lg-2 col-sm-2 col-7 ml-6">
-        <div class="artist-card abs-bottom" @click="goToJuria('JuriaDj')">
+        <div
+          class="artist-card abs-bottom"
+          data-aos="flip-left"
+          data-aos-duration="1000"
+          @click="goToJuria('JuriaDj')"
+        >
           <div class="img-container">
             <img src="@/assets/juria/j5_hover.png" alt />
           </div>

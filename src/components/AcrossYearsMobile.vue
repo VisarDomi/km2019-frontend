@@ -2,7 +2,7 @@
   <div class="section-acrossyears pt-5 pb-5" id="nder-vite-mobile">
     <div class="row ml-0 pt-5">
       <div class="slider-img-container w-80 mx-auto">
-        <div class="embed-responsive embed-responsive-4by3">
+        <div class="embed-responsive embed-responsive-4by3" data-aos="fade-in">
           <iframe
             class="embed-responsive-item"
             src="https://www.youtube.com/embed/EvktbPe1gV0"
@@ -13,10 +13,10 @@
     </div>
 
     <div class="row go-up ml-0" style="margin-top:-5rem;">
-      <h1 class="header-text" v-if="this.lang == 'en'">Through the years</h1>
-      <h1 class="header-text" v-else>ndër vite</h1>
+      <h1 class="header-text" v-if="this.lang == 'en'" data-aos="fade-in">Through the years</h1>
+      <h1 class="header-text" v-else data-aos="fade-in">ndër vite</h1>
     </div>
-    <div class="row ml-0">
+    <div class="row ml-0" data-aos="fade-in">
       <p
         class="description"
         v-if="this.lang == 'en'"

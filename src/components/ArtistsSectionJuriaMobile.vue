@@ -1,14 +1,19 @@
 <template>
   <div class="mobile-juria pb-5 pt-5" id="juria-mobile">
     <div class="row h-15 align-items-center ml-0" style="width:100%;">
-      <h1 class="title" v-if="this.lang == 'en'">the jury</h1>
-      <h1 class="title" v-else>juria</h1>
+      <h1 class="title" v-if="this.lang == 'en'" data-aos="zoom-in">the jury</h1>
+      <h1 class="title" v-else data-aos="zoom-in">juria</h1>
     </div>
 
     <div class="row ml-0" style="width:100%;">
       <div class="row ml-0" style="margin-bottom:50px; margin:10px; margin-top:20px;width:100%;">
         <div class="col-6">
-          <div class="artist-card" @click="goToRoute('JuriaArmend')">
+          <div
+            class="artist-card"
+            @click="goToRoute('JuriaArmend')"
+            data-aos="flip-left"
+            data-aos-duration="1000"
+          >
             <div class="img-container">
               <img src="@/assets/juria/j1_normal.png" alt />
             </div>
@@ -16,7 +21,12 @@
           </div>
         </div>
         <div class="col-6">
-          <div class="artist-card" @click="goToRoute('JuriaJonida')">
+          <div
+            class="artist-card"
+            @click="goToRoute('JuriaJonida')"
+            data-aos="flip-left"
+            data-aos-duration="1000"
+          >
             <div class="img-container">
               <img src="@/assets/juria/j2_normal.png" alt />
             </div>
@@ -27,7 +37,12 @@
 
       <div class="row ml-0" style="margin-bottom:50px; margin:10px;width:100%;">
         <div class="col-6">
-          <div class="artist-card" @click="goToRoute('JuriaArben')">
+          <div
+            class="artist-card"
+            @click="goToRoute('JuriaArben')"
+            data-aos="flip-left"
+            data-aos-duration="1000"
+          >
             <div class="img-container">
               <img src="@/assets/juria/j3_normal.png" alt />
             </div>
@@ -35,7 +50,12 @@
           </div>
         </div>
         <div class="col-6" style="margin-top:10px;">
-          <div class="artist-card" @click="goToRoute('JuriaEnkel')">
+          <div
+            class="artist-card"
+            @click="goToRoute('JuriaEnkel')"
+            data-aos="flip-left"
+            data-aos-duration="1000"
+          >
             <div class="img-container">
               <img src="@/assets/juria/j4_normal.png" alt />
             </div>
@@ -46,7 +66,12 @@
 
       <div class="row mb-5 ml-0" style=" margin:10px;width:100%;">
         <div class="col-6">
-          <div class="artist-card" @click="goToRoute('JuriaDj')">
+          <div
+            class="artist-card"
+            @click="goToRoute('JuriaDj')"
+            data-aos="flip-left"
+            data-aos-duration="1000"
+          >
             <div class="img-container">
               <img src="@/assets/juria/j5_normal.png" alt />
             </div>

@@ -13,7 +13,8 @@ import VueI18n from "vue-i18n";
 import { al, en } from "./translations";
 import Amplify, * as AmplifyModules from "aws-amplify";
 import { AmplifyPlugin } from "aws-amplify-vue";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 export const aws_user_pools_web_client_id = "5qbjv29p8e8f2vv05c7dmr37fs";
 
 const awsmobile = {
@@ -62,6 +63,9 @@ Vue.use(VueCarousel);
 export const eventBus = new Vue();
 
 new Vue({
+  created() {
+    AOS.init();
+  },
   router,
   store,
   i18n,

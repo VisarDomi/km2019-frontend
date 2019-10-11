@@ -4,8 +4,13 @@
     <div class="spacer"></div>
     <div class="row go-up--small h-20">
       <div class="col-lg-12 offset-1">
-        <h1 class="header-text header-text--small" v-if="this.lang == 'en'">Through the years</h1>
-        <h1 class="header-text" v-else>ndër vite</h1>
+        <h1
+          class="header-text header-text--small"
+          v-if="this.lang == 'en'"
+          data-aos="fade-right"
+          data-aos-duration="500"
+        >Through the years</h1>
+        <h1 class="header-text" data-aos="fade-right" data-aos-duration="500" v-else>ndër vite</h1>
       </div>
     </div>
     <div class="row h-50">
@@ -15,7 +20,7 @@
       <div class="graphic-right w-50">
         <img src="@/assets/img/Group 158.svg" alt />
       </div>
-      <div class="container h-100">
+      <div class="container h-100" data-aos="fade-left" data-aos-duration="500">
         <div class="slider-img-container h-100">
           <div class="embed-responsive embed-responsive-4by3 h-100">
             <iframe
@@ -27,7 +32,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" data-aos="fade-right" data-aos-duration="500" data-aos-anchor-placement="top-bottom">
       <div class="col-lg-9 offset-lg-2">
         <p
           v-if="this.lang == 'en'"

@@ -7,8 +7,8 @@
     <div class="container-fluid mods">
       <div class="row go-up--small">
         <div class="col-lg-12 text-center">
-          <h1 class="header-text" v-if="lang == 'en'">artists</h1>
-          <h1 class="header-text" v-else>artistët</h1>
+          <h1 class="header-text" v-if="lang == 'en'" data-aos="fade-up">artists</h1>
+          <h1 class="header-text" v-else data-aos="fade-up">artistët</h1>
         </div>
       </div>
       <div class="row px-6 respond-height" v-if="nrArtists(5) || nrArtists(6)">
@@ -18,6 +18,7 @@
           v-for="(artist, index) in this.artists"
           :key="artist.name"
           @click="goToArtist(artist)"
+          data-aos="fade-up"
         >
           <div class="artist-card abs-bottom" :class="{'abs-bottom--up': index % 2 === 0}">
             <div>
@@ -35,8 +36,22 @@
           class="col-lg-6 offset-lg-3 col-12 text-center"
           :class="{'mt-6' : nrArtists(5) || nrArtists(6)}"
         >
-          <a href="#" class="btn" @click="goToArtists()" v-if="this.lang == 'en'">more artists</a>
-          <a href="#" class="btn" @click="goToArtists()" v-else>më shumë artistë</a>
+          <a
+            href="#"
+            class="btn"
+            @click="goToArtists()"
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            v-if="this.lang == 'en'"
+          >more artists</a>
+          <a
+            href="#"
+            class="btn"
+            @click="goToArtists()"
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            v-else
+          >më shumë artistë</a>
         </div>
       </div>
     </div>
@@ -92,11 +107,11 @@ export default {
       };
       await this.$store.dispatch(LIST_ARTIST, params);
       for (let artist of this.getArtists) {
-        if(artist.isCurrentWeek==true){
+        if (artist.isCurrentWeek == true) {
           this.artists.push(artist);
         }
       }
-      this.artists.sort((a, b) => a.ordering - b.ordering)
+      this.artists.sort((a, b) => a.ordering - b.ordering);
       // console.log("ordering->>", this.artists)
     }
   },
