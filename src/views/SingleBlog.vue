@@ -30,7 +30,7 @@
               <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
                 <img
                   v-if="hoverR"
-                  @click="goToBlog(recBlogs[1])"
+                  @click="goToBlog(recomandedBlogs[1])"
                   src="@/assets/img/buttons_export/button_tereja_right_h.svg"
                   style="width:6rem;"
                   alt
@@ -46,7 +46,7 @@
               <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
                 <img
                   v-if="hoverL"
-                  @click="goToBlog(recBlogs[0])"
+                  @click="goToBlog(recomandedBlogs[0])"
                   src="@/assets/img/buttons_export/button_tereja_left_h.svg"
                   style="width:6rem;"
                   alt
@@ -64,7 +64,7 @@
             <h3 class="bio-text" v-else>të ngjashme</h3>
             <br />
             <div class="row">
-              <div class="col-lg-6" v-for="blog of this.recBlogs" :key="blog.id">
+              <div class="col-lg-6" v-for="blog of this.recomandedBlogs" :key="blog.id">
                 <div class="blog-card" @click="goToBlog(blog)">
                   <img class="blog-card-image img-fluid" :src="blog.img" alt />
                   <h2 class="blog-card-title" v-if="lang == 'en'">{{blog.titleEn}}</h2>
@@ -133,7 +133,7 @@ export default {
       windowWidth: window.innerWidth,
       hoverR: false,
       hoverL: false,
-      recBlogs: [],
+      recomandedBlogs: [],
       lang: ""
     };
   },
@@ -147,14 +147,36 @@ export default {
     goToBlogs() {
       this.$router.push({ name: "Blogs" });
     },
-    goToBlog(blog) {
-      // this.$router.push({ name: blog.title });
-      console.log("id", blog.id);
+    async goToBlog(blog) {
       this.$router.push({
         name: "SingleBlog",
         params: { title: blog.title, id: blog.id }
       });
-      this.$router.go(0);
+
+      await this.$store.dispatch(GET_BLOG, {
+        TableName: "KM2019-Blog",
+        id: blog.id
+      });
+
+      await this.fetchBlogs();
+
+      // await this.$store.dispatch(LIST_BLOGS, {
+      //   TableName: "KM2019-Blog",
+      //   Limit: "100"
+      // });
+      // let coppy = this.getBlogs.slice();
+      // let shuffledArr = this.shuffle(coppy);
+      // this.recomandedBlogs = [];
+      // for (let blog of shuffledArr) {
+      //   if (blog.title !== this.getBlog.title) {
+      //     this.recomandedBlogs.push(blog);
+      //   }
+      //   console.log("blog.length", this.recomandedBlogs.length);
+      //   if (this.recomandedBlogs.length == 2) {
+      //     console.log("should break");
+      //     break;
+      //   }
+      // }
     },
     goToHome() {
       this.$router.push({ name: "Home" });
@@ -199,11 +221,13 @@ export default {
       await this.$store.dispatch(LIST_BLOGS, params);
       let coppy = this.getBlogs.slice();
       let shuffledArr = this.shuffle(coppy);
+
+      this.recomandedBlogs = [];
       for (let blog of shuffledArr) {
         if (blog.title !== this.getBlog.title) {
-          this.recBlogs.push(blog);
+          this.recomandedBlogs.push(blog);
         }
-        if (this.recBlogs.length == 2) {
+        if (this.recomandedBlogs.length == 2) {
           break;
         }
       }

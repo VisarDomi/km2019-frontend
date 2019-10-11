@@ -30,32 +30,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="row respond-height go-up--medium" v-if="nrArtists(4)">
-        <div class="col-lg-3--spacer"></div>
-        <div class="col-lg-2 mx--2" v-for="artist in this.artists" :key="artist.name">
-          <div class="artist-card abs-bottom">
-            <div>
-              <img :src="artist.img" alt />
-              <p class="artist-card__name inside-card">Ronald Domi</p>
-              <br />
-              <p class="artist-card__song mb-5">Loose yourself to dance</p>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <!-- <div class="row respond-height go-up--small" v-if="nrArtists(4)">
-        <div :class="myClass()"></div>
-        <div class="col-lg-2 mx--2" v-for="artist in this.artists2Row" :key="artist.name">
-          <div class="artist-card abs-bottom">
-            <div>
-              <img :src="artist.img" alt />
-              <p class="artist-card__name inside-card">Ronald Domi</p>
-              <br />
-              <p class="artist-card__song mb-5">Loose yourself to dance</p>
-            </div>
-          </div>
-        </div>
-      </div> -->
       <div class="row mt--2" :class="{'mt-4' : nrArtists(5) || nrArtists(6)}">
         <div
           class="col-lg-6 offset-lg-3 col-12 text-center"
