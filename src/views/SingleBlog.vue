@@ -91,42 +91,58 @@
 import { Carousel, Slide } from "vue-carousel";
 
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterSingleBlog from "@/components/Footer/FooterSingleBlog.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
 
 import { GET_BLOG, LIST_BLOGS } from "@/store/actions.type";
 import { mapGetters } from "vuex";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
-import { START_LOADING, STOP_LOADING } from "@/store/mutations.type";
+import { START_LOADING, STOP_LOADING, SET_BLOG } from "@/store/mutations.type";
+import { ApiService } from "@/store/services/api";
+import store from "@/store";
+
 export default {
   name: "SingleBlog",
   components: {
     Carousel,
     Slide,
     FooterWhite,
+    FooterSingleBlog,
     FooterSingleBlogMobile
   },
-  head: {
-    // To use "this" in the component, it is necessary to return the object through a function
-    meta: [
-      {
-        p: "og:image",
-        c: () => {
-          return this.getBlog.img;
+  beforeRouteEnter(to, from, next) {
+    const TableName = "KM2019-Blog";
+    const id = to.params.id;
+    const params = {
+      TableName,
+      id
+    };
+    ApiService.get(params)
+      .then(res => {
+        store.commit(SET_BLOG, res.data.Item);
+        next();
+      })
+      .catch(err => {
+        next();
+      });
+  },
+  head() {
+    return {
+      meta: [
+        {
+          name: "og:image",
+          content: this.getBlog.img
+        },
+        {
+          name: "og:title",
+          content: this.getBlog.title
+        },
+        {
+          name: "og:description",
+          content: this.getBlog.body
         }
-      },
-      {
-        p: "og:title",
-        c: () => {
-          this.getBlog.title;
-        }
-      },
-      {
-        p: "og:description",
-        c: () => {
-          this.getBlog.body;
-        }
-      }
-    ]
+      ]
+    };
   },
   data() {
     return {

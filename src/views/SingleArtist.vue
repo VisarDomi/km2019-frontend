@@ -83,7 +83,8 @@ import {
   STOP_LOADING,
   SET_ARTIST
 } from "@/store/mutations.type";
-
+import { ApiService } from "@/store/services/api";
+import store from "@/store"
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 
 export default {
@@ -93,28 +94,41 @@ export default {
     FooterWhite,
     FooterWhiteSmall
   },
-  head: {
-    meta: [
-      {
-        p: "og:image",
-        c: () => {
-          return this.getArtist["bgImg"];
-        }
-      },
-      {
-        p: "og:title",
-        c: () => {
-          return this.getArtist.name;
-        }
-      },
-      {
-        p: "og:description",
-        c: () => {
-          return this.getArtist.bio;
-        }
-      }
-    ]
+  beforeRouteEnter(to, from, next) {
+    const TableName = "KM2019-Artist";
+    const id = to.params.id;
+    const params = {
+      TableName,
+      id
+    };
+    ApiService.get(params)
+      .then(res => {
+        store.commit(SET_ARTIST, res.data.Item)
+        next()
+      })
+      .catch(err => {
+        next();
+      });
   },
+  head() {
+    return {
+      meta: [
+        {
+          name: "og:image",
+          content: this.getArtist.img
+        },
+        {
+          name: "og:title",
+          content: this.getArtist.name
+        },
+        {
+          name: "og:description",
+          content: this.getArtist.bio
+        }
+      ]
+    };
+  },
+
   data() {
     return {
       windowWidth: window.innerWidth,
@@ -154,7 +168,7 @@ export default {
       };
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(GET_ARTIST, params);
-      console.log("meta tag for image is: ", this.getArtist["bgImg"]);
+      // console.log("meta tag for image is: ", this.getArtist.bgImg);
       this.$store.commit(STOP_LOADING);
     },
     shuffle(array) {
