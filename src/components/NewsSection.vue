@@ -33,14 +33,13 @@
           }"
             data-aos="zoom-out"
             data-aos-duration="700"
-          >
-            <div class="blog__footer">
-              <p class="blog__footer--date">{{blog.date}}</p>
-              <p class="blog__footer--title" v-if="lang == 'en'">{{blog.titleEn}}</p>
-              <p class="blog__footer--title" v-else>{{blog.title}}</p>
-              <div class="blog__footer--other mb-4">
-                <img src="@/assets/img/Group 180.svg" alt />
-              </div>
+          ></div>
+          <div class="blog__footer">
+            <p class="blog__footer--date">{{blog.date}}</p>
+            <p class="blog__footer--title" v-if="lang == 'en'">{{blog.titleEn}}</p>
+            <p class="blog__footer--title" v-else>{{blog.title}}</p>
+            <div class="blog__footer--other mb-4">
+              <img src="@/assets/img/Group 180.svg" alt />
             </div>
           </div>
         </div>
@@ -190,6 +189,7 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    filter: saturate(20%) brightness(70%);
     width: 100%;
     height: 100%;
     &:hover {
@@ -199,6 +199,7 @@ export default {
   }
 
   &__footer {
+    // filter: saturate(0%) brightness(100%) !important;
     opacity: 1 !important;
     z-index: 20;
     position: absolute;

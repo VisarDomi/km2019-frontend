@@ -155,6 +155,7 @@ export default {
 
 .img-fluid {
   width: 88%;
+  filter: saturate(20%) brightness(70%);
 }
 .img-blog {
   height: 100%;
