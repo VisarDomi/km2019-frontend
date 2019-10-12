@@ -91,26 +91,47 @@
 import { Carousel, Slide } from "vue-carousel";
 
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
+import FooterSingleBlog from "@/components/Footer/FooterSingleBlog.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
 
 import { GET_BLOG, LIST_BLOGS } from "@/store/actions.type";
 import { mapGetters } from "vuex";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
-import { START_LOADING, STOP_LOADING } from "@/store/mutations.type";
+import { START_LOADING, STOP_LOADING, SET_BLOG } from "@/store/mutations.type";
+import { ApiService } from "@/store/services/api";
+import store from "@/store";
+
 export default {
   name: "SingleBlog",
   components: {
     Carousel,
     Slide,
     FooterWhite,
+    FooterSingleBlog,
     FooterSingleBlogMobile
   },
-  head: {
-    meta: function() {
-      return [
+  beforeRouteEnter(to, from, next) {
+    const TableName = "KM2019-Blog";
+    const id = to.params.id;
+    const params = {
+      TableName,
+      id
+    };
+    ApiService.get(params)
+      .then(res => {
+        store.commit(SET_BLOG, res.data.Item);
+        next();
+      })
+      .catch(err => {
+        next();
+      });
+  },
+  head() {
+    return {
+      meta: [
         {
           name: "og:image",
-          content: this.getBlog.bgImg
+          content: this.getBlog.img
         },
         {
           name: "og:title",
@@ -120,8 +141,8 @@ export default {
           name: "og:description",
           content: this.getBlog.body
         }
-      ];
-    }
+      ]
+    };
   },
   data() {
     return {

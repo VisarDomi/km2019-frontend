@@ -115,7 +115,7 @@ export default {
       meta: [
         {
           name: "og:image",
-          content: this.getArtist.bgImg
+          content: this.getArtist.img
         },
         {
           name: "og:title",
