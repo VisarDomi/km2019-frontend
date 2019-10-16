@@ -25,17 +25,16 @@
             <hr />
             <p class="blog-content" v-if="lang == 'en'">{{this.getBlog.bodyEn}}</p>
             <p class="blog-content" v-else>{{this.getBlog.body}}</p>
+            <div class="translation" @click="changeLang()" v-if="this.lang == 'en'">
+              <!-- <span class="bold-decoration">AL/</span> -->
+              Kthe ne Shqip
+            </div>
+            <div class="translation" @click="changeLang()" v-else>
+              Switch to English
+              <!-- <span class="bold-decoration">EN</span> -->
+            </div>
             <div class="row">
               <p class="single-date">{{this.getBlog.date}}</p>
-
-              <div class="translation" @click="changeLang()" v-if="this.lang == 'en'">
-                <!-- <span class="bold-decoration">AL/</span> -->
-                AL
-              </div>
-              <div class="translation" @click="changeLang()" v-else>
-                EN
-                <!-- <span class="bold-decoration">EN</span> -->
-              </div>
 
               <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
                 <img
@@ -313,6 +312,12 @@ export default {
   padding: 0.5rem 1rem;
   font-size: 1.6rem;
   height: 3.5rem;
+  border-radius: 20px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  @include respond(phone) {
+    margin-left: 0;
+  }
 }
 
 .carousel-right {
