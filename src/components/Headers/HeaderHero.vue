@@ -132,11 +132,9 @@ export default {
         saveLanguage("al");
         this.lang = "al";
         this.$router.go(0);
-        saveLanguage("al");
       } else {
         saveLanguage("en");
         this.lang = "en";
-        saveLanguage("en");
         this.$router.go(0);
       }
       eventBus.$emit("changeLanguage", this.lang);

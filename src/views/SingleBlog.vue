@@ -27,6 +27,16 @@
             <p class="blog-content" v-else>{{this.getBlog.body}}</p>
             <div class="row">
               <p class="single-date">{{this.getBlog.date}}</p>
+
+              <div class="translation" @click="changeLang()" v-if="this.lang == 'en'">
+                <!-- <span class="bold-decoration">AL/</span> -->
+                AL
+              </div>
+              <div class="translation" @click="changeLang()" v-else>
+                EN
+                <!-- <span class="bold-decoration">EN</span> -->
+              </div>
+
               <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
                 <img
                   v-if="hoverR"
@@ -154,6 +164,16 @@ export default {
     };
   },
   methods: {
+    changeLang() {
+      if (this.lang == "en") {
+        saveLanguage("al");
+        this.lang = "al";
+      } else {
+        saveLanguage("en");
+        this.lang = "en";
+      }
+      eventBus.$emit("changeLanguage", this.lang);
+    },
     nextSlide() {
       this.$refs.carousel.goToPage(this.$refs.carousel.getNextPage());
     },
@@ -275,6 +295,24 @@ export default {
   font-family: Panton;
   src: url("../assets/Fonts/panton-semibold.OTF");
   font-weight: bold;
+}
+.bold-decoration {
+  font-weight: bold;
+  color: red;
+}
+.translation {
+  position: initial;
+  width: fit-content;
+  margin-top: 3rem;
+  margin-left: 5rem;
+  font-family: Panton;
+  color: #47b8b0;
+  z-index: 30;
+  background: white;
+  // font-weight: 900;
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+  height: 3.5rem;
 }
 
 .carousel-right {
