@@ -249,6 +249,7 @@ export default {
 }
 
 .artist-card {
+  cursor: pointer;
   // width: 90%;
   width: 63%;
   z-index: 4;

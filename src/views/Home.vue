@@ -1,39 +1,31 @@
 <template>
   <div class="home">
+    <HeaderHero v-if="windowWidth > 750" menutype="menu__items--white" />
     <HeaderHero
-      v-if="windowWidth > 750"
-      logoWhite="true"
-      menutype="menu__items--white"
-      iconWhite="true"
-    />
-    <!-- <HeaderHero
-      v-if="windowWidth > 750 && this.section == 'JurySection'"
+      v-if="windowWidth > 750 && this.section == 'ArtistSection'"
       menutype="menu__items--white"
       logoWhite="true"
-      iconWhite="true"
     />
     <HeaderHero
       v-if="windowWidth > 750 && this.section == 'AcrossYearsSection'"
       menutype="menu__items--white"
       logoWhite="true"
-      iconWhite="true"
     />
     <HeaderHero
       v-if="windowWidth > 750 && this.section == 'BlogSection'"
       menutype="menu__items--white"
       logoGreen="true"
-      iconWhite="true"
+    />
+    <HeaderHero
+      v-if="windowWidth > 750 && this.section == 'JurySection'"
+      menutype="menu__items--white"
+      logoWhite="true"
     />
     <HeaderHero
       v-if="windowWidth > 750 && this.section == 'SponsorSection'"
-      menutype="menu__items--black"
-      logoBlack="true"
+      menutype="menu__items--white"
+      logoWhite="true"
     />
-    <HeaderHero
-      v-if="windowWidth > 750 && this.section == 'ArtistSection'"
-      menutype="menu__items--black"
-      logoBlack="true"
-    />-->
     <HeaderMobile v-if="windowWidth < 750" />
 
     <HeroSection />

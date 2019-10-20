@@ -226,6 +226,10 @@ export default {
 .logo {
   float: left;
 }
+
+.background--white {
+  background-color: white;
+}
 .menu__items {
   text-align: center;
   font-family: Ubuntu;
@@ -243,6 +247,9 @@ export default {
   }
   &--black {
     color: black;
+  }
+  &--green {
+    color: #47b8b0;
   }
 }
 
