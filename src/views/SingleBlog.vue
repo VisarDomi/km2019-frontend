@@ -25,21 +25,21 @@
             <hr />
             <p class="blog-content" v-if="lang == 'en'">{{this.getBlog.bodyEn}}</p>
             <p class="blog-content" v-else>{{this.getBlog.body}}</p>
-            <div class="translation" @click="changeLang()" v-if="this.lang == 'en'">
-              <!-- <span class="bold-decoration">AL/</span> -->
-              Kthe ne Shqip
-            </div>
-            <div class="translation" @click="changeLang()" v-else>
-              Switch to English
-              <!-- <span class="bold-decoration">EN</span> -->
-            </div>
+            <p class="single-date">{{this.getBlog.date}}</p>
             <div class="row">
-              <p class="single-date">{{this.getBlog.date}}</p>
+              <div class="translation" @click="changeLang()" v-if="this.lang == 'en'">
+                <!-- <span class="bold-decoration">AL/</span> -->
+                Kthe ne Shqip
+              </div>
+              <div class="translation" @click="changeLang()" v-else>
+                Switch to English
+                <!-- <span class="bold-decoration">EN</span> -->
+              </div>
 
               <div class="carousel-right" @mouseover="hoverR = true" @mouseleave="hoverR = false">
                 <img
                   v-if="hoverR"
-                  @click="goToBlog(recomandedBlogs[1])"
+                  @click="goToBlog(prevBlog)"
                   src="@/assets/img/buttons_export/button_tereja_right_h.svg"
                   style="width:6rem;"
                   alt
@@ -55,7 +55,7 @@
               <div class="carousel-left" @mouseover="hoverL = true" @mouseleave="hoverL = false">
                 <img
                   v-if="hoverL"
-                  @click="goToBlog(recomandedBlogs[0])"
+                  @click="goToBlog(nextBlog)"
                   src="@/assets/img/buttons_export/button_tereja_left_h.svg"
                   style="width:6rem;"
                   alt
@@ -159,6 +159,8 @@ export default {
       hoverR: false,
       hoverL: false,
       recomandedBlogs: [],
+      nextBlog: "",
+      prevBlog: "",
       lang: ""
     };
   },
@@ -183,6 +185,10 @@ export default {
       this.$router.push({ name: "Blogs" });
     },
     async goToBlog(blog) {
+      if (blog.title == this.getBlog.title) {
+        return;
+      }
+      console.log("should show");
       this.$router.push({
         name: "SingleBlog",
         params: { title: blog.title, id: blog.id }
@@ -194,24 +200,6 @@ export default {
       });
 
       await this.fetchBlogs();
-
-      // await this.$store.dispatch(LIST_BLOGS, {
-      //   TableName: "KM2019-Blog",
-      //   Limit: "100"
-      // });
-      // let coppy = this.getBlogs.slice();
-      // let shuffledArr = this.shuffle(coppy);
-      // this.recomandedBlogs = [];
-      // for (let blog of shuffledArr) {
-      //   if (blog.title !== this.getBlog.title) {
-      //     this.recomandedBlogs.push(blog);
-      //   }
-      //   console.log("blog.length", this.recomandedBlogs.length);
-      //   if (this.recomandedBlogs.length == 2) {
-      //     console.log("should break");
-      //     break;
-      //   }
-      // }
     },
     goToHome() {
       this.$router.push({ name: "Home" });
@@ -244,6 +232,7 @@ export default {
       };
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(GET_BLOG, params);
+      console.log("this.blog.order", this.getBlog.ordering);
       this.$store.commit(STOP_LOADING);
     },
     async fetchBlogs() {
@@ -264,6 +253,18 @@ export default {
         }
         if (this.recomandedBlogs.length == 2) {
           break;
+        }
+      }
+      for (let blog of this.getBlogs) {
+        if (blog.ordering == parseInt(this.getBlog.ordering, 10) + 1) {
+          console.log("next", blog.ordering);
+          this.nextBlog = blog;
+          console.log(blog);
+        }
+        if (blog.ordering == parseInt(this.getBlog.ordering, 10) - 1) {
+          console.log("this:", parseInt(this.getBlog.ordering, 10));
+          this.prevBlog = blog;
+          console.log("prev", blog.ordering);
         }
       }
     }
@@ -303,7 +304,7 @@ export default {
   position: initial;
   width: fit-content;
   margin-top: 3rem;
-  margin-left: 5rem;
+  // margin-left: 5rem;
   font-family: Panton;
   color: #47b8b0;
   z-index: 30;
@@ -313,7 +314,7 @@ export default {
   font-size: 1.6rem;
   height: 3.5rem;
   border-radius: 20px;
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  // box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   @include respond(phone) {
     margin-left: 0;
