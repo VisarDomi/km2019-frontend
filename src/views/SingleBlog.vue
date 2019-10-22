@@ -16,14 +16,11 @@
 
       <div class="row blog-row">
         <div class="col-md-5 col-12 image-col">
-          <div v-if="this.getBlog.containsVideo" style="    height: 100%;
-    text-align: center;">
-            <iframe 
-              style="margin-top: 10rem;
-    width: 80%;
-    height: 500px;"
+          <div v-if="this.getBlog.containsVideo" style="height: 100%; text-align: center;">
+            <iframe
+              style="margin-top: 10rem; width: 80%; height: 500px;"
               class="embed-responsive-item blog-video"
-              :src='this.getBlog.videoLink'
+              :src="this.getBlog.videoLink"
               allowfullscreen
             ></iframe>
           </div>
@@ -200,7 +197,7 @@ export default {
       if (blog.title == this.getBlog.title) {
         return;
       }
-      console.log("should show");
+      // console.log("should show");
       this.$router.push({
         name: "SingleBlog",
         params: { title: blog.title, id: blog.id }
@@ -244,7 +241,7 @@ export default {
       };
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(GET_BLOG, params);
-      console.log("this.blog.order", this.getBlog.ordering);
+      // console.log("this.blog.order", this.getBlog.ordering);
       this.$store.commit(STOP_LOADING);
     },
     async fetchBlogs() {
@@ -269,14 +266,14 @@ export default {
       }
       for (let blog of this.getBlogs) {
         if (blog.ordering == parseInt(this.getBlog.ordering, 10) + 1) {
-          console.log("next", blog.ordering);
+          // console.log("next", blog.ordering);
           this.nextBlog = blog;
-          console.log(blog);
+          // console.log(blog);
         }
         if (blog.ordering == parseInt(this.getBlog.ordering, 10) - 1) {
-          console.log("this:", parseInt(this.getBlog.ordering, 10));
+          // console.log("this:", parseInt(this.getBlog.ordering, 10));
           this.prevBlog = blog;
-          console.log("prev", blog.ordering);
+          // console.log("prev", blog.ordering);
         }
       }
     }
@@ -362,9 +359,9 @@ export default {
   border-radius: 50%;
   // background-color: white;
 }
-.blog-video{
+.blog-video {
   @include respond(phone) {
-    height:80%;
+    height: 80%;
   }
 }
 .carousel-left:hover {

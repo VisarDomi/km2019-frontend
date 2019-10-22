@@ -4,8 +4,7 @@
       <div class="col-lg-3 col-sm-3 col-6 text-center">
         <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
-      <div class="col-lg-1 col-sm-2
-       col-3 vertical-center back-hover" @click="goToHome()">
+      <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToHome()">
         <img
           src="@/assets/img/artistet_arrow_right.svg"
           alt
@@ -112,11 +111,11 @@ export default {
       await this.$store.dispatch(LIST_ARTIST, params);
 
       for (let artist of this.getArtists) {
-        if(artist.isCurrentWeek==true){
+        if (artist.isCurrentWeek == true) {
           this.artists.push(artist);
         }
       }
-      this.artists.sort((a, b) => a.ordering - b.ordering)
+      this.artists.sort((a, b) => a.ordering - b.ordering);
     },
     goToHome() {
       this.$router.push({ name: "Home" });

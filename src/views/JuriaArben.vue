@@ -24,14 +24,13 @@
           <h1 class="artist-surname">Skënderaj</h1>
           <h3 class="bio-text">bio</h3>
           <h4
-            class="bio-description" v-if="this.lang == 'en'"
-          >
-Talented instrumentalist, lecturer, currently head of the French-Albanian production house "On Off Productions". Arben Skender is for the second time a member of the jury for the category New Artist, as he was part of the evaluation of new artists in the 2018 edition as well. </h4>
+            class="bio-description"
+            v-if="this.lang == 'en'"
+          >Talented instrumentalist, lecturer, currently head of the French-Albanian production house "On Off Productions". Arben Skender is for the second time a member of the jury for the category New Artist, as he was part of the evaluation of new artists in the 2018 edition as well.</h4>
           <h4
-            class="bio-description" v-else
-          >
-          Instrumentist i talentuar, pedagog, aktualisht drejtues i shtëpisë së produksionit franko –shqiptare “On Off Productions”. Arben Skënderi është  për herë të dytë anëtar  jurie për kategorinë New Artist, pasi ka qenë pjesë e vlerësimit të artistëve të rinj edhe në “Kënga Magjike 2018”.
-          </h4>
+            class="bio-description"
+            v-else
+          >Instrumentist i talentuar, pedagog, aktualisht drejtues i shtëpisë së produksionit franko –shqiptare “On Off Productions”. Arben Skënderi është për herë të dytë anëtar jurie për kategorinë New Artist, pasi ka qenë pjesë e vlerësimit të artistëve të rinj edhe në “Kënga Magjike 2018”.</h4>
         </div>
       </div>
 

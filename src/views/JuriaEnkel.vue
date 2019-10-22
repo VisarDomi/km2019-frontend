@@ -26,9 +26,7 @@
           <h4
             class="bio-description"
             v-if="this.lang == 'en'"
-          >
-          Successful journalist, writer, television and radio moderator. Enkel Demi with an already solid career, is also the author of various television shows and author of two books: "Hide mbi Kalldrëm" and "Gurët e Vetmisë". For the first time part of the jury of the festival.
-          </h4>
+          >Successful journalist, writer, television and radio moderator. Enkel Demi with an already solid career, is also the author of various television shows and author of two books: "Hide mbi Kalldrëm" and "Gurët e Vetmisë". For the first time part of the jury of the festival.</h4>
           <h4
             class="bio-description"
             v-else

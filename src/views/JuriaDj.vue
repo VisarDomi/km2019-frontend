@@ -26,15 +26,11 @@
           <h4
             class="bio-description"
             v-if="this.lang == 'en'"
-          >
-            They are a DJ duo, not only professionally. Erida and Arbri Kadena, a happily married couple who are living between two lives; the day and night. In addition to their respective professions, they have been performing music in Albania's most popular clubs for years. 2019 was quite successful for the DJ couple. They are two people, but will they agree or have contradictions on their decision because they vote as one. 
-          </h4>
+          >They are a DJ duo, not only professionally. Erida and Arbri Kadena, a happily married couple who are living between two lives; the day and night. In addition to their respective professions, they have been performing music in Albania's most popular clubs for years. 2019 was quite successful for the DJ couple. They are two people, but will they agree or have contradictions on their decision because they vote as one.</h4>
           <h4
             class="bio-description"
             v-else
-          >
-            Ata janë një çift DJ, çift jo vetëm profesionalisht. Erida dhe Arbri Kadena, një çift bashkëshortësh, të cilët jetojnë mes dy jetësh; asaj të ditës dhe asaj të natës. Veç profesioneve përkatëse, ata prej vitesh performojnë muzikë në clubet më në zë në Shqipëri. Viti 2019 ishte mjaft i suksesshëm për çiftin e DJ-ve. Ata janë dy, por a do të kenë të dy të njëjtin mendim apo do të kenë kontradikta, sepse vota e tyre në këtë juri, do të vlejë 1.
-          </h4>
+          >Ata janë një çift DJ, çift jo vetëm profesionalisht. Erida dhe Arbri Kadena, një çift bashkëshortësh, të cilët jetojnë mes dy jetësh; asaj të ditës dhe asaj të natës. Veç profesioneve përkatëse, ata prej vitesh performojnë muzikë në clubet më në zë në Shqipëri. Viti 2019 ishte mjaft i suksesshëm për çiftin e DJ-ve. Ata janë dy, por a do të kenë të dy të njëjtin mendim apo do të kenë kontradikta, sepse vota e tyre në këtë juri, do të vlejë 1.</h4>
         </div>
       </div>
 

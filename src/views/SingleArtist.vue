@@ -84,7 +84,7 @@ import {
   SET_ARTIST
 } from "@/store/mutations.type";
 import { ApiService } from "@/store/services/api";
-import store from "@/store"
+import store from "@/store";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 
 export default {
@@ -103,8 +103,8 @@ export default {
     };
     ApiService.get(params)
       .then(res => {
-        store.commit(SET_ARTIST, res.data.Item)
-        next()
+        store.commit(SET_ARTIST, res.data.Item);
+        next();
       })
       .catch(err => {
         next();

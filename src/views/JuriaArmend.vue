@@ -26,14 +26,11 @@
           <h4
             class="bio-description"
             v-if="this.lang == 'en'"
-          >
-          He is considered one of the legends of Albanian music. Unique artist, songwriter, composer and lyricist of many well-known songs, returns for his second year as a jury member in Kënga Magjike. Armend Rexhepagiqi, with his showman reactions, combined with his profound professional judgment, won not only the sympathy of the public but also of the competitors themselves last year.          
-          </h4>
+          >He is considered one of the legends of Albanian music. Unique artist, songwriter, composer and lyricist of many well-known songs, returns for his second year as a jury member in Kënga Magjike. Armend Rexhepagiqi, with his showman reactions, combined with his profound professional judgment, won not only the sympathy of the public but also of the competitors themselves last year.</h4>
           <h4
             class="bio-description"
             v-else
-          >Është cilësuar si një prej legjendave të muzikës shqiptare. Artist unik, kantautor, kompozitor dhe autor këngësh mjaft të njohura, tashmë për të dytin vit anëtar i jurisë në “Kënga Magjike”. Armend Rexhepagiqi, me reagimet e tij prej showman-i, ndërthurur me gjykimin e tij të thellë profesional, vitin e kaluar, fitoi jo vetëm simpatinë e publikut, por edhe të vetë konkurrentëve.
-          </h4>
+          >Është cilësuar si një prej legjendave të muzikës shqiptare. Artist unik, kantautor, kompozitor dhe autor këngësh mjaft të njohura, tashmë për të dytin vit anëtar i jurisë në “Kënga Magjike”. Armend Rexhepagiqi, me reagimet e tij prej showman-i, ndërthurur me gjykimin e tij të thellë profesional, vitin e kaluar, fitoi jo vetëm simpatinë e publikut, por edhe të vetë konkurrentëve.</h4>
         </div>
       </div>
 

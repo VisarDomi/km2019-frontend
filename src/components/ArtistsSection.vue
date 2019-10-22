@@ -143,7 +143,7 @@ export default {
         this.artists2Row.push(this.artists.pop());
         this.artists2Row.push(this.artists.pop());
       }
-      console.log("artists:", this.artists);
+      // console.log("artists:", this.artists);
       // console.log("ordering->>", this.artists)
     }
   },

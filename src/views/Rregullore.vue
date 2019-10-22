@@ -424,7 +424,7 @@ export default {
       // console.log("hello");
       this.RregulloreExpanded = !this.RregulloreExpanded;
     }
-  },
+  }
 };
 </script>
 

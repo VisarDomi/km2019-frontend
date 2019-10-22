@@ -302,8 +302,8 @@ export default {
         this.disabled = false;
       }
 
-      if(this.getArtist.isCurrentWeek == false){
-        this.disabled=true;
+      if (this.getArtist.isCurrentWeek == false) {
+        this.disabled = true;
       }
     }
   },
@@ -337,7 +337,7 @@ export default {
     //   }
     // }
 
-      await this.fetchArtist(this.$route.params.id);
+    await this.fetchArtist(this.$route.params.id);
 
     let votoPage = document.getElementsByClassName("voto-artist")[0];
 
@@ -358,7 +358,6 @@ export default {
     });
     await this.setDisabled();
     // console.log("this.message", this.message);
-
   },
   computed: {
     ...mapGetters([
