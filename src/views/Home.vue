@@ -39,8 +39,8 @@
     <NewsSection v-if="windowWidth > 950" />
     <NewsMobile v-else />
 
-    <JuriaSection v-if="windowWidth > 600" />
-    <JuriaMobile v-else />
+    <JurysSection v-if="windowWidth > 600" />
+    <JurysMobile v-else />
 
     <SponsorSectionz />
   </div>
@@ -60,8 +60,8 @@ import HeroSection from "@/components/HeroSection.vue";
 import ArtistsSection from "@/components/ArtistsSection.vue";
 import ArtistsMobile from "@/components/ArtistsMobile.vue";
 
-import JuriaSection from "@/components/ArtistsSectionJuria.vue";
-import JuriaMobile from "@/components/ArtistsSectionJuriaMobile.vue";
+import JurysSection from "@/components/JurysSection.vue";
+import JurysMobile from "@/components/JurysMobile.vue";
 
 import AcrossYearsSection from "@/components/AcrossYearsSection.vue";
 import AcrossYearsMobile from "@/components/AcrossYearsMobile.vue";
@@ -85,8 +85,8 @@ export default {
     HeroSection,
     ArtistsSection,
     ArtistsMobile,
-    JuriaSection,
-    JuriaMobile,
+    JurysSection,
+    JurysMobile,
     AcrossYearsSection,
     AcrossYearsMobile,
     SubmissionSection,

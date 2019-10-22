@@ -112,7 +112,7 @@ import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterSingleBlog from "@/components/Footer/FooterSingleBlog.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
 
-import { GET_BLOG, LIST_BLOGS } from "@/store/actions.type";
+import { GET_BLOG, LIST_BLOG } from "@/store/actions.type";
 import { mapGetters } from "vuex";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 import { START_LOADING, STOP_LOADING, SET_BLOG } from "@/store/mutations.type";
@@ -251,7 +251,7 @@ export default {
         TableName,
         Limit
       };
-      await this.$store.dispatch(LIST_BLOGS, params);
+      await this.$store.dispatch(LIST_BLOG, params);
       let coppy = this.getBlogs.slice();
       let shuffledArr = this.shuffle(coppy);
 
@@ -276,6 +276,20 @@ export default {
           // console.log("prev", blog.ordering);
         }
       }
+    },
+    serveFromCloudFront() {
+      // change from S3 to CloudFront
+      let s3Img = this.getBlog.img;
+      let splitList1 = s3Img.split("kengamagjike2019");
+      let finalURL1 = cloudFrontDomain + splitList1[1];
+      let s3BgImg = this.getBlog.bgImg;
+      let splitList2 = s3BgImg.split("kengamagjike2019");
+      let finalURL2 = cloudFrontDomain + splitList2[1];
+      // now mutate artist
+      let artist = { ...this.getBlog };
+      artist.img = finalURL1;
+      artist.bgImg = finalURL2;
+      this.$store.commit(SET_ARTIST, artist);
     }
   },
   computed: {

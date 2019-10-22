@@ -86,6 +86,7 @@ import {
 import { ApiService } from "@/store/services/api";
 import store from "@/store";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
+import { cloudFrontDomain } from "@/common/constants";
 
 export default {
   name: "SingleArtist",
@@ -211,6 +212,20 @@ export default {
     },
     goToHome() {
       this.$router.push({ name: "Home" });
+    },
+    serveFromCloudFront() {
+      // change from S3 to CloudFront
+      let s3Img = this.getArtist.img;
+      let splitList1 = s3Img.split("kengamagjike2019");
+      let finalURL1 = cloudFrontDomain + splitList1[1];
+      let s3BgImg = this.getArtist.bgImg;
+      let splitList2 = s3BgImg.split("kengamagjike2019");
+      let finalURL2 = cloudFrontDomain + splitList2[1];
+      // now mutate artist
+      let artist = { ...this.getArtist };
+      artist.img = finalURL1;
+      artist.bgImg = finalURL2;
+      this.$store.commit(SET_ARTIST, artist);
     }
   },
   computed: {
@@ -224,11 +239,13 @@ export default {
     let artistPage = document.getElementsByClassName("artist-page")[0];
     artistPage.style.background =
       "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
-      this.getArtist["bgImg"] +
+      this.getArtist.bgImg +
       "), no-repeat ";
 
     artistPage.style.backgroundSize = "cover";
     artistPage.style.backgroundAttachment = "fixed";
+
+    this.serveFromCloudFront();
 
     this.$nextTick(() => {
       window.addEventListener("resize", () => {

@@ -74,7 +74,7 @@ import { getLanguage, saveLanguage } from "@/store/services/storage";
 import { eventBus } from "@/main";
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 
-import { LIST_BLOGS } from "@/store/actions.type";
+import { LIST_BLOG } from "@/store/actions.type";
 import { mapGetters } from "vuex";
 export default {
   name: "NewsSection",
@@ -106,7 +106,7 @@ export default {
         TableName,
         Limit
       };
-      await this.$store.dispatch(LIST_BLOGS, params);
+      await this.$store.dispatch(LIST_BLOG, params);
 
       for (let blog of this.getBlogs) {
         if (blog.isMainHome == true) {

@@ -113,33 +113,6 @@ export default {
   components: { HeaderHero },
   data() {
     return {
-      artists: [
-        {
-          name: "ARBEN SKËNDERI",
-          songtilte: "",
-          img: "@/assets/img/juria/Arben.jpg"
-        },
-        {
-          name: "ARMEND REXHEPAGIQ",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "JONIDA MALIQI",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "DJ MISS ROSE & DJ STONE",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "ENKEL DEMI",
-          songtilte: "Loose yourself to dance",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        }
-      ],
       windowWidth: window.innerWidth,
       lang: ""
     };

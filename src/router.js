@@ -5,7 +5,6 @@ import Home from "./views/Home.vue";
 import Artists from "./views/Artists.vue";
 import SingleArtist from "./views/SingleArtist.vue";
 
-import Juria from "./views/Juria.vue";
 import JuriaArben from "./views/JuriaArben.vue";
 import JuriaArmend from "./views/JuriaArmend.vue";
 import JuriaJonida from "./views/JuriaJonida.vue";
@@ -20,7 +19,6 @@ import Voto from "./views/Voto.vue";
 import VotoArtist from "./views/VotoArtist.vue";
 
 import NotFound from "./views/NotFound.vue";
-import About from "./views/About.vue";
 
 Vue.use(Router);
 
@@ -43,17 +41,10 @@ export default new Router({
       meta: { transition: "overlay-left" }
     },
     { path: "*", component: NotFound },
-    { path: "/about", component: About },
     {
       path: "/artists",
       name: "Artists",
       component: Artists,
-      meta: { transition: "overlay-right" }
-    },
-    {
-      path: "/juria",
-      name: "Juria",
-      component: Juria,
       meta: { transition: "overlay-right" }
     },
     {
