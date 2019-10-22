@@ -24,12 +24,9 @@ import About from "./views/About.vue";
 
 Vue.use(Router);
 
-
-
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
-  // base: "/:lang",
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition;
@@ -146,145 +143,6 @@ export default new Router({
         ]
       }
     },
-
-    // {
-    //   path: "/blog1",
-    //   name: "Blog1",
-    //   component: Blog1,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog2",
-    //   name: "Blog2",
-    //   component: Blog2,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog3",
-    //   name: "Blog3",
-    //   component: Blog3,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog4",
-    //   name: "Blog4",
-    //   component: Blog4,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog5",
-    //   name: "Blog5",
-    //   component: Blog5,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog6",
-    //   name: "Blog6",
-    //   component: Blog6,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog7",
-    //   name: "Blog7",
-    //   component: Blog7,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog8",
-    //   name: "Blog8",
-    //   component: Blog8,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog9",
-    //   name: "Blog9",
-    //   component: Blog9,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog10",
-    //   name: "Blog10",
-    //   component: Blog10,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog11",
-    //   name: "Blog11",
-    //   component: Blog11,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog12",
-    //   name: "Blog12",
-    //   component: Blog12,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog13",
-    //   name: "Blog13",
-    //   component: Blog13,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog14",
-    //   name: "Blog14",
-    //   component: Blog14,
-    //   meta: { transition: "overlay-left" }
-    // },    
-    // {
-    //   path: "/blog15",
-    //   name: "Blog15",
-    //   component: Blog15,
-    //   meta: { transition: "overlay-left" }
-    // },    
-    // {
-    //   path: "/blog16",
-    //   name: "Blog16",
-    //   component: Blog16,
-    //   meta: { transition: "overlay-left" }
-    // },    
-    // {
-    //   path: "/blog17",
-    //   name: "Blog17",
-    //   component: Blog17,
-    //   meta: { transition: "overlay-left" }
-    // },    
-    // {
-    //   path: "/blog18",
-    //   name: "Blog18",
-    //   component: Blog18,
-    //   meta: { transition: "overlay-left" }
-    // },    
-    // {
-    //   path: "/blog19",
-    //   name: "Blog19",
-    //   component: Blog19,
-    //   meta: { transition: "overlay-left" }
-    // },    
-    // {
-    //   path: "/blog20",
-    //   name: "Blog20",
-    //   component: Blog20,
-    //   meta: { transition: "overlay-left" }
-    // },    
-    // {
-    //   path: "/blog0",
-    //   name: "Blog0",
-    //   component: Blog0,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog01",
-    //   name: "Blog01",
-    //   component: Blog01,
-    //   meta: { transition: "overlay-left" }
-    // },
-    // {
-    //   path: "/blog02",
-    //   name: "Blog02",
-    //   component: Blog02,
-    //   meta: { transition: "overlay-left" }
-    // },
 
     {
       path: "/rregullore",
