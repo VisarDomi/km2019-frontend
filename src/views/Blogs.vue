@@ -168,8 +168,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
 .grey-scale {
-  // -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  // filter: grayscale(100%);
+  filter: saturate(20%) brightness(70%);
 }
 
 .img-blog {

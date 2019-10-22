@@ -109,15 +109,20 @@
           </div>
 
           <div class="col-3" data-aos="zoom-in-down">
+            <a href="https://www.delta.com/" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/19_delta_logo.jpg" alt />
+            </a>
+          </div>
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="100">
             <a
               href="https://www.plazatirana.com/sq/?Hotelnames=ALTIRHTLHotelThePlaz&d=30d-xppc&partner=FB-PACK-PPC-15&campaignId=632185893%7C32037204978%7Ckwd-kwd-186420274625&device=c&network=google&gclid=Cj0KCQjwoKzsBRC5ARIsAITcwXFuwJLvQ6PhndKpq-TRO10QySs-3ReLnOHMyumTTiCwVAWvIz0LdYMaAg5NEALw_wcB"
               target="_blank"
             >
-              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/17_plaza_logo.jpg" alt />
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/17_plaza_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="100">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="200">
             <a href="https://www.geraldinasposa.com" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -127,19 +132,24 @@
             </a>
           </div>
 
-          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="200">
+          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="300">
             <a href="https://www.era.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/5_Era_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-3" data-aos="zoom-in-down" data-aos-delay="300">
+          <div class="col-3" data-aos="zoom-in-down">
             <a href="http://www.citytaxi.al/" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/18_taxi_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-3" data-aos="zoom-in-down" data-aos-anchor-placement="top-bottom">
+          <div
+            class="col-3"
+            data-aos="zoom-in-down"
+            data-aos-delay="100"
+            data-aos-anchor-placement="top-bottom"
+          >
             <a href="http://www.tess.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
             </a>
@@ -258,15 +268,20 @@
           </div>
 
           <div class="col-4" data-aos="zoom-in-down">
+            <a href="https://www.delta.com/" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/19_delta_logo.jpg" alt />
+            </a>
+          </div>
+          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="100">
             <a
               href="https://www.plazatirana.com/sq/?Hotelnames=ALTIRHTLHotelThePlaz&d=30d-xppc&partner=FB-PACK-PPC-15&campaignId=632185893%7C32037204978%7Ckwd-kwd-186420274625&device=c&network=google&gclid=Cj0KCQjwoKzsBRC5ARIsAITcwXFuwJLvQ6PhndKpq-TRO10QySs-3ReLnOHMyumTTiCwVAWvIz0LdYMaAg5NEALw_wcB"
               target="_blank"
             >
-              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/17_plaza_logo.jpg" alt />
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/17_plaza_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="100">
+          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="200">
             <a href="https://www.geraldinasposa.com" target="_blank">
               <img
                 class="img-fluid img-sponsor"
@@ -276,19 +291,19 @@
             </a>
           </div>
 
-          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="200">
+          <div class="col-4" data-aos="zoom-in-down">
             <a href="https://www.era.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/5_Era_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-4" data-aos="zoom-in-down">
+          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="100">
             <a href="http://www.citytaxi.al/" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/18_taxi_logo.png" alt />
             </a>
           </div>
 
-          <div class="col-4" data-aos="zoom-in-down">
+          <div class="col-4" data-aos="zoom-in-down" data-aos-delay="200">
             <a href="http://www.tess.al" target="_blank">
               <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/6_tess_logo.png" alt />
             </a>
@@ -298,6 +313,7 @@
 
       <FooterBlack v-if="windowWidth > 770" />
     </div>
+
     <div v-else>
       <div class="container">
         <div
@@ -405,11 +421,16 @@
           </div>
 
           <div class="col-4">
+            <a href="https://www.delta.com/" target="_blank">
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/19_delta_logo.jpg" alt />
+            </a>
+          </div>
+          <div class="col-4">
             <a
               href="https://www.plazatirana.com/sq/?Hotelnames=ALTIRHTLHotelThePlaz&d=30d-xppc&partner=FB-PACK-PPC-15&campaignId=632185893%7C32037204978%7Ckwd-kwd-186420274625&device=c&network=google&gclid=Cj0KCQjwoKzsBRC5ARIsAITcwXFuwJLvQ6PhndKpq-TRO10QySs-3ReLnOHMyumTTiCwVAWvIz0LdYMaAg5NEALw_wcB"
               target="_blank"
             >
-              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/17_plaza_logo.jpg" alt />
+              <img class="img-fluid img-sponsor" src="@/assets/img/sponsors/17_plaza_logo.png" alt />
             </a>
           </div>
 

@@ -132,11 +132,9 @@ export default {
         saveLanguage("al");
         this.lang = "al";
         this.$router.go(0);
-        saveLanguage("al");
       } else {
         saveLanguage("en");
         this.lang = "en";
-        saveLanguage("en");
         this.$router.go(0);
       }
       eventBus.$emit("changeLanguage", this.lang);
@@ -228,6 +226,10 @@ export default {
 .logo {
   float: left;
 }
+
+.background--white {
+  background-color: white;
+}
 .menu__items {
   text-align: center;
   font-family: Ubuntu;
@@ -245,6 +247,9 @@ export default {
   }
   &--black {
     color: black;
+  }
+  &--green {
+    color: #47b8b0;
   }
 }
 
