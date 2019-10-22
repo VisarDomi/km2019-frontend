@@ -16,7 +16,19 @@
 
       <div class="row blog-row">
         <div class="col-md-5 col-12 image-col">
-          <img class="blog-image" :src="this.getBlog.img" alt />
+          <div v-if="this.getBlog.containsVideo" style="    height: 100%;
+    text-align: center;">
+            <iframe 
+              style="margin-top: 10rem;
+    width: 80%;
+    height: 500px;"
+              class="embed-responsive-item blog-video"
+              :src='this.getBlog.videoLink'
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <img v-else class="blog-image" :src="this.getBlog.img" alt />
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
@@ -306,7 +318,11 @@ export default {
   border-radius: 50%;
   // background-color: white;
 }
-
+.blog-video{
+  @include respond(phone) {
+    height:80%;
+  }
+}
 .carousel-left:hover {
   cursor: pointer;
   border-radius: 50%;
