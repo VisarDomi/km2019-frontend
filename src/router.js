@@ -5,11 +5,7 @@ import Home from "./views/Home.vue";
 import Artists from "./views/Artists.vue";
 import SingleArtist from "./views/SingleArtist.vue";
 
-import JuriaArben from "./views/JuriaArben.vue";
-import JuriaArmend from "./views/JuriaArmend.vue";
-import JuriaJonida from "./views/JuriaJonida.vue";
-import JuriaDj from "./views/JuriaDj.vue";
-import JuriaEnkel from "./views/JuriaEnkel.vue";
+import SingleJury from "./views/SingleJury.vue";
 
 import Blogs from "./views/Blogs.vue";
 import SingleBlog from "./views/SingleBlog.vue";
@@ -63,6 +59,21 @@ export default new Router({
       }
     },
     {
+      path: "/jury/:slug/:id",
+      name: "SingleJury",
+      component: SingleJury,
+      meta: {
+        title: `Jury`,
+        transition: "overlay-right",
+        metaTags: [
+          {
+            name: "description",
+            content: `The Jury page of Kenga Magjike.`
+          }
+        ]
+      }
+    },
+    {
       path: "/voto",
       name: "Voto",
       component: Voto,
@@ -82,36 +93,6 @@ export default new Router({
           }
         ]
       }
-    },
-    {
-      path: "/arbenskenderaj",
-      name: "JuriaArben",
-      component: JuriaArben,
-      meta: { transition: "overlay-right" }
-    },
-    {
-      path: "/armendrexhepagiqi",
-      name: "JuriaArmend",
-      component: JuriaArmend,
-      meta: { transition: "overlay-right" }
-    },
-    {
-      path: "/jonidamaliqi",
-      name: "JuriaJonida",
-      component: JuriaJonida,
-      meta: { transition: "overlay-right" }
-    },
-    {
-      path: "/dj",
-      name: "JuriaDj",
-      component: JuriaDj,
-      meta: { transition: "overlay-right" }
-    },
-    {
-      path: "/enkeldemi",
-      name: "JuriaEnkel",
-      component: JuriaEnkel,
-      meta: { transition: "overlay-right" }
     },
     {
       path: "/blogs",

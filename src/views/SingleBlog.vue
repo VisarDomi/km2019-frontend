@@ -197,7 +197,6 @@ export default {
       if (blog.title == this.getBlog.title) {
         return;
       }
-      // console.log("should show");
       this.$router.push({
         name: "SingleBlog",
         params: { title: blog.title, id: blog.id }
@@ -241,7 +240,6 @@ export default {
       };
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(GET_BLOG, params);
-      // console.log("this.blog.order", this.getBlog.ordering);
       this.$store.commit(STOP_LOADING);
     },
     async fetchBlogs() {
@@ -266,14 +264,10 @@ export default {
       }
       for (let blog of this.getBlogs) {
         if (blog.ordering == parseInt(this.getBlog.ordering, 10) + 1) {
-          // console.log("next", blog.ordering);
           this.nextBlog = blog;
-          // console.log(blog);
         }
         if (blog.ordering == parseInt(this.getBlog.ordering, 10) - 1) {
-          // console.log("this:", parseInt(this.getBlog.ordering, 10));
           this.prevBlog = blog;
-          // console.log("prev", blog.ordering);
         }
       }
     },
@@ -295,10 +289,10 @@ export default {
   computed: {
     ...mapGetters(["getBlog", "getBlogs"])
   },
-  async mounted() {
+  mounted() {
     this.lang = getLanguage();
-    await this.fetchBlog(this.$route.params.id);
-    await this.fetchBlogs();
+    this.fetchBlog(this.$route.params.id);
+    this.fetchBlogs();
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;

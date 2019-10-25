@@ -1,6 +1,6 @@
 <template>
   <vue-page-transition>
-    <router-view />
+    <router-view/>
   </vue-page-transition>
 </template>
 
@@ -9,12 +9,7 @@ import { AmplifyEventBus } from "aws-amplify-vue";
 import { Auth } from "aws-amplify";
 
 export default {
-  name: "App",
-  data() {
-    return {
-      signedIn: false
-    };
-  }
+  name: "App"
 };
 </script>
 

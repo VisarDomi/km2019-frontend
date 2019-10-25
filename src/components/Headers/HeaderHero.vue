@@ -113,7 +113,6 @@ export default {
   },
   methods: {
     moveTo(index) {
-      // console.log("clicked");
       eventBus.$emit("changeSection", index);
     },
     goToRregullore() {
@@ -143,7 +142,6 @@ export default {
       var Items = document.getElementsByClassName("cmi");
       if (this.shouldHide) {
         for (var i = 0; i < Items.length; i++) {
-          // // console.log(i, Items[i]);
           Items[i].style.opacity = 0;
           Items[i].style.transition = "all 1s";
           // Items[i].sytle.display = "none";

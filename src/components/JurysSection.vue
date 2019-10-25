@@ -9,79 +9,16 @@
       </div>
     </div>
     <div class="row respond-height">
-      <div class="col-lg-2 col-sm-2 col-7 ml-6">
+      <div class="col-lg-2 col-sm-2 col-7 ml-6" v-for="jury of jurys" :key="jury.id">
         <div
           class="artist-card abs-bottom"
           data-aos="flip-left"
           data-aos-duration="1000"
-          @click="goToJuria('JuriaArmend')"
+          @click="goToJury(jury)"
         >
           <div class="img-container"></div>
-          <img src="@/assets/juria/j1_hover.png" alt />
-          <p class="artist-card__name go-up--small">ARMEND REXHEPAGIQI</p>
-          <!-- <br />
-          <p class="artist-card__song">{{artist.songtilte}}</p>-->
-        </div>
-      </div>
-      <div class="col-lg-2 col-sm-2 col-7 ml-6">
-        <div
-          class="artist-card abs-bottom"
-          data-aos="flip-left"
-          data-aos-duration="1000"
-          @click="goToJuria('JuriaJonida')"
-        >
-          <div class="img-container">
-            <img src="@/assets/juria/j2_hover.png" alt />
-          </div>
-          <p class="artist-card__name go-up--small">JONIDA MALIQI</p>
-          <!-- <br />
-          <p class="artist-card__song">{{artist.songtilte}}</p>-->
-        </div>
-      </div>
-      <div class="col-lg-2 col-sm-2 col-7 ml-6">
-        <div
-          class="artist-card abs-bottom"
-          data-aos="flip-left"
-          data-aos-duration="1000"
-          @click="goToJuria('JuriaArben')"
-        >
-          <div class="img-container">
-            <img src="@/assets/juria/j3_hover.png" alt />
-          </div>
-          <p class="artist-card__name go-up--small">ARBEN SKËNDERAJ</p>
-          <!-- <br />
-          <p class="artist-card__song">{{artist.songtilte}}</p>-->
-        </div>
-      </div>
-
-      <div class="col-lg-2 col-sm-2 col-7 ml-6">
-        <div
-          class="artist-card abs-bottom"
-          data-aos="flip-left"
-          data-aos-duration="1000"
-          @click="goToJuria('JuriaEnkel')"
-        >
-          <div class="img-container">
-            <img src="@/assets/juria/j4_hover.png" alt />
-          </div>
-          <p class="artist-card__name go-up--small">ENKEL DEMI</p>
-          <!-- <br />
-          <p class="artist-card__song">{{artist.songtilte}}</p>-->
-        </div>
-      </div>
-      <div class="col-lg-2 col-sm-2 col-7 ml-6">
-        <div
-          class="artist-card abs-bottom"
-          data-aos="flip-left"
-          data-aos-duration="1000"
-          @click="goToJuria('JuriaDj')"
-        >
-          <div class="img-container">
-            <img src="@/assets/juria/j5_hover.png" alt />
-          </div>
-          <p class="artist-card__name go-up--small">DJ MISS ROSE & DJ STONE</p>
-          <!-- <br />
-          <p class="artist-card__song">{{artist.songtilte}}</p>-->
+          <img :src="jury.hoverImg" alt />
+          <p class="artist-card__name go-up--small">{{(jury.firstName + " " + jury.lastName).toUpperCase()}}</p>
         </div>
       </div>
     </div>
@@ -103,21 +40,49 @@
 <script>
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
+import { mapGetters } from "vuex";
+import { LIST_JURY } from "@/store/actions.type";
+import { serveJuryFromCloudFront } from "@/common/cloudFront";
+
 export default {
-  name: "ArtistsSection",
-  methods: {
-    goToJuria(routename) {
-      this.$router.push({ name: routename });
-    }
-  },
+  name: "JurysSection",
   components: { HeaderHero },
   data() {
     return {
       windowWidth: window.innerWidth,
-      lang: ""
+      lang: "",
+      jurys: []
     };
   },
+  computed: {
+    ...mapGetters(["getJurys"])
+  },
+  methods: {
+    goToJury(jury) {
+      this.$router.push({
+        name: "SingleJury",
+        params: { slug: jury.firstName + jury.lastName, id: jury.id }
+      });
+    },
+    async fetchJurys() {
+      const TableName = "KM2019-Jury";
+      const Limit = "100";
+      const params = {
+        TableName,
+        Limit
+      };
+      await this.$store.dispatch(LIST_JURY, params);
+      for (let jury of this.getJurys) {
+        let jury2 = serveJuryFromCloudFront(jury)
+        this.jurys.push(jury2);
+      }
+      this.jurys.sort((a, b) => a.ordering - b.ordering);
+    }
+  },
+
   mounted() {
+    // get Jurys
+    this.fetchJurys();
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;

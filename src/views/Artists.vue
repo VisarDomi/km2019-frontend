@@ -52,6 +52,7 @@ import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
 import { LIST_ARTIST } from "@/store/actions.type";
 import { SET_ARTIST } from "@/store/mutations.type";
 import { mapGetters } from "vuex";
+import { serveArtistFromCloudFront } from "@/common/cloudFront";
 
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 export default {
@@ -87,15 +88,13 @@ export default {
       };
       await this.$store.dispatch(LIST_ARTIST, params);
       for (let artist of this.getArtists) {
-        // console.log("artist currentw eek: ", artist.isCurrentWeek);
-        // if(artist.isCurrentWeek==true){
-        this.artists.push(artist);
-        // }
+        let artist2 = serveArtistFromCloudFront(artist)
+        this.artists.push(artist2);
       }
       this.artists.sort((a, b) => a.ordering - b.ordering);
     }
   },
-  async mounted() {
+  mounted() {
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;

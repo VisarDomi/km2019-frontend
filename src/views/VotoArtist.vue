@@ -100,7 +100,30 @@ export default {
     goToVoto() {
       this.$router.push({ name: "Voto" });
     },
+    async setDisabled(ip) {
+      this.disabled = true;
+      const params = {
+        ip
+      };
+      await this.$store.dispatch(GET_HAS_VOTED, params);
+      if (this.getHasVoted) {
+        if (this.lang == "en") {
+          this.message = "You have already voted for today!";
+        } else {
+          this.message = "Ju keni votuar për sot!";
+        }
+        this.disabled = true;
+      } else if (this.getHasVoted === false) {
+        this.disabled = false;
+      }
+
+      if (this.getArtist.isCurrentWeek == false) {
+        this.disabled = true;
+      }
+    },
     async getIp() {
+      this.disabled = true;
+
       const endpoint = "https://api.ipgeolocation.io/ipgeo";
       const ipParams = {
         apiKey: "9e6368cad8654c6e867dcbc3b8a2fec9",
@@ -114,13 +137,19 @@ export default {
       await axios
         .get(endpoint, { params: ipParams })
         .then(response => {
-          // console.log("response", response);
           ip = response.data.ip;
+          // first check if this ip can vote
+          this.setDisabled(ip);
         })
         .catch(err => {
-          return console.log("err", Object.assign({}, err));
+          // adblock blocks ip
+          if (this.lang == "en") {
+            this.message = "Adblock is blocking the voting (with IP)";
+          } else {
+            this.message = "Adblock-u pengon votimin (me IP)";
+          }
         });
-      // console.log("ip", ip);
+      // if it can vote, then send the vote to the backend (where it will be checked again)
       return ip;
     },
     async voteFirstWeek() {
@@ -182,56 +211,35 @@ export default {
       };
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(GET_ARTIST, params);
+      this.setArtistBackground(this.getArtist);
+
       this.$store.commit(STOP_LOADING);
     },
-    async setDisabled() {
-      this.disabled = true;
-      let ip = await this.getIp();
-      const params = {
-        ip
-      };
-      await this.$store.dispatch(GET_HAS_VOTED, params);
-      // console.log("this.getHasVoted", this.getHasVoted);
-      if (this.getHasVoted) {
-        if (this.lang == "en") {
-          this.message = "You have already voted for today!";
-        } else {
-          this.message = "Ju keni votuar për sot!";
-        }
-        this.disabled = true;
-      } else if (this.getHasVoted === false) {
-        this.disabled = false;
-      }
 
-      if (this.getArtist.isCurrentWeek == false) {
-        this.disabled = true;
-      }
+    setArtistBackground(artist) {
+      let votoPage = document.getElementsByClassName("voto-artist")[0];
+
+      votoPage.style.background =
+        "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
+        this.getArtist.bgImg +
+        "), no-repeat ";
+
+      votoPage.style.backgroundPosition = "center top";
+      votoPage.style.backgroundSize = "cover";
+      votoPage.style.backgroundAttachment = "fixed";
     }
   },
-  async mounted() {
+  mounted() {
     this.lang = getLanguage();
 
-    await this.fetchArtist(this.$route.params.id);
-
-    let votoPage = document.getElementsByClassName("voto-artist")[0];
-
-    // console.log(votoPage);
-    votoPage.style.background =
-      "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
-      this.getArtist.bgImg +
-      "), no-repeat ";
-
-    votoPage.style.backgroundPosition = "center top";
-    votoPage.style.backgroundSize = "cover";
-    votoPage.style.backgroundAttachment = "fixed";
+    this.fetchArtist(this.$route.params.id);
 
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
     });
-    await this.setDisabled();
-    // console.log("this.message", this.message);
+    this.getIp();
   },
   computed: {
     ...mapGetters([

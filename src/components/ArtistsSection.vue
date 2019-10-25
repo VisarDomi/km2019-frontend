@@ -86,10 +86,13 @@
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 import axios from "axios";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
+import { serveArtistFromCloudFront } from "@/common/cloudFront";
 
 import { LIST_ARTIST } from "@/store/actions.type";
 import { SET_ARTIST } from "@/store/mutations.type";
 import { mapGetters } from "vuex";
+
+
 export default {
   name: "ArtistsSection",
   methods: {
@@ -131,7 +134,8 @@ export default {
       await this.$store.dispatch(LIST_ARTIST, params);
       for (let artist of this.getArtists) {
         if (artist.isCurrentWeek == true) {
-          this.artists.push(artist);
+          let artist2 = serveArtistFromCloudFront(artist)
+          this.artists.push(artist2);
         }
       }
       this.artists.sort((a, b) => a.ordering - b.ordering);
@@ -143,8 +147,6 @@ export default {
         this.artists2Row.push(this.artists.pop());
         this.artists2Row.push(this.artists.pop());
       }
-      // console.log("artists:", this.artists);
-      // console.log("ordering->>", this.artists)
     }
   },
   components: {
@@ -158,14 +160,14 @@ export default {
       windowWidth: window.innerWidth
     };
   },
-  async mounted() {
+  mounted() {
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
     });
     this.lang = getLanguage();
-    await this.fetchArtists();
+    this.fetchArtists();
   },
   computed: {
     ...mapGetters(["getArtists"])

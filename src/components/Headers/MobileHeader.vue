@@ -59,11 +59,9 @@ export default {
       this.$router.push({ name: name });
     },
     goToRregullore() {
-      // console.log("h");
       this.$router.push({ name: "Rregullore" });
     },
     goToVoto() {
-      // console.log("h");
       this.$router.push({ name: "Voto" });
     },
     openNavR() {
@@ -74,7 +72,6 @@ export default {
       document.getElementById("mySidenavR").style.width = "0";
     },
     changeLang() {
-      // console.log("changing lang")
       if (this.lang == "en") {
         saveLanguage("al");
         this.lang = "al";
@@ -85,7 +82,6 @@ export default {
         this.$router.go(0)
       }
       eventBus.$emit("changeLanguage", this.lang);
-      // console.log("lang is now: ", this.lang)
     }
   },
   mounted() {

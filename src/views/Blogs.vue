@@ -144,14 +144,14 @@ export default {
       this.blogs.sort((a, b) => b.ordering - a.ordering);
     }
   },
-  async mounted() {
+  mounted() {
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
     });
     this.lang = getLanguage();
-    await this.fetchBlogs();
+    this.fetchBlogs();
   },
   computed: {
     ...mapGetters(["getBlogs"])
@@ -263,7 +263,7 @@ export default {
 @import "@/assets/sass/abstracts/_mixins.scss";
 
 .imageback {
-  background: url("../../src/assets/img/blog1.jpg") no-repeat center;
+  // background: url("../../src/assets/img/blog1.jpg") no-repeat center;
   height: 100%;
   background-size: cover;
   filter: grayscale(100%);

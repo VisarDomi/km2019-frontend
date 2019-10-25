@@ -6,158 +6,126 @@
     </div>
 
     <div class="row ml-0" style="width:100%;">
-      <div class="row ml-0" style="margin-bottom:50px; margin:10px; margin-top:20px;width:100%;">
-        <div class="col-6">
+      <div class="row ml-0" style="margin-bottom:50px; margin:10px; margin-top:20px; width:100%;">
+        <div class="col-6" v-for="jury of jurys1" :key="jury.id">
           <div
-            class="artist-card"
-            @click="goToRoute('JuriaArmend')"
+            class="jury-card"
+            @click="goToJury(jury)"
             data-aos="flip-left"
             data-aos-duration="1000"
           >
             <div class="img-container">
-              <img src="@/assets/juria/j1_normal.png" alt />
+              <img :src="jury.img" alt />
             </div>
-            <p class="artist-card__name inside-card">ARMEND REXHEPAGIQI</p>
-          </div>
-        </div>
-        <div class="col-6">
-          <div
-            class="artist-card"
-            @click="goToRoute('JuriaJonida')"
-            data-aos="flip-left"
-            data-aos-duration="1000"
-          >
-            <div class="img-container">
-              <img src="@/assets/juria/j2_normal.png" alt />
-            </div>
-            <p class="artist-card__name inside-card">JONIDA MALIQI</p>
+            <p
+              class="jury-card__name inside-card"
+            >{{ (jury.firstName + " " + jury.lastName).toUpperCase() }}</p>
           </div>
         </div>
       </div>
 
-      <div class="row ml-0" style="margin-bottom:50px; margin:10px;width:100%;">
-        <div class="col-6">
+      <div class="row ml-0" style="margin-bottom:50px; margin:10px; width:100%;">
+        <div class="col-6" v-for="jury of jurys2" :key="jury.id">
           <div
-            class="artist-card"
-            @click="goToRoute('JuriaArben')"
+            class="jury-card"
+            @click="goToJury(jury)"
             data-aos="flip-left"
             data-aos-duration="1000"
           >
             <div class="img-container">
-              <img src="@/assets/juria/j3_normal.png" alt />
+              <img :src="jury.img" alt />
             </div>
-            <p class="artist-card__name inside-card">ARBEN SKËNDERAJ</p>
-          </div>
-        </div>
-        <div class="col-6" style="margin-top:10px;">
-          <div
-            class="artist-card"
-            @click="goToRoute('JuriaEnkel')"
-            data-aos="flip-left"
-            data-aos-duration="1000"
-          >
-            <div class="img-container">
-              <img src="@/assets/juria/j4_normal.png" alt />
-            </div>
-            <p class="artist-card__name inside-card">ENKEL DEMI</p>
+            <p
+              class="jury-card__name inside-card"
+            >{{ (jury.firstName + " " + jury.lastName).toUpperCase() }}</p>
           </div>
         </div>
       </div>
 
-      <div class="row mb-5 ml-0" style=" margin:10px;width:100%;">
-        <div class="col-6">
+      <div class="row mb-5 ml-0" style=" margin:10px; width:100%;">
+        <div class="col-6" v-for="jury of jurys3" :key="jury.id">
           <div
-            class="artist-card"
-            @click="goToRoute('JuriaDj')"
+            class="jury-card"
+            @click="goToJury(jury)"
             data-aos="flip-left"
             data-aos-duration="1000"
           >
             <div class="img-container">
-              <img src="@/assets/juria/j5_normal.png" alt />
+              <img :src="jury.img" alt />
             </div>
-            <p class="artist-card__name inside-card">DJ MISS ROSE & DJ STONE</p>
+            <p
+              class="jury-card__name inside-card"
+            >{{ (jury.firstName + " " + jury.lastName).toUpperCase() }}</p>
           </div>
         </div>
       </div>
-      <div class="row" style="margin-bottom: 30px;"></div>
+      <div class="row" style="margin-bottom:30px; width:100%;"></div>
     </div>
   </div>
 </template>
 
 <script>
 import { getLanguage, saveLanguage } from "@/store/services/storage";
-
+import { LIST_JURY } from "@/store/actions.type";
 import { eventBus } from "@/main";
 import { API_URL } from "@/store/services/api";
+import { mapGetters } from "vuex";
+import { serveJuryFromCloudFront } from "@/common/cloudFront";
+
 export default {
-  name: "NewsMobile",
+  name: "JurysMobile",
   data() {
     return {
-      artists: [
-        {
-          name: "name",
-          songtitle: "songtitle songtitle songtitle",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "name",
-          songtitle: "songtitle songtitle songtitle",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        }
-      ],
-      artists1: [],
-      artists2: [],
-      artists3: [],
-      artists4: [],
+      jurys: [],
+      jurys1: [],
+      jurys2: [],
+      jurys3: [],
       lang: ""
     };
   },
+  computed: {
+    ...mapGetters(["getJurys"])
+  },
   methods: {
-    goToRoute(name) {
-      this.$router.push({ name: name });
-    },
-    hasCol4() {
-      return this.artists4.length > 0;
+    goToJury(jury) {
+      this.$router.push({
+        name: "SingleJury",
+        params: { slug: jury.firstName + jury.lastName, id: jury.id }
+      });
     },
     nextSlide() {
-      this.$refs.carouselArtistsMobile.goToPage(
-        this.$refs.carouselArtistsMobile.getNextPage()
+      this.$refs.carouselJurysMobile.goToPage(
+        this.$refs.carouselJurysMobile.getNextPage()
       );
     },
     prevSlide() {
-      this.$refs.carouselArtistsMobile.goToPage(
-        this.$refs.carouselArtistsMobile.getPreviousPage()
+      this.$refs.carouselJurysMobile.goToPage(
+        this.$refs.carouselJurysMobile.getPreviousPage()
       );
     },
-    async getArtists() {
-      const axios = require("axios");
-      axios.defaults.headers.common = {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json"
+    async fetchJurys() {
+      const TableName = "KM2019-Jury";
+      const Limit = "100";
+      const params = {
+        TableName,
+        Limit
       };
-      let artists = axios
-        .get(API_URL, {
-          params: {
-            TableName: "KM2019-Artist",
-            Limit: "100"
-          }
-        })
-        .then(res => {
-          let resItems = res.data["Items"];
-          this.artists1 = [...resItems.splice(0, 2)];
-          this.artists2 = [...resItems.splice(0, 2)];
-          this.artists3 = [...resItems.splice(0, 2)];
-          if (resItems.length > 0) {
-            this.artists4 = [...resItems.splice(0, 2)];
-          }
-        });
+      await this.$store.dispatch(LIST_JURY, params);
+      for (let jury of this.getJurys) {
+        let jury2 = serveJuryFromCloudFront(jury)
+        this.jurys.push(jury2);
+      }
+      //reverse sorting for mobile
+      this.jurys.sort((b, a) => a.ordering - b.ordering);
+      this.jurys1.push(this.jurys.pop())
+      this.jurys1.push(this.jurys.pop())
+      this.jurys2.push(this.jurys.pop())
+      this.jurys2.push(this.jurys.pop())
+      this.jurys3.push(this.jurys.pop())
     }
   },
   mounted() {
-    this.getArtists();
-    setTimeout(() => {
-      this.$forceUpdate();
-    }, 500);
+    this.fetchJurys();
     eventBus.$on("changeLanguage", payload => {
       this.lang = payload;
     });
@@ -287,7 +255,7 @@ export default {
 .mt-6 {
   margin-top: 5rem;
 }
-.artist-card {
+.jury-card {
   position: relative;
   width: 100%;
   z-index: 4;
@@ -334,27 +302,5 @@ export default {
 }
 .h-15 {
   height: 15%;
-}
-
-.blog {
-  &__image {
-    &--1 {
-      background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog 1.svg");
-
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    &--2 {
-      background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
-        url("../assets/img/blog 2.svg");
-
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-
-    width: 100%;
-    height: 100%;
-  }
 }
 </style>
