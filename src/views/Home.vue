@@ -22,7 +22,7 @@
       logoWhite="true"
     />
     <HeaderHero
-      v-if="windowWidth > 750 && this.section == 'SponsorSection'"
+      v-if="windowWidth > 750 && this.section == 'SponsorSectionz'"
       menutype="menu__items--white"
       logoWhite="true"
     />
@@ -69,7 +69,7 @@ import AcrossYearsMobile from "@/components/AcrossYearsMobile.vue";
 import BlogsSection from "@/components/BlogsSection.vue";
 import BlogsMobile from "@/components/BlogsMobile.vue";
 
-import SponsorSectionz from "@/components/SponsorSection.vue";
+import SponsorSectionz from "@/components/SponsorSectionz.vue";
 
 import { eventBus } from "@/main";
 // import Blogs from "@/views/Blogs.vue";
@@ -131,7 +131,7 @@ export default {
       ) {
         this.section = "JurySection";
       } else if (window.scrollY > window.innerHeight * 5 - 100) {
-        this.section = "SponsorSection";
+        this.section = "SponsorSectionz";
       }
     }
   },

@@ -11,25 +11,8 @@ import VuePageTransition from "vue-page-transition";
 import vueScrollTo from "vue-scrollto";
 import VueI18n from "vue-i18n";
 import { al, en } from "./translations";
-import Amplify, * as AmplifyModules from "aws-amplify";
-import { AmplifyPlugin } from "aws-amplify-vue";
 import AOS from "aos";
 import "aos/dist/aos.css";
-export const aws_user_pools_web_client_id = "5qbjv29p8e8f2vv05c7dmr37fs";
-
-const awsmobile = {
-  aws_project_region: "eu-west-1",
-  aws_cognito_identity_pool_id:
-    "eu-west-1:61ecf7b6-4bc0-467c-91c5-028fe5587417",
-  aws_cognito_region: "eu-west-1",
-  aws_user_pools_id: "eu-west-1_XwFoO4emX",
-  aws_user_pools_web_client_id,
-  oauth: {}
-};
-
-Amplify.configure(awsmobile);
-// Amplify.configure(config)
-Vue.use(AmplifyPlugin, AmplifyModules);
 
 Vue.use(vueScrollTo);
 Vue.config.productionTip = false;

@@ -1,6 +1,5 @@
 <template>
   <div class="section-sponsorz padder">
-    <!-- <HeaderHero menutype="menu__items--black" logoBlack="true" /> -->
     <!-- if larger than tablet -->
     <div v-if="windowWidth > 950">
       <div class="container">
@@ -310,8 +309,6 @@
           </div>
         </div>
       </div>
-
-      <FooterBlack v-if="windowWidth > 770" />
     </div>
 
     <div v-else>
@@ -472,18 +469,14 @@
 
 <script>
 import FooterBlack from "@/components/Footer/FooterBlack.vue";
-import FooterBlackSmall from "@/components/Footer/FooterBlackSmall.vue";
 import FooterBlackMobile from "@/components/Footer/FooterBlackMobile.vue";
-import Footer from "@/components/Footer/FooterWhite.vue";
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 
 export default {
   name: "SponsorSectionz",
   components: {
     FooterBlack,
-    FooterBlackSmall,
     FooterBlackMobile,
-    Footer,
     HeaderHero
   },
   data() {
