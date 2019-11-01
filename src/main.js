@@ -96,6 +96,10 @@ router.beforeEach((to, from, next) => {
       return tag;
     })
     .forEach(tag => document.head.appendChild(tag));
+  // console.log("navigator.userAgent", navigator.userAgent)
+  // if (fbUserAgent1===navigator.userAgent || fbUserAgent2===navigator.userAgent) {
+  //   console.log("hello fb")
+  // }
   next();
 });
 

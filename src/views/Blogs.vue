@@ -2,7 +2,7 @@
   <div class="blogs">
     <div class="row justify-content-between artist-row align-items-center h-15 ml-0">
       <div class="col-lg-2 col-md-3 offset-sm-1 offset-lg-0 col-sm-3 col-6 text-center logo-col-sm">
-        <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
+        <img src="@/assets/img/logoblog.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
       <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToHome()">
         <img
@@ -89,7 +89,7 @@ import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.v
 import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterBlackSmall from "@/components/Footer/FooterBlackSmall.vue";
 
-import { LIST_BLOG } from "@/store/actions.type";
+import { LIST_BLOGS } from "@/store/actions.type";
 import { mapGetters } from "vuex";
 export default {
   name: "Blogs",
@@ -136,7 +136,7 @@ export default {
         TableName,
         Limit
       };
-      await this.$store.dispatch(LIST_BLOG, params);
+      await this.$store.dispatch(LIST_BLOGS, params);
 
       for (let blog of this.getBlogs) {
         this.blogs.push(blog);
@@ -144,14 +144,14 @@ export default {
       this.blogs.sort((a, b) => b.ordering - a.ordering);
     }
   },
-  mounted() {
+  async mounted() {
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
     });
     this.lang = getLanguage();
-    this.fetchBlogs();
+    await this.fetchBlogs();
   },
   computed: {
     ...mapGetters(["getBlogs"])
@@ -263,7 +263,7 @@ export default {
 @import "@/assets/sass/abstracts/_mixins.scss";
 
 .imageback {
-  // background: url("../../src/assets/img/blog1.jpg") no-repeat center;
+  background: url("../../src/assets/img/blog1.jpg") no-repeat center;
   height: 100%;
   background-size: cover;
   filter: grayscale(100%);
@@ -279,7 +279,7 @@ export default {
 
 .blog-title-container {
   position: absolute;
-  bottom: 10%;
+  bottom: 33%;
 }
 
 .blog-title {

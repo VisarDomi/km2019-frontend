@@ -86,7 +86,6 @@ import {
 import { ApiService } from "@/store/services/api";
 import store from "@/store";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
-import { serveArtistFromCloudFront } from "@/common/cloudFront";
 
 export default {
   name: "SingleArtist",
@@ -104,9 +103,7 @@ export default {
     };
     ApiService.get(params)
       .then(res => {
-        let artist = res.data.Item;
-        let artist2 = serveArtistFromCloudFront(artist);
-        store.commit(SET_ARTIST, artist2);
+        store.commit(SET_ARTIST, res.data.Item);
         next();
       })
       .catch(err => {
@@ -136,8 +133,7 @@ export default {
     return {
       windowWidth: window.innerWidth,
       artists: [],
-      lang: "",
-      artist: {}
+      lang: ""
     };
   },
 
@@ -153,27 +149,26 @@ export default {
         params: { slug: name, id: id }
       });
     },
-    async goToArtist(artist) {
-      this.artists = [];
-      this.fetchArtists();
-      await this.fetchArtist(artist.id);
-      this.setArtistBackground(artist)
+    goToArtist(artist) {
       this.$router.push({
         name: "SingleArtist",
         params: { slug: artist.name, id: artist.id }
       });
+      this.$router.go(0);
     },
     goToHome() {
       this.$router.push({ name: "Home" });
     },
-    async fetchArtist(id) {
+    async fetchArtist(artistId) {
       const TableName = "KM2019-Artist";
+      const id = artistId;
       const params = {
         TableName,
         id
       };
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(GET_ARTIST, params);
+      // console.log("meta tag for image is: ", this.getArtist.bgImg);
       this.$store.commit(STOP_LOADING);
     },
     shuffle(array) {
@@ -207,8 +202,7 @@ export default {
       let shuffledArr = this.shuffle(coppy);
       for (let artist of shuffledArr) {
         if (artist.name !== this.getArtist.name) {
-          let artist2 = serveArtistFromCloudFront(artist);
-          this.artists.push(artist2);
+          this.artists.push(artist);
         }
         if (this.artists.length == 4) {
           break;
@@ -217,27 +211,25 @@ export default {
     },
     goToHome() {
       this.$router.push({ name: "Home" });
-    },
-    setArtistBackground(artist) {
-      let artistPage = document.getElementsByClassName("artist-page")[0];
-      artistPage.style.background =
-        "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
-        artist.bgImg +
-        "), no-repeat ";
-
-      artistPage.style.backgroundSize = "cover";
-      artistPage.style.backgroundAttachment = "fixed";
     }
   },
   computed: {
     ...mapGetters(["getArtist", "getArtists"])
   },
-  mounted() {
+  async mounted() {
     this.lang = getLanguage();
-    this.fetchArtist(this.$route.params.id);
+    await this.fetchArtist(this.$route.params.id);
     this.fetchArtists();
 
-    this.setArtistBackground(this.getArtist)
+    let artistPage = document.getElementsByClassName("artist-page")[0];
+    artistPage.style.background =
+      "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
+      this.getArtist["bgImg"] +
+      "), no-repeat ";
+
+    artistPage.style.backgroundSize = "cover";
+    artistPage.style.backgroundAttachment = "fixed";
+
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
@@ -378,6 +370,7 @@ i.fa {
 .img-logo {
   position: relative;
   top: 30%;
+  width: 66%;
 }
 .img-logo:hover {
   cursor: pointer;

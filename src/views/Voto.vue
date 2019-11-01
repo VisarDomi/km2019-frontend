@@ -73,6 +73,27 @@ export default {
       artists: []
     };
   },
+  head: {
+    meta: [
+      {
+        p: "og:image",
+        c:
+          "https://previews.dropbox.com/p/thumb/AAjqnkGyCgiX4XqouopfXwFN2ciIjIdsn30Fz8s_AxCWh_xiLbogQhFXrjkHUAUnoxc-Qk8vqXHWDBX2n5ioMPVdhHtggd8co7OPJWAx1VDGdfp1cTJhDYPlo6WlTbuFAcb6VzRwmAeaCvTviTGgPFewi45Wun569ZAMDYtIBDYBoDCXScRk1-xeKkbw-PlzWMYKjzJoksSX-vfy-0s2ya7HUZ5LVMCQ69tZDPQvB2lOKJ8tKyyF3OYxnvv4AQw-T2w2dVo5y-eFTb1lmrGtFgxBPckoAE7W-QR3Kc2SAP5s4-9TWwtabuIWdOAb4XoslUZ41qv1cOauqO5cGu3eyYeq5O4l3dlDRtgJHxyUCJPBSA/p.png?fv_content=true&size_mode=5"
+      },
+      {
+        p: "og:url",
+        c: "https://kengamagjike.com/voto"
+      },
+      {
+        p: "og:title",
+        c: "Kënga Magjike 2019"
+      },
+      {
+        p: "og:description",
+        c: "Voto këngëtarin tuaj të preferuar..."
+      }
+    ]
+  },
   methods: {
     goToVotoArtist(artist) {
       this.$router.push({
@@ -100,7 +121,7 @@ export default {
       this.$router.push({ name: "Home" });
     }
   },
-  mounted() {
+  async mounted() {
     this.lang = getLanguage();
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
@@ -196,7 +217,7 @@ hr {
   margin-top: 10rem;
 }
 .logo-img {
-  width: 50%;
+  width: 100%;
 }
 
 .header-row {

@@ -6,15 +6,10 @@ export const STOP_LOADING = "stopLoading";
 export const SET_ARTISTS = "setArtists";
 export const SET_ARTIST = "setArtist";
 
-// jury
-export const SET_JURYS = "setJurys";
-export const SET_JURY = "setJury";
-
-// blog
+// artist
 export const SET_BLOGS = "setBlogs";
 export const SET_BLOG = "setBlog";
 
-//votes
 export const SET_VOTE = "setVote";
 export const SET_VOTE_ERR = "setVoteErr";
 export const SET_VOTES = "setVotes";

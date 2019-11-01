@@ -13,7 +13,7 @@
     />
     <div class="bg-video">
       <video class="bg-video__content" autoplay muted loop>
-        <source :src="cloudFrontDomain+'/test26.mp4'" type="video/mp4" />
+        <source src="@/assets/videoplayback.webm" type="video/mp4" />
       </video>
     </div>
   </div>
@@ -21,9 +21,6 @@
 
 <script>
 // import HeaderHero from "@/components/Headers/HeaderHero.vue";
-
-import { cloudFrontDomain } from "@/common/constants";
-
 export default {
   name: "HeroSection",
 
@@ -33,7 +30,6 @@ export default {
   methods: {},
   data() {
     return {
-      cloudFrontDomain,
       windowWidth: window.innerWidth
     };
   },

@@ -52,10 +52,9 @@ import { LIST_ARTIST } from "@/store/actions.type";
 import { SET_ARTIST } from "@/store/mutations.type";
 import { mapGetters } from "vuex";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
-import { serveArtistFromCloudFront } from "@/common/cloudFront";
 
 export default {
-  name: "ArtistsMobile",
+  name: "NewsMobile",
   data() {
     return {
       artists: [],
@@ -96,16 +95,27 @@ export default {
 
       for (let artist of this.getArtists) {
         if (artist.isCurrentWeek == true) {
-          let artist2 = serveArtistFromCloudFront(artist)
-          this.artists.push(artist2);
+          this.artists.push(artist);
         }
       }
       this.artists.sort((a, b) => a.ordering - b.ordering);
+
+      // let resItems = this.getArtists;
+      // // console.log("resItems: ", resItems);
+      // this.artists1 = [...resItems.splice(0, 2)];
+      // this.artists2 = [...resItems.splice(0, 2)];
+      // this.artists3 = [...resItems.splice(0, 2)];
+      // if (resItems.length > 0) {
+      //   this.artists4 = [...resItems.splice(0, 2)];
+      // }
     }
   },
-  mounted() {
+  async mounted() {
     this.lang = getLanguage();
-    this.fetchArtists();
+    setTimeout(() => {
+      this.$forceUpdate();
+    }, 500);
+    await this.fetchArtists();
   },
   computed: {
     ...mapGetters(["getArtists"])
@@ -289,5 +299,27 @@ p {
 }
 .h-15 {
   height: 15%;
+}
+
+.blog {
+  &__image {
+    &--1 {
+      background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
+        url("../assets/img/blog 1.svg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &--2 {
+      background: linear-gradient(rgba(#060e26, 0.7), rgba(#060e26, 0.7)),
+        url("../assets/img/blog 2.svg");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>

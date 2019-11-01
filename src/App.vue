@@ -1,6 +1,6 @@
 <template>
   <vue-page-transition>
-    <router-view/>
+    <router-view />
   </vue-page-transition>
 </template>
 
@@ -9,7 +9,31 @@ import { AmplifyEventBus } from "aws-amplify-vue";
 import { Auth } from "aws-amplify";
 
 export default {
-  name: "App"
+  name: "App",
+  data() {
+    return {
+      signedIn: false
+    };
+  },
+  beforeCreate() {
+    AmplifyEventBus.$on("authState", info => {
+      if (info === "signedIn") {
+        this.signedIn = true;
+        // this.$router.push('/voto')
+        this.$router.go();
+      }
+      if (info === "signedOut") {
+        this.$router.push("/auth");
+        this.signedIn = false;
+      }
+    });
+
+    Auth.currentAuthenticatedUser()
+      .then(user => {
+        this.signedIn = true;
+      })
+      .catch(() => (this.signedIn = false));
+  }
 };
 </script>
 
@@ -38,26 +62,44 @@ a:not([href]):not([tabindex]) {
   text-decoration: none;
 }
 
-[class^="Form__formSection"] {
+[class^="Form__formSection"]{
   color: red !important;
   font-size: 14px;
 }
-[class^="Input__input"] {
-  @include respond(phone) {
+[class^="Input__input"]{
+  @include respond(phone){
     width: 75%;
-  }
+    }
+    
 }
-#auth {
+#auth{
   overflow: hidden;
 }
-[class^="Button__button"] {
-  @include respond(phone) {
+[class^="Button__button"]{
+  @include respond(phone){
     width: 75% !important;
   }
 }
-[class^="Section__sectionFooterSecondaryContent"] {
-  @include respond(phone) {
+[class^="Section__sectionFooterSecondaryContent"]{
+  @include respond(phone){
     text-align: left;
   }
+}
+// for amazon
+:root {
+  /* Colors */
+  --amazonOrange: #007bff; /* Redefined to dark green */
+  --lightAmazonOrange: #31465f;
+  --darkAmazonOrange: #152939;
+  --squidInk: #232f3e;
+  --lightSquidInk: #31465f;
+  --deepSquidInk: #152939;
+  --grey: #828282;
+  --lightGrey: #c4c4c4;
+  --silver: #e1e4ea;
+  --darkBlue: #31465f;
+  --red: #dd3f5b;
+  --white: #ffffff;
+  --light-blue: #00a1c9;
 }
 </style>

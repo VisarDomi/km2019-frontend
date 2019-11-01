@@ -6,12 +6,8 @@ export const DELETE = "delete";
 export const LIST_ARTIST = "listArtist";
 export const GET_ARTIST = "getArtist";
 
-// jury
-export const LIST_JURY = "listJury";
-export const GET_JURY = "getJury";
-
-// blog
-export const LIST_BLOG = "listBlog";
+// artist
+export const LIST_BLOGS = "listBlogs";
 export const GET_BLOG = "getBlog";
 
 export const PUT_VOTES = "putVotes";

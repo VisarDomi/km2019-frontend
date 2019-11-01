@@ -2,7 +2,6 @@ import Vue from "vue";
 import Vuex from "vuex";
 import loading from "./modules/loading";
 import artist from "./modules/artist";
-import jury from "./modules/jury";
 import blog from "./modules/blog";
 import vote from "./modules/vote";
 import album from "./modules/album";
@@ -15,7 +14,6 @@ export default new Vuex.Store({
   modules: {
     loading,
     artist,
-    jury,
     blog,
     vote,
     album

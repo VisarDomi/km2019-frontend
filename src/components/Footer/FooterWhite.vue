@@ -126,7 +126,9 @@ export default {
     },
     changeSection(index) {
       this.$router.push({ name: "Home", hash: "#nder-vite" });
+      // // console.log("after push");
       // eventBus.$emit("changeSectionFromFooter", index);
+      // // console.log("from footer");
     },
     gotoRregullore() {
       this.$router.push({ name: "Rregullore" });

@@ -29,7 +29,7 @@ body, html {
 }
 
 .bgimg {
-  /* background-image: url('https://dn3ldd5bkxg9p.cloudfront.net/bridge.jpg'); */
+  /* background-image: url('../assets/img/bridge.jpg'); */
   background-color: #0e1032;
   height: 100%;
   background-position: center;

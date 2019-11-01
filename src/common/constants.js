@@ -1,6 +1,5 @@
 import AWS from "aws-sdk";
 
-export const cloudFrontDomain = "https://dn3ldd5bkxg9p.cloudfront.net"
 export const albumBucketName = "kengamagjike2019";
 const bucketRegion = "eu-west-1";
 const IdentityPoolId = "eu-west-1:3b983321-f178-4d4d-b369-7184ffbcf0a4";

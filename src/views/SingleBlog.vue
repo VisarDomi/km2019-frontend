@@ -16,16 +16,7 @@
 
       <div class="row blog-row">
         <div class="col-md-5 col-12 image-col">
-          <div v-if="this.getBlog.containsVideo" style="height: 100%; text-align: center;">
-            <iframe
-              style="margin-top: 10rem; width: 80%; height: 500px;"
-              class="embed-responsive-item blog-video"
-              :src="this.getBlog.videoLink"
-              allowfullscreen
-            ></iframe>
-          </div>
-
-          <img v-else class="blog-image" :src="this.getBlog.img" alt />
+          <img class="blog-image" :src="this.getBlog.img" alt />
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
@@ -97,8 +88,8 @@
         </div>
 
         <FooterSingleBlog v-if="windowWidth > 770" />
+        <FooterSingleBlogMobile v-if="windowWidth < 770" />
       </div>
-      <FooterSingleBlogMobile v-if="windowWidth < 770" />
     </div>
   </div>
 </template>
@@ -112,7 +103,7 @@ import FooterWhite from "@/components/Footer/FooterWhite.vue";
 import FooterSingleBlog from "@/components/Footer/FooterSingleBlog.vue";
 import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
 
-import { GET_BLOG, LIST_BLOG } from "@/store/actions.type";
+import { GET_BLOG, LIST_BLOGS } from "@/store/actions.type";
 import { mapGetters } from "vuex";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 import { START_LOADING, STOP_LOADING, SET_BLOG } from "@/store/mutations.type";
@@ -197,6 +188,7 @@ export default {
       if (blog.title == this.getBlog.title) {
         return;
       }
+      console.log("should show");
       this.$router.push({
         name: "SingleBlog",
         params: { title: blog.title, id: blog.id }
@@ -240,6 +232,7 @@ export default {
       };
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(GET_BLOG, params);
+      console.log("this.blog.order", this.getBlog.ordering);
       this.$store.commit(STOP_LOADING);
     },
     async fetchBlogs() {
@@ -249,7 +242,7 @@ export default {
         TableName,
         Limit
       };
-      await this.$store.dispatch(LIST_BLOG, params);
+      await this.$store.dispatch(LIST_BLOGS, params);
       let coppy = this.getBlogs.slice();
       let shuffledArr = this.shuffle(coppy);
 
@@ -264,35 +257,25 @@ export default {
       }
       for (let blog of this.getBlogs) {
         if (blog.ordering == parseInt(this.getBlog.ordering, 10) + 1) {
+          console.log("next", blog.ordering);
           this.nextBlog = blog;
+          console.log(blog);
         }
         if (blog.ordering == parseInt(this.getBlog.ordering, 10) - 1) {
+          console.log("this:", parseInt(this.getBlog.ordering, 10));
           this.prevBlog = blog;
+          console.log("prev", blog.ordering);
         }
       }
-    },
-    serveFromCloudFront() {
-      // change from S3 to CloudFront
-      let s3Img = this.getBlog.img;
-      let splitList1 = s3Img.split("kengamagjike2019");
-      let finalURL1 = cloudFrontDomain + splitList1[1];
-      let s3BgImg = this.getBlog.bgImg;
-      let splitList2 = s3BgImg.split("kengamagjike2019");
-      let finalURL2 = cloudFrontDomain + splitList2[1];
-      // now mutate artist
-      let artist = { ...this.getBlog };
-      artist.img = finalURL1;
-      artist.bgImg = finalURL2;
-      this.$store.commit(SET_ARTIST, artist);
     }
   },
   computed: {
     ...mapGetters(["getBlog", "getBlogs"])
   },
-  mounted() {
+  async mounted() {
     this.lang = getLanguage();
-    this.fetchBlog(this.$route.params.id);
-    this.fetchBlogs();
+    await this.fetchBlog(this.$route.params.id);
+    await this.fetchBlogs();
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
@@ -367,11 +350,7 @@ export default {
   border-radius: 50%;
   // background-color: white;
 }
-.blog-video {
-  @include respond(phone) {
-    height: 80%;
-  }
-}
+
 .carousel-left:hover {
   cursor: pointer;
   border-radius: 50%;
@@ -469,7 +448,7 @@ export default {
   margin-top: 20%;
   position: initial;
   @include respond(tab-port) {
-    margin-top: 25%;
+    margin-top: 10%;
   }
   // margin-left:5rem;
 }
@@ -482,7 +461,7 @@ hr {
 .blog-image {
   width: 100%;
   margin-left: 2rem;
-  margin-top: 17rem;
+  margin-top: 10rem;
 
   @include respond(phone) {
     margin-left: 0rem;
@@ -508,7 +487,7 @@ hr {
   padding-left: 5rem;
   padding-right: 5rem;
   @include respond(phone) {
-    margin-bottom: 80px;
+    // margin-bottom: 80px;
   }
 }
 .blog-page {

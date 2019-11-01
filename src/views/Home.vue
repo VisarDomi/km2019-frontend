@@ -8,8 +8,8 @@
     />
     <HeaderHero
       v-if="windowWidth > 750 && this.section == 'AcrossYearsSection'"
-      menutype="menu__items--white"
-      logoWhite="true"
+      menutype="menu__items--white background--green"
+      logoGreen="true"
     />
     <HeaderHero
       v-if="windowWidth > 750 && this.section == 'BlogSection'"
@@ -18,8 +18,8 @@
     />
     <HeaderHero
       v-if="windowWidth > 750 && this.section == 'JurySection'"
-      menutype="menu__items--white"
-      logoWhite="true"
+      menutype="menu__items--white background--green"
+      logoGreen="true"
     />
     <HeaderHero
       v-if="windowWidth > 750 && this.section == 'SponsorSection'"
@@ -36,11 +36,11 @@
     <AcrossYearsSection v-if="windowWidth > 750" />
     <AcrossYearsMobile v-else />
 
-    <BlogsSection v-if="windowWidth > 950" />
-    <BlogsMobile v-else />
+    <NewsSection v-if="windowWidth > 950" />
+    <NewsMobile v-else />
 
-    <JurysSection v-if="windowWidth > 600" />
-    <JurysMobile v-else />
+    <JuriaSection v-if="windowWidth > 600" />
+    <JuriaMobile v-else />
 
     <SponsorSectionz />
   </div>
@@ -60,14 +60,17 @@ import HeroSection from "@/components/HeroSection.vue";
 import ArtistsSection from "@/components/ArtistsSection.vue";
 import ArtistsMobile from "@/components/ArtistsMobile.vue";
 
-import JurysSection from "@/components/JurysSection.vue";
-import JurysMobile from "@/components/JurysMobile.vue";
+import JuriaSection from "@/components/ArtistsSectionJuria.vue";
+import JuriaMobile from "@/components/ArtistsSectionJuriaMobile.vue";
 
 import AcrossYearsSection from "@/components/AcrossYearsSection.vue";
 import AcrossYearsMobile from "@/components/AcrossYearsMobile.vue";
 
-import BlogsSection from "@/components/BlogsSection.vue";
-import BlogsMobile from "@/components/BlogsMobile.vue";
+import SubmissionSection from "@/components/SubmissionSection.vue";
+import SubmissionMobile from "@/components/SubmissionMobile.vue";
+
+import NewsSection from "@/components/NewsSection.vue";
+import NewsMobile from "@/components/NewsMobile.vue";
 
 import SponsorSectionz from "@/components/SponsorSection.vue";
 
@@ -82,12 +85,14 @@ export default {
     HeroSection,
     ArtistsSection,
     ArtistsMobile,
-    JurysSection,
-    JurysMobile,
+    JuriaSection,
+    JuriaMobile,
     AcrossYearsSection,
     AcrossYearsMobile,
-    BlogsSection,
-    BlogsMobile,
+    SubmissionSection,
+    SubmissionMobile,
+    NewsSection,
+    NewsMobile,
 
     SponsorSectionz,
     HeaderMobile,
@@ -108,6 +113,7 @@ export default {
   },
   methods: {
     handleScroll(event) {
+      // // console.log("scrolling", window.scrollY);
       if (window.scrollY > 0 && window.scrollY < window.innerHeight - 100) {
         this.section = "HeroSection";
       } else if (
@@ -129,10 +135,12 @@ export default {
         window.scrollY > window.innerHeight * 4 - 100 &&
         window.scrollY < window.innerHeight * 5 - 100
       ) {
+        // console.log("Sponsors");
         this.section = "JurySection";
       } else if (window.scrollY > window.innerHeight * 5 - 100) {
         this.section = "SponsorSection";
       }
+      // console.log(this.section);
     }
   },
   created() {

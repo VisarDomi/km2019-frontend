@@ -124,6 +124,7 @@ export default {
       this.$router.push({ name: name });
     },
     goToVoto() {
+      // console.log("h");
       this.$router.push({ name: "Voto" });
     },
   },
