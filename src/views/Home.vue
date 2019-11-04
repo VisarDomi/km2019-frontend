@@ -8,18 +8,18 @@
     />
     <HeaderHero
       v-if="windowWidth > 750 && this.section == 'AcrossYearsSection'"
-      menutype="menu__items--white"
-      logoWhite="true"
+      menutype="menu__items--white background--green"
+      logoGreen="true"
     />
     <HeaderHero
       v-if="windowWidth > 750 && this.section == 'BlogSection'"
       menutype="menu__items--white"
-      logoGreen="true"
+      logoWhite="true"
     />
     <HeaderHero
       v-if="windowWidth > 750 && this.section == 'JurySection'"
-      menutype="menu__items--white"
-      logoWhite="true"
+      menutype="menu__items--white background--green"
+      logoGreen="true"
     />
     <HeaderHero
       v-if="windowWidth > 750 && this.section == 'SponsorSection'"

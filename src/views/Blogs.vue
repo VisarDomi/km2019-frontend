@@ -2,7 +2,7 @@
   <div class="blogs">
     <div class="row justify-content-between artist-row align-items-center h-15 ml-0">
       <div class="col-lg-2 col-md-3 offset-sm-1 offset-lg-0 col-sm-3 col-6 text-center logo-col-sm">
-        <img src="@/assets/img/logowhite.svg" @click="goToHome()" class="logo-img img-logo" alt />
+        <img src="@/assets/img/logoblog.svg" @click="goToHome()" class="logo-img img-logo" alt />
       </div>
       <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToHome()">
         <img
@@ -279,7 +279,7 @@ export default {
 
 .blog-title-container {
   position: absolute;
-  bottom: 10%;
+  bottom: 23%;
 }
 
 .blog-title {

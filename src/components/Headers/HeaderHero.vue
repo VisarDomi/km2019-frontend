@@ -218,9 +218,12 @@ export default {
     cursor: pointer;
   }
   z-index: 1000;
+  text-transform: capitalize;
   font-weight: bold;
 }
-
+.background--green {
+  background-color: #47b8b0;
+}
 .logo {
   float: left;
 }
