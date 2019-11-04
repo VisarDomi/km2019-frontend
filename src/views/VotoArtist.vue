@@ -49,24 +49,24 @@
       <div v-if="disabled" class="my-text-message">{{this.message}}</div>
     </div>
     <div class="spacer"></div>
-    <Footer v-if="windowWidth > 770" />
-    <FooterSmall v-if="windowWidth < 770 && windowWidth > 600" />
-    <FooterMobile gClass="height-5 rel" v-if="windowWidth < 600" />
+    <FooterWhite v-if="windowWidth > 770" />
+    <FooterWhiteSmall v-if="windowWidth < 770 && windowWidth > 600" />
+    <FooterWhiteMobile gClass="height-5 rel" v-if="windowWidth < 600" />
   </div>
 </template>
 
 
 <script>
-import Footer from "@/components/Footer/FooterWhite.vue";
-import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
-import FooterMobile from "@/components/Footer/FooterWhiteMobile.vue";
+const FooterWhite = () => import("@/components/Footer/FooterWhite");
+const FooterWhiteSmall = () => import("@/components/Footer/FooterWhiteSmall");
+const FooterWhiteMobile = () => import("@/components/Footer/FooterWhiteMobile");
 import axios from "axios";
+import { serveArtistFromCloudFront } from "@/common/cloudFront";
 
 import { mapGetters } from "vuex";
 import {
   GET_ARTIST,
   PUT_VOTES,
-  PUT,
   GET_HAS_VOTED
 } from "@/store/actions.type";
 import {
@@ -80,9 +80,9 @@ import { getLanguage, saveLanguage } from "@/store/services/storage";
 export default {
   name: "VotoArtist",
   components: {
-    Footer,
-    FooterSmall,
-    FooterMobile
+    FooterWhite,
+    FooterWhiteSmall,
+    FooterWhiteMobile
   },
   data() {
     return {
@@ -229,10 +229,14 @@ export default {
       votoPage.style.backgroundAttachment = "fixed";
     }
   },
-  mounted() {
+  async mounted() {
     this.lang = getLanguage();
 
-    this.fetchArtist(this.$route.params.id);
+    await this.fetchArtist(this.$route.params.id);
+    let artist2 = serveArtistFromCloudFront(this.getArtist);
+    this.$store.commit(SET_ARTIST, artist2);
+
+    this.setArtistBackground(this.getArtist)
 
     this.$nextTick(() => {
       window.addEventListener("resize", () => {

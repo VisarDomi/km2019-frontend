@@ -1,6 +1,5 @@
 <template>
   <div class="section-juria" id="juria">
-    <!-- <HeaderHero menutype="menu__items--white" logoWhite="true" iconWhite="true" /> -->
     <div class="spacer"></div>
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -38,15 +37,13 @@
 </template>
 
 <script>
-import { getLanguage, saveLanguage } from "@/store/services/storage";
-import HeaderHero from "@/components/Headers/HeaderHero.vue";
+import { getLanguage } from "@/store/services/storage";
 import { mapGetters } from "vuex";
 import { LIST_JURY } from "@/store/actions.type";
 import { serveJuryFromCloudFront } from "@/common/cloudFront";
 
 export default {
   name: "JurysSection",
-  components: { HeaderHero },
   data() {
     return {
       windowWidth: window.innerWidth,

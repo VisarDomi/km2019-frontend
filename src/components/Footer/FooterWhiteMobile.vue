@@ -9,8 +9,18 @@
         <div class="col-7">
           <div class="row links-row ml-0">
             <div class="col-4">
-              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Artists')" v-if="this.lang == 'en'">artists</div>
-              <div class="row" style="margin-bottom:5px;" @click="changeRoute('Artists')" v-else>artistët</div>
+              <div
+                class="row"
+                style="margin-bottom:5px;"
+                @click="changeRoute('Artists')"
+                v-if="this.lang == 'en'"
+              >artists</div>
+              <div
+                class="row"
+                style="margin-bottom:5px;"
+                @click="changeRoute('Artists')"
+                v-else
+              >artistët</div>
 
               <a class="row" href="/#nder-vite-mobile" v-if="this.lang == 'en'">Through the years</a>
               <a class="row" href="/#nder-vite-mobile" v-else>nder vite</a>
@@ -27,12 +37,14 @@
               <div
                 class="row"
                 style="margin-bottom:5px;"
-                @click="changeRoute('Rregullore')" v-if="this.lang == 'en'"
+                @click="changeRoute('Rregullore')"
+                v-if="this.lang == 'en'"
               >rules</div>
               <div
                 class="row"
                 style="margin-bottom:5px;"
-                @click="changeRoute('Rregullore')" v-else
+                @click="changeRoute('Rregullore')"
+                v-else
               >rregullore</div>
 
               <div class="row" @click="changeRoute('Voto')" v-if="this.lang == 'en'">vote</div>
@@ -82,26 +94,28 @@
 </template>
 
 <script>
-import { getLanguage, saveLanguage } from "@/store/services/storage";
+import { getLanguage } from "@/store/services/storage";
 
 export default {
+  name: "FooterWhiteMobile",
+
   methods: {
     changeRoute(name) {
       this.$router.push({ name: name });
     },
     goToVoto() {
       this.$router.push({ name: "Voto" });
-    },
+    }
   },
   data() {
     return {
-      lang: "",
-    }
+      lang: ""
+    };
   },
   props: {
     gClass: ""
   },
-  mounted(){
+  mounted() {
     this.lang = getLanguage();
   }
 };

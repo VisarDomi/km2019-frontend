@@ -39,14 +39,12 @@
 </template>
 
 <script>
-import { eventBus } from "@/main";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 
 export default {
   name: "HeaderMobile",
   data() {
     return {
-      shouldHide: true,
       listMenu: [],
       lang: ""
     };
@@ -57,12 +55,6 @@ export default {
   methods: {
     changeRoute(name) {
       this.$router.push({ name: name });
-    },
-    goToRregullore() {
-      this.$router.push({ name: "Rregullore" });
-    },
-    goToVoto() {
-      this.$router.push({ name: "Voto" });
     },
     openNavR() {
       document.getElementById("mySidenavR").style.width = "250px";
@@ -75,19 +67,15 @@ export default {
       if (this.lang == "en") {
         saveLanguage("al");
         this.lang = "al";
-        this.$router.go(0)
+        this.$router.go(0);
       } else {
         saveLanguage("en");
         this.lang = "en";
-        this.$router.go(0)
+        this.$router.go(0);
       }
-      eventBus.$emit("changeLanguage", this.lang);
     }
   },
   mounted() {
-    eventBus.$on("menuState", payload => {
-      this.shouldHide = payload;
-    });
     this.lang = getLanguage();
   }
 };

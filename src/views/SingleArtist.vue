@@ -72,9 +72,9 @@
 </template>
 
 <script>
-import FooterWhite from "@/components/Footer/FooterWhite.vue";
-import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
-import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
+const FooterWhite = () => import("@/components/Footer/FooterWhite");
+const FooterWhiteSmall = () => import("@/components/Footer/FooterWhiteSmall");
+const FooterWhiteMobile = () => import("@/components/Footer/FooterWhiteMobile");
 // @ is an alias to /src
 import { LIST_ARTIST, GET_ARTIST } from "@/store/actions.type";
 import { mapGetters } from "vuex";

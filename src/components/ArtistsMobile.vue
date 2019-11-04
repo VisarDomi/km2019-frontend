@@ -49,9 +49,8 @@
 
 <script>
 import { LIST_ARTIST } from "@/store/actions.type";
-import { SET_ARTIST } from "@/store/mutations.type";
 import { mapGetters } from "vuex";
-import { getLanguage, saveLanguage } from "@/store/services/storage";
+import { getLanguage } from "@/store/services/storage";
 import { serveArtistFromCloudFront } from "@/common/cloudFront";
 
 export default {

@@ -23,7 +23,7 @@
           <h1 class="artist-name">{{getJury.firstName}}</h1>
           <h1 class="artist-surname">{{getJury.lastName}}</h1>
           <h3 class="bio-text">bio</h3>
-          <h4 class="bio-description" v-if="this.lang == 'en'">{{getJury.bioEn}}</h4>
+          <h4 class="bio-description" v-if="this.lang == 'en'">{{getJury.bioEng}}</h4>
           <h4 class="bio-description" v-else>{{getJury.bio}}</h4>
         </div>
       </div>
@@ -55,9 +55,9 @@
 </template>
 
 <script>
-import FooterWhite from "@/components/Footer/FooterWhite.vue";
-import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
-import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
+const FooterWhite = () => import("@/components/Footer/FooterWhite");
+const FooterWhiteMobile = () => import("@/components/Footer/FooterWhiteMobile");
+const FooterWhiteSmall = () => import("@/components/Footer/FooterWhiteSmall");
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 import { mapGetters } from "vuex";
 import { ApiService } from "@/store/services/api";

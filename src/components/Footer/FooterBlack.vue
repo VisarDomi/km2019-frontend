@@ -112,8 +112,7 @@
 </template>
 
 <script>
-import { eventBus } from "@/main";
-import { getLanguage, saveLanguage } from "@/store/services/storage";
+import { getLanguage } from "@/store/services/storage";
 export default {
   name: "FooterBlack",
   data() {
@@ -127,10 +126,6 @@ export default {
   methods: {
     changeRoute(name) {
       this.$router.push({ name: name });
-    },
-    changeSection(index) {
-      this.$router.push({ name: "Home" });
-      eventBus.$emit("changeSectionFromFooter", index);
     }
   },
   mounted() {

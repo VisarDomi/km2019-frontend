@@ -1,5 +1,4 @@
 <template>
-  <!-- <div> -->
   <div class="header-hero row align-items-center menu__items row-no-margin" v-bind:class="menutype">
     <div class="col-xl-3 col-lg-4 col-sm-4 high-index">
       <span class="d-lg-inline-block" href="#" v-if="logoBlack">
@@ -65,41 +64,16 @@
       AL
       <span class="font-weight-normal">/EN</span>
     </div>
-
-    <!-- <div class="col-lg-1 col-sm-1 high-index">
-      <span class="navigation__icon" @click="collapseMenu" v-if="iconWhite">
-        <img
-          v-if="shouldHide"
-          src="@/assets/img/icon_menu_close_white.svg"
-          class="respond-width"
-          alt
-        />
-        <img v-if="!shouldHide" src="@/assets/img/icon_menu.svg" class="respond-width" alt />
-      </span>
-      <span class="navigation__icon" @click="collapseMenu" v-else>
-        <img
-          v-if="shouldHide"
-          src="@/assets/img/icon_menu_close_black.svg"
-          class="respond-width"
-          alt
-        />
-        <img v-if="!shouldHide" src="@/assets/img/icon_menu_black.svg" class="respond-width" alt />
-      </span>
-    </div>-->
   </div>
-  <!-- </div> -->
 </template>
 
 <script>
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 
-import { eventBus } from "@/main";
-
 export default {
   name: "HeaderHero",
   data() {
     return {
-      shouldHide: false,
       listMenu: [],
       lang: ""
     };
@@ -112,9 +86,6 @@ export default {
     logoWhite: ""
   },
   methods: {
-    moveTo(index) {
-      eventBus.$emit("changeSection", index);
-    },
     goToRregullore() {
       this.$router.push({
         name: "Rregullore",
@@ -136,48 +107,9 @@ export default {
         this.lang = "en";
         this.$router.go(0);
       }
-      eventBus.$emit("changeLanguage", this.lang);
-    },
-    collapseMenu() {
-      var Items = document.getElementsByClassName("cmi");
-      if (this.shouldHide) {
-        for (var i = 0; i < Items.length; i++) {
-          Items[i].style.opacity = 0;
-          Items[i].style.transition = "all 1s";
-          // Items[i].sytle.display = "none";
-          Items[i].style.pointerEvents = "none";
-
-          if (i % 4 == 0) {
-            Items[i].style.transform = "translate(5vw, 0)";
-          } else if (i % 4 == 1) {
-            Items[i].style.transform = "translate(5vw, 0)";
-          } else if (i % 4 == 2) {
-            Items[i].style.transform = "translate(5vw, 0)";
-          } else if (i % 4 == 3) {
-            Items[i].style.transform = "translate(5vw, 0)";
-          }
-        }
-
-        // this.shouldHide = false;
-      } else {
-        for (var i = 0; i < Items.length; i++) {
-          Items[i].style.opacity = 1;
-          Items[i].style.transition = "all 1s";
-          Items[i].style.transform = "translate(0, 0)";
-          Items[i].style.pointerEvents = "auto";
-
-          // Items[i].style.display = "inline-block";
-        }
-        // this.shouldHide = true;
-      }
-      eventBus.$emit("menuState", this.shouldHide);
     }
   },
   mounted() {
-    eventBus.$on("menuState", payload => {
-      this.shouldHide = payload;
-    });
-    this.collapseMenu();
     this.lang = getLanguage();
   }
 };

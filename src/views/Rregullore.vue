@@ -88,41 +88,6 @@
             <br />
             <br />In the ‘Big’ category are only first place winners in: ‘X Factor’, ‘The Voice’, and ‘Top Fest’.
           </p>
-          <!-- <b-collapse id="collapse-2" class="mt-2">
-            <b-card>
-              <p class="card-text">
-                Ne kategorine “Big” bejne pjese vetem fituesit e 3 çmimeve te para te Fest RTSH.
-                <br />
-                <br />Ne kategorine “Big”, Produksioni ne baze te nje Komisioni qe therret, mund te marre ne konsiderate kengetaret te cilet kane mbi 10 milion klikime ne kenget e tyre ne YOUTUBE.
-                <br />
-                <br />Ne kategorine “Big” bejne pjese artistet te cilet Juria e kategorisë New Artist i kualifikon direkt ne kete kategori.
-                <br />
-                <br />Nese artistet e rinj, kane fituar apo fitojne per dy edicione festivali te drejten per te votuar ne netet gjysemfinale perkrah artisteve ‘’Big’’, ata kalojne automatikisht ne kategorine “Big” per Edicionin e rradhes dhe pergjithmone.
-                <br />
-                <br />Ne kategorine Big bejne pjese ata artiste te cilet kane nje aktivitet te pasur interancional, ose qe kane fituar nje nga 3 çmimet e para ne nje aktivitet te rendesishem nderkombetar.
-                <br />
-                <br />Produksioni i Festivalit Kenga Magjike, zgjedh kenget e kategorise “Big” te cilat do te kalojne ne Fazen e Pare te Edicionit 2019 (Shtator – Dhjetor 2019) si edhe ne Netet Finale ne Pallatin e Koncerteve. Kengetaret e kesaj kategorie, ne fund, votojne kenget qe do te shkojne ne Naten Finale.
-                <br />
-                <br />Produksioni i Festivalit Kenga Magjike, ka te drejten fakultative te zgjedhe nje nga kenget e cdo Edicioni, per ta kaluar ne Naten Finale duke e futur emrin ne nje zarf ne perfundim te Nates 2.
-                <br />
-                <br />Ne kategorine “Big” bejne pjese te gjithe artistet e Kategorise New Artist, te cilet votohen nga koleget per te interpretuar ne Naten Finale.
-                <br />
-              </p>
-            </b-card>
-          </b-collapse>
-          <b-button
-            v-b-toggle.collapse-2
-            size="lg"
-            class="improved-button"
-            :class="{'rotated': RregulloreExpanded}"
-            @click="RregulloreMoreClicked()"
-          >
-            <img
-              src="@/assets/img/buttons_export/button_rregullore_down.svg"
-              style="width:8rem;"
-              alt
-            />
-          </b-button>-->
         </div>
         <div class="row spacer--small"></div>
         <h1 class="title-rregullat" style="margin-top:20px;">New Artist</h1>
@@ -133,38 +98,6 @@
             <br />
             <br />The ‘New Artist’ category presents the songs before the jury in the first phase, which takes place within ‘E Diela Shqiptare’
           </p>
-          <!-- <b-collapse id="collapse-3" class="mt-2">
-            <b-card>
-              <p class="card-text">
-                3. Ne rast kualifilimi per me tej, Juria e kesaj kategorie, do te shpalle artistet te cilet do te kalojne ne mbremjet GjysemFinale.
-                <br />
-                <br />4. Ne Naten GjysemFinale 1 dhe Naten GjysemFinale 2 artistet e Kategorise “New Artist” do te vleresohen perseri nga Juria, e njejta e fazes se pare. Kjo Juri vendos se cilet artiste kane te drejte te votojne dhe te votohen per ne Naten Finale.
-                <br />
-                <br />6. Ne rast se nje artist i kategorise “New Artist”, e fiton 2 here statusin per te votuar, atehere ai automatikisht fiton pergjithmone statusin e kategorise “Big”.
-                <br />
-                <br />7. Pavaresisht votimeve te vete artisteve, Juria e Kategorise “New Artist”, ka te drejte te kaloje ne Naten Finale, vetem nje nga artistet e Kategorise “New Artist”. Emri i saj/i tij/i tyre/ vendoset ne nje zarf ne fund te Nates GjysemFinale 2 dhe deklarohet vetem ne Naten Finale duke fituar Cmimin “Best New Artist”.
-                <br />
-                <br />8. Juria e Kategorise “New Artist”, ka te drejte t’u jape artisteve te rinj, statusin e perhershem e kalimit ne Kategorine “Big” edhe ne rastin kur nuk votohet nga koleget artiste. Kjo nese ndodh, do te deklarohet ne Naten Finale.
-                <br />
-                <br />9. Pas Festivalit “Kenga Magjike” duke pare votimet e artisteve dhe duke analizuar performancat ne skene, Produksioni i Fastivalit ka te drejte fakultative çdo vit te jape statusin “Big”, vetem per nje ose dy nga artistet e kategorise “New Artist”.
-                <br />
-                <br />10. Nese nje kengetar New Artist merr pjese ne duet apo trio me nje artist Big, pavaresisht nga kjo, kur ai te konkurroje ne edicionet pasardhese, ai do te jete serish ne kategorine New Artist deri ne nje vendimarrje te jurise.
-              </p>
-            </b-card>
-          </b-collapse>
-          <b-button
-            v-b-toggle.collapse-3
-            size="lg"
-            class="improved-button"
-            :class="{'rotated': RregulloreExpanded}"
-            @click="RregulloreMoreClicked()"
-          >
-            <img
-              src="@/assets/img/buttons_export/button_rregullore_down.svg"
-              style="width:8rem;"
-              alt
-            />
-          </b-button>-->
         </div>
         <div class="row-spacer--small"></div>
         <h1 class="title-rregullat" style="margin-top:20px;">International Artist</h1>
@@ -369,26 +302,26 @@
     <!-- <div class="spacer"></div> -->
     <div class="row spacer"></div>
 
-    <Footer height="height-5" v-if="windowWidth > 770" />
-    <FooterSmall v-else-if="windowWidth < 770 && windowWidth > 600" />
+    <FooterWhite height="height-5" v-if="windowWidth > 770" />
+    <FooterWhiteSmall v-else-if="windowWidth < 770 && windowWidth > 600" />
     <FooterWhiteMobile v-else />
   </div>
 </template>
 
 
 <script>
-import Footer from "@/components/Footer/FooterWhite.vue";
-import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
-import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
+const FooterWhite = () => import("@/components/Footer/FooterWhite");
+const FooterWhiteSmall = () => import("@/components/Footer/FooterWhiteSmall");
+const FooterWhiteMobile = () => import("@/components/Footer/FooterWhiteMobile");
 
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 
 export default {
   name: "Rregullore",
   components: {
-    Footer,
     FooterWhiteMobile,
-    FooterSmall
+    FooterWhite,
+    FooterWhiteSmall
   },
   data() {
     return {

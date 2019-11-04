@@ -67,26 +67,15 @@
 </template>
 
 <script>
-import { getLanguage, saveLanguage } from "@/store/services/storage";
+import { getLanguage } from "@/store/services/storage";
 import { LIST_BLOG } from "@/store/actions.type";
 import { mapGetters } from "vuex";
-import { eventBus } from "@/main";
+import { serveBlogFromCloudFront } from "@/common/cloudFront";
+
 export default {
   name: "BlogsMobile",
   data() {
     return {
-      artists: [
-        {
-          name: "10.10.2018",
-          songtilte: "Flori Mumajesi fitues i Kënga Magjike 2018!",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        },
-        {
-          name: "10.10.2018",
-          songtilte: "Flori Mumajesi fitues i Kënga Magjike 2018!",
-          img: "https://www.teksteshqip.com/img_upz/allart_full/4838.jpg"
-        }
-      ],
       blogs: [],
       lang: ""
     };
@@ -123,19 +112,15 @@ export default {
 
       for (let blog of this.getBlogs) {
         if (blog.isMainHome == true) {
-          this.blogs.push(blog);
+          let blog2 = serveBlogFromCloudFront(blog);
+
+          this.blogs.push(blog2);
         }
       }
       this.blogs.sort((a, b) => a.ordering - b.ordering);
     }
   },
   mounted() {
-    setTimeout(() => {
-      this.$forceUpdate();
-    }, 800);
-    eventBus.$on("changeLanguage", payload => {
-      this.lang = payload;
-    });
     this.lang = getLanguage();
     this.fetchBlogs();
   },

@@ -29,3 +29,18 @@ export function serveJuryFromCloudFront(jury) {
   jury2.hoverImg = finalURL2;
   return jury2;
 }
+
+export function serveBlogFromCloudFront(blog) {
+  // change from S3 to CloudFront
+  let s3Img = blog.img;
+  let splitList1 = s3Img.split("kengamagjike2019");
+  let finalURL1 = cloudFrontDomain + splitList1[1];
+  // let s3BgImg = blog.hoverImg;
+  // let splitList2 = s3BgImg.split("kengamagjike2019");
+  // let finalURL2 = cloudFrontDomain + splitList2[1];
+  // now mutate blog
+  let blog2 = { ...blog };
+  blog2.img = finalURL1;
+  // blog2.hoverImg = finalURL2;
+  return blog2;
+}

@@ -468,16 +468,14 @@
 </template>
 
 <script>
-import FooterBlack from "@/components/Footer/FooterBlack.vue";
-import FooterBlackMobile from "@/components/Footer/FooterBlackMobile.vue";
-import HeaderHero from "@/components/Headers/HeaderHero.vue";
+const FooterBlack = () => import("@/components/Footer/FooterBlack");
+const FooterBlackMobile = () => import("@/components/Footer/FooterBlackMobile");
 
 export default {
   name: "SponsorSectionz",
   components: {
     FooterBlack,
-    FooterBlackMobile,
-    HeaderHero
+    FooterBlackMobile
   },
   data() {
     return {

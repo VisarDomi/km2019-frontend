@@ -1,7 +1,6 @@
 
 <template>
   <div class="section-hero" id="kengamagjike">
-    <!-- <HeaderHero menutype="menu__items--white" iconWhite="true" v-if="windowWidth > 750" /> -->
     <img
       data-aos="zoom-out"
       data-aos-easing="ease-in-back"
@@ -20,16 +19,11 @@
 </template>
 
 <script>
-// import HeaderHero from "@/components/Headers/HeaderHero.vue";
 
 import { cloudFrontDomain } from "@/common/constants";
 
 export default {
   name: "HeroSection",
-
-  components: {
-    // HeaderHero
-  },
   methods: {},
   data() {
     return {

@@ -30,10 +30,7 @@
 </template>
 
 <script>
-import HeaderHero from "@/components/Headers/HeaderHero.vue";
-import { getLanguage, saveLanguage } from "@/store/services/storage";
-
-import { eventBus } from "@/main";
+import { getLanguage } from "@/store/services/storage";
 
 export default {
   name: "AcrossYearsSection",
@@ -45,9 +42,6 @@ export default {
       this.$refs.carousel.goToPage(this.$refs.carousel.getPreviousPage());
     }
   },
-  components: {
-    HeaderHero
-  },
   data() {
     return {
       windowWidth: window.innerWidth,
@@ -58,9 +52,6 @@ export default {
     window.onresize = () => {
       this.windowWidth = window.innerWidth;
     };
-    eventBus.$on("changeLanguage", payload => {
-      this.lang = payload;
-    });
     this.lang = getLanguage();
   }
 };

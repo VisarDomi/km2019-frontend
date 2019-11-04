@@ -1,18 +1,32 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-const Artists = () => import("@/views/Artists.vue");
-const SingleArtist = () => import("@/views/SingleArtist.vue");
-const SingleJury = () => import("@/views/SingleJury.vue");
-const Blogs = () => import("@/views/Blogs.vue");
-const SingleBlog = () => import("@/views/SingleBlog.vue");
-const Rregullore = () => import("@/views/Rregullore.vue");
-const Voto = () => import("@/views/Voto.vue");
-const VotoArtist = () => import("@/views/VotoArtist.vue");
-const NotFound = () => import("@/views/NotFound.vue");
-const Home = () => import("@/views/Home.vue");
+const Artists = () => import("@/views/Artists");
+const SingleArtist = () => import("@/views/SingleArtist");
+const SingleJury = () => import("@/views/SingleJury");
+const Blogs = () => import("@/views/Blogs");
+const SingleBlog = () => import("@/views/SingleBlog");
+const Rregullore = () => import("@/views/Rregullore");
+const Voto = () => import("@/views/Voto");
+const VotoArtist = () => import("@/views/VotoArtist");
+const NotFound = () => import("@/views/NotFound");
+const Home = () => import("@/views/Home");
 
 Vue.use(Router);
+
+function setMeta(name) {
+  let meta = {
+    title: `${name}`,
+    transition: "overlay-right",
+    metaTags: [
+      {
+        name: "description",
+        content: `The ${name} page of Kenga Magjike.`
+      }
+    ]
+  };
+  return meta;
+}
 
 export default new Router({
   mode: "history",
@@ -30,93 +44,57 @@ export default new Router({
       path: "/",
       name: "Home",
       component: Home,
-      meta: { transition: "overlay-left" }
+      meta: setMeta("Kënga Magjike")
     },
     { path: "*", component: NotFound },
     {
       path: "/artists",
       name: "Artists",
       component: Artists,
-      meta: { transition: "overlay-right" }
+      meta: setMeta("Artistët")
     },
     {
       path: "/artist/:slug/:id",
       name: "SingleArtist",
       component: SingleArtist,
-      meta: {
-        title: `Artist`,
-        transition: "overlay-right",
-        metaTags: [
-          {
-            name: "description",
-            content: `The Artist page of Kenga Magjike.`
-          }
-        ]
-      }
+      meta: setMeta("Artistët")
     },
     {
       path: "/jury/:slug/:id",
       name: "SingleJury",
       component: SingleJury,
-      meta: {
-        title: `Jury`,
-        transition: "overlay-right",
-        metaTags: [
-          {
-            name: "description",
-            content: `The Jury page of Kenga Magjike.`
-          }
-        ]
-      }
+      meta: setMeta("Juria")
     },
     {
       path: "/voto",
       name: "Voto",
       component: Voto,
-      meta: { transition: "overlay-left" }
+      meta: setMeta("Voto")
     },
     {
       path: "/voto-artist/:slug/:id",
       name: "VotoArtist",
       component: VotoArtist,
-      meta: {
-        title: `Artist`,
-        transition: "overlay-right",
-        metaTags: [
-          {
-            name: "description",
-            content: `The Artist page of Kenga Magjike.`
-          }
-        ]
-      }
+      meta: setMeta("Voto")
     },
     {
       path: "/blogs",
       name: "Blogs",
       component: Blogs,
-      meta: { transition: "overlay-left" }
+      meta: setMeta("Të reja")
     },
     {
       path: "/blog/:id",
       name: "SingleBlog",
       component: SingleBlog,
-      meta: {
-        title: `Blog`,
-        transition: "overlay-right",
-        metaTags: [
-          {
-            name: "description",
-            content: `The Blog page of Kenga Magjike.`
-          }
-        ]
-      }
+      meta: setMeta("Blog")
     },
 
     {
       path: "/rregullore",
       name: "Rregullore",
       component: Rregullore,
-      meta: { transition: "overlay-left" }
+      meta: setMeta("Rregullore")
     }
   ]
 });

@@ -82,7 +82,7 @@
             <h3 class="bio-text" v-else>të ngjashme</h3>
             <br />
             <div class="row">
-              <div class="col-lg-6" v-for="blog of this.recomandedBlogs" :key="blog.id">
+              <div class="col-lg-6" v-for="blog of this.recommendedBlogs" :key="blog.id">
                 <div class="blog-card" @click="goToBlog(blog)">
                   <img class="blog-card-image img-fluid" :src="blog.img" alt />
                   <h2 class="blog-card-title" v-if="lang == 'en'">{{blog.titleEn}}</h2>
@@ -104,13 +104,12 @@
 </template>
 
 <script>
-// @ is an alias to /src
-
 import { Carousel, Slide } from "vue-carousel";
 
-import FooterWhite from "@/components/Footer/FooterWhite.vue";
-import FooterSingleBlog from "@/components/Footer/FooterSingleBlog.vue";
-import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
+const FooterWhite = () => import("@/components/Footer/FooterWhite");
+const FooterSingleBlog = () => import("@/components/Footer/FooterSingleBlog");
+const FooterSingleBlogMobile = () =>
+  import("@/components/Footer/FooterSingleBlogMobile");
 
 import { GET_BLOG, LIST_BLOG } from "@/store/actions.type";
 import { mapGetters } from "vuex";
@@ -118,6 +117,7 @@ import { getLanguage, saveLanguage } from "@/store/services/storage";
 import { START_LOADING, STOP_LOADING, SET_BLOG } from "@/store/mutations.type";
 import { ApiService } from "@/store/services/api";
 import store from "@/store";
+import { serveBlogFromCloudFront } from "@/common/cloudFront";
 
 export default {
   name: "SingleBlog",
@@ -137,7 +137,10 @@ export default {
     };
     ApiService.get(params)
       .then(res => {
-        store.commit(SET_BLOG, res.data.Item);
+        let blog = res.data.Item;
+        let blog2 = serveJuryFromCloudFront(blog);
+
+        store.commit(SET_BLOG, blog2);
         next();
       })
       .catch(err => {
@@ -167,7 +170,7 @@ export default {
       windowWidth: window.innerWidth,
       hoverR: false,
       hoverL: false,
-      recomandedBlogs: [],
+      recommendedBlogs: [],
       nextBlog: "",
       prevBlog: "",
       lang: ""
@@ -206,6 +209,8 @@ export default {
         TableName: "KM2019-Blog",
         id: blog.id
       });
+      let blog2 = serveBlogFromCloudFront(this.getBlog);
+      this.$store.commit(SET_BLOG, blog2);
 
       await this.fetchBlogs();
     },
@@ -240,6 +245,9 @@ export default {
       };
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(GET_BLOG, params);
+      let blog2 = serveBlogFromCloudFront(this.getBlog);
+      this.$store.commit(SET_BLOG, blog2);
+
       this.$store.commit(STOP_LOADING);
     },
     async fetchBlogs() {
@@ -250,15 +258,17 @@ export default {
         Limit
       };
       await this.$store.dispatch(LIST_BLOG, params);
-      let coppy = this.getBlogs.slice();
-      let shuffledArr = this.shuffle(coppy);
+      let copy = this.getBlogs.slice();
+      let shuffledArr = this.shuffle(copy);
 
-      this.recomandedBlogs = [];
+      this.recommendedBlogs = [];
       for (let blog of shuffledArr) {
         if (blog.title !== this.getBlog.title) {
-          this.recomandedBlogs.push(blog);
+          let blog2 = serveBlogFromCloudFront(blog);
+
+          this.recommendedBlogs.push(blog2);
         }
-        if (this.recomandedBlogs.length == 2) {
+        if (this.recommendedBlogs.length == 2) {
           break;
         }
       }
@@ -270,20 +280,6 @@ export default {
           this.prevBlog = blog;
         }
       }
-    },
-    serveFromCloudFront() {
-      // change from S3 to CloudFront
-      let s3Img = this.getBlog.img;
-      let splitList1 = s3Img.split("kengamagjike2019");
-      let finalURL1 = cloudFrontDomain + splitList1[1];
-      let s3BgImg = this.getBlog.bgImg;
-      let splitList2 = s3BgImg.split("kengamagjike2019");
-      let finalURL2 = cloudFrontDomain + splitList2[1];
-      // now mutate artist
-      let artist = { ...this.getBlog };
-      artist.img = finalURL1;
-      artist.bgImg = finalURL2;
-      this.$store.commit(SET_ARTIST, artist);
     }
   },
   computed: {

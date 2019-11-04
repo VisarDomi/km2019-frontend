@@ -1,6 +1,5 @@
 <template>
   <div class="section-news pt-5 pb-5" id="te-reja">
-    <!-- <HeaderHero menutype="menu__items--white" logoGreen="true" iconWhite="true" /> -->
     <div class="spacer"></div>
     <div class="row h-25">
       <div class="header-container">
@@ -70,16 +69,12 @@
 </template>
 
 <script>
-import { getLanguage, saveLanguage } from "@/store/services/storage";
-import { eventBus } from "@/main";
-import HeaderHero from "@/components/Headers/HeaderHero.vue";
-
+import { getLanguage} from "@/store/services/storage";
 import { LIST_BLOG } from "@/store/actions.type";
 import { mapGetters } from "vuex";
+import { serveBlogFromCloudFront } from "@/common/cloudFront";
 export default {
   name: "BlogsSection",
-
-  components: { HeaderHero },
   data() {
     return {
       blogs: [],
@@ -110,7 +105,8 @@ export default {
 
       for (let blog of this.getBlogs) {
         if (blog.isMainHome == true) {
-          this.blogs.push(blog);
+          let blog2 = serveBlogFromCloudFront(blog);
+          this.blogs.push(blog2);
         }
       }
       this.blogs.sort((a, b) => a.ordering - b.ordering);
@@ -121,9 +117,6 @@ export default {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
-    });
-    eventBus.$on("changeLanguage", payload => {
-      this.lang = payload;
     });
     this.lang = getLanguage();
     this.fetchBlogs();

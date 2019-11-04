@@ -45,10 +45,9 @@
 </template>
 
 <script>
-import FooterWhite from "@/components/Footer/FooterWhite.vue";
-import FooterWhiteSmall from "@/components/Footer/FooterWhiteSmall.vue";
-import FooterWhiteMobile from "@/components/Footer/FooterWhiteMobile.vue";
-// @ is an alias to /src
+const FooterWhite = () => import("@/components/Footer/FooterWhite");
+const FooterWhiteSmall = () => import("@/components/Footer/FooterWhiteSmall");
+const FooterWhiteMobile = () => import("@/components/Footer/FooterWhiteMobile");
 import { LIST_ARTIST } from "@/store/actions.type";
 import { SET_ARTIST } from "@/store/mutations.type";
 import { mapGetters } from "vuex";

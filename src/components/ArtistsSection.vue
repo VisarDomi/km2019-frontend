@@ -1,9 +1,5 @@
 <template>
   <div class="section-artists" id="section-artists">
-    <!-- <HeaderHero
-      menutype="menu__items--black"
-      logoBlack="true"
-    />-->
     <div class="container-fluid mods">
       <div class="row go-up--small" :class="{'go-up--big' : this.artists2Row.length}">
         <div class="col-lg-12 text-center">
@@ -83,13 +79,9 @@
 </template>
 
 <script>
-import HeaderHero from "@/components/Headers/HeaderHero.vue";
-import axios from "axios";
-import { getLanguage, saveLanguage } from "@/store/services/storage";
+import { getLanguage } from "@/store/services/storage";
 import { serveArtistFromCloudFront } from "@/common/cloudFront";
-
 import { LIST_ARTIST } from "@/store/actions.type";
-import { SET_ARTIST } from "@/store/mutations.type";
 import { mapGetters } from "vuex";
 
 export default {
@@ -138,9 +130,6 @@ export default {
         this.artists2Row.push(this.artists.pop());
       }
     }
-  },
-  components: {
-    HeaderHero
   },
   data() {
     return {

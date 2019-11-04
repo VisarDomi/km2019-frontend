@@ -83,11 +83,12 @@
 <script>
 import { getLanguage } from "@/store/services/storage";
 import { Carousel, Slide } from "vue-carousel";
-import { eventBus } from "@/main";
-import FooterBlack from "@/components/Footer/FooterBlack.vue";
-import FooterSingleBlogMobile from "@/components/Footer/FooterSingleBlogMobile.vue";
-import FooterWhite from "@/components/Footer/FooterWhite.vue";
-import FooterBlackSmall from "@/components/Footer/FooterBlackSmall.vue";
+const FooterBlack = () => import("@/components/Footer/FooterBlack");
+const FooterSingleBlogMobile = () =>
+  import("@/components/Footer/FooterSingleBlogMobile");
+const FooterWhite = () => import("@/components/Footer/FooterWhite");
+const FooterBlackSmall = () => import("@/components/Footer/FooterBlackSmall");
+import { serveBlogFromCloudFront } from "@/common/cloudFront";
 
 import { LIST_BLOG } from "@/store/actions.type";
 import { mapGetters } from "vuex";
@@ -139,7 +140,9 @@ export default {
       await this.$store.dispatch(LIST_BLOG, params);
 
       for (let blog of this.getBlogs) {
-        this.blogs.push(blog);
+        let blog2 = serveBlogFromCloudFront(blog);
+
+        this.blogs.push(blog2);
       }
       this.blogs.sort((a, b) => b.ordering - a.ordering);
     }

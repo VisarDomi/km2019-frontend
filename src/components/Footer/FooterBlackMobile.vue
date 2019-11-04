@@ -114,17 +114,12 @@
 </template>
 
 <script>
-import { getLanguage, saveLanguage } from "@/store/services/storage";
-
-import { eventBus } from "@/main";
+import { getLanguage } from "@/store/services/storage";
 
 export default {
   methods: {
     changeRoute(name) {
       this.$router.push({ name: name });
-    },
-    goToVoto() {
-      this.$router.push({ name: "Voto" });
     },
   },
   data() {
@@ -133,9 +128,6 @@ export default {
     };
   },
   mounted() {
-    eventBus.$on("changeLanguage", payload => {
-      this.lang = payload;
-    });
     this.lang = getLanguage();
   }
 };

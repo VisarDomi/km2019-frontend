@@ -42,29 +42,30 @@
       </div>
     </div>
     <div class="spacer"></div>
-    <Footer v-if="windowWidth > 770" />
-    <FooterSmall v-if="windowWidth < 770 && windowWidth > 600" />
-    <FooterMobile v-if="windowWidth < 600" />
+    <FooterWhite v-if="windowWidth > 770" />
+    <FooterWhiteSmall v-if="windowWidth < 770 && windowWidth > 600" />
+    <FooterWhiteMobile v-if="windowWidth < 600" />
   </div>
 </template>
 
 
 <script>
-import Footer from "@/components/Footer/FooterWhite.vue";
-import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
-import FooterMobile from "@/components/Footer/FooterWhiteMobile.vue";
+const FooterWhite = () => import("@/components/Footer/FooterWhite");
+const FooterWhiteSmall = () => import("@/components/Footer/FooterWhiteSmall");
+const FooterWhiteMobile = () => import("@/components/Footer/FooterWhiteMobile");
 
 import { LIST_ARTIST } from "@/store/actions.type";
 import { SET_ARTIST } from "@/store/mutations.type";
 import { mapGetters } from "vuex";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
+import { serveArtistFromCloudFront } from "@/common/cloudFront";
 
 export default {
   name: "Voto",
   components: {
-    Footer,
-    FooterSmall,
-    FooterMobile
+    FooterWhite,
+    FooterWhiteSmall,
+    FooterWhiteMobile
   },
   data() {
     return {
@@ -91,7 +92,9 @@ export default {
 
       for (let artist of this.getArtists) {
         if (artist.isCurrentWeek == true) {
-          this.artists.push(artist);
+          let artist2 = serveArtistFromCloudFront(artist);
+
+          this.artists.push(artist2);
         }
       }
       this.artists.sort((a, b) => a.ordering - b.ordering);

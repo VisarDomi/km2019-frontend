@@ -105,10 +105,9 @@
 </template>
 
 <script>
-import { getLanguage, saveLanguage } from "@/store/services/storage";
-import { eventBus } from "@/main";
+import { getLanguage } from "@/store/services/storage";
 export default {
-  name: "FooterBlack",
+  name: "FooterWhite",
   data() {
     return {
       hoverFB: false,
@@ -121,12 +120,8 @@ export default {
     height: ""
   },
   methods: {
-    changeRoute(name) {
-      this.$router.push({ name: name });
-    },
     changeSection(index) {
       this.$router.push({ name: "Home", hash: "#nder-vite" });
-      // eventBus.$emit("changeSectionFromFooter", index);
     },
     gotoRregullore() {
       this.$router.push({ name: "Rregullore" });

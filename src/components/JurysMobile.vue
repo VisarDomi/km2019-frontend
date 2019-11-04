@@ -65,10 +65,8 @@
 </template>
 
 <script>
-import { getLanguage, saveLanguage } from "@/store/services/storage";
+import { getLanguage } from "@/store/services/storage";
 import { LIST_JURY } from "@/store/actions.type";
-import { eventBus } from "@/main";
-import { API_URL } from "@/store/services/api";
 import { mapGetters } from "vuex";
 import { serveJuryFromCloudFront } from "@/common/cloudFront";
 
@@ -126,9 +124,6 @@ export default {
   },
   mounted() {
     this.fetchJurys();
-    eventBus.$on("changeLanguage", payload => {
-      this.lang = payload;
-    });
     this.lang = getLanguage();
   }
 };

@@ -47,37 +47,28 @@
 </template>
 
 <script>
-// @ is an alias to /src
+const ComingSoon = () => import("@/components/ComingSoon");
 
-import ComingSoon from "@/components/ComingSoon.vue";
-import FooterBlackMobile from "@/components/Footer/FooterBlackMobile.vue";
+const HeroSection = () => import("@/components/HeroSection");
+const ArtistsSection = () => import("@/components/ArtistsSection");
+const ArtistsMobile = () => import("@/components/ArtistsMobile");
+const JurysSection = () => import("@/components/JurysSection");
+const JurysMobile = () => import("@/components/JurysMobile");
+const AcrossYearsSection = () => import("@/components/AcrossYearsSection");
+const AcrossYearsMobile = () => import("@/components/AcrossYearsMobile");
+const BlogsSection = () => import("@/components/BlogsSection");
+const BlogsMobile = () => import("@/components/BlogsMobile");
+const SponsorSectionz = () => import("@/components/SponsorSectionz");
 
-import HeaderMobile from "@/components/Headers/MobileHeader.vue";
-import HeaderHero from "@/components/Headers/HeaderHero.vue";
-
-import HeroSection from "@/components/HeroSection.vue";
-
-import ArtistsSection from "@/components/ArtistsSection.vue";
-import ArtistsMobile from "@/components/ArtistsMobile.vue";
-
-import JurysSection from "@/components/JurysSection.vue";
-import JurysMobile from "@/components/JurysMobile.vue";
-
-import AcrossYearsSection from "@/components/AcrossYearsSection.vue";
-import AcrossYearsMobile from "@/components/AcrossYearsMobile.vue";
-
-import BlogsSection from "@/components/BlogsSection.vue";
-import BlogsMobile from "@/components/BlogsMobile.vue";
-
-import SponsorSectionz from "@/components/SponsorSectionz.vue";
+const HeaderHero = () => import("@/components/Header/HeaderHero");
+const HeaderMobile = () => import("@/components/Header/HeaderMobile");
+const FooterBlackMobile = () => import("@/components/Footer/FooterBlackMobile");
 
 import { eventBus } from "@/main";
-// import Blogs from "@/views/Blogs.vue";
 
 export default {
   name: "Home",
   components: {
-    FooterBlackMobile,
     ComingSoon,
     HeroSection,
     ArtistsSection,
@@ -88,10 +79,11 @@ export default {
     AcrossYearsMobile,
     BlogsSection,
     BlogsMobile,
-
     SponsorSectionz,
+
+    HeaderHero,
     HeaderMobile,
-    HeaderHero
+    FooterBlackMobile
   },
   data() {
     return {
@@ -142,9 +134,6 @@ export default {
     window.removeEventListener("scroll", this.handleScroll);
   },
   mounted() {
-    // eventBus.$on("changeSection", payload => {
-    //   this.moveTo(payload);
-    // });
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
