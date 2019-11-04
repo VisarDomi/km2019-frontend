@@ -43,7 +43,7 @@
           @click="goToArtist(artist)"
           data-aos="fade-up"
         >
-          <div class="artist-card abs-bottom--up">
+          <div class="artist-card high-index">
             <div>
               <img :src="artist.img" alt />
             </div>
@@ -92,7 +92,6 @@ import { LIST_ARTIST } from "@/store/actions.type";
 import { SET_ARTIST } from "@/store/mutations.type";
 import { mapGetters } from "vuex";
 
-
 export default {
   name: "ArtistsSection",
   methods: {
@@ -111,17 +110,8 @@ export default {
         params: { slug: artist.name, id: artist.id }
       });
     },
-    // myClass() {
-    //   let nrColumns = this.artists2Row.length;
-    //   if (nrColumns == 3) {
-    //     return `col-lg-3`;
-    //   }
-    //   return `col-lg-3--spacer`;
-    // },
     myClass() {
       let nrColumns = this.artists2Row.length;
-      // return `col-lg-2 col-sm-2 col-7 pos-relative col-${nrColumns}-centered`;
-      // return ` col-7 ml-6  col-${nrColumns}-centered`;
       return `col-lg-2 col-sm-2 pos-relative col-${nrColumns}-centered`;
     },
     async fetchArtists() {
@@ -134,7 +124,7 @@ export default {
       await this.$store.dispatch(LIST_ARTIST, params);
       for (let artist of this.getArtists) {
         if (artist.isCurrentWeek == true) {
-          let artist2 = serveArtistFromCloudFront(artist)
+          let artist2 = serveArtistFromCloudFront(artist);
           this.artists.push(artist2);
         }
       }
@@ -270,11 +260,8 @@ export default {
 }
 
 .abs-bottom {
-  position: absolute;
   bottom: 0;
-  &--up {
-    bottom: -20%;
-  }
+  position: absolute;
 }
 
 .high-index {
@@ -286,7 +273,7 @@ export default {
   cursor: pointer;
   // width: 90%;
   width: 63%;
-  z-index: 4;
+  z-index: 10;
   img {
     height: 100%;
     width: 100%;

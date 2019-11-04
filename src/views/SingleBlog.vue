@@ -469,7 +469,9 @@ export default {
   margin-top: 20%;
   position: initial;
   @include respond(tab-port) {
-    margin-top: 25%;
+    // margin-top: 25%;
+
+    margin-top: 10%;
   }
   // margin-left:5rem;
 }
@@ -482,7 +484,9 @@ hr {
 .blog-image {
   width: 100%;
   margin-left: 2rem;
-  margin-top: 17rem;
+  // margin-top: 17rem;
+
+  margin-top: 10rem;
 
   @include respond(phone) {
     margin-left: 0rem;
@@ -508,7 +512,7 @@ hr {
   padding-left: 5rem;
   padding-right: 5rem;
   @include respond(phone) {
-    margin-bottom: 80px;
+    // margin-bottom: 80px;
   }
 }
 .blog-page {
