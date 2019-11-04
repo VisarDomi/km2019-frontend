@@ -113,7 +113,6 @@ export default {
   },
   methods: {
     moveTo(index) {
-      // console.log("clicked");
       eventBus.$emit("changeSection", index);
     },
     goToRregullore() {
@@ -143,7 +142,6 @@ export default {
       var Items = document.getElementsByClassName("cmi");
       if (this.shouldHide) {
         for (var i = 0; i < Items.length; i++) {
-          // // console.log(i, Items[i]);
           Items[i].style.opacity = 0;
           Items[i].style.transition = "all 1s";
           // Items[i].sytle.display = "none";
@@ -219,7 +217,6 @@ export default {
   &:hover {
     cursor: pointer;
   }
-  text-transform: capitalize;
   z-index: 1000;
   font-weight: bold;
 }
@@ -230,9 +227,6 @@ export default {
 
 .background--white {
   background-color: white;
-}
-.background--green {
-  background-color: #47b8b0;
 }
 .menu__items {
   text-align: center;

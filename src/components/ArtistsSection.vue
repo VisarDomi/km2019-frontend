@@ -5,12 +5,13 @@
       logoBlack="true"
     />-->
     <div class="container-fluid mods">
-      <div class="row go-up--small">
+      <div class="row go-up--small" :class="{'go-up--big' : this.artists2Row.length}">
         <div class="col-lg-12 text-center">
           <h1 class="header-text" v-if="lang == 'en'" data-aos="fade-up">artists</h1>
           <h1 class="header-text" v-else data-aos="fade-up">artistët</h1>
         </div>
       </div>
+
       <div class="row px-6 respond-height" v-if="nrArtists(5) || nrArtists(6)">
         <div
           class="col-lg-2 col-sm-2 pos-relative"
@@ -20,7 +21,10 @@
           @click="goToArtist(artist)"
           data-aos="fade-up"
         >
-          <div class="artist-card abs-bottom" :class="{'abs-bottom--up': index % 2 === 0}">
+          <div
+            class="artist-card abs-bottom"
+            :class="{'abs-bottom--up': index % 2 === 0 && artists2Row.length === 0}"
+          >
             <div>
               <img :src="artist.img" alt />
             </div>
@@ -31,25 +35,38 @@
           </div>
         </div>
       </div>
+      <div class="row px-6 respond-height">
+        <div
+          :class="myClass()"
+          v-for="artist in this.artists2Row"
+          :key="artist.name"
+          @click="goToArtist(artist)"
+          data-aos="fade-up"
+        >
+          <div class="artist-card abs-bottom--up">
+            <div>
+              <img :src="artist.img" alt />
+            </div>
+            <p class="artist-card__name go-up--small">{{artist.name}}</p>
+            <br />
+            <p class="artist-card__song" v-if="lang == 'en'">{{artist.songEng}}</p>
+            <p class="artist-card__song" v-else>{{artist.song}}</p>
+          </div>
+        </div>
+      </div>
+
       <div class="row mt--2" :class="{'mt-4' : nrArtists(5) || nrArtists(6)}">
         <div
           class="col-lg-6 offset-lg-3 col-12 text-center"
-          :class="{'mt-6' : nrArtists(5) || nrArtists(6)}"
+          :class="{'go-up--small' : this.artists2Row.length}"
         >
+          <a href="#" class="btn" @click="goToArtists()" v-if="this.lang == 'en'">more artists</a>
           <a
             href="#"
-            class="btn"
-            @click="goToArtists()"
             data-aos="fade-up"
             data-aos-anchor-placement="top-bottom"
-            v-if="this.lang == 'en'"
-          >more artists</a>
-          <a
-            href="#"
             class="btn"
             @click="goToArtists()"
-            data-aos="fade-up"
-            data-aos-anchor-placement="top-bottom"
             v-else
           >më shumë artistë</a>
         </div>
@@ -69,10 +86,13 @@
 import HeaderHero from "@/components/Headers/HeaderHero.vue";
 import axios from "axios";
 import { getLanguage, saveLanguage } from "@/store/services/storage";
+import { serveArtistFromCloudFront } from "@/common/cloudFront";
 
 import { LIST_ARTIST } from "@/store/actions.type";
 import { SET_ARTIST } from "@/store/mutations.type";
 import { mapGetters } from "vuex";
+
+
 export default {
   name: "ArtistsSection",
   methods: {
@@ -91,12 +111,18 @@ export default {
         params: { slug: artist.name, id: artist.id }
       });
     },
+    // myClass() {
+    //   let nrColumns = this.artists2Row.length;
+    //   if (nrColumns == 3) {
+    //     return `col-lg-3`;
+    //   }
+    //   return `col-lg-3--spacer`;
+    // },
     myClass() {
       let nrColumns = this.artists2Row.length;
-      if (nrColumns == 3) {
-        return `col-lg-3`;
-      }
-      return `col-lg-3--spacer`;
+      // return `col-lg-2 col-sm-2 col-7 pos-relative col-${nrColumns}-centered`;
+      // return ` col-7 ml-6  col-${nrColumns}-centered`;
+      return `col-lg-2 col-sm-2 pos-relative col-${nrColumns}-centered`;
     },
     async fetchArtists() {
       const TableName = "KM2019-Artist";
@@ -108,11 +134,19 @@ export default {
       await this.$store.dispatch(LIST_ARTIST, params);
       for (let artist of this.getArtists) {
         if (artist.isCurrentWeek == true) {
-          this.artists.push(artist);
+          let artist2 = serveArtistFromCloudFront(artist)
+          this.artists.push(artist2);
         }
       }
       this.artists.sort((a, b) => a.ordering - b.ordering);
-      // console.log("ordering->>", this.artists)
+      if (this.artists.length == 7) {
+        this.artists2Row.push(this.artists.pop());
+        this.artists2Row.push(this.artists.pop());
+      } else if (this.artists.length == 8) {
+        this.artists2Row.push(this.artists.pop());
+        this.artists2Row.push(this.artists.pop());
+        this.artists2Row.push(this.artists.pop());
+      }
     }
   },
   components: {
@@ -126,14 +160,14 @@ export default {
       windowWidth: window.innerWidth
     };
   },
-  async mounted() {
+  mounted() {
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
     });
     this.lang = getLanguage();
-    await this.fetchArtists();
+    this.fetchArtists();
   },
   computed: {
     ...mapGetters(["getArtists"])
@@ -337,6 +371,9 @@ export default {
   }
   &--medium {
     margin-top: -5rem;
+  }
+  &--big {
+    margin-top: -12rem;
   }
   @include respond(4k-desktop) {
     margin-top: -25rem;

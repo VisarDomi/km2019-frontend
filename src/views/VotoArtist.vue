@@ -48,33 +48,7 @@
 
       <div v-if="disabled" class="my-text-message">{{this.message}}</div>
     </div>
-    <!-- new login -->
-
-    <!-- old login -->
-    <!-- <div class="button-container" v-if="test(user)">
-      <b-button class="btn" @click="voto()">Dërgo votën</b-button>
-      <div v-if="getIsLoading" class="my-text-message">Duke dërguar votën</div>
-      <div v-if="voteSent" class="my-text-message">{{this.message}}</div>
-    </div>
-    <div class="button-container" v-else>
-      <b-button class="btn centered-voto" v-b-modal.my-modal>Voto</b-button>
-    </div>-->
-    <!-- old login -->
     <div class="spacer"></div>
-
-    <!-- pop up -->
-    <b-modal id="my-modal">
-      <h5 class="m-2" style="text-align: center; font-size: 12px; font-weight: 700;">
-        <div>Loading...</div>
-      </h5>
-
-      <div id="auth">
-        <amplify-authenticator :authConfig="authConfig"></amplify-authenticator>
-        <!-- <AmplifyAuthenticator></AmplifyAuthenticator> -->
-      </div>
-    </b-modal>
-    <!-- pop up -->
-
     <Footer v-if="windowWidth > 770" />
     <FooterSmall v-if="windowWidth < 770 && windowWidth > 600" />
     <FooterMobile gClass="height-5 rel" v-if="windowWidth < 600" />
@@ -86,10 +60,7 @@
 import Footer from "@/components/Footer/FooterWhite.vue";
 import FooterSmall from "@/components/Footer/FooterWhiteSmall.vue";
 import FooterMobile from "@/components/Footer/FooterWhiteMobile.vue";
-import { sleep } from "@/common/functions";
 import axios from "axios";
-
-import AmplifyAuthenticator from "@/components/AwsCustomComponent.vue";
 
 import { mapGetters } from "vuex";
 import {
@@ -103,8 +74,6 @@ import {
   STOP_LOADING,
   SET_ARTIST
 } from "@/store/mutations.type";
-import { Auth } from "aws-amplify";
-import { aws_user_pools_web_client_id } from "@/main";
 
 import { getLanguage, saveLanguage } from "@/store/services/storage";
 
@@ -113,28 +82,8 @@ export default {
   components: {
     Footer,
     FooterSmall,
-    FooterMobile,
-    AmplifyAuthenticator
+    FooterMobile
   },
-  // head: {
-  //   // To use "this" in the component, it is necessary to return the object through a function
-  //   meta: [
-  //     {
-  //       p: "og:image",
-  //       c:
-  //         getArtist.bgImg
-  //     },
-  //     {
-  //       p: "og:title",
-  //       c: getArtist.name
-  //     },
-  //     {
-  //       p: "og:description",
-  //       c:
-  //         "Voto per" + getArtist.name
-  //     }
-  //   ]
-  // },
   data() {
     return {
       lang: "",
@@ -144,47 +93,37 @@ export default {
       isError: null,
       windowWidth: window.innerWidth,
       user: {},
-      disabled: false,
-      authConfig: {
-        signInConfig: {
-          header: "Sign In"
-        },
-        signUpConfig: {
-          header: "Sign Up",
-          hideAllDefaults: true,
-          signUpFields: [
-            {
-              label: "Username",
-              key: "username",
-              required: true,
-              displayOrder: 1,
-              type: "string"
-            },
-            {
-              label: "Email",
-              key: "email",
-              required: true,
-              displayOrder: 2,
-              type: "string",
-              signUpWith: true
-            },
-            {
-              label: "Password",
-              key: "password",
-              required: true,
-              displayOrder: 3,
-              type: "password"
-            }
-          ]
-        }
-      }
+      disabled: false
     };
   },
   methods: {
     goToVoto() {
       this.$router.push({ name: "Voto" });
     },
+    async setDisabled(ip) {
+      this.disabled = true;
+      const params = {
+        ip
+      };
+      await this.$store.dispatch(GET_HAS_VOTED, params);
+      if (this.getHasVoted) {
+        if (this.lang == "en") {
+          this.message = "You have already voted for today!";
+        } else {
+          this.message = "Ju keni votuar për sot!";
+        }
+        this.disabled = true;
+      } else if (this.getHasVoted === false) {
+        this.disabled = false;
+      }
+
+      if (this.getArtist.isCurrentWeek == false) {
+        this.disabled = true;
+      }
+    },
     async getIp() {
+      this.disabled = true;
+
       const endpoint = "https://api.ipgeolocation.io/ipgeo";
       const ipParams = {
         apiKey: "9e6368cad8654c6e867dcbc3b8a2fec9",
@@ -198,13 +137,19 @@ export default {
       await axios
         .get(endpoint, { params: ipParams })
         .then(response => {
-          // console.log("response", response);
           ip = response.data.ip;
+          // first check if this ip can vote
+          this.setDisabled(ip);
         })
         .catch(err => {
-          return console.log("err", Object.assign({}, err));
+          // adblock blocks ip
+          if (this.lang == "en") {
+            this.message = "Adblock is blocking the voting (with IP)";
+          } else {
+            this.message = "Adblock-u pengon votimin (me IP)";
+          }
         });
-      // console.log("ip", ip);
+      // if it can vote, then send the vote to the backend (where it will be checked again)
       return ip;
     },
     async voteFirstWeek() {
@@ -219,11 +164,8 @@ export default {
       };
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(PUT_VOTES, params);
-      // await sleep(1000);
-      // await this.$store.dispatch(PUT_VOTES, params);
       this.$store.commit(STOP_LOADING);
       if (this.getVoteErr !== null) {
-        // console.log("this.getVoteErr", this.getVoteErr);
         if (this.getVoteErr.response.status === 501) {
           this.$store.dispatch(PUT_VOTES, params);
           if (this.lang == "en") {
@@ -242,23 +184,12 @@ export default {
           // this.voteSentSuccess = false;
         }
       } else {
-        // this.$store.commit(SET_VOTE_ERR, null)
-        // let now = new Date();
-        // let tomorrow = new Date(
-        //   `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate() + 1}`
-        // );
-        // console.log("tomorrow", tomorrow)
-        // console.log("tomorrow.toGMTString()", tomorrow.toGMTString())
-        // document.cookie = `vote=${Date.now()};expires=${tomorrow.toGMTString()}`;
-        // this.voteSentSuccess = true;
         this.disabled = true;
         if (this.lang == "en") {
           this.message = "Your vote has been recorded!";
         } else {
           this.message = "Vota u dërgua me sukses";
         }
-        // await sleep(3000);
-        // this.voteSentSuccess = false;
       }
     },
     test(obj) {
@@ -274,90 +205,41 @@ export default {
     async fetchArtist(artistId) {
       const TableName = "KM2019-Artist";
       const id = artistId;
-      // console.log("artistId", artistId);
       const params = {
         TableName,
         id
       };
       this.$store.commit(START_LOADING);
       await this.$store.dispatch(GET_ARTIST, params);
+      this.setArtistBackground(this.getArtist);
+
       this.$store.commit(STOP_LOADING);
     },
-    async setDisabled() {
-      this.disabled = true;
-      let ip = await this.getIp();
-      const params = {
-        ip
-      };
-      await this.$store.dispatch(GET_HAS_VOTED, params);
-      // console.log("this.getHasVoted", this.getHasVoted);
-      if (this.getHasVoted) {
-        if (this.lang == "en") {
-          this.message = "You have already voted for today!";
-        } else {
-          this.message = "Ju keni votuar për sot!";
-        }
-        this.disabled = true;
-      } else if (this.getHasVoted === false) {
-        this.disabled = false;
-      }
 
-      if (this.getArtist.isCurrentWeek == false) {
-        this.disabled = true;
-      }
+    setArtistBackground(artist) {
+      let votoPage = document.getElementsByClassName("voto-artist")[0];
+
+      votoPage.style.background =
+        "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
+        this.getArtist.bgImg +
+        "), no-repeat ";
+
+      votoPage.style.backgroundPosition = "center top";
+      votoPage.style.backgroundSize = "cover";
+      votoPage.style.backgroundAttachment = "fixed";
     }
   },
-  async mounted() {
+  mounted() {
     this.lang = getLanguage();
-    // console.log("this.lang", this.lang)
-    // if (this.getVoteErr.response.data === "Ip has already voted for today") {
-    //   this.message = "Ju keni votuar për sot!";
-    //   this.disabled = true;
-    //   // this.voteSentSuccess = false;
-    // } else {
-    //   this.disabled = false;
-    // }
-    // let cookies = document.cookie;
-    // if (cookies !== null) {
-    //   // console.log("cookie.split(';')", cookies.split(';'))
-    //   for (let cookie of cookies.split(";")) {
-    //     // console.log("current cookie: ", cookie)
-    //     // console.log("cookie.split", cookie.split('=')[0])
-    //     if (cookie.split("=")[0].trim() === "vote") {
-    //       let voted = cookie.split("=")[1];
-    //       // console.log("voted_cookied: ", voted);
-    //       let now = new Date();
-    //       let today = new Date(
-    //         `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`
-    //       );
-    //       if (voted - today > 0) {
-    //         this.disabled = true;
-    //       }
-    //     }
-    //   }
-    // }
 
-    await this.fetchArtist(this.$route.params.id);
-
-    let votoPage = document.getElementsByClassName("voto-artist")[0];
-
-    // console.log(votoPage);
-    votoPage.style.background =
-      "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(" +
-      this.getArtist["bgImg"] +
-      "), no-repeat ";
-
-    votoPage.style.backgroundPosition = "center top";
-    votoPage.style.backgroundSize = "cover";
-    votoPage.style.backgroundAttachment = "fixed";
+    this.fetchArtist(this.$route.params.id);
 
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;
       });
     });
-    await this.setDisabled();
-    // console.log("this.message", this.message);
+    this.getIp();
   },
   computed: {
     ...mapGetters([
@@ -367,17 +249,6 @@ export default {
       "getVoteErr",
       "getHasVoted"
     ])
-  },
-  beforeCreate() {
-    Auth.currentAuthenticatedUser()
-      .then(user => {
-        this.user = user;
-        // // console.log(this.user);
-      })
-      .catch(() => {
-        // console.log("not signed in...");
-        // // console.log("user: ", this.test(this.user));
-      });
   }
 };
 </script>
@@ -481,7 +352,7 @@ hr {
   // background-attachment: fixed;
 }
 .logo-img {
-  width: 100%;
+  width: 50%;
 }
 .back-hover:hover {
   cursor: pointer;

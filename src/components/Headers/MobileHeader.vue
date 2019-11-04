@@ -9,9 +9,9 @@
     <div id="mySidenavR" class="sidenavR">
       <a href="javascript:void(0)" class="closebtn" @click="closeNavR()">×</a>
       <a href="#">&nbsp;</a>
-
       <a href="#" v-if="this.lang == 'en'" v-scroll-to="'#artists-mobile'">artists</a>
       <a href="#" v-else v-scroll-to="'#artists-mobile'">artistët</a>
+
 
       <a href="#" v-if="this.lang == 'en'" v-scroll-to="'#nder-vite-mobile'">through the years</a>
       <a href="#" v-else v-scroll-to="'#nder-vite-mobile'">ndër vite</a>
@@ -25,8 +25,8 @@
       <a href="#" @click="changeRoute('Voto')" v-if="this.lang == 'en'">vote</a>
       <a href="#" @click="changeRoute('Voto')" v-else>voto</a>
 
-      <a href="#" @click="changeRoute('Rregullore')" v-if="this.lang == 'en'">rules</a>
-      <a href="#" @click="changeRoute('Rregullore')" v-else>rregullore</a>
+      <a href="#" @click="changeRoute('Rregullore')" v-if="this.lang == 'en'" >rules</a>
+      <a href="#" @click="changeRoute('Rregullore')" v-else >rregullore</a>
 
       <a href="#" @click="changeLang()" v-if="this.lang == 'en'">Shqip</a>
       <a href="#" @click="changeLang()" v-else>English</a>
@@ -59,11 +59,9 @@ export default {
       this.$router.push({ name: name });
     },
     goToRregullore() {
-      // console.log("h");
       this.$router.push({ name: "Rregullore" });
     },
     goToVoto() {
-      // console.log("h");
       this.$router.push({ name: "Voto" });
     },
     openNavR() {
@@ -74,18 +72,16 @@ export default {
       document.getElementById("mySidenavR").style.width = "0";
     },
     changeLang() {
-      console.log("changing lang");
       if (this.lang == "en") {
         saveLanguage("al");
         this.lang = "al";
-        this.$router.go(0);
+        this.$router.go(0)
       } else {
         saveLanguage("en");
         this.lang = "en";
-        this.$router.go(0);
+        this.$router.go(0)
       }
       eventBus.$emit("changeLanguage", this.lang);
-      console.log("lang is now: ", this.lang);
     }
   },
   mounted() {
@@ -110,7 +106,7 @@ export default {
 
 .bottom-graphic {
   position: absolute;
-  z-index: -1;
+  z-index:-1;
   bottom: 0%;
   left: 50%;
   transform: translate(-50%, 0);
@@ -142,7 +138,6 @@ a:not([href]):not([tabindex]) {
   top: 0;
   transition: 0.5s;
   width: 0;
-
   z-index: 3000;
 
   .closebtn {

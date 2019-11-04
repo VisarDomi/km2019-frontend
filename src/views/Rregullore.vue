@@ -413,18 +413,15 @@ export default {
       this.$router.push({ name: "Home" });
     },
     BigMoreClicked() {
-      // console.log("hello");
       this.BigExpanded = !this.BigExpanded;
     },
     NewMoreClicked() {
-      // console.log("hello");
       this.NewExpanded = !this.NewExpanded;
     },
     RregulloreMoreClicked() {
-      // console.log("hello");
       this.RregulloreExpanded = !this.RregulloreExpanded;
     }
-  },
+  }
 };
 </script>
 
