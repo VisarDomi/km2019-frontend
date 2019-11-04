@@ -1,20 +1,16 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-import Home from "./views/Home.vue";
-import Artists from "./views/Artists.vue";
-import SingleArtist from "./views/SingleArtist.vue";
-
-import SingleJury from "./views/SingleJury.vue";
-
-import Blogs from "./views/Blogs.vue";
-import SingleBlog from "./views/SingleBlog.vue";
-
-import Rregullore from "./views/Rregullore.vue";
-import Voto from "./views/Voto.vue";
-import VotoArtist from "./views/VotoArtist.vue";
-
-import NotFound from "./views/NotFound.vue";
+const Artists = () => import("@/views/Artists.vue");
+const SingleArtist = () => import("@/views/SingleArtist.vue");
+const SingleJury = () => import("@/views/SingleJury.vue");
+const Blogs = () => import("@/views/Blogs.vue");
+const SingleBlog = () => import("@/views/SingleBlog.vue");
+const Rregullore = () => import("@/views/Rregullore.vue");
+const Voto = () => import("@/views/Voto.vue");
+const VotoArtist = () => import("@/views/VotoArtist.vue");
+const NotFound = () => import("@/views/NotFound.vue");
+const Home = () => import("@/views/Home.vue");
 
 Vue.use(Router);
 
