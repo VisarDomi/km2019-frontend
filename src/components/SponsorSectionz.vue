@@ -8,6 +8,16 @@
           style="padding-bottom:15%; padding-top:10%;"
         >
           <div class="col-3" data-aos="zoom-in-down">
+            <a href="https://www.airalbania.com.al/" target="_blank">
+              <img
+                class="img-fluid img-sponsor"
+                src="@/assets/img/sponsors/a.png"
+                alt
+              />
+            </a>
+          </div>
+
+          <div class="col-3" data-aos="zoom-in-down">
             <a href="https://www.tirana.al" target="_blank">
               <img
                 class="img-fluid img-sponsor"
