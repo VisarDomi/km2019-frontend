@@ -1,5 +1,9 @@
 <template>
   <div class="header-hero row align-items-center menu__items row-no-margin" v-bind:class="menutype">
+    <div class="col-10 offset-1">
+      <div class="row">
+
+
     <div class="col-xl-3 col-lg-4 col-sm-4 high-index">
       <span class="d-lg-inline-block" href="#" v-if="logoBlack">
         <img
@@ -63,6 +67,9 @@
     <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-else>
       AL
       <span class="font-weight-normal">/EN</span>
+    </div>
+          </div>
+    
     </div>
   </div>
 </template>

@@ -155,7 +155,7 @@ hr {
 .footer-container {
   background: white;
   height: 16rem;
-  position: fixed;
+  position: relative;
 
   z-index: 99999999;
   bottom: 0%;
