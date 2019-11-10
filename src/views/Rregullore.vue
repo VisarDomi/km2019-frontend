@@ -123,7 +123,26 @@
     </div>
     <div class="containertext" v-else>
       <h1 class="title-rregullat">Rregulla te pjesemarrjes ne Festivalin Kenga Magjike 2019</h1>
-
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
+<!-- lots of comments -->
       <div>
         <p class="card-text">
           Kenget duhet te jene origjinale, te padegjuara me pare dhe te krijuara enkas per “Kenga Magjike 2019”
@@ -131,7 +150,7 @@
           <br />
           <span
             class="font-weight-bold"
-          >Kenget e paraqitura në “Kenga Magjike 2019” nuk duhet të jenë te gjata më shume se 3 minuta e 45 sekonda.</span>
+          >Kenget e paraqitura në “Kenga Magjike 2019” nuk duhet të jenë te gjata më shume se 5 minuta.</span>
         </p>
         <b-collapse id="collapse-1" class="mt-2">
           <b-card>
