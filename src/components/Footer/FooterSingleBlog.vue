@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div class="row h-50 vertical-center footer-container">
+    <div class="row align-items-center h-100 footer-container">
       <div class="col-md-2">
         <div class="abs-center">
           <img

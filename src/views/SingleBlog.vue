@@ -1,11 +1,39 @@
 <template>
   <div>
     <div class="blog-page">
-      <div class="row justify-content-between artist-row align-items-center h-15">
+      <div class="row justify-content-between artist-row align-items-center h-15" style="background:#4fc9bf;">
         <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
           <img src="@/assets/img/logoblog.svg" @click="goToHome()" class="logo-img img-logo" alt />
         </div>
         <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
           <img
             src="@/assets/img/artistet_arrow_left.svg"
             alt
@@ -138,7 +166,7 @@ export default {
     ApiService.get(params)
       .then(res => {
         let blog = res.data.Item;
-        let blog2 = serveJuryFromCloudFront(blog);
+        let blog2 = serveBlogFromCloudFront(blog);
 
         store.commit(SET_BLOG, blog2);
         next();
@@ -478,16 +506,18 @@ hr {
   // margin-right: 5rem;
 }
 .blog-image {
-  width: 100%;
-  margin-left: 2rem;
-  // margin-top: 17rem;
-
-  margin-top: 10rem;
+    width: 100%;
+    margin-left: 2rem;
+    margin-top: 13rem;
+    object-fit: cover;
+    object-position: center;
+    height: 700px;
 
   @include respond(phone) {
     margin-left: 0rem;
     height: 100%;
     object-fit: cover;
+    margin-top:10rem;
   }
 }
 
@@ -512,7 +542,7 @@ hr {
   }
 }
 .blog-page {
-  height: 100vh;
+  // height: 100vh;
   background: #47b8b0;
   background-size: cover;
   background-attachment: fixed;
