@@ -179,15 +179,15 @@ export default {
     return {
       meta: [
         {
-          name: "og:image",
+          property: "og:image",
           content: this.getBlog.img
         },
         {
-          name: "og:title",
+          property: "og:title",
           content: this.getBlog.title
         },
         {
-          name: "og:description",
+          property: "og:description",
           content: this.getBlog.body
         }
       ]

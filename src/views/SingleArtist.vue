@@ -117,15 +117,15 @@ export default {
     return {
       meta: [
         {
-          name: "og:image",
+          property: "og:image",
           content: this.getArtist.img
         },
         {
-          name: "og:title",
+          property: "og:title",
           content: this.getArtist.name
         },
         {
-          name: "og:description",
+          property: "og:description",
           content: this.getArtist.bio
         }
       ]

@@ -102,15 +102,15 @@ export default {
     return {
       meta: [
         {
-          name: "og:image",
+          property: "og:image",
           content: this.getJury.img
         },
         {
-          name: "og:title",
+          property: "og:title",
           content: this.getJury.firstName + " " + this.getJury.lastName
         },
         {
-          name: "og:description",
+          property: "og:description",
           content: this.getJury.bio
         }
       ]
