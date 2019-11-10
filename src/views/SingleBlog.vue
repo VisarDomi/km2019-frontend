@@ -6,6 +6,34 @@
           <img src="@/assets/img/logoblog.svg" @click="goToHome()" class="logo-img img-logo" alt />
         </div>
         <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
           <img
             src="@/assets/img/artistet_arrow_left.svg"
             alt
