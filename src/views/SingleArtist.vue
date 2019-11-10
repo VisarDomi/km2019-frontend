@@ -157,7 +157,7 @@ export default {
       this.artists = [];
       this.fetchArtists();
       await this.fetchArtist(artist.id);
-      this.setArtistBackground(artist)
+      this.setArtistBackground(artist);
       this.$router.push({
         name: "SingleArtist",
         params: { slug: artist.name, id: artist.id }
@@ -237,7 +237,7 @@ export default {
     this.fetchArtist(this.$route.params.id);
     this.fetchArtists();
 
-    this.setArtistBackground(this.getArtist)
+    this.setArtistBackground(this.getArtist);
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
         this.windowWidth = window.innerWidth;

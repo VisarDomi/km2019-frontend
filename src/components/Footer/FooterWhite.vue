@@ -38,7 +38,7 @@
               <div @mouseover="hoverFB = true" @mouseleave="hoverFB = false">
                 <a
                   v-if="hoverFB"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   href="https://www.facebook.com/kengamagjikeofficial/"
                 >
                   <img
@@ -47,7 +47,7 @@
                     alt
                   />
                 </a>
-                <a v-else target="_blank" href="https://www.facebook.com/kengamagjikeofficial/">
+                <a v-else target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/kengamagjikeofficial/">
                   <img src="@/assets/img/footer_export/social_blue_fb.svg" style="width:4rem;" alt />
                 </a>
               </div>
@@ -57,7 +57,7 @@
               <div @mouseover="hoverIG = true" @mouseleave="hoverIG = false">
                 <a
                   v-if="hoverIG"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   href="https://www.instagram.com/kengamagjikeofficial/"
                 >
                   <img
@@ -66,7 +66,7 @@
                     alt
                   />
                 </a>
-                <a v-else target="_blank" href="https://www.instagram.com/kengamagjikeofficial/">
+                <a v-else target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/kengamagjikeofficial/">
                   <img src="@/assets/img/footer_export/social_blue_ig.svg" style="width:4rem;" alt />
                 </a>
               </div>
@@ -76,7 +76,7 @@
               <div @mouseover="hoverYT = true" @mouseleave="hoverYT = false">
                 <a
                   v-if="hoverYT"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   href="https://www.youtube.com/user/officialkengamagjike"
                 >
                   <img
@@ -85,7 +85,7 @@
                     alt
                   />
                 </a>
-                <a v-else target="_blank" href="https://www.youtube.com/user/officialkengamagjike">
+                <a v-else target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/officialkengamagjike">
                   <img src="@/assets/img/footer_export/social_blue_yt.svg" style="width:4rem;" alt />
                 </a>
               </div>

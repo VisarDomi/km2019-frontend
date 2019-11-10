@@ -64,8 +64,6 @@ const HeaderHero = () => import("@/components/Header/HeaderHero");
 const HeaderMobile = () => import("@/components/Header/HeaderMobile");
 const FooterBlackMobile = () => import("@/components/Footer/FooterBlackMobile");
 
-import { eventBus } from "@/main";
-
 export default {
   name: "Home",
   components: {

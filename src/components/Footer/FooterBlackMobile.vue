@@ -78,7 +78,7 @@
 
       <div class="row" style="margin-bottom:10px;">
         <div class="col-1">
-          <a target="_blank" href="https://www.facebook.com/kengamagjikeofficial/">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/kengamagjikeofficial/">
             <img src="@/assets/img/icon facebook white.svg" class="social-1" alt />
           </a>
         </div>
@@ -86,8 +86,7 @@
         <div class="col-1">
           <a
             href="https://www.youtube.com/user/officialkengamagjike"
-            target="_blank"
-            rel="noopener noreferrer"
+            target="_blank" rel="noopener noreferrer"
           >
             <img src="@/assets/img/icon youtube white.svg" class="social-1" alt />
           </a>
@@ -96,8 +95,7 @@
         <div class="col-1">
           <a
             href="https://www.instagram.com/kengamagjikeofficial/"
-            target="_blank"
-            rel="noopener noreferrer"
+            target="_blank" rel="noopener noreferrer"
           >
             <img src="@/assets/img/icon instagram white.svg" class="social-1" alt />
           </a>

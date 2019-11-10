@@ -41,8 +41,6 @@ Vue.use(BootstrapVue);
 Vue.use(VueFullpage);
 Vue.use(VueCarousel);
 
-export const eventBus = new Vue();
-
 router.beforeEach((to, from, next) => {
   rewriteMeta(to, from, next);
 });
