@@ -138,7 +138,7 @@ export default {
     ApiService.get(params)
       .then(res => {
         let blog = res.data.Item;
-        let blog2 = serveJuryFromCloudFront(blog);
+        let blog2 = serveBlogFromCloudFront(blog);
 
         store.commit(SET_BLOG, blog2);
         next();
