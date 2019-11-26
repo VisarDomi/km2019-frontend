@@ -95,11 +95,12 @@ export default {
 
       for (let artist of this.getArtists) {
         if (artist.isCurrentWeek == true) {
-          let artist2 = serveArtistFromCloudFront(artist)
+          let artist2 = serveArtistFromCloudFront(artist);
           this.artists.push(artist2);
         }
       }
       this.artists.sort((a, b) => a.ordering - b.ordering);
+      this.artists = this.artists.slice(0, 2);
     }
   },
   mounted() {

@@ -1,10 +1,36 @@
 <template>
   <div class="section-artists" id="section-artists">
     <div class="container-fluid mods">
-      <div class="row go-up--small" :class="{'go-up--big' : this.artists2Row.length}">
+      <div
+        class="row go-up--small"
+        :class="{'go-up--big' : this.artists2Row.length || nrArtists(2)}"
+      >
         <div class="col-lg-12 text-center">
           <h1 class="header-text" v-if="lang == 'en'" data-aos="fade-up">artists</h1>
           <h1 class="header-text" v-else data-aos="fade-up">artistët</h1>
+        </div>
+      </div>
+
+      <div class="row px-6 respond-height" v-if="nrArtists(2)">
+        <div
+          class="offset-lg-2 col-lg-4 pos-relative"
+          v-for="(artist, index) in this.artists"
+          :key="artist.name"
+          @click="goToArtist(artist)"
+          data-aos="fade-up"
+        >
+          <div
+            class="artist-card"
+            :class="{'abs-bottom--up': index % 2 === 0 && artists2Row.length === 0}"
+          >
+            <div>
+              <img :src="artist.img" alt />
+            </div>
+            <p class="artist-card__name go-up--small">{{artist.name}}</p>
+            <br />
+            <p class="artist-card__song" v-if="lang == 'en'">{{artist.songEng}}</p>
+            <p class="artist-card__song" v-else>{{artist.song}}</p>
+          </div>
         </div>
       </div>
 
@@ -113,6 +139,7 @@ export default {
         TableName,
         Limit
       };
+
       await this.$store.dispatch(LIST_ARTIST, params);
       for (let artist of this.getArtists) {
         if (artist.isCurrentWeek == true) {
@@ -120,7 +147,9 @@ export default {
           this.artists.push(artist2);
         }
       }
+
       this.artists.sort((a, b) => a.ordering - b.ordering);
+      // this.artists = this.artists.slice(0, 2);
       if (this.artists.length == 7) {
         this.artists2Row.push(this.artists.pop());
         this.artists2Row.push(this.artists.pop());
@@ -263,6 +292,7 @@ export default {
   // width: 90%;
   width: 63%;
   z-index: 10;
+  position: relative;
   img {
     height: 100%;
     width: 100%;
