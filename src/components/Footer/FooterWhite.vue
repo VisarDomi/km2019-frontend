@@ -118,7 +118,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-2 border-left-black">
+      <div class="col-md-1 border-left-black">
         <p class="footer-item">
           <a href="https://boldcrest.com/">
             <img src="@/assets/img/logocrestfooterwhite.svg" alt class="crest-logo" />
@@ -184,8 +184,8 @@ export default {
   width: 250px;
   padding-left: 30px;
   @include respond(small-screen) {
-    padding-left: 0;
-    transform: scale(0.8);
+    // padding-left: 0;
+    transform: scale(0.8) translate(-25%, 0);
   }
 }
 
