@@ -1,6 +1,9 @@
 <template>
   <div class="footer" v-bind:class="height">
-    <div class="row h-50 footer-container vertical-center">
+    <div
+      class="row h-50 footer-container vertical-center"
+      :class="{'notransform' : this.$route.path == '/blogs'}"
+    >
       <div class="col-md-2">
         <div class="abs-center">
           <img class="logo-footer" src="@/assets/img/logoblack.svg" alt @click="changeSection(0)" />
@@ -158,6 +161,7 @@ export default {
   },
   mounted() {
     this.lang = getLanguage();
+    console.log(this.$route.path == "/blogs");
   }
 };
 </script>
@@ -165,10 +169,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
-a,
-a:focus,
-a:visited {
-  // color: black !important;
+.notransform {
+  color: red;
+  transform: translate(0, 0) !important;
 }
 .height-5 {
   height: 5% !important;

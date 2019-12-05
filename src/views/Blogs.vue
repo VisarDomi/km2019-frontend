@@ -72,7 +72,7 @@
         </slide>
       </carousel>
     </div>
-    <FooterWhite notransform="true" v-if="windowWidth > 770" height="height-0" />
+    <FooterWhite v-if="windowWidth > 770" height="height-10" />
     <FooterSingleBlogMobile v-else />
   </div>
 </template>
