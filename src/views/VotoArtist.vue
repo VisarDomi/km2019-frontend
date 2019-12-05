@@ -12,7 +12,7 @@
         />
       </div>
     </div>
-    <div class="row h-75 align-items-center" v-if="windowWidth > 600">
+    <div class="row h-75 align-items-center nmr" v-if="windowWidth > 600">
       <div class="col-lg-7 offset-lg-2">
         <span class="artist-name">{{getArtist.name}}</span>
         <hr />
@@ -64,11 +64,7 @@ import axios from "axios";
 import { serveArtistFromCloudFront } from "@/common/cloudFront";
 
 import { mapGetters } from "vuex";
-import {
-  GET_ARTIST,
-  PUT_VOTES,
-  GET_HAS_VOTED
-} from "@/store/actions.type";
+import { GET_ARTIST, PUT_VOTES, GET_HAS_VOTED } from "@/store/actions.type";
 import {
   START_LOADING,
   STOP_LOADING,
@@ -236,7 +232,7 @@ export default {
     let artist2 = serveArtistFromCloudFront(this.getArtist);
     this.$store.commit(SET_ARTIST, artist2);
 
-    this.setArtistBackground(this.getArtist)
+    this.setArtistBackground(this.getArtist);
 
     this.$nextTick(() => {
       window.addEventListener("resize", () => {
@@ -259,6 +255,10 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+
+.nmr {
+  margin-right: 0 !important;
+}
 
 .my-text-message {
   color: white;
@@ -283,7 +283,7 @@ export default {
 }
 
 .spacer {
-  height: 16rem;
+  height: 13%;
 }
 
 .rel {

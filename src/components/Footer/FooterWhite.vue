@@ -1,30 +1,34 @@
 <template>
   <div class="footer" v-bind:class="height">
-    <div class="row h-50 vertical-center footer-container">
+    <div class="row h-50 footer-container vertical-center">
       <div class="col-md-2">
         <div class="abs-center">
           <img class="logo-footer" src="@/assets/img/logoblack.svg" alt @click="changeSection(0)" />
         </div>
       </div>
-      <div class="col-md-1" border-left-black>
-        <a class="footer-item" href="/#section-artists" v-if="this.lang == 'en'">artists</a>
-        <a class="footer-item" href="/#section-artists" v-else>artistet</a>
+      <div class="col-md-1 border-left-black">
+        <div class="footer-item" @click="gotoHome()" v-if="this.lang == 'en'">artists</div>
+        <div class="footer-item" @click="gotoHome()" v-else>artistet</div>
       </div>
       <div class="col-md-1">
-        <a class="footer-item" href="/#nder-vite" v-if="this.lang == 'en'">Through the years</a>
-        <a class="footer-item" href="/#nder-vite" v-else>ndër vite</a>
+        <div class="footer-item" @click="gotoHome()" v-if="this.lang == 'en'">Through the years</div>
+        <div class="footer-item" @click="gotoHome()" v-else>ndër vite</div>
       </div>
       <div class="col-md-1">
-        <a class="footer-item" href="/#te-reja" v-if="this.lang == 'en'">news</a>
-        <a class="footer-item" href="/#te-reja" v-else>të reja</a>
+        <div class="footer-item" @click="gotoHome()" v-if="this.lang == 'en'">news</div>
+        <div class="footer-item" @click="gotoHome()" v-else>të reja</div>
       </div>
       <div class="col-md-1">
-        <a class="footer-item align-centered" href="/#juria" v-if="this.lang == 'en'">the jury</a>
-        <a class="footer-item align-centered" href="/#juria" v-else>juria</a>
+        <div
+          class="footer-item align-centered"
+          @click="gotoHome()"
+          v-if="this.lang == 'en'"
+        >the jury</div>
+        <div class="footer-item align-centered" @click="gotoHome()" v-else>juria</div>
       </div>
       <div class="col-md-1">
-        <a class="footer-item" @click="gotoVoto()" v-if="this.lang == 'en'">vote</a>
-        <a class="footer-item" @click="gotoVoto()" v-else>voto</a>
+        <div class="footer-item" @click="gotoVoto()" v-if="this.lang == 'en'">vote</div>
+        <div class="footer-item" @click="gotoVoto()" v-else>voto</div>
       </div>
       <div class="col-md-1">
         <div class="footer-item" @click="gotoRregullore()" v-if="this.lang == 'en'">rules</div>
@@ -35,10 +39,11 @@
         <div class="icons horizontal-center">
           <div class="row ml-0">
             <div class="col-4">
-              <div @mouseover="hoverFB = true" @mouseleave="hoverFB = false">
+              <div @mouseover="hoverFB = true" @mouseleave="hoverFB = false" class="social">
                 <a
                   v-if="hoverFB"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   href="https://www.facebook.com/kengamagjikeofficial/"
                 >
                   <img
@@ -47,17 +52,23 @@
                     alt
                   />
                 </a>
-                <a v-else target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/kengamagjikeofficial/">
+                <a
+                  v-else
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.facebook.com/kengamagjikeofficial/"
+                >
                   <img src="@/assets/img/footer_export/social_blue_fb.svg" style="width:4rem;" alt />
                 </a>
               </div>
             </div>
 
             <div class="col-4">
-              <div @mouseover="hoverIG = true" @mouseleave="hoverIG = false">
+              <div @mouseover="hoverIG = true" @mouseleave="hoverIG = false" class="social">
                 <a
                   v-if="hoverIG"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   href="https://www.instagram.com/kengamagjikeofficial/"
                 >
                   <img
@@ -66,17 +77,23 @@
                     alt
                   />
                 </a>
-                <a v-else target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/kengamagjikeofficial/">
+                <a
+                  v-else
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.instagram.com/kengamagjikeofficial/"
+                >
                   <img src="@/assets/img/footer_export/social_blue_ig.svg" style="width:4rem;" alt />
                 </a>
               </div>
             </div>
 
             <div class="col-4">
-              <div @mouseover="hoverYT = true" @mouseleave="hoverYT = false">
+              <div @mouseover="hoverYT = true" @mouseleave="hoverYT = false" class="social">
                 <a
                   v-if="hoverYT"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   href="https://www.youtube.com/user/officialkengamagjike"
                 >
                   <img
@@ -85,7 +102,12 @@
                     alt
                   />
                 </a>
-                <a v-else target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/officialkengamagjike">
+                <a
+                  v-else
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.youtube.com/user/officialkengamagjike"
+                >
                   <img src="@/assets/img/footer_export/social_blue_yt.svg" style="width:4rem;" alt />
                 </a>
               </div>
@@ -117,7 +139,8 @@ export default {
     };
   },
   props: {
-    height: ""
+    height: "",
+    notransform: false
   },
   methods: {
     changeSection(index) {
@@ -128,6 +151,9 @@ export default {
     },
     gotoVoto() {
       this.$router.push({ name: "Voto" });
+    },
+    gotoHome() {
+      this.$router.push({ name: "Home" });
     }
   },
   mounted() {
@@ -146,6 +172,9 @@ a:visited {
 }
 .height-5 {
   height: 5% !important;
+}
+.height-0 {
+  height: 0% !important;
 }
 
 .crest-logo {
@@ -169,34 +198,11 @@ a:visited {
 
 .footer-item {
   cursor: pointer;
+  // transform: translate(0, 50%);
 }
-.social {
-  &-1 {
-    position: absolute;
-    left: 14%;
-    top: -100%;
-  }
-  &-1:hover {
-    cursor: pointer;
-  }
-  &-2 {
-    position: absolute;
-    left: 42%;
-    top: -100%;
-  }
-  &-2:hover {
-    cursor: pointer;
-  }
-  &-3 {
-    // position: absolute;
-    // left: 2%;
-    padding-left: 64%;
-    top: -100%;
-  }
-  &-3 :hover {
-    cursor: pointer;
-  }
-}
+// .social {
+//   transform: translate(0, 35%);
+// }
 
 .temporary-spread {
   margin-right: 3%;
@@ -221,6 +227,11 @@ a:visited {
   right: 10%;
   transform: translate(0%, -50%);
 }
+// @media only screen and (min-width: 1920px) {
+.vertical-center {
+  transform: translate(0, 50%);
+}
+// }
 .abs-center {
   position: absolute;
   top: 50%;
@@ -230,7 +241,8 @@ a:visited {
 
 .footer {
   position: absolute;
-  bottom: 0%;
+  // display: inline;
+  // bottom: 0%;
   width: 100%;
   // height: 13%;
   height: 9rem;

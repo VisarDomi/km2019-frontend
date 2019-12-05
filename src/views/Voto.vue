@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="row align-items-center justify-content-center row-title">
+    <div class="row align-items-center justify-content-center row-title nmr">
       <div class="col-xl-7 col-lg-9 col-md-12 text-center">
         <div class="row align-items-center justify-content-center">
           <h1 class="jumbo-title-voto" v-if="lang == 'en'">vote</h1>
@@ -26,7 +26,7 @@
     </div>
 
     <div
-      class="row voto-artist-row voto-card mt-5"
+      class="row voto-artist-row voto-card mt-5 nmr"
       v-for="artist of this.artists"
       :key="artist.name"
       @click="goToVotoArtist(artist)"
@@ -120,6 +120,10 @@ export default {
 
 <style scoped lang="scss">
 @import "@/assets/sass/abstracts/_mixins.scss";
+.nmr {
+  margin-right: 0% !important;
+}
+
 .rel {
   @include respond(phone) {
     position: relative;

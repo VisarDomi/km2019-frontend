@@ -62,6 +62,7 @@
         <slide v-for="blog in this.blogs" :key="blog.id">
           <div class="h-100 slide-column">
             <img :src="blog.img" class="img-blog img-fluid grey-scale" alt />
+            <!-- <img src="@/assets/temp/Blogs__Blog-7.jpg" class="img-blog img-fluid grey-scale" alt /> -->
             <div class="blog-title-container">
               <h3 class="date">{{blog.date}}</h3>
               <h1 class="blog-title" v-if="lang == 'en'" @click="goToBlog(blog)">{{blog.titleEn}}</h1>
@@ -71,10 +72,8 @@
         </slide>
       </carousel>
     </div>
-    <!-- <FooterBlack v-if="windowWidth > 770" /> -->
-    <FooterWhite v-if="windowWidth > 770" height="height-10" />
+    <FooterWhite notransform="true" v-if="windowWidth > 770" height="height-0" />
     <FooterSingleBlogMobile v-else />
-    <!-- <FooterBlackSmall v-if="windowWidth < 770 && windowWidth > 600" /> -->
   </div>
 </template>
 

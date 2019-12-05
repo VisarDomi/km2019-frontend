@@ -380,15 +380,9 @@ export default {
   }
   &--big {
     margin-top: -12rem;
-  }
-  @include respond(4k-desktop) {
-    margin-top: -25rem;
-  }
-  @include respond(small-screen) {
-    margin-top: -4%;
-  }
-  @include respond(tab-port) {
-    margin-top: 0rem;
+    @include respond(small-screen) {
+      margin-top: 10rem;
+    }
   }
 }
 

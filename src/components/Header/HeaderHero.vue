@@ -1,75 +1,72 @@
 <template>
   <div class="header-hero row align-items-center menu__items row-no-margin" v-bind:class="menutype">
-    <div class="col-10 offset-1">
+    <div class="col-10 offset-1 h-50">
       <div class="row">
+        <div class="col-xl-3 col-lg-4 col-sm-4 high-index">
+          <span class="d-lg-inline-block" href="#" v-if="logoBlack">
+            <img
+              src="@/assets/img/logoblack.svg"
+              alt="Logo"
+              class="img-logo logo respond-width--logo"
+              v-scroll-to="'#kengamagjike'"
+            />
+          </span>
+          <span class="d-lg-inline-block" href="#" v-if="logoWhite">
+            <img
+              src="@/assets/img/logowhite.svg"
+              alt="Logo"
+              class="img-logo logo respond-width--logo"
+              v-scroll-to="'#kengamagjike'"
+            />
+          </span>
+          <span class="d-lg-inline-block" href="#" v-if="logoGreen">
+            <img
+              src="@/assets/img/logoblog.svg"
+              alt="Logo"
+              class="img-logo logo respond-width--logo"
+              v-scroll-to="'#kengamagjike'"
+            />
+          </span>
+        </div>
+        <div
+          v-if="this.lang == 'en'"
+          class="col-lg-1 col-sm-1 offset-xl-2 cmi"
+          v-scroll-to="'#juria'"
+        >the jury</div>
+        <div v-else class="col-lg-1 col-sm-1 offset-xl-2 cmi" v-scroll-to="'#juria'">juria</div>
 
+        <div
+          v-if="this.lang == 'en'"
+          class="col-lg-1 col-sm-1 cmi"
+          v-scroll-to="'#nder-vite'"
+        >through years</div>
+        <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#nder-vite'">ndër vite</div>
 
-    <div class="col-xl-3 col-lg-4 col-sm-4 high-index">
-      <span class="d-lg-inline-block" href="#" v-if="logoBlack">
-        <img
-          src="@/assets/img/logoblack.svg"
-          alt="Logo"
-          class="img-logo logo respond-width--logo"
-          v-scroll-to="'#kengamagjike'"
-        />
-      </span>
-      <span class="d-lg-inline-block" href="#" v-if="logoWhite">
-        <img
-          src="@/assets/img/logowhite.svg"
-          alt="Logo"
-          class="img-logo logo respond-width--logo"
-          v-scroll-to="'#kengamagjike'"
-        />
-      </span>
-      <span class="d-lg-inline-block" href="#" v-if="logoGreen">
-        <img
-          src="@/assets/img/logoblog.svg"
-          alt="Logo"
-          class="img-logo logo respond-width--logo"
-          v-scroll-to="'#kengamagjike'"
-        />
-      </span>
-    </div>
-    <div
-      v-if="this.lang == 'en'"
-      class="col-lg-1 col-sm-1 offset-xl-2 cmi"
-      v-scroll-to="'#juria'"
-    >the jury</div>
-    <div v-else class="col-lg-1 col-sm-1 offset-xl-2 cmi" v-scroll-to="'#juria'">juria</div>
+        <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#te-reja'">news</div>
+        <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#te-reja'">të reja</div>
 
-    <div
-      v-if="this.lang == 'en'"
-      class="col-lg-1 col-sm-1 cmi"
-      v-scroll-to="'#nder-vite'"
-    >through years</div>
-    <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#nder-vite'">ndër vite</div>
+        <div
+          v-if="this.lang == 'en'"
+          class="col-lg-1 col-sm-1 cmi"
+          v-scroll-to="'#section-artists'"
+        >artists</div>
+        <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#section-artists'">artistët</div>
 
-    <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#te-reja'">news</div>
-    <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#te-reja'">të reja</div>
+        <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rules</div>
+        <div v-else class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rregullore</div>
 
-    <div
-      v-if="this.lang == 'en'"
-      class="col-lg-1 col-sm-1 cmi"
-      v-scroll-to="'#section-artists'"
-    >artists</div>
-    <div v-else class="col-lg-1 col-sm-1 cmi" v-scroll-to="'#section-artists'">artistët</div>
+        <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" @click="goToVoto()">vote</div>
+        <div v-else class="col-lg-1 col-sm-1 cmi" @click="goToVoto()">voto</div>
 
-    <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rules</div>
-    <div v-else class="col-lg-1 col-sm-1 cmi" @click="goToRregullore()">rregullore</div>
-
-    <div v-if="this.lang == 'en'" class="col-lg-1 col-sm-1 cmi" @click="goToVoto()">vote</div>
-    <div v-else class="col-lg-1 col-sm-1 cmi" @click="goToVoto()">voto</div>
-
-    <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-if="this.lang == 'en'">
-      <span class="font-weight-normal">AL/</span>
-      EN
-    </div>
-    <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-else>
-      AL
-      <span class="font-weight-normal">/EN</span>
-    </div>
-          </div>
-    
+        <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-if="this.lang == 'en'">
+          <span class="font-weight-normal">AL/</span>
+          EN
+        </div>
+        <div class="col-lg-1 col-sm-1 cmi" @click="changeLang()" v-else>
+          AL
+          <span class="font-weight-normal">/EN</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -165,6 +162,7 @@ export default {
 }
 .logo {
   float: left;
+  transform: translate(0, -10px);
 }
 
 .background--white {
