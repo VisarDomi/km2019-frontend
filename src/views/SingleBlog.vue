@@ -63,6 +63,9 @@
             <p class="blog-content" v-if="lang == 'en'">{{this.getBlog.bodyEn}}</p>
             <p class="blog-content" v-else>{{this.getBlog.body}}</p>
             <p class="single-date">{{this.getBlog.date}}</p>
+            <img v-if="this.getBlog.img2" :src="this.getBlog.img2" alt />
+            <img v-if="this.getBlog.img3" :src="this.getBlog.img3" alt />
+
             <div class="row">
               <div class="translation" @click="changeLang()" v-if="this.lang == 'en'">
                 <!-- <span class="bold-decoration">AL/</span> -->
