@@ -1,39 +1,14 @@
 <template>
   <div>
     <div class="blog-page">
-      <div class="row justify-content-between artist-row align-items-center h-15" style="background:#4fc9bf;">
+      <div
+        class="row justify-content-between artist-row align-items-center h-15"
+        style="background:#4fc9bf;"
+      >
         <div class="col-lg-2 col-md-3 offset-sm-0 offset-1 col-sm-3 col-6 text-center">
           <img src="@/assets/img/logoblog.svg" @click="goToHome()" class="logo-img img-logo" alt />
         </div>
         <div class="col-lg-1 col-sm-2 col-3 vertical-center back-hover" @click="goToBlogs()">
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
-          <!-- comment -->
           <img
             src="@/assets/img/artistet_arrow_left.svg"
             alt
@@ -52,8 +27,91 @@
               allowfullscreen
             ></iframe>
           </div>
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
 
-          <img v-else class="blog-image" :src="this.getBlog.img" alt />
+          <!-- <img v-else class="blog-image" :src="this.getBlog.img" alt /> -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <div class="carousel-container">
+            <carousel
+              ref="carousel"
+              :perPage="1"
+              :paginationEnabled="false"
+              :navigationEnabled="false"
+            >
+              <slide>
+                <img class="blog-image" :src="this.getBlog.img" alt />
+              </slide>
+              <slide v-if="this.getBlog.img2">
+                <img class="blog-image" :src="this.getBlog.img2" alt />
+              </slide>
+              <slide v-if="this.getBlog.img3">
+                <img class="blog-image" :src="this.getBlog.img3" alt />
+              </slide>
+            </carousel>
+          </div>
+          <div
+            class="carousel-right--2"
+            v-if="this.getBlog.img2"
+            @mouseover="hoverR2 = true"
+            @mouseleave="hoverR2 = false"
+          >
+            <img
+              v-if="hoverR2"
+              @click.prevent="nextSlide2"
+              src="@/assets/img/buttons_export/button_tereja_right_h.svg"
+              style="width:6rem;"
+              alt
+            />
+            <img
+              v-else
+              @click.prevent="nextSlide2"
+              src="@/assets/img/buttons_export/button_tereja_right.svg"
+              style="width:6rem;"
+              alt
+            />
+          </div>
+
+          <div
+            class="carousel-left--2"
+            v-if="this.getBlog.img2"
+            @mouseover="hoverL2 = true"
+            @mouseleave="hoverL2 = false"
+          >
+            <img
+              v-if="hoverL2"
+              @click.prevent="prevSlide2"
+              src="@/assets/img/buttons_export/button_tereja_left_h.svg"
+              style="width:6rem;"
+              alt
+            />
+            <img
+              v-else
+              @click.prevent="prevSlide2"
+              src="@/assets/img/buttons_export/button_tereja_left.svg"
+              style="width:6rem;"
+              alt
+            />
+          </div>
+
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
+          <!-- comment -->
         </div>
         <div class="col-md-7 col-xs-12 blog-col">
           <div class="container">
@@ -63,8 +121,8 @@
             <p class="blog-content" v-if="lang == 'en'">{{this.getBlog.bodyEn}}</p>
             <p class="blog-content" v-else>{{this.getBlog.body}}</p>
             <p class="single-date">{{this.getBlog.date}}</p>
-            <img v-if="this.getBlog.img2" :src="this.getBlog.img2" alt />
-            <img v-if="this.getBlog.img3" :src="this.getBlog.img3" alt />
+            <!-- <img v-if="this.getBlog.img2" :src="this.getBlog.img2" alt /> -->
+            <!-- <img v-if="this.getBlog.img3" :src="this.getBlog.img3" alt /> -->
 
             <div class="row">
               <div class="translation" @click="changeLang()" v-if="this.lang == 'en'">
@@ -201,6 +259,8 @@ export default {
       windowWidth: window.innerWidth,
       hoverR: false,
       hoverL: false,
+      hoverR2: false,
+      hoverL2: false,
       recommendedBlogs: [],
       nextBlog: "",
       prevBlog: "",
@@ -222,6 +282,12 @@ export default {
       this.$refs.carousel.goToPage(this.$refs.carousel.getNextPage());
     },
     prevSlide() {
+      this.$refs.carousel.goToPage(this.$refs.carousel.getPreviousPage());
+    },
+    nextSlide2() {
+      this.$refs.carousel.goToPage(this.$refs.carousel.getNextPage());
+    },
+    prevSlide2() {
       this.$refs.carousel.goToPage(this.$refs.carousel.getPreviousPage());
     },
     goToBlogs() {
@@ -374,10 +440,49 @@ export default {
   }
   border-radius: 50%;
   // background-color: white;
+  &:hover {
+    cursor: pointer;
+    border-radius: 50%;
+  }
 }
-.carousel-right:hover {
-  cursor: pointer;
+.carousel-right--2 {
+  position: absolute;
+  right: 8rem;
+  // margin-top: 19px;
+  top: 72%;
+  @include respond(phone) {
+    margin-top: 13px;
+    display: none;
+  }
+  @include respond(small-screen) {
+    top: 102%;
+  }
   border-radius: 50%;
+  // background-color: white;
+  &:hover {
+    cursor: pointer;
+    border-radius: 50%;
+  }
+}
+.carousel-left--2 {
+  position: absolute;
+  left: 8rem;
+  top: 72%;
+  // margin-top: 19px;
+  @include respond(phone) {
+    margin-top: 13px;
+    display: none;
+  }
+
+  @include respond(small-screen) {
+    top: 102%;
+  }
+  border-radius: 50%;
+  // background-color: white;
+  &:hover {
+    cursor: pointer;
+    border-radius: 50%;
+  }
 }
 
 .img-left-arrow {
@@ -392,7 +497,6 @@ export default {
     margin-top: 13px;
   }
   border-radius: 50%;
-  // background-color: white;
 }
 .blog-video {
   @include respond(phone) {
@@ -509,18 +613,18 @@ hr {
   // margin-right: 5rem;
 }
 .blog-image {
-    width: 100%;
-    margin-left: 2rem;
-    margin-top: 13rem;
-    object-fit: cover;
-    object-position: center;
-    height: 700px;
+  width: 100%;
+  margin-left: 2rem;
+  margin-top: 13rem;
+  object-fit: cover;
+  object-position: center;
+  height: 700px;
 
   @include respond(phone) {
     margin-left: 0rem;
     height: 100%;
     object-fit: cover;
-    margin-top:10rem;
+    margin-top: 10rem;
   }
 }
 
