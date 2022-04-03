@@ -1,4 +1,6 @@
-# vue-kenga
+A website involving custom design implementation and a voting mechanism.
+
+# km2019
 
 ## Project setup
 ```
